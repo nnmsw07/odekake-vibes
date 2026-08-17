@@ -1,4 +1,4 @@
-# Kibun — おでかけVibes MVP
+# Kibun MVP v0.3 — 40スポット + Buzz layer
 
 「今日はどんな気分？」から始める、関東近郊おでかけ推薦の静的Web MVPです。
 
@@ -20,10 +20,11 @@ python -m http.server 8000
 - `styles.css` — スマホ優先デザイン
 - `app.js` — UI制御・詳細モーダル・お気に入り
 - `recommender.js` — Python版V0をJavaScriptへ移植した推薦ロジック
-- `data.js` — ブラウザから直接読む10スポットデータ
+- `data.js` — ブラウザから直接読む40スポットデータ
 - `seed.json` — 元JSON
 - `images/ai/` — 権利未確保スポット用の暫定イメージ
 - `test_recommender.js` — 推薦ロジックの簡易テスト
+- `CHANGELOG_v03.md` — v0.3差分と注意点
 
 ## V0.2 の主な変更
 
@@ -84,3 +85,18 @@ node test_recommender.js
 4. 施設提供・自前写真への段階的な差し替え
 5. 30〜100スポットへの拡張
 6. URL共有できる検索条件・結果
+
+
+## v0.3 更新内容
+
+- 既存10スポット + 新規30スポット = **関東40スポット**
+- `culture`（文化にふれたい）候補を大幅拡充
+- experimentalな `buzz` レイヤーを追加
+- 新規開業・リニューアルなど Buzz 90以上を「いま、ちょっと話題。」に表示
+- Buzzは推薦の主スコアには未使用（年齢/Vibe適合を優先）
+- JAL SKY MUSEUMのような明示的な年齢制限はhard filter対応を開始
+- 新規スポットの写真は現時点では既存のAIイメージを仮利用。権利確認済み実写へ順次差し替える
+
+### GitHub Pagesへ更新する場合
+
+このフォルダの中身をリポジトリ直下へ上書きしてください。`images/ai/` はv0.2と同じ画像一式です。

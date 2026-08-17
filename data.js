@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kanto_odekake_mvp_seed_v0",
-    "version": "0.2.0",
+    "dataset_name": "kibun_kanto_seed_v1_40spots",
+    "version": "0.3.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -29,6 +29,19 @@ window.ODEKAKE_SEED = {
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
       "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける"
+    },
+    "buzz_layer": {
+      "status": "experimental",
+      "definition": "SNSの正確な投稿数ではなく、新規性・SNS存在感・視覚性・メディア露出・人気の勢いを編集スコア化。",
+      "fields": [
+        "score",
+        "freshness",
+        "social_presence",
+        "visual_appeal",
+        "media_attention",
+        "popularity_momentum"
+      ],
+      "refresh_policy": "週1回を目安。新規開業・大型リニューアルは随時。"
     }
   },
   "vibe_definitions": {
@@ -776,6 +789,2815 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
+      }
+    },
+    {
+      "spot_id": "spot_011",
+      "slug": "wonderia-yokohama",
+      "name": "ワンダリア横浜",
+      "aliases": [],
+      "category_primary": "immersive_museum",
+      "categories": [
+        "immersive_museum",
+        "digital_experience",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区港町1-1-1 BASEGATE横浜関内 タワー3F・4F",
+      "official_url": "https://wonderia.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 45,
+        "hands_on": 75,
+        "quietness": 25,
+        "parent_rest": 45,
+        "greenery": 5,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 25,
+        "creative_sensory": 95,
+        "baby_fit": 55,
+        "toddler_fit": 75,
+        "stroller_fit": 0,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 100,
+        "culture": 90,
+        "waterside": 15,
+        "animals": 10,
+        "creative": 95,
+        "food": 20,
+        "active": 50,
+        "relax": 40
+      },
+      "editorial_reason": "駅前で、暑さや雨を避けながら“世界を旅するような”没入体験。文化・非日常を一気に補える。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "月〜木10:00〜19:00、金〜日・祝等10:00〜21:00。休館日は公式で確認。",
+        "price_summary": "大人2,900円〜、幼児（4歳以上）1,000円、3歳以下無料。",
+        "reservation_summary": "日時により料金変動。チケット情報は公式で確認。",
+        "age_note": "3歳以下無料。館内ベビーカー不可、入口に置き場あり。",
+        "temporary_note": null,
+        "source_url": "https://wonderia.jp/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 100,
+        "social_presence": 80,
+        "visual_appeal": 95,
+        "media_attention": 90,
+        "popularity_momentum": 95,
+        "reason": "2026年春の新規開業＋没入型で視覚性が高く、今の横浜Buzz枠として強い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-03",
+            "url": "https://wonderia.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "没入型デジタル展示をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_012",
+      "slug": "unko-museum-yokohama-bay",
+      "name": "うんこミュージアム YOKOHAMA BAY",
+      "aliases": [],
+      "category_primary": "immersive_museum",
+      "categories": [
+        "immersive_museum",
+        "indoor",
+        "photo_spot"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-2-1 横浜ワールドポーターズ2F",
+      "official_url": "https://unkomuseum.com/yokohama",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 55,
+        "hands_on": 85,
+        "quietness": 5,
+        "parent_rest": 25,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 100,
+        "baby_fit": 25,
+        "toddler_fit": 60,
+        "stroller_fit": 60,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "culture": 55,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 20,
+        "active": 70,
+        "relax": 15
+      },
+      "editorial_reason": "“写真を撮りたくなる”体験の代表。新しさと非日常性をBuzzレイヤーで最大限活かす。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日時は公式のチケットカレンダーを確認。",
+        "price_summary": "日時・券種で変動。公式で確認。",
+        "reservation_summary": "混雑が見込まれるため事前チケット推奨。",
+        "age_note": "乳幼児は刺激の強さ・混雑を考慮。ベビーカー等は公式FAQ確認。",
+        "temporary_note": "2026年8月1日オープン。",
+        "source_url": "https://unkomuseum.com/yokohama",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 99,
+        "freshness": 100,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 95,
+        "popularity_momentum": 100,
+        "reason": "2026年8月1日開業直後。フォトジェニック性と話題性が突出。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-08-01",
+            "url": "https://unkomuseum.com/yokohama"
+          },
+          {
+            "kind": "milestone",
+            "date": "2026-07-31",
+            "url": "https://unkomuseum.com/yokohama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "カラフルな体験型ミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_013",
+      "slug": "chikyu-no-niwa-kohoku",
+      "name": "ちきゅうのにわ 港北店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "sensory_play",
+        "toddler"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市都筑区",
+      "address": "神奈川県横浜市都筑区中川中央1-31-1-2 モザイクモール港北5F",
+      "official_url": "https://www.fantasy.co.jp/shoplist/shop2421/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 90,
+        "hands_on": 95,
+        "quietness": 15,
+        "parent_rest": 45,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 65,
+        "culture": 35,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 80,
+        "food": 10,
+        "active": 100,
+        "relax": 35
+      },
+      "editorial_reason": "センター北で乳幼児に使いやすい大型屋内遊び場。近場・猛暑・雨の推薦精度を上げる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "モザイクモール港北の営業に準ずる。最新は公式店舗情報を確認。",
+        "price_summary": "料金は公式店舗ページで確認。",
+        "reservation_summary": "混雑時の運用は公式で確認。",
+        "age_note": "乳幼児向けに高適合でseed。",
+        "temporary_note": null,
+        "source_url": "https://www.fantasy.co.jp/shoplist/shop2421/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 70,
+        "social_presence": 80,
+        "visual_appeal": 85,
+        "media_attention": 70,
+        "popularity_momentum": 82,
+        "reason": "2025年開業の比較的新しい大型屋内施設で、地元子連れ導線に強い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "opening",
+            "date": "2025-07-18",
+            "url": "https://www.fantasy.co.jp/shoplist/shop2421/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "明るい屋内キッズプレイ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_014",
+      "slug": "yumesaki-gallery",
+      "name": "YUMESAKI GALLERY",
+      "aliases": [],
+      "category_primary": "digital_gallery",
+      "categories": [
+        "digital_gallery",
+        "free",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区高島1-2-13 LG YOKOHAMA INNOVATION CENTER 1F",
+      "official_url": "https://yumesaki-g.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 25,
+        "hands_on": 70,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 95,
+        "baby_fit": 70,
+        "toddler_fit": 80,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 20,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 5,
+        "extraordinary": 80,
+        "culture": 95,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 0,
+        "active": 25,
+        "relax": 70
+      },
+      "editorial_reason": "無料でふらっと寄れて、映像・テクノロジーに触れられる。『文化×軽め』の良い回答になる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:00〜17:00、土日祝10:00〜18:00。火曜・金曜ほか休館。",
+        "price_summary": "無料。",
+        "reservation_summary": "通常入館の詳細は公式を確認。",
+        "age_note": "子連れ利用可。静かめの展示のため親子でゆったり向き。",
+        "temporary_note": null,
+        "source_url": "https://yumesaki-g.com/access/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 78,
+        "freshness": 45,
+        "social_presence": 70,
+        "visual_appeal": 90,
+        "media_attention": 65,
+        "popularity_momentum": 75,
+        "reason": "無料×デジタル体験でSNS紹介と相性がよく、横浜駅周辺の穴場として使える。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://yumesaki-g.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "デジタルギャラリーをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_015",
+      "slug": "keikyu-museum",
+      "name": "京急ミュージアム",
+      "aliases": [],
+      "category_primary": "transport_museum",
+      "categories": [
+        "transport_museum",
+        "free",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区高島1-2-8 京急グループ本社1F",
+      "official_url": "https://www.keikyu.co.jp/museum/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 75,
+        "quietness": 45,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 65,
+        "baby_fit": 75,
+        "toddler_fit": 95,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 70,
+        "culture": 95,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 60,
+        "food": 0,
+        "active": 40,
+        "relax": 55
+      },
+      "editorial_reason": "実車・ジオラマ・体験を無料で。『文化にふれたい＋子どもと軽く』の強いカード。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜16:30。火曜（祝日の場合翌日）ほか休館。",
+        "price_summary": "入館無料。一部体験コンテンツ有料。",
+        "reservation_summary": "一部体験はWEB事前予約が必要。",
+        "age_note": "乳幼児でも展示鑑賞しやすいが、体験ごとに条件確認。",
+        "temporary_note": null,
+        "source_url": "https://www.keikyu.co.jp/museum/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 45,
+        "social_presence": 78,
+        "visual_appeal": 82,
+        "media_attention": 70,
+        "popularity_momentum": 80,
+        "reason": "子連れSNSで繰り返し紹介されやすい『無料×鉄道×実物』の定番。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://www.keikyu.co.jp/museum/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "鉄道ミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_016",
+      "slug": "mitsubishi-minatomirai-museum",
+      "name": "三菱みなとみらい技術館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "science_museum",
+        "technology",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい3-3-1 KDX横浜みなとみらいタワー",
+      "official_url": "https://www.mhi.com/jp/company/overview/museum/minatomirai",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 85,
+        "quietness": 50,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 95,
+        "baby_fit": 60,
+        "toddler_fit": 85,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 70,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 0,
+        "active": 35,
+        "relax": 55
+      },
+      "editorial_reason": "陸・海・空・宇宙を体験展示で。『文化＝見るだけでなく触れる』を増やす。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館日・営業時間は公式カレンダーで確認。",
+        "price_summary": "入館料は公式で確認。",
+        "reservation_summary": "イベント・体験は事前予約の場合あり。",
+        "age_note": "展示は幅広い年齢向け。乳幼児は親子鑑賞中心。",
+        "temporary_note": null,
+        "source_url": "https://www.mhi.com/jp/company/overview/museum/minatomirai/about_museum",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 77,
+        "freshness": 35,
+        "social_presence": 65,
+        "visual_appeal": 78,
+        "media_attention": 62,
+        "popularity_momentum": 72,
+        "reason": "定番だが体験性が高く、文化Vibeの質を上げる発掘枠。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://www.mhi.com/jp/company/overview/museum/minatomirai/about_museum"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "科学技術ミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_017",
+      "slug": "earth-plaza",
+      "name": "あーすぷらざ",
+      "aliases": [],
+      "category_primary": "culture_museum",
+      "categories": [
+        "culture_museum",
+        "kids_exhibit",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市栄区",
+      "address": "神奈川県横浜市栄区小菅ケ谷1-2-1",
+      "official_url": "https://www.earthplaza.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 95,
+        "outdoor": 5,
+        "physical_activity": 50,
+        "hands_on": 90,
+        "quietness": 35,
+        "parent_rest": 55,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 95,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 5,
+        "extraordinary": 80,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 95,
+        "food": 5,
+        "active": 55,
+        "relax": 55
+      },
+      "editorial_reason": "世界のくらしや文化を遊びながら感じられる。『文化にふれたい』の意味を広げる施設。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "フロアにより異なる。常設展示室は月曜等休館。最新は公式で確認。",
+        "price_summary": "常設展示室は未就学児無料。その他料金は公式で確認。",
+        "reservation_summary": "通常展示は公式案内を確認。イベントは予約制の場合あり。",
+        "age_note": "未就学児向け体験との相性が良い。",
+        "temporary_note": null,
+        "source_url": "https://www.earthplaza.jp/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 72,
+        "freshness": 30,
+        "social_presence": 60,
+        "visual_appeal": 80,
+        "media_attention": 55,
+        "popularity_momentum": 65,
+        "reason": "超新規ではないが、Kibunらしい『文化×子ども体験』の穴場枠。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://www.earthplaza.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "世界文化を体験する子ども向け展示をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_018",
+      "slug": "romancecar-museum",
+      "name": "ロマンスカーミュージアム",
+      "aliases": [],
+      "category_primary": "transport_museum",
+      "categories": [
+        "transport_museum",
+        "indoor",
+        "train"
+      ],
+      "prefecture": "神奈川県",
+      "city": "海老名市",
+      "address": "神奈川県海老名市めぐみ町1-3",
+      "official_url": "https://www.odakyu.jp/romancecarmuseum/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 40,
+        "hands_on": 80,
+        "quietness": 35,
+        "parent_rest": 50,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 75,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 40,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 85,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 70,
+        "food": 20,
+        "active": 50,
+        "relax": 45
+      },
+      "editorial_reason": "駅直結で、実車を近くで見られる。VSE常設展示開始で『定番だけど今また新しい』。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜17:00（最終入館16:30）。火曜休館ほか。",
+        "price_summary": "料金は公式で確認。",
+        "reservation_summary": "混雑・イベント時は公式案内を確認。",
+        "age_note": "授乳室・おむつ交換設備あり。",
+        "temporary_note": "2026年3月19日からロマンスカーVSE常設展示開始。",
+        "source_url": "https://www.odakyu.jp/romancecarmuseum/about/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 85,
+        "freshness": 75,
+        "social_presence": 78,
+        "visual_appeal": 90,
+        "media_attention": 78,
+        "popularity_momentum": 88,
+        "reason": "VSE展示開始で再注目。鉄道好き以外にも写真・体験で刺さりやすい。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_exhibit",
+            "date": "2026-03-19",
+            "url": "https://www.pref.kanagawa.jp/docs/u5r/cnt/f550/tabi-174_eng.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "鉄道車両展示のあるミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_019",
+      "slug": "cupnoodles-museum-yokohama",
+      "name": "カップヌードルミュージアム 横浜",
+      "aliases": [],
+      "category_primary": "food_museum",
+      "categories": [
+        "food_museum",
+        "creative",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-3-4",
+      "official_url": "https://www.cupnoodles-museum.jp/ja/yokohama/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 45,
+        "hands_on": 95,
+        "quietness": 30,
+        "parent_rest": 40,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 100,
+        "baby_fit": 45,
+        "toddler_fit": 80,
+        "stroller_fit": 75,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 60
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 90,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 100,
+        "active": 55,
+        "relax": 35
+      },
+      "editorial_reason": "『文化にふれる』と『作る・食べる』が交差する。家族で完成品を持ち帰れるのも強い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜18:00（入館17:00まで）。火曜ほか休館。",
+        "price_summary": "大人500円、高校生以下無料。各アトラクション別料金。",
+        "reservation_summary": "チキンラーメンファクトリー等は予約/整理運用あり。",
+        "age_note": "展示は乳幼児も可。体験ごとに年齢条件あり。",
+        "temporary_note": null,
+        "source_url": "https://www.cupnoodles-museum.jp/ja/yokohama/guide/admission/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 40,
+        "social_presence": 88,
+        "visual_appeal": 95,
+        "media_attention": 78,
+        "popularity_momentum": 90,
+        "reason": "定番人気に加え、作ったものを撮影・共有しやすくSNSとの相性が高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "current_popular",
+            "date": "2026-08-17",
+            "url": "https://www.cupnoodles-museum.jp/ja/yokohama/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "食品づくり体験型ミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_020",
+      "slug": "anitouch-minatomirai",
+      "name": "アニタッチ みなとみらい",
+      "aliases": [],
+      "category_primary": "indoor_animals",
+      "categories": [
+        "indoor_animals",
+        "animal_contact",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-2-1 横浜ワールドポーターズ2F",
+      "official_url": "https://www.anitouch.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 90,
+        "quietness": 25,
+        "parent_rest": 50,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 20,
+        "creative_sensory": 50,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 60,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 25,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 85,
+        "culture": 45,
+        "waterside": 0,
+        "animals": 100,
+        "creative": 55,
+        "food": 20,
+        "active": 45,
+        "relax": 55
+      },
+      "editorial_reason": "『生きものに会いたい』を天候に左右されず叶える。3歳以下無料で乳幼児レコメンドに強い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:30〜19:00、土日祝10:30〜20:00。特定日は変動。",
+        "price_summary": "3歳以下無料。大人・小人料金は日区分で変動。",
+        "reservation_summary": "通常は予約不可。",
+        "age_note": "3歳以下無料。動物との接触時は保護者が安全管理。",
+        "temporary_note": null,
+        "source_url": "https://www.anitouch.jp/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 35,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 72,
+        "popularity_momentum": 82,
+        "reason": "ゼロ距離動物体験の視覚性が強く、SNS投稿との相性が高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://www.anitouch.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "屋内で小動物とふれあう体験をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_021",
+      "slug": "hamagin-space-science-center",
+      "name": "はまぎん こども宇宙科学館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "science_museum",
+        "planetarium",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市磯子区",
+      "address": "神奈川県横浜市磯子区洋光台5-2-1",
+      "official_url": "https://www.yokohama-kagakukan.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 70,
+        "hands_on": 90,
+        "quietness": 30,
+        "parent_rest": 45,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 95,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 50,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 85,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 95,
+        "food": 5,
+        "active": 75,
+        "relax": 40
+      },
+      "editorial_reason": "触って遊べる科学館。『文化×アクティブ』で博物館＝静か、だけではない選択肢。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00（最終入館16:00）。第1・3火曜ほか休館。",
+        "price_summary": "小中学生200円、高校生以上600円。プラネタリウム別料金。",
+        "reservation_summary": "プラネタリウム・イベントは公式案内を確認。",
+        "age_note": "3歳以下でも利用可。プラネタリウム座席利用時は条件あり。",
+        "temporary_note": null,
+        "source_url": "https://www.yokohama-kagakukan.jp/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 81,
+        "freshness": 35,
+        "social_presence": 70,
+        "visual_appeal": 85,
+        "media_attention": 72,
+        "popularity_momentum": 78,
+        "reason": "横浜の人気子連れ定番で、暑い日の体験型スポットとして強い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "current_popular",
+            "date": "2026-08-17",
+            "url": "https://www.yokohama-kagakukan.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "宇宙と科学の体験展示をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_022",
+      "slug": "shonan-asobimare",
+      "name": "湘南あそびマーレ",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "snow_play",
+        "toddler"
+      ],
+      "prefecture": "神奈川県",
+      "city": "平塚市",
+      "address": "神奈川県平塚市代官町33-1 OSC湘南シティC棟1F",
+      "official_url": "https://asobimare.jp/shonan/",
+      "environment": "indoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 95,
+        "quietness": 10,
+        "parent_rest": 40,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 75,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 75,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 40,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 85,
+        "culture": 20,
+        "waterside": 10,
+        "animals": 0,
+        "creative": 70,
+        "food": 20,
+        "active": 100,
+        "relax": 30
+      },
+      "editorial_reason": "0〜12歳対象の大型屋内遊園地。真夏でも『雪』という強い非日常カードを作れる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "全日10:00〜18:00（最終受付17:00）。",
+        "price_summary": "料金は公式で確認。",
+        "reservation_summary": "通常利用は公式案内を確認。",
+        "age_note": "保護者同伴の0〜12歳対象。コーナーごとに年齢制限あり。",
+        "temporary_note": null,
+        "source_url": "https://asobimare.jp/shonan/faq/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 30,
+        "social_presence": 78,
+        "visual_appeal": 90,
+        "media_attention": 65,
+        "popularity_momentum": 82,
+        "reason": "大型屋内＋雪遊びの絵力が強く、夏の子連れ需要と噛み合う。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://asobimare.jp/shonan/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "大型屋内遊園地をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_023",
+      "slug": "hakone-yunessun",
+      "name": "箱根小涌園ユネッサン",
+      "aliases": [],
+      "category_primary": "water_spa",
+      "categories": [
+        "water_spa",
+        "family_pool",
+        "resort"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町二ノ平1297",
+      "official_url": "https://www.yunessun.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 60,
+        "outdoor": 55,
+        "physical_activity": 80,
+        "hands_on": 80,
+        "quietness": 10,
+        "parent_rest": 65,
+        "greenery": 45,
+        "water_contact": 100,
+        "animal_contact": 0,
+        "food_experience": 65,
+        "creative_sensory": 70,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 60,
+        "rain_resilience": 85,
+        "heat_resilience": 75,
+        "walking_load": 65,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 65,
+        "nature": 50,
+        "extraordinary": 100,
+        "culture": 35,
+        "waterside": 100,
+        "animals": 0,
+        "creative": 65,
+        "food": 70,
+        "active": 85,
+        "relax": 80
+      },
+      "editorial_reason": "『今日は旅行気分』を一気に満たす水着温泉。乳児でも水遊びパンツ＋水着で水着エリア利用可。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "8月は原則9:00〜19:00、繁忙期は8:00開始など変動。森の湯11:00〜20:00。",
+        "price_summary": "料金は日程・エリアで変動。公式で確認。",
+        "reservation_summary": "繁忙期は事前購入推奨。",
+        "age_note": "オムツ未卒業でも水着エリアは水遊びパンツ＋水着で利用可。森の湯浴槽は不可。",
+        "temporary_note": "2026年夏コラボ等あり。",
+        "source_url": "https://www.yunessun.com/service/faq/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 88,
+        "visual_appeal": 95,
+        "media_attention": 85,
+        "popularity_momentum": 92,
+        "reason": "夏の水遊び・箱根旅行・コラボで継続的に話題になりやすい。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "summer_current",
+            "date": "2026-08",
+            "url": "https://www.yunessun.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "箱根の水遊び温浴リゾートをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_024",
+      "slug": "hakone-pirate-royal2",
+      "name": "箱根海賊船 ロワイヤルII",
+      "aliases": [],
+      "category_primary": "boat_trip",
+      "categories": [
+        "boat_trip",
+        "waterside",
+        "sightseeing"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町 芦ノ湖（箱根町港・元箱根港・桃源台港）",
+      "official_url": "https://www.hakonenavi.jp/hakone-kankosen/",
+      "environment": "mixed",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 20,
+        "outdoor": 85,
+        "physical_activity": 25,
+        "hands_on": 35,
+        "quietness": 55,
+        "parent_rest": 75,
+        "greenery": 40,
+        "water_contact": 25,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 50,
+        "baby_fit": 75,
+        "toddler_fit": 90,
+        "stroller_fit": 70,
+        "rain_resilience": 55,
+        "heat_resilience": 35,
+        "walking_load": 25,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 30,
+        "nature": 60,
+        "extraordinary": 100,
+        "culture": 75,
+        "waterside": 100,
+        "animals": 0,
+        "creative": 55,
+        "food": 20,
+        "active": 25,
+        "relax": 85
+      },
+      "editorial_reason": "移動そのものを体験に変える。『水辺＋非日常＋文化』で近場の小旅行感を作れる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "運航時刻は季節・天候で変動。公式時刻表を確認。",
+        "price_summary": "乗船区間・船室で異なる。",
+        "reservation_summary": "繁忙期・特別船室は公式で確認。",
+        "age_note": "乳幼児同伴可。船内移動・デッキ利用は安全に注意。",
+        "temporary_note": "ロワイヤルIIは2026年7月18日リニューアル就航。",
+        "source_url": "https://www.hakonenavi.jp/hakone-kankosen/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 95,
+        "social_presence": 82,
+        "visual_appeal": 95,
+        "media_attention": 85,
+        "popularity_momentum": 92,
+        "reason": "2026年7月リニューアル直後。新しい特別船室とトリックアートで再注目。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "renewal",
+            "date": "2026-07-18",
+            "url": "https://www.hakonenavi.jp/_wp/wp-content/uploads/2026/06/853db35525d6bc9361c3c3236857e065-1.pdf"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "湖を進む観光船の小旅行をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_025",
+      "slug": "kodomo-shizen-koen",
+      "name": "こども自然公園",
+      "aliases": [],
+      "category_primary": "nature_park",
+      "categories": [
+        "nature_park",
+        "playground",
+        "animals"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市旭区",
+      "address": "神奈川県横浜市旭区大池町65-1",
+      "official_url": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/10131.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 80,
+        "hands_on": 60,
+        "quietness": 55,
+        "parent_rest": 60,
+        "greenery": 100,
+        "water_contact": 25,
+        "animal_contact": 40,
+        "food_experience": 25,
+        "creative_sensory": 35,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 70,
+        "planning_friction": 5
+      },
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 55,
+        "culture": 20,
+        "waterside": 45,
+        "animals": 50,
+        "creative": 30,
+        "food": 25,
+        "active": 85,
+        "relax": 80
+      },
+      "editorial_reason": "バズだけに寄せず、近場の『ちゃんと自然』を残す発掘枠。幼児と走り回る日に使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は基本的に常時利用可。施設ごとの利用時間は現地案内を確認。",
+        "price_summary": "公園利用無料。",
+        "reservation_summary": "通常の公園利用は不要。",
+        "age_note": "おむつ交換台あり。授乳室なし。未舗装や坂道あり。",
+        "temporary_note": null,
+        "source_url": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/10131.html",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 20,
+        "social_presence": 75,
+        "visual_appeal": 82,
+        "media_attention": 45,
+        "popularity_momentum": 73,
+        "reason": "SNS保存型の『近場自然』として強い。Buzz一辺倒を防ぐ穴場枠。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "evergreen_social",
+            "date": "2026-08-17",
+            "url": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/fuku-machi/barrierfree/shisetsu/shisetsu/10131.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "大きな池と緑のある自然公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_026",
+      "slug": "national-museum-nature-science",
+      "name": "国立科学博物館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "science_museum",
+        "culture",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区上野公園7-20",
+      "official_url": "https://www.kahaku.go.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 45,
+        "hands_on": 70,
+        "quietness": 45,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 30,
+        "food_experience": 0,
+        "creative_sensory": 75,
+        "baby_fit": 85,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 65,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 5,
+        "extraordinary": 90,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 60,
+        "creative": 80,
+        "food": 0,
+        "active": 45,
+        "relax": 55
+      },
+      "editorial_reason": "『文化にふれたい』の王道。コンパスを使えば0歳から親子で遊びながら展示に入れる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "本館開館時間・休館日は公式カレンダーで確認。",
+        "price_summary": "常設展料金とコンパス料金は別途公式を確認。",
+        "reservation_summary": "コンパスは日時指定予約＋料金支払いが必要。",
+        "age_note": "コンパスは0歳〜小学6年生と保護者が利用可。主対象は4〜6歳。",
+        "temporary_note": null,
+        "source_url": "https://www.kahaku.go.jp/learning/compass/index.php",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 30,
+        "social_presence": 92,
+        "visual_appeal": 92,
+        "media_attention": 88,
+        "popularity_momentum": 95,
+        "reason": "現在も親子向け人気が高く、保存・検索され続ける強い定番。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "current_parent_program",
+            "date": "2026-07",
+            "url": "https://www.kahaku.go.jp/learning/compass/index.php"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "自然史・科学博物館の展示空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_027",
+      "slug": "teamlab-planets",
+      "name": "teamLab Planets TOKYO",
+      "aliases": [],
+      "category_primary": "immersive_art",
+      "categories": [
+        "immersive_art",
+        "digital_art",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区豊洲6-1-16",
+      "official_url": "https://www.teamlab.art/e/planets/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 95,
+        "outdoor": 10,
+        "physical_activity": 45,
+        "hands_on": 85,
+        "quietness": 20,
+        "parent_rest": 35,
+        "greenery": 35,
+        "water_contact": 60,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 45,
+        "toddler_fit": 75,
+        "stroller_fit": 35,
+        "rain_resilience": 95,
+        "heat_resilience": 95,
+        "walking_load": 45,
+        "planning_friction": 80
+      },
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 55,
+        "extraordinary": 100,
+        "culture": 100,
+        "waterside": 70,
+        "animals": 0,
+        "creative": 100,
+        "food": 0,
+        "active": 55,
+        "relax": 35
+      },
+      "editorial_reason": "写真だけで『行きたい』が伝わるKibun向き代表。文化×非日常の基準点にできる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "日付指定で変動。公式チケット画面を確認。",
+        "price_summary": "日時で変動。公式チケットを確認。",
+        "reservation_summary": "日時指定チケット推奨。",
+        "age_note": "水に入る作品あり。乳幼児は抱っこ・迂回ルート等を公式ガイドで確認。",
+        "temporary_note": "2025年1月22日に大規模拡張リニューアル。",
+        "source_url": "https://teamlabplanets.dmm.com/guide",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 70,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 95,
+        "popularity_momentum": 98,
+        "reason": "没入型アートでSNS視覚性が最高水準。拡張後も継続的な話題性が高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "renewal",
+            "date": "2025-01-22",
+            "url": "https://architects.team-lab.com/jp/projects/teamLab_planets/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "没入型デジタルアートをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_028",
+      "slug": "play-park-tachikawa",
+      "name": "PLAY! PARK",
+      "aliases": [],
+      "category_primary": "creative_play",
+      "categories": [
+        "creative_play",
+        "workshop",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "立川市",
+      "address": "東京都立川市緑町3-1 GREEN SPRINGS W3棟3F",
+      "official_url": "https://play2020.jp/park/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 90,
+        "hands_on": 100,
+        "quietness": 20,
+        "parent_rest": 45,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 100,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 80,
+        "culture": 65,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 10,
+        "active": 100,
+        "relax": 35
+      },
+      "editorial_reason": "大きな造形物とワークショップで『作る×動く』を表現できる。バイブスUIとの相性が良い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・入場枠は公式サイトを確認。",
+        "price_summary": "料金は公式で確認。",
+        "reservation_summary": "日時指定/混雑運用は公式案内を確認。",
+        "age_note": "乳幼児向けエリア・遊びあり。最新運用を公式で確認。",
+        "temporary_note": null,
+        "source_url": "https://play2020.jp/park/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 85,
+        "freshness": 35,
+        "social_presence": 78,
+        "visual_appeal": 94,
+        "media_attention": 70,
+        "popularity_momentum": 82,
+        "reason": "造形物の視覚性と体験性が高く、親子クリエイティブ系投稿と相性が良い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://play2020.jp/park/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "大きな造形物で遊ぶクリエイティブな屋内施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_029",
+      "slug": "small-worlds",
+      "name": "スモールワールズ",
+      "aliases": [],
+      "category_primary": "miniature_museum",
+      "categories": [
+        "miniature_museum",
+        "culture",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区有明1-3-33 有明物流センター",
+      "official_url": "https://smallworlds.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 25,
+        "hands_on": 45,
+        "quietness": 65,
+        "parent_rest": 70,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 90,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 95,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 25,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 90,
+        "culture": 95,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 90,
+        "food": 20,
+        "active": 25,
+        "relax": 80
+      },
+      "editorial_reason": "『細かいものを見つける』親子体験。雨の日に文化へ寄せつつ、堅くなりすぎない。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "日ごとに変動。公式営業カレンダーを確認。",
+        "price_summary": "料金は公式で確認。",
+        "reservation_summary": "当日券ありの日もある。混雑時は事前購入推奨。",
+        "age_note": "ベビーカー等の設備案内あり。",
+        "temporary_note": null,
+        "source_url": "https://smallworlds.jp/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 83,
+        "freshness": 35,
+        "social_presence": 76,
+        "visual_appeal": 96,
+        "media_attention": 65,
+        "popularity_momentum": 80,
+        "reason": "ミニチュアの写真・発見投稿が作りやすく、雨天定番として強い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-17",
+            "url": "https://smallworlds.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "精巧なミニチュア世界の展示をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_030",
+      "slug": "takaratomy-planet-kameari",
+      "name": "タカラトミープラネット アリオ亀有",
+      "aliases": [],
+      "category_primary": "xr_play",
+      "categories": [
+        "xr_play",
+        "toy",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "葛飾区",
+      "address": "東京都葛飾区亀有3-49-3 アリオ亀有3F",
+      "official_url": "https://litpla.com/takaratomyplanet/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 85,
+        "hands_on": 100,
+        "quietness": 10,
+        "parent_rest": 35,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 25,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 10,
+        "toddler_fit": 85,
+        "stroller_fit": 70,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 90,
+        "culture": 55,
+        "waterside": 0,
+        "animals": 25,
+        "creative": 100,
+        "food": 0,
+        "active": 95,
+        "relax": 25
+      },
+      "editorial_reason": "玩具×XRで、家ではできない遊び。2歳以上中心なので年齢filterが効くデータとしても良い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜20:00（19:30最終受付）。施設営業により変更あり。",
+        "price_summary": "2〜17歳料金。会員登録/年会費あり。最新は公式で確認。",
+        "reservation_summary": "当日券あり。混雑時は待ち/入場制限の場合あり。",
+        "age_note": "主料金区分は2歳以上。0〜1歳は体験適合を低めにseed。",
+        "temporary_note": "2026年7月に新アトラクション追加。",
+        "source_url": "https://litpla.com/space/takaratomy_kameari/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 70,
+        "social_presence": 85,
+        "visual_appeal": 95,
+        "media_attention": 80,
+        "popularity_momentum": 92,
+        "reason": "2026年7月にも新アトラクション追加。『新しい遊び』として鮮度が続く。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_attraction",
+            "date": "2026-07-17",
+            "url": "https://litpla.com/takaratomyplanet/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "デジタルと玩具が融合した屋内遊びをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "age_constraints": {
+        "min_months": 24,
+        "soft": true,
+        "note": "主料金・体験対象は2歳以上。0〜1歳は適合度を低く評価"
+      }
+    },
+    {
+      "spot_id": "spot_031",
+      "slug": "jal-sky-museum",
+      "name": "JAL SKY MUSEUM",
+      "aliases": [],
+      "category_primary": "aviation_museum",
+      "categories": [
+        "aviation_museum",
+        "factory_tour",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "大田区",
+      "address": "東京都大田区羽田空港3-5-1 JALメインテナンスセンター1",
+      "official_url": "https://www.jal.com/ja/kengaku/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 10,
+        "physical_activity": 35,
+        "hands_on": 65,
+        "quietness": 45,
+        "parent_rest": 45,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 80,
+        "baby_fit": 0,
+        "toddler_fit": 0,
+        "stroller_fit": 20,
+        "rain_resilience": 85,
+        "heat_resilience": 85,
+        "walking_load": 55,
+        "planning_friction": 100
+      },
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 0,
+        "extraordinary": 100,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 80,
+        "food": 20,
+        "active": 40,
+        "relax": 35
+      },
+      "editorial_reason": "乳幼児向けではないが、『年齢条件で正しく落とす』ために入れる価値が高い強Buzzスポット。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "見学枠ごとの予約制。開催日時は公式予約画面を確認。",
+        "price_summary": "通常見学/特別コースで異なる。",
+        "reservation_summary": "事前予約必須。",
+        "age_note": "小学生未満は安全上・施設上の理由で参加不可の案内あり。",
+        "temporary_note": "2026年も特別コース等を実施。",
+        "source_url": "https://www.jal.com/ja/kengaku/access/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 55,
+        "social_presence": 82,
+        "visual_appeal": 95,
+        "media_attention": 82,
+        "popularity_momentum": 88,
+        "reason": "格納庫・本物の航空機という強い非日常。予約難易度も含め話題になりやすい。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "age_restriction_verified",
+            "date": "2026",
+            "url": "https://www.jal.co.jp/jp/ja/jmb/wellness/campaign/2026/sky-museum/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "航空機格納庫見学をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "age_constraints": {
+        "min_months": 72,
+        "note": "小学生未満は参加不可"
+      }
+    },
+    {
+      "spot_id": "spot_032",
+      "slug": "asobono",
+      "name": "ASOBono!",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "baby_area",
+        "toddler"
+      ],
+      "prefecture": "東京都",
+      "city": "文京区",
+      "address": "東京都文京区後楽1-3-61 東京ドームシティ",
+      "official_url": "https://www.tokyo-dome.co.jp/asobono/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 100,
+        "quietness": 10,
+        "parent_rest": 45,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 85,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 75,
+        "culture": 25,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 80,
+        "food": 5,
+        "active": 100,
+        "relax": 35
+      },
+      "editorial_reason": "2026年7月にベビー専用エリア刷新。1歳前後の『今行きたい』候補として非常に強い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:00〜18:00、土日祝9:30〜19:00。変動あり。",
+        "price_summary": "料金区分は公式で確認。",
+        "reservation_summary": "混雑時の入場運用は公式で確認。",
+        "age_note": "ベビー専用『ハイハイガーデン』あり。授乳・おむつ替えに便利なベビールーム隣接。",
+        "temporary_note": "2026年7月11日ベビー専用エリア全面リニューアル。",
+        "source_url": "https://www.tokyo-dome.co.jp/asobono/15th/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 100,
+        "social_presence": 90,
+        "visual_appeal": 95,
+        "media_attention": 88,
+        "popularity_momentum": 98,
+        "reason": "乳幼児向けリニューアル直後で、Kibunの現在ユーザー像に最も刺さるBuzz。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "renewal",
+            "date": "2026-07-11",
+            "url": "https://www.tokyo-dome.co.jp/asobono/15th/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "赤ちゃん専用エリアのある屋内キッズ施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_033",
+      "slug": "joypolis-sports-x",
+      "name": "JOYPOLIS SPORTS X",
+      "aliases": [],
+      "category_primary": "digital_sports",
+      "categories": [
+        "digital_sports",
+        "xr",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区台場1-6-1 デックス東京ビーチ アイランドモール5F",
+      "official_url": "https://joypolis-sports.com/x-daiba/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 90,
+        "quietness": 5,
+        "parent_rest": 20,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 0,
+        "toddler_fit": 10,
+        "stroller_fit": 40,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "culture": 35,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 95,
+        "food": 0,
+        "active": 100,
+        "relax": 15
+      },
+      "editorial_reason": "Buzzは強いが幼児適性は低い。『子連れ＝乳幼児だけではない』将来拡張と年齢filterの検証用。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日11:00〜19:00、土日祝・ハイシーズン11:00〜20:00。最新はカレンダー確認。",
+        "price_summary": "利用時間・券種で異なる。",
+        "reservation_summary": "混雑・チケット運用は公式で確認。",
+        "age_note": "未就学児は一部コンテンツ利用不可。幼児適合を低くseed。",
+        "temporary_note": "2026年7月10日グランドオープン。",
+        "source_url": "https://joypolis-sports.com/x-daiba/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 100,
+        "social_presence": 90,
+        "visual_appeal": 100,
+        "media_attention": 90,
+        "popularity_momentum": 98,
+        "reason": "2026年7月開業＋インスタ投稿キャンペーン。デジタルスポーツの新規性が強い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-07-10",
+            "url": "https://joypolis-sports.com/x-daiba/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "XRデジタルスポーツ施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_034",
+      "slug": "yomiuriland-food-factory",
+      "name": "よみうりランド グッジョバ!! FOOD factory",
+      "aliases": [],
+      "category_primary": "theme_factory",
+      "categories": [
+        "theme_factory",
+        "food",
+        "workshop"
+      ],
+      "prefecture": "東京都",
+      "city": "稲城市",
+      "address": "東京都稲城市矢野口4015-1 よみうりランド内",
+      "official_url": "https://www.yomiuriland.com/gj/food/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 65,
+        "outdoor": 35,
+        "physical_activity": 80,
+        "hands_on": 95,
+        "quietness": 10,
+        "parent_rest": 30,
+        "greenery": 10,
+        "water_contact": 20,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 100,
+        "baby_fit": 20,
+        "toddler_fit": 75,
+        "stroller_fit": 65,
+        "rain_resilience": 80,
+        "heat_resilience": 75,
+        "walking_load": 55,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 70,
+        "nature": 10,
+        "extraordinary": 100,
+        "culture": 70,
+        "waterside": 20,
+        "animals": 0,
+        "creative": 100,
+        "food": 100,
+        "active": 90,
+        "relax": 20
+      },
+      "editorial_reason": "『食べたい・作りたい・遊びたい』の全部を掛け合わせられる、Kibunらしい複合Vibe施設。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "よみうりランド営業時間に準ずる。公式カレンダー確認。",
+        "price_summary": "入園/アトラクション料金は公式で確認。",
+        "reservation_summary": "マイU.F.O.ファクトリー等は当日運用を確認。",
+        "age_note": "アトラクションごとに年齢・身長制限あり。",
+        "temporary_note": "2026年7月17日リニューアルオープン。",
+        "source_url": "https://www.yomiuriland.com/gj/food/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 100,
+        "social_presence": 86,
+        "visual_appeal": 95,
+        "media_attention": 85,
+        "popularity_momentum": 95,
+        "reason": "2026年7月リニューアル直後。新アトラクション＋オリジナルU.F.O.作りで共有性が高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "renewal",
+            "date": "2026-07-17",
+            "url": "https://www.yomiuriland.com/event/food_renewal/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "食の工場テーマパークをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_035",
+      "slug": "tokyo-toy-museum",
+      "name": "東京おもちゃ美術館",
+      "aliases": [],
+      "category_primary": "toy_museum",
+      "categories": [
+        "toy_museum",
+        "wood_play",
+        "creative"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区四谷4-20 四谷ひろば内",
+      "official_url": "https://art-play.or.jp/ttm/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 60,
+        "hands_on": 100,
+        "quietness": 55,
+        "parent_rest": 75,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 25,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 15,
+        "extraordinary": 70,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 0,
+        "active": 60,
+        "relax": 85
+      },
+      "editorial_reason": "0〜2歳専用木育ひろばがある、文化と遊びの理想的な中間。親も落ち着きやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜16:00（最終入館15:30）。木曜ほか休館。",
+        "price_summary": "6か月未満無料。6か月〜小学生と大人に料金設定あり。",
+        "reservation_summary": "オンラインチケット推奨。赤ちゃん木育ひろばは1時間入替制。",
+        "age_note": "赤ちゃん木育ひろばは0〜2歳児と保護者専用。",
+        "temporary_note": null,
+        "source_url": "https://art-play.or.jp/ttm/info/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 40,
+        "social_presence": 84,
+        "visual_appeal": 92,
+        "media_attention": 80,
+        "popularity_momentum": 90,
+        "reason": "赤ちゃん専用木育エリアという明確な魅力で、親子メディア/SNSに載せやすい。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "baby_program",
+            "date": "2026-08-17",
+            "url": "https://art-play.or.jp/ttm/guide/plan-baby/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "木のおもちゃに囲まれた赤ちゃん向けミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_036",
+      "slug": "snoopy-playful-park",
+      "name": "SNOOPY Playful PARK",
+      "aliases": [],
+      "category_primary": "character_play",
+      "categories": [
+        "character_play",
+        "indoor_play",
+        "food"
+      ],
+      "prefecture": "千葉県",
+      "city": "習志野市",
+      "address": "千葉県習志野市津田沼1-10-30 イオンモール津田沼South 7F",
+      "official_url": "https://www.snoopyplayfulpark.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 95,
+        "hands_on": 90,
+        "quietness": 10,
+        "parent_rest": 35,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 65,
+        "creative_sensory": 90,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "culture": 45,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 85,
+        "food": 70,
+        "active": 100,
+        "relax": 30
+      },
+      "editorial_reason": "2026年8月10日開業したばかり。キャラクター世界観＋大型遊具＋飲食で今最も『行ってみたい』を作りやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜18:30。90分完全入替制（複数枠）。",
+        "price_summary": "1〜12歳700円〜、13歳以上1,000円〜。日区分で変動。",
+        "reservation_summary": "事前WEB購入可。当日購入可。完全入替制。",
+        "age_note": "1歳から小人料金。幼児向けに高適合でseed。",
+        "temporary_note": "2026年8月10日オープン。",
+        "source_url": "https://www.aeon.jp/sc/tsudanuma/shop/store/service-553.html",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 99,
+        "freshness": 100,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 95,
+        "popularity_momentum": 100,
+        "reason": "開業1週間以内の超新規スポット。PEANUTS世界観と遊具でSNS視覚性も非常に高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-08-10",
+            "url": "https://aeonentertainment.jp/news/26/07/22_433.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "キャラクター世界観のある大型屋内プレイグラウンドをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_037",
+      "slug": "ryugujo-mikazuki",
+      "name": "龍宮城スパホテル三日月",
+      "aliases": [],
+      "category_primary": "water_resort",
+      "categories": [
+        "water_resort",
+        "pool",
+        "spa"
+      ],
+      "prefecture": "千葉県",
+      "city": "木更津市",
+      "address": "千葉県木更津市北浜町1",
+      "official_url": "https://www.mikazuki.co.jp/ryugujo/",
+      "environment": "mixed",
+      "stay_minutes_seed": 360,
+      "experience_seed": {
+        "indoor": 70,
+        "outdoor": 50,
+        "physical_activity": 85,
+        "hands_on": 70,
+        "quietness": 15,
+        "parent_rest": 80,
+        "greenery": 20,
+        "water_contact": 100,
+        "animal_contact": 0,
+        "food_experience": 80,
+        "creative_sensory": 55,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 90,
+        "heat_resilience": 85,
+        "walking_load": 60,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 80,
+        "nature": 35,
+        "extraordinary": 100,
+        "culture": 25,
+        "waterside": 100,
+        "animals": 0,
+        "creative": 55,
+        "food": 85,
+        "active": 90,
+        "relax": 90
+      },
+      "editorial_reason": "親も子も満足しやすい『一日リゾート』。水・非日常・のんびりの複合回答になる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "プール・スパ・日帰り利用時間は公式で確認。",
+        "price_summary": "日帰り/宿泊・曜日で異なる。",
+        "reservation_summary": "宿泊は予約。日帰り利用条件は公式で確認。",
+        "age_note": "乳幼児利用ルールはプール/浴場ごとに公式確認。",
+        "temporary_note": "2026年7月18日インフィニティプール開業。",
+        "source_url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 100,
+        "social_presence": 90,
+        "visual_appeal": 100,
+        "media_attention": 90,
+        "popularity_momentum": 98,
+        "reason": "東京湾を望むインフィニティプール新設で2026夏の話題性が非常に高い。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_pool",
+            "date": "2026-07-18",
+            "url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "東京湾を望む家族向けウォーターリゾートをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_038",
+      "slug": "seibu-agri-park-tokorozawa",
+      "name": "西武アグリパーク所沢",
+      "aliases": [],
+      "category_primary": "farm_experience",
+      "categories": [
+        "farm_experience",
+        "fruit_picking",
+        "outdoor"
+      ],
+      "prefecture": "埼玉県",
+      "city": "所沢市",
+      "address": "埼玉県所沢市北岩岡167-4",
+      "official_url": "https://www.seibu-agri.co.jp/agripark/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 45,
+        "hands_on": 95,
+        "quietness": 65,
+        "parent_rest": 55,
+        "greenery": 90,
+        "water_contact": 0,
+        "animal_contact": 15,
+        "food_experience": 100,
+        "creative_sensory": 70,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 5,
+        "heat_resilience": 15,
+        "walking_load": 35,
+        "planning_friction": 80
+      },
+      "vibes_seed": {
+        "cool": 5,
+        "nature": 100,
+        "extraordinary": 75,
+        "culture": 35,
+        "waterside": 0,
+        "animals": 20,
+        "creative": 65,
+        "food": 100,
+        "active": 50,
+        "relax": 75
+      },
+      "editorial_reason": "『食べる×自然×体験』を新しく追加。子どもと収穫する、という明確な一日を提案できる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "収穫時期・営業日は生育/天候で変動。公式カレンダーを確認。",
+        "price_summary": "ブルーベリー収穫体験は予約制。料金は公式で確認。",
+        "reservation_summary": "ブルーベリー収穫体験は予約制。",
+        "age_note": "2歳以下無料の料金設定あり。暑さ対策必須。",
+        "temporary_note": "2026年6月13日グランドオープン。",
+        "source_url": "https://www.seibu-agri.co.jp/agripark/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 100,
+        "social_presence": 88,
+        "visual_appeal": 93,
+        "media_attention": 100,
+        "popularity_momentum": 98,
+        "reason": "2026年6月開業直後で、news every.・めざましテレビ紹介実績もある。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-06-13",
+            "url": "https://www.seibu-agri.co.jp/agripark/"
+          },
+          {
+            "kind": "tv_media",
+            "date": "2026-07",
+            "url": "https://www.seibu-agri.co.jp/agripark/update/news/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/strawberry-greenhouse.jpg",
+        "type": "ai",
+        "alt": "親子で果物を収穫する観光農園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_039",
+      "slug": "kobito-hakubutsukan",
+      "name": "こびと はくぶつかん",
+      "aliases": [],
+      "category_primary": "immersive_character",
+      "categories": [
+        "immersive_character",
+        "observation",
+        "indoor"
+      ],
+      "prefecture": "埼玉県",
+      "city": "越谷市",
+      "address": "埼玉県越谷市レイクタウン3-1-1 イオンレイクタウンmori 3F",
+      "official_url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 40,
+        "hands_on": 85,
+        "quietness": 45,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 90,
+        "baby_fit": 75,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 20,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "culture": 70,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 90,
+        "food": 0,
+        "active": 45,
+        "relax": 60
+      },
+      "editorial_reason": "『探す・観察する・発見する』というKibunらしい体験。キャラクター施設でも遊具一辺倒にならない。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "イオンレイクタウンmori専門店街の営業に準ずる（通常10:00〜21:00）。",
+        "price_summary": "料金/入場運用は店舗案内を確認。",
+        "reservation_summary": "最新の入場運用は店舗で確認。",
+        "age_note": "子どもから大人まで幅広い世代向け。",
+        "temporary_note": "2026年7月17日オープン。",
+        "source_url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 98,
+        "freshness": 100,
+        "social_presence": 92,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 100,
+        "reason": "開業1か月以内。等身大コビトを探す世界観がSNSに非常に向く。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-07-17",
+            "url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "不思議な生きものを探して観察する博物館風空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_040",
+      "slug": "kidsland-us-max-kawagoe",
+      "name": "キッズランドUS MAX 川越南古谷店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "athletic",
+        "toddler"
+      ],
+      "prefecture": "埼玉県",
+      "city": "川越市",
+      "address": "埼玉県川越市泉町2-1 ウニクス南古谷アネックス2F",
+      "official_url": "https://kidslandus.com/shop/kawagoe-minamifuruya/",
+      "environment": "indoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 95,
+        "quietness": 10,
+        "parent_rest": 50,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 75,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 75,
+        "culture": 15,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 65,
+        "food": 20,
+        "active": 100,
+        "relax": 45
+      },
+      "editorial_reason": "0歳無料・授乳室/おむつ交換・約40種類の遊び。『今日はとにかく遊ばせたい』の新Buzz枠。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜19:00。",
+        "price_summary": "0歳無料。1時間/1日パック等あり。繁忙期は休日料金。",
+        "reservation_summary": "Web事前チケットあり。当日利用も公式案内を確認。",
+        "age_note": "0歳無料。幼児〜小学生向け。",
+        "temporary_note": "2026年7月31日グランドオープン。",
+        "source_url": "https://kidslandus.com/shop/kawagoe-minamifuruya/",
+        "checked_at": "2026-08-17"
+      },
+      "buzz": {
+        "score": 97,
+        "freshness": 100,
+        "social_presence": 90,
+        "visual_appeal": 92,
+        "media_attention": 85,
+        "popularity_momentum": 100,
+        "reason": "開業直後＋大型屋内＋全天候で、夏休み子連れニーズに直結。",
+        "checked_at": "2026-08-17",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-07-31",
+            "url": "https://kidslandus.com/shop/kawagoe-minamifuruya/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "大型屋内アスレチックと遊具のあるキッズパークをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
       }
     }
   ]

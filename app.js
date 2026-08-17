@@ -26,6 +26,7 @@ const resultsSection = $('resultsSection');
 const resultsGrid = $('resultsGrid');
 const warningBox = $('coverageWarning');
 const dialog = $('spotDialog');
+const trendingGrid = $('trendingGrid');
 
 function renderVibes(){
   vibeGrid.innerHTML = vibeKeys.map(key => {
@@ -67,6 +68,26 @@ function context(){
 function vibeLabel(key){ return VIBE_UI[key]?.[1] || key; }
 function vibeEmoji(key){ return VIBE_UI[key]?.[0] || '•'; }
 function findSpot(id){ return seed.spots.find(s=>s.spot_id===id); }
+function buzzScore(s){ return Number(s?.buzz?.score || 0); }
+function buzzBadge(s){
+  const score = buzzScore(s);
+  if(score < 90) return '';
+  return `<span class="buzz-badge">🔥 話題 ${Math.round(score)}</span>`;
+}
+
+function renderTrending(){
+  if(!trendingGrid) return;
+  const items = [...seed.spots]
+    .filter(s => buzzScore(s) >= 90)
+    .sort((a,b) => buzzScore(b) - buzzScore(a))
+    .slice(0,6);
+  if(!items.length){ trendingGrid.closest('.trending')?.setAttribute('hidden',''); return; }
+  trendingGrid.innerHTML = items.map(s => `<button class="trending-card" type="button" data-trending="${s.spot_id}">
+    <div class="trending-media">${imageBlock(s,'trend')}${buzzBadge(s)}</div>
+    <div class="trending-copy"><strong>${s.name}</strong><span>${s.prefecture} · ${s.city}</span><small>${s.buzz?.reason || ''}</small></div>
+  </button>`).join('');
+  trendingGrid.querySelectorAll('[data-trending]').forEach(b => b.addEventListener('click',()=>openSpot(b.dataset.trending)));
+}
 
 function imageBadge(image){
   if(!image || image.type === 'photo') return '';
@@ -117,6 +138,7 @@ function resultCard(r){
   return `<article class="result-card ${css}">
     <div class="card-media">
       ${imageBlock(s,'card')}
+      ${buzzBadge(s)}
       <div class="slot-chip">${r.slot_label}</div>
       <div class="match-chip"><span>今日の気分との相性</span><strong>${Math.round(r.scores.overall)}<small>%</small></strong></div>
     </div>
@@ -150,13 +172,14 @@ function openSpot(id){
       <p class="eyebrow">${s.prefecture} · ${s.category_primary}</p>
       <h2>${s.name}</h2>
       <p class="dialog-copy">${s.editorial_reason||''}</p>
-      <div class="info-pills"><span class="info-pill">🕐 約${Math.round((s.stay_minutes_seed||120)/60*10)/10}時間</span><span class="info-pill">👶 1歳相性 ${s.experience_seed?.baby_fit??'-'}</span><span class="info-pill">🌧 雨 ${s.experience_seed?.rain_resilience??'-'}</span><span class="info-pill">☀️ 暑さ ${s.experience_seed?.heat_resilience??'-'}</span></div>
+      <div class="info-pills"><span class="info-pill">🕐 約${Math.round((s.stay_minutes_seed||120)/60*10)/10}時間</span><span class="info-pill">👶 1歳相性 ${s.experience_seed?.baby_fit??'-'}</span><span class="info-pill">🌧 雨 ${s.experience_seed?.rain_resilience??'-'}</span><span class="info-pill">☀️ 暑さ ${s.experience_seed?.heat_resilience??'-'}</span>${buzzScore(s)>=90?`<span class="info-pill buzz-info">🔥 話題 ${Math.round(buzzScore(s))}</span>`:''}</div>
       ${imageCredit(s.hero_image)}
     </div>
     <div class="dialog-body">
       <h3>この場所に合うバイブス</h3>
       <div class="vibe-bars">${ranked.map(([k,v])=>`<div class="vibe-bar"><span>${vibeEmoji(k)} ${vibeLabel(k).replace('したい','').replace('行きたい','')}</span><span class="bar-track"><span class="bar-fill" style="display:block;width:${v}%"></span></span><strong>${v}</strong></div>`).join('')}</div>
       <div class="fact-box"><h4>今日行く前に確認</h4><p><strong>営業時間：</strong>${d.opening_hours_text||'要確認'}</p><p><strong>料金：</strong>${d.price_summary||'要確認'}</p><p><strong>予約：</strong>${d.reservation_summary||'要確認'}</p>${d.age_note?`<p><strong>年齢：</strong>${d.age_note}</p>`:''}${d.temporary_note?`<p><strong>臨時情報：</strong>${d.temporary_note}</p>`:''}<p class="freshness">最終確認: ${d.checked_at||'未記録'} ※営業時間・料金は必ず公式サイトで再確認してください。</p></div>
+      ${s.buzz?.reason?`<div class="fact-box buzz-fact"><h4>🔥 最近気になる理由</h4><p>${s.buzz.reason}</p><p class="freshness">Buzz確認: ${s.buzz.checked_at || '未記録'} · 編集指標</p></div>`:''}
       <div class="fact-box"><h4>アクセス</h4><p>${s.address}</p><a class="official-link" href="${s.official_url}" target="_blank" rel="noopener">公式サイトを見る →</a></div>
     </div>`;
   dialog.showModal();
@@ -187,3 +210,4 @@ document.querySelectorAll('.collection-card').forEach(btn=>btn.addEventListener(
 }));
 $('favoriteCount').textContent=favorites.size;
 renderVibes();
+renderTrending();

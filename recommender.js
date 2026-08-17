@@ -63,6 +63,12 @@
 
   function hardFilterReason(spot, ctx) {
     const sid = spot.spot_id;
+    const age = (ctx.childAgeMonths === null || ctx.childAgeMonths === undefined || ctx.childAgeMonths === '') ? null : Number(ctx.childAgeMonths);
+    const ageConstraint = spot.age_constraints || {};
+    if (age !== null && !ageConstraint.soft) {
+      if (ageConstraint.min_months !== undefined && age < Number(ageConstraint.min_months)) return ageConstraint.note || '年齢条件に合わない';
+      if (ageConstraint.max_months !== undefined && age > Number(ageConstraint.max_months)) return ageConstraint.note || '年齢条件に合わない';
+    }
     const availability = (ctx.availabilityBySpot || {})[sid] || {};
     const checks = [
       ['is_open', '営業していない'],
@@ -170,7 +176,8 @@
     const [bestSpot, bestScores] = candidates[0];
     const used = new Set([bestSpot.spot_id]);
 
-    const remaining1 = candidates.filter(([s]) => !used.has(s.spot_id));
+    const minSlotVibe = selectedVibes.length ? 45 : 0;
+    const remaining1 = candidates.filter(([s, sc]) => !used.has(s.spot_id) && sc.vibe >= minSlotVibe);
     let adventure = null;
     if (remaining1.length) {
       adventure = remaining1.reduce((best, cur) => {
@@ -180,7 +187,7 @@
       used.add(adventure.pair[0].spot_id);
     }
 
-    const remaining2 = candidates.filter(([s]) => !used.has(s.spot_id));
+    const remaining2 = candidates.filter(([s, sc]) => !used.has(s.spot_id) && sc.vibe >= minSlotVibe);
     let easy = null;
     if (remaining2.length) {
       easy = remaining2.reduce((best, cur) => {
