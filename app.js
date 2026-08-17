@@ -96,11 +96,13 @@ function imageBadge(image){
 
 function imageCredit(image, compact=false){
   if(!image) return '';
-  if(image.type === 'photo' && image.credit){
+  if(image.type === 'photo'){
+    if(image.credit_required === false || !image.credit) return '';
     const label = [image.credit, image.license].filter(Boolean).join(' · ');
+    const cls = compact ? 'image-credit compact' : 'image-credit detail-credit';
     return image.source_url
-      ? `<a class="image-credit ${compact?'compact':''}" href="${image.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`
-      : `<span class="image-credit ${compact?'compact':''}">Photo: ${label}</span>`;
+      ? `<a class="${cls}" href="${image.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`
+      : `<span class="${cls}">Photo: ${label}</span>`;
   }
   return compact ? '' : `<p class="image-note">※ ${image.credit || '生成イメージ'}。実在施設の正確な外観・内観を示すものではありません。</p>`;
 }

@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v1_40spots",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -28,7 +28,13 @@ window.ODEKAKE_SEED = {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
-      "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける"
+      "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける",
+      "credit_rule": "CC BY / CC BY-SA は画面上に作者・出典・ライセンスを表示。CC0は表示を省略可能だがDBには出典を保持。",
+      "photo_count": "9/40 spots",
+      "ai_count": "30/40 spots",
+      "real_image_audit": "2026-08-17: 優先15件を監査し、7件を実写へ追加差し替え。",
+      "illustration_count": "1/40 spots",
+      "generated_image_total": "31/40 spots"
     },
     "buzz_layer": {
       "status": "experimental",
@@ -200,7 +206,11 @@ window.ODEKAKE_SEED = {
         "source_url": "https://commons.wikimedia.org/wiki/File:Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg",
         "license": "CC0 1.0",
         "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "exact_spot": true
+        "exact_spot": true,
+        "author": "NEO-NEED",
+        "credit_required": false,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       }
     },
     {
@@ -495,7 +505,11 @@ window.ODEKAKE_SEED = {
         "source_url": "https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg",
         "license": "CC BY 2.0",
         "license_url": "https://creativecommons.org/licenses/by/2.0/",
-        "exact_spot": true
+        "exact_spot": true,
+        "author": "Toshihiro Gamo",
+        "credit_required": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       }
     },
     {
@@ -1525,14 +1539,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "鉄道車両展示のあるミュージアムをイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/ROMANCECAR_MUSEUM_20210423.jpg/1280px-ROMANCECAR_MUSEUM_20210423.jpg",
+        "type": "photo",
+        "alt": "ロマンスカーミュージアムの外観",
+        "label": null,
+        "credit": "Kaze315 / Wikimedia Commons",
+        "author": "Kaze315",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ROMANCECAR_MUSEUM_20210423.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -1618,14 +1637,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "食品づくり体験型ミュージアムをイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cupnoodles_museum_yokohama.jpg/1280px-Cupnoodles_museum_yokohama.jpg",
+        "type": "photo",
+        "alt": "カップヌードルミュージアム 横浜の外観",
+        "label": null,
+        "credit": "Keeezawa / Wikimedia Commons",
+        "author": "Keeezawa",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cupnoodles_museum_yokohama.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "credit_required": false,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -1804,14 +1828,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "宇宙と科学の体験展示をイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yokohama_Science_Center.JPG",
+        "type": "photo",
+        "alt": "はまぎん こども宇宙科学館の外観",
+        "label": null,
+        "credit": "妖精書士 / Wikimedia Commons",
+        "author": "妖精書士",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yokohama_Science_Center.JPG",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2176,14 +2205,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/forest-path.jpg",
-        "type": "ai",
-        "alt": "大きな池と緑のある自然公園をイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Childrens_Natural_Park%28Ooike_Park%29_in_Yokohama_Japan.jpg/1280px-Childrens_Natural_Park%28Ooike_Park%29_in_Yokohama_Japan.jpg",
+        "type": "photo",
+        "alt": "横浜市のこども自然公園（大池公園）",
+        "label": null,
+        "credit": "Kounosu / Wikimedia Commons",
+        "author": "Kounosu",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Childrens_Natural_Park(Ooike_Park)_in_Yokohama_Japan.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2269,14 +2303,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "自然史・科学博物館の展示空間をイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC06741.JPG/1280px-National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC06741.JPG",
+        "type": "photo",
+        "alt": "国立科学博物館の館内",
+        "label": null,
+        "credit": "Daderot / Wikimedia Commons",
+        "author": "Daderot",
+        "source_url": "https://commons.wikimedia.org/wiki/File:National_Museum_of_Nature_and_Science,_Tokyo_-_DSC06741.JPG",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "credit_required": false,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2362,14 +2401,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "没入型デジタルアートをイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Teamlab_toyosu.jpg/1280px-Teamlab_toyosu.jpg",
+        "type": "photo",
+        "alt": "teamLab Planets TOKYO 豊洲の施設外観",
+        "label": null,
+        "credit": "Syced / Wikimedia Commons",
+        "author": "Syced",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Teamlab_toyosu.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "credit_required": false,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -3115,14 +3159,19 @@ window.ODEKAKE_SEED = {
         ]
       },
       "hero_image": {
-        "url": "images/ai/culture-interior.jpg",
-        "type": "ai",
-        "alt": "木のおもちゃに囲まれた赤ちゃん向けミュージアムをイメージした画像",
-        "label": "イメージ",
-        "credit": "AI生成イメージ",
-        "source_url": null,
-        "license": null,
-        "exact_spot": false
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Entrance_of_Tokyo_Toy_Museum.jpg/1280px-Entrance_of_Tokyo_Toy_Museum.jpg",
+        "type": "photo",
+        "alt": "東京おもちゃ美術館の入口",
+        "label": null,
+        "credit": "Tzu-hsun Hsu / Wikimedia Commons",
+        "author": "Tzu-hsun Hsu",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_of_Tokyo_Toy_Museum.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-17",
+        "modified_by_kibun": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",

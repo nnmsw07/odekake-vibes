@@ -100,3 +100,8 @@ node test_recommender.js
 ### GitHub Pagesへ更新する場合
 
 このフォルダの中身をリポジトリ直下へ上書きしてください。`images/ai/` はv0.2と同じ画像一式です。
+
+
+## V0.4 画像更新
+
+実写heroを9/40スポットまで増やしました。画像の出典・ライセンスは `IMAGE_CREDITS.md` と `seed.json` の `hero_image` を参照してください。CC BY / CC BY-SA画像は画面上にもクレジットを表示します。
