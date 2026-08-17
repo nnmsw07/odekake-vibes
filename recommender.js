@@ -160,7 +160,7 @@
         return {
           input: ctx,
           recommendations: [],
-          coverage_warning: `「${primary}」に十分マッチするスポットが現在のDBにありません。この気分のスポットを追加してください。`,
+          coverage_warning: `選んだ気分にぴったりと言えるスポットが、今のDBにはまだ少ないようです。`,
           excluded,
         };
       }
@@ -209,7 +209,7 @@
       const primary = selectedVibes[0];
       const maxPrimary = Math.max(...candidates.map(([s]) => Number((s.vibes_seed || {})[primary] || 0)));
       const maxVibeMatch = Math.max(...candidates.map(([, sc]) => sc.vibe));
-      if (maxPrimary < 50 || maxVibeMatch < 45) coverageWarning = `「${primary}」に強く合うスポットが現在のDBには少ないため、候補追加が必要です。`;
+      if (maxPrimary < 50 || maxVibeMatch < 45) coverageWarning = `この気分に強く合うスポットは、今のDBではまだ少なめです。`;
     }
 
     return { input: ctx, recommendations: recs, coverage_warning: coverageWarning, excluded };

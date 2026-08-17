@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kanto_odekake_mvp_seed_v0",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -22,13 +22,20 @@
       "experience_seed": "編集レビューまたはユーザーフィードバック蓄積時",
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
+    },
+    "updated_at": "2026-08-17",
+    "image_policy": {
+      "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
+      "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
+      "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
+      "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける"
     }
   },
   "vibe_definitions": {
     "cool": "暑さから逃れたい・涼しく過ごしたい",
     "nature": "緑・山・川など自然に浸りたい",
     "extraordinary": "普段と違う特別感・小旅行感がほしい",
-    "cross_cultural": "異なる国・地域・文化の空気に触れたい",
+    "culture": "博物館・美術館・音楽・歴史・建築など、文化や知的な刺激にふれたい",
     "waterside": "川・海・湖・水辺を感じたい",
     "animals": "生きものに会いたい",
     "creative": "音・工作・表現など創造的な刺激がほしい",
@@ -80,7 +87,7 @@
         "cool": 80,
         "nature": 0,
         "extraordinary": 100,
-        "cross_cultural": 0,
+        "culture": 25,
         "waterside": 0,
         "animals": 0,
         "creative": 45,
@@ -97,6 +104,16 @@
         "temporary_note": null,
         "checked_at": "2026-08-12",
         "source_url": "https://www.yokohama-anpanman.jp/guide/"
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "子ども向け屋内ミュージアムの遊び空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -143,7 +160,7 @@
         "cool": 100,
         "nature": 0,
         "extraordinary": 60,
-        "cross_cultural": 10,
+        "culture": 90,
         "waterside": 0,
         "animals": 0,
         "creative": 100,
@@ -160,6 +177,17 @@
         "temporary_note": "2026年8月11日〜15日は休業案内あり。",
         "checked_at": "2026-08-12",
         "source_url": "https://retailing.jp.yamaha.com/shop/yokohama-minatomirai"
+      },
+      "hero_image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg/1280px-Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg",
+        "type": "photo",
+        "alt": "ヤマハミュージック横浜みなとみらいのMusic Canvas",
+        "label": null,
+        "credit": "NEO-NEED / Wikimedia Commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "exact_spot": true
       }
     },
     {
@@ -207,7 +235,7 @@
         "cool": 50,
         "nature": 5,
         "extraordinary": 50,
-        "cross_cultural": 0,
+        "culture": 10,
         "waterside": 35,
         "animals": 0,
         "creative": 0,
@@ -224,6 +252,16 @@
         "temporary_note": null,
         "checked_at": "2026-08-12",
         "source_url": "https://www.sportsoasis.co.jp/coco/fee/"
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "木々に囲まれた温浴施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -270,7 +308,7 @@
         "cool": 75,
         "nature": 45,
         "extraordinary": 80,
-        "cross_cultural": 0,
+        "culture": 25,
         "waterside": 0,
         "animals": 0,
         "creative": 35,
@@ -287,6 +325,16 @@
         "temporary_note": "2026年夏は平日特別営業枠が予約ページに掲載。",
         "checked_at": "2026-08-12",
         "source_url": "https://reserva.be/strawberrypark/about"
+      },
+      "hero_image": {
+        "url": "images/ai/strawberry-greenhouse.jpg",
+        "type": "illustration",
+        "alt": "温室でいちご狩りを楽しむ雰囲気を表したイメージ",
+        "label": "イメージ",
+        "credit": "生成イラスト",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -334,7 +382,7 @@
         "cool": 100,
         "nature": 0,
         "extraordinary": 20,
-        "cross_cultural": 10,
+        "culture": 85,
         "waterside": 0,
         "animals": 0,
         "creative": 75,
@@ -351,6 +399,16 @@
         "temporary_note": null,
         "checked_at": "2026-08-12",
         "source_url": "https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/tshokan/central/oyako.html"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "親子で静かに文化や本にふれる室内空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -397,7 +455,7 @@
         "cool": 20,
         "nature": 100,
         "extraordinary": 75,
-        "cross_cultural": 5,
+        "culture": 55,
         "waterside": 10,
         "animals": 100,
         "creative": 10,
@@ -414,6 +472,17 @@
         "temporary_note": "8月はナイトズーラシア時間帯あり。展示休止動物は日々変動。",
         "checked_at": "2026-08-12",
         "source_url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/fee.php"
+      },
+      "hero_image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg/1280px-Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg",
+        "type": "photo",
+        "alt": "よこはま動物園ズーラシアの園内風景",
+        "label": null,
+        "credit": "Toshihiro Gamo / Wikimedia Commons",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "exact_spot": true
       }
     },
     {
@@ -461,7 +530,7 @@
         "cool": 100,
         "nature": 0,
         "extraordinary": 50,
-        "cross_cultural": 0,
+        "culture": 25,
         "waterside": 0,
         "animals": 0,
         "creative": 90,
@@ -479,7 +548,17 @@
         "checked_at": "2026-08-12",
         "source_url": "https://kidokid.bornelund.co.jp/markis-minatomirai/"
       },
-      "data_note": "ユーザー入力の『ボーネルンドあそびの世界』は、MVPではMARK ISみなとみらい店として登録。"
+      "data_note": "ユーザー入力の『ボーネルンドあそびの世界』は、MVPではMARK ISみなとみらい店として登録。",
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "親子で遊べる屋内プレイグラウンドをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      }
     },
     {
       "spot_id": "spot_008",
@@ -525,7 +604,7 @@
         "cool": 100,
         "nature": 0,
         "extraordinary": 50,
-        "cross_cultural": 0,
+        "culture": 10,
         "waterside": 0,
         "animals": 0,
         "creative": 70,
@@ -542,6 +621,16 @@
         "temporary_note": "2026年7月18日〜8月31日は全日土日祝料金。",
         "checked_at": "2026-08-12",
         "source_url": "https://www.hapipiland.com/kidspark/kohoku"
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "大型遊具のある屋内キッズパークをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -588,7 +677,7 @@
         "cool": 40,
         "nature": 100,
         "extraordinary": 80,
-        "cross_cultural": 0,
+        "culture": 25,
         "waterside": 75,
         "animals": 0,
         "creative": 0,
@@ -605,6 +694,16 @@
         "temporary_note": null,
         "checked_at": "2026-08-12",
         "source_url": "https://www.town.yamakita.kanagawa.jp/0000004453.html"
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "山あいの温泉でのんびり過ごす雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     },
     {
@@ -650,7 +749,7 @@
         "cool": 75,
         "nature": 100,
         "extraordinary": 100,
-        "cross_cultural": 0,
+        "culture": 15,
         "waterside": 100,
         "animals": 55,
         "creative": 25,
@@ -667,6 +766,16 @@
         "temporary_note": null,
         "checked_at": "2026-08-12",
         "source_url": "https://k-riverland.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/kiyokawa-river.jpg",
+        "type": "ai",
+        "alt": "緑の山あいで川遊びを楽しむ雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       }
     }
   ]
