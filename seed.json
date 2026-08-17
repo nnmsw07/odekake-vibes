@@ -1,0 +1,673 @@
+{
+  "metadata": {
+    "dataset_name": "kanto_odekake_mvp_seed_v0",
+    "version": "0.1.0",
+    "created_at": "2026-08-12",
+    "score_scale": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "score_note": "experience_seed / vibes_seed はMVP用の編集初期値。公式事実ではなく、ユーザー行動・レビュー等で将来更新する前提。",
+    "architecture": {
+      "layer_1_static_spot": "名称・住所・カテゴリ・公式URLなど比較的安定した事実",
+      "layer_2_experience_seed": "推薦に使う編集特徴量。0〜100",
+      "layer_3_vibes_seed": "『どんな気分に合うか』の編集スコア。0〜100",
+      "layer_4_dynamic_snapshot": "営業時間・料金・予約・臨時情報。checked_atとsource_urlを必須にする"
+    },
+    "recommended_refresh_policy": {
+      "static_spot": "施設名変更・移転時",
+      "experience_seed": "編集レビューまたはユーザーフィードバック蓄積時",
+      "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
+      "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
+    }
+  },
+  "vibe_definitions": {
+    "cool": "暑さから逃れたい・涼しく過ごしたい",
+    "nature": "緑・山・川など自然に浸りたい",
+    "extraordinary": "普段と違う特別感・小旅行感がほしい",
+    "cross_cultural": "異なる国・地域・文化の空気に触れたい",
+    "waterside": "川・海・湖・水辺を感じたい",
+    "animals": "生きものに会いたい",
+    "creative": "音・工作・表現など創造的な刺激がほしい",
+    "food": "食べる・採る・作るなど食体験を楽しみたい",
+    "active": "身体を動かしたい",
+    "relax": "頑張らずゆっくり過ごしたい"
+  },
+  "spots": [
+    {
+      "spot_id": "spot_001",
+      "slug": "yokohama-anpanman-museum",
+      "name": "横浜アンパンマンこどもミュージアム",
+      "aliases": [
+        "アンパンマンミュージアム"
+      ],
+      "category_primary": "theme_museum",
+      "categories": [
+        "theme_museum",
+        "indoor_play",
+        "character"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい6-2-9",
+      "official_url": "https://www.yokohama-anpanman.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 15,
+        "physical_activity": 75,
+        "hands_on": 85,
+        "quietness": 10,
+        "parent_rest": 30,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 70,
+        "creative_sensory": 55,
+        "baby_fit": 70,
+        "toddler_fit": 100,
+        "stroller_fit": 55,
+        "rain_resilience": 95,
+        "heat_resilience": 95,
+        "walking_load": 55,
+        "planning_friction": 80
+      },
+      "vibes_seed": {
+        "cool": 80,
+        "nature": 0,
+        "extraordinary": 100,
+        "cross_cultural": 0,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 45,
+        "food": 65,
+        "active": 80,
+        "relax": 20
+      },
+      "editorial_reason": "子どもの『好き』を一日まるごと満たす、非日常・全力遊び寄り。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常のミュージアム営業時間は10:00〜17:00（最終入館16:00）。日付により変更あり。",
+        "price_summary": "1歳以上 2,200〜2,800円。",
+        "reservation_summary": "2・3Fミュージアムは日時指定WEBチケットの事前購入が必要。",
+        "age_note": "1歳以上は有料。",
+        "temporary_note": null,
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.yokohama-anpanman.jp/guide/"
+      }
+    },
+    {
+      "spot_id": "spot_002",
+      "slug": "yamaha-music-yokohama-minatomirai",
+      "name": "ヤマハミュージック 横浜みなとみらい",
+      "aliases": [
+        "ヤマハミュージック みなとみらい"
+      ],
+      "category_primary": "interactive_music",
+      "categories": [
+        "interactive_music",
+        "shop",
+        "sensory",
+        "cafe"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい5-1-2 横浜シンフォステージ ウエストタワー1F〜2F",
+      "official_url": "https://retailing.jp.yamaha.com/shop/yokohama-minatomirai",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 25,
+        "hands_on": 80,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 45,
+        "creative_sensory": 100,
+        "baby_fit": 65,
+        "toddler_fit": 75,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 20,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 60,
+        "cross_cultural": 10,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 35,
+        "active": 25,
+        "relax": 65
+      },
+      "editorial_reason": "『遊び場に行くほどでもないけど、何か面白いものに触れたい』日に強い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜18:30。通常は火曜定休（祝日の場合は営業）。",
+        "price_summary": "Music Canvasの現行Showは無料・予約不要。",
+        "reservation_summary": "通常のMusic Canvas Showは予約不要。イベントにより例外あり。",
+        "age_note": "特定の年齢制限は基本情報上なし。イベントごとの条件は要確認。",
+        "temporary_note": "2026年8月11日〜15日は休業案内あり。",
+        "checked_at": "2026-08-12",
+        "source_url": "https://retailing.jp.yamaha.com/shop/yokohama-minatomirai"
+      }
+    },
+    {
+      "spot_id": "spot_003",
+      "slug": "yuttari-coco-kohoku",
+      "name": "港北天然温泉 ゆったりCOco",
+      "aliases": [
+        "港北温泉coco",
+        "ゆったりCOco"
+      ],
+      "category_primary": "spa",
+      "categories": [
+        "spa",
+        "family_bath",
+        "restaurant",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市都筑区",
+      "address": "神奈川県横浜市都筑区中川中央2-7-1 港北みなも3階",
+      "official_url": "https://www.sportsoasis.co.jp/coco/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 20,
+        "physical_activity": 5,
+        "hands_on": 10,
+        "quietness": 70,
+        "parent_rest": 100,
+        "greenery": 10,
+        "water_contact": 75,
+        "animal_contact": 0,
+        "food_experience": 75,
+        "creative_sensory": 0,
+        "baby_fit": 20,
+        "toddler_fit": 30,
+        "stroller_fit": 70,
+        "rain_resilience": 95,
+        "heat_resilience": 75,
+        "walking_load": 10,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 50,
+        "nature": 5,
+        "extraordinary": 50,
+        "cross_cultural": 0,
+        "waterside": 35,
+        "animals": 0,
+        "creative": 0,
+        "food": 70,
+        "active": 5,
+        "relax": 100
+      },
+      "editorial_reason": "『子どもを遊ばせる』より『親も回復したい』日に入る選択肢。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "温泉 10:00〜24:00（最終入館23:00）。毎月第1水曜休館。",
+        "price_summary": "大人 平日1,200円／土日祝1,500円、3歳〜小学生680円。家族風呂は別料金。",
+        "reservation_summary": "家族風呂は完全予約制（1か月前から電話予約）。",
+        "age_note": "3歳未満、オムツ・トレーニングパンツ利用中の子どもは大浴場・ロッカー・シャワー利用不可。家族風呂の利用可。",
+        "temporary_note": null,
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.sportsoasis.co.jp/coco/fee/"
+      }
+    },
+    {
+      "spot_id": "spot_004",
+      "slug": "yokohama-strawberry-park",
+      "name": "横浜ストロベリーパーク",
+      "aliases": [
+        "東京ストロベリーパーク"
+      ],
+      "category_primary": "fruit_picking",
+      "categories": [
+        "fruit_picking",
+        "food",
+        "hands_on",
+        "cafe"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市鶴見区",
+      "address": "神奈川県横浜市鶴見区大黒町11-1 横浜火力発電所構内",
+      "official_url": "https://reserva.be/strawberrypark/about",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 95,
+        "outdoor": 10,
+        "physical_activity": 20,
+        "hands_on": 95,
+        "quietness": 50,
+        "parent_rest": 55,
+        "greenery": 40,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 45,
+        "baby_fit": 60,
+        "toddler_fit": 80,
+        "stroller_fit": 85,
+        "rain_resilience": 90,
+        "heat_resilience": 90,
+        "walking_load": 15,
+        "planning_friction": 95
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 45,
+        "extraordinary": 80,
+        "cross_cultural": 0,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 35,
+        "food": 100,
+        "active": 25,
+        "relax": 55
+      },
+      "editorial_reason": "近場なのに『今日は体験した』感が出る、食×収穫の非日常枠。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "基本はいちご摘み取り土日祝・事前予約制。カフェ10:00〜16:00。夏休み等に平日特別枠あり。",
+        "price_summary": "いちご摘み取り 1人1カップ約300g・2,500円。",
+        "reservation_summary": "摘み取りは予約サイトで事前予約。カフェは予約不要。",
+        "age_note": "未就学児は摘み取り用カップが必要な人数分を予約。",
+        "temporary_note": "2026年夏は平日特別営業枠が予約ページに掲載。",
+        "checked_at": "2026-08-12",
+        "source_url": "https://reserva.be/strawberrypark/about"
+      }
+    },
+    {
+      "spot_id": "spot_005",
+      "slug": "nogeyama-kodomo-library-oyako",
+      "name": "のげやま子ども図書館おやこフロア",
+      "aliases": [
+        "野毛山こども図書館",
+        "のげやま子ども図書館"
+      ],
+      "category_primary": "library",
+      "categories": [
+        "library",
+        "baby_space",
+        "quiet",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区老松町1 横浜市中央図書館1階",
+      "official_url": "https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/tshokan/central/oyako.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 25,
+        "hands_on": 55,
+        "quietness": 85,
+        "parent_rest": 95,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 75,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 10,
+        "planning_friction": 0
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 20,
+        "cross_cultural": 10,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 75,
+        "food": 5,
+        "active": 20,
+        "relax": 100
+      },
+      "editorial_reason": "『今日は頑張りたくない。でも家にはいたくない』日に強い親子の逃げ場。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00（1月4日のみ12:00〜17:00）。中央図書館の施設点検日等は休館。",
+        "price_summary": "公共図書館の親子フロア。",
+        "reservation_summary": "未就学児と保護者の通常利用は予約不要。大人のみの見学・団体利用は事前予約。",
+        "age_note": "未就学児とその保護者向け。授乳室・おむつ交換・調乳スペースあり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/tshokan/central/oyako.html"
+      }
+    },
+    {
+      "spot_id": "spot_006",
+      "slug": "zoorasia",
+      "name": "よこはま動物園ズーラシア",
+      "aliases": [
+        "ズーラシア"
+      ],
+      "category_primary": "zoo",
+      "categories": [
+        "zoo",
+        "nature",
+        "outdoor",
+        "animals"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市旭区",
+      "address": "神奈川県横浜市旭区上白根町1175-1",
+      "official_url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 75,
+        "hands_on": 30,
+        "quietness": 40,
+        "parent_rest": 35,
+        "greenery": 100,
+        "water_contact": 10,
+        "animal_contact": 100,
+        "food_experience": 45,
+        "creative_sensory": 15,
+        "baby_fit": 75,
+        "toddler_fit": 90,
+        "stroller_fit": 85,
+        "rain_resilience": 20,
+        "heat_resilience": 20,
+        "walking_load": 90,
+        "planning_friction": 15
+      },
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 100,
+        "extraordinary": 75,
+        "cross_cultural": 5,
+        "waterside": 10,
+        "animals": 100,
+        "creative": 10,
+        "food": 25,
+        "active": 75,
+        "relax": 40
+      },
+      "editorial_reason": "生きもの＋緑＋歩く。一日かけて外へ出たい日の王道。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常9:30〜16:30（入園16:00まで）。8月土日祝は13:00〜20:00（入園19:00まで）。",
+        "price_summary": "一般800円。小学生未満無料。",
+        "reservation_summary": "通常の個人入園は予約不要。団体等は別。",
+        "age_note": "小学生未満は入園無料。",
+        "temporary_note": "8月はナイトズーラシア時間帯あり。展示休止動物は日々変動。",
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/fee.php"
+      }
+    },
+    {
+      "spot_id": "spot_007",
+      "slug": "bornelund-kidokid-markis-minatomirai",
+      "name": "ボーネルンドあそびのせかい MARK IS みなとみらい店",
+      "aliases": [
+        "ボーネルンドあそびの世界",
+        "キドキド マークイズみなとみらい"
+      ],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "gross_motor",
+        "creative",
+        "baby_space"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい3-5-1 MARK IS みなとみらい3階",
+      "official_url": "https://kidokid.bornelund.co.jp/markis-minatomirai/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 100,
+        "quietness": 10,
+        "parent_rest": 30,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 50,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 50,
+        "cross_cultural": 0,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 90,
+        "food": 5,
+        "active": 100,
+        "relax": 20
+      },
+      "editorial_reason": "天候を気にせず、子どもの身体と好奇心を全開にする定番。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休業日はMARK ISおよびキドキド公式の当日情報を確認。",
+        "price_summary": "基本時間制：6〜11か月 平日400円/休日600円、1〜12歳 平日800円/休日1,000円、大人700円（料金体系は時期で変動）。",
+        "reservation_summary": "パスの事前購入導線あり。混雑時はフリーパス完売等あり。",
+        "age_note": "6か月〜18か月専用ベビーゾーンあり。授乳室・おむつ替えスペースあり。",
+        "temporary_note": "2026年8月8〜16日は休日料金扱いの案内あり。",
+        "checked_at": "2026-08-12",
+        "source_url": "https://kidokid.bornelund.co.jp/markis-minatomirai/"
+      },
+      "data_note": "ユーザー入力の『ボーネルンドあそびの世界』は、MVPではMARK ISみなとみらい店として登録。"
+    },
+    {
+      "spot_id": "spot_008",
+      "slug": "hapipiland-lulala-kohoku",
+      "name": "ハピピランド ルララ港北店",
+      "aliases": [
+        "ハピピランド港北"
+      ],
+      "category_primary": "indoor_play",
+      "categories": [
+        "indoor_play",
+        "gross_motor",
+        "creative",
+        "baby_space"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市都筑区",
+      "address": "神奈川県横浜市都筑区中川中央2-2-1 ルララ港北4階",
+      "official_url": "https://www.hapipiland.com/kidspark/kohoku",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 100,
+        "hands_on": 95,
+        "quietness": 10,
+        "parent_rest": 25,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 80,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 15
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 50,
+        "cross_cultural": 0,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 70,
+        "food": 10,
+        "active": 100,
+        "relax": 20
+      },
+      "editorial_reason": "『とにかく今日は体力を使ってほしい』を屋内で叶える枠。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜19:00。定休日は不定休（ルララ休館日に準ずる）。",
+        "price_summary": "通常：平日60分550円、土日祝60分750円。大人も子どもも同額。0歳無料。",
+        "reservation_summary": "通常利用は当日受付。混雑状況を公式サイトで1時間ごとに更新。",
+        "age_note": "0〜2歳コーナーあり。0歳は無料（年齢証明が必要）。",
+        "temporary_note": "2026年7月18日〜8月31日は全日土日祝料金。",
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.hapipiland.com/kidspark/kohoku"
+      }
+    },
+    {
+      "spot_id": "spot_009",
+      "slug": "nakagawa-onsen-bunanoyu",
+      "name": "中川温泉ぶなの湯",
+      "aliases": [
+        "ぶなの湯"
+      ],
+      "category_primary": "nature_spa",
+      "categories": [
+        "spa",
+        "nature",
+        "river",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄上郡山北町",
+      "address": "神奈川県足柄上郡山北町中川645-8",
+      "official_url": "https://www.town.yamakita.kanagawa.jp/0000004453.html",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 70,
+        "outdoor": 30,
+        "physical_activity": 5,
+        "hands_on": 10,
+        "quietness": 85,
+        "parent_rest": 100,
+        "greenery": 90,
+        "water_contact": 70,
+        "animal_contact": 0,
+        "food_experience": 15,
+        "creative_sensory": 0,
+        "baby_fit": 30,
+        "toddler_fit": 40,
+        "stroller_fit": 45,
+        "rain_resilience": 80,
+        "heat_resilience": 60,
+        "walking_load": 15,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 80,
+        "cross_cultural": 0,
+        "waterside": 75,
+        "animals": 0,
+        "creative": 0,
+        "food": 10,
+        "active": 5,
+        "relax": 100
+      },
+      "editorial_reason": "遠出して、山と川を感じながら親も休みたい日に刺さる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:00〜18:00。3〜11月の土日祝は10:00〜19:00、12〜2月の土日祝は10:00〜18:00。月曜定休（祝日の場合翌日）ほか。",
+        "price_summary": "2時間：大人750円、小人450円。4歳未満の乳幼児は保護者同伴で無料。",
+        "reservation_summary": "日帰り入浴の通常利用について予約必須の記載なし。",
+        "age_note": "公式料金表では4歳未満無料。乳幼児の入浴ルール詳細は来訪前確認推奨。",
+        "temporary_note": null,
+        "checked_at": "2026-08-12",
+        "source_url": "https://www.town.yamakita.kanagawa.jp/0000004453.html"
+      }
+    },
+    {
+      "spot_id": "spot_010",
+      "slug": "kiyokawa-riverland",
+      "name": "清川リバーランド",
+      "aliases": [],
+      "category_primary": "outdoor_recreation",
+      "categories": [
+        "river_play",
+        "bbq",
+        "fishing",
+        "camping",
+        "nature"
+      ],
+      "prefecture": "神奈川県",
+      "city": "愛甲郡清川村",
+      "address": "神奈川県愛甲郡清川村煤ケ谷2450",
+      "official_url": "https://k-riverland.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 90,
+        "hands_on": 100,
+        "quietness": 40,
+        "parent_rest": 40,
+        "greenery": 100,
+        "water_contact": 100,
+        "animal_contact": 55,
+        "food_experience": 90,
+        "creative_sensory": 25,
+        "baby_fit": 35,
+        "toddler_fit": 70,
+        "stroller_fit": 25,
+        "rain_resilience": 50,
+        "heat_resilience": 65,
+        "walking_load": 60,
+        "planning_friction": 75
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 100,
+        "extraordinary": 100,
+        "cross_cultural": 0,
+        "waterside": 100,
+        "animals": 55,
+        "creative": 25,
+        "food": 85,
+        "active": 85,
+        "relax": 45
+      },
+      "editorial_reason": "川・魚・BBQまでまとめて『夏の一日をやった感』が出る冒険枠。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "日帰りBBQは土日祝・夏休み期間9:00〜17:00、平日・3月は9:00〜16:00。",
+        "price_summary": "持込BBQ：管理料 大人600円、3歳以上の子ども500円＋1区画1,100円。釣り等は別料金。",
+        "reservation_summary": "日帰りBBQは電話予約。魚つかみ取り・魚釣り自体は予約不要との案内。",
+        "age_note": "施設内に浅い人工の川があり、小さい子向けとの案内。自然河川での川遊びは保護者の安全管理が前提。",
+        "temporary_note": null,
+        "checked_at": "2026-08-12",
+        "source_url": "https://k-riverland.jp/"
+      }
+    }
+  ]
+}

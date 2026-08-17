@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f4ed" />
+  <title>Kibun — 気分から見つけるおでかけ</title>
+  <meta name="description" content="行き先ではなく、過ごしたい一日から。気分を選ぶだけで今日のおでかけ先を3つ提案します。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kibun ホーム"><span class="brand-dot"></span>Kibun</a>
+    <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <p class="eyebrow">VIBES FIRST, DESTINATION SECOND.</p>
+      <h1>今日は、<br><em>どんな気分？</em></h1>
+      <p class="hero-copy">行きたい場所が決まってなくても大丈夫。<br>過ごしたい一日から、今日の3つを見つけよう。</p>
+
+      <div id="vibeGrid" class="vibe-grid" aria-label="気分を選ぶ"></div>
+      <div class="selection-row">
+        <span id="selectedHint">まずは気分を1つ選んでください</span>
+        <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
+      </div>
+
+      <details class="conditions" open>
+        <summary>ちょっとだけ教えて <span>おすすめを調整します</span></summary>
+        <div class="condition-grid">
+          <label class="field-card">
+            <span class="field-label">👶 子どもの年齢</span>
+            <select id="ageSelect">
+              <option value="">指定しない</option>
+              <option value="6">0歳</option>
+              <option value="15" selected>1歳</option>
+              <option value="30">2歳</option>
+              <option value="42">3歳</option>
+              <option value="54">4歳以上</option>
+            </select>
+          </label>
+          <label class="field-card">
+            <span class="field-label">☀️ 今日の空気</span>
+            <select id="weatherSelect">
+              <option value="any">気にしない</option>
+              <option value="hot" selected>暑い</option>
+              <option value="rain">雨</option>
+              <option value="clear">晴れ</option>
+              <option value="cold">寒い</option>
+            </select>
+          </label>
+          <label class="field-card">
+            <span class="field-label">🕐 使える時間</span>
+            <select id="timeSelect">
+              <option value="90">1〜2時間</option>
+              <option value="180" selected>半日くらい</option>
+              <option value="360">たっぷり半日</option>
+              <option value="480">1日</option>
+            </select>
+          </label>
+        </div>
+      </details>
+
+      <button id="recommendBtn" class="primary-btn" type="button" disabled>
+        今日の3つを見る <span>→</span>
+      </button>
+      <p class="microcopy">現在は神奈川の10スポットで試運転中。</p>
+    </section>
+
+    <section id="resultsSection" class="results-section shell" hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow">TODAY'S PICKS</p><h2>今日のあなたなら、<br>この3つ。</h2></div>
+        <button id="editBtn" class="outline-btn" type="button">気分を選び直す</button>
+      </div>
+      <div id="coverageWarning" class="warning" hidden></div>
+      <div id="resultsGrid" class="results-grid"></div>
+    </section>
+
+    <section class="collections shell">
+      <div class="section-heading compact"><div><p class="eyebrow">MOOD COLLECTIONS</p><h2>こんな日、あるよね。</h2></div></div>
+      <div class="collection-grid">
+        <button class="collection-card c1" data-vibes="cool,relax"><span>🧊</span><strong>もう暑いの無理</strong><small>涼しく、頑張らない</small></button>
+        <button class="collection-card c2" data-vibes="nature,waterside,extraordinary"><span>🌿</span><strong>ちょっと遠くへ</strong><small>自然と水辺で小旅行</small></button>
+        <button class="collection-card c3" data-vibes="creative,relax"><span>🎵</span><strong>刺激はほしい。でも軽め</strong><small>音や表現に触れる午後</small></button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="spotDialog" class="spot-dialog">
+    <button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun</span><p>場所を探す前に、今日はどんな一日にしたいか。</p></footer>
+
+  <script src="data.js"></script>
+  <script src="recommender.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
