@@ -1,24 +1,24 @@
 # Kibun image credits
 
-Updated: 2026-08-17
+Updated: 2026-08-17 (Hero quality audit v0.6)
 
-実写画像の出典・ライセンス管理用ファイルです。CC BY / CC BY-SA はサイト画面にもクレジットを表示します。CC0は画面上の表示を省略していますが、ここに出典を保持します。
+実写画像の出典・ライセンス管理用ファイルです。**実写があることより、KibunのHeroとして体験が伝わることを優先**します。CC BY / CC BY-SA はサイト画面にもクレジットを表示します。
 
 | Spot | Author / Source | License | Source page | Credit on UI |
 |---|---|---|---|---|
 | ヤマハミュージック 横浜みなとみらい | NEO-NEED / Wikimedia Commons | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg | No (CC0) |
-| よこはま動物園ズーラシア | Toshihiro Gamo / Wikimedia Commons | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg | Yes |
-| ロマンスカーミュージアム | Kaze315 / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:ROMANCECAR_MUSEUM_20210423.jpg | Yes |
-| カップヌードルミュージアム 横浜 | Keeezawa / Wikimedia Commons | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Cupnoodles_museum_yokohama.jpg | No (CC0) |
-| はまぎん こども宇宙科学館 | 妖精書士 / Wikimedia Commons | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Yokohama_Science_Center.JPG | Yes |
+| よこはま動物園ズーラシア | aotaro / Wikimedia Commons | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Asian_lion,_Yokohama_Zoological_Gardens%3B_2016.jpg | Yes |
+| ロマンスカーミュージアム | Kaze315 / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:ROMANCECAR_GALLERY_in_Romancecar_Museum.jpg | Yes |
+| カップヌードルミュージアム 横浜 | KCyamazaki / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%E3%82%AB%E3%83%83%E3%83%97%E3%83%8C%E3%83%BC%E3%83%89%E3%83%AB%E8%A3%BD%E4%BD%9C%E4%BD%93%E9%A8%93.JPG | Yes |
 | こども自然公園 | Kounosu / Wikimedia Commons | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Childrens_Natural_Park(Ooike_Park)_in_Yokohama_Japan.jpg | Yes |
 | 国立科学博物館 | Daderot / Wikimedia Commons | CC0 1.0 | https://commons.wikimedia.org/wiki/File:National_Museum_of_Nature_and_Science,_Tokyo_-_DSC06741.JPG | No (CC0) |
-| teamLab Planets TOKYO | Syced / Wikimedia Commons | CC0 1.0 | https://commons.wikimedia.org/wiki/File:Teamlab_toyosu.jpg | No (CC0) |
-| 東京おもちゃ美術館 | Tzu-hsun Hsu / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Entrance_of_Tokyo_Toy_Museum.jpg | Yes |
+| teamLab Planets TOKYO | Big Ben in Japan / Wikimedia Commons | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:At_teamLab_Planets_(48277793276).jpg | Yes |
 
-## 運用ルール
-- 外部の実写は `hero_image.source_url` と `license` を必ず保持する。
-- CC BY / CC BY-SA は作者・出典・ライセンスを表示する。
-- CC0も出典をDBと本ファイルに保持する。
-- 現在はWikimediaの1280pxサムネイル/原画像URLを直接参照しており、Kibun側では画像ファイル自体を加工していない。
-- AI画像には「イメージ」を表示し、実在施設の正確な写真として扱わない。
+## Hero採用ルール
+1. 権利が確認できる
+2. その施設/体験の写真である
+3. **そこで何ができるか・どんな気分になれるかが伝わる**
+4. Kibunの推薦コピー/Vibeと写真が一致する
+5. スマホの横長Heroに切り抜いても魅力が残る
+
+上記を満たさない場合は、権利クリアな実写があっても「イメージ」と明示したAI画像を暫定利用します。

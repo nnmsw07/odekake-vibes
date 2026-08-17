@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v1_40spots",
-    "version": "0.4.0",
+    "version": "0.6.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -30,11 +30,13 @@
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
       "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける",
       "credit_rule": "CC BY / CC BY-SA は画面上に作者・出典・ライセンスを表示。CC0は表示を省略可能だがDBには出典を保持。",
-      "photo_count": "9/40 spots",
-      "ai_count": "30/40 spots",
+      "photo_count": "7/40 spots",
+      "ai_count": "32/40 spots",
       "real_image_audit": "2026-08-17: 優先15件を監査し、7件を実写へ追加差し替え。",
       "illustration_count": "1/40 spots",
-      "generated_image_total": "31/40 spots"
+      "generated_image_total": "33/40 spots",
+      "hero_rule": "実写が存在するだけでは採用しない。①権利、②施設との一致、③体験が伝わる、④コピー/Vibeとの一致、⑤スマホHeroとして成立、を満たす画像を優先する。",
+      "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。"
     },
     "buzz_layer": {
       "status": "experimental",
@@ -210,7 +212,8 @@
         "author": "NEO-NEED",
         "credit_required": false,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_experience_photo"
       }
     },
     {
@@ -497,19 +500,20 @@
         "source_url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/fee.php"
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg/1280px-Zoorasia%2C_Yokohama_-_Sep_27%2C_2012.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian_lion,_Yokohama_Zoological_Gardens%3B_2016.jpg?width=1280",
         "type": "photo",
-        "alt": "よこはま動物園ズーラシアの園内風景",
+        "alt": "よこはま動物園ズーラシアで撮影されたアジアライオン",
         "label": null,
-        "credit": "Toshihiro Gamo / Wikimedia Commons",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Zoorasia,_Yokohama_-_Sep_27,_2012.jpg",
+        "credit": "aotaro / Wikimedia Commons",
+        "author": "aotaro",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Asian_lion,_Yokohama_Zoological_Gardens%3B_2016.jpg",
         "license": "CC BY 2.0",
         "license_url": "https://creativecommons.org/licenses/by/2.0/",
-        "exact_spot": true,
-        "author": "Toshihiro Gamo",
         "credit_required": true,
+        "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_experience_photo"
       }
     },
     {
@@ -1539,19 +1543,20 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/ROMANCECAR_MUSEUM_20210423.jpg/1280px-ROMANCECAR_MUSEUM_20210423.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/ROMANCECAR_GALLERY_in_Romancecar_Museum.jpg?width=1280",
         "type": "photo",
-        "alt": "ロマンスカーミュージアムの外観",
+        "alt": "ロマンスカーミュージアムのロマンスカーギャラリー",
         "label": null,
         "credit": "Kaze315 / Wikimedia Commons",
         "author": "Kaze315",
-        "source_url": "https://commons.wikimedia.org/wiki/File:ROMANCECAR_MUSEUM_20210423.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:ROMANCECAR_GALLERY_in_Romancecar_Museum.jpg",
         "license": "CC BY-SA 4.0",
         "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
         "credit_required": true,
         "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_experience_photo"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -1637,19 +1642,20 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Cupnoodles_museum_yokohama.jpg/1280px-Cupnoodles_museum_yokohama.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E3%82%AB%E3%83%83%E3%83%97%E3%83%8C%E3%83%BC%E3%83%89%E3%83%AB%E8%A3%BD%E4%BD%9C%E4%BD%93%E9%A8%93.JPG?width=1280",
         "type": "photo",
-        "alt": "カップヌードルミュージアム 横浜の外観",
+        "alt": "カップヌードルミュージアム横浜のオリジナルカップヌードル製作体験",
         "label": null,
-        "credit": "Keeezawa / Wikimedia Commons",
-        "author": "Keeezawa",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cupnoodles_museum_yokohama.jpg",
-        "license": "CC0 1.0",
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "credit_required": false,
+        "credit": "KCyamazaki / Wikimedia Commons",
+        "author": "KCyamazaki",
+        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%AB%E3%83%83%E3%83%97%E3%83%8C%E3%83%BC%E3%83%89%E3%83%AB%E8%A3%BD%E4%BD%9C%E4%BD%93%E9%A8%93.JPG",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "credit_required": true,
         "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_experience_photo"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -1828,19 +1834,15 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Yokohama_Science_Center.JPG",
-        "type": "photo",
-        "alt": "はまぎん こども宇宙科学館の外観",
-        "label": null,
-        "credit": "妖精書士 / Wikimedia Commons",
-        "author": "妖精書士",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yokohama_Science_Center.JPG",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "親子で宇宙や科学にふれる体験型ミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false,
+        "hero_review": "ai_until_better_experience_photo"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2217,7 +2219,8 @@
         "credit_required": true,
         "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_real_but_future_upgrade"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2315,7 +2318,8 @@
         "credit_required": false,
         "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_atmosphere_photo"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2401,19 +2405,20 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Teamlab_toyosu.jpg/1280px-Teamlab_toyosu.jpg",
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/At_teamLab_Planets_(48277793276).jpg?width=1280",
         "type": "photo",
-        "alt": "teamLab Planets TOKYO 豊洲の施設外観",
+        "alt": "teamLab Planets TOKYOの没入型アート空間",
         "label": null,
-        "credit": "Syced / Wikimedia Commons",
-        "author": "Syced",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Teamlab_toyosu.jpg",
-        "license": "CC0 1.0",
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "credit_required": false,
+        "credit": "Big Ben in Japan / Wikimedia Commons",
+        "author": "Big Ben in Japan",
+        "source_url": "https://commons.wikimedia.org/wiki/File:At_teamLab_Planets_(48277793276).jpg",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "credit_required": true,
         "exact_spot": true,
         "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "modified_by_kibun": false,
+        "hero_review": "keep_experience_photo"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -3159,19 +3164,15 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Entrance_of_Tokyo_Toy_Museum.jpg/1280px-Entrance_of_Tokyo_Toy_Museum.jpg",
-        "type": "photo",
-        "alt": "東京おもちゃ美術館の入口",
-        "label": null,
-        "credit": "Tzu-hsun Hsu / Wikimedia Commons",
-        "author": "Tzu-hsun Hsu",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_of_Tokyo_Toy_Museum.jpg",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "木のおもちゃや遊びに親子でふれる空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false,
+        "hero_review": "ai_until_interior_permission"
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
