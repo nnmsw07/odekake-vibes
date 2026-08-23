@@ -1,6 +1,6 @@
 # Kibun image credits
 
-Updated: 2026-08-17 (Hero quality audit v0.6)
+Updated: 2026-08-22 (55 spots / v0.8)
 
 実写画像の出典・ライセンス管理用ファイルです。**実写があることより、KibunのHeroとして体験が伝わることを優先**します。CC BY / CC BY-SA はサイト画面にもクレジットを表示します。
 
@@ -13,6 +13,10 @@ Updated: 2026-08-17 (Hero quality audit v0.6)
 | こども自然公園 | Kounosu / Wikimedia Commons | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Childrens_Natural_Park(Ooike_Park)_in_Yokohama_Japan.jpg | Yes |
 | 国立科学博物館 | Daderot / Wikimedia Commons | CC0 1.0 | https://commons.wikimedia.org/wiki/File:National_Museum_of_Nature_and_Science,_Tokyo_-_DSC06741.JPG | No (CC0) |
 | teamLab Planets TOKYO | Big Ben in Japan / Wikimedia Commons | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:At_teamLab_Planets_(48277793276).jpg | Yes |
+
+| 荒崎公園 | Quercus acuta / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Arasaki_Park_-_Yokosuka.jpg | Yes |
+| 箱根 彫刻の森美術館 | 663highland / Wikimedia Commons | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:220622_Hakone_Open-air_Museum_Japan01s3.jpg | Yes |
+| 新江ノ島水族館 | Nesnad / Wikimedia Commons | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Enoshima_Aquarium_inside_2025_March_21_various_19_43_24_715000.jpeg | Yes |
 
 ## Hero採用ルール
 1. 権利が確認できる

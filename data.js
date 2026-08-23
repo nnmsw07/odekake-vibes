@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v1_40spots",
-    "version": "0.6.0",
+    "dataset_name": "kibun_kanto_seed_v2_55spots",
+    "version": "0.8.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -15,7 +15,9 @@ window.ODEKAKE_SEED = {
       "layer_1_static_spot": "名称・住所・カテゴリ・公式URLなど比較的安定した事実",
       "layer_2_experience_seed": "推薦に使う編集特徴量。0〜100",
       "layer_3_vibes_seed": "『どんな気分に合うか』の編集スコア。0〜100",
-      "layer_4_dynamic_snapshot": "営業時間・料金・予約・臨時情報。checked_atとsource_urlを必須にする"
+      "layer_4_dynamic_snapshot": "営業時間・料金・予約・臨時情報。checked_atとsource_urlを必須にする",
+      "layer_public_copy": "ユーザー画面に表示する施設紹介文。運営・推薦ロジック・データ整備の内部事情を書かない",
+      "layer_internal_editorial_reason": "editorial_reasonは運営用の選定・編集メモ。UIには表示しない"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -23,18 +25,18 @@ window.ODEKAKE_SEED = {
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-17",
+    "updated_at": "2026-08-22",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
       "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける",
       "credit_rule": "CC BY / CC BY-SA は画面上に作者・出典・ライセンスを表示。CC0は表示を省略可能だがDBには出典を保持。",
-      "photo_count": "7/40 spots",
-      "ai_count": "32/40 spots",
-      "real_image_audit": "2026-08-17: 優先15件を監査し、7件を実写へ追加差し替え。",
-      "illustration_count": "1/40 spots",
-      "generated_image_total": "33/40 spots",
+      "photo_count": "10/55 spots",
+      "ai_count": "44/55 spots",
+      "real_image_audit": "2026-08-22: Priority A 15件を本番品質で追加。新規3件（荒崎公園・彫刻の森美術館・新江ノ島水族館）に権利確認済み実写Heroを採用。",
+      "illustration_count": "1/55 spots",
+      "generated_image_total": "45/55 spots",
       "hero_rule": "実写が存在するだけでは採用しない。①権利、②施設との一致、③体験が伝わる、④コピー/Vibeとの一致、⑤スマホHeroとして成立、を満たす画像を優先する。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。"
     },
@@ -50,7 +52,12 @@ window.ODEKAKE_SEED = {
         "popularity_momentum"
       ],
       "refresh_policy": "週1回を目安。新規開業・大型リニューアルは随時。"
-    }
+    },
+    "copy_policy": {
+      "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
+      "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
+    },
+    "expansion_note": "2026-08-22: 神奈川中心のPriority A 15スポットを追加し40→55件。親満足・自然・水辺・生きものを補強。"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れたい・涼しく過ごしたい",
@@ -135,7 +142,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "アンパンマンの世界に入り込んで、見て・遊んで・体を動かせる親子向けミュージアム。小さな子どもでも一日たっぷり楽しみやすい。"
     },
     {
       "spot_id": "spot_002",
@@ -214,7 +222,8 @@ window.ODEKAKE_SEED = {
         "checked_at": "2026-08-17",
         "modified_by_kibun": false,
         "hero_review": "keep_experience_photo"
-      }
+      },
+      "public_copy": "楽器や音にふれながら、気軽に音楽の楽しさを体験できるスポット。みなとみらい散歩の途中にも立ち寄りやすい。"
     },
     {
       "spot_id": "spot_003",
@@ -288,7 +297,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "温泉や休憩スペースでゆっくり過ごせる日帰り温浴施設。遊び中心ではなく、家族でのんびりしたい日に。"
     },
     {
       "spot_id": "spot_004",
@@ -361,7 +371,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "温室でいちご狩りを楽しめる体験型スポット。季節感のある収穫体験と甘いいちごを家族で味わえる。"
     },
     {
       "spot_id": "spot_005",
@@ -435,7 +446,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "絵本に囲まれた空間で、未就学児と保護者がゆったり過ごせる図書館フロア。短時間のお出かけにも使いやすい。"
     },
     {
       "spot_id": "spot_006",
@@ -514,7 +526,8 @@ window.ODEKAKE_SEED = {
         "checked_at": "2026-08-17",
         "modified_by_kibun": false,
         "hero_review": "keep_experience_photo"
-      }
+      },
+      "public_copy": "広い園内を歩きながら、世界各地の動物と緑豊かな景色を楽しめる動物園。自然の中で一日過ごしたい日に。"
     },
     {
       "spot_id": "spot_007",
@@ -589,7 +602,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "走る・跳ぶ・組み立てる・ごっこ遊びなど、多彩な遊びを楽しめる屋内プレイ施設。天候を気にせず思いきり遊べる。"
     },
     {
       "spot_id": "spot_008",
@@ -662,7 +676,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "大型遊具や体を動かす遊びがそろう全天候型のキッズパーク。元気いっぱい遊びたい日にぴったり。"
     },
     {
       "spot_id": "spot_009",
@@ -735,7 +750,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "丹沢の自然に囲まれた日帰り温泉。山あいの景色を楽しみながら、ゆっくりお湯に浸かって過ごせる。"
     },
     {
       "spot_id": "spot_010",
@@ -807,7 +823,8 @@ window.ODEKAKE_SEED = {
         "source_url": null,
         "license": null,
         "exact_spot": false
-      }
+      },
+      "public_copy": "川遊びや魚のつかみ取り、釣り、BBQなどを楽しめる自然体験スポット。夏らしい一日を過ごしたい日に。"
     },
     {
       "spot_id": "spot_011",
@@ -900,7 +917,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "光や映像を使った没入型の展示をめぐりながら、物語の中を旅するような体験ができる屋内スポット。"
     },
     {
       "spot_id": "spot_012",
@@ -998,7 +1016,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "カラフルでユニークな展示や体験が続くエンタメ型ミュージアム。写真を撮りながら非日常の世界を楽しめる。"
     },
     {
       "spot_id": "spot_013",
@@ -1091,7 +1110,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "自然や地球をテーマにした遊びがそろう大型屋内プレイグラウンド。乳幼児でも過ごしやすく、雨や暑い日にも便利。"
     },
     {
       "spot_id": "spot_014",
@@ -1184,7 +1204,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "映像やデジタル技術を使った展示を無料で楽しめる体験型ギャラリー。短時間でも新しい刺激にふれられる。"
     },
     {
       "spot_id": "spot_015",
@@ -1277,7 +1298,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "歴史的な京急車両やジオラマ、運転体験などを楽しめる鉄道ミュージアム。本物の車両を間近で見られる。"
     },
     {
       "spot_id": "spot_016",
@@ -1370,7 +1392,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "陸・海・空・宇宙をテーマに、科学技術を体験しながら学べるミュージアム。触って楽しめる展示が多い。"
     },
     {
       "spot_id": "spot_017",
@@ -1463,7 +1486,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "世界のくらしや文化を、展示や体験を通して楽しく知ることができる施設。子どもと一緒に異なる文化へ目を向けられる。"
     },
     {
       "spot_id": "spot_018",
@@ -1562,7 +1586,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "歴代ロマンスカーの実車や大きな鉄道ジオラマを楽しめる屋内ミュージアム。海老名駅直結でアクセスもしやすい。"
     },
     {
       "spot_id": "spot_019",
@@ -1661,7 +1686,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "インスタントラーメンの歴史を学びながら、オリジナルのカップヌードル作りも楽しめる体験型ミュージアム。"
     },
     {
       "spot_id": "spot_020",
@@ -1754,7 +1780,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "さまざまな動物を近くで観察したり、ふれあったりできる屋内施設。天候に左右されず生きものとの時間を楽しめる。"
     },
     {
       "spot_id": "spot_021",
@@ -1848,7 +1875,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "宇宙や科学をテーマにした体験展示が充実する科学館。遊びながら不思議を発見でき、プラネタリウムも楽しめる。"
     },
     {
       "spot_id": "spot_022",
@@ -1941,7 +1969,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "大型遊具や乗り物などを楽しめる屋内型の遊園地。天候を気にせず長時間遊びやすく、雪遊びエリアも特徴的。"
     },
     {
       "spot_id": "spot_023",
@@ -2034,7 +2063,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "水着で楽しむ温泉やプールがそろう箱根の温泉テーマパーク。家族で水遊びと温泉の両方を楽しめる。"
     },
     {
       "spot_id": "spot_024",
@@ -2127,7 +2157,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "芦ノ湖の景色を眺めながら、個性的な船で湖上クルーズを楽しめる。箱根観光に小旅行らしい特別感を添えてくれる。"
     },
     {
       "spot_id": "spot_025",
@@ -2226,7 +2257,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "大きな池や森、遊具のある広い公園。緑の中を散歩したり、思いきり走ったり、季節の自然を身近に楽しめる。"
     },
     {
       "spot_id": "spot_026",
@@ -2325,7 +2357,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "恐竜や動物、地球や科学の展示を幅広く楽しめる国内最大級の博物館。親子向けの体験スペースも用意されている。"
     },
     {
       "spot_id": "spot_027",
@@ -2424,7 +2457,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "光・水・花などに包まれながら、作品の中を歩いて体験する没入型アートミュージアム。五感でアートを楽しめる。"
     },
     {
       "spot_id": "spot_028",
@@ -2517,7 +2551,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "大きな造形物や自由な遊び、ワークショップを通して、子どもの発想をのびのび広げられる屋内プレイ施設。"
     },
     {
       "spot_id": "spot_029",
@@ -2610,7 +2645,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "精巧なミニチュアの街や世界を眺めながら、小さな発見を楽しめる屋内ミュージアム。雨の日にもゆっくり過ごせる。"
     },
     {
       "spot_id": "spot_030",
@@ -2708,7 +2744,8 @@ window.ODEKAKE_SEED = {
         "min_months": 24,
         "soft": true,
         "note": "主料金・体験対象は2歳以上。0〜1歳は適合度を低く評価"
-      }
+      },
+      "public_copy": "タカラトミーのおもちゃの世界とデジタル技術が融合した体験型プレイ施設。画面の中と現実を行き来するように遊べる。"
     },
     {
       "spot_id": "spot_031",
@@ -2805,7 +2842,8 @@ window.ODEKAKE_SEED = {
       "age_constraints": {
         "min_months": 72,
         "note": "小学生未満は参加不可"
-      }
+      },
+      "public_copy": "航空の仕事や飛行機の仕組みを学び、格納庫で実際の航空機を間近に見学できる体験施設。参加には年齢条件がある。"
     },
     {
       "spot_id": "spot_032",
@@ -2898,7 +2936,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "海・駅・森などをイメージしたエリアで、体を動かして遊べる大型屋内キッズ施設。赤ちゃん向け専用エリアもある。"
     },
     {
       "spot_id": "spot_033",
@@ -2991,7 +3030,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "デジタル技術を使ったスポーツやゲームに挑戦できる屋内型アクティビティ施設。体を動かしながら新感覚の遊びを楽しめる。"
     },
     {
       "spot_id": "spot_034",
@@ -3084,7 +3124,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "食品工場をテーマにしたアトラクションやものづくり体験を楽しめるエリア。遊びながら食の仕組みにふれられる。"
     },
     {
       "spot_id": "spot_035",
@@ -3178,7 +3219,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "木のおもちゃや手仕事の遊びにふれられる体験型ミュージアム。0〜2歳向けの木育スペースもあり、親子で穏やかに遊べる。"
     },
     {
       "spot_id": "spot_036",
@@ -3271,7 +3313,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "スヌーピーの世界観の中で、大型遊具や遊びを楽しめる屋内施設。遊んだあとは飲食やショッピングも一緒に楽しめる。"
     },
     {
       "spot_id": "spot_037",
@@ -3364,7 +3407,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "プールや温浴施設を備えた大型リゾート。水遊びをたっぷり楽しみながら、家族で旅行気分を味わえる。"
     },
     {
       "spot_id": "spot_038",
@@ -3462,7 +3506,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "ブルーベリーなどの収穫体験を通して、果物や農業を身近に楽しめる農園。採って味わう体験を家族で楽しめる。"
     },
     {
       "spot_id": "spot_039",
@@ -3555,7 +3600,8 @@ window.ODEKAKE_SEED = {
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "public_copy": "不思議な「こびと」たちを探しながら、観察や発見を楽しむ体験型施設。館内をめぐるほど新しい発見が見つかる。"
     },
     {
       "spot_id": "spot_040",
@@ -3646,6 +3692,1464 @@ window.ODEKAKE_SEED = {
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "public_copy": "大型遊具やアスレチック、さまざまな遊びがそろう広々とした屋内キッズパーク。天候を気にせず一日遊びやすい。"
+    },
+    {
+      "spot_id": "spot_041",
+      "slug": "bosai-no-oka-park",
+      "name": "ぼうさいの丘公園",
+      "aliases": [],
+      "category_primary": "large_park",
+      "categories": [
+        "large_park",
+        "water_play",
+        "playground"
+      ],
+      "prefecture": "神奈川県",
+      "city": "厚木市",
+      "address": "神奈川県厚木市温水783-1",
+      "official_url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/1/11034.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 95,
+        "hands_on": 80,
+        "quietness": 45,
+        "parent_rest": 60,
+        "greenery": 90,
+        "water_contact": 90,
+        "animal_contact": 35,
+        "food_experience": 20,
+        "creative_sensory": 40,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 75,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 55,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 15,
+        "nature": 95,
+        "extraordinary": 65,
+        "culture": 20,
+        "waterside": 90,
+        "animals": 45,
+        "creative": 40,
+        "food": 20,
+        "active": 100,
+        "relax": 75
+      },
+      "editorial_reason": "大型遊具、水遊び、小動物、芝生が同居し、近場の複数Vibeを一度に満たす。",
+      "public_copy": "広い芝生や遊具、水遊びまでそろう大きな公園。思いきり遊びたい日にも、自然の中でのんびりしたい日にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は終日利用可。防災センターは9:00〜21:00。遊具等は天候・季節で利用制限あり。",
+        "price_summary": "公園利用無料。",
+        "reservation_summary": "通常の公園利用は予約不要。",
+        "age_note": "乳幼児も利用可。遊具は対象年齢・安全表示を確認。",
+        "temporary_note": "「遊びの丘」の一部複合遊具は老朽化のため利用停止中。暑さ指数が高い日はふわふわドーム休止。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/1/11034.html"
+      },
+      "buzz": {
+        "score": 78,
+        "freshness": 35,
+        "social_presence": 75,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 76,
+        "reason": "水遊び・大型遊具・芝生がまとまった神奈川の子連れ定番として保存型の需要がある。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/1/11034.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "広い緑と水辺のある公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_042",
+      "slug": "arasaki-park",
+      "name": "荒崎公園",
+      "aliases": [],
+      "category_primary": "coastal_park",
+      "categories": [
+        "coastal_park",
+        "rocky_shore",
+        "nature"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市長井6",
+      "official_url": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 70,
+        "hands_on": 65,
+        "quietness": 65,
+        "parent_rest": 45,
+        "greenery": 80,
+        "water_contact": 100,
+        "animal_contact": 70,
+        "food_experience": 10,
+        "creative_sensory": 20,
+        "baby_fit": 55,
+        "toddler_fit": 80,
+        "stroller_fit": 20,
+        "rain_resilience": 5,
+        "heat_resilience": 10,
+        "walking_load": 70,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 5,
+        "nature": 100,
+        "extraordinary": 95,
+        "culture": 25,
+        "waterside": 100,
+        "animals": 80,
+        "creative": 15,
+        "food": 10,
+        "active": 70,
+        "relax": 70
+      },
+      "editorial_reason": "海・岩場・磯の生きものを一度に満たし、animals×waterside×natureの不足を補う。",
+      "public_copy": "岩場の海岸を歩きながら、カニや小さな海の生きものを探せる公園。相模湾の景色を眺めながら、ちょっとした磯探検を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は終日利用可。駐車場は季節により8:00〜17:30〜19:30。",
+        "price_summary": "公園利用無料。駐車場は土日祝・夏季等に有料（通常1,000円）。",
+        "reservation_summary": "予約不要。",
+        "age_note": "岩場・磯は足元が不安定。乳幼児は抱っこや手つなぎ前提で安全優先。",
+        "temporary_note": "荒天・高波時は海岸利用を避ける。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 30,
+        "social_presence": 78,
+        "visual_appeal": 98,
+        "media_attention": 55,
+        "popularity_momentum": 80,
+        "reason": "地層の岩場と海景色が写真・動画で魅力を伝えやすい自然スポット。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.city.yokosuka.kanagawa.jp/5560/sisetu/fc00000433.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arasaki_Park_-_Yokosuka.jpg?width=1280",
+        "type": "photo",
+        "alt": "荒崎公園の海岸と岩場",
+        "label": null,
+        "credit": "Quercus acuta / Wikimedia Commons",
+        "author": "Quercus acuta",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Arasaki_Park_-_Yokosuka.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-22",
+        "modified_by_kibun": false,
+        "hero_review": "new_priority_a_experience_photo"
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_043",
+      "slug": "kanno-coffee-kawasaki-arima",
+      "name": "神乃珈琲 川崎有馬店",
+      "aliases": [],
+      "category_primary": "cafe",
+      "categories": [
+        "cafe",
+        "coffee",
+        "parent_break"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市宮前区",
+      "address": "神奈川県川崎市宮前区有馬1-12-7",
+      "official_url": "https://kannocoffee.com/contents/shopinfo/kawasaki/",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 5,
+        "hands_on": 10,
+        "quietness": 80,
+        "parent_rest": 95,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 35,
+        "baby_fit": 45,
+        "toddler_fit": 35,
+        "stroller_fit": 55,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 5,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 5,
+        "extraordinary": 35,
+        "culture": 55,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 35,
+        "food": 100,
+        "active": 5,
+        "relax": 100
+      },
+      "editorial_reason": "子どものためだけではない休日を推薦できるようにする親満足の基準点。",
+      "public_copy": "今日は子どもを遊ばせるだけじゃなく、大人もおいしい珈琲でひと息。落ち着いた空間で、少しゆっくりしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日9:00〜20:00、土日祝8:00〜20:00。",
+        "price_summary": "飲食代は注文内容による。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "子ども向け施設ではない。乳幼児設備・ベビーチェア等は来店前に店舗へ確認推奨。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://kannocoffee.com/contents/shopinfo/kawasaki/"
+      },
+      "buzz": {
+        "score": 72,
+        "freshness": 35,
+        "social_presence": 62,
+        "visual_appeal": 88,
+        "media_attention": 52,
+        "popularity_momentum": 68,
+        "reason": "建築・内装と珈琲の写真が親世代の保存投稿と相性がよい。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_store",
+            "date": "2026-08-22",
+            "url": "https://kannocoffee.com/contents/shopinfo/kawasaki/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "自然光の入る落ち着いたカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_044",
+      "slug": "aikawa-park",
+      "name": "神奈川県立あいかわ公園",
+      "aliases": [
+        "あいかわ公園"
+      ],
+      "category_primary": "nature_park",
+      "categories": [
+        "nature_park",
+        "playground",
+        "water_play",
+        "craft"
+      ],
+      "prefecture": "神奈川県",
+      "city": "愛甲郡愛川町",
+      "address": "神奈川県愛甲郡愛川町半原5423",
+      "official_url": "https://www.aikawa-park.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 85,
+        "quietness": 35,
+        "parent_rest": 50,
+        "greenery": 100,
+        "water_contact": 90,
+        "animal_contact": 10,
+        "food_experience": 25,
+        "creative_sensory": 75,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 15,
+        "heat_resilience": 20,
+        "walking_load": 65,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 90,
+        "culture": 45,
+        "waterside": 90,
+        "animals": 20,
+        "creative": 75,
+        "food": 25,
+        "active": 100,
+        "relax": 65
+      },
+      "editorial_reason": "宮ヶ瀬ダム、大型遊具、水遊び、工芸を横断でき、複数Vibeに強い。",
+      "public_copy": "宮ヶ瀬ダムのすぐそばに広がる大きな公園。大型遊具や水遊び、工芸体験まで、家族で一日たっぷり楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園開門は4〜9月8:30〜18:00、10〜3月8:30〜17:00。施設ごとに利用時間あり。",
+        "price_summary": "公園入園無料。駐車場・ロードトレイン・体験等は別料金の場合あり。",
+        "reservation_summary": "通常の公園利用は予約不要。体験は予約が必要な場合あり。",
+        "age_note": "小さいふわふわドームは3歳以上・保護者同伴。水遊び等は季節運用を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.aikawa-park.jp/publics/index/3/index.html"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 25,
+        "social_presence": 75,
+        "visual_appeal": 93,
+        "media_attention": 65,
+        "popularity_momentum": 78,
+        "reason": "大型遊具と宮ヶ瀬ダムの景観で家族の一日レジャーとして定番性が高い。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.aikawa-park.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "ダム近くの緑豊かな大型公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_045",
+      "slug": "hadano-tokawa-park",
+      "name": "神奈川県立秦野戸川公園",
+      "aliases": [
+        "秦野戸川公園"
+      ],
+      "category_primary": "river_park",
+      "categories": [
+        "river_park",
+        "nature",
+        "playground"
+      ],
+      "prefecture": "神奈川県",
+      "city": "秦野市",
+      "address": "神奈川県秦野市堀山下1513",
+      "official_url": "https://www.kanagawa-park.or.jp/hadanotokawa/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 85,
+        "hands_on": 55,
+        "quietness": 55,
+        "parent_rest": 60,
+        "greenery": 100,
+        "water_contact": 100,
+        "animal_contact": 10,
+        "food_experience": 35,
+        "creative_sensory": 20,
+        "baby_fit": 70,
+        "toddler_fit": 90,
+        "stroller_fit": 55,
+        "rain_resilience": 5,
+        "heat_resilience": 15,
+        "walking_load": 65,
+        "planning_friction": 15
+      },
+      "vibes_seed": {
+        "cool": 5,
+        "nature": 100,
+        "extraordinary": 85,
+        "culture": 20,
+        "waterside": 100,
+        "animals": 20,
+        "creative": 20,
+        "food": 35,
+        "active": 85,
+        "relax": 80
+      },
+      "editorial_reason": "丹沢・川・吊り橋の自然Vibeが強く、夏の水辺候補を増やせる。",
+      "public_copy": "丹沢の山並みと大きな吊り橋が印象的な公園。川辺で遊んだり芝生で休んだり、自然を丸ごと楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は終日利用可。パークセンター等の施設時間は公式確認。",
+        "price_summary": "公園利用無料。BBQ等は別料金。",
+        "reservation_summary": "通常利用は予約不要。BBQ等は予約制。",
+        "age_note": "川遊びは水量・天候を確認し、乳幼児は必ず保護者がそばで見守る。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.kanagawa-park.or.jp/hadanotokawa/"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 20,
+        "social_presence": 70,
+        "visual_appeal": 96,
+        "media_attention": 50,
+        "popularity_momentum": 74,
+        "reason": "吊り橋・川・丹沢の写真映えと夏の水遊び需要が強い。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.kanagawa-park.or.jp/hadanotokawa/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kiyokawa-river.jpg",
+        "type": "ai",
+        "alt": "山と川に囲まれた自然公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_046",
+      "slug": "soleil-no-oka",
+      "name": "長井海の手公園 ソレイユの丘",
+      "aliases": [
+        "ソレイユの丘"
+      ],
+      "category_primary": "experience_park",
+      "categories": [
+        "experience_park",
+        "animals",
+        "playground",
+        "farm",
+        "water_play"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市長井4丁目地内",
+      "official_url": "https://soleil-park.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 20,
+        "outdoor": 95,
+        "physical_activity": 100,
+        "hands_on": 95,
+        "quietness": 20,
+        "parent_rest": 65,
+        "greenery": 95,
+        "water_contact": 85,
+        "animal_contact": 95,
+        "food_experience": 90,
+        "creative_sensory": 90,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 40,
+        "heat_resilience": 45,
+        "walking_load": 70,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 35,
+        "nature": 100,
+        "extraordinary": 95,
+        "culture": 45,
+        "waterside": 80,
+        "animals": 100,
+        "creative": 90,
+        "food": 95,
+        "active": 100,
+        "relax": 70
+      },
+      "editorial_reason": "遊具・水・動物・収穫・食が揃い、Kibunの複数Vibe選択を活かしやすい。",
+      "public_copy": "海と畑に囲まれた体験型公園。大きな遊具、動物とのふれあい、季節の収穫や食まで、一日中いろいろ楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園営業時間は9:00〜18:00を基本に季節・施設で変動。",
+        "price_summary": "入園無料。アトラクション、体験、飲食、駐車場等は別料金。",
+        "reservation_summary": "通常入園は予約不要。体験・キャンプ等は予約制の場合あり。",
+        "age_note": "ベビーカー貸出、授乳・おむつ替え設備あり。じゃぶじゃぶ池はオムツが外れていない子は利用不可。",
+        "temporary_note": "水遊び・一部施設は季節営業。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://soleil-park.jp/for_kids/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 45,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 96,
+        "reason": "大型リニューアル後も遊具・動物・季節イベントでSNS露出が継続している。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://soleil-park.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "海と畑に囲まれた体験型公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_047",
+      "slug": "kannonzaki-park",
+      "name": "神奈川県立観音崎公園",
+      "aliases": [
+        "観音崎公園"
+      ],
+      "category_primary": "coastal_park",
+      "categories": [
+        "coastal_park",
+        "history",
+        "rocky_shore",
+        "playground"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市鴨居4丁目",
+      "official_url": "https://www.kanagawaparks.com/kannonzaki/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 50,
+        "greenery": 90,
+        "water_contact": 85,
+        "animal_contact": 45,
+        "food_experience": 15,
+        "creative_sensory": 25,
+        "baby_fit": 55,
+        "toddler_fit": 75,
+        "stroller_fit": 35,
+        "rain_resilience": 5,
+        "heat_resilience": 10,
+        "walking_load": 75,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 5,
+        "nature": 95,
+        "extraordinary": 90,
+        "culture": 70,
+        "waterside": 100,
+        "animals": 60,
+        "creative": 20,
+        "food": 15,
+        "active": 75,
+        "relax": 75
+      },
+      "editorial_reason": "海・磯・灯台・砲台跡・森が一体で、文化と自然を横断できる。",
+      "public_copy": "海沿いの森を歩きながら、磯や灯台、歴史の跡にも出会える公園。景色を楽しみつつ、ちょっとした探検気分を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は終日利用可。園内施設・駐車場は季節により時間が異なる。",
+        "price_summary": "公園利用無料。駐車場・周辺施設は別料金の場合あり。",
+        "reservation_summary": "通常の公園利用は予約不要。",
+        "age_note": "磯や坂道があるため、乳幼児は抱っこ・手つなぎ前提。ベビーカーで行きにくい区間あり。",
+        "temporary_note": "夏季・連休は駐車場混雑。荒天・高波時は磯利用を避ける。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.kanagawaparks.com/kannonzaki/"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 20,
+        "social_presence": 72,
+        "visual_appeal": 98,
+        "media_attention": 58,
+        "popularity_momentum": 75,
+        "reason": "東京湾の海景色、灯台、砲台跡が一度に撮れ、探索系投稿と相性が良い。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.kanagawaparks.com/kannonzaki/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kiyokawa-river.jpg",
+        "type": "ai",
+        "alt": "海と森を歩く自然公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_048",
+      "slug": "tsujido-seaside-park",
+      "name": "神奈川県立辻堂海浜公園",
+      "aliases": [
+        "辻堂海浜公園"
+      ],
+      "category_primary": "seaside_park",
+      "categories": [
+        "seaside_park",
+        "traffic_park",
+        "pool"
+      ],
+      "prefecture": "神奈川県",
+      "city": "藤沢市",
+      "address": "神奈川県藤沢市辻堂西海岸3-2",
+      "official_url": "https://www.kanagawa-park.or.jp/tujidou/",
+      "environment": "mixed",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 90,
+        "physical_activity": 85,
+        "hands_on": 70,
+        "quietness": 55,
+        "parent_rest": 70,
+        "greenery": 75,
+        "water_contact": 65,
+        "animal_contact": 0,
+        "food_experience": 35,
+        "creative_sensory": 55,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 55,
+        "heat_resilience": 45,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 45,
+        "nature": 75,
+        "extraordinary": 65,
+        "culture": 65,
+        "waterside": 85,
+        "animals": 5,
+        "creative": 55,
+        "food": 35,
+        "active": 90,
+        "relax": 80
+      },
+      "editorial_reason": "海辺・交通公園・展示館・夏プールを組み合わせられ、乳幼児にも使いやすい。",
+      "public_copy": "海の近くの大きな芝生公園。交通公園や乗りもの展示もあり、のびのび遊ぶ日にも、軽めのお出かけにも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は終日利用可。交通展示館9:00〜17:00、交通公園の乗りもの9:00〜16:00。",
+        "price_summary": "公園・交通公園は無料。交通展示館は中学生以下無料、大人310円等。プールは季節・別料金。",
+        "reservation_summary": "通常利用は予約不要。イベント等は例外あり。",
+        "age_note": "授乳・おむつ替えスペースあり。乳幼児向け設備は交通展示館等を利用可能。",
+        "temporary_note": "ジャンボプールは夏季営業。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.kanagawa-park.or.jp/tujidou/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 30,
+        "social_presence": 82,
+        "visual_appeal": 92,
+        "media_attention": 70,
+        "popularity_momentum": 85,
+        "reason": "芝生・乗りもの・夏プールで幅広い子連れ層から定番人気。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.kanagawa-park.or.jp/tujidou/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "海辺の芝生と遊び場がある公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_049",
+      "slug": "kanagawa-museum-natural-history",
+      "name": "神奈川県立生命の星・地球博物館",
+      "aliases": [
+        "生命の星・地球博物館"
+      ],
+      "category_primary": "natural_history_museum",
+      "categories": [
+        "natural_history_museum",
+        "science",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "小田原市",
+      "address": "神奈川県小田原市入生田499",
+      "official_url": "https://nh.kanagawa-museum.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 55,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 40,
+        "food_experience": 0,
+        "creative_sensory": 75,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 90,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 80,
+        "creative": 75,
+        "food": 0,
+        "active": 35,
+        "relax": 70
+      },
+      "editorial_reason": "恐竜・地球史・生物でcultureとanimalsを同時補完し、雨・猛暑にも強い。",
+      "public_copy": "大きな恐竜骨格や隕石、本物の標本に出会える自然史博物館。涼しい館内で、地球の長い歴史を旅する気分に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜16:30（入館16:00まで）。休館日は月曜等。8月は原則毎日開館。",
+        "price_summary": "20歳以上65歳未満（学生除く）520円。高校生以下などは区分により無料・割引あり。",
+        "reservation_summary": "通常の常設展は予約不要。イベントは予約制の場合あり。",
+        "age_note": "授乳室・ベビーベッドあり。ベビーカー貸出あり、館内利用可。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://nh.kanagawa-museum.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 20,
+        "social_presence": 76,
+        "visual_appeal": 94,
+        "media_attention": 68,
+        "popularity_momentum": 80,
+        "reason": "巨大な恐竜骨格・標本の絵力が強く、雨の日の文化体験として保存されやすい。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://nh.kanagawa-museum.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "恐竜や地球の展示がある自然史博物館をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_050",
+      "slug": "hakone-open-air-museum",
+      "name": "箱根 彫刻の森美術館",
+      "aliases": [
+        "彫刻の森美術館"
+      ],
+      "category_primary": "outdoor_art_museum",
+      "categories": [
+        "art_museum",
+        "outdoor_art",
+        "nature"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町二ノ平1121",
+      "official_url": "https://www.hakone-oam.or.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 25,
+        "outdoor": 90,
+        "physical_activity": 60,
+        "hands_on": 70,
+        "quietness": 65,
+        "parent_rest": 60,
+        "greenery": 85,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 100,
+        "baby_fit": 70,
+        "toddler_fit": 85,
+        "stroller_fit": 65,
+        "rain_resilience": 45,
+        "heat_resilience": 35,
+        "walking_load": 70,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 35,
+        "nature": 85,
+        "extraordinary": 100,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 20,
+        "active": 65,
+        "relax": 80
+      },
+      "editorial_reason": "美術館でありながら子どもが身体を使える。親の文化満足と子の遊びを両立できる。",
+      "public_copy": "箱根の山の景色の中にアートが点在する野外美術館。作品を見ながら歩いたり、子ども向けの体験型作品で遊んだり。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜17:00（入館16:30まで）。年中無休。",
+        "price_summary": "大人2,000円（WEB1,800円）、大学・高校生1,600円（WEB1,400円）、小中学生800円（WEB600円）、未就学児無料。",
+        "reservation_summary": "通常入館は事前予約不要。WEBチケットあり。",
+        "age_note": "ベビーカー貸出・授乳室あり。一部作品・ルートはベビーカー利用に制限あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.hakone-oam.or.jp/info/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 25,
+        "social_presence": 88,
+        "visual_appeal": 100,
+        "media_attention": 82,
+        "popularity_momentum": 90,
+        "reason": "箱根の景観と体験型アートで、親子旅行・写真投稿の双方に強い定番。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.hakone-oam.or.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/220622_Hakone_Open-air_Museum_Japan01s3.jpg?width=1280",
+        "type": "photo",
+        "alt": "箱根 彫刻の森美術館の野外展示と景観",
+        "label": null,
+        "credit": "663highland / Wikimedia Commons",
+        "author": "663highland",
+        "source_url": "https://commons.wikimedia.org/wiki/File:220622_Hakone_Open-air_Museum_Japan01s3.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-22",
+        "modified_by_kibun": false,
+        "hero_review": "new_priority_a_experience_photo"
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_051",
+      "slug": "enosui",
+      "name": "新江ノ島水族館",
+      "aliases": [
+        "えのすい"
+      ],
+      "category_primary": "aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "waterside",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "藤沢市",
+      "address": "神奈川県藤沢市片瀬海岸2-19-1",
+      "official_url": "https://www.enosui.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 95,
+        "outdoor": 10,
+        "physical_activity": 40,
+        "hands_on": 65,
+        "quietness": 50,
+        "parent_rest": 65,
+        "greenery": 10,
+        "water_contact": 35,
+        "animal_contact": 100,
+        "food_experience": 25,
+        "creative_sensory": 80,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 95,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 25,
+        "extraordinary": 100,
+        "culture": 80,
+        "waterside": 100,
+        "animals": 100,
+        "creative": 80,
+        "food": 25,
+        "active": 45,
+        "relax": 75
+      },
+      "editorial_reason": "animals不足を強く補い、海辺立地でwatersideにもつながる。",
+      "public_copy": "相模湾の海の生きものを間近で見られる水族館。館内を楽しんだあとは、そのまま海辺のお散歩へ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026年8月後半は9:00〜18:00を基本。季節・日付で変動。",
+        "price_summary": "大人2,800円、高校生1,800円、小中学生1,300円、3歳以上900円、2歳以下無料。",
+        "reservation_summary": "通常入館は予約不要。前売券あり。",
+        "age_note": "ベビーカー貸出（有料）、授乳室・Mamaro・おむつ替え設備あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.enosui.com/basicinfo.php"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 25,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 94,
+        "reason": "クラゲ・大水槽・相模湾の景色でSNS視覚性が高く、子連れ定番として勢いが続く。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.enosui.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enoshima_Aquarium_inside_2025_March_21_various_19_43_24_715000.jpeg?width=1280",
+        "type": "photo",
+        "alt": "新江ノ島水族館の館内水槽",
+        "label": null,
+        "credit": "Nesnad / Wikimedia Commons",
+        "author": "Nesnad",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Enoshima_Aquarium_inside_2025_March_21_various_19_43_24_715000.jpeg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "credit_required": true,
+        "exact_spot": true,
+        "checked_at": "2026-08-22",
+        "modified_by_kibun": false,
+        "hero_review": "new_priority_a_experience_photo"
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_052",
+      "slug": "kawasui",
+      "name": "カワスイ 川崎水族館",
+      "aliases": [],
+      "category_primary": "aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "indoor",
+        "city"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市川崎区",
+      "address": "神奈川県川崎市川崎区日進町1-11 川崎ルフロン9-10F",
+      "official_url": "https://kawa-sui.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 30,
+        "hands_on": 70,
+        "quietness": 50,
+        "parent_rest": 75,
+        "greenery": 10,
+        "water_contact": 20,
+        "animal_contact": 100,
+        "food_experience": 35,
+        "creative_sensory": 80,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 20,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 85,
+        "culture": 75,
+        "waterside": 70,
+        "animals": 100,
+        "creative": 75,
+        "food": 35,
+        "active": 35,
+        "relax": 90
+      },
+      "editorial_reason": "駅近・屋内のanimals枠として「今から」「猛暑」「雨」に強い。",
+      "public_copy": "川崎駅のすぐ近くで、世界の水辺の生きものに出会える屋内水族館。暑い日や雨の日にも立ち寄りやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜20:00（最終入館19:00）を基本。",
+        "price_summary": "大人2,200円、高校生1,700円、小中学生1,400円、4歳以上800円、3歳以下無料。",
+        "reservation_summary": "通常入館は予約不要。イベント等は別途。",
+        "age_note": "館内バリアフリー。おむつ替え・授乳用Mamaro・キッズルーム・抱っこひも貸出あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://kawa-sui.com/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 30,
+        "social_presence": 84,
+        "visual_appeal": 96,
+        "media_attention": 72,
+        "popularity_momentum": 86,
+        "reason": "駅前屋内でゼロ距離感のある水辺展示が、天候回避の子連れ投稿と相性がよい。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://kawa-sui.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "都会の屋内水族館をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_053",
+      "slug": "yokosuka-museum-of-art",
+      "name": "横須賀美術館",
+      "aliases": [],
+      "category_primary": "art_museum",
+      "categories": [
+        "art_museum",
+        "waterside",
+        "architecture"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市鴨居4-1",
+      "official_url": "https://www.yokosuka-moa.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 20,
+        "physical_activity": 15,
+        "hands_on": 25,
+        "quietness": 90,
+        "parent_rest": 90,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 45,
+        "creative_sensory": 80,
+        "baby_fit": 60,
+        "toddler_fit": 65,
+        "stroller_fit": 90,
+        "rain_resilience": 95,
+        "heat_resilience": 90,
+        "walking_load": 15,
+        "planning_friction": 10
+      },
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 35,
+        "extraordinary": 75,
+        "culture": 100,
+        "waterside": 90,
+        "animals": 0,
+        "creative": 85,
+        "food": 45,
+        "active": 10,
+        "relax": 100
+      },
+      "editorial_reason": "親が行きたい場所を明示的に増やし、海景色×文化×relaxを担う。",
+      "public_copy": "海を眺めるロケーションも魅力の美術館。アートにふれながら、親子で少しゆっくり過ごしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常10:00〜18:00。毎月第1月曜等休館。",
+        "price_summary": "所蔵品展一般450円、中学生以下無料。企画展は別料金。",
+        "reservation_summary": "通常入館は予約不要。",
+        "age_note": "ベビーカー利用可・貸出あり。1階に授乳室あり。",
+        "temporary_note": "施設改修のため2026年9月4日まで長期休館。9月5日再開予定。",
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.yokosuka-moa.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 55,
+        "social_presence": 76,
+        "visual_appeal": 100,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "海と建築そのものが写真映えし、親世代の文化系お出かけ投稿と相性が良い。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "temporary_closure",
+            "date": "2026-09-04",
+            "url": "https://www.yokosuka-moa.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "海を望む静かな美術館をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "availability_constraints": {
+        "unavailable_until": "2026-09-05",
+        "note": "2026年9月4日まで長期休館"
+      }
+    },
+    {
+      "spot_id": "spot_054",
+      "slug": "kodomonokuni",
+      "name": "こどもの国",
+      "aliases": [],
+      "category_primary": "large_park",
+      "categories": [
+        "large_park",
+        "animals",
+        "playground",
+        "nature",
+        "water_play"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市青葉区",
+      "address": "神奈川県横浜市青葉区奈良町700",
+      "official_url": "https://www.kodomonokuni.org/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 85,
+        "quietness": 35,
+        "parent_rest": 55,
+        "greenery": 100,
+        "water_contact": 75,
+        "animal_contact": 80,
+        "food_experience": 50,
+        "creative_sensory": 45,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 70,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 80,
+        "culture": 30,
+        "waterside": 75,
+        "animals": 95,
+        "creative": 45,
+        "food": 55,
+        "active": 100,
+        "relax": 70
+      },
+      "editorial_reason": "自然・動物・遊具・水・乗りものをまとめて補い、animals/natureの主力になる。",
+      "public_copy": "広い自然の中で、動物に会ったり遊具で遊んだり、水辺や乗りものを楽しんだり。今日は一日遊ぶぞ、という日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜16:30。7〜8月は17:00まで。水曜等休園（季節・祝日例外あり）。",
+        "price_summary": "大人800円、高校生600円、小中学生300円、3歳以上200円、2歳以下無料。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "ベビーカー貸出、授乳室、おむつ替え設備あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.kodomonokuni.org/guide/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 20,
+        "social_presence": 88,
+        "visual_appeal": 94,
+        "media_attention": 75,
+        "popularity_momentum": 90,
+        "reason": "動物・大型遊具・季節の水遊びを備え、長年の子連れ定番として検索・保存需要が強い。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.kodomonokuni.org/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "広い自然と遊び場のある公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_055",
+      "slug": "shonandai-culture-center-kodomokan",
+      "name": "湘南台文化センターこども館",
+      "aliases": [],
+      "category_primary": "children_museum",
+      "categories": [
+        "children_museum",
+        "culture",
+        "science",
+        "planetarium"
+      ],
+      "prefecture": "神奈川県",
+      "city": "藤沢市",
+      "address": "神奈川県藤沢市湘南台1-8",
+      "official_url": "https://www.kodomokan.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 50,
+        "hands_on": 95,
+        "quietness": 45,
+        "parent_rest": 60,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 85,
+        "culture": 100,
+        "waterside": 0,
+        "animals": 0,
+        "creative": 100,
+        "food": 0,
+        "active": 55,
+        "relax": 65
+      },
+      "editorial_reason": "世界文化・科学・プラネタリウムを子ども向けに体験でき、cultureの幼児適合を強化する。",
+      "public_copy": "世界の暮らしや科学に、遊びながらふれられるこども館。ちょっと知的な刺激がほしい日の屋内おでかけに。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜17:00。月曜等休館。8月は原則休館日なし。",
+        "price_summary": "展示ホール：子ども100円、大人300円、未就学児は大人同伴で無料。プラネタリウムは別料金。",
+        "reservation_summary": "通常の展示ホールは予約不要。プラネタリウム・イベントは公式確認。",
+        "age_note": "ベビーカー貸出あり。おむつ替え設備・授乳対応あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-22",
+        "source_url": "https://www.kodomokan.jp/"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 20,
+        "social_presence": 68,
+        "visual_appeal": 90,
+        "media_attention": 55,
+        "popularity_momentum": 72,
+        "reason": "独特な建築と世界文化の体験展示で、文化系の親子お出かけ候補として差別化できる。",
+        "checked_at": "2026-08-22",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-22",
+            "url": "https://www.kodomokan.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "世界文化や科学にふれる子ども向け展示をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       }

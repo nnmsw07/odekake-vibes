@@ -105,3 +105,8 @@ node test_recommender.js
 ## V0.4 画像更新
 
 実写heroを9/40スポットまで増やしました。画像の出典・ライセンスは `IMAGE_CREDITS.md` と `seed.json` の `hero_image` を参照してください。CC BY / CC BY-SA画像は画面上にもクレジットを表示します。
+
+
+## v0.8
+- 55スポット収録（神奈川中心のPriority A 15件を追加）
+- 一時休館のhard filterに対応

@@ -146,7 +146,7 @@ function resultCard(r){
     </div>
     <div class="card-content">
       <h3>${s.name}</h3>
-      <p class="editorial">${s.editorial_reason || ''}</p>
+      <p class="editorial">${s.public_copy || ''}</p>
       <div class="vibe-tags">${tags}</div>
       <ul class="why-list">${why}</ul>
       <div class="card-actions"><button class="detail-btn" data-detail="${s.spot_id}">この場所を見る <span>→</span></button><button class="fav-btn ${isFav?'active':''}" data-fav="${s.spot_id}" aria-label="お気に入り">${isFav?'♥':'♡'}</button></div>
@@ -173,7 +173,7 @@ function openSpot(id){
     <div class="dialog-hero">
       <p class="eyebrow">${s.prefecture} · ${s.category_primary}</p>
       <h2>${s.name}</h2>
-      <p class="dialog-copy">${s.editorial_reason||''}</p>
+      <p class="dialog-copy">${s.public_copy||''}</p>
       <div class="info-pills"><span class="info-pill">🕐 約${Math.round((s.stay_minutes_seed||120)/60*10)/10}時間</span><span class="info-pill">👶 1歳相性 ${s.experience_seed?.baby_fit??'-'}</span><span class="info-pill">🌧 雨 ${s.experience_seed?.rain_resilience??'-'}</span><span class="info-pill">☀️ 暑さ ${s.experience_seed?.heat_resilience??'-'}</span>${buzzScore(s)>=90?`<span class="info-pill buzz-info">🔥 話題 ${Math.round(buzzScore(s))}</span>`:''}</div>
       ${imageCredit(s.hero_image)}
     </div>

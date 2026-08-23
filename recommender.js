@@ -69,6 +69,14 @@
       if (ageConstraint.min_months !== undefined && age < Number(ageConstraint.min_months)) return ageConstraint.note || '年齢条件に合わない';
       if (ageConstraint.max_months !== undefined && age > Number(ageConstraint.max_months)) return ageConstraint.note || '年齢条件に合わない';
     }
+    const availabilityConstraint = spot.availability_constraints || {};
+    if (availabilityConstraint.unavailable_until) {
+      const resume = new Date(`${availabilityConstraint.unavailable_until}T00:00:00+09:00`);
+      const now = ctx.currentDate ? new Date(ctx.currentDate) : new Date();
+      if (!Number.isNaN(resume.getTime()) && now < resume) {
+        return availabilityConstraint.note || '現在は利用できない';
+      }
+    }
     const availability = (ctx.availabilityBySpot || {})[sid] || {};
     const checks = [
       ['is_open', '営業していない'],
@@ -125,7 +133,7 @@
     if (ctx.weather === 'rain' && scores.weather >= 85) lines.push('雨でも過ごしやすい');
     if (ctx.childAgeMonths !== null && ctx.childAgeMonths !== undefined && ctx.childAgeMonths !== '' && scores.age >= 85) lines.push('子どもの年齢との相性が良い');
     if (scores.time >= 90 && ctx.availableMinutes) lines.push('使える時間に収まりやすい');
-    if (!lines.length && spot.editorial_reason) lines.push(spot.editorial_reason);
+    if (!lines.length && spot.public_copy) lines.push(spot.public_copy);
     return lines.slice(0, 3);
   }
 
@@ -135,7 +143,7 @@
       name: spot.name,
       slug: spot.slug,
       category_primary: spot.category_primary,
-      editorial_reason: spot.editorial_reason,
+      public_copy: spot.public_copy,
       scores: Object.fromEntries(Object.entries(scores).map(([k, v]) => [k, Math.round(v * 10) / 10])),
       why: reasonLines(spot, ctx, scores),
     };
