@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v2_55spots",
-    "version": "0.9.0",
+    "version": "0.10.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -2515,7 +2515,7 @@ window.ODEKAKE_SEED = {
         {
           "platform": "instagram",
           "type": "reel",
-          "reel_url": null,
+          "reel_url": "https://www.instagram.com/reel/DaaKQXZDBxp/",
           "account_url": "https://www.instagram.com/teamlab.planets/",
           "account_handle": "@teamlab.planets",
           "source_type": "official",
@@ -4376,7 +4376,7 @@ window.ODEKAKE_SEED = {
         {
           "platform": "instagram",
           "type": "reel",
-          "reel_url": null,
+          "reel_url": "https://www.instagram.com/reel/DYGf0FYxCXT/",
           "account_url": "https://www.instagram.com/soleil_yokosuka/",
           "account_handle": "@soleil_yokosuka",
           "source_type": "official",
