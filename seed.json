@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v2_55spots",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -25,7 +25,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-22",
+    "updated_at": "2026-08-23",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -57,7 +57,14 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-22: 神奈川中心のPriority A 15スポットを追加し40→55件。親満足・自然・水辺・生きものを補強。"
+    "expansion_note": "2026-08-22: 神奈川中心のPriority A 15スポットを追加し40→55件。親満足・自然・水辺・生きものを補強。",
+    "social_embed_policy": {
+      "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
+      "detail_page": "詳細ページに公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード",
+      "download_policy": "Instagramの動画・サムネイルは保存・転載しない",
+      "ugc_policy": "一般ユーザー投稿は明示許諾後に掲載",
+      "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト"
+    }
   },
   "vibe_definitions": {
     "cool": "暑さから逃れたい・涼しく過ごしたい",
@@ -1587,7 +1594,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "歴代ロマンスカーの実車や大きな鉄道ジオラマを楽しめる屋内ミュージアム。海老名駅直結でアクセスもしやすい。"
+      "public_copy": "歴代ロマンスカーの実車や大きな鉄道ジオラマを楽しめる屋内ミュージアム。海老名駅直結でアクセスもしやすい。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/romancecar_museum/",
+          "account_handle": "@romancecar_museum",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "VSE展示＋歴代ロマンスカーが並ぶ館内ギャラリー",
+          "why_video": "実車のスケール感が動画で伝わり、文化×非日常が強い。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_019",
@@ -1781,7 +1803,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "さまざまな動物を近くで観察したり、ふれあったりできる屋内施設。天候に左右されず生きものとの時間を楽しめる。"
+      "public_copy": "さまざまな動物を近くで観察したり、ふれあったりできる屋内施設。天候に左右されず生きものとの時間を楽しめる。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/anitouch_minatomirai/",
+          "account_handle": "@anitouch_minatomirai",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "カピバラ・ワオキツネザル・おやつあげ体験",
+          "why_video": "『ゼロ距離』の魅力は動物の動きがあるReelで最も伝わる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_021",
@@ -2064,7 +2101,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "水着で楽しむ温泉やプールがそろう箱根の温泉テーマパーク。家族で水遊びと温泉の両方を楽しめる。"
+      "public_copy": "水着で楽しむ温泉やプールがそろう箱根の温泉テーマパーク。家族で水遊びと温泉の両方を楽しめる。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/yunessun_hakone/",
+          "account_handle": "@yunessun_hakone",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "屋外水遊び＋変わり風呂＋ファミリー向け水着エリア",
+          "why_video": "水の動きと非日常感が動画で圧倒的に伝わる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_024",
@@ -2458,7 +2510,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "光・水・花などに包まれながら、作品の中を歩いて体験する没入型アートミュージアム。五感でアートを楽しめる。"
+      "public_copy": "光・水・花などに包まれながら、作品の中を歩いて体験する没入型アートミュージアム。五感でアートを楽しめる。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/teamlab.planets/",
+          "account_handle": "@teamlab.planets",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "水・光・花の没入作品を歩く映像",
+          "why_video": "Reelとの相性が最も高い施設の一つ。静止画より没入感を説明しやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_028",
@@ -2937,7 +3004,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "海・駅・森などをイメージしたエリアで、体を動かして遊べる大型屋内キッズ施設。赤ちゃん向け専用エリアもある。"
+      "public_copy": "海・駅・森などをイメージしたエリアで、体を動かして遊べる大型屋内キッズ施設。赤ちゃん向け専用エリアもある。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/asobono_official/",
+          "account_handle": "@asobono_official",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "ハイハイガーデン＋ボールプール＋ごっこ遊び",
+          "why_video": "乳幼児向けの実際の遊び方が一目でわかる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_033",
@@ -3220,7 +3302,22 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "木のおもちゃや手仕事の遊びにふれられる体験型ミュージアム。0〜2歳向けの木育スペースもあり、親子で穏やかに遊べる。"
+      "public_copy": "木のおもちゃや手仕事の遊びにふれられる体験型ミュージアム。0〜2歳向けの木育スペースもあり、親子で穏やかに遊べる。",
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/tokyotoymuseum/",
+          "account_handle": "@tokyotoymuseum",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "赤ちゃん木育ひろば／木のおもちゃを触って遊ぶ様子",
+          "why_video": "外観写真では伝わらなかった『木の温かさ』を動画で補える。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_036",
@@ -4274,7 +4371,22 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/soleil_yokosuka/",
+          "account_handle": "@soleil_yokosuka",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "ひまわり畑＋観覧車／水遊び／大型遊具を短くつないだ園内紹介",
+          "why_video": "自然・遊び・食が一度に伝わり、Kibunの複数Vibeを動画1本で表現しやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_047",
@@ -4665,7 +4777,22 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/thehakoneopenairmuseum/",
+          "account_handle": "@thehakoneopenairmuseum",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "ネットの森→野外彫刻→ステンドグラス塔の流れ",
+          "why_video": "子どもの遊びと大人のアート鑑賞を1本で両立できる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_051",
@@ -4768,7 +4895,22 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/enosui_com/",
+          "account_handle": "@enosui_com",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "クラゲ／相模湾大水槽／イルカなど、生きものが動く映像",
+          "why_video": "静止画より水槽の動きや館内の光が伝わりやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_052",
@@ -4863,7 +5005,22 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
-      }
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/kawasui_aqua/",
+          "account_handle": "@kawasui_aqua",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "カピバラ・アマゾンゾーン・水辺の生きもの",
+          "why_video": "『駅前なのに自然っぽい』という意外性が動画で出しやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_053",
@@ -4961,7 +5118,22 @@
       "availability_constraints": {
         "unavailable_until": "2026-09-05",
         "note": "2026年9月4日まで長期休館"
-      }
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/yokosuka_moa/",
+          "account_handle": "@yokosuka_moa",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "海が見える建築＋屋上／谷内六郎館周辺＋展示の雰囲気",
+          "why_video": "『親も行きたい』を強く伝えられる。海と美術館のロケーションが動画向き。",
+          "checked_at": "2026-08-23"
+        }
+      ]
     },
     {
       "spot_id": "spot_054",

@@ -117,6 +117,56 @@ function imageBlock(s, variant='card'){
   </div>`;
 }
 
+
+function instagramIcon(){
+  return `<svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/></svg>`;
+}
+
+function getInstagramSocial(s){
+  return (s.social_embeds || []).find(x => x.platform === 'instagram') || null;
+}
+
+function socialSection(s){
+  const social = getInstagramSocial(s);
+  if(!social) return '';
+  const title = social.display_title || 'この場所の雰囲気をのぞく';
+  const copy = social.preview_copy || '公式Instagramで実際の雰囲気を見てみる。';
+  if(social.reel_url){
+    return `<section class="social-peek social-peek-embed">
+      <div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div>
+      <div class="instagram-embed-wrap">
+        <blockquote class="instagram-media" data-instgrm-permalink="${social.reel_url}" data-instgrm-version="14"></blockquote>
+      </div>
+      <a class="social-fallback-link" href="${social.reel_url}" target="_blank" rel="noopener noreferrer">InstagramでReelを開く →</a>
+    </section>`;
+  }
+  return `<section class="social-peek social-peek-link">
+    <div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div>
+    <a class="instagram-profile-card" href="${social.account_url}" target="_blank" rel="noopener noreferrer">
+      <span class="instagram-profile-mark">${instagramIcon()}</span>
+      <span class="instagram-profile-copy"><strong>${social.account_handle || '公式Instagram'}</strong><small>公式Instagramで写真やReelを見る</small></span>
+      <span class="instagram-profile-arrow">→</span>
+    </a>
+    <p class="social-note">動画はInstagram上で表示します。Kibunには動画ファイルを転載していません。</p>
+  </section>`;
+}
+
+function processInstagramEmbeds(){
+  const hasEmbed = document.querySelector('.instagram-media[data-instgrm-permalink]');
+  if(!hasEmbed) return;
+  if(window.instgrm?.Embeds?.process){
+    window.instgrm.Embeds.process();
+    return;
+  }
+  if(document.querySelector('script[data-kibun-instagram-embed]')) return;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.instagram.com/embed.js';
+  script.dataset.kibunInstagramEmbed = 'true';
+  script.onload = () => window.instgrm?.Embeds?.process?.();
+  document.body.appendChild(script);
+}
+
 function renderRecommendations(){
   lastResult = recommend(seed, context());
   warningBox.hidden = !lastResult.coverage_warning;
@@ -181,10 +231,12 @@ function openSpot(id){
       <h3>この場所に合うバイブス</h3>
       <div class="vibe-bars">${ranked.map(([k,v])=>`<div class="vibe-bar"><span>${vibeEmoji(k)} ${vibeLabel(k).replace('したい','').replace('行きたい','')}</span><span class="bar-track"><span class="bar-fill" style="display:block;width:${v}%"></span></span><strong>${v}</strong></div>`).join('')}</div>
       <div class="fact-box"><h4>今日行く前に確認</h4><p><strong>営業時間：</strong>${d.opening_hours_text||'要確認'}</p><p><strong>料金：</strong>${d.price_summary||'要確認'}</p><p><strong>予約：</strong>${d.reservation_summary||'要確認'}</p>${d.age_note?`<p><strong>年齢：</strong>${d.age_note}</p>`:''}${d.temporary_note?`<p><strong>臨時情報：</strong>${d.temporary_note}</p>`:''}<p class="freshness">最終確認: ${d.checked_at||'未記録'} ※営業時間・料金は必ず公式サイトで再確認してください。</p></div>
+      ${socialSection(s)}
       ${s.buzz?.reason?`<div class="fact-box buzz-fact"><h4>🔥 最近気になる理由</h4><p>${s.buzz.reason}</p><p class="freshness">Buzz確認: ${s.buzz.checked_at || '未記録'} · 編集指標</p></div>`:''}
       <div class="fact-box"><h4>アクセス</h4><p>${s.address}</p><a class="official-link" href="${s.official_url}" target="_blank" rel="noopener">公式サイトを見る →</a></div>
     </div>`;
   dialog.showModal();
+  requestAnimationFrame(processInstagramEmbeds);
 }
 
 function toggleFavorite(id){
