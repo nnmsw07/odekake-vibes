@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v2_55spots",
-    "version": "0.10.0",
+    "dataset_name": "kibun_kanto_seed_v3_83spots",
+    "version": "0.11.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -32,11 +32,11 @@
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
       "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける",
       "credit_rule": "CC BY / CC BY-SA は画面上に作者・出典・ライセンスを表示。CC0は表示を省略可能だがDBには出典を保持。",
-      "photo_count": "10/55 spots",
-      "ai_count": "44/55 spots",
+      "photo_count": "10/83 spots",
+      "ai_count": "72/83 spots",
       "real_image_audit": "2026-08-22: Priority A 15件を本番品質で追加。新規3件（荒崎公園・彫刻の森美術館・新江ノ島水族館）に権利確認済み実写Heroを採用。",
-      "illustration_count": "1/55 spots",
-      "generated_image_total": "45/55 spots",
+      "illustration_count": "1/83 spots",
+      "generated_image_total": "73/83 spots",
       "hero_rule": "実写が存在するだけでは採用しない。①権利、②施設との一致、③体験が伝わる、④コピー/Vibeとの一致、⑤スマホHeroとして成立、を満たす画像を優先する。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。"
     },
@@ -57,13 +57,14 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-22: 神奈川中心のPriority A 15スポットを追加し40→55件。親満足・自然・水辺・生きものを補強。",
+    "expansion_note": "2026-08-23: 残りPriority B 28スポットを追加し55→83件。自然・動物・水辺・文化・親満足を拡充。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
-      "detail_page": "詳細ページに公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード",
+      "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
       "download_policy": "Instagramの動画・サムネイルは保存・転載しない",
       "ugc_policy": "一般ユーザー投稿は明示許諾後に掲載",
-      "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト"
+      "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
+      "official_account_count": "23/83 spots"
     }
   },
   "vibe_definitions": {
@@ -5322,6 +5323,2885 @@
       },
       "research_status": {
         "static_basic": "verified",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_056",
+      "slug": "spot_056-spot",
+      "name": "神奈川県立四季の森公園",
+      "aliases": [],
+      "category_primary": "nature_park",
+      "categories": [
+        "nature_park",
+        "nature",
+        "relax",
+        "active"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市緑区",
+      "address": "神奈川県横浜市緑区寺山町291",
+      "official_url": "https://www.kanagawaparks.com/shikinomori/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 55,
+        "animal_contact": 40,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 80,
+        "relax": 90
+      },
+      "editorial_reason": "横浜市内の自然の濃さを補う近場穴場枠。",
+      "public_copy": "森や池、里山の風景が残る大きな公園。季節の草花や生きものを探しながら、ゆっくり歩きたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は常時利用可。駐車場・施設は時間設定あり。",
+        "price_summary": "入園無料。駐車場は平日無料、土日祝は有料日あり。",
+        "reservation_summary": "通常の公園利用は予約不要。",
+        "age_note": "じゃぶじゃぶ池・ジャンボすべり台あり。夏季は熱中症対策を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.kanagawaparks.com/shikinomori/"
+      },
+      "buzz": {
+        "score": 66,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 66,
+        "reason": "横浜市内の自然の濃さを補う近場穴場枠。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.kanagawaparks.com/shikinomori/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "森や池、里山の風景が残る大きな公園。季節の草花や生きものを探しながら、ゆっくり歩きたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_057",
+      "slug": "spot_057-spot",
+      "name": "神奈川県立相模原公園",
+      "aliases": [],
+      "category_primary": "garden_park",
+      "categories": [
+        "garden_park",
+        "nature",
+        "relax",
+        "culture",
+        "cool"
+      ],
+      "prefecture": "神奈川県",
+      "city": "相模原市",
+      "address": "神奈川県相模原市南区下溝3277",
+      "official_url": "https://www.sagamihara.kanagawa-park.or.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 25,
+        "outdoor": 90,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 90,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 90,
+        "rain_resilience": 10,
+        "heat_resilience": 45,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 95,
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 100,
+        "extraordinary": 10,
+        "culture": 80,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 70,
+        "relax": 90
+      },
+      "editorial_reason": "庭園・芝生・温室で自然と文化の中間を補う。",
+      "public_copy": "大きな芝生と整えられた庭園が気持ちいい公園。季節の花や温室を眺めながら穏やかに過ごせる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は原則6:00〜20:00（駐車場利用時間）。施設は個別設定。",
+        "price_summary": "有料エリアを除き無料。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "舗装路・バリアフリー設備あり。温室等の開館は個別確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.sagamihara.kanagawa-park.or.jp/"
+      },
+      "buzz": {
+        "score": 70,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 70,
+        "reason": "庭園・芝生・温室で自然と文化の中間を補う。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.sagamihara.kanagawa-park.or.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "大きな芝生と整えられた庭園が気持ちいい公園。季節の花や温室を眺めながら穏やかに過ごせる。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/coen_sagamihara/",
+          "account_handle": "@coen_sagamihara",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "花・噴水・温室の季節の景色",
+          "why_video": "庭園の広がりと季節感が動画で伝わる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_058",
+      "slug": "spot_058-spot",
+      "name": "くりはま花の国",
+      "aliases": [],
+      "category_primary": "flower_park",
+      "categories": [
+        "flower_park",
+        "nature",
+        "active",
+        "extraordinary"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市神明町1",
+      "official_url": "https://www.kanagawaparks.com/kurihama/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 90,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 50,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 80,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 90,
+        "relax": 75
+      },
+      "editorial_reason": "花＋巨大遊具の写真映え。自然だけで終わらない。",
+      "public_copy": "季節の花畑を歩いた先に、大きな遊具や長いすべり台。景色も遊びも楽しみたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は24時間・年中無休。園内施設は個別営業時間。",
+        "price_summary": "入園無料。一部施設有料。",
+        "reservation_summary": "通常の公園利用は予約不要。",
+        "age_note": "坂道が多い。夏季は遊具・トランポリン等が高温で休止する場合あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.kanagawaparks.com/kurihama/"
+      },
+      "buzz": {
+        "score": 72,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 72,
+        "reason": "花＋巨大遊具の写真映え。自然だけで終わらない。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.kanagawaparks.com/kurihama/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "季節の花畑を歩いた先に、大きな遊具や長いすべり台。景色も遊びも楽しみたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/kurihama_hananokuni_yokosuka/",
+          "account_handle": "@kurihama_hananokuni_yokosuka",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "花畑→ゴジラすべり台→園内散策",
+          "why_video": "花と遊具の両方を短い動画で見せやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_059",
+      "slug": "spot_059-spot",
+      "name": "平塚市総合公園",
+      "aliases": [],
+      "category_primary": "urban_park",
+      "categories": [
+        "urban_park",
+        "active",
+        "animals",
+        "nature",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "平塚市",
+      "address": "神奈川県平塚市大原1-1",
+      "official_url": "https://www.city.hiratsuka.kanagawa.jp/koen/page-c_00824.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 90,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 80,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 85,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 85,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 95,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 90,
+        "creative": 10,
+        "food": 10,
+        "active": 100,
+        "relax": 75
+      },
+      "editorial_reason": "無料ふれあい動物園＋大型公園でコスパの良いanimals候補。",
+      "public_copy": "広い芝生や遊具に加えて、小さな動物とのふれあいも楽しめる総合公園。気軽にたっぷり遊びたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は常時利用可。各施設の利用時間は公式確認。",
+        "price_summary": "公園・ふれあい動物園は基本無料。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "大型公園。動物ふれあい・遊具・芝生あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.city.hiratsuka.kanagawa.jp/koen/page-c_00824.html"
+      },
+      "buzz": {
+        "score": 74,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 74,
+        "reason": "無料ふれあい動物園＋大型公園でコスパの良いanimals候補。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.city.hiratsuka.kanagawa.jp/koen/page-c_00824.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "広い芝生や遊具に加えて、小さな動物とのふれあいも楽しめる総合公園。気軽にたっぷり遊びたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_060",
+      "slug": "spot_060-spot",
+      "name": "神奈川県立茅ケ崎里山公園",
+      "aliases": [],
+      "category_primary": "satoyama_park",
+      "categories": [
+        "satoyama_park",
+        "nature",
+        "active",
+        "food",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "茅ヶ崎市",
+      "address": "神奈川県茅ヶ崎市芹沢1030",
+      "official_url": "https://www.kanagawa-park.or.jp/satoyama/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 85,
+        "hands_on": 65,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 45,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 80,
+        "active": 90,
+        "relax": 75
+      },
+      "editorial_reason": "里山＋遊具＋地域体験。都市公園と違う自然感。",
+      "public_copy": "里山の景色の中に、大きな遊具や芝生が広がる公園。季節の農や食の体験に出会えることも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は常時利用可。パークセンター等は時間設定あり。",
+        "price_summary": "入園無料。BBQ等は有料。",
+        "reservation_summary": "通常利用は予約不要。BBQ・イベントは予約制の場合あり。",
+        "age_note": "里山・大型遊具・長いすべり台あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.kanagawa-park.or.jp/satoyama/"
+      },
+      "buzz": {
+        "score": 70,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 70,
+        "reason": "里山＋遊具＋地域体験。都市公園と違う自然感。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.kanagawa-park.or.jp/satoyama/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "里山の景色の中に、大きな遊具や芝生が広がる公園。季節の農や食の体験に出会えることも。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_061",
+      "slug": "spot_061-spot",
+      "name": "あつぎこどもの森公園",
+      "aliases": [],
+      "category_primary": "forest_park",
+      "categories": [
+        "forest_park",
+        "nature",
+        "active",
+        "extraordinary"
+      ],
+      "prefecture": "神奈川県",
+      "city": "厚木市",
+      "address": "神奈川県厚木市中荻野916-2",
+      "official_url": "https://atsugikodomonomori.com/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 95,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 50,
+        "toddler_fit": 90,
+        "stroller_fit": 25,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 80,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 80,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 80,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 90,
+        "relax": 75
+      },
+      "editorial_reason": "空中回廊や森の大型すべり台で冒険感がある。",
+      "public_copy": "森の中を高い空中回廊で歩いたり、長いすべり台で遊んだり。いつもの公園より少し冒険したい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開園時間は季節で変動。最新は公式サイト確認。",
+        "price_summary": "入園無料。",
+        "reservation_summary": "通常利用は予約不要。体験プログラムは要申込の場合あり。",
+        "age_note": "森のすべり台は高温時閉鎖あり。ベビーカーには不向きな区間あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://atsugikodomonomori.com/"
+      },
+      "buzz": {
+        "score": 68,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 68,
+        "reason": "空中回廊や森の大型すべり台で冒険感がある。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://atsugikodomonomori.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "森の中を高い空中回廊で歩いたり、長いすべり台で遊んだり。いつもの公園より少し冒険したい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_062",
+      "slug": "spot_062-spot",
+      "name": "電車とバスの博物館",
+      "aliases": [],
+      "category_primary": "transport_museum",
+      "categories": [
+        "transport_museum",
+        "culture",
+        "creative",
+        "cool"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市宮前区",
+      "address": "神奈川県川崎市宮前区宮崎2-10-12",
+      "official_url": "https://denbus.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 90,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 90,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "鉄道系文化を近場で。低コスト・駅近で使いやすい。",
+      "public_copy": "電車やバスの運転体験や展示を親子で楽しめる博物館。乗りものが気になる時期の子にぴったり。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜16:30。木曜等休館（最新カレンダー確認）。",
+        "price_summary": "料金は公式サイトで確認。",
+        "reservation_summary": "混雑日・体験は公式案内確認。",
+        "age_note": "駅直結。運転シミュレーター等あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://denbus.jp/"
+      },
+      "buzz": {
+        "score": 78,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 78,
+        "reason": "鉄道系文化を近場で。低コスト・駅近で使いやすい。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://denbus.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "電車やバスの運転体験や展示を親子で楽しめる博物館。乗りものが気になる時期の子にぴったり。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_063",
+      "slug": "spot_063-spot",
+      "name": "かわさき宙と緑の科学館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "science_museum",
+        "culture",
+        "nature",
+        "cool",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市多摩区",
+      "address": "神奈川県川崎市多摩区枡形7-1-2",
+      "official_url": "https://www.nature-kawasaki.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 75,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 40,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 90,
+        "baby_fit": 80,
+        "toddler_fit": 90,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 90,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 70,
+        "food": 10,
+        "active": 10,
+        "relax": 75
+      },
+      "editorial_reason": "生田緑地とセットで屋内外を組める。",
+      "public_copy": "自然や宇宙を学べる展示とプラネタリウムのある科学館。生田緑地のお散歩と組み合わせるのも楽しい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00。月曜等休館。",
+        "price_summary": "科学館は無料、プラネタリウムは有料。",
+        "reservation_summary": "プラネタリウムは当日券/イベント予約を公式確認。",
+        "age_note": "生田緑地内。授乳・おむつ替えは施設案内確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.nature-kawasaki.jp/"
+      },
+      "buzz": {
+        "score": 72,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 72,
+        "reason": "生田緑地とセットで屋内外を組める。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.nature-kawasaki.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "自然や宇宙を学べる展示とプラネタリウムのある科学館。生田緑地のお散歩と組み合わせるのも楽しい。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_064",
+      "slug": "spot_064-spot",
+      "name": "横浜イングリッシュガーデン",
+      "aliases": [],
+      "category_primary": "garden",
+      "categories": [
+        "garden",
+        "nature",
+        "relax",
+        "culture"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区西平沼町6-1 tvk ecom park",
+      "official_url": "https://www.y-eg.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 25,
+        "hands_on": 45,
+        "quietness": 90,
+        "parent_rest": 100,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 65,
+        "toddler_fit": 65,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 10,
+        "culture": 80,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 70,
+        "relax": 90
+      },
+      "editorial_reason": "親満足の高い花・庭園枠。子連れポータルを“親子の休日”へ広げる。",
+      "public_copy": "季節の花に囲まれた庭園をゆっくり散歩。子ども中心のお出かけから少し離れて、景色を楽しみたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "季節により営業時間・入園料が変動。公式サイト確認。",
+        "price_summary": "季節変動制。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "花の見頃で混雑。園路中心で穏やかに散策する施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.y-eg.jp/"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 76,
+        "reason": "親満足の高い花・庭園枠。子連れポータルを“親子の休日”へ広げる。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.y-eg.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "季節の花に囲まれた庭園をゆっくり散歩。子ども中心のお出かけから少し離れて、景色を楽しみたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_065",
+      "slug": "spot_065-spot",
+      "name": "国立国会図書館 国際子ども図書館",
+      "aliases": [],
+      "category_primary": "children_library",
+      "categories": [
+        "children_library",
+        "culture",
+        "relax",
+        "cool"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区上野公園12-49",
+      "official_url": "https://www.kodomo.go.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 15,
+        "hands_on": 30,
+        "quietness": 100,
+        "parent_rest": 95,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 90,
+        "toddler_fit": 85,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 95,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 70,
+        "food": 10,
+        "active": 10,
+        "relax": 90
+      },
+      "editorial_reason": "建築・絵本・静かな時間。culture×relaxの質を上げる。",
+      "public_copy": "絵本や児童書に囲まれて過ごせる、上野の子どものための図書館。歴史ある建物の雰囲気も楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00。月曜・祝日等の休館は公式カレンダー確認。",
+        "price_summary": "入館無料。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "児童書・絵本の図書館。授乳設備等は公式案内確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.kodomo.go.jp/"
+      },
+      "buzz": {
+        "score": 74,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 74,
+        "reason": "建築・絵本・静かな時間。culture×relaxの質を上げる。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.kodomo.go.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "絵本や児童書に囲まれて過ごせる、上野の子どものための図書館。歴史ある建物の雰囲気も楽しめる。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_066",
+      "slug": "spot_066-spot",
+      "name": "東京国立博物館",
+      "aliases": [],
+      "category_primary": "art_history_museum",
+      "categories": [
+        "art_history_museum",
+        "culture",
+        "relax",
+        "extraordinary"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区上野公園13-9",
+      "official_url": "https://www.tnm.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 85,
+        "physical_activity": 75,
+        "hands_on": 25,
+        "quietness": 85,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 55,
+        "toddler_fit": 60,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 55,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 10,
+        "extraordinary": 80,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 10,
+        "relax": 90
+      },
+      "editorial_reason": "日本文化の本丸。親満足と文化Vibeを強化。",
+      "public_copy": "本物の美術や歴史資料にふれられる、日本を代表する博物館。上野公園と合わせてゆったり文化の日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常9:30〜17:00。金・土等は延長日あり。月曜休館（祝日の場合等は変動）。",
+        "price_summary": "一般1,000円。高校生以下・18歳未満等は条件により無料。特別展別料金。",
+        "reservation_summary": "通常展は予約不要の日が基本。特別展は別運用。",
+        "age_note": "展示保護のため走らず、静かに鑑賞する施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.tnm.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 88,
+        "reason": "日本文化の本丸。親満足と文化Vibeを強化。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.tnm.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "本物の美術や歴史資料にふれられる、日本を代表する博物館。上野公園と合わせてゆったり文化の日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/tnm_pr/",
+          "account_handle": "@tnm_pr",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "本館の建築＋展示室＋季節の企画",
+          "why_video": "文化の日の雰囲気を写真・動画で補える。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_067",
+      "slug": "spot_067-spot",
+      "name": "消防博物館",
+      "aliases": [],
+      "category_primary": "public_museum",
+      "categories": [
+        "public_museum",
+        "culture",
+        "creative",
+        "cool"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区四谷3-10",
+      "official_url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 45,
+        "hands_on": 85,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 80,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 90,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "無料・乗りもの・防災で幼児に強い。",
+      "public_copy": "消防車やヘリコプター、消防の歴史を見て楽しめる無料の博物館。乗りもの好きの子にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00。月曜休館（祝日の場合翌日等）。",
+        "price_summary": "入館無料。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "消防車・ヘリ等の展示。館内設備は公式確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 82,
+        "reason": "無料・乗りもの・防災で幼児に強い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "消防車やヘリコプター、消防の歴史を見て楽しめる無料の博物館。乗りもの好きの子にも。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_068",
+      "slug": "spot_068-spot",
+      "name": "東京都虹の下水道館",
+      "aliases": [],
+      "category_primary": "infrastructure_museum",
+      "categories": [
+        "infrastructure_museum",
+        "culture",
+        "creative",
+        "cool"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区有明2-3-5 有明水再生センター5F",
+      "official_url": "https://www.nijinogesuidoukan.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 55,
+        "hands_on": 100,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 75,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 80,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 90,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "未就学児向け体験もある無料のインフラ体験施設。",
+      "public_copy": "普段は入れない下水道の仕事を、遊びながら体験できる無料施設。『こんなところで働いてるんだ』という発見がある。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜16:30。月曜休館（祝日の場合翌日等）。",
+        "price_summary": "入館無料。",
+        "reservation_summary": "一部お仕事体験は整理・定員あり。",
+        "age_note": "未就学児向け体験日あり。水再生センター内の体験施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.nijinogesuidoukan.jp/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 80,
+        "reason": "未就学児向け体験もある無料のインフラ体験施設。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.nijinogesuidoukan.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "普段は入れない下水道の仕事を、遊びながら体験できる無料施設。『こんなところで働いてるんだ』という発見がある。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_069",
+      "slug": "spot_069-spot",
+      "name": "東京都水の科学館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "science_museum",
+        "culture",
+        "waterside",
+        "cool",
+        "creative"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区有明3-1-8",
+      "official_url": "https://www.mizunokagaku.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 100,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 65,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 90,
+        "animals": 10,
+        "creative": 75,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "無料・水テーマ・屋内で夏に強い。",
+      "public_copy": "水が家に届くまでを、映像や体験展示で楽しく知れる無料の科学館。暑い日の『水にふれたい』気分にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00。月曜休館（祝日の場合翌日等）。",
+        "price_summary": "入館無料。",
+        "reservation_summary": "通常利用は予約不要。イベントは申込制の場合あり。",
+        "age_note": "水の体験展示あり。濡れる可能性のある展示も。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.mizunokagaku.jp/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 80,
+        "reason": "無料・水テーマ・屋内で夏に強い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.mizunokagaku.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "水が家に届くまでを、映像や体験展示で楽しく知れる無料の科学館。暑い日の『水にふれたい』気分にも。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_070",
+      "slug": "spot_070-spot",
+      "name": "地下鉄博物館",
+      "aliases": [],
+      "category_primary": "transport_museum",
+      "categories": [
+        "transport_museum",
+        "culture",
+        "creative",
+        "cool"
+      ],
+      "prefecture": "東京都",
+      "city": "江戸川区",
+      "address": "東京都江戸川区東葛西6-3-1",
+      "official_url": "https://www.chikahaku.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 50,
+        "hands_on": 95,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 80,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 90,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "実車・運転体験、乳幼児設備で使いやすい。",
+      "public_copy": "本物の地下鉄車両や運転体験で、東京の地下鉄を身近に感じられる博物館。乗りもの好きなら長く楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜17:00（入館16:30まで）。月曜、年末年始休館。",
+        "price_summary": "大人220円、4歳〜中学生100円。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "ベビーカー無料貸出、授乳室あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.chikahaku.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 80,
+        "media_attention": 60,
+        "popularity_momentum": 82,
+        "reason": "実車・運転体験、乳幼児設備で使いやすい。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.chikahaku.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "本物の地下鉄車両や運転体験で、東京の地下鉄を身近に感じられる博物館。乗りもの好きなら長く楽しめる。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/metromuseum_official/",
+          "account_handle": "@metromuseum_official",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "実車展示＋運転シミュレーター",
+          "why_video": "乗りものの体験感は動画で伝わりやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_071",
+      "slug": "spot_071-spot",
+      "name": "板橋区立 熱帯環境植物館",
+      "aliases": [],
+      "category_primary": "tropical_greenhouse",
+      "categories": [
+        "tropical_greenhouse",
+        "nature",
+        "animals",
+        "cool",
+        "extraordinary"
+      ],
+      "prefecture": "東京都",
+      "city": "板橋区",
+      "address": "東京都板橋区高島平8-29-2",
+      "official_url": "https://www.seibu-la.co.jp/nettaikan/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 75,
+        "quietness": 70,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 65,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 95,
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 100,
+        "extraordinary": 80,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 90,
+        "creative": 10,
+        "food": 10,
+        "active": 10,
+        "relax": 75
+      },
+      "editorial_reason": "植物＋ミニ水族館でanimals/natureを屋内補完。",
+      "public_copy": "熱帯の森を再現した温室で、大きな植物や水辺の生きものに出会える。都内でちょっと南国旅行気分。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜18:00（入館17:30まで）。月曜等休館。",
+        "price_summary": "有料。料金は公式サイト確認。",
+        "reservation_summary": "通常利用は予約不要。イベントは申込制の場合あり。",
+        "age_note": "熱帯温室・冷室・ミニ水族館。館内は高温多湿なエリアあり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.seibu-la.co.jp/nettaikan/"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 76,
+        "reason": "植物＋ミニ水族館でanimals/natureを屋内補完。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.seibu-la.co.jp/nettaikan/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/strawberry-greenhouse.jpg",
+        "type": "ai",
+        "alt": "熱帯の森を再現した温室で、大きな植物や水辺の生きものに出会える。都内でちょっと南国旅行気分。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_072",
+      "slug": "spot_072-spot",
+      "name": "江戸東京たてもの園",
+      "aliases": [],
+      "category_primary": "open_air_museum",
+      "categories": [
+        "open_air_museum",
+        "culture",
+        "nature",
+        "relax",
+        "extraordinary"
+      ],
+      "prefecture": "東京都",
+      "city": "小金井市",
+      "address": "東京都小金井市桜町3-7-1 都立小金井公園内",
+      "official_url": "https://www.tatemonoen.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 25,
+        "outdoor": 90,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 75,
+        "parent_rest": 75,
+        "greenery": 75,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 65,
+        "baby_fit": 65,
+        "toddler_fit": 70,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 55,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 90,
+        "extraordinary": 75,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 70,
+        "food": 10,
+        "active": 10,
+        "relax": 80
+      },
+      "editorial_reason": "建築と散歩。親が楽しい文化系の幅を広げる。",
+      "public_copy": "昔の東京の建物を移築した野外博物館。路地や商店を歩きながら、ちょっと時間旅行したような気分に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "4〜9月9:30〜17:30、10〜3月9:30〜16:30。月曜等休園。",
+        "price_summary": "一般有料。中学生以下等の料金は公式確認。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "野外博物館のため夏季は熱中症対策を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.tatemonoen.jp/"
+      },
+      "buzz": {
+        "score": 78,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 78,
+        "reason": "建築と散歩。親が楽しい文化系の幅を広げる。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.tatemonoen.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "昔の東京の建物を移築した野外博物館。路地や商店を歩きながら、ちょっと時間旅行したような気分に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/tatemonoen/",
+          "account_handle": "@tatemonoen",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "昔の商店街・住宅・季節の風景",
+          "why_video": "歩いて時間旅行する感じを動画で表現できる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_073",
+      "slug": "spot_073-spot",
+      "name": "ふなばしアンデルセン公園",
+      "aliases": [],
+      "category_primary": "large_park",
+      "categories": [
+        "large_park",
+        "nature",
+        "active",
+        "creative",
+        "extraordinary"
+      ],
+      "prefecture": "千葉県",
+      "city": "船橋市",
+      "address": "千葉県船橋市金堀町525",
+      "official_url": "https://www.park-funabashi.or.jp/and/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 100,
+        "quietness": 60,
+        "parent_rest": 60,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 25,
+        "creative_sensory": 30,
+        "baby_fit": 90,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 70,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 75,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 80,
+        "food": 10,
+        "active": 90,
+        "relax": 75
+      },
+      "editorial_reason": "大型遊具・花・創作体験が全部ある王道。Kibunで多Vibeに強い。",
+      "public_copy": "花いっぱいの広い公園で、遊具やアスレチック、ものづくりまで。今日は一日たっぷり遊びたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜16:00を基本に季節延長あり。月曜等休園。",
+        "price_summary": "一般900円、高校生600円、小中学生200円、幼児100円（最新確認）。",
+        "reservation_summary": "通常入園は予約不要。体験は別受付の場合あり。",
+        "age_note": "大型遊具・子ども美術館・水遊び等。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.park-funabashi.or.jp/and/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 90,
+        "reason": "大型遊具・花・創作体験が全部ある王道。Kibunで多Vibeに強い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.park-funabashi.or.jp/and/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "花いっぱいの広い公園で、遊具やアスレチック、ものづくりまで。今日は一日たっぷり遊びたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/funabashi_andersen_park/",
+          "account_handle": "@funabashi_andersen_park",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "花畑＋大型遊具＋創作体験",
+          "why_video": "公園の広さと複数の遊びを1本で見せやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_074",
+      "slug": "spot_074-spot",
+      "name": "千葉市動物公園",
+      "aliases": [],
+      "category_primary": "zoo",
+      "categories": [
+        "zoo",
+        "animals",
+        "nature",
+        "active"
+      ],
+      "prefecture": "千葉県",
+      "city": "千葉市若葉区",
+      "address": "千葉県千葉市若葉区源町280",
+      "official_url": "https://www.city.chiba.jp/zoo/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 65,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 100,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 65,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 90,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 100,
+        "creative": 10,
+        "food": 10,
+        "active": 80,
+        "relax": 45
+      },
+      "editorial_reason": "animalsの主力追加。乳幼児でも見やすい。",
+      "public_copy": "たくさんの動物を見ながら、園内をのびのび歩ける動物公園。生きものに会いたい日の王道。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜16:30（入園16:00まで）。水曜等休園。",
+        "price_summary": "大人800円、中学生以下無料。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "ベビーカーで回りやすい園路あり。動物の展示は暑さ等で変更あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.city.chiba.jp/zoo/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 86,
+        "reason": "animalsの主力追加。乳幼児でも見やすい。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.city.chiba.jp/zoo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "たくさんの動物を見ながら、園内をのびのび歩ける動物公園。生きものに会いたい日の王道。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_075",
+      "slug": "spot_075-spot",
+      "name": "航空科学博物館",
+      "aliases": [],
+      "category_primary": "aviation_museum",
+      "categories": [
+        "aviation_museum",
+        "culture",
+        "extraordinary",
+        "creative"
+      ],
+      "prefecture": "千葉県",
+      "city": "芝山町",
+      "address": "千葉県山武郡芝山町岩山111-3",
+      "official_url": "https://www.aeromuseum.or.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 85,
+        "physical_activity": 35,
+        "hands_on": 80,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 65,
+        "toddler_fit": 85,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 10,
+        "extraordinary": 90,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 80,
+        "food": 10,
+        "active": 10,
+        "relax": 10
+      },
+      "editorial_reason": "実機・空港ビューで非日常の乗りもの文化。",
+      "public_copy": "飛行機の実物やエンジン、操縦体験を楽しめる博物館。成田空港を行き交う飛行機を眺める時間も特別。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜17:00（入館16:30まで）。月曜等休館。",
+        "price_summary": "大人700円、中高生300円、こども200円（最新確認）。",
+        "reservation_summary": "通常利用は予約不要。体験は当日受付等あり。",
+        "age_note": "展望展示室から成田空港の飛行機を眺められる。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.aeromuseum.or.jp/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 84,
+        "reason": "実機・空港ビューで非日常の乗りもの文化。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.aeromuseum.or.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "飛行機の実物やエンジン、操縦体験を楽しめる博物館。成田空港を行き交う飛行機を眺める時間も特別。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_076",
+      "slug": "spot_076-sunset-beach-park-inage",
+      "name": "稲毛海浜公園 / SUNSET BEACH PARK INAGE",
+      "aliases": [],
+      "category_primary": "seaside_park",
+      "categories": [
+        "seaside_park",
+        "waterside",
+        "relax",
+        "nature",
+        "food"
+      ],
+      "prefecture": "千葉県",
+      "city": "千葉市美浜区",
+      "address": "千葉県千葉市美浜区高浜7-2-2",
+      "official_url": "https://sunsetbeachpark.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 85,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 75,
+        "parent_rest": 100,
+        "greenery": 80,
+        "water_contact": 70,
+        "animal_contact": 10,
+        "food_experience": 70,
+        "creative_sensory": 30,
+        "baby_fit": 85,
+        "toddler_fit": 90,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 80,
+        "extraordinary": 65,
+        "culture": 10,
+        "waterside": 100,
+        "animals": 10,
+        "creative": 10,
+        "food": 75,
+        "active": 10,
+        "relax": 90
+      },
+      "editorial_reason": "海・芝生・カフェで親満足の水辺枠。",
+      "public_copy": "海と芝生を行き来しながら、カフェで休憩したり夕日を眺めたり。のんびり海辺で過ごしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は常時利用可。施設・店舗・プールは個別営業時間。",
+        "price_summary": "公園利用無料。プール・BBQ等は有料。",
+        "reservation_summary": "公園利用は予約不要。各アクティビティは予約制の場合あり。",
+        "age_note": "海・砂浜・芝生・飲食がある。夏は日差し対策必須。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://sunsetbeachpark.jp/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 84,
+        "reason": "海・芝生・カフェで親満足の水辺枠。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://sunsetbeachpark.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "海と芝生を行き来しながら、カフェで休憩したり夕日を眺めたり。のんびり海辺で過ごしたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/sunsetbeachpark/",
+          "account_handle": "@sunsetbeachpark",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "白い砂浜＋桟橋＋夕景",
+          "why_video": "海辺でゆっくり過ごす雰囲気が動画向き。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_077",
+      "slug": "spot_077-spot",
+      "name": "埼玉県こども動物自然公園",
+      "aliases": [],
+      "category_primary": "zoo_nature",
+      "categories": [
+        "zoo_nature",
+        "animals",
+        "nature",
+        "active"
+      ],
+      "prefecture": "埼玉県",
+      "city": "東松山市",
+      "address": "埼玉県東松山市岩殿554",
+      "official_url": "https://www.parks.or.jp/sczoo/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 85,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 100,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 90,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 100,
+        "creative": 10,
+        "food": 10,
+        "active": 80,
+        "relax": 10
+      },
+      "editorial_reason": "animals不足を強力に補う。自然公園としても良い。",
+      "public_copy": "動物との距離が近く、広い自然の中を歩いて楽しめる動物園。動物も外遊びも好きな日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00（入園16:00まで）を基本。月曜等休園。",
+        "price_summary": "大人700円、小中学生200円、未就学児無料（最新確認）。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "コアラ・クオッカ等。広い園内のため歩行量多め。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.parks.or.jp/sczoo/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 88,
+        "reason": "animals不足を強力に補う。自然公園としても良い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.parks.or.jp/sczoo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "動物との距離が近く、広い自然の中を歩いて楽しめる動物園。動物も外遊びも好きな日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/saitamazoo/",
+          "account_handle": "@saitamazoo",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "コアラ・クオッカ・動物との近い距離感",
+          "why_video": "動物の動きがReelで最も魅力的に伝わる。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_078",
+      "slug": "spot_078-spot",
+      "name": "鉄道博物館",
+      "aliases": [],
+      "category_primary": "transport_museum",
+      "categories": [
+        "transport_museum",
+        "culture",
+        "creative",
+        "cool",
+        "extraordinary"
+      ],
+      "prefecture": "埼玉県",
+      "city": "さいたま市大宮区",
+      "address": "埼玉県さいたま市大宮区大成町3-47",
+      "official_url": "https://www.railway-museum.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 45,
+        "hands_on": 95,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 75,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 90,
+        "food": 10,
+        "active": 10,
+        "relax": 55
+      },
+      "editorial_reason": "乗りもの文化の大型定番。Buzz/人気も強い。",
+      "public_copy": "本物の鉄道車両がずらりと並び、運転や仕組みも体験できる大型博物館。電車好きなら一日コース。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜17:00（最終入館16:30）を基本。火曜等休館。",
+        "price_summary": "一般1,330円、小中高生620円、幼児310円（最新確認）。",
+        "reservation_summary": "日時指定券等の運用は公式確認。",
+        "age_note": "広い館内でベビーカー利用可。体験は年齢条件あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.railway-museum.jp/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 94,
+        "reason": "乗りもの文化の大型定番。Buzz/人気も強い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.railway-museum.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "本物の鉄道車両がずらりと並び、運転や仕組みも体験できる大型博物館。電車好きなら一日コース。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/railwaymuseum/",
+          "account_handle": "@railwaymuseum",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "実車が並ぶ車両ステーション＋体験",
+          "why_video": "車両のスケール感を動画で補える。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_079",
+      "slug": "spot_079-spot",
+      "name": "角川武蔵野ミュージアム",
+      "aliases": [],
+      "category_primary": "culture_museum",
+      "categories": [
+        "culture_museum",
+        "culture",
+        "extraordinary",
+        "relax"
+      ],
+      "prefecture": "埼玉県",
+      "city": "所沢市",
+      "address": "埼玉県所沢市東所沢和田3-31-3",
+      "official_url": "https://kadcul.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 35,
+        "quietness": 70,
+        "parent_rest": 80,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 40,
+        "toddler_fit": 50,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 50
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 90,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 70,
+        "food": 10,
+        "active": 10,
+        "relax": 80
+      },
+      "editorial_reason": "大人寄りの文化・建築・本のスポット。親満足を高める。",
+      "public_copy": "巨大な本棚や印象的な建築に囲まれて、本・アート・博物を横断して楽しめる文化施設。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "曜日・企画展で変動。2026年8月は10:00〜18:00の日が中心。",
+        "price_summary": "展示・エリアで料金が異なる。",
+        "reservation_summary": "チケット事前購入推奨。",
+        "age_note": "本棚劇場等は親子で鑑賞可。企画展は対象年齢を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://kadcul.com/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 86,
+        "reason": "大人寄りの文化・建築・本のスポット。親満足を高める。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://kadcul.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "巨大な本棚や印象的な建築に囲まれて、本・アート・博物を横断して楽しめる文化施設。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/kadokawa_culture_museum/",
+          "account_handle": "@kadokawa_culture_museum",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "本棚劇場＋建築＋企画展",
+          "why_video": "建築と巨大本棚の非日常感が強い。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_080",
+      "slug": "spot_080-spot",
+      "name": "国営武蔵丘陵森林公園",
+      "aliases": [],
+      "category_primary": "forest_park",
+      "categories": [
+        "forest_park",
+        "nature",
+        "active",
+        "relax"
+      ],
+      "prefecture": "埼玉県",
+      "city": "滑川町",
+      "address": "埼玉県比企郡滑川町山田1920",
+      "official_url": "https://www.shinrinkoen.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 80,
+        "quietness": 60,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 80,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 10,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 90,
+        "relax": 80
+      },
+      "editorial_reason": "圧倒的なスケールの自然公園。自然Vibeの遠出枠を強化。",
+      "public_copy": "広大な森と芝生の中で、遊具やサイクリング、季節の花まで。自然の中で一日過ごしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "3〜10月9:30〜17:00、11月16:30、冬季16:00。休園日あり。",
+        "price_summary": "大人450円、中学生以下無料。",
+        "reservation_summary": "通常入園は予約不要。イベントは申込制の場合あり。",
+        "age_note": "非常に広い。目的地に合わせて入口選択推奨。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.shinrinkoen.jp/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 84,
+        "reason": "圧倒的なスケールの自然公園。自然Vibeの遠出枠を強化。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.shinrinkoen.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "広大な森と芝生の中で、遊具やサイクリング、季節の花まで。自然の中で一日過ごしたい日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/shinrinkoen/",
+          "account_handle": "@shinrinkoen",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "ぽんぽこマウンテン＋花畑＋アスレチック",
+          "why_video": "広大な自然と遊具を短い動画でまとめやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_081",
+      "slug": "spot_081-spot",
+      "name": "三溪園",
+      "aliases": [],
+      "category_primary": "historic_garden",
+      "categories": [
+        "historic_garden",
+        "culture",
+        "nature",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区本牧三之谷58-1",
+      "official_url": "https://www.sankeien.or.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 30,
+        "hands_on": 45,
+        "quietness": 95,
+        "parent_rest": 100,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 70,
+        "toddler_fit": 65,
+        "stroller_fit": 65,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 55,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 95,
+        "extraordinary": 10,
+        "culture": 100,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 70,
+        "relax": 80
+      },
+      "editorial_reason": "歴史建築・日本庭園・季節の自然を一度に楽しめ、親が行きたい文化系休日を増やせる。",
+      "public_copy": "歴史ある建物と日本庭園をゆっくり歩ける横浜の名園。季節の花を眺めながら、少し落ち着いた親子時間を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜17:00（入園16:30まで）を基本。",
+        "price_summary": "大人900円、小中学生200円（最新確認）。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "歴史建築と庭園。砂利・坂・段差がある場所あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.sankeien.or.jp/"
+      },
+      "buzz": {
+        "score": 78,
+        "freshness": 30,
+        "social_presence": 70,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 78,
+        "reason": "歴史建築・日本庭園・季節の自然を一度に楽しめ、親が行きたい文化系休日を増やせる。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.sankeien.or.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "歴史ある建物と日本庭園をゆっくり歩ける横浜の名園。季節の花を眺めながら、少し落ち着いた親子時間を。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "social_embeds": [
+        {
+          "platform": "instagram",
+          "type": "reel",
+          "reel_url": null,
+          "account_url": "https://www.instagram.com/sankeien_garden/",
+          "account_handle": "@sankeien_garden",
+          "source_type": "official",
+          "permission_status": "official_embed_candidate",
+          "display_title": "この場所の雰囲気をのぞく",
+          "preview_copy": "三重塔・池・季節の花",
+          "why_video": "歴史建築と庭園の空気感を伝えやすい。",
+          "checked_at": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "spot_id": "spot_082",
+      "slug": "spot_082-spot",
+      "name": "葉山しおさい公園",
+      "aliases": [],
+      "category_primary": "coastal_garden_museum",
+      "categories": [
+        "coastal_garden_museum",
+        "waterside",
+        "nature",
+        "culture",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "葉山町",
+      "address": "神奈川県三浦郡葉山町一色2123-1",
+      "official_url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 85,
+        "physical_activity": 75,
+        "hands_on": 45,
+        "quietness": 95,
+        "parent_rest": 100,
+        "greenery": 80,
+        "water_contact": 20,
+        "animal_contact": 45,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 75,
+        "toddler_fit": 75,
+        "stroller_fit": 70,
+        "rain_resilience": 35,
+        "heat_resilience": 45,
+        "walking_load": 60,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 90,
+        "extraordinary": 65,
+        "culture": 80,
+        "waterside": 100,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 10,
+        "relax": 90
+      },
+      "editorial_reason": "海景色・日本庭園・海洋生物博物館を一度に楽しめ、荒崎とは違う穏やかな海Vibeを補える。",
+      "public_copy": "日本庭園を散歩したり、海を眺めたり、博物館で海の生きものを見たり。葉山らしい穏やかな時間を過ごせる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "8:30〜17:00（入園16:30まで）を基本。月曜等休園。",
+        "price_summary": "一般300円、小中学生150円。",
+        "reservation_summary": "通常入園は予約不要。",
+        "age_note": "日本庭園と葉山しおさい博物館。海岸へ直接下りる公園ではない。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html"
+      },
+      "buzz": {
+        "score": 76,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 76,
+        "reason": "海景色・日本庭園・海洋生物博物館を一度に楽しめ、荒崎とは違う穏やかな海Vibeを補える。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "日本庭園を散歩したり、海を眺めたり、博物館で海の生きものを見たり。葉山らしい穏やかな時間を過ごせる。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      }
+    },
+    {
+      "spot_id": "spot_083",
+      "slug": "spot_083-spot",
+      "name": "小田原こどもの森公園 わんぱくらんど",
+      "aliases": [],
+      "category_primary": "large_play_park",
+      "categories": [
+        "large_play_park",
+        "nature",
+        "active",
+        "extraordinary"
+      ],
+      "prefecture": "神奈川県",
+      "city": "小田原市",
+      "address": "神奈川県小田原市久野4377-1",
+      "official_url": "https://www.city.odawara.kanagawa.jp/public-i/park/wanpaku/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 85,
+        "quietness": 60,
+        "parent_rest": 60,
+        "greenery": 100,
+        "water_contact": 15,
+        "animal_contact": 10,
+        "food_experience": 15,
+        "creative_sensory": 30,
+        "baby_fit": 80,
+        "toddler_fit": 100,
+        "stroller_fit": 45,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 80,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 85,
+      "vibes_seed": {
+        "cool": 10,
+        "nature": 100,
+        "extraordinary": 80,
+        "culture": 10,
+        "waterside": 10,
+        "animals": 10,
+        "creative": 10,
+        "food": 10,
+        "active": 90,
+        "relax": 75
+      },
+      "editorial_reason": "12.5haの自然の中に大型遊具・列車・アドベンチャー要素があり、遠出のactive/nature枠として強い。",
+      "public_copy": "山の自然を生かした広い公園で、大型遊具やこども列車を楽しめる。今日は外で思いきり遊びたい、という日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜16:30を基本。休園日は公式カレンダー確認。",
+        "price_summary": "入園無料。駐車場・一部乗りもの有料。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "丘陵地で坂が多い。大型遊具は年齢・安全に注意。",
+        "temporary_note": null,
+        "checked_at": "2026-08-23",
+        "source_url": "https://www.city.odawara.kanagawa.jp/public-i/park/wanpaku/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 30,
+        "social_presence": 55,
+        "visual_appeal": 95,
+        "media_attention": 60,
+        "popularity_momentum": 82,
+        "reason": "12.5haの自然の中に大型遊具・列車・アドベンチャー要素があり、遠出のactive/nature枠として強い。",
+        "checked_at": "2026-08-23",
+        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-23",
+            "url": "https://www.city.odawara.kanagawa.jp/public-i/park/wanpaku/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "山の自然を生かした広い公園で、大型遊具やこども列車を楽しめる。今日は外で思いきり遊びたい、という日に。 をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       }

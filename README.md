@@ -108,5 +108,5 @@ node test_recommender.js
 
 
 ## v0.8
-- 55スポット収録（神奈川中心のPriority A 15件を追加）
+- 83スポット収録（神奈川中心のPriority A 15件を追加）
 - 一時休館のhard filterに対応
