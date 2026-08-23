@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v3_83spots",
-    "version": "0.11.0",
+    "dataset_name": "kibun_kanto_seed_v4_83spots_audience_routing",
+    "version": "0.12.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -17,7 +17,10 @@
       "layer_3_vibes_seed": "『どんな気分に合うか』の編集スコア。0〜100",
       "layer_4_dynamic_snapshot": "営業時間・料金・予約・臨時情報。checked_atとsource_urlを必須にする",
       "layer_public_copy": "ユーザー画面に表示する施設紹介文。運営・推薦ロジック・データ整備の内部事情を書かない",
-      "layer_internal_editorial_reason": "editorial_reasonは運営用の選定・編集メモ。UIには表示しない"
+      "layer_internal_editorial_reason": "editorial_reasonは運営用の選定・編集メモ。UIには表示しない",
+      "layer_audience_fit": "同行者 family / partner / solo / friends への編集適合度。0〜100。",
+      "layer_routing": "現在地フィルター用。GitHub Pages単体ではGeolonia町丁目代表点＋距離モデルで概算。Google Routes APIプロキシ設定時は実ルート所要時間に差し替え可能。",
+      "layer_media_strategy": "Heroは公式提供→Google Places→権利クリア実写→Instagram Embed→AIの順を基本方針とする。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -151,7 +154,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "アンパンマンの世界に入り込んで、見て・遊んで・体を動かせる親子向けミュージアム。小さな子どもでも一日たっぷり楽しみやすい。"
+      "public_copy": "アンパンマンの世界に入り込んで、見て・遊んで・体を動かせる親子向けミュージアム。小さな子どもでも一日たっぷり楽しみやすい。",
+      "audience_fit": {
+        "family": 90,
+        "partner": 24,
+        "solo": 7,
+        "friends": 57
+      },
+      "adult_enjoyment_seed": 27,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_002",
@@ -231,7 +261,34 @@
         "modified_by_kibun": false,
         "hero_review": "keep_experience_photo"
       },
-      "public_copy": "楽器や音にふれながら、気軽に音楽の楽しさを体験できるスポット。みなとみらい散歩の途中にも立ち寄りやすい。"
+      "public_copy": "楽器や音にふれながら、気軽に音楽の楽しさを体験できるスポット。みなとみらい散歩の途中にも立ち寄りやすい。",
+      "audience_fit": {
+        "family": 72,
+        "partner": 51,
+        "solo": 62,
+        "friends": 40
+      },
+      "adult_enjoyment_seed": 52,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_003",
@@ -306,7 +363,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "温泉や休憩スペースでゆっくり過ごせる日帰り温浴施設。遊び中心ではなく、家族でのんびりしたい日に。"
+      "public_copy": "温泉や休憩スペースでゆっくり過ごせる日帰り温浴施設。遊び中心ではなく、家族でのんびりしたい日に。",
+      "audience_fit": {
+        "family": 27,
+        "partner": 63,
+        "solo": 62,
+        "friends": 25
+      },
+      "adult_enjoyment_seed": 54,
+      "routing": {
+        "municipality": "横浜市都筑区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_004",
@@ -380,7 +464,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "温室でいちご狩りを楽しめる体験型スポット。季節感のある収穫体験と甘いいちごを家族で味わえる。"
+      "public_copy": "温室でいちご狩りを楽しめる体験型スポット。季節感のある収穫体験と甘いいちごを家族で味わえる。",
+      "audience_fit": {
+        "family": 73,
+        "partner": 53,
+        "solo": 49,
+        "friends": 51
+      },
+      "adult_enjoyment_seed": 51,
+      "routing": {
+        "municipality": "横浜市鶴見区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_005",
@@ -455,7 +566,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "絵本に囲まれた空間で、未就学児と保護者がゆったり過ごせる図書館フロア。短時間のお出かけにも使いやすい。"
+      "public_copy": "絵本に囲まれた空間で、未就学児と保護者がゆったり過ごせる図書館フロア。短時間のお出かけにも使いやすい。",
+      "audience_fit": {
+        "family": 96,
+        "partner": 49,
+        "solo": 74,
+        "friends": 22
+      },
+      "adult_enjoyment_seed": 49,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_006",
@@ -535,7 +673,34 @@
         "modified_by_kibun": false,
         "hero_review": "keep_experience_photo"
       },
-      "public_copy": "広い園内を歩きながら、世界各地の動物と緑豊かな景色を楽しめる動物園。自然の中で一日過ごしたい日に。"
+      "public_copy": "広い園内を歩きながら、世界各地の動物と緑豊かな景色を楽しめる動物園。自然の中で一日過ごしたい日に。",
+      "audience_fit": {
+        "family": 83,
+        "partner": 55,
+        "solo": 49,
+        "friends": 64
+      },
+      "adult_enjoyment_seed": 55,
+      "routing": {
+        "municipality": "横浜市旭区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_007",
@@ -611,7 +776,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "走る・跳ぶ・組み立てる・ごっこ遊びなど、多彩な遊びを楽しめる屋内プレイ施設。天候を気にせず思いきり遊べる。"
+      "public_copy": "走る・跳ぶ・組み立てる・ごっこ遊びなど、多彩な遊びを楽しめる屋内プレイ施設。天候を気にせず思いきり遊べる。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 7,
+        "solo": 4,
+        "friends": 47
+      },
+      "adult_enjoyment_seed": 16,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_008",
@@ -685,7 +877,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "大型遊具や体を動かす遊びがそろう全天候型のキッズパーク。元気いっぱい遊びたい日にぴったり。"
+      "public_copy": "大型遊具や体を動かす遊びがそろう全天候型のキッズパーク。元気いっぱい遊びたい日にぴったり。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 5,
+        "solo": 0,
+        "friends": 45
+      },
+      "adult_enjoyment_seed": 13,
+      "routing": {
+        "municipality": "横浜市都筑区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_009",
@@ -759,7 +978,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "丹沢の自然に囲まれた日帰り温泉。山あいの景色を楽しみながら、ゆっくりお湯に浸かって過ごせる。"
+      "public_copy": "丹沢の自然に囲まれた日帰り温泉。山あいの景色を楽しみながら、ゆっくりお湯に浸かって過ごせる。",
+      "audience_fit": {
+        "family": 34,
+        "partner": 80,
+        "solo": 75,
+        "friends": 33
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "山北町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_010",
@@ -832,7 +1078,34 @@
         "license": null,
         "exact_spot": false
       },
-      "public_copy": "川遊びや魚のつかみ取り、釣り、BBQなどを楽しめる自然体験スポット。夏らしい一日を過ごしたい日に。"
+      "public_copy": "川遊びや魚のつかみ取り、釣り、BBQなどを楽しめる自然体験スポット。夏らしい一日を過ごしたい日に。",
+      "audience_fit": {
+        "family": 55,
+        "partner": 70,
+        "solo": 47,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 68,
+      "routing": {
+        "municipality": "清川村",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_011",
@@ -926,7 +1199,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "光や映像を使った没入型の展示をめぐりながら、物語の中を旅するような体験ができる屋内スポット。"
+      "public_copy": "光や映像を使った没入型の展示をめぐりながら、物語の中を旅するような体験ができる屋内スポット。",
+      "audience_fit": {
+        "family": 61,
+        "partner": 56,
+        "solo": 50,
+        "friends": 66
+      },
+      "adult_enjoyment_seed": 57,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_012",
@@ -1025,7 +1325,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "カラフルでユニークな展示や体験が続くエンタメ型ミュージアム。写真を撮りながら非日常の世界を楽しめる。"
+      "public_copy": "カラフルでユニークな展示や体験が続くエンタメ型ミュージアム。写真を撮りながら非日常の世界を楽しめる。",
+      "audience_fit": {
+        "family": 47,
+        "partner": 40,
+        "solo": 29,
+        "friends": 70
+      },
+      "adult_enjoyment_seed": 44,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_013",
@@ -1119,7 +1446,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "自然や地球をテーマにした遊びがそろう大型屋内プレイグラウンド。乳幼児でも過ごしやすく、雨や暑い日にも便利。"
+      "public_copy": "自然や地球をテーマにした遊びがそろう大型屋内プレイグラウンド。乳幼児でも過ごしやすく、雨や暑い日にも便利。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 18,
+        "solo": 13,
+        "friends": 51
+      },
+      "adult_enjoyment_seed": 25,
+      "routing": {
+        "municipality": "横浜市都筑区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_014",
@@ -1213,7 +1567,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "映像やデジタル技術を使った展示を無料で楽しめる体験型ギャラリー。短時間でも新しい刺激にふれられる。"
+      "public_copy": "映像やデジタル技術を使った展示を無料で楽しめる体験型ギャラリー。短時間でも新しい刺激にふれられる。",
+      "audience_fit": {
+        "family": 75,
+        "partner": 62,
+        "solo": 72,
+        "friends": 41
+      },
+      "adult_enjoyment_seed": 60,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_015",
@@ -1307,7 +1688,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "歴史的な京急車両やジオラマ、運転体験などを楽しめる鉄道ミュージアム。本物の車両を間近で見られる。"
+      "public_copy": "歴史的な京急車両やジオラマ、運転体験などを楽しめる鉄道ミュージアム。本物の車両を間近で見られる。",
+      "audience_fit": {
+        "family": 87,
+        "partner": 47,
+        "solo": 58,
+        "friends": 37
+      },
+      "adult_enjoyment_seed": 48,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_016",
@@ -1401,7 +1809,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "陸・海・空・宇宙をテーマに、科学技術を体験しながら学べるミュージアム。触って楽しめる展示が多い。"
+      "public_copy": "陸・海・空・宇宙をテーマに、科学技術を体験しながら学べるミュージアム。触って楽しめる展示が多い。",
+      "audience_fit": {
+        "family": 78,
+        "partner": 48,
+        "solo": 60,
+        "friends": 41
+      },
+      "adult_enjoyment_seed": 50,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_017",
@@ -1495,7 +1930,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "世界のくらしや文化を、展示や体験を通して楽しく知ることができる施設。子どもと一緒に異なる文化へ目を向けられる。"
+      "public_copy": "世界のくらしや文化を、展示や体験を通して楽しく知ることができる施設。子どもと一緒に異なる文化へ目を向けられる。",
+      "audience_fit": {
+        "family": 92,
+        "partner": 60,
+        "solo": 66,
+        "friends": 49
+      },
+      "adult_enjoyment_seed": 59,
+      "routing": {
+        "municipality": "横浜市栄区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_018",
@@ -1610,7 +2072,34 @@
           "why_video": "実車のスケール感が動画で伝わり、文化×非日常が強い。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 96,
+        "partner": 51,
+        "solo": 57,
+        "friends": 47
+      },
+      "adult_enjoyment_seed": 52,
+      "routing": {
+        "municipality": "海老名市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_019",
@@ -1710,7 +2199,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "インスタントラーメンの歴史を学びながら、オリジナルのカップヌードル作りも楽しめる体験型ミュージアム。"
+      "public_copy": "インスタントラーメンの歴史を学びながら、オリジナルのカップヌードル作りも楽しめる体験型ミュージアム。",
+      "audience_fit": {
+        "family": 66,
+        "partner": 57,
+        "solo": 58,
+        "friends": 66
+      },
+      "adult_enjoyment_seed": 59,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_020",
@@ -1819,7 +2335,34 @@
           "why_video": "『ゼロ距離』の魅力は動物の動きがあるReelで最も伝わる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 96,
+        "partner": 46,
+        "solo": 40,
+        "friends": 52
+      },
+      "adult_enjoyment_seed": 46,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_021",
@@ -1914,7 +2457,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "宇宙や科学をテーマにした体験展示が充実する科学館。遊びながら不思議を発見でき、プラネタリウムも楽しめる。"
+      "public_copy": "宇宙や科学をテーマにした体験展示が充実する科学館。遊びながら不思議を発見でき、プラネタリウムも楽しめる。",
+      "audience_fit": {
+        "family": 92,
+        "partner": 48,
+        "solo": 54,
+        "friends": 56
+      },
+      "adult_enjoyment_seed": 51,
+      "routing": {
+        "municipality": "横浜市磯子区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_022",
@@ -2008,7 +2578,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "大型遊具や乗り物などを楽しめる屋内型の遊園地。天候を気にせず長時間遊びやすく、雪遊びエリアも特徴的。"
+      "public_copy": "大型遊具や乗り物などを楽しめる屋内型の遊園地。天候を気にせず長時間遊びやすく、雪遊びエリアも特徴的。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 18,
+        "solo": 6,
+        "friends": 55
+      },
+      "adult_enjoyment_seed": 24,
+      "routing": {
+        "municipality": "平塚市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_023",
@@ -2117,7 +2714,34 @@
           "why_video": "水の動きと非日常感が動画で圧倒的に伝わる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 94,
+        "partner": 75,
+        "solo": 50,
+        "friends": 83
+      },
+      "adult_enjoyment_seed": 70,
+      "routing": {
+        "municipality": "箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_024",
@@ -2211,7 +2835,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "芦ノ湖の景色を眺めながら、個性的な船で湖上クルーズを楽しめる。箱根観光に小旅行らしい特別感を添えてくれる。"
+      "public_copy": "芦ノ湖の景色を眺めながら、個性的な船で湖上クルーズを楽しめる。箱根観光に小旅行らしい特別感を添えてくれる。",
+      "audience_fit": {
+        "family": 78,
+        "partner": 85,
+        "solo": 74,
+        "friends": 48
+      },
+      "adult_enjoyment_seed": 73,
+      "routing": {
+        "municipality": "箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_025",
@@ -2311,7 +2962,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "大きな池や森、遊具のある広い公園。緑の中を散歩したり、思いきり走ったり、季節の自然を身近に楽しめる。"
+      "public_copy": "大きな池や森、遊具のある広い公園。緑の中を散歩したり、思いきり走ったり、季節の自然を身近に楽しめる。",
+      "audience_fit": {
+        "family": 94,
+        "partner": 60,
+        "solo": 58,
+        "friends": 64
+      },
+      "adult_enjoyment_seed": 60,
+      "routing": {
+        "municipality": "横浜市旭区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_026",
@@ -2411,7 +3089,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "恐竜や動物、地球や科学の展示を幅広く楽しめる国内最大級の博物館。親子向けの体験スペースも用意されている。"
+      "public_copy": "恐竜や動物、地球や科学の展示を幅広く楽しめる国内最大級の博物館。親子向けの体験スペースも用意されている。",
+      "audience_fit": {
+        "family": 91,
+        "partner": 52,
+        "solo": 60,
+        "friends": 51
+      },
+      "adult_enjoyment_seed": 54,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_027",
@@ -2526,7 +3231,34 @@
           "why_video": "Reelとの相性が最も高い施設の一つ。静止画より没入感を説明しやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 60,
+        "partner": 74,
+        "solo": 63,
+        "friends": 69
+      },
+      "adult_enjoyment_seed": 70,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_028",
@@ -2620,7 +3352,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "大きな造形物や自由な遊び、ワークショップを通して、子どもの発想をのびのび広げられる屋内プレイ施設。"
+      "public_copy": "大きな造形物や自由な遊び、ワークショップを通して、子どもの発想をのびのび広げられる屋内プレイ施設。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 25,
+        "solo": 21,
+        "friends": 56
+      },
+      "adult_enjoyment_seed": 31,
+      "routing": {
+        "municipality": "立川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_029",
@@ -2714,7 +3473,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "精巧なミニチュアの街や世界を眺めながら、小さな発見を楽しめる屋内ミュージアム。雨の日にもゆっくり過ごせる。"
+      "public_copy": "精巧なミニチュアの街や世界を眺めながら、小さな発見を楽しめる屋内ミュージアム。雨の日にもゆっくり過ごせる。",
+      "audience_fit": {
+        "family": 83,
+        "partner": 58,
+        "solo": 68,
+        "friends": 44
+      },
+      "adult_enjoyment_seed": 58,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_030",
@@ -2813,7 +3599,34 @@
         "soft": true,
         "note": "主料金・体験対象は2歳以上。0〜1歳は適合度を低く評価"
       },
-      "public_copy": "タカラトミーのおもちゃの世界とデジタル技術が融合した体験型プレイ施設。画面の中と現実を行き来するように遊べる。"
+      "public_copy": "タカラトミーのおもちゃの世界とデジタル技術が融合した体験型プレイ施設。画面の中と現実を行き来するように遊べる。",
+      "audience_fit": {
+        "family": 61,
+        "partner": 21,
+        "solo": 13,
+        "friends": 57
+      },
+      "adult_enjoyment_seed": 27,
+      "routing": {
+        "municipality": "葛飾区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_031",
@@ -2911,7 +3724,34 @@
         "min_months": 72,
         "note": "小学生未満は参加不可"
       },
-      "public_copy": "航空の仕事や飛行機の仕組みを学び、格納庫で実際の航空機を間近に見学できる体験施設。参加には年齢条件がある。"
+      "public_copy": "航空の仕事や飛行機の仕組みを学び、格納庫で実際の航空機を間近に見学できる体験施設。参加には年齢条件がある。",
+      "audience_fit": {
+        "family": 10,
+        "partner": 51,
+        "solo": 55,
+        "friends": 50
+      },
+      "adult_enjoyment_seed": 52,
+      "routing": {
+        "municipality": "大田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_032",
@@ -3020,7 +3860,34 @@
           "why_video": "乳幼児向けの実際の遊び方が一目でわかる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 100,
+        "partner": 16,
+        "solo": 8,
+        "friends": 52
+      },
+      "adult_enjoyment_seed": 23,
+      "routing": {
+        "municipality": "文京区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_033",
@@ -3114,7 +3981,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "デジタル技術を使ったスポーツやゲームに挑戦できる屋内型アクティビティ施設。体を動かしながら新感覚の遊びを楽しめる。"
+      "public_copy": "デジタル技術を使ったスポーツやゲームに挑戦できる屋内型アクティビティ施設。体を動かしながら新感覚の遊びを楽しめる。",
+      "audience_fit": {
+        "family": 14,
+        "partner": 33,
+        "solo": 21,
+        "friends": 76
+      },
+      "adult_enjoyment_seed": 40,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_034",
@@ -3208,7 +4102,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "食品工場をテーマにしたアトラクションやものづくり体験を楽しめるエリア。遊びながら食の仕組みにふれられる。"
+      "public_copy": "食品工場をテーマにしたアトラクションやものづくり体験を楽しめるエリア。遊びながら食の仕組みにふれられる。",
+      "audience_fit": {
+        "family": 53,
+        "partner": 57,
+        "solo": 41,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 60,
+      "routing": {
+        "municipality": "稲城市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_035",
@@ -3318,7 +4239,34 @@
           "why_video": "外観写真では伝わらなかった『木の温かさ』を動画で補える。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 100,
+        "partner": 43,
+        "solo": 52,
+        "friends": 42
+      },
+      "adult_enjoyment_seed": 45,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_036",
@@ -3412,7 +4360,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "スヌーピーの世界観の中で、大型遊具や遊びを楽しめる屋内施設。遊んだあとは飲食やショッピングも一緒に楽しめる。"
+      "public_copy": "スヌーピーの世界観の中で、大型遊具や遊びを楽しめる屋内施設。遊んだあとは飲食やショッピングも一緒に楽しめる。",
+      "audience_fit": {
+        "family": 96,
+        "partner": 30,
+        "solo": 17,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 36,
+      "routing": {
+        "municipality": "習志野市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_037",
@@ -3506,7 +4481,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "プールや温浴施設を備えた大型リゾート。水遊びをたっぷり楽しみながら、家族で旅行気分を味わえる。"
+      "public_copy": "プールや温浴施設を備えた大型リゾート。水遊びをたっぷり楽しみながら、家族で旅行気分を味わえる。",
+      "audience_fit": {
+        "family": 91,
+        "partner": 77,
+        "solo": 52,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 71,
+      "routing": {
+        "municipality": "木更津市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_038",
@@ -3605,7 +4607,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "ブルーベリーなどの収穫体験を通して、果物や農業を身近に楽しめる農園。採って味わう体験を家族で楽しめる。"
+      "public_copy": "ブルーベリーなどの収穫体験を通して、果物や農業を身近に楽しめる農園。採って味わう体験を家族で楽しめる。",
+      "audience_fit": {
+        "family": 91,
+        "partner": 64,
+        "solo": 62,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 64,
+      "routing": {
+        "municipality": "所沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_039",
@@ -3699,7 +4728,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "不思議な「こびと」たちを探しながら、観察や発見を楽しむ体験型施設。館内をめぐるほど新しい発見が見つかる。"
+      "public_copy": "不思議な「こびと」たちを探しながら、観察や発見を楽しむ体験型施設。館内をめぐるほど新しい発見が見つかる。",
+      "audience_fit": {
+        "family": 92,
+        "partner": 34,
+        "solo": 32,
+        "friends": 42
+      },
+      "adult_enjoyment_seed": 36,
+      "routing": {
+        "municipality": "越谷市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_040",
@@ -3793,7 +4849,34 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "大型遊具やアスレチック、さまざまな遊びがそろう広々とした屋内キッズパーク。天候を気にせず一日遊びやすい。"
+      "public_copy": "大型遊具やアスレチック、さまざまな遊びがそろう広々とした屋内キッズパーク。天候を気にせず一日遊びやすい。",
+      "audience_fit": {
+        "family": 100,
+        "partner": 19,
+        "solo": 9,
+        "friends": 52
+      },
+      "adult_enjoyment_seed": 24,
+      "routing": {
+        "municipality": "川越市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_041",
@@ -3887,6 +4970,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 64,
+        "solo": 54,
+        "friends": 70
+      },
+      "adult_enjoyment_seed": 63,
+      "routing": {
+        "municipality": "厚木市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -3987,6 +5097,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 64,
+        "partner": 68,
+        "solo": 56,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 65,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4081,6 +5218,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 39,
+        "partner": 94,
+        "solo": 92,
+        "friends": 30
+      },
+      "adult_enjoyment_seed": 78,
+      "routing": {
+        "municipality": "川崎市宮前区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4178,6 +5342,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 71,
+        "solo": 57,
+        "friends": 81
+      },
+      "adult_enjoyment_seed": 69,
+      "routing": {
+        "municipality": "愛川町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4274,6 +5465,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 76,
+        "partner": 67,
+        "solo": 52,
+        "friends": 65
+      },
+      "adult_enjoyment_seed": 62,
+      "routing": {
+        "municipality": "秦野市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4387,7 +5605,34 @@
           "why_video": "自然・遊び・食が一度に伝わり、Kibunの複数Vibeを動画1本で表現しやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 94,
+        "partner": 81,
+        "solo": 58,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 81,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_047",
@@ -4484,6 +5729,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 61,
+        "partner": 76,
+        "solo": 69,
+        "friends": 67
+      },
+      "adult_enjoyment_seed": 72,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4580,6 +5852,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 93,
+        "partner": 73,
+        "solo": 71,
+        "friends": 66
+      },
+      "adult_enjoyment_seed": 71,
+      "routing": {
+        "municipality": "藤沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4676,6 +5975,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 86,
+        "partner": 57,
+        "solo": 67,
+        "friends": 50
+      },
+      "adult_enjoyment_seed": 58,
+      "routing": {
+        "municipality": "小田原市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -4793,7 +6119,34 @@
           "why_video": "子どもの遊びと大人のアート鑑賞を1本で両立できる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 76,
+        "partner": 80,
+        "solo": 84,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 78,
+      "routing": {
+        "municipality": "箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_051",
@@ -4911,7 +6264,34 @@
           "why_video": "静止画より水槽の動きや館内の光が伝わりやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 99,
+        "partner": 74,
+        "solo": 63,
+        "friends": 62
+      },
+      "adult_enjoyment_seed": 68,
+      "routing": {
+        "municipality": "藤沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "licensed_real",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_052",
@@ -5021,7 +6401,34 @@
           "why_video": "『駅前なのに自然っぽい』という意外性が動画で出しやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 99,
+        "partner": 70,
+        "solo": 65,
+        "friends": 55
+      },
+      "adult_enjoyment_seed": 65,
+      "routing": {
+        "municipality": "川崎市川崎区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_053",
@@ -5134,7 +6541,34 @@
           "why_video": "『親も行きたい』を強く伝えられる。海と美術館のロケーションが動画向き。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 61,
+        "partner": 89,
+        "solo": 94,
+        "friends": 43
+      },
+      "adult_enjoyment_seed": 79,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_054",
@@ -5230,6 +6664,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 95,
+        "partner": 70,
+        "solo": 57,
+        "friends": 85
+      },
+      "adult_enjoyment_seed": 70,
+      "routing": {
+        "municipality": "横浜市青葉区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -5325,6 +6786,33 @@
         "static_basic": "verified",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 97,
+        "partner": 38,
+        "solo": 42,
+        "friends": 43
+      },
+      "adult_enjoyment_seed": 41,
+      "routing": {
+        "municipality": "藤沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -5421,6 +6909,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 80,
+        "partner": 49,
+        "solo": 58,
+        "friends": 43
+      },
+      "adult_enjoyment_seed": 50,
+      "routing": {
+        "municipality": "横浜市緑区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -5533,7 +7048,34 @@
           "why_video": "庭園の広がりと季節感が動画で伝わる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 82,
+        "partner": 63,
+        "solo": 83,
+        "friends": 41
+      },
+      "adult_enjoyment_seed": 63,
+      "routing": {
+        "municipality": "相模原市南区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_058",
@@ -5644,7 +7186,34 @@
           "why_video": "花と遊具の両方を短い動画で見せやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 79,
+        "partner": 59,
+        "solo": 55,
+        "friends": 64
+      },
+      "adult_enjoyment_seed": 59,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_059",
@@ -5741,6 +7310,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 41,
+        "solo": 48,
+        "friends": 50
+      },
+      "adult_enjoyment_seed": 45,
+      "routing": {
+        "municipality": "平塚市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -5838,6 +7434,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 56,
+        "solo": 61,
+        "friends": 56
+      },
+      "adult_enjoyment_seed": 57,
+      "routing": {
+        "municipality": "茅ヶ崎市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -5934,6 +7557,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 65,
+        "partner": 58,
+        "solo": 55,
+        "friends": 64
+      },
+      "adult_enjoyment_seed": 59,
+      "routing": {
+        "municipality": "厚木市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6030,6 +7680,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 93,
+        "partner": 44,
+        "solo": 64,
+        "friends": 22
+      },
+      "adult_enjoyment_seed": 44,
+      "routing": {
+        "municipality": "川崎市宮前区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6127,6 +7804,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 58,
+        "solo": 79,
+        "friends": 27
+      },
+      "adult_enjoyment_seed": 57,
+      "routing": {
+        "municipality": "川崎市多摩区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6223,6 +7927,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 63,
+        "partner": 69,
+        "solo": 87,
+        "friends": 34
+      },
+      "adult_enjoyment_seed": 65,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6319,6 +8050,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 37,
+        "solo": 60,
+        "friends": 11
+      },
+      "adult_enjoyment_seed": 37,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6430,7 +8188,34 @@
           "why_video": "文化の日の雰囲気を写真・動画で補える。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 56,
+        "partner": 74,
+        "solo": 81,
+        "friends": 31
+      },
+      "adult_enjoyment_seed": 66,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_067",
@@ -6526,6 +8311,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 97,
+        "partner": 29,
+        "solo": 44,
+        "friends": 16
+      },
+      "adult_enjoyment_seed": 30,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6622,6 +8434,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 29,
+        "solo": 44,
+        "friends": 16
+      },
+      "adult_enjoyment_seed": 30,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6719,6 +8558,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 52,
+        "solo": 64,
+        "friends": 20
+      },
+      "adult_enjoyment_seed": 48,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -6830,7 +8696,34 @@
           "why_video": "乗りものの体験感は動画で伝わりやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 96,
+        "partner": 44,
+        "solo": 64,
+        "friends": 23
+      },
+      "adult_enjoyment_seed": 44,
+      "routing": {
+        "municipality": "江戸川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_071",
@@ -6927,6 +8820,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 97,
+        "partner": 59,
+        "solo": 56,
+        "friends": 44
+      },
+      "adult_enjoyment_seed": 55,
+      "routing": {
+        "municipality": "板橋区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -7039,7 +8959,34 @@
           "why_video": "歩いて時間旅行する感じを動画で表現できる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 66,
+        "partner": 81,
+        "solo": 91,
+        "friends": 46
+      },
+      "adult_enjoyment_seed": 75,
+      "routing": {
+        "municipality": "小金井市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_073",
@@ -7151,7 +9098,34 @@
           "why_video": "公園の広さと複数の遊びを1本で見せやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 93,
+        "partner": 59,
+        "solo": 55,
+        "friends": 72
+      },
+      "adult_enjoyment_seed": 61,
+      "routing": {
+        "municipality": "船橋市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_074",
@@ -7247,6 +9221,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 39,
+        "solo": 40,
+        "friends": 45
+      },
+      "adult_enjoyment_seed": 41,
+      "routing": {
+        "municipality": "千葉市若葉区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -7343,6 +9344,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 51,
+        "solo": 50,
+        "friends": 41
+      },
+      "adult_enjoyment_seed": 48,
+      "routing": {
+        "municipality": "芝山町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -7455,7 +9483,34 @@
           "why_video": "海辺でゆっくり過ごす雰囲気が動画向き。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 83,
+        "partner": 75,
+        "solo": 65,
+        "friends": 48
+      },
+      "adult_enjoyment_seed": 66,
+      "routing": {
+        "municipality": "千葉市美浜区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_077",
@@ -7566,7 +9621,34 @@
           "why_video": "動物の動きがReelで最も魅力的に伝わる。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 95,
+        "partner": 33,
+        "solo": 32,
+        "friends": 45
+      },
+      "adult_enjoyment_seed": 36,
+      "routing": {
+        "municipality": "東松山市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_078",
@@ -7678,7 +9760,34 @@
           "why_video": "車両のスケール感を動画で補える。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 96,
+        "partner": 57,
+        "solo": 64,
+        "friends": 39
+      },
+      "adult_enjoyment_seed": 55,
+      "routing": {
+        "municipality": "さいたま市大宮区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_079",
@@ -7789,7 +9898,34 @@
           "why_video": "建築と巨大本棚の非日常感が強い。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 47,
+        "partner": 74,
+        "solo": 80,
+        "friends": 39
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "所沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_080",
@@ -7900,7 +10036,34 @@
           "why_video": "広大な自然と遊具を短い動画でまとめやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 88,
+        "partner": 48,
+        "solo": 56,
+        "friends": 47
+      },
+      "adult_enjoyment_seed": 50,
+      "routing": {
+        "municipality": "滑川町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_081",
@@ -8011,7 +10174,34 @@
           "why_video": "歴史建築と庭園の空気感を伝えやすい。",
           "checked_at": "2026-08-23"
         }
-      ]
+      ],
+      "audience_fit": {
+        "family": 66,
+        "partner": 70,
+        "solo": 90,
+        "friends": 34
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
+      }
     },
     {
       "spot_id": "spot_082",
@@ -8108,6 +10298,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 86,
+        "solo": 86,
+        "friends": 36
+      },
+      "adult_enjoyment_seed": 74,
+      "routing": {
+        "municipality": "葉山町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     },
     {
@@ -8204,6 +10421,33 @@
         "static_basic": "verified_or_high_confidence",
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 40,
+        "solo": 31,
+        "friends": 53
+      },
+      "adult_enjoyment_seed": 41,
+      "routing": {
+        "municipality": "小田原市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "official_permission",
+          "google_places",
+          "licensed_real",
+          "instagram_embed",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved"
+        }
       }
     }
   ]

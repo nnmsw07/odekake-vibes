@@ -1,267 +1,50 @@
-const seed = window.ODEKAKE_SEED;
-const { recommend } = window.OdekakeRecommender;
-
-const VIBE_UI = {
-  cool: ['🧊','涼みたい','暑さから逃げたい'],
-  nature: ['🌿','自然に浸りたい','緑・山・川へ'],
-  extraordinary: ['✨','非日常を味わいたい','いつもと違う一日'],
-  culture: ['🏛️','文化にふれたい','博物館・音楽・歴史'],
-  waterside: ['🌊','水辺へ行きたい','海・川・湖のそばへ'],
-  animals: ['🐾','生きものに会いたい','動物・魚と出会う'],
-  creative: ['🎨','何か作りたい','音・工作・表現'],
-  food: ['🍓','おいしい体験がしたい','食べる・採る・作る'],
-  active: ['🏃','思いっきり遊びたい','身体を動かす'],
-  relax: ['🛋️','のんびりしたい','頑張らない一日'],
-};
-
-const vibeKeys = Object.keys(VIBE_UI);
-let selectedVibes = [];
-let lastResult = null;
-let favorites = new Set(JSON.parse(localStorage.getItem('kibun-favorites') || '[]'));
-
-const $ = (id) => document.getElementById(id);
-const vibeGrid = $('vibeGrid');
-const recommendBtn = $('recommendBtn');
-const resultsSection = $('resultsSection');
-const resultsGrid = $('resultsGrid');
-const warningBox = $('coverageWarning');
-const dialog = $('spotDialog');
-const trendingGrid = $('trendingGrid');
-
-function renderVibes(){
-  vibeGrid.innerHTML = vibeKeys.map(key => {
-    const [emoji,name,desc] = VIBE_UI[key];
-    return `<button class="vibe-card ${selectedVibes.includes(key)?'selected':''}" data-vibe="${key}" type="button" aria-pressed="${selectedVibes.includes(key)}">
-      <span class="vibe-emoji">${emoji}</span><span><span class="vibe-name">${name}</span><span class="vibe-desc">${desc}</span></span>
-    </button>`;
-  }).join('');
-  vibeGrid.querySelectorAll('.vibe-card').forEach(btn => btn.addEventListener('click', () => toggleVibe(btn.dataset.vibe)));
-  updateSelectionUi();
-}
-
-function toggleVibe(key){
-  if(selectedVibes.includes(key)) selectedVibes = selectedVibes.filter(v=>v!==key);
-  else if(selectedVibes.length < 3) selectedVibes.push(key);
-  else selectedVibes = [...selectedVibes.slice(0,2), key];
-  renderVibes();
-}
-
-function updateSelectionUi(){
-  $('selectedHint').textContent = selectedVibes.length
-    ? `${selectedVibes.length}/3 選択中${selectedVibes.length===3?' · これで十分！':' · もう少し重ねてもOK'}`
-    : 'まずは気分を1つ選んでください';
-  $('clearVibes').hidden = !selectedVibes.length;
-  recommendBtn.disabled = !selectedVibes.length;
-}
-
-function context(){
-  const ageVal = $('ageSelect').value;
-  return {
-    selectedVibes: [...selectedVibes],
-    childAgeMonths: ageVal === '' ? null : Number(ageVal),
-    weather: $('weatherSelect').value,
-    availableMinutes: Number($('timeSelect').value),
-    maxTravelMinutes: null,
-  };
-}
-
-function vibeLabel(key){ return VIBE_UI[key]?.[1] || key; }
-function vibeEmoji(key){ return VIBE_UI[key]?.[0] || '•'; }
-function findSpot(id){ return seed.spots.find(s=>s.spot_id===id); }
-function buzzScore(s){ return Number(s?.buzz?.score || 0); }
-function buzzBadge(s){
-  const score = buzzScore(s);
-  if(score < 90) return '';
-  return `<span class="buzz-badge">🔥 話題 ${Math.round(score)}</span>`;
-}
-
-function renderTrending(){
-  if(!trendingGrid) return;
-  const items = [...seed.spots]
-    .filter(s => buzzScore(s) >= 90)
-    .sort((a,b) => buzzScore(b) - buzzScore(a))
-    .slice(0,6);
-  if(!items.length){ trendingGrid.closest('.trending')?.setAttribute('hidden',''); return; }
-  trendingGrid.innerHTML = items.map(s => `<button class="trending-card" type="button" data-trending="${s.spot_id}">
-    <div class="trending-media">${imageBlock(s,'trend')}${buzzBadge(s)}</div>
-    <div class="trending-copy"><strong>${s.name}</strong><span>${s.prefecture} · ${s.city}</span><small>${s.buzz?.reason || ''}</small></div>
-  </button>`).join('');
-  trendingGrid.querySelectorAll('[data-trending]').forEach(b => b.addEventListener('click',()=>openSpot(b.dataset.trending)));
-}
-
-function imageBadge(image){
-  if(!image || image.type === 'photo') return '';
-  return `<span class="image-badge">${image.label || 'イメージ'}</span>`;
-}
-
-function imageCredit(image, compact=false){
-  if(!image) return '';
-  if(image.type === 'photo'){
-    if(image.credit_required === false || !image.credit) return '';
-    const label = [image.credit, image.license].filter(Boolean).join(' · ');
-    const cls = compact ? 'image-credit compact' : 'image-credit detail-credit';
-    return image.source_url
-      ? `<a class="${cls}" href="${image.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`
-      : `<span class="${cls}">Photo: ${label}</span>`;
-  }
-  return compact ? '' : `<p class="image-note">※ ${image.credit || '生成イメージ'}。実在施設の正確な外観・内観を示すものではありません。</p>`;
-}
-
-function imageBlock(s, variant='card'){
-  const image = s.hero_image;
-  if(!image?.url) return `<div class="${variant}-image image-fallback"><span>${vibeEmoji(Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1])[0]?.[0])}</span></div>`;
-  return `<div class="${variant}-image image-shell">
-    <img src="${image.url}" alt="${image.alt || s.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('image-fallback');this.remove()">
-    ${imageBadge(image)}
-    ${variant==='card' ? imageCredit(image,true) : ''}
-  </div>`;
-}
-
-
-function instagramIcon(){
-  return `<svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/></svg>`;
-}
-
-function getInstagramSocial(s){
-  return (s.social_embeds || []).find(x => x.platform === 'instagram') || null;
-}
-
-function socialSection(s){
-  const social = getInstagramSocial(s);
-  if(!social) return '';
-  const title = social.display_title || 'この場所の雰囲気をのぞく';
-  const copy = social.preview_copy || '公式Instagramで実際の雰囲気を見てみる。';
-  if(social.reel_url){
-    return `<section class="social-peek social-peek-embed">
-      <div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div>
-      <div class="instagram-embed-wrap">
-        <blockquote class="instagram-media" data-instgrm-permalink="${social.reel_url}" data-instgrm-version="14"></blockquote>
-      </div>
-      <a class="social-fallback-link" href="${social.reel_url}" target="_blank" rel="noopener noreferrer">InstagramでReelを開く →</a>
-    </section>`;
-  }
-  return `<section class="social-peek social-peek-link">
-    <div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div>
-    <a class="instagram-profile-card" href="${social.account_url}" target="_blank" rel="noopener noreferrer">
-      <span class="instagram-profile-mark">${instagramIcon()}</span>
-      <span class="instagram-profile-copy"><strong>${social.account_handle || '公式Instagram'}</strong><small>公式Instagramで写真やReelを見る</small></span>
-      <span class="instagram-profile-arrow">→</span>
-    </a>
-    <p class="social-note">動画はInstagram上で表示します。Kibunには動画ファイルを転載していません。</p>
-  </section>`;
-}
-
-function processInstagramEmbeds(){
-  const hasEmbed = document.querySelector('.instagram-media[data-instgrm-permalink]');
-  if(!hasEmbed) return;
-  if(window.instgrm?.Embeds?.process){
-    window.instgrm.Embeds.process();
-    return;
-  }
-  if(document.querySelector('script[data-kibun-instagram-embed]')) return;
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.instagram.com/embed.js';
-  script.dataset.kibunInstagramEmbed = 'true';
-  script.onload = () => window.instgrm?.Embeds?.process?.();
-  document.body.appendChild(script);
-}
-
-function renderRecommendations(){
-  lastResult = recommend(seed, context());
-  warningBox.hidden = !lastResult.coverage_warning;
-  warningBox.textContent = lastResult.coverage_warning || '';
-  if(!lastResult.recommendations.length){
-    resultsGrid.innerHTML = `<article class="result-card empty-result"><div class="empty-icon">🧭</div><h3>この気分、まだ開拓中です。</h3><p class="editorial">ぴったりと言える場所が少ないので、無理に3件は出しません。このバイブスのスポットをこれから増やしていきます。</p></article>`;
-  } else {
-    resultsGrid.innerHTML = lastResult.recommendations.map(resultCard).join('');
-    wireResultActions();
-  }
-  resultsSection.hidden = false;
-  setTimeout(()=>resultsSection.scrollIntoView({behavior:'smooth',block:'start'}),50);
-}
-
-function resultCard(r){
-  const s=findSpot(r.spot_id);
-  const css = r.slot==='best_match'?'best':r.slot==='adventure'?'adventure':'easy';
-  const tags = selectedVibes.filter(v => (s.vibes_seed?.[v]||0)>=50).slice(0,3).map(v=>`<span class="mini-tag">${vibeEmoji(v)} ${vibeLabel(v)}</span>`).join('');
-  const why = (r.why||[]).slice(0,2).map(x=>`<li>${translateReason(x)}</li>`).join('');
-  const isFav=favorites.has(s.spot_id);
-  return `<article class="result-card ${css}">
-    <div class="card-media">
-      ${imageBlock(s,'card')}
-      ${buzzBadge(s)}
-      <div class="slot-chip">${r.slot_label}</div>
-      <div class="match-chip"><span>今日の気分との相性</span><strong>${Math.round(r.scores.overall)}<small>%</small></strong></div>
-    </div>
-    <div class="card-content">
-      <h3>${s.name}</h3>
-      <p class="editorial">${s.public_copy || ''}</p>
-      <div class="vibe-tags">${tags}</div>
-      <ul class="why-list">${why}</ul>
-      <div class="card-actions"><button class="detail-btn" data-detail="${s.spot_id}">この場所を見る <span>→</span></button><button class="fav-btn ${isFav?'active':''}" data-fav="${s.spot_id}" aria-label="お気に入り">${isFav?'♥':'♡'}</button></div>
-    </div>
-  </article>`;
-}
-
-function wireResultActions(){
-  resultsGrid.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>openSpot(b.dataset.detail)));
-  resultsGrid.querySelectorAll('[data-fav]').forEach(b=>b.addEventListener('click',()=>toggleFavorite(b.dataset.fav)));
-}
-
-function translateReason(text){
-  for(const key of vibeKeys){ if(text.startsWith(key+' ')) return text.replace(key,vibeLabel(key)); }
-  return text;
-}
-
-function openSpot(id){
-  const s=findSpot(id); if(!s) return;
-  const ranked = Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  const d=s.dynamic_snapshot||{};
-  $('dialogContent').innerHTML = `
-    <div class="dialog-media">${imageBlock(s,'dialog')}</div>
-    <div class="dialog-hero">
-      <p class="eyebrow">${s.prefecture} · ${s.category_primary}</p>
-      <h2>${s.name}</h2>
-      <p class="dialog-copy">${s.public_copy||''}</p>
-      <div class="info-pills"><span class="info-pill">🕐 約${Math.round((s.stay_minutes_seed||120)/60*10)/10}時間</span><span class="info-pill">👶 1歳相性 ${s.experience_seed?.baby_fit??'-'}</span><span class="info-pill">🌧 雨 ${s.experience_seed?.rain_resilience??'-'}</span><span class="info-pill">☀️ 暑さ ${s.experience_seed?.heat_resilience??'-'}</span>${buzzScore(s)>=90?`<span class="info-pill buzz-info">🔥 話題 ${Math.round(buzzScore(s))}</span>`:''}</div>
-      ${imageCredit(s.hero_image)}
-    </div>
-    <div class="dialog-body">
-      <h3>この場所に合うバイブス</h3>
-      <div class="vibe-bars">${ranked.map(([k,v])=>`<div class="vibe-bar"><span>${vibeEmoji(k)} ${vibeLabel(k).replace('したい','').replace('行きたい','')}</span><span class="bar-track"><span class="bar-fill" style="display:block;width:${v}%"></span></span><strong>${v}</strong></div>`).join('')}</div>
-      <div class="fact-box"><h4>今日行く前に確認</h4><p><strong>営業時間：</strong>${d.opening_hours_text||'要確認'}</p><p><strong>料金：</strong>${d.price_summary||'要確認'}</p><p><strong>予約：</strong>${d.reservation_summary||'要確認'}</p>${d.age_note?`<p><strong>年齢：</strong>${d.age_note}</p>`:''}${d.temporary_note?`<p><strong>臨時情報：</strong>${d.temporary_note}</p>`:''}<p class="freshness">最終確認: ${d.checked_at||'未記録'} ※営業時間・料金は必ず公式サイトで再確認してください。</p></div>
-      ${socialSection(s)}
-      ${s.buzz?.reason?`<div class="fact-box buzz-fact"><h4>🔥 最近気になる理由</h4><p>${s.buzz.reason}</p><p class="freshness">Buzz確認: ${s.buzz.checked_at || '未記録'} · 編集指標</p></div>`:''}
-      <div class="fact-box"><h4>アクセス</h4><p>${s.address}</p><a class="official-link" href="${s.official_url}" target="_blank" rel="noopener">公式サイトを見る →</a></div>
-    </div>`;
-  dialog.showModal();
-  requestAnimationFrame(processInstagramEmbeds);
-}
-
-function toggleFavorite(id){
-  favorites.has(id)?favorites.delete(id):favorites.add(id);
-  localStorage.setItem('kibun-favorites',JSON.stringify([...favorites]));
-  $('favoriteCount').textContent=favorites.size;
-  if(lastResult && !resultsSection.hidden){
-    const y=window.scrollY;
-    resultsGrid.innerHTML = lastResult.recommendations.map(resultCard).join('');
-    wireResultActions();
-    window.scrollTo(0,y);
+const seed=window.ODEKAKE_SEED;const {recommend,baseScores}=window.OdekakeRecommender;
+const VIBE_UI={cool:['🧊','涼みたい','暑さから逃げたい'],nature:['🌿','自然に浸りたい','緑・山・川へ'],extraordinary:['✨','非日常を味わいたい','いつもと違う一日'],culture:['🏛️','文化にふれたい','アート・音楽・歴史'],waterside:['🌊','水辺へ行きたい','海・川・湖のそばへ'],animals:['🐾','生きものに会いたい','動物・魚と出会う'],creative:['🎨','何か作りたい','音・工作・表現'],food:['🍓','おいしい体験がしたい','食べる・採る・作る'],active:['🏃','思いっきり遊びたい','身体を動かす'],relax:['🛋️','のんびりしたい','頑張らない一日']};
+const AUDIENCE_UI={family:['👶','子どもと'],partner:['♡','パートナーと'],solo:['◯','ひとり'],friends:['👥','友だちと']};
+const vibeKeys=Object.keys(VIBE_UI);let selectedVibes=[],selectedAudience=localStorage.getItem('kibun-audience')||'family',lastResult=null,currentOrigin=null,lastTravelProvider=null;let favorites=new Set(JSON.parse(localStorage.getItem('kibun-favorites')||'[]'));
+const $=id=>document.getElementById(id),vibeGrid=$('vibeGrid'),recommendBtn=$('recommendBtn'),resultsSection=$('resultsSection'),resultsGrid=$('resultsGrid'),warningBox=$('coverageWarning'),dialog=$('spotDialog'),trendingGrid=$('trendingGrid');
+function renderAudience(){const el=$('audiencePicker');el.innerHTML=Object.entries(AUDIENCE_UI).map(([k,[ic,label]])=>`<button type="button" class="audience-chip ${k===selectedAudience?'selected':''}" data-audience="${k}" aria-pressed="${k===selectedAudience}"><span>${ic}</span>${label}</button>`).join('');el.querySelectorAll('[data-audience]').forEach(b=>b.addEventListener('click',()=>{selectedAudience=b.dataset.audience;localStorage.setItem('kibun-audience',selectedAudience);renderAudience();updateAudienceUi();}));}
+function updateAudienceUi(){$('ageField').hidden=selectedAudience!=='family';$('resultsHeading').innerHTML=selectedAudience==='family'?'今日のふたり／家族なら、<br>この3つ。':selectedAudience==='partner'?'ふたりの今日なら、<br>この3つ。':selectedAudience==='solo'?'ひとりの今日なら、<br>この3つ。':'みんなの今日なら、<br>この3つ。';}
+function renderVibes(){vibeGrid.innerHTML=vibeKeys.map(k=>{const [e,n,d]=VIBE_UI[k];return `<button class="vibe-card ${selectedVibes.includes(k)?'selected':''}" data-vibe="${k}" type="button" aria-pressed="${selectedVibes.includes(k)}"><span class="vibe-emoji">${e}</span><span class="vibe-text"><span class="vibe-name">${n}</span><span class="vibe-desc">${d}</span></span></button>`}).join('');vibeGrid.querySelectorAll('.vibe-card').forEach(b=>b.addEventListener('click',()=>toggleVibe(b.dataset.vibe)));updateSelectionUi();}
+function toggleVibe(k){if(selectedVibes.includes(k))selectedVibes=selectedVibes.filter(v=>v!==k);else if(selectedVibes.length<3)selectedVibes.push(k);else selectedVibes=[...selectedVibes.slice(0,2),k];renderVibes();}
+function updateSelectionUi(){$('selectedHint').textContent=selectedVibes.length?`${selectedVibes.length}/3 選択中${selectedVibes.length===3?' · これで十分！':' · もう少し重ねてもOK'}`:'まずは気分を1つ選んでください';$('clearVibes').hidden=!selectedVibes.length;recommendBtn.disabled=!selectedVibes.length;}
+function context(extra={}){const ageVal=$('ageSelect').value,max=$('travelLimitSelect').value;return {selectedVibes:[...selectedVibes],audience:selectedAudience,childAgeMonths:selectedAudience==='family'&&ageVal!==''?Number(ageVal):null,weather:$('weatherSelect').value,availableMinutes:Number($('timeSelect').value),maxTravelMinutes:max?Number(max):null,...extra};}
+function vibeLabel(k){return VIBE_UI[k]?.[1]||k}function vibeEmoji(k){return VIBE_UI[k]?.[0]||'•'}function findSpot(id){return seed.spots.find(s=>s.spot_id===id)}function buzzScore(s){return Number(s?.buzz?.score||0)}
+function buzzBadge(s){return buzzScore(s)>=90?`<span class="buzz-badge">🔥 話題 ${Math.round(buzzScore(s))}</span>`:''}
+function imageBadge(i){return !i||i.type==='photo'?'':`<span class="image-badge">${i.label||'イメージ'}</span>`}function imageCredit(i,compact=false){if(!i)return'';if(i.type==='photo'){if(i.credit_required===false||!i.credit)return'';const label=[i.credit,i.license].filter(Boolean).join(' · '),cls=compact?'image-credit compact':'image-credit detail-credit';return i.source_url?`<a class="${cls}" href="${i.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`:`<span class="${cls}">Photo: ${label}</span>`;}return compact?'':`<p class="image-note">※ ${i.credit||'生成イメージ'}。実在施設の正確な外観・内観を示すものではありません。</p>`;}
+function imageBlock(s,variant='card'){const i=s.hero_image;if(!i?.url)return `<div class="${variant}-image image-fallback"><span>${vibeEmoji(Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1])[0]?.[0])}</span></div>`;return `<div class="${variant}-image image-shell" data-media-spot="${s.spot_id}"><img src="${i.url}" alt="${i.alt||s.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('image-fallback');this.remove()">${imageBadge(i)}${variant==='card'?imageCredit(i,true):''}</div>`;}
+async function enhancePlacePhotos(root=document){
+  if(!window.KIBUN_CONFIG?.placePhotoApiUrl)return;
+  const nodes=[...root.querySelectorAll('[data-media-spot]')];
+  for(const node of nodes.slice(0,8)){
+    const s=findSpot(node.dataset.mediaSpot);
+    if(!s||node.dataset.placeEnhanced)continue;
+    node.dataset.placeEnhanced='1';
+    const p=await window.KibunMedia.resolvePlacePhoto(s);
+    if(!p?.photoUri)continue;
+    const img=node.querySelector('img');
+    if(img)img.src=p.photoUri;
+    node.querySelector('.image-badge')?.remove();
+    node.querySelector('.image-credit')?.remove();
+    const who=p.attribution?.displayName?`Photo: ${p.attribution.displayName} · `:'';
+    const source=p.googleMapsUri||p.attribution?.uri||'#';
+    node.insertAdjacentHTML('beforeend',`<a class="image-credit compact google-attribution" href="${source}" target="_blank" rel="noopener">${who}<span translate="no">Google Maps</span></a>`);
+    if(root===dialog){
+      const note=root.querySelector('.image-note,.detail-credit');
+      if(note)note.outerHTML=`<a class="image-credit detail-credit google-attribution" href="${source}" target="_blank" rel="noopener">${who}<span translate="no">Google Maps</span></a>`;
+    }
   }
 }
-
-$('clearVibes').addEventListener('click',()=>{selectedVibes=[];renderVibes()});
-recommendBtn.addEventListener('click',renderRecommendations);
-$('editBtn').addEventListener('click',()=>document.querySelector('.hero').scrollIntoView({behavior:'smooth'}));
-$('dialogClose').addEventListener('click',()=>dialog.close());
-dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-$('favoritesBtn').addEventListener('click',()=>alert(favorites.size?`お気に入り ${favorites.size}件\n${[...favorites].map(id=>'・'+findSpot(id)?.name).join('\n')}`:'まだお気に入りはありません。'));
-document.querySelectorAll('.collection-card').forEach(btn=>btn.addEventListener('click',()=>{
-  selectedVibes=btn.dataset.vibes.split(',').slice(0,3);
-  renderVibes();
-  document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
-}));
-$('favoriteCount').textContent=favorites.size;
-renderVibes();
-renderTrending();
+function renderTrending(){if(!trendingGrid)return;const items=[...seed.spots].filter(s=>buzzScore(s)>=90).sort((a,b)=>buzzScore(b)-buzzScore(a)).slice(0,6);trendingGrid.innerHTML=items.map(s=>`<button class="trending-card" type="button" data-trending="${s.spot_id}"><div class="trending-media">${imageBlock(s,'trend')}${buzzBadge(s)}</div><div class="trending-copy"><strong>${s.name}</strong><span>${s.prefecture} · ${s.city}</span><small>${s.public_copy||s.buzz?.reason||''}</small></div></button>`).join('');trendingGrid.querySelectorAll('[data-trending]').forEach(b=>b.addEventListener('click',()=>openSpot(b.dataset.trending)));enhancePlacePhotos(trendingGrid);}
+async function useCurrentLocation(){const btn=$('locationBtn'),status=$('locationStatus');btn.disabled=true;status.textContent='取得中…';try{currentOrigin=await window.KibunTravel.getCurrentPosition();status.textContent=`取得済み · ±${Math.round(currentOrigin.accuracy)}m`;btn.textContent='現在地を更新';}catch(e){status.textContent='取得できませんでした';currentOrigin=null;alert('現在地を取得できませんでした。ブラウザの位置情報許可を確認してください。');}finally{btn.disabled=false;}}
+async function prepareTravel(ctx){if(!ctx.maxTravelMinutes||!currentOrigin)return {...ctx,maxTravelMinutes:null};const preliminary=seed.spots.map(s=>[s,baseScores(s,{...ctx,maxTravelMinutes:null})]).sort((a,b)=>b[1].overall-a[1].overall).slice(0,Number(window.KIBUN_CONFIG?.travelEstimateCandidateLimit||36)).map(x=>x[0]);$('locationStatus').textContent='所要時間を計算中…';const out=await window.KibunTravel.getTimes(preliminary,currentOrigin,$('travelModeSelect').value);lastTravelProvider=out.provider;$('locationStatus').textContent=`取得済み · ${out.provider==='google_routes'?'実ルート':'概算'}`;return {...ctx,travelMinutesBySpot:out.times,requireKnownTravel:true};}
+async function renderRecommendations(){recommendBtn.disabled=true;recommendBtn.classList.add('loading');const base=context();if(base.maxTravelMinutes&&!currentOrigin){await useCurrentLocation();if(!currentOrigin){recommendBtn.disabled=false;recommendBtn.classList.remove('loading');return;}}const ctx=await prepareTravel(base);lastResult=recommend(seed,ctx);warningBox.hidden=!lastResult.coverage_warning;warningBox.textContent=lastResult.coverage_warning||'';if(!lastResult.recommendations.length)resultsGrid.innerHTML=`<article class="result-card empty-result"><div class="empty-icon">🧭</div><h3>この条件、まだ開拓中です。</h3><p class="editorial">条件を少し広げるか、所要時間を長めにしてみてください。</p></article>`;else{resultsGrid.innerHTML=lastResult.recommendations.map(resultCard).join('');wireResultActions();enhancePlacePhotos(resultsGrid);}const note=$('travelResultNote');if(base.maxTravelMinutes&&currentOrigin){note.hidden=false;note.innerHTML=`${$('travelModeSelect').value==='drive'?'車':'公共交通'}・${base.maxTravelMinutes}分以内で絞り込み｜${lastTravelProvider==='google_routes'?'実ルート時間 · <span translate="no">Google Maps</span>':'現在は概算時間'}`;}else note.hidden=true;resultsSection.hidden=false;setTimeout(()=>resultsSection.scrollIntoView({behavior:'smooth',block:'start'}),50);recommendBtn.disabled=false;recommendBtn.classList.remove('loading');}
+function resultCard(r){const s=findSpot(r.spot_id),css=r.slot==='best_match'?'best':r.slot==='adventure'?'adventure':'easy',tags=selectedVibes.filter(v=>(s.vibes_seed?.[v]||0)>=50).slice(0,3).map(v=>`<span class="mini-tag">${vibeEmoji(v)} ${vibeLabel(v)}</span>`).join(''),why=(r.why||[]).slice(0,2).map(x=>`<li>${translateReason(x)}</li>`).join(''),isFav=favorites.has(s.spot_id),travel=r.travel_minutes!=null?`<span class="travel-chip">${$('travelModeSelect').value==='drive'?'🚗':'🚃'} ${lastTravelProvider==='google_routes'?'':'約'}${r.travel_minutes}分</span>`:'';return `<article class="result-card ${css}"><div class="card-media">${imageBlock(s,'card')}${buzzBadge(s)}<div class="slot-chip">${r.slot_label}</div>${travel}<div class="match-chip"><span>今日との相性</span><strong>${Math.round(r.scores.overall)}<small>%</small></strong></div></div><div class="card-content"><div class="place-meta"><span>${s.prefecture} · ${s.city}</span><span>${AUDIENCE_UI[selectedAudience][1]}相性 ${Math.round(r.scores.audience)}</span></div><h3>${s.name}</h3><p class="editorial">${s.public_copy||''}</p><div class="vibe-tags">${tags}</div><ul class="why-list">${why}</ul><div class="card-actions"><button class="detail-btn" data-detail="${s.spot_id}">この場所を見る <span>→</span></button><button class="fav-btn ${isFav?'active':''}" data-fav="${s.spot_id}" aria-label="お気に入り">${isFav?'♥':'♡'}</button></div></div></article>`;}
+function wireResultActions(){resultsGrid.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>openSpot(b.dataset.detail)));resultsGrid.querySelectorAll('[data-fav]').forEach(b=>b.addEventListener('click',()=>toggleFavorite(b.dataset.fav)));}
+function translateReason(t){for(const k of vibeKeys)if(t.startsWith(k+' '))return t.replace(k,vibeLabel(k));return t;}
+function instagramIcon(){return `<svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.7" r="1.1" fill="currentColor"/></svg>`}function getInstagramSocial(s){return(s.social_embeds||[]).find(x=>x.platform==='instagram')||null}function socialSection(s){const x=getInstagramSocial(s);if(!x)return'';const title=x.display_title||'この場所の雰囲気をのぞく',copy=x.preview_copy||'公式Instagramで実際の雰囲気を見てみる。';if(x.reel_url)return `<section class="social-peek"><div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div><div class="instagram-embed-wrap"><blockquote class="instagram-media" data-instgrm-permalink="${x.reel_url}" data-instgrm-version="14"></blockquote></div><a class="social-fallback-link" href="${x.reel_url}" target="_blank" rel="noopener noreferrer">InstagramでReelを開く →</a></section>`;return `<section class="social-peek"><div class="social-peek-head"><span class="social-brand">${instagramIcon()} Instagram</span><h3>${title}</h3><p>${copy}</p></div><a class="instagram-profile-card" href="${x.account_url}" target="_blank" rel="noopener noreferrer"><span class="instagram-profile-mark">${instagramIcon()}</span><span class="instagram-profile-copy"><strong>${x.account_handle||'公式Instagram'}</strong><small>写真やReelを見る</small></span><span class="instagram-profile-arrow">→</span></a></section>`;}
+function processInstagramEmbeds(){if(!document.querySelector('.instagram-media[data-instgrm-permalink]'))return;if(window.instgrm?.Embeds?.process)return window.instgrm.Embeds.process();if(document.querySelector('script[data-kibun-instagram-embed]'))return;const sc=document.createElement('script');sc.async=true;sc.src='https://www.instagram.com/embed.js';sc.dataset.kibunInstagramEmbed='true';sc.onload=()=>window.instgrm?.Embeds?.process?.();document.body.appendChild(sc);}
+function currentTravelFor(id){return lastResult?.input?.travelMinutesBySpot?.[id]??null}
+function openSpot(id){const s=findSpot(id);if(!s)return;const ranked=Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1]).slice(0,6),d=s.dynamic_snapshot||{},travel=currentTravelFor(id),aud=s.audience_fit?.[selectedAudience]??'-';$('dialogContent').innerHTML=`<div class="dialog-media">${imageBlock(s,'dialog')}</div><div class="dialog-hero"><p class="eyebrow">${s.prefecture} · ${s.category_primary}</p><h2>${s.name}</h2><p class="dialog-copy">${s.public_copy||''}</p><div class="info-pills">${travel!=null?`<span class="info-pill strong-pill">${$('travelModeSelect').value==='drive'?'🚗':'🚃'} ${lastTravelProvider==='google_routes'?'':'約'}${travel}分</span>`:''}<span class="info-pill">🕐 滞在 約${Math.round((s.stay_minutes_seed||120)/60*10)/10}時間</span><span class="info-pill">${AUDIENCE_UI[selectedAudience][0]} ${AUDIENCE_UI[selectedAudience][1]} ${aud}</span>${selectedAudience==='family'?`<span class="info-pill">👶 乳幼児 ${s.experience_seed?.baby_fit??'-'}</span>`:''}</div>${imageCredit(s.hero_image)}</div><div class="dialog-body"><h3>この場所に合う気分</h3><div class="vibe-bars">${ranked.map(([k,v])=>`<div class="vibe-bar"><span>${vibeEmoji(k)} ${vibeLabel(k).replace('したい','').replace('行きたい','')}</span><span class="bar-track"><span class="bar-fill" style="display:block;width:${v}%"></span></span><strong>${v}</strong></div>`).join('')}</div><div class="audience-score-box">${Object.entries(AUDIENCE_UI).map(([k,[ic,l]])=>`<span class="audience-score ${k===selectedAudience?'active':''}">${ic} ${l}<strong>${s.audience_fit?.[k]??'-'}</strong></span>`).join('')}</div><div class="fact-box"><h4>行く前に確認</h4><p><strong>営業時間：</strong>${d.opening_hours_text||'要確認'}</p><p><strong>料金：</strong>${d.price_summary||'要確認'}</p><p><strong>予約：</strong>${d.reservation_summary||'要確認'}</p>${d.age_note?`<p><strong>年齢：</strong>${d.age_note}</p>`:''}${d.temporary_note?`<p><strong>臨時情報：</strong>${d.temporary_note}</p>`:''}<p class="freshness">最終確認: ${d.checked_at||'未記録'} ※最新情報は公式サイトで再確認してください。</p></div>${socialSection(s)}<div class="fact-box"><h4>アクセス</h4><p>${s.address}</p><a class="official-link" href="${s.official_url}" target="_blank" rel="noopener">公式サイトを見る →</a></div></div>`;dialog.showModal();requestAnimationFrame(()=>{processInstagramEmbeds();enhancePlacePhotos(dialog);});}
+function toggleFavorite(id){favorites.has(id)?favorites.delete(id):favorites.add(id);localStorage.setItem('kibun-favorites',JSON.stringify([...favorites]));$('favoriteCount').textContent=favorites.size;if(lastResult&&!resultsSection.hidden){const y=scrollY;resultsGrid.innerHTML=lastResult.recommendations.map(resultCard).join('');wireResultActions();scrollTo(0,y);}}
+$('clearVibes').addEventListener('click',()=>{selectedVibes=[];renderVibes()});recommendBtn.addEventListener('click',renderRecommendations);$('locationBtn').addEventListener('click',useCurrentLocation);$('editBtn').addEventListener('click',()=>document.querySelector('.hero').scrollIntoView({behavior:'smooth'}));$('dialogClose').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});$('favoritesBtn').addEventListener('click',()=>alert(favorites.size?`お気に入り ${favorites.size}件\n${[...favorites].map(id=>'・'+findSpot(id)?.name).join('\n')}`:'まだお気に入りはありません。'));document.querySelectorAll('.collection-card').forEach(btn=>btn.addEventListener('click',()=>{selectedVibes=btn.dataset.vibes.split(',').slice(0,3);renderVibes();document.querySelector('.hero').scrollIntoView({behavior:'smooth'});}));$('favoriteCount').textContent=favorites.size;renderAudience();updateAudienceUi();renderVibes();renderTrending();

@@ -3,110 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f8f4ed" />
-  <title>Kibun — 気分から見つけるおでかけ</title>
-  <meta name="description" content="行き先ではなく、過ごしたい一日から。気分を選ぶだけで今日のおでかけ先を3つ提案します。" />
+  <meta name="theme-color" content="#f6f1e9" />
+  <title>Kibun — 気分から見つける休日</title>
+  <meta name="description" content="誰と過ごすか、どんな気分か。今日の気分と現在地から、行き先を3つ提案します。" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Kibun ホーム"><span class="brand-dot"></span>Kibun</a>
+    <span class="topbar-tag">MOOD → PLACE</span>
     <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
   </header>
 
   <main id="top">
     <section class="hero shell">
-      <p class="eyebrow">VIBES FIRST, DESTINATION SECOND.</p>
+      <p class="eyebrow">MOOD FIRST. PLACE SECOND.</p>
       <h1>今日は、<br><em>どんな気分？</em></h1>
-      <p class="hero-copy">行きたい場所が決まってなくても大丈夫。<br>過ごしたい一日から、今日の3つを見つけよう。</p>
+      <p class="hero-copy">行きたい場所を検索する前に、過ごしたい一日を選ぶ。<br>誰と行くか、今いる場所も少しだけ教えてください。</p>
 
-      <div id="vibeGrid" class="vibe-grid" aria-label="気分を選ぶ"></div>
-      <div class="selection-row">
-        <span id="selectedHint">まずは気分を1つ選んでください</span>
-        <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
+      <div class="audience-block">
+        <div class="mini-heading"><span>01</span><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
+        <div id="audiencePicker" class="audience-picker" role="group" aria-label="同行者を選ぶ"></div>
       </div>
 
-      <details class="conditions">
-        <summary><strong>＋ 条件を追加</strong><span>年齢・天気・使える時間で調整</span></summary>
+      <div class="vibe-block">
+        <div class="mini-heading"><span>02</span><strong>気分を重ねる</strong><small>最大3つ</small></div>
+        <div id="vibeGrid" class="vibe-grid" aria-label="気分を選ぶ"></div>
+        <div class="selection-row">
+          <span id="selectedHint">まずは気分を1つ選んでください</span>
+          <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
+        </div>
+      </div>
+
+      <details class="conditions" open>
+        <summary><strong>03　条件を少しだけ</strong><span>現在地・時間・天気で調整</span></summary>
         <div class="condition-grid">
-          <label class="field-card">
+          <div class="field-card travel-card">
+            <span class="field-label">📍 現在地から</span>
+            <div class="travel-actions"><button id="locationBtn" class="location-btn" type="button">現在地を使う</button><span id="locationStatus" class="location-status">未取得</span></div>
+            <div class="compact-row">
+              <select id="travelModeSelect" aria-label="移動手段"><option value="drive">🚗 車</option><option value="transit">🚃 公共交通</option></select>
+              <select id="travelLimitSelect" aria-label="所要時間"><option value="" selected>指定なし</option><option value="30">30分以内</option><option value="60">60分以内</option><option value="90">90分以内</option><option value="120">120分以内</option></select>
+            </div>
+            <small class="field-note">現在は町丁目代表点からの概算。Routes API接続後は実ルート時間へ自動切替。</small>
+          </div>
+          <label class="field-card family-only" id="ageField">
             <span class="field-label">👶 子どもの年齢</span>
-            <select id="ageSelect">
-              <option value="">指定しない</option>
-              <option value="6">0歳</option>
-              <option value="15" selected>1歳</option>
-              <option value="30">2歳</option>
-              <option value="42">3歳</option>
-              <option value="54">4歳以上</option>
-            </select>
+            <select id="ageSelect"><option value="">指定しない</option><option value="6">0歳</option><option value="15" selected>1歳</option><option value="30">2歳</option><option value="42">3歳</option><option value="54">4歳以上</option></select>
           </label>
-          <label class="field-card">
-            <span class="field-label">☀️ 今日の空気</span>
-            <select id="weatherSelect">
-              <option value="any">気にしない</option>
-              <option value="hot" selected>暑い</option>
-              <option value="rain">雨</option>
-              <option value="clear">晴れ</option>
-              <option value="cold">寒い</option>
-            </select>
-          </label>
-          <label class="field-card">
-            <span class="field-label">🕐 使える時間</span>
-            <select id="timeSelect">
-              <option value="90">1〜2時間</option>
-              <option value="180" selected>半日くらい</option>
-              <option value="360">たっぷり半日</option>
-              <option value="480">1日</option>
-            </select>
-          </label>
+          <label class="field-card"><span class="field-label">☀️ 今日の空気</span><select id="weatherSelect"><option value="any">気にしない</option><option value="hot" selected>暑い</option><option value="rain">雨</option><option value="clear">晴れ</option><option value="cold">寒い</option></select></label>
+          <label class="field-card"><span class="field-label">🕐 使える時間</span><select id="timeSelect"><option value="90">1〜2時間</option><option value="180" selected>半日くらい</option><option value="360">たっぷり半日</option><option value="480">1日</option></select></label>
         </div>
       </details>
 
-      <button id="recommendBtn" class="primary-btn" type="button" disabled>
-        今日の3つを見る <span>→</span>
-      </button>
-      <p class="microcopy">関東40スポットで試運転中。話題の新着も少しずつ追加しています。</p>
+      <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の3つを見る <span>→</span></button>
+      <p class="microcopy">関東83スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
-      <div class="section-heading">
-        <div><p class="eyebrow">TODAY'S PICKS</p><h2>今日のあなたなら、<br>この3つ。</h2></div>
-        <button id="editBtn" class="outline-btn" type="button">気分を選び直す</button>
-      </div>
-      <div id="coverageWarning" class="warning" hidden></div>
-      <div id="resultsGrid" class="results-grid"></div>
+      <div class="section-heading"><div><p class="eyebrow">TODAY'S PICKS</p><h2 id="resultsHeading">今日のあなたなら、<br>この3つ。</h2><p id="travelResultNote" class="result-note" hidden></p></div><button id="editBtn" class="outline-btn" type="button">条件を変える</button></div>
+      <div id="coverageWarning" class="warning" hidden></div><div id="resultsGrid" class="results-grid"></div>
     </section>
 
+    <section class="trending shell"><div class="section-heading compact"><div><p class="eyebrow">TRENDING NOW</p><h2>いま、ちょっと話題。</h2></div><p class="trending-caption">新規オープンやリニューアル。写真から気になる場所へ。</p></div><div id="trendingGrid" class="trending-grid"></div><p class="collection-note">※ Buzzは正確なSNS投稿数ではなく、新規性・露出・写真映え・人気の勢いをもとにした編集指標です。</p></section>
 
-    <section class="trending shell">
-      <div class="section-heading compact">
-        <div><p class="eyebrow">TRENDING NOW</p><h2>いま、ちょっと話題。</h2></div>
-        <p class="trending-caption">新規オープンやリニューアルなど、最近気になる場所。</p>
-      </div>
-      <div id="trendingGrid" class="trending-grid"></div>
-      <p class="collection-note">※ BuzzはSNSの正確な投稿数ではなく、新規性・露出・写真映え・人気の勢いをもとにした編集指標です。</p>
-    </section>
-
-    <section class="collections shell">
-      <div class="section-heading compact"><div><p class="eyebrow">MOOD COLLECTIONS</p><h2>こんな日、あるよね。</h2></div></div>
-      <div class="collection-grid">
-        <button class="collection-card c1" data-vibes="cool,relax"><span class="collection-icon">🧊</span><strong>もう暑いの無理</strong><small>涼しく、頑張らない</small></button>
-        <button class="collection-card c2" data-vibes="nature,waterside,extraordinary"><span class="collection-icon">🌿</span><strong>ちょっと遠くへ</strong><small>自然と水辺で小旅行</small></button>
-        <button class="collection-card c3" data-vibes="culture,relax"><span class="collection-icon">🏛️</span><strong>文化にふれたい午後</strong><small>博物館・音楽・本に、ゆるく触れる</small></button>
-      </div>
-      <p class="collection-note">※ 一部の施設画像は、雰囲気を伝えるためのイメージです。</p>
-    </section>
+    <section class="collections shell"><div class="section-heading compact"><div><p class="eyebrow">MOOD COLLECTIONS</p><h2>こんな日、あるよね。</h2></div></div><div class="collection-grid"><button class="collection-card c1" data-vibes="cool,relax"><span class="collection-icon">🧊</span><strong>もう暑いの無理</strong><small>涼しく、頑張らない</small></button><button class="collection-card c2" data-vibes="nature,waterside,extraordinary"><span class="collection-icon">🌿</span><strong>ちょっと遠くへ</strong><small>自然と水辺で小旅行</small></button><button class="collection-card c3" data-vibes="culture,relax"><span class="collection-icon">🏛️</span><strong>文化にふれたい午後</strong><small>アート・本・建築に、ゆるく触れる</small></button></div><p class="collection-note">※ 一部の施設画像は、雰囲気を伝えるためのイメージです。</p></section>
   </main>
 
-  <dialog id="spotDialog" class="spot-dialog">
-    <button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button>
-    <div id="dialogContent"></div>
-  </dialog>
+  <dialog id="spotDialog" class="spot-dialog"><button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button><div id="dialogContent"></div></dialog>
+  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div></footer>
 
-  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun</span><p>場所を探す前に、今日はどんな一日にしたいか。</p></footer>
-
-  <script src="data.js"></script>
-  <script src="recommender.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+  <script src="config.js"></script><script src="data.js"></script><script src="recommender.js"></script><script src="travel.js"></script><script src="media.js"></script><script src="app.js"></script>
+</body></html>

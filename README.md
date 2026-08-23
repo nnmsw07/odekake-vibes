@@ -110,3 +110,7 @@ node test_recommender.js
 ## v0.8
 - 83スポット収録（神奈川中心のPriority A 15件を追加）
 - 一時休館のhard filterに対応
+
+
+## v0.12 UI V2
+同行者モード・現在地からの概算所要時間・audience_fit・Google Routes/Places拡張フックを追加。詳細は `ROUTING_MEDIA_v12.md`。
