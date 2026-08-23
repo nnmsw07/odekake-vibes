@@ -1,8 +1,20 @@
 window.KIBUN_CONFIG = {
-  // Optional. Cloudflare WorkerなどをデプロイしたらURLを設定すると、概算からGoogle Routes実時間へ切り替わります。
-  travelApiUrl: "",
-  // Optional. Google Places写真プロキシ。空なら現在のhero_imageを使用します。
-  placePhotoApiUrl: "",
+  // Cloudflare Workerをデプロイしたら、この1行だけ設定してください。
+  // 例: "https://kibun-api.<your-subdomain>.workers.dev"
+  apiBaseUrl: "",
+
+  // Google Places Hero: API接続後はAI Heroだけを実写へ差し替えます。
+  // audited licensed/official photos are preserved by default.
+  placePhotoEnabled: true,
+  placePhotoMode: "replace_ai_only", // replace_ai_only | prefer_places | off
+  placePhotoMaxConcurrent: 3,
+
   geoloniaApiBase: "https://japanese-addresses-v2.geoloniamaps.com/api/ja",
   travelEstimateCandidateLimit: 36
 };
+
+(function resolveKibunApiConfig(cfg){
+  const base=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
+  cfg.travelApiUrl = cfg.travelApiUrl || (base ? `${base}/travel-times` : "");
+  cfg.placePhotoApiUrl = cfg.placePhotoApiUrl || (base ? `${base}/place-photo` : "");
+})(window.KIBUN_CONFIG);

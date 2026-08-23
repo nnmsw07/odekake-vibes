@@ -13,27 +13,35 @@ function vibeLabel(k){return VIBE_UI[k]?.[1]||k}function vibeEmoji(k){return VIB
 function buzzBadge(s){return buzzScore(s)>=90?`<span class="buzz-badge">🔥 話題 ${Math.round(buzzScore(s))}</span>`:''}
 function imageBadge(i){return !i||i.type==='photo'?'':`<span class="image-badge">${i.label||'イメージ'}</span>`}function imageCredit(i,compact=false){if(!i)return'';if(i.type==='photo'){if(i.credit_required===false||!i.credit)return'';const label=[i.credit,i.license].filter(Boolean).join(' · '),cls=compact?'image-credit compact':'image-credit detail-credit';return i.source_url?`<a class="${cls}" href="${i.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`:`<span class="${cls}">Photo: ${label}</span>`;}return compact?'':`<p class="image-note">※ ${i.credit||'生成イメージ'}。実在施設の正確な外観・内観を示すものではありません。</p>`;}
 function imageBlock(s,variant='card'){const i=s.hero_image;if(!i?.url)return `<div class="${variant}-image image-fallback"><span>${vibeEmoji(Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1])[0]?.[0])}</span></div>`;return `<div class="${variant}-image image-shell" data-media-spot="${s.spot_id}"><img src="${i.url}" alt="${i.alt||s.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('image-fallback');this.remove()">${imageBadge(i)}${variant==='card'?imageCredit(i,true):''}</div>`;}
-async function enhancePlacePhotos(root=document){
-  if(!window.KIBUN_CONFIG?.placePhotoApiUrl)return;
-  const nodes=[...root.querySelectorAll('[data-media-spot]')];
-  for(const node of nodes.slice(0,8)){
-    const s=findSpot(node.dataset.mediaSpot);
-    if(!s||node.dataset.placeEnhanced)continue;
-    node.dataset.placeEnhanced='1';
-    const p=await window.KibunMedia.resolvePlacePhoto(s);
-    if(!p?.photoUri)continue;
-    const img=node.querySelector('img');
-    if(img)img.src=p.photoUri;
-    node.querySelector('.image-badge')?.remove();
-    node.querySelector('.image-credit')?.remove();
-    const who=p.attribution?.displayName?`Photo: ${p.attribution.displayName} · `:'';
-    const source=p.googleMapsUri||p.attribution?.uri||'#';
-    node.insertAdjacentHTML('beforeend',`<a class="image-credit compact google-attribution" href="${source}" target="_blank" rel="noopener">${who}<span translate="no">Google Maps</span></a>`);
-    if(root===dialog){
-      const note=root.querySelector('.image-note,.detail-credit');
-      if(note)note.outerHTML=`<a class="image-credit detail-credit google-attribution" href="${source}" target="_blank" rel="noopener">${who}<span translate="no">Google Maps</span></a>`;
-    }
-  }
+function googleAuthorHtml(authors=[],compact=false){
+  if(compact){const a=authors[0];return a?.displayName?`<span class="gmp-author-name">${a.displayName}</span>`:'';}
+  if(!authors.length)return'';
+  return `<div class="gmp-authors">${authors.map(a=>`<a class="gmp-author" href="${a.uri||'#'}" target="_blank" rel="noopener">${a.photoUri?`<img src="${a.photoUri}" alt="" loading="lazy">`:''}<span>${a.displayName||'写真投稿者'}</span></a>`).join('')}</div>`;
+}
+function googleAttributionHtml(p,compact=false){
+  const source=p.photoGoogleMapsUri||p.placeGoogleMapsUri||'#';
+  if(compact)return `<a class="gmp-attribution compact" href="${source}" target="_blank" rel="noopener" aria-label="Google Mapsで元の写真を見る">${googleAuthorHtml(p.authors||[],true)}<span class="gmp-brand" translate="no">Google Maps</span></a>`;
+  return `<div class="gmp-attribution detail">${googleAuthorHtml(p.authors||[],false)}<a class="gmp-source-link" href="${source}" target="_blank" rel="noopener"><span class="gmp-brand" translate="no">Google Maps</span> で元の写真を見る →</a></div>`;
+}
+async function enhanceOnePlacePhoto(node,root=document){
+  if(node.dataset.placeEnhanced)return;const s=findSpot(node.dataset.mediaSpot);if(!s||!window.KibunMedia?.shouldUsePlacePhoto(s))return;
+  node.dataset.placeEnhanced='loading';const p=await window.KibunMedia.resolvePlacePhoto(s);if(!p?.photoUri){node.dataset.placeEnhanced='fallback';return;}
+  const img=node.querySelector('img');if(img){img.src=p.photoUri;img.alt=`${s.name}の写真`;img.referrerPolicy='no-referrer';}
+  node.classList.add('google-places-photo');node.querySelector('.image-badge')?.remove();node.querySelector('.image-credit')?.remove();node.querySelector('.gmp-attribution')?.remove();
+  node.insertAdjacentHTML('beforeend',googleAttributionHtml(p,true));
+  if(root===dialog){const hero=root.querySelector('.dialog-hero');hero?.querySelector('.image-note,.detail-credit,.gmp-attribution.detail')?.remove();hero?.insertAdjacentHTML('beforeend',googleAttributionHtml(p,false));}
+  node.dataset.placeEnhanced='1';
+}
+function enhancePlacePhotos(root=document){
+  if(!window.KIBUN_CONFIG?.placePhotoApiUrl||!window.KIBUN_CONFIG?.placePhotoEnabled)return;
+  const nodes=[...root.querySelectorAll('[data-media-spot]')].filter(n=>!n.dataset.placeEnhanced);
+  if(!nodes.length)return;
+  const max=Number(window.KIBUN_CONFIG?.placePhotoMaxConcurrent||3),queue=[];let active=0;
+  const run=()=>{while(active<max&&queue.length){const item=queue.shift();active++;enhanceOnePlacePhoto(item,root).finally(()=>{active--;run();});}};
+  const enqueue=n=>{if(!n.dataset.placeQueued){n.dataset.placeQueued='1';queue.push(n);run();}};
+  if(!('IntersectionObserver'in window)||root===dialog){nodes.forEach(enqueue);return;}
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);enqueue(e.target);}})},{rootMargin:'220px'});
+  nodes.forEach(n=>io.observe(n));
 }
 function renderTrending(){if(!trendingGrid)return;const items=[...seed.spots].filter(s=>buzzScore(s)>=90).sort((a,b)=>buzzScore(b)-buzzScore(a)).slice(0,6);trendingGrid.innerHTML=items.map(s=>`<button class="trending-card" type="button" data-trending="${s.spot_id}"><div class="trending-media">${imageBlock(s,'trend')}${buzzBadge(s)}</div><div class="trending-copy"><strong>${s.name}</strong><span>${s.prefecture} · ${s.city}</span><small>${s.public_copy||s.buzz?.reason||''}</small></div></button>`).join('');trendingGrid.querySelectorAll('[data-trending]').forEach(b=>b.addEventListener('click',()=>openSpot(b.dataset.trending)));enhancePlacePhotos(trendingGrid);}
 async function useCurrentLocation(){const btn=$('locationBtn'),status=$('locationStatus');btn.disabled=true;status.textContent='取得中…';try{currentOrigin=await window.KibunTravel.getCurrentPosition();status.textContent=`取得済み · ±${Math.round(currentOrigin.accuracy)}m`;btn.textContent='現在地を更新';}catch(e){status.textContent='取得できませんでした';currentOrigin=null;alert('現在地を取得できませんでした。ブラウザの位置情報許可を確認してください。');}finally{btn.disabled=false;}}

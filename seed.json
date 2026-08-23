@@ -179,7 +179,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "横浜アンパンマンこどもミュージアム",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -286,7 +289,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ヤマハミュージック 横浜みなとみらい",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -388,7 +394,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "港北天然温泉 ゆったりCOco",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -489,7 +498,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "横浜ストロベリーパーク",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -591,7 +603,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "のげやま子ども図書館おやこフロア",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -698,7 +713,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "よこはま動物園ズーラシア",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -801,7 +819,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ボーネルンドあそびのせかい MARK IS みなとみらい店",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -902,7 +923,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ハピピランド ルララ港北店",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1003,7 +1027,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "中川温泉ぶなの湯",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1103,7 +1130,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "清川リバーランド",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1224,7 +1254,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ワンダリア横浜",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1350,7 +1383,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "うんこミュージアム YOKOHAMA BAY",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1471,7 +1507,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ちきゅうのにわ 港北店",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1592,7 +1631,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "YUMESAKI GALLERY",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1713,7 +1755,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "京急ミュージアム",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1834,7 +1879,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "三菱みなとみらい技術館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -1955,7 +2003,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "あーすぷらざ",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2097,7 +2148,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ロマンスカーミュージアム",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2224,7 +2278,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "カップヌードルミュージアム 横浜",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2360,7 +2417,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "アニタッチ みなとみらい",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2482,7 +2542,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "はまぎん こども宇宙科学館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2603,7 +2666,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "湘南あそびマーレ",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2739,7 +2805,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "箱根小涌園ユネッサン",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2860,7 +2929,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "箱根海賊船 ロワイヤルII",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -2987,7 +3059,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "こども自然公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3114,7 +3189,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "国立科学博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3256,7 +3334,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "teamLab Planets TOKYO",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3377,7 +3458,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "PLAY! PARK",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3498,7 +3582,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "スモールワールズ",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3624,7 +3711,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "タカラトミープラネット アリオ亀有",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3749,7 +3839,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "JAL SKY MUSEUM",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -3885,7 +3978,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ASOBono!",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4006,7 +4102,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "JOYPOLIS SPORTS X",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4127,7 +4226,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "よみうりランド グッジョバ!! FOOD factory",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4264,7 +4366,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "東京おもちゃ美術館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4385,7 +4490,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "SNOOPY Playful PARK",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4506,7 +4614,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "龍宮城スパホテル三日月",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4632,7 +4743,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "西武アグリパーク所沢",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4753,7 +4867,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "こびと はくぶつかん",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4874,7 +4991,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "キッズランドUS MAX 川越南古谷店",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -4995,7 +5115,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ぼうさいの丘公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5122,7 +5245,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "荒崎公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5243,7 +5369,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神乃珈琲 川崎有馬店",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5367,7 +5496,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立あいかわ公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5490,7 +5622,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立秦野戸川公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5630,7 +5765,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "長井海の手公園 ソレイユの丘",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5754,7 +5892,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立観音崎公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -5877,7 +6018,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立辻堂海浜公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6000,7 +6144,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立生命の星・地球博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6144,7 +6291,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "箱根 彫刻の森美術館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6289,7 +6439,10 @@
         "current_provider": "licensed_real",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "新江ノ島水族館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6426,7 +6579,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "カワスイ 川崎水族館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6566,7 +6722,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "横須賀美術館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6689,7 +6848,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "こどもの国",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6811,7 +6973,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "湘南台文化センターこども館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -6934,7 +7099,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立四季の森公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7073,7 +7241,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立相模原公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7211,7 +7382,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "くりはま花の国",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7335,7 +7509,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "平塚市総合公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7459,7 +7636,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "神奈川県立茅ケ崎里山公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7582,7 +7762,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "あつぎこどもの森公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7705,7 +7888,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "電車とバスの博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7829,7 +8015,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "かわさき宙と緑の科学館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -7952,7 +8141,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "横浜イングリッシュガーデン",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8075,7 +8267,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "国立国会図書館 国際子ども図書館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8213,7 +8408,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "東京国立博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8336,7 +8534,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "消防博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8459,7 +8660,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "東京都虹の下水道館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8583,7 +8787,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "東京都水の科学館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8721,7 +8928,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "地下鉄博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8845,7 +9055,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "板橋区立 熱帯環境植物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -8984,7 +9197,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "江戸東京たてもの園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9123,7 +9339,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "ふなばしアンデルセン公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9246,7 +9465,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "千葉市動物公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9369,7 +9591,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "航空科学博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9508,7 +9733,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "稲毛海浜公園 / SUNSET BEACH PARK INAGE",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9646,7 +9874,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "埼玉県こども動物自然公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9785,7 +10016,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "鉄道博物館",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -9923,7 +10157,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "角川武蔵野ミュージアム",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -10061,7 +10298,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "国営武蔵丘陵森林公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -10199,7 +10439,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "三溪園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -10323,7 +10566,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "葉山しおさい公園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     },
@@ -10446,7 +10692,10 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved"
+          "status": "not_resolved",
+          "query": "小田原こどもの森公園 わんぱくらんど",
+          "photo_index_override": null,
+          "force": false
         }
       }
     }
