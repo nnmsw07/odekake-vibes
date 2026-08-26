@@ -1,0 +1,7 @@
+name = "kibun-api"
+main = "worker.js"
+compatibility_date = "2026-08-26"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://nnmsw07.github.io"
