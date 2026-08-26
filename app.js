@@ -68,7 +68,7 @@ async function loadHeroAudit(s){
   box.querySelector('[data-audit-reset]')?.addEventListener('click',async()=>{window.KibunMedia.setAuditOverride(s.spot_id,null);dialog.close();setTimeout(()=>openSpot(s.spot_id),0);});
 }
 function installHeroAuditDock(){
-  if(!HERO_AUDIT)return;const dock=document.createElement('aside');dock.className='hero-audit-dock';dock.innerHTML=`<span>🖼 Hero監査</span><select id="heroAuditSpotSelect" aria-label="監査するスポット">${seed.spots.map(s=>`<option value="${s.spot_id}">${s.name}</option>`).join('')}</select><button type="button" id="heroAuditOpen">開く</button><button type="button" id="heroAuditExport">設定を書き出す</button>`;document.body.appendChild(dock);
+  if(!HERO_AUDIT)return;const dock=document.createElement('aside');dock.className='hero-audit-dock';dock.innerHTML=`<span>🖼 Hero監査 <small>v14.1</small></span><select id="heroAuditSpotSelect" aria-label="監査するスポット">${seed.spots.map(s=>`<option value="${s.spot_id}">${s.name}</option>`).join('')}</select><button type="button" id="heroAuditOpen">開く</button><button type="button" id="heroAuditExport">設定を書き出す</button>`;document.body.appendChild(dock);
   const sel=dock.querySelector('#heroAuditSpotSelect');dock.querySelector('#heroAuditOpen').addEventListener('click',()=>openSpot(sel.value));dock.querySelector('#heroAuditExport').addEventListener('click',()=>{
     const payload=JSON.stringify(window.KibunMedia.getAuditOverrides?.()||{},null,2);const w=window.open('','_blank');if(w){w.document.write(`<meta name="viewport" content="width=device-width"><pre style="white-space:pre-wrap;font:14px/1.5 monospace;padding:20px">${payload.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</pre>`);w.document.close();}else prompt('Hero overrides',payload);
   });

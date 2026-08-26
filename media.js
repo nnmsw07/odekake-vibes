@@ -1,7 +1,13 @@
 (function(global){
   const cfg=global.KIBUN_CONFIG||{};
   const inflight=new Map(),candidateInflight=new Map();
-  const auditMode=new URLSearchParams(location.search).get('heroAudit')==='1';
+  const auditParams=new URLSearchParams(location.search);
+  const auditHash=decodeURIComponent(location.hash||'');
+  const auditRequested=auditParams.get('heroAudit');
+  if(auditRequested==='1'){ try{localStorage.setItem('kibun-hero-audit-enabled','1');}catch(_e){} }
+  if(auditRequested==='0'){ try{localStorage.removeItem('kibun-hero-audit-enabled');}catch(_e){} }
+  let auditPersisted=false; try{auditPersisted=localStorage.getItem('kibun-hero-audit-enabled')==='1';}catch(_e){}
+  const auditMode=auditRequested==='1' || /(?:^|[?&#])heroAudit=1(?:&|$)/.test(auditHash) || auditPersisted;
   const OVERRIDE_KEY='kibun-hero-overrides-v14';
 
   function strategy(spot){ return spot?.media_strategy?.google_places || {}; }
