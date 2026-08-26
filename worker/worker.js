@@ -94,6 +94,50 @@ export default {
           source:'google_places'
         },200,cors);
       }
+
+      // Hero監査用: 1回のPlace検索で複数の写真候補を返す。
+      // 通常UIからは呼ばず、?heroAudit=1 の管理用UIだけで使用する。
+      if(url.pathname.endsWith('/place-photos') && request.method==='GET'){
+        const name=url.searchParams.get('name'),address=url.searchParams.get('address')||'',placeId=url.searchParams.get('placeId')||'';
+        const requested=Math.max(1,Math.min(8,Number(url.searchParams.get('limit')||6)));
+        if(!name && !placeId) return json({error:'name or placeId required'},400,cors);
+        const place=await getPlace(env,{name,address,placeId});
+        if(!place) return json({candidates:[],reason:'place_not_found'},200,cors);
+        const confidence=placeId?'high':matchConfidence(name,place.displayName?.text);
+        if(confidence==='low') return json({candidates:[],reason:'low_match',matchedPlaceName:place.displayName?.text||'',matchedAddress:place.formattedAddress||'',placeId:place.id||null,matchConfidence:confidence},200,cors);
+        const photos=(place.photos||[]).slice(0,requested);
+        const candidates=[];
+        for(let index=0;index<photos.length;index++){
+          const selected=photos[index];
+          try{
+            const mediaUrl=`https://places.googleapis.com/v1/${selected.name}/media?maxWidthPx=1200&skipHttpRedirect=true`;
+            const pr=await fetch(mediaUrl,{headers:{'X-Goog-Api-Key':env.GOOGLE_MAPS_API_KEY}});
+            if(!pr.ok) continue;
+            const pj=await pr.json();
+            if(!pj.photoUri) continue;
+            candidates.push({
+              index,
+              photoUri:pj.photoUri,
+              widthPx:Number(selected.widthPx||0),
+              heightPx:Number(selected.heightPx||0),
+              score:photoScore(selected,index),
+              photoGoogleMapsUri:selected.googleMapsUri||place.googleMapsUri||null,
+              authors:(selected.authorAttributions||[]).map(a=>({displayName:a.displayName||'',uri:a.uri||'',photoUri:a.photoUri||''}))
+            });
+          }catch(_e){}
+        }
+        const auto=pickPhoto(place.photos||[],null);
+        return json({
+          candidates,
+          autoSelectedPhotoIndex:auto?.index??null,
+          placeId:place.id||null,
+          matchedPlaceName:place.displayName?.text||'',
+          matchedAddress:place.formattedAddress||'',
+          placeGoogleMapsUri:place.googleMapsUri||null,
+          matchConfidence:confidence,
+          source:'google_places'
+        },200,cors);
+      }
       return new Response('Kibun API',{headers:cors});
     }catch(e){return json({error:String(e.message||e)},500,cors);}
   }
