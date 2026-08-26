@@ -1,7 +1,7 @@
 window.KIBUN_CONFIG = {
   // Cloudflare Workerをデプロイしたら、この1行だけ設定してください。
   // 例: "https://kibun-api.<your-subdomain>.workers.dev"
-  apiBaseUrl: "",
+  apiBaseUrl: "https://kibun-api.misawa-nana7.workers.dev/",
 
   // Google Places Hero: API接続後はAI Heroだけを実写へ差し替えます。
   // audited licensed/official photos are preserved by default.
@@ -10,7 +10,7 @@ window.KIBUN_CONFIG = {
   placePhotoMaxConcurrent: 3,
 
   geoloniaApiBase: "https://japanese-addresses-v2.geoloniamaps.com/api/ja",
-  travelEstimateCandidateLimit: 36
+  travelEstimateCandidateLimit: 10
 };
 
 (function resolveKibunApiConfig(cfg){
