@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v5_95spots_audience_vibes",
-    "version": "0.17.1",
+    "dataset_name": "kibun_kanto_seed_v6_125spots_gap_expansion",
+    "version": "0.18.0",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -40,7 +40,7 @@
       "real_image_audit": "2026-08-22: Priority A 15件を本番品質で追加。新規3件（荒崎公園・彫刻の森美術館・新江ノ島水族館）に権利確認済み実写Heroを採用。",
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
-      "static_fallback": "95スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
+      "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
       "hero_selection": "2026-08-27: ユーザー目視監査のphoto_index 73件、Google Place ID 10件をseedへ固定。"
     },
     "buzz_layer": {
@@ -60,7 +60,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-27 V17.1: 気分を3軸、やりたいことを10軸に再整理。95スポットHero監査結果を正式反映し、Google Places→AI fallbackへ統一。",
+    "expansion_note": "2026-08-27 V18: ユーザー指定6件（よこすかポートマーケット、SKY PLAZA IBASHO、Think Coffee、グランツリー武蔵小杉、CULAFUL、横浜美術館）を含む30件を追加。既存95件で弱かったanimals / shopping / food / natureを、partner・solo・friendsまで意識して補強。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -12196,6 +12196,3813 @@
           "use_address": false,
           "matched_name": "KASHIWANOHA T-SITE",
           "matched_address": "〒277-0871 千葉県柏市若柴２２７−１"
+        }
+      }
+    },
+    {
+      "spot_id": "spot_096",
+      "slug": "yokosuka-port-market",
+      "name": "いちご よこすかポートマーケット",
+      "aliases": [],
+      "category_primary": "food_market",
+      "categories": [
+        "food",
+        "shopping",
+        "waterside",
+        "stroll",
+        "market"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市新港町6",
+      "official_url": "https://yokosukaport-market.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 70,
+        "outdoor": 50,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 50,
+        "parent_rest": 80,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 35,
+        "baby_fit": 70,
+        "toddler_fit": 70,
+        "stroller_fit": 92,
+        "rain_resilience": 78,
+        "heat_resilience": 75,
+        "walking_load": 25,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 96,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 10,
+        "extraordinary": 58,
+        "scenic": 86,
+        "stroll": 90,
+        "relax": 72,
+        "shopping": 80,
+        "food": 100,
+        "culture": 45,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 90
+      },
+      "editorial_reason": "food×waterside×shoppingの弱点を一度に補える横須賀の複合スポット。",
+      "public_copy": "三浦半島の海鮮や野菜、スイーツを選びながら、港の景色まで楽しめるマーケット。食べたいものが違う日にも合わせやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜19:00を基本。店舗により異なる。",
+        "price_summary": "入場無料。飲食・買い物は各店舗で別途。",
+        "reservation_summary": "通常利用は予約不要。イベント・店舗により例外あり。",
+        "age_note": "乳幼児同行可。店舗ごとの設備・条件は公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://yokosukaport-market.com/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 90,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 90,
+        "reason": "food×waterside×shoppingの弱点を一度に補える横須賀の複合スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://yokosukaport-market.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "いちご よこすかポートマーケットの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 96,
+        "solo": 90,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "いちご よこすかポートマーケット",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_097",
+      "slug": "sky-plaza-ibasho",
+      "name": "SKY PLAZA IBASHO",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "lounge",
+        "scenic",
+        "relax",
+        "food",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区西新宿2-2-1 京王プラザホテル本館47F",
+      "official_url": "https://www.keioplaza.co.jp/stay/sky_plaza_ibasho.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 88,
+        "parent_rest": 100,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 55,
+        "creative_sensory": 35,
+        "baby_fit": 92,
+        "toddler_fit": 90,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 10,
+        "planning_friction": 70
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 100,
+        "stroll": 25,
+        "relax": 100,
+        "shopping": 20,
+        "food": 50,
+        "culture": 35,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "familyとpartner/soloの両方に強い『親も行きたい』室内スポット。",
+      "public_copy": "ホテル最上階から新宿を一望しながら、ラウンジや靴を脱いで過ごせるエリアでゆっくり。子ども連れでも大人だけでも使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "デイタイム8:00〜16:30、ナイトタイム17:00〜22:00。",
+        "price_summary": "ビジターは時間帯・曜日で料金が異なる。未就学児は料金条件を公式で確認。",
+        "reservation_summary": "2026年4月25日以降、ビジター利用は事前予約・チケット購入が必要。",
+        "age_note": "小学生以上は大人料金の案内あり。乳幼児同行可、ベビーフード等の持込例外あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.keioplaza.co.jp/stay/sky_plaza_ibasho.html"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 55,
+        "social_presence": 92,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 92,
+        "reason": "familyとpartner/soloの両方に強い『親も行きたい』室内スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.keioplaza.co.jp/stay/sky_plaza_ibasho.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "SKY PLAZA IBASHOの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 96,
+        "solo": 98,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "SKY PLAZA IBASHO",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_098",
+      "slug": "think-coffee-kanda",
+      "name": "Think Coffee Japan 神田錦町",
+      "aliases": [],
+      "category_primary": "specialty_cafe",
+      "categories": [
+        "cafe",
+        "food",
+        "culture",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区神田錦町2-9-15 神田SDGsコネクション1F-2F",
+      "official_url": "https://thinkcoffee.jp/cafe/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 82,
+        "parent_rest": 90,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 88,
+        "creative_sensory": 35,
+        "baby_fit": 55,
+        "toddler_fit": 50,
+        "stroller_fit": 55,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 5
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 52,
+        "scenic": 35,
+        "stroll": 55,
+        "relax": 95,
+        "shopping": 15,
+        "food": 92,
+        "culture": 65,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "solo/partnerのfood×relaxを強化する大人向けカフェ枠。",
+      "public_copy": "NY発のスペシャルティコーヒーを、2フロアの落ち着いた空間で。街歩きの途中にひと息ついたり、ひとりでゆっくりしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "8:00〜19:00。定休日は不定休。",
+        "price_summary": "飲食代のみ。",
+        "reservation_summary": "通常利用は予約不要。最新営業は公式・Google Mapsを確認。",
+        "age_note": "子ども専用設備を目的とする施設ではないため、乳幼児同行時は混雑・座席状況を確認推奨。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://thinkcoffee.jp/cafe/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 55,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "solo/partnerのfood×relaxを強化する大人向けカフェ枠。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://thinkcoffee.jp/cafe/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Think Coffee Japan 神田錦町の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 94,
+        "solo": 100,
+        "friends": 82
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Think Coffee Japan 神田錦町",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_099",
+      "slug": "grand-tree-musashikosugi",
+      "name": "グランツリー武蔵小杉",
+      "aliases": [],
+      "category_primary": "shopping_mall",
+      "categories": [
+        "shopping",
+        "food",
+        "family",
+        "indoor_play",
+        "stroll"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市中原区",
+      "address": "神奈川県川崎市中原区新丸子東3-1135-1",
+      "official_url": "https://grand-tree.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 35,
+        "hands_on": 55,
+        "quietness": 50,
+        "parent_rest": 90,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 92,
+        "creative_sensory": 65,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 100,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 5
+      },
+      "parent_enjoyment_seed": 90,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 38,
+        "scenic": 35,
+        "stroll": 88,
+        "relax": 80,
+        "shopping": 100,
+        "food": 92,
+        "culture": 30,
+        "animals": 0,
+        "creative": 55,
+        "active": 55,
+        "waterside": 0
+      },
+      "editorial_reason": "shoppingのfamily適合をさらに厚くする近場の実用枠。",
+      "public_copy": "買い物や食事に加えて、子ども向けショップや遊び場も充実。天気を気にせず『家族それぞれやりたいことがある日』に使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "専門店は10:00〜21:00を基本。飲食など一部異なる。",
+        "price_summary": "入場無料。買い物・飲食・各サービスは別途。",
+        "reservation_summary": "通常利用は予約不要。店舗・イベントにより予約あり。",
+        "age_note": "乳幼児同行しやすい大型商業施設。個別施設の年齢条件は各店確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://grand-tree.jp/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 55,
+        "social_presence": 86,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 86,
+        "reason": "shoppingのfamily適合をさらに厚くする近場の実用枠。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://grand-tree.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-b.jpg",
+        "type": "ai",
+        "alt": "グランツリー武蔵小杉の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 82,
+        "solo": 82,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "川崎市中原区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "グランツリー武蔵小杉",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_100",
+      "slug": "culaful-takeshiba",
+      "name": "CULAFUL（キュラフル）",
+      "aliases": [],
+      "category_primary": "kids_park_cafe",
+      "categories": [
+        "indoor_play",
+        "cafe",
+        "creative",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区海岸1-10-45 アトレ竹芝 シアター棟2F",
+      "official_url": "https://culaful.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 85,
+        "hands_on": 80,
+        "quietness": 50,
+        "parent_rest": 75,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 70,
+        "creative_sensory": 100,
+        "baby_fit": 100,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 20,
+        "planning_friction": 55
+      },
+      "parent_enjoyment_seed": 78,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 30,
+        "extraordinary": 75,
+        "scenic": 35,
+        "stroll": 55,
+        "relax": 68,
+        "shopping": 20,
+        "food": 55,
+        "culture": 30,
+        "animals": 0,
+        "creative": 100,
+        "active": 92,
+        "waterside": 0
+      },
+      "editorial_reason": "family×creative/activeの質を上げる、親の居心地も意識した屋内施設。",
+      "public_copy": "自然をテーマにした屋内キッズパークとカフェ。体を動かす遊びと、親が少し休める時間を同じ場所でつくりやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公式案内では11:00〜19:00を基本。最新営業は予約ページで確認。",
+        "price_summary": "年齢・曜日・利用時間により料金が異なる。",
+        "reservation_summary": "予約枠あり。当日案内もあるため公式予約ページで確認。",
+        "age_note": "0歳〜小学生向け料金区分あり。滑り止め付き靴下など利用ルールを事前確認。",
+        "temporary_note": "営業情報は公式予約ページの最新表示を優先して確認。",
+        "checked_at": "2026-08-27",
+        "source_url": "https://culaful.com/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 55,
+        "social_presence": 82,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 82,
+        "reason": "family×creative/activeの質を上げる、親の居心地も意識した屋内施設。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://culaful.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "CULAFUL（キュラフル）の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 28,
+        "solo": 10,
+        "friends": 40
+      },
+      "adult_enjoyment_seed": 78,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "CULAFUL（キュラフル）",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_101",
+      "slug": "yokohama-museum-of-art",
+      "name": "横浜美術館",
+      "aliases": [],
+      "category_primary": "art_museum",
+      "categories": [
+        "art",
+        "culture",
+        "creative",
+        "stroll",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい3-4-1",
+      "official_url": "https://yokohama.art.museum/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 10,
+        "physical_activity": 35,
+        "hands_on": 55,
+        "quietness": 88,
+        "parent_rest": 70,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 100,
+        "baby_fit": 78,
+        "toddler_fit": 72,
+        "stroller_fit": 95,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 30
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 72,
+        "scenic": 45,
+        "stroll": 70,
+        "relax": 78,
+        "shopping": 20,
+        "food": 30,
+        "culture": 100,
+        "animals": 0,
+        "creative": 95,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "cultureをfamilyとpartner/soloの両方で強化できる横浜の中核スポット。",
+      "public_copy": "大きなグランドギャラリーと展覧会を楽しめる、みなとみらいの美術館。子どものアトリエなど親子向け造形プログラムもある。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜18:00を基本。木曜・年末年始休館、展覧会により変更あり。",
+        "price_summary": "観覧料は展覧会ごとに異なる。",
+        "reservation_summary": "通常鑑賞は予約不要の展覧会もあるが、プログラムは事前申込制の場合あり。",
+        "age_note": "子どものアトリエは12歳までを対象としたプログラムあり。開催日・対象年齢は要確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://yokohama.art.museum/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 90,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 90,
+        "reason": "cultureをfamilyとpartner/soloの両方で強化できる横浜の中核スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://yokohama.art.museum/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜美術館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 98,
+        "solo": 100,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜美術館",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_102",
+      "slug": "yokohama-hakkeijima-seaparadise",
+      "name": "横浜・八景島シーパラダイス",
+      "aliases": [],
+      "category_primary": "marine_theme_park",
+      "categories": [
+        "aquarium",
+        "animals",
+        "waterside",
+        "active",
+        "shopping",
+        "food"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市金沢区",
+      "address": "神奈川県横浜市金沢区八景島",
+      "official_url": "https://www.seaparadise.co.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 360,
+      "experience_seed": {
+        "indoor": 60,
+        "outdoor": 75,
+        "physical_activity": 70,
+        "hands_on": 60,
+        "quietness": 50,
+        "parent_rest": 55,
+        "greenery": 20,
+        "water_contact": 35,
+        "animal_contact": 100,
+        "food_experience": 80,
+        "creative_sensory": 70,
+        "baby_fit": 88,
+        "toddler_fit": 95,
+        "stroller_fit": 88,
+        "rain_resilience": 65,
+        "heat_resilience": 60,
+        "walking_load": 80,
+        "planning_friction": 45
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 72,
+        "nature": 10,
+        "extraordinary": 100,
+        "scenic": 95,
+        "stroll": 85,
+        "relax": 60,
+        "shopping": 65,
+        "food": 80,
+        "culture": 30,
+        "animals": 100,
+        "creative": 15,
+        "active": 90,
+        "waterside": 100
+      },
+      "editorial_reason": "animals不足を最大級に補い、friendsにも強い大型候補。",
+      "public_copy": "4つの水族館とアトラクション、食事や買い物までそろう海のテーマパーク。生きものにも遊びにも振り切りたい一日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付・施設ごとに変動。公式の本日情報を確認。",
+        "price_summary": "水族館・アトラクションの利用内容によりチケットが異なる。",
+        "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
+        "age_note": "乳幼児同行可。アトラクションは個別に身長・年齢条件あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.seaparadise.co.jp/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 55,
+        "social_presence": 96,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 96,
+        "reason": "animals不足を最大級に補い、friendsにも強い大型候補。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.seaparadise.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "横浜・八景島シーパラダイスの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 92,
+        "solo": 82,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "横浜市金沢区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜・八景島シーパラダイス",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_103",
+      "slug": "yamashita-park",
+      "name": "山下公園",
+      "aliases": [],
+      "category_primary": "seaside_park",
+      "categories": [
+        "park",
+        "waterside",
+        "scenic",
+        "stroll",
+        "nature"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町279",
+      "official_url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/koen/daihyoteki/kouen008.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 68,
+        "parent_rest": 75,
+        "greenery": 80,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 95,
+        "toddler_fit": 92,
+        "stroller_fit": 100,
+        "rain_resilience": 10,
+        "heat_resilience": 25,
+        "walking_load": 25,
+        "planning_friction": 0
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 75,
+        "extraordinary": 45,
+        "scenic": 100,
+        "stroll": 100,
+        "relax": 95,
+        "shopping": 20,
+        "food": 30,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 35,
+        "waterside": 100
+      },
+      "editorial_reason": "scenic/strollを全audienceで強化する無料・低摩擦スポット。",
+      "public_copy": "港を行き交う船やベイブリッジを眺めながら、芝生やバラ園を気ままに散歩。何かをしなくても満足しやすい横浜の定番。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "常時開放の都市公園。工事・イベント等は公式情報を確認。",
+        "price_summary": "入園無料。",
+        "reservation_summary": "予約不要。",
+        "age_note": "乳幼児同行可。夏季は日差し・暑さ対策が必要。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/koen/daihyoteki/kouen008.html"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 55,
+        "social_presence": 88,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 88,
+        "reason": "scenic/strollを全audienceで強化する無料・低摩擦スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/midori-koen/koen/koen/daihyoteki/kouen008.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "山下公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 100,
+        "solo": 100,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "山下公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_104",
+      "slug": "yokohama-marine-tower",
+      "name": "横浜マリンタワー",
+      "aliases": [],
+      "category_primary": "observation_tower",
+      "categories": [
+        "scenic",
+        "culture",
+        "stroll",
+        "food"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町14-1",
+      "official_url": "https://marinetower.yokohama/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 10,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 65,
+        "parent_rest": 65,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 65,
+        "creative_sensory": 70,
+        "baby_fit": 88,
+        "toddler_fit": 86,
+        "stroller_fit": 95,
+        "rain_resilience": 95,
+        "heat_resilience": 95,
+        "walking_load": 20,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 10,
+        "extraordinary": 90,
+        "scenic": 100,
+        "stroll": 75,
+        "relax": 70,
+        "shopping": 20,
+        "food": 55,
+        "culture": 72,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "partner/soloのscenic×extraordinaryを横浜で補強。",
+      "public_copy": "横浜の街と港を360度見渡せる展望スポット。山下公園や中華街の散歩と組み合わせると、短時間でも特別感が出る。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "展望フロア10:00〜22:00を基本。メンテナンス休館日あり。",
+        "price_summary": "日時・時間帯等で料金が異なるため公式確認。",
+        "reservation_summary": "当日券・WEB券あり。混雑日は事前購入推奨。",
+        "age_note": "ベビーカー利用しやすいバリアフリー案内あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://marinetower.yokohama/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 90,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 90,
+        "reason": "partner/soloのscenic×extraordinaryを横浜で補強。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://marinetower.yokohama/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜マリンタワーの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 100,
+        "solo": 96,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜マリンタワー",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_105",
+      "slug": "enoshima-samuel-cocking-garden",
+      "name": "江の島サムエル・コッキング苑",
+      "aliases": [],
+      "category_primary": "island_garden",
+      "categories": [
+        "garden",
+        "scenic",
+        "nature",
+        "stroll",
+        "culture"
+      ],
+      "prefecture": "神奈川県",
+      "city": "藤沢市",
+      "address": "神奈川県藤沢市江の島2-3-28",
+      "official_url": "https://enoshima-seacandle.com/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 95,
+        "physical_activity": 45,
+        "hands_on": 20,
+        "quietness": 72,
+        "parent_rest": 65,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 55,
+        "creative_sensory": 35,
+        "baby_fit": 72,
+        "toddler_fit": 85,
+        "stroller_fit": 60,
+        "rain_resilience": 15,
+        "heat_resilience": 25,
+        "walking_load": 65,
+        "planning_friction": 15
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 82,
+        "scenic": 100,
+        "stroll": 100,
+        "relax": 85,
+        "shopping": 20,
+        "food": 50,
+        "culture": 72,
+        "animals": 0,
+        "creative": 15,
+        "active": 45,
+        "waterside": 75
+      },
+      "editorial_reason": "nature/scenic/strollをpartner/soloにも強くする湘南候補。",
+      "public_copy": "江の島の頂上で、植物や温室遺構、海の眺めを楽しめる庭園。景色を見ながらぶらぶらするだけでも休日らしくなる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜20:00を基本。イベント時は延長あり。",
+        "price_summary": "日中入苑や夜間・シーキャンドル等で料金体系が異なるため公式確認。",
+        "reservation_summary": "通常散策は予約不要。イベントによりチケットあり。",
+        "age_note": "3〜9歳向け遊具あり。島内移動に坂・階段があるためベビーカー利用は経路確認推奨。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://enoshima-seacandle.com/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 55,
+        "social_presence": 91,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 91,
+        "reason": "nature/scenic/strollをpartner/soloにも強くする湘南候補。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://enoshima-seacandle.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "江の島サムエル・コッキング苑の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 100,
+        "solo": 98,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "藤沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "江の島サムエル・コッキング苑",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_106",
+      "slug": "riviera-zushi-marina",
+      "name": "リビエラ逗子マリーナ",
+      "aliases": [],
+      "category_primary": "marina_resort",
+      "categories": [
+        "waterside",
+        "scenic",
+        "stroll",
+        "food",
+        "shopping"
+      ],
+      "prefecture": "神奈川県",
+      "city": "逗子市",
+      "address": "神奈川県逗子市小坪5-23-9",
+      "official_url": "https://www.riviera.co.jp/area/zushi/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 25,
+        "outdoor": 90,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 75,
+        "parent_rest": 78,
+        "greenery": 55,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 92,
+        "creative_sensory": 35,
+        "baby_fit": 65,
+        "toddler_fit": 65,
+        "stroller_fit": 82,
+        "rain_resilience": 25,
+        "heat_resilience": 30,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 55,
+        "extraordinary": 90,
+        "scenic": 100,
+        "stroll": 95,
+        "relax": 92,
+        "shopping": 65,
+        "food": 95,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 100
+      },
+      "editorial_reason": "partner/friendsのscenic×food×watersideを強化。",
+      "public_copy": "ヤシ並木とクルーザー、江の島や富士山の景色が広がる湘南のマリーナ。散歩や食事を目的に、大人の休日として使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "施設・店舗ごとに営業時間が異なる。",
+        "price_summary": "エリア入場自体は無料。飲食・買い物・各サービスは別途。",
+        "reservation_summary": "通常散策は予約不要。レストラン等は予約推奨の場合あり。",
+        "age_note": "乳幼児同行可だが、子ども専用遊具を目的とする施設ではない。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.riviera.co.jp/area/zushi/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 55,
+        "social_presence": 88,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 88,
+        "reason": "partner/friendsのscenic×food×watersideを強化。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.riviera.co.jp/area/zushi/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "リビエラ逗子マリーナの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "逗子市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "リビエラ逗子マリーナ",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_107",
+      "slug": "yokohama-world-porters",
+      "name": "横浜ワールドポーターズ",
+      "aliases": [],
+      "category_primary": "shopping_entertainment",
+      "categories": [
+        "shopping",
+        "food",
+        "cinema",
+        "stroll",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-2-1",
+      "official_url": "https://www.yim.co.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 10,
+        "physical_activity": 30,
+        "hands_on": 25,
+        "quietness": 50,
+        "parent_rest": 85,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 95,
+        "creative_sensory": 55,
+        "baby_fit": 92,
+        "toddler_fit": 90,
+        "stroller_fit": 98,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 5
+      },
+      "parent_enjoyment_seed": 92,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 55,
+        "scenic": 40,
+        "stroll": 85,
+        "relax": 75,
+        "shopping": 100,
+        "food": 92,
+        "culture": 45,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "shoppingの神奈川・friends/familyを補強。",
+      "public_copy": "買い物、映画、食事を一つの建物で組み合わせられるみなとみらいの大型商業施設。雨の日でも予定を組みやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ショッピング10:30〜21:00、レストラン&カフェ11:00〜23:00を基本。",
+        "price_summary": "入場無料。各店舗・映画等は別途。",
+        "reservation_summary": "通常利用は予約不要。映画・店舗・イベントにより予約あり。",
+        "age_note": "乳幼児同行しやすい大型商業施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.yim.co.jp/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 55,
+        "social_presence": 84,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "shoppingの神奈川・friends/familyを補強。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.yim.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜ワールドポーターズの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 95,
+        "partner": 90,
+        "solo": 82,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜ワールドポーターズ",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_108",
+      "slug": "shin-yokohama-raumen-museum",
+      "name": "新横浜ラーメン博物館",
+      "aliases": [],
+      "category_primary": "food_museum",
+      "categories": [
+        "food",
+        "culture",
+        "creative",
+        "stroll"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市港北区",
+      "address": "神奈川県横浜市港北区新横浜2-14-21",
+      "official_url": "https://www.raumen.co.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 65,
+        "quietness": 35,
+        "parent_rest": 55,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 75,
+        "baby_fit": 75,
+        "toddler_fit": 78,
+        "stroller_fit": 60,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 35,
+        "stroll": 82,
+        "relax": 40,
+        "shopping": 45,
+        "food": 100,
+        "culture": 92,
+        "animals": 0,
+        "creative": 72,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "foodをfriends/cultureへつなぐ高相性スポット。",
+      "public_copy": "昭和の街並みを歩きながら全国のラーメンを食べ比べられるフードアミューズメント。食べるだけでなく、文化や体験も楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日11:00〜21:00、休日10:30〜21:00を基本。",
+        "price_summary": "入場料＋飲食代。体験等は別料金の場合あり。",
+        "reservation_summary": "通常入場は当日利用可。体験プログラムは予約条件を確認。",
+        "age_note": "乳幼児同行可。混雑時の階段・店内導線は注意。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.raumen.co.jp/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 90,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 90,
+        "reason": "foodをfriends/cultureへつなぐ高相性スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.raumen.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "新横浜ラーメン博物館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 84,
+        "partner": 92,
+        "solo": 88,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "横浜市港北区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "新横浜ラーメン博物館",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_109",
+      "slug": "sumida-aquarium",
+      "name": "すみだ水族館",
+      "aliases": [],
+      "category_primary": "urban_aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "cool",
+        "culture",
+        "shopping"
+      ],
+      "prefecture": "東京都",
+      "city": "墨田区",
+      "address": "東京都墨田区押上1-1-2 東京スカイツリータウン・ソラマチ5F・6F",
+      "official_url": "https://www.sumida-aquarium.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 70,
+        "parent_rest": 75,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 95,
+        "food_experience": 40,
+        "creative_sensory": 75,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 100,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 35,
+        "stroll": 65,
+        "relax": 82,
+        "shopping": 60,
+        "food": 30,
+        "culture": 78,
+        "animals": 100,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "animalsのpartner/solo不足を強く補う。",
+      "public_copy": "ペンギンやクラゲなどを、開放的な館内でゆっくり眺められる都市型水族館。ソラマチの買い物や食事にもつなげやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付により変動。公式の本日情報を確認。",
+        "price_summary": "入館料あり。年齢区分・前売り券は公式確認。",
+        "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
+        "age_note": "乳幼児同行しやすい屋内施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.sumida-aquarium.com/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 55,
+        "social_presence": 94,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 94,
+        "reason": "animalsのpartner/solo不足を強く補う。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.sumida-aquarium.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "すみだ水族館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 98,
+        "solo": 98,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "墨田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "すみだ水族館",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_110",
+      "slug": "maxell-aquapark-shinagawa",
+      "name": "マクセル アクアパーク品川",
+      "aliases": [],
+      "category_primary": "entertainment_aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "extraordinary",
+        "cool"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区高輪4-10-30 品川プリンスホテル内",
+      "official_url": "https://www.aqua-park.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 30,
+        "hands_on": 25,
+        "quietness": 45,
+        "parent_rest": 65,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 40,
+        "creative_sensory": 100,
+        "baby_fit": 92,
+        "toddler_fit": 98,
+        "stroller_fit": 92,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 30
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 10,
+        "extraordinary": 100,
+        "scenic": 70,
+        "stroll": 55,
+        "relax": 60,
+        "shopping": 20,
+        "food": 30,
+        "culture": 70,
+        "animals": 100,
+        "creative": 15,
+        "active": 40,
+        "waterside": 0
+      },
+      "editorial_reason": "animalsをpartner/friendsのextraordinaryと組み合わせられる希少枠。",
+      "public_copy": "光・音・映像の演出と海の生きものを組み合わせた水族館。品川駅近くで、短時間でも非日常感をつくりやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付により変動。公式の本日情報を確認。",
+        "price_summary": "入場料あり。アトラクション・有料プログラムは別料金。",
+        "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
+        "age_note": "4歳以上に料金区分あり。アトラクションは年齢・身長条件あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.aqua-park.jp/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 55,
+        "social_presence": 96,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 96,
+        "reason": "animalsをpartner/friendsのextraordinaryと組み合わせられる希少枠。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.aqua-park.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "マクセル アクアパーク品川の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 100,
+        "solo": 92,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "マクセル アクアパーク品川",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_111",
+      "slug": "kasai-aquarium",
+      "name": "葛西臨海水族園",
+      "aliases": [],
+      "category_primary": "public_aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "waterside",
+        "culture",
+        "nature"
+      ],
+      "prefecture": "東京都",
+      "city": "江戸川区",
+      "address": "東京都江戸川区臨海町6-2-3",
+      "official_url": "https://www.tokyo-zoo.net/kasai/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 75,
+        "outdoor": 45,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 72,
+        "parent_rest": 65,
+        "greenery": 45,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 95,
+        "rain_resilience": 82,
+        "heat_resilience": 82,
+        "walking_load": 45,
+        "planning_friction": 15
+      },
+      "parent_enjoyment_seed": 92,
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 55,
+        "extraordinary": 70,
+        "scenic": 75,
+        "stroll": 75,
+        "relax": 80,
+        "shopping": 20,
+        "food": 30,
+        "culture": 85,
+        "animals": 100,
+        "creative": 15,
+        "active": 20,
+        "waterside": 90
+      },
+      "editorial_reason": "低コスト寄りのanimals×culture×watersideを追加。",
+      "public_copy": "マグロの大水槽やペンギンなど、多様な海の生きものをじっくり観察できる水族園。臨海公園の散歩と合わせやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開園日・時間は公式カレンダーを確認。",
+        "price_summary": "入園料あり。年齢区分・無料日等は公式確認。",
+        "reservation_summary": "通常入園は予約不要。イベントは申込制の場合あり。",
+        "age_note": "乳幼児向けプログラムも実施。展示休止等は当日情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.tokyo-zoo.net/kasai/"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 55,
+        "social_presence": 89,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 89,
+        "reason": "低コスト寄りのanimals×culture×watersideを追加。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.tokyo-zoo.net/kasai/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "葛西臨海水族園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 88,
+        "solo": 96,
+        "friends": 85
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "江戸川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "葛西臨海水族園",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_112",
+      "slug": "tokyo-skytree-town",
+      "name": "東京スカイツリータウン",
+      "aliases": [],
+      "category_primary": "mixed_use_landmark",
+      "categories": [
+        "shopping",
+        "scenic",
+        "food",
+        "culture",
+        "stroll"
+      ],
+      "prefecture": "東京都",
+      "city": "墨田区",
+      "address": "東京都墨田区押上1-1-2",
+      "official_url": "https://www.tokyo-skytree.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 80,
+        "outdoor": 35,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 35,
+        "parent_rest": 75,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 95,
+        "creative_sensory": 65,
+        "baby_fit": 92,
+        "toddler_fit": 90,
+        "stroller_fit": 98,
+        "rain_resilience": 88,
+        "heat_resilience": 88,
+        "walking_load": 55,
+        "planning_friction": 15
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 10,
+        "extraordinary": 95,
+        "scenic": 100,
+        "stroll": 95,
+        "relax": 62,
+        "shopping": 100,
+        "food": 92,
+        "culture": 70,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "shopping/scenic/friendsを強化し、animalsにも近接連携できる。",
+      "public_copy": "展望台、ソラマチのショップや飲食、水族館などを一度に楽しめる大型複合施設。『何をするか決めきれない日』にも選択肢が多い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "各施設・店舗で営業時間が異なる。",
+        "price_summary": "タウン入場は無料。展望台・水族館等は別途。",
+        "reservation_summary": "展望台等は日時指定券・前売り利用推奨。",
+        "age_note": "乳幼児同行しやすい大型複合施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.tokyo-skytree.jp/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 55,
+        "social_presence": 94,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 94,
+        "reason": "shopping/scenic/friendsを強化し、animalsにも近接連携できる。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.tokyo-skytree.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東京スカイツリータウンの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 98,
+        "solo": 92,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "墨田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京スカイツリータウン",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_113",
+      "slug": "shibuya-sky",
+      "name": "SHIBUYA SKY",
+      "aliases": [],
+      "category_primary": "observation_deck",
+      "categories": [
+        "scenic",
+        "extraordinary",
+        "culture",
+        "stroll"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア",
+      "official_url": "https://www.shibuya-scramble-square.com/sky/",
+      "environment": "mixed",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 55,
+        "outdoor": 65,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 50,
+        "parent_rest": 55,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 85,
+        "baby_fit": 50,
+        "toddler_fit": 45,
+        "stroller_fit": 60,
+        "rain_resilience": 55,
+        "heat_resilience": 50,
+        "walking_load": 30,
+        "planning_friction": 80
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 10,
+        "extraordinary": 100,
+        "scenic": 100,
+        "stroll": 65,
+        "relax": 60,
+        "shopping": 20,
+        "food": 30,
+        "culture": 70,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "partner/friendsのscenic×extraordinaryを強化する大人寄り定番。",
+      "public_copy": "渋谷上空229mから街を見渡す展望体験。屋上まで含めた空間そのものに特別感があり、夕方から夜のデートにも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜22:30、最終入場21:20を基本。屋上は天候で閉鎖あり。",
+        "price_summary": "日時・入場時間帯等で料金が異なる。",
+        "reservation_summary": "日時指定チケットの事前購入を強く推奨。",
+        "age_note": "小人料金条件あり。屋上は手荷物制限・安全ルールを要確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.shibuya-scramble-square.com/sky/"
+      },
+      "buzz": {
+        "score": 97,
+        "freshness": 55,
+        "social_presence": 96,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 97,
+        "reason": "partner/friendsのscenic×extraordinaryを強化する大人寄り定番。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.shibuya-scramble-square.com/sky/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "SHIBUYA SKYの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 55,
+        "partner": 100,
+        "solo": 98,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "SHIBUYA SKY",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_114",
+      "slug": "green-springs-tachikawa",
+      "name": "GREEN SPRINGS",
+      "aliases": [],
+      "category_primary": "wellbeing_complex",
+      "categories": [
+        "shopping",
+        "food",
+        "nature",
+        "stroll",
+        "culture",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "立川市",
+      "address": "東京都立川市緑町3-1",
+      "official_url": "https://greensprings.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 45,
+        "outdoor": 80,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 70,
+        "parent_rest": 85,
+        "greenery": 85,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 88,
+        "creative_sensory": 70,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 96,
+        "rain_resilience": 55,
+        "heat_resilience": 45,
+        "walking_load": 30,
+        "planning_friction": 5
+      },
+      "parent_enjoyment_seed": 99,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 80,
+        "extraordinary": 60,
+        "scenic": 88,
+        "stroll": 100,
+        "relax": 95,
+        "shopping": 82,
+        "food": 90,
+        "culture": 72,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "nature×shopping×strollを全audienceで補強。",
+      "public_copy": "芝生や水辺、ショップやカフェ、アートがゆるくつながる立川の複合エリア。何か一つを目的にせず、気分で寄り道したい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "エリア・店舗ごとに営業時間が異なる。",
+        "price_summary": "入場無料。買い物・飲食・イベント等は別途。",
+        "reservation_summary": "通常利用は予約不要。イベント・店舗により予約あり。",
+        "age_note": "乳幼児同行しやすい屋外・屋内混在型施設。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://greensprings.jp/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 55,
+        "social_presence": 90,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 90,
+        "reason": "nature×shopping×strollを全audienceで補強。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://greensprings.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "GREEN SPRINGSの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 100,
+        "solo": 98,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "立川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "GREEN SPRINGS",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_115",
+      "slug": "showa-kinen-park",
+      "name": "国営昭和記念公園",
+      "aliases": [],
+      "category_primary": "national_park",
+      "categories": [
+        "nature",
+        "active",
+        "scenic",
+        "stroll",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "立川市",
+      "address": "東京都立川市緑町3173",
+      "official_url": "https://www.showakinen-koen.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 10,
+        "outdoor": 100,
+        "physical_activity": 85,
+        "hands_on": 25,
+        "quietness": 75,
+        "parent_rest": 70,
+        "greenery": 100,
+        "water_contact": 30,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 92,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 80,
+        "planning_friction": 15
+      },
+      "parent_enjoyment_seed": 96,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 65,
+        "scenic": 95,
+        "stroll": 100,
+        "relax": 88,
+        "shopping": 20,
+        "food": 30,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 95,
+        "waterside": 55
+      },
+      "editorial_reason": "natureをpartner/solo/friendsまで広げる大型基盤スポット。",
+      "public_copy": "広大な芝生や森、季節の花、こどもの森などを自由に組み合わせられる国営公園。歩く・遊ぶ・何もしないを同じ日に選べる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "季節・エリアにより開園時間が異なる。公式当日情報を確認。",
+        "price_summary": "有料エリアは入園料あり。施設・乗りもの等は別料金の場合あり。",
+        "reservation_summary": "通常入園は予約不要。施設利用は予約制の場合あり。",
+        "age_note": "乳幼児同行可。園内が広いため移動手段・暑さ対策を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.showakinen-koen.jp/"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 55,
+        "social_presence": 92,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 92,
+        "reason": "natureをpartner/solo/friendsまで広げる大型基盤スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.showakinen-koen.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "国営昭和記念公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 96,
+        "solo": 100,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "立川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "国営昭和記念公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_116",
+      "slug": "hana-biyori",
+      "name": "HANA・BIYORI",
+      "aliases": [],
+      "category_primary": "flower_park",
+      "categories": [
+        "nature",
+        "scenic",
+        "animals",
+        "culture",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "稲城市",
+      "address": "東京都稲城市矢野口4015-1",
+      "official_url": "https://www.yomiuriland.com/hanabiyori/",
+      "environment": "mixed",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 45,
+        "outdoor": 80,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 82,
+        "parent_rest": 88,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 60,
+        "food_experience": 60,
+        "creative_sensory": 90,
+        "baby_fit": 88,
+        "toddler_fit": 90,
+        "stroller_fit": 88,
+        "rain_resilience": 50,
+        "heat_resilience": 55,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 88,
+        "scenic": 95,
+        "stroll": 95,
+        "relax": 100,
+        "shopping": 20,
+        "food": 55,
+        "culture": 70,
+        "animals": 65,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "nature/animalsをpartner/soloにもつなぐ重要スポット。",
+      "public_copy": "花と植物に囲まれた温室や庭園を歩き、デジタルアートやカワウソにも出会えるフラワーパーク。大人も子どもも落ち着いて楽しみやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日・営業時間は季節で変動。公式カレンダーを確認。",
+        "price_summary": "入園料あり。温浴施設等は別料金。",
+        "reservation_summary": "通常入園は当日利用可。イベント・体験は予約条件を確認。",
+        "age_note": "乳幼児同行可。カワウソ体験等は実施日・条件あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.yomiuriland.com/hanabiyori/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 55,
+        "social_presence": 91,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 91,
+        "reason": "nature/animalsをpartner/soloにもつなぐ重要スポット。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.yomiuriland.com/hanabiyori/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "HANA・BIYORIの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 100,
+        "solo": 100,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "稲城市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "HANA・BIYORI",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_117",
+      "slug": "tokyo-metropolitan-teien-art-museum",
+      "name": "東京都庭園美術館",
+      "aliases": [],
+      "category_primary": "art_architecture_garden",
+      "categories": [
+        "culture",
+        "nature",
+        "scenic",
+        "stroll",
+        "food"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区白金台5-21-9",
+      "official_url": "https://www.teien-art-museum.ne.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 60,
+        "outdoor": 65,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 95,
+        "parent_rest": 78,
+        "greenery": 90,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 65,
+        "creative_sensory": 90,
+        "baby_fit": 55,
+        "toddler_fit": 50,
+        "stroller_fit": 65,
+        "rain_resilience": 60,
+        "heat_resilience": 50,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 100,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 85,
+        "extraordinary": 78,
+        "scenic": 95,
+        "stroll": 95,
+        "relax": 100,
+        "shopping": 20,
+        "food": 55,
+        "culture": 100,
+        "animals": 0,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "solo/partnerのculture×nature×relaxを強化。",
+      "public_copy": "アール・デコ建築と庭園を一緒に楽しめる美術館。展示を見たあと庭を歩いたり、カフェで余韻を楽しんだりできる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜18:00を基本。月曜休館（祝日の場合は翌日）ほか。",
+        "price_summary": "展覧会・庭園のみ公開などで料金が異なる。",
+        "reservation_summary": "通常鑑賞は予約不要のことが多いが、展覧会・イベント条件を確認。",
+        "age_note": "小さな子ども同行時は展示鑑賞マナーと館内ルールを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.teien-art-museum.ne.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 55,
+        "social_presence": 88,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 88,
+        "reason": "solo/partnerのculture×nature×relaxを強化。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.teien-art-museum.ne.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東京都庭園美術館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 62,
+        "partner": 100,
+        "solo": 100,
+        "friends": 80
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京都庭園美術館",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_118",
+      "slug": "kiyosumi-gardens",
+      "name": "清澄庭園",
+      "aliases": [],
+      "category_primary": "japanese_garden",
+      "categories": [
+        "nature",
+        "scenic",
+        "stroll",
+        "culture",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区清澄3-3-9",
+      "official_url": "https://www.tokyo-park.or.jp/park/kiyosumi/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 100,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 30,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 72,
+        "toddler_fit": 70,
+        "stroller_fit": 75,
+        "rain_resilience": 10,
+        "heat_resilience": 25,
+        "walking_load": 25,
+        "planning_friction": 5
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 55,
+        "scenic": 90,
+        "stroll": 100,
+        "relax": 100,
+        "shopping": 20,
+        "food": 30,
+        "culture": 85,
+        "animals": 35,
+        "creative": 15,
+        "active": 20,
+        "waterside": 0
+      },
+      "editorial_reason": "solo/partnerのnature/stroll/relaxを低コストで補強。",
+      "public_copy": "池と名石、緑の中を静かに回れる日本庭園。清澄白河のカフェ巡りと合わせて、予定を詰めない一日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜17:00、最終入園16:30を基本。",
+        "price_summary": "一般150円など年齢区分あり。",
+        "reservation_summary": "通常入園は予約不要。オンライン入園券あり。",
+        "age_note": "小学生以下は無料。乳幼児同行可だが園路・暑さ対策を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.tokyo-park.or.jp/park/kiyosumi/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 55,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "solo/partnerのnature/stroll/relaxを低コストで補強。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.tokyo-park.or.jp/park/kiyosumi/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "清澄庭園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 98,
+        "solo": 100,
+        "friends": 72
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "清澄庭園",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_119",
+      "slug": "mother-farm",
+      "name": "マザー牧場",
+      "aliases": [],
+      "category_primary": "farm_theme_park",
+      "categories": [
+        "animals",
+        "nature",
+        "food",
+        "active",
+        "creative"
+      ],
+      "prefecture": "千葉県",
+      "city": "富津市",
+      "address": "千葉県富津市田倉940-3",
+      "official_url": "https://www.motherfarm.co.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 75,
+        "hands_on": 90,
+        "quietness": 55,
+        "parent_rest": 55,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 95,
+        "creative_sensory": 75,
+        "baby_fit": 82,
+        "toddler_fit": 100,
+        "stroller_fit": 65,
+        "rain_resilience": 15,
+        "heat_resilience": 20,
+        "walking_load": 80,
+        "planning_friction": 30
+      },
+      "parent_enjoyment_seed": 92,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 95,
+        "scenic": 95,
+        "stroll": 85,
+        "relax": 60,
+        "shopping": 20,
+        "food": 95,
+        "culture": 30,
+        "animals": 100,
+        "creative": 80,
+        "active": 90,
+        "waterside": 0
+      },
+      "editorial_reason": "animals/nature/foodをfamily/friendsで強力に補う。",
+      "public_copy": "動物とのふれあい、牧場グルメ、花畑や体験を一日で楽しめる大型牧場。遠出して『今日は牧場の日』に振り切りたいときに。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "季節・日付で営業時間が異なる。公式営業情報を確認。",
+        "price_summary": "入場料あり。体験・アトラクション等は別料金の場合あり。",
+        "reservation_summary": "前売り券・体験予約あり。人気体験は事前確認推奨。",
+        "age_note": "乳幼児同行可。園内高低差・暑さ・動物ふれあいルールを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.motherfarm.co.jp/"
+      },
+      "buzz": {
+        "score": 93,
+        "freshness": 55,
+        "social_presence": 93,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 93,
+        "reason": "animals/nature/foodをfamily/friendsで強力に補う。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.motherfarm.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "マザー牧場の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 88,
+        "solo": 78,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "富津市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "マザー牧場",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_120",
+      "slug": "narita-yume-bokujo",
+      "name": "成田ゆめ牧場",
+      "aliases": [],
+      "category_primary": "farm",
+      "categories": [
+        "animals",
+        "nature",
+        "food",
+        "active",
+        "creative"
+      ],
+      "prefecture": "千葉県",
+      "city": "成田市",
+      "address": "千葉県成田市名木730-3",
+      "official_url": "https://www.yumebokujo.com/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 70,
+        "hands_on": 90,
+        "quietness": 65,
+        "parent_rest": 55,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 100,
+        "creative_sensory": 75,
+        "baby_fit": 88,
+        "toddler_fit": 100,
+        "stroller_fit": 70,
+        "rain_resilience": 15,
+        "heat_resilience": 20,
+        "walking_load": 65,
+        "planning_friction": 25
+      },
+      "parent_enjoyment_seed": 88,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 100,
+        "extraordinary": 85,
+        "scenic": 75,
+        "stroll": 55,
+        "relax": 75,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 100,
+        "creative": 82,
+        "active": 82,
+        "waterside": 0
+      },
+      "editorial_reason": "animals/foodをfamilyに厚くし、体験系の選択肢を増やす。",
+      "public_copy": "牛やヤギなどとのふれあいに加え、乳製品や牧場グルメ、季節の体験まで楽しめる。小さな子どもの『初めての牧場』にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休園日は季節で変動。公式カレンダーを確認。",
+        "price_summary": "入場料あり。体験等は別料金の場合あり。",
+        "reservation_summary": "前売り券・体験予約あり。実施中止情報も公式確認。",
+        "age_note": "乳幼児同行可。体験ごとの年齢条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.yumebokujo.com/"
+      },
+      "buzz": {
+        "score": 87,
+        "freshness": 55,
+        "social_presence": 87,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 87,
+        "reason": "animals/foodをfamilyに厚くし、体験系の選択肢を増やす。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.yumebokujo.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "成田ゆめ牧場の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 82,
+        "solo": 72,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 88,
+      "routing": {
+        "municipality": "成田市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "成田ゆめ牧場",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_121",
+      "slug": "kamogawa-seaworld",
+      "name": "鴨川シーワールド",
+      "aliases": [],
+      "category_primary": "marine_park",
+      "categories": [
+        "aquarium",
+        "animals",
+        "waterside",
+        "extraordinary",
+        "active"
+      ],
+      "prefecture": "千葉県",
+      "city": "鴨川市",
+      "address": "千葉県鴨川市東町1464-18",
+      "official_url": "https://www.kamogawa-seaworld.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 45,
+        "outdoor": 70,
+        "physical_activity": 55,
+        "hands_on": 25,
+        "quietness": 40,
+        "parent_rest": 50,
+        "greenery": 20,
+        "water_contact": 20,
+        "animal_contact": 100,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 92,
+        "toddler_fit": 100,
+        "stroller_fit": 85,
+        "rain_resilience": 55,
+        "heat_resilience": 50,
+        "walking_load": 65,
+        "planning_friction": 35
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 65,
+        "nature": 10,
+        "extraordinary": 100,
+        "scenic": 95,
+        "stroll": 70,
+        "relax": 60,
+        "shopping": 20,
+        "food": 30,
+        "culture": 70,
+        "animals": 100,
+        "creative": 15,
+        "active": 75,
+        "waterside": 100
+      },
+      "editorial_reason": "animals×watersideの遠出主力を追加。",
+      "public_copy": "太平洋を目の前に、シャチやイルカなど海の生きものを迫力ある展示やパフォーマンスで楽しめる大型水族館。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付により変動。公式カレンダーを確認。",
+        "price_summary": "入館料あり。チケットプランは公式確認。",
+        "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
+        "age_note": "乳幼児同行可。屋外スタジアムは天候・水しぶき対策を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.kamogawa-seaworld.jp/"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 55,
+        "social_presence": 95,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 95,
+        "reason": "animals×watersideの遠出主力を追加。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.kamogawa-seaworld.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "鴨川シーワールドの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 92,
+        "solo": 86,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "鴨川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "鴨川シーワールド",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_122",
+      "slug": "moominvalley-park",
+      "name": "ムーミンバレーパーク",
+      "aliases": [],
+      "category_primary": "story_theme_park",
+      "categories": [
+        "extraordinary",
+        "nature",
+        "culture",
+        "shopping",
+        "food",
+        "waterside"
+      ],
+      "prefecture": "埼玉県",
+      "city": "飯能市",
+      "address": "埼玉県飯能市宮沢327-6 メッツァ",
+      "official_url": "https://metsa-hanno.com/moominvalleypark/",
+      "environment": "mixed",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 40,
+        "outdoor": 85,
+        "physical_activity": 60,
+        "hands_on": 65,
+        "quietness": 55,
+        "parent_rest": 65,
+        "greenery": 100,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 85,
+        "creative_sensory": 90,
+        "baby_fit": 85,
+        "toddler_fit": 95,
+        "stroller_fit": 78,
+        "rain_resilience": 45,
+        "heat_resilience": 40,
+        "walking_load": 70,
+        "planning_friction": 35
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 95,
+        "extraordinary": 100,
+        "scenic": 95,
+        "stroll": 95,
+        "relax": 75,
+        "shopping": 85,
+        "food": 82,
+        "culture": 90,
+        "animals": 0,
+        "creative": 70,
+        "active": 20,
+        "waterside": 95
+      },
+      "editorial_reason": "メッツァビレッジと異なりextraordinary/cultureを強く補う。",
+      "public_copy": "湖と森の中でムーミンの物語世界を歩けるテーマパーク。展示やショー、食事、限定ショップまで一日ゆっくり楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付・季節で変動。公式カレンダーを確認。",
+        "price_summary": "入園料あり。イベント・アトラクション等の条件は公式確認。",
+        "reservation_summary": "前売りチケットあり。繁忙日は事前購入推奨。",
+        "age_note": "乳幼児同行可。夏季水遊び等はイベント条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://metsa-hanno.com/moominvalleypark/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 55,
+        "social_presence": 96,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 96,
+        "reason": "メッツァビレッジと異なりextraordinary/cultureを強く補う。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://metsa-hanno.com/moominvalleypark/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "ムーミンバレーパークの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 100,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "飯能市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ムーミンバレーパーク",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_123",
+      "slug": "tobu-zoo",
+      "name": "東武動物公園",
+      "aliases": [],
+      "category_primary": "zoo_amusement_park",
+      "categories": [
+        "animals",
+        "active",
+        "nature",
+        "extraordinary",
+        "friends"
+      ],
+      "prefecture": "埼玉県",
+      "city": "南埼玉郡宮代町",
+      "address": "埼玉県南埼玉郡宮代町須賀110",
+      "official_url": "https://www.tobuzoo.com/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 360,
+      "experience_seed": {
+        "indoor": 10,
+        "outdoor": 100,
+        "physical_activity": 85,
+        "hands_on": 55,
+        "quietness": 35,
+        "parent_rest": 50,
+        "greenery": 85,
+        "water_contact": 25,
+        "animal_contact": 100,
+        "food_experience": 65,
+        "creative_sensory": 35,
+        "baby_fit": 85,
+        "toddler_fit": 100,
+        "stroller_fit": 80,
+        "rain_resilience": 15,
+        "heat_resilience": 20,
+        "walking_load": 85,
+        "planning_friction": 30
+      },
+      "parent_enjoyment_seed": 84,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 80,
+        "extraordinary": 95,
+        "scenic": 65,
+        "stroll": 80,
+        "relax": 60,
+        "shopping": 20,
+        "food": 55,
+        "culture": 30,
+        "animals": 100,
+        "creative": 15,
+        "active": 100,
+        "waterside": 35
+      },
+      "editorial_reason": "animals×activeのfriends不足を補う大型候補。",
+      "public_copy": "動物園と遊園地、季節のプールや花のエリアまで一体になった大型レジャー施設。友だち同士でも家族でも一日遊び切れる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日付で変動。公式の本日情報を確認。",
+        "price_summary": "入園・アトラクション利用内容によりチケットが異なる。",
+        "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
+        "age_note": "乳幼児同行可。アトラクションは年齢・身長条件あり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.tobuzoo.com/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 55,
+        "social_presence": 94,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 94,
+        "reason": "animals×activeのfriends不足を補う大型候補。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.tobuzoo.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "東武動物公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 78,
+        "solo": 70,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 84,
+      "routing": {
+        "municipality": "南埼玉郡宮代町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東武動物公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_124",
+      "slug": "saitama-aquarium",
+      "name": "さいたま水族館",
+      "aliases": [],
+      "category_primary": "freshwater_aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "nature",
+        "culture",
+        "relax"
+      ],
+      "prefecture": "埼玉県",
+      "city": "羽生市",
+      "address": "埼玉県羽生市三田ヶ谷751-1",
+      "official_url": "https://www.parks.or.jp/suizokukan/",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 70,
+        "outdoor": 45,
+        "physical_activity": 35,
+        "hands_on": 25,
+        "quietness": 78,
+        "parent_rest": 70,
+        "greenery": 60,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 80,
+        "heat_resilience": 80,
+        "walking_load": 25,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 86,
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 65,
+        "extraordinary": 55,
+        "scenic": 35,
+        "stroll": 65,
+        "relax": 85,
+        "shopping": 20,
+        "food": 30,
+        "culture": 78,
+        "animals": 100,
+        "creative": 15,
+        "active": 20,
+        "waterside": 50
+      },
+      "editorial_reason": "animalsを低負荷・solo寄りにも補う。",
+      "public_copy": "埼玉の川にすむ魚を中心に、淡水の生きものを身近に観察できる水族館。公園と合わせてのんびり過ごしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00を基本。冬季は16:30まで、休館日あり。",
+        "price_summary": "大人320円、小中学生100円、未就学児無料を基本。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "未就学児無料。乳幼児同行しやすい。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.parks.or.jp/suizokukan/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 55,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "animalsを低負荷・solo寄りにも補う。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.parks.or.jp/suizokukan/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "さいたま水族館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 80,
+        "solo": 92,
+        "friends": 76
+      },
+      "adult_enjoyment_seed": 86,
+      "routing": {
+        "municipality": "羽生市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "さいたま水族館",
+          "photo_index_override": null,
+          "force": false
+        }
+      }
+    },
+    {
+      "spot_id": "spot_125",
+      "slug": "inokashira-park-zoo",
+      "name": "井の頭自然文化園",
+      "aliases": [],
+      "category_primary": "urban_zoo",
+      "categories": [
+        "animals",
+        "nature",
+        "culture",
+        "stroll",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "武蔵野市",
+      "address": "東京都武蔵野市御殿山1-17-6",
+      "official_url": "https://www.tokyo-zoo.net/zoo/ino/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 45,
+        "hands_on": 25,
+        "quietness": 80,
+        "parent_rest": 70,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 40,
+        "creative_sensory": 35,
+        "baby_fit": 95,
+        "toddler_fit": 100,
+        "stroller_fit": 90,
+        "rain_resilience": 15,
+        "heat_resilience": 25,
+        "walking_load": 50,
+        "planning_friction": 10
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 95,
+        "extraordinary": 40,
+        "scenic": 75,
+        "stroll": 100,
+        "relax": 90,
+        "shopping": 20,
+        "food": 30,
+        "culture": 72,
+        "animals": 100,
+        "creative": 15,
+        "active": 45,
+        "waterside": 0
+      },
+      "editorial_reason": "animalsのsolo/partner不足を都市近郊で補う。",
+      "public_copy": "リスや小動物に会いながら、井の頭公園の緑の中をゆっくり歩ける動物園。吉祥寺の街歩きと組み合わせやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開園日・時間は公式カレンダーを確認。",
+        "price_summary": "入園料あり。年齢区分・無料日等は公式確認。",
+        "reservation_summary": "通常入園は予約不要。イベントは申込制の場合あり。",
+        "age_note": "乳幼児同行可。屋外中心のため季節対策を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-27",
+        "source_url": "https://www.tokyo-zoo.net/zoo/ino/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 55,
+        "social_presence": 88,
+        "visual_appeal": 88,
+        "media_attention": 72,
+        "popularity_momentum": 88,
+        "reason": "animalsのsolo/partner不足を都市近郊で補う。",
+        "checked_at": "2026-08-27",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-27",
+            "url": "https://www.tokyo-zoo.net/zoo/ino/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "井の頭自然文化園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 92,
+        "solo": 100,
+        "friends": 82
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "武蔵野市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "井の頭自然文化園",
+          "photo_index_override": null,
+          "force": false
         }
       }
     }

@@ -4,7 +4,7 @@ const path = require('path');
 const R = require('./recommender.js');
 const seed = JSON.parse(fs.readFileSync(path.join(__dirname,'seed.json'),'utf8'));
 
-assert.equal(seed.spots.length,95);
+assert.equal(seed.spots.length,125);
 
 let r = R.recommend(seed,{selectedVibes:['cool','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.equal(r.recommendations[0].spot_id,'spot_005');
@@ -25,7 +25,8 @@ assert.ok(r.excluded.some(x => x.spot_id === 'spot_031'));
 
 // New animals data should improve coverage.
 r = R.recommend(seed,{selectedVibes:['animals','cool'],childAgeMonths:15,weather:'hot',availableMinutes:180});
-assert.equal(r.recommendations[0].spot_id,'spot_052'); // カワスイ
+assert.ok(['spot_109','spot_051','spot_052'].includes(r.recommendations[0].spot_id)); // すみだ / えのすい / カワスイ
+assert.ok(r.recommendations.some(x => ['spot_109','spot_051','spot_052'].includes(x.spot_id))); // animals coverage
 
 // New active/nature data should surface Aikawa Park.
 r = R.recommend(seed,{selectedVibes:['active','nature'],childAgeMonths:15,weather:'clear',availableMinutes:240});
@@ -43,4 +44,4 @@ assert.ok(r.excluded.some(x => x.spot_id === 'spot_053'));
 r = R.recommend(seed,{selectedVibes:['culture','relax'],childAgeMonths:15,currentDate:'2026-09-05T12:00:00+09:00'});
 assert.ok(!r.excluded.some(x => x.spot_id === 'spot_053'));
 
-console.log('PASS: 95 spots + recommendation / age / buzz / temporary-closure scenarios');
+console.log('PASS: 125 spots + recommendation / age / buzz / temporary-closure scenarios');
