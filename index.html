@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f6f1e9" />
   <title>Kibun — 気分から見つける休日</title>
   <meta name="description" content="誰と過ごすか、どんな気分か。今日の気分と現在地から、行き先を3つ提案します。" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=17" />
 </head>
 <body>
   <header class="topbar">
@@ -28,7 +28,7 @@
 
       <div class="vibe-block">
         <div class="mini-heading"><span>02</span><strong>気分を重ねる</strong><small>最大3つ</small></div>
-        <div id="vibeGrid" class="vibe-grid" aria-label="気分を選ぶ"></div>
+        <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら選びます。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
         <div class="selection-row">
           <span id="selectedHint">まずは気分を1つ選んでください</span>
           <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
@@ -58,7 +58,7 @@
       </details>
 
       <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の3つを見る <span>→</span></button>
-      <p class="microcopy">関東83スポット。子どもと、パートナーと、ひとりでも。</p>
+      <p class="microcopy">関東95スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
@@ -68,11 +68,11 @@
 
     <section class="trending shell"><div class="section-heading compact"><div><p class="eyebrow">TRENDING NOW</p><h2>いま、ちょっと話題。</h2></div><p class="trending-caption">新規オープンやリニューアル。写真から気になる場所へ。</p></div><div id="trendingGrid" class="trending-grid"></div><p class="collection-note">※ Buzzは正確なSNS投稿数ではなく、新規性・露出・写真映え・人気の勢いをもとにした編集指標です。</p></section>
 
-    <section class="collections shell"><div class="section-heading compact"><div><p class="eyebrow">MOOD COLLECTIONS</p><h2>こんな日、あるよね。</h2></div></div><div class="collection-grid"><button class="collection-card c1" data-vibes="cool,relax"><span class="collection-icon">🧊</span><strong>もう暑いの無理</strong><small>涼しく、頑張らない</small></button><button class="collection-card c2" data-vibes="nature,waterside,extraordinary"><span class="collection-icon">🌿</span><strong>ちょっと遠くへ</strong><small>自然と水辺で小旅行</small></button><button class="collection-card c3" data-vibes="culture,relax"><span class="collection-icon">🏛️</span><strong>文化にふれたい午後</strong><small>アート・本・建築に、ゆるく触れる</small></button></div><p class="collection-note">※ 一部の施設画像は、雰囲気を伝えるためのイメージです。</p></section>
+    <section class="collections shell"><div class="section-heading compact"><div><p class="eyebrow">MOOD COLLECTIONS</p><h2>こんな日、あるよね。</h2></div></div><div class="collection-grid"><button class="collection-card c1" data-vibes="cool,relax"><span class="collection-icon">🧊</span><strong>もう暑いの無理</strong><small>涼しく、頑張らない</small></button><button class="collection-card c2" data-vibes="nature,waterside,extraordinary"><span class="collection-icon">🌿</span><strong>ちょっと遠くへ</strong><small>自然と水辺で小旅行</small></button><button class="collection-card c3" data-vibes="culture,relax"><span class="collection-icon">🏛️</span><strong>文化にふれたい午後</strong><small>アート・本・建築に、ゆるく触れる</small></button><button class="collection-card c4" data-vibes="shopping,food,stroll"><span class="collection-icon">🛍️</span><strong>買い物して、お茶したい</strong><small>街を歩いて、気になる店へ</small></button></div><p class="collection-note">※ 一部の施設画像は、雰囲気を伝えるためのイメージです。</p></section>
   </main>
 
   <dialog id="spotDialog" class="spot-dialog"><button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button><div id="dialogContent"></div></dialog>
   <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=16"></script><script src="data.js?v=16"></script><script src="recommender.js?v=16"></script><script src="travel.js?v=16"></script><script src="media.js?v=16"></script><script src="app.js?v=16"></script>
+  <script src="config.js?v=17"></script><script src="data.js?v=17"></script><script src="recommender.js?v=17"></script><script src="travel.js?v=17"></script><script src="media.js?v=17"></script><script src="app.js?v=17"></script>
 </body></html>
