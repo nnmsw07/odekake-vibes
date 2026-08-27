@@ -9,10 +9,26 @@
     x=x.replace(/([一二三四五六七八九])丁目/g,(_,n)=>`${kanjiNums[n]}丁目`).replace(/十丁目/g,'10丁目');
     return x;
   }
+  function locationError(kind,message,original){
+    const e=new Error(message);e.kind=kind;e.original=original||null;return e;
+  }
+  function classifyGeoError(err){
+    if(!err)return locationError('unknown','現在地を取得できませんでした');
+    if(err.kind)return err;
+    if(err.code===1)return locationError('permission_denied','位置情報の利用が許可されていません',err);
+    if(err.code===2)return locationError('position_unavailable','端末で現在地を特定できませんでした',err);
+    if(err.code===3)return locationError('timeout','現在地の取得に時間がかかっています',err);
+    return locationError('unknown',err.message||'現在地を取得できませんでした',err);
+  }
   function getCurrentPosition(){
     return new Promise((resolve,reject)=>{
-      if(!navigator.geolocation) return reject(new Error('このブラウザは現在地取得に対応していません'));
-      navigator.geolocation.getCurrentPosition(p=>resolve({lat:p.coords.latitude,lng:p.coords.longitude,accuracy:p.coords.accuracy}),reject,{enableHighAccuracy:false,timeout:12000,maximumAge:300000});
+      if(!window.isSecureContext)return reject(locationError('insecure_context','安全な接続でないため現在地を利用できません'));
+      if(!navigator.geolocation)return reject(locationError('unsupported','このブラウザは現在地取得に対応していません'));
+      navigator.geolocation.getCurrentPosition(
+        p=>resolve({lat:p.coords.latitude,lng:p.coords.longitude,accuracy:p.coords.accuracy}),
+        e=>reject(classifyGeoError(e)),
+        {enableHighAccuracy:false,timeout:15000,maximumAge:300000}
+      );
     });
   }
   async function municipalityData(spot){
@@ -75,5 +91,5 @@
     for(const x of resolved){const km=haversine(origin,x.point); times[x.spot.spot_id]=estimateMinutes(km,mode);}
     return {times,provider:'estimate_v1'};
   }
-  global.KibunTravel={getCurrentPosition,getTimes,spotPoint,haversine,estimateMinutes};
+  global.KibunTravel={getCurrentPosition,getTimes,spotPoint,haversine,estimateMinutes,classifyGeoError};
 })(window);
