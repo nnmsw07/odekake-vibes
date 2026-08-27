@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v5_95spots_audience_vibes",
-    "version": "0.17.0",
+    "version": "0.17.1",
     "created_at": "2026-08-12",
     "score_scale": [
       0,
@@ -20,8 +20,8 @@
       "layer_internal_editorial_reason": "editorial_reasonは運営用の選定・編集メモ。UIには表示しない",
       "layer_audience_fit": "同行者 family / partner / solo / friends への編集適合度。0〜100。",
       "layer_routing": "現在地フィルター用。GitHub Pages単体ではGeolonia町丁目代表点＋距離モデルで概算。Google Routes APIプロキシ設定時は実ルート所要時間に差し替え可能。",
-      "layer_media_strategy": "Heroは公式提供→Google Places→権利クリア実写→Instagram Embed→AIの順を基本方針とする。",
-      "layer_vibe_groups": "UI上で mood / activity に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
+      "layer_media_strategy": "HeroはGoogle Places実写を第一候補とし、取得不可時のみAIイメージへfallback。旧CC/Wikimedia画像は画面fallbackに使わない。",
+      "layer_vibe_groups": "UI上は mood 3軸（cool / extraordinary / relax）と activity 10軸に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
       "layer_audience_presentation": "同行者ごとに推薦枠名・紹介文・詳細の見せ方を変更。family以外では乳幼児指標を表示しない。"
     },
     "recommended_refresh_policy": {
@@ -37,13 +37,11 @@
       "illustration": "雰囲気を補う生成イラスト。実在施設の写真ではない",
       "rule": "実写とイメージを明確に区別し、イメージには「イメージ」表示を付ける",
       "credit_rule": "CC BY / CC BY-SA は画面上に作者・出典・ライセンスを表示。CC0は表示を省略可能だがDBには出典を保持。",
-      "photo_count": "10/83 spots",
-      "ai_count": "72/83 spots",
       "real_image_audit": "2026-08-22: Priority A 15件を本番品質で追加。新規3件（荒崎公園・彫刻の森美術館・新江ノ島水族館）に権利確認済み実写Heroを採用。",
-      "illustration_count": "1/83 spots",
-      "generated_image_total": "73/83 spots",
-      "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補とし、取得不可時のみAIへfallback。Hero監査で選んだphoto index / Place IDを固定可能。",
-      "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。"
+      "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
+      "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
+      "static_fallback": "95スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
+      "hero_selection": "2026-08-27: ユーザー目視監査のphoto_index 73件、Google Place ID 10件をseedへ固定。"
     },
     "buzz_layer": {
       "status": "experimental",
@@ -62,7 +60,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-27: shopping / scenic / stroll の3軸を追加し、買い物・街歩き・大人の休日向け12スポットを追加。83→95件。同行者別UI・推薦理由もV17で更新。",
+    "expansion_note": "2026-08-27 V17.1: 気分を3軸、やりたいことを10軸に再整理。95スポットHero監査結果を正式反映し、Google Places→AI fallbackへ統一。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -178,10 +176,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -260,20 +255,14 @@
         "source_url": "https://retailing.jp.yamaha.com/shop/yokohama-minatomirai"
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg/1280px-Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg",
-        "type": "photo",
-        "alt": "ヤマハミュージック横浜みなとみらいのMusic Canvas",
-        "label": null,
-        "credit": "NEO-NEED / Wikimedia Commons",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Yamaha_Music_Yokohama_Minatomirai_-_Music_Canvas_01.jpg",
-        "license": "CC0 1.0",
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "exact_spot": true,
-        "author": "NEO-NEED",
-        "credit_required": false,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_experience_photo"
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "音や文化にふれる明るい屋内空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "public_copy": "楽器や音にふれながら、気軽に音楽の楽しさを体験できるスポット。みなとみらい散歩の途中にも立ち寄りやすい。",
       "audience_fit": {
@@ -291,13 +280,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -399,10 +385,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -506,10 +489,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "licensed_real",
@@ -614,10 +594,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -696,20 +673,14 @@
         "source_url": "https://www.hama-midorinokyokai.or.jp/zoo/zoorasia/fee.php"
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian_lion,_Yokohama_Zoological_Gardens%3B_2016.jpg?width=1280",
-        "type": "photo",
-        "alt": "よこはま動物園ズーラシアで撮影されたアジアライオン",
-        "label": null,
-        "credit": "aotaro / Wikimedia Commons",
-        "author": "aotaro",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Asian_lion,_Yokohama_Zoological_Gardens%3B_2016.jpg",
-        "license": "CC BY 2.0",
-        "license_url": "https://creativecommons.org/licenses/by/2.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_experience_photo"
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "緑の中で生きものに出会う休日をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "public_copy": "広い園内を歩きながら、世界各地の動物と緑豊かな景色を楽しめる動物園。自然の中で一日過ごしたい日に。",
       "audience_fit": {
@@ -727,13 +698,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -836,10 +804,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -943,10 +908,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1050,10 +1012,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1156,10 +1115,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1283,10 +1239,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1415,10 +1368,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1542,10 +1492,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1669,10 +1616,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1796,10 +1740,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -1923,10 +1864,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2050,10 +1988,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2147,20 +2082,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/ROMANCECAR_GALLERY_in_Romancecar_Museum.jpg?width=1280",
-        "type": "photo",
-        "alt": "ロマンスカーミュージアムのロマンスカーギャラリー",
-        "label": null,
-        "credit": "Kaze315 / Wikimedia Commons",
-        "author": "Kaze315",
-        "source_url": "https://commons.wikimedia.org/wiki/File:ROMANCECAR_GALLERY_in_Romancecar_Museum.jpg",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_experience_photo"
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "鉄道展示を楽しむ文化施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2198,13 +2127,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -2295,20 +2221,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%E3%82%AB%E3%83%83%E3%83%97%E3%83%8C%E3%83%BC%E3%83%89%E3%83%AB%E8%A3%BD%E4%BD%9C%E4%BD%93%E9%A8%93.JPG?width=1280",
-        "type": "photo",
-        "alt": "カップヌードルミュージアム横浜のオリジナルカップヌードル製作体験",
-        "label": null,
-        "credit": "KCyamazaki / Wikimedia Commons",
-        "author": "KCyamazaki",
-        "source_url": "https://commons.wikimedia.org/wiki/File:%E3%82%AB%E3%83%83%E3%83%97%E3%83%8C%E3%83%BC%E3%83%89%E3%83%AB%E8%A3%BD%E4%BD%9C%E4%BD%93%E9%A8%93.JPG",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_experience_photo"
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "食文化を体験できるミュージアムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -2331,13 +2251,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -2473,10 +2390,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2601,10 +2515,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2728,10 +2639,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2870,10 +2778,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -2997,16 +2902,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJPWp8On2YGWARFYJAfsRM3e8",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "箱根海賊船 ロワイヤルII",
           "photo_index_override": 0,
           "force": false,
@@ -3097,20 +2999,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Childrens_Natural_Park%28Ooike_Park%29_in_Yokohama_Japan.jpg/1280px-Childrens_Natural_Park%28Ooike_Park%29_in_Yokohama_Japan.jpg",
-        "type": "photo",
-        "alt": "横浜市のこども自然公園（大池公園）",
-        "label": null,
-        "credit": "Kounosu / Wikimedia Commons",
-        "author": "Kounosu",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Childrens_Natural_Park(Ooike_Park)_in_Yokohama_Japan.jpg",
-        "license": "CC BY-SA 3.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_real_but_future_upgrade"
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "緑豊かな大きな公園をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -3133,16 +3029,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJ01v4evpZGGARl4P3h_7FCV0",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "こども自然公園",
           "photo_index_override": 3,
           "force": false,
@@ -3233,20 +3126,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC06741.JPG/1280px-National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC06741.JPG",
-        "type": "photo",
-        "alt": "国立科学博物館の館内",
-        "label": null,
-        "credit": "Daderot / Wikimedia Commons",
-        "author": "Daderot",
-        "source_url": "https://commons.wikimedia.org/wiki/File:National_Museum_of_Nature_and_Science,_Tokyo_-_DSC06741.JPG",
-        "license": "CC0 1.0",
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "credit_required": false,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_atmosphere_photo"
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "自然史・科学展示を楽しむ博物館をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -3269,16 +3156,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJ8Vuh65yOGGARyj4L5IBFiIk",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "国立科学博物館",
           "photo_index_override": 3,
           "force": false,
@@ -3369,20 +3253,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/At_teamLab_Planets_(48277793276).jpg?width=1280",
-        "type": "photo",
-        "alt": "teamLab Planets TOKYOの没入型アート空間",
-        "label": null,
-        "credit": "Big Ben in Japan / Wikimedia Commons",
-        "author": "Big Ben in Japan",
-        "source_url": "https://commons.wikimedia.org/wiki/File:At_teamLab_Planets_(48277793276).jpg",
-        "license": "CC BY-SA 2.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-17",
-        "modified_by_kibun": false,
-        "hero_review": "keep_experience_photo"
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "光に包まれる没入型アート空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
@@ -3420,16 +3298,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJSeco5wiJGGARItbTS8lQ5G0",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "teamLab Planets TOKYO",
           "photo_index_override": 0,
           "force": false,
@@ -3550,10 +3425,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -3677,10 +3549,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -3809,10 +3678,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -3940,16 +3806,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJ0QY2_sRlGGAR7BJpx4rPOxE",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "JAL SKY MUSEUM",
           "photo_index_override": 1,
           "force": false,
@@ -4085,10 +3948,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4212,16 +4072,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJm56sGoqJGGARwwf1AFwrTwA",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "JOYPOLIS SPORTS X",
           "photo_index_override": 1,
           "force": false,
@@ -4342,10 +4199,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4485,10 +4339,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4612,10 +4463,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4739,10 +4587,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4871,10 +4716,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -4998,10 +4840,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5125,10 +4964,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5252,10 +5088,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5350,20 +5183,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arasaki_Park_-_Yokosuka.jpg?width=1280",
-        "type": "photo",
-        "alt": "荒崎公園の海岸と岩場",
-        "label": null,
-        "credit": "Quercus acuta / Wikimedia Commons",
-        "author": "Quercus acuta",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Arasaki_Park_-_Yokosuka.jpg",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-22",
-        "modified_by_kibun": false,
-        "hero_review": "new_priority_a_experience_photo"
+        "url": "images/ai/kiyokawa-river.jpg",
+        "type": "ai",
+        "alt": "海辺の岩場と自然を楽しむ休日をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified",
@@ -5385,13 +5212,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -5512,10 +5336,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5642,10 +5463,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5771,10 +5589,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -5917,10 +5732,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -6047,10 +5859,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -6176,10 +5985,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -6305,10 +6111,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -6405,20 +6208,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/220622_Hakone_Open-air_Museum_Japan01s3.jpg?width=1280",
-        "type": "photo",
-        "alt": "箱根 彫刻の森美術館の野外展示と景観",
-        "label": null,
-        "credit": "663highland / Wikimedia Commons",
-        "author": "663highland",
-        "source_url": "https://commons.wikimedia.org/wiki/File:220622_Hakone_Open-air_Museum_Japan01s3.jpg",
-        "license": "CC BY-SA 4.0",
-        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-22",
-        "modified_by_kibun": false,
-        "hero_review": "new_priority_a_experience_photo"
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "自然の中でアートにふれる休日をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified",
@@ -6455,13 +6252,10 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
@@ -6556,20 +6350,14 @@
         ]
       },
       "hero_image": {
-        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enoshima_Aquarium_inside_2025_March_21_various_19_43_24_715000.jpeg?width=1280",
-        "type": "photo",
-        "alt": "新江ノ島水族館の館内水槽",
-        "label": null,
-        "credit": "Nesnad / Wikimedia Commons",
-        "author": "Nesnad",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Enoshima_Aquarium_inside_2025_March_21_various_19_43_24_715000.jpeg",
-        "license": "CC BY 4.0",
-        "license_url": "https://creativecommons.org/licenses/by/4.0/",
-        "credit_required": true,
-        "exact_spot": true,
-        "checked_at": "2026-08-22",
-        "modified_by_kibun": false,
-        "hero_review": "new_priority_a_experience_photo"
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "水の中の生きものを楽しむ水族館をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
       },
       "research_status": {
         "static_basic": "verified",
@@ -6606,16 +6394,13 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
-        "current_provider": "licensed_real",
+        "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJr6UTdvlOGGART30L2LcRlmc",
-          "status": "manual_fixed",
+          "status": "resolved_manual",
           "query": "新江ノ島水族館",
           "photo_index_override": 0,
           "force": false,
@@ -6752,10 +6537,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -6898,10 +6680,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7027,10 +6806,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7155,10 +6931,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7284,10 +7057,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7429,10 +7199,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7573,10 +7340,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7703,10 +7467,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7833,10 +7594,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -7962,10 +7720,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8091,10 +7846,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8221,10 +7973,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8350,10 +8099,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8479,10 +8225,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8623,10 +8366,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8752,10 +8492,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -8881,10 +8618,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9011,10 +8745,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9155,10 +8886,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9285,10 +9013,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9430,10 +9155,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9575,10 +9297,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9704,10 +9423,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9833,10 +9549,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -9978,10 +9691,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10122,10 +9832,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10267,10 +9974,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10411,10 +10115,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10555,10 +10256,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10699,10 +10397,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10829,10 +10524,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -10958,10 +10650,7 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "official_permission",
           "google_places",
-          "licensed_real",
-          "instagram_embed",
           "ai"
         ],
         "current_provider": "ai",
@@ -11096,7 +10785,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜赤レンガ倉庫",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       }
@@ -11223,7 +10912,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "MARINE & WALK YOKOHAMA",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       }
@@ -11350,7 +11039,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜ハンマーヘッド",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       }
@@ -11477,7 +11166,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜ベイクォーター",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       }
@@ -11604,7 +11293,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "三井アウトレットパーク 横浜ベイサイド",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       }
@@ -11731,7 +11420,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "湘南 T-SITE",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       }
@@ -11846,7 +11535,7 @@
         "municipality": "世田谷区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJVVWV3z_0GGARlmuWyKGhjH0"
       },
       "media_strategy": {
         "hero_priority": [
@@ -11855,11 +11544,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJVVWV3z_0GGARlmuWyKGhjH0",
+          "status": "resolved_manual",
           "query": "二子玉川ライズ",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 1,
+          "force": false,
+          "use_address": true,
+          "matched_name": "二子玉川ライズ",
+          "matched_address": "〒158-0094 東京都世田谷区玉川２丁目２１−１"
         }
       }
     },
@@ -11985,7 +11677,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "代官山 T-SITE",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       }
@@ -12113,7 +11805,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "麻布台ヒルズ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       }
@@ -12228,7 +11920,7 @@
         "municipality": "中央区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJ3wbbClWJGGARHXtIUuwJqW8"
       },
       "media_strategy": {
         "hero_priority": [
@@ -12237,11 +11929,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJ3wbbClWJGGARHXtIUuwJqW8",
+          "status": "resolved_manual",
           "query": "COREDO室町",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "use_address": false,
+          "matched_name": "コレド室町1",
+          "matched_address": "〒103-0022 東京都中央区日本橋室町２丁目２−１"
         }
       }
     },
@@ -12368,7 +12063,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "メッツァビレッジ",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       }
@@ -12484,7 +12179,7 @@
         "municipality": "柏市",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJhaco3BmcGGARJ-CDMjxMeOs"
       },
       "media_strategy": {
         "hero_priority": [
@@ -12493,11 +12188,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJhaco3BmcGGARJ-CDMjxMeOs",
+          "status": "resolved_manual",
           "query": "柏の葉 T-SITE",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 1,
+          "force": false,
+          "use_address": false,
+          "matched_name": "KASHIWANOHA T-SITE",
+          "matched_address": "〒277-0871 千葉県柏市若柴２２７−１"
         }
       }
     }

@@ -1,3 +1,5 @@
+> **V17.1:** Wikimedia / CC実写は現在のHero表示には使用せず、Google Places実写を優先し、取得不可時はAIイメージへfallbackします。以下は過去利用画像の権利記録として保持しています。
+
 # Kibun image credits
 
 Updated: 2026-08-22 (55 spots / v0.8)

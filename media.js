@@ -43,7 +43,8 @@
       try{
         const gp=strategy(spot),po=runtimePlaceOverride(spot),u=new URL(cfg.placePhotoApiUrl);
         u.searchParams.set('name',po?.query||gp.query||spot.name);
-        u.searchParams.set('address',po?.use_address===false?'':(spot.address||''));
+        const useAddress=po?.use_address??gp.use_address??true;
+        u.searchParams.set('address',useAddress===false?'':(spot.address||''));
         if(po?.place_id||gp.place_id) u.searchParams.set('placeId',po?.place_id||gp.place_id);
         const seedIndex=Number.isInteger(gp.photo_index_override)?gp.photo_index_override:null;
         const chosen=localIndex??seedIndex;
@@ -63,7 +64,7 @@
     const gp=strategy(spot),po=runtimePlaceOverride(spot);
     const query=String(opts.query??po?.query??gp.query??spot.name).trim();
     const placeId=String(opts.placeId??po?.place_id??gp.place_id??'').trim();
-    const useAddress=opts.useAddress??po?.use_address??true;
+    const useAddress=opts.useAddress??po?.use_address??gp.use_address??true;
     const allowLowMatch=opts.allowLowMatch===true;
     const key=`${spot.spot_id}:${limit}:${query}:${placeId}:${useAddress?'addr':'noaddr'}:${allowLowMatch?'lowok':'strict'}`;
     if(candidateInflight.has(key))return candidateInflight.get(key);
