@@ -5,4 +5,3 @@ workers_dev = true
 
 [vars]
 ALLOWED_ORIGIN = "https://nnmsw07.github.io"
-

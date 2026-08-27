@@ -91,6 +91,7 @@ export default {
           authors:(selected.authorAttributions||[]).map(a=>({displayName:a.displayName||'',uri:a.uri||'',photoUri:a.photoUri||''})),
           selectedPhotoIndex:picked.index,
           matchConfidence:confidence,
+          requiresManualConfirmation:confidence==='low',
           source:'google_places'
         },200,cors);
       }
@@ -104,7 +105,8 @@ export default {
         const place=await getPlace(env,{name,address,placeId});
         if(!place) return json({candidates:[],reason:'place_not_found'},200,cors);
         const confidence=placeId?'high':matchConfidence(name,place.displayName?.text);
-        if(confidence==='low') return json({candidates:[],reason:'low_match',matchedPlaceName:place.displayName?.text||'',matchedAddress:place.formattedAddress||'',placeId:place.id||null,matchConfidence:confidence},200,cors);
+        const allowLowMatch=url.searchParams.get('allowLowMatch')==='1';
+        if(confidence==='low' && !allowLowMatch) return json({candidates:[],reason:'low_match',matchedPlaceName:place.displayName?.text||'',matchedAddress:place.formattedAddress||'',placeId:place.id||null,placeGoogleMapsUri:place.googleMapsUri||null,matchConfidence:confidence},200,cors);
         const photos=(place.photos||[]).slice(0,requested);
         const candidates=[];
         for(let index=0;index<photos.length;index++){
@@ -135,6 +137,7 @@ export default {
           matchedAddress:place.formattedAddress||'',
           placeGoogleMapsUri:place.googleMapsUri||null,
           matchConfidence:confidence,
+          requiresManualConfirmation:confidence==='low',
           source:'google_places'
         },200,cors);
       }
