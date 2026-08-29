@@ -2,7 +2,7 @@ const assert = require('assert');
 const fs = require('fs');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
 assert.equal(seed.spots.length, 211);
-assert.equal(seed.metadata.version, '0.19.5.4');
+assert.ok(['0.19.5.4','0.19.6'].includes(seed.metadata.version));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id, s]));
 const expected = {
   spot_047:'https://www.kanagawa-park.or.jp/kannonzaki/',

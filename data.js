@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_5_4_public_candidate",
-    "version": "0.19.5.4",
+    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_6_seo_affiliate_foundation",
+    "version": "0.19.6",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -23,7 +23,8 @@ window.ODEKAKE_SEED = {
       "layer_media_strategy": "HeroはGoogle Places実写を第一候補とし、取得不可時のみAIイメージへfallback。旧CC/Wikimedia画像は画面fallbackに使わない。",
       "layer_vibe_groups": "UI上は mood 3軸（cool / extraordinary / relax）と activity 10軸に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
       "layer_audience_presentation": "同行者ごとに推薦枠名・紹介文・詳細の見せ方を変更。family以外では乳幼児指標を表示しない。",
-      "layer_ui_tags": "UI用の短い閲覧タグ。推薦スコアには直接使用せず、コレクション・チップ表示用。"
+      "layer_ui_tags": "UI用の短い閲覧タグ。推薦スコアには直接使用せず、コレクション・チップ表示用。",
+      "layer_monetization": "affiliate_fitは編集上の収益化適性。provider/productの実在を保証せず、提携・商品照合完了までUI非表示。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -61,7 +62,7 @@ window.ODEKAKE_SEED = {
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-29 V19.5.4: 211件の名称・休館/休業・営業時間を公開前棚卸し。変動の大きい季節施設・新規施設・臨時休館スポットを重点照合し、2026年営業期間/既知休業を推薦ハードフィルターへ反映。スポット総数は211件のまま。",
+    "expansion_note": "2026-08-29 V19.6: スポット追加は行わず、検索流入の入口となる地域×カテゴリSEOガイド20本とアフィリエイト候補棚卸しを追加。収益化リンクは未有効化。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -100,7 +101,7 @@ window.ODEKAKE_SEED = {
       "brand_name": "Kibun Trip",
       "ui_brand": "Kibun",
       "locale": "ja-JP",
-      "release_stage": "domain-ready"
+      "release_stage": "seo-affiliate-foundation"
     },
     "operations_audit_note": "2026-08-29: 名称・営業時間・季節営業・既知メンテナンスを重点監査。2026年限定の営業期間は availability_constraints で保守的に除外し、翌シーズンは要再監査。"
   },
@@ -227,7 +228,17 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_002",
@@ -336,7 +347,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_003",
@@ -445,7 +465,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "雨の日",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_004",
@@ -552,7 +581,16 @@ window.ODEKAKE_SEED = {
       },
       "ui_tags": [
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_005",
@@ -665,7 +703,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "のんびり",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_006",
@@ -772,7 +817,16 @@ window.ODEKAKE_SEED = {
       },
       "ui_tags": [
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_007",
@@ -885,7 +939,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_008",
@@ -996,7 +1059,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_009",
@@ -1104,7 +1176,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "のんびり",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_010",
@@ -1214,7 +1295,16 @@ window.ODEKAKE_SEED = {
         "非日常",
         "体を動かす",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_011",
@@ -1344,7 +1434,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "非日常",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_012",
@@ -1478,7 +1577,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_013",
@@ -1609,7 +1717,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_014",
@@ -1738,7 +1855,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_015",
@@ -1867,7 +1991,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_016",
@@ -1996,7 +2127,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_017",
@@ -2126,7 +2266,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_018",
@@ -2273,7 +2422,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_019",
@@ -2404,7 +2562,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_020",
@@ -2550,7 +2717,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_021",
@@ -2682,7 +2858,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_022",
@@ -2814,7 +2999,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_023",
@@ -2960,7 +3154,19 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "非日常",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "宿泊OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_024",
@@ -3092,7 +3298,18 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "非日常",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_025",
@@ -3225,7 +3442,14 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_026",
@@ -3359,7 +3583,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_027",
@@ -3507,7 +3740,18 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_028",
@@ -3639,7 +3883,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_029",
@@ -3769,7 +4022,17 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_030",
@@ -3904,7 +4167,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_031",
@@ -4039,7 +4311,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_032",
@@ -4189,7 +4470,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_033",
@@ -4322,7 +4612,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_034",
@@ -4451,7 +4748,17 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "非日常",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_035",
@@ -4599,7 +4906,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_036",
@@ -4730,7 +5046,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_037",
@@ -4862,7 +5187,18 @@ window.ODEKAKE_SEED = {
         "非日常",
         "体を動かす",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "宿泊OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_038",
@@ -4996,7 +5332,16 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "自然",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_039",
@@ -5126,7 +5471,17 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_040",
@@ -5257,7 +5612,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_041",
@@ -5388,7 +5752,14 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "自然",
         "水辺・水遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_042",
@@ -5517,7 +5888,14 @@ window.ODEKAKE_SEED = {
         "自然",
         "水辺・水遊び",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_043",
@@ -5649,7 +6027,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "ごはん",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_044",
@@ -5783,7 +6168,14 @@ window.ODEKAKE_SEED = {
         "自然",
         "水辺・水遊び",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_045",
@@ -5915,7 +6307,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_046",
@@ -6066,7 +6465,14 @@ window.ODEKAKE_SEED = {
         "自然",
         "ごはん",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_047",
@@ -6198,7 +6604,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "自然",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_048",
@@ -6330,7 +6743,14 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "体を動かす",
         "水辺・水遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_049",
@@ -6462,7 +6882,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_050",
@@ -6608,7 +7037,17 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_051",
@@ -6761,7 +7200,17 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "水辺・水遊び",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_052",
@@ -6909,7 +7358,17 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "のんびり",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_053",
@@ -7059,7 +7518,16 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "水辺・水遊び",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_054",
@@ -7191,7 +7659,16 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "体を動かす",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_055",
@@ -7323,7 +7800,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_056",
@@ -7453,7 +7939,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_057",
@@ -7599,7 +8092,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_058",
@@ -7744,7 +8244,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_059",
@@ -7875,7 +8384,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "体を動かす",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_060",
@@ -8006,7 +8522,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_061",
@@ -8136,7 +8659,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_062",
@@ -8268,7 +8798,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_063",
@@ -8402,7 +8941,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_064",
@@ -8532,7 +9080,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "自然",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_065",
@@ -8666,7 +9223,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_066",
@@ -8811,7 +9375,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "学び・文化",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_067",
@@ -8943,7 +9516,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_068",
@@ -9075,7 +9657,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_069",
@@ -9209,7 +9800,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "水辺・水遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_070",
@@ -9356,7 +9956,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_071",
@@ -9490,7 +10099,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_072",
@@ -9636,7 +10254,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "学び・文化",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_073",
@@ -9784,7 +10411,14 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_074",
@@ -9915,7 +10549,14 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_075",
@@ -10045,7 +10686,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_076",
@@ -10191,7 +10841,14 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "水辺・水遊び",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_077",
@@ -10337,7 +10994,14 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_078",
@@ -10485,7 +11149,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_079",
@@ -10632,7 +11305,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_080",
@@ -10778,7 +11460,14 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_081",
@@ -10923,7 +11612,16 @@ window.ODEKAKE_SEED = {
       "ui_tags": [
         "学び・文化",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_082",
@@ -11055,7 +11753,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "のんびり",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_083",
@@ -11186,7 +11891,14 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "自然",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_084",
@@ -11319,7 +12031,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "水辺・水遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_085",
@@ -11453,7 +12172,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "ごはん",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_086",
@@ -11586,7 +12312,14 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "水辺・水遊び",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_087",
@@ -11719,7 +12452,14 @@ window.ODEKAKE_SEED = {
         "デート",
         "買い物",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_088",
@@ -11852,7 +12592,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "水辺・水遊び",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_089",
@@ -11986,7 +12733,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "買い物",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_090",
@@ -12124,7 +12878,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_091",
@@ -12258,7 +13019,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "学び・文化",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_092",
@@ -12395,7 +13163,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_093",
@@ -12533,7 +13308,14 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_094",
@@ -12670,7 +13452,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "のんびり",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_095",
@@ -12808,7 +13597,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "買い物",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_096",
@@ -12942,7 +13738,14 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "水辺・水遊び",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_097",
@@ -13077,7 +13880,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_098",
@@ -13214,7 +14024,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "ごはん",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_099",
@@ -13349,7 +14166,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "買い物",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_100",
@@ -13482,7 +14308,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_101",
@@ -13617,7 +14452,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_102",
@@ -13753,7 +14597,17 @@ window.ODEKAKE_SEED = {
         "非日常",
         "体を動かす",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_103",
@@ -13888,7 +14742,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_104",
@@ -14022,7 +14883,17 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_105",
@@ -14158,7 +15029,16 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_106",
@@ -14296,7 +15176,16 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "宿泊OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_107",
@@ -14434,7 +15323,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_108",
@@ -14568,7 +15464,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_109",
@@ -14704,7 +15609,17 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_110",
@@ -14841,7 +15756,17 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_111",
@@ -14975,7 +15900,16 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "学び・文化",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_112",
@@ -15114,7 +16048,16 @@ window.ODEKAKE_SEED = {
         "買い物",
         "非日常",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "訪日OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_113",
@@ -15249,7 +16192,18 @@ window.ODEKAKE_SEED = {
         "非日常",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_114",
@@ -15386,7 +16340,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "ごはん",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_115",
@@ -15524,7 +16485,14 @@ window.ODEKAKE_SEED = {
         "自然",
         "体を動かす",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_116",
@@ -15659,7 +16627,16 @@ window.ODEKAKE_SEED = {
         "自然",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_117",
@@ -15793,7 +16770,16 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "自然",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_118",
@@ -15927,7 +16913,16 @@ window.ODEKAKE_SEED = {
         "自然",
         "学び・文化",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_119",
@@ -16062,7 +17057,17 @@ window.ODEKAKE_SEED = {
         "非日常",
         "体を動かす",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_120",
@@ -16200,7 +17205,16 @@ window.ODEKAKE_SEED = {
         "非日常",
         "体を動かす",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_121",
@@ -16338,7 +17352,17 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "非日常",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_122",
@@ -16478,7 +17502,17 @@ window.ODEKAKE_SEED = {
         "自然",
         "水辺・水遊び",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_123",
@@ -16614,7 +17648,14 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "非日常",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_124",
@@ -16750,7 +17791,16 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_125",
@@ -16888,7 +17938,16 @@ window.ODEKAKE_SEED = {
         "自然",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_126",
@@ -17027,7 +18086,16 @@ window.ODEKAKE_SEED = {
         "非日常",
         "水辺・水遊び",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "宿泊OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_127",
@@ -17164,7 +18232,16 @@ window.ODEKAKE_SEED = {
         "買い物",
         "のんびり",
         "水辺・水遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_128",
@@ -17300,7 +18377,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_129",
@@ -17434,7 +18520,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "買い物",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_130",
@@ -17575,7 +18668,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "非日常",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_131",
@@ -17712,7 +18814,17 @@ window.ODEKAKE_SEED = {
         "自然",
         "体を動かす",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_132",
@@ -17847,7 +18959,17 @@ window.ODEKAKE_SEED = {
         "非日常",
         "学び・文化",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_133",
@@ -17982,7 +19104,18 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_134",
@@ -18115,7 +19248,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_135",
@@ -18250,7 +19390,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_136",
@@ -18388,7 +19535,18 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_137",
@@ -18524,7 +19682,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "のんびり",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_138",
@@ -18658,7 +19823,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "買い物",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_139",
@@ -18793,7 +19965,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_140",
@@ -18927,7 +20106,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_141",
@@ -19064,7 +20250,14 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_142",
@@ -19198,7 +20391,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_143",
@@ -19333,7 +20533,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_144",
@@ -19468,7 +20675,14 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_145",
@@ -19603,7 +20817,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_146",
@@ -19738,7 +20961,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "買い物"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_147",
@@ -19876,7 +21108,17 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "ごはん",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_148",
@@ -20010,7 +21252,18 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "非日常",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_149",
@@ -20144,7 +21397,14 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_150",
@@ -20278,7 +21538,17 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "非日常",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_151",
@@ -20412,7 +21682,18 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_152",
@@ -20546,7 +21827,16 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_153",
@@ -20679,7 +21969,16 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_154",
@@ -20813,7 +22112,16 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_155",
@@ -20947,7 +22255,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_156",
@@ -21081,7 +22398,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_157",
@@ -21215,7 +22541,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "学び・文化",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_158",
@@ -21353,7 +22688,16 @@ window.ODEKAKE_SEED = {
         "体を動かす",
         "ひとり",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_159",
@@ -21487,7 +22831,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_160",
@@ -21621,7 +22972,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_161",
@@ -21756,7 +23114,16 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "学び・文化"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_162",
@@ -21891,7 +23258,16 @@ window.ODEKAKE_SEED = {
         "自然",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_163",
@@ -22025,7 +23401,17 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_164",
@@ -22160,7 +23546,17 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "非日常",
         "自然"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_165",
@@ -22294,7 +23690,18 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "のんびり",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "hinohara-forest-toy-museum",
@@ -22430,7 +23837,16 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "学び・文化",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "ue-fantasia",
@@ -22568,7 +23984,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "体を動かす",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "mahono-bungakukan",
@@ -22704,7 +24129,16 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "学び・文化",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "the-library-lounge",
@@ -22841,7 +24275,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "bar-panorama",
@@ -22980,7 +24421,14 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "ごはん",
         "非日常"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "shibuya-fureai-botanical-center",
@@ -23117,7 +24565,16 @@ window.ODEKAKE_SEED = {
         "自然",
         "のんびり",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "warner-bros-studio-tour-tokyo",
@@ -23257,7 +24714,18 @@ window.ODEKAKE_SEED = {
         "非日常",
         "学び・文化",
         "友だち"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "訪日OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "yumenoshima-tropical-greenhouse",
@@ -23393,7 +24861,14 @@ window.ODEKAKE_SEED = {
         "暑い日",
         "自然",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "slug": "reve-des-lumieres",
@@ -23532,7 +25007,17 @@ window.ODEKAKE_SEED = {
         "非日常",
         "学び・文化",
         "ひとり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_175",
@@ -23665,7 +25150,16 @@ window.ODEKAKE_SEED = {
         "デート",
         "ごはん",
         "神奈川ローカル"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_176",
@@ -23796,7 +25290,14 @@ window.ODEKAKE_SEED = {
         "近場穴場",
         "外遊び",
         "水辺"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_177",
@@ -23929,7 +25430,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "横須賀"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_178",
@@ -24063,7 +25571,16 @@ window.ODEKAKE_SEED = {
         "大人も楽しい",
         "駅近",
         "水辺"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_179",
@@ -24196,7 +25713,16 @@ window.ODEKAKE_SEED = {
         "デート",
         "駅近",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_180",
@@ -24328,7 +25854,14 @@ window.ODEKAKE_SEED = {
         "近場穴場",
         "駅近",
         "街歩き"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_181",
@@ -24459,7 +25992,16 @@ window.ODEKAKE_SEED = {
         "近場穴場",
         "外遊び",
         "ごはん"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_182",
@@ -24590,7 +26132,14 @@ window.ODEKAKE_SEED = {
         "水辺",
         "外遊び",
         "景色"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_183",
@@ -24730,6 +26279,15 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年の営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -24872,6 +26430,13 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年のジャンボプール営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -25046,6 +26611,15 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年のプールWAI営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -25177,7 +26751,16 @@ window.ODEKAKE_SEED = {
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_187",
@@ -25344,6 +26927,15 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年の営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -25486,6 +27078,16 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年のガーデンプール営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "宿泊OTA"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -25626,6 +27228,13 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年のプール営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -25758,7 +27367,16 @@ window.ODEKAKE_SEED = {
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_191",
@@ -25890,7 +27508,16 @@ window.ODEKAKE_SEED = {
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_192",
@@ -26025,7 +27652,16 @@ window.ODEKAKE_SEED = {
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_193",
@@ -26166,6 +27802,15 @@ window.ODEKAKE_SEED = {
             "note": "メンテナンス休館"
           }
         ]
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -26309,6 +27954,15 @@ window.ODEKAKE_SEED = {
             "note": "プール・浴室営業休止"
           }
         ]
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -26455,6 +28109,15 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年のDayプール営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -26598,6 +28261,15 @@ window.ODEKAKE_SEED = {
             "note": "休所日"
           }
         ]
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -26738,6 +28410,15 @@ window.ODEKAKE_SEED = {
           }
         ],
         "note": "2026年の屋外プール営業期間外"
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -26886,6 +28567,17 @@ window.ODEKAKE_SEED = {
             "note": "温水プール・ウォーターアスレチック休業（クアパークのみ営業）"
           }
         ]
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP",
+          "宿泊OTA",
+          "周辺宿泊"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
       }
     },
     {
@@ -27025,7 +28717,16 @@ window.ODEKAKE_SEED = {
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_200",
@@ -27158,7 +28859,14 @@ window.ODEKAKE_SEED = {
         "近場穴場",
         "外遊び",
         "神奈川ローカル"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_201",
@@ -27293,7 +29001,16 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "近場穴場"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_202",
@@ -27425,7 +29142,16 @@ window.ODEKAKE_SEED = {
         "室内",
         "無料",
         "近場穴場"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_203",
@@ -27559,7 +29285,16 @@ window.ODEKAKE_SEED = {
         "水辺",
         "小旅行",
         "神奈川ローカル"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_204",
@@ -27693,7 +29428,14 @@ window.ODEKAKE_SEED = {
         "買い物",
         "ごはん",
         "神奈川ローカル"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_205",
@@ -27825,7 +29567,14 @@ window.ODEKAKE_SEED = {
         "学び・体験",
         "のんびり",
         "無料"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_206",
@@ -27962,7 +29711,16 @@ window.ODEKAKE_SEED = {
         "学び・体験",
         "無料",
         "神奈川ローカル"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_207",
@@ -28095,7 +29853,16 @@ window.ODEKAKE_SEED = {
         "友だち",
         "ごはん",
         "大人も楽しい"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_208",
@@ -28228,7 +29995,14 @@ window.ODEKAKE_SEED = {
         "デート",
         "ごはん",
         "駅近"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_209",
@@ -28362,7 +30136,14 @@ window.ODEKAKE_SEED = {
         "学び・文化",
         "建築",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_210",
@@ -28498,7 +30279,16 @@ window.ODEKAKE_SEED = {
         "無料",
         "近場穴場",
         "外遊び"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     },
     {
       "spot_id": "spot_211",
@@ -28632,7 +30422,14 @@ window.ODEKAKE_SEED = {
         "学び・体験",
         "絵本",
         "のんびり"
-      ]
+      ],
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
     }
   ]
 };

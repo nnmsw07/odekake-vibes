@@ -1,4 +1,4 @@
-# Kibun Trip MVP v0.19.5.4 — 211 spots
+# Kibun Trip MVP v0.19.6 — 211 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
@@ -111,3 +111,16 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 ## V19.5.4 operations audit
 
 公開前の名称・休館/休業・営業時間棚卸しを実施しました。季節プール等は2026年営業期間を `availability_constraints` に入れ、営業期間外や既知メンテナンス日は推薦から除外します。詳細は `OPERATIONS_AUDIT_v19_5_4.md`。`node scripts/audit_operating_snapshots.mjs` で古い動的情報を再点検できます。
+
+
+## V19.6 SEO / Affiliate foundation
+
+- `/guide/` と地域×カテゴリSEOガイド20ページを追加
+- `sitemap.xml` にガイドページを追加
+- SEOガイドから `/?region=...&category=...` でKibunのブラウズを直接開ける
+- GA4イベント `seo_guide_cta` / `seo_guide_open` を追加
+- 211スポットへ内部 `monetization.affiliate_fit (A/B/C)` を付与
+- `affiliate-config.js` / `affiliate.js` を追加。ただし **enabled=false** で、提携前はPR導線を一切表示しない
+- 提携後のPRリンクは `rel="sponsored noopener"`、GA4 `affiliate_click` で計測
+
+詳細: `SEO_PLAN_v19_6.md` / `AFFILIATE_AUDIT_v19_6.md`

@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-08-29",
+  "guides": [
+    {
+      "slug": "yokohama-kids",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 28,
+      "title": "横浜の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "yokohama-water",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "water",
+      "category": "水遊び・プール",
+      "count": 17,
+      "title": "横浜の水遊び・プールスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "yokohama-experience",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "experience",
+      "category": "体験・学び",
+      "count": 22,
+      "title": "横浜の体験・学びスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "yokohama-culture",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "culture",
+      "category": "アート・文化・本",
+      "count": 21,
+      "title": "横浜のアート・文化・本スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "yokohama-food",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "food",
+      "category": "カフェ・グルメ",
+      "count": 18,
+      "title": "横浜のカフェ・グルメスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "yokohama-nature",
+      "region_key": "yokohama",
+      "region": "横浜",
+      "category_key": "nature",
+      "category": "公園・自然",
+      "count": 10,
+      "title": "横浜の公園・自然スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "kawasaki-kids",
+      "region_key": "kawasaki",
+      "region": "川崎",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 9,
+      "title": "川崎の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "kawasaki-culture",
+      "region_key": "kawasaki",
+      "region": "川崎",
+      "category_key": "culture",
+      "category": "アート・文化・本",
+      "count": 5,
+      "title": "川崎のアート・文化・本スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "shonan-kids",
+      "region_key": "shonan",
+      "region": "湘南・鎌倉",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 10,
+      "title": "湘南・鎌倉の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "shonan-nature",
+      "region_key": "shonan",
+      "region": "湘南・鎌倉",
+      "category_key": "nature",
+      "category": "公園・自然",
+      "count": 9,
+      "title": "湘南・鎌倉の公園・自然スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "shonan-water",
+      "region_key": "shonan",
+      "region": "湘南・鎌倉",
+      "category_key": "water",
+      "category": "水遊び・プール",
+      "count": 9,
+      "title": "湘南・鎌倉の水遊び・プールスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "miura-kids",
+      "region_key": "miura",
+      "region": "横須賀・三浦",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 9,
+      "title": "横須賀・三浦の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "miura-water",
+      "region_key": "miura",
+      "region": "横須賀・三浦",
+      "category_key": "water",
+      "category": "水遊び・プール",
+      "count": 10,
+      "title": "横須賀・三浦の水遊び・プールスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "kenou-kids",
+      "region_key": "kenou",
+      "region": "県央・丹沢",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 10,
+      "title": "県央・丹沢の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "kenou-nature",
+      "region_key": "kenou",
+      "region": "県央・丹沢",
+      "category_key": "nature",
+      "category": "公園・自然",
+      "count": 7,
+      "title": "県央・丹沢の公園・自然スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "tokyo23-kids",
+      "region_key": "tokyo23",
+      "region": "東京23区",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 38,
+      "title": "東京23区の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "tokyo23-culture",
+      "region_key": "tokyo23",
+      "region": "東京23区",
+      "category_key": "culture",
+      "category": "アート・文化・本",
+      "count": 40,
+      "title": "東京23区のアート・文化・本スポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "tokyo23-experience",
+      "region_key": "tokyo23",
+      "region": "東京23区",
+      "category_key": "experience",
+      "category": "体験・学び",
+      "count": 29,
+      "title": "東京23区の体験・学びスポット｜今日のおでかけ候補"
+    },
+    {
+      "slug": "chiba-kids",
+      "region_key": "chiba",
+      "region": "千葉",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 17,
+      "title": "千葉の子連れおでかけ｜子どもと楽しめるスポット"
+    },
+    {
+      "slug": "saitama-kids",
+      "region_key": "saitama",
+      "region": "埼玉",
+      "category_key": "kids",
+      "category": "子ども・遊び",
+      "count": 13,
+      "title": "埼玉の子連れおでかけ｜子どもと楽しめるスポット"
+    }
+  ]
+}

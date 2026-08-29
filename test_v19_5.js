@@ -5,7 +5,7 @@ const index=fs.readFileSync('index.html','utf8');
 const privacy=fs.readFileSync('privacy.html','utf8');
 const workerToml=fs.readFileSync('worker/wrangler.toml','utf8');
 assert.equal(seed.spots.length,211);
-assert.ok(/^0\.19\.5(?:\.\d+)?$/.test(seed.metadata.version));
+assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6)$/.test(seed.metadata.version));
 assert.equal(fs.readFileSync('CNAME','utf8').trim(),'kibuntrip.com');
 assert.ok(index.includes('<link rel="canonical" href="https://kibuntrip.com/"'));
 assert.ok(index.includes('property="og:image" content="https://kibuntrip.com/assets/og-kibuntrip.png"'));
