@@ -1,0 +1,263 @@
+{
+  "photo_index_overrides": {
+    "spot_001": 0,
+    "spot_003": 2,
+    "spot_004": 2,
+    "spot_005": 3,
+    "spot_009": 4,
+    "spot_010": 0,
+    "spot_013": 2,
+    "spot_014": 1,
+    "spot_015": 1,
+    "spot_016": 1,
+    "spot_017": 4,
+    "spot_021": 2,
+    "spot_022": 2,
+    "spot_023": 1,
+    "spot_028": 1,
+    "spot_030": 2,
+    "spot_032": 1,
+    "spot_035": 1,
+    "spot_036": 2,
+    "spot_037": 2,
+    "spot_038": 0,
+    "spot_039": 5,
+    "spot_040": 0,
+    "spot_044": 0,
+    "spot_045": 0,
+    "spot_047": 2,
+    "spot_052": 1,
+    "spot_054": 3,
+    "spot_055": 5,
+    "spot_056": 4,
+    "spot_058": 1,
+    "spot_059": 5,
+    "spot_060": 5,
+    "spot_061": 2,
+    "spot_062": 2,
+    "spot_063": 1,
+    "spot_064": 2,
+    "spot_065": 2,
+    "spot_066": 2,
+    "spot_068": 0,
+    "spot_069": 3,
+    "spot_074": 0,
+    "spot_075": 2,
+    "spot_076": 3,
+    "spot_077": 2,
+    "spot_079": 1,
+    "spot_080": 2,
+    "spot_081": 1,
+    "spot_082": 0,
+    "spot_083": 1,
+    "spot_002": 1,
+    "spot_006": 2,
+    "spot_019": 3,
+    "spot_024": 0,
+    "spot_025": 3,
+    "spot_026": 3,
+    "spot_027": 0,
+    "spot_029": 1,
+    "spot_031": 1,
+    "spot_033": 1,
+    "spot_051": 0,
+    "spot_094": 4,
+    "spot_090": 1,
+    "spot_084": 3,
+    "spot_085": 1,
+    "spot_086": 1,
+    "spot_087": 0,
+    "spot_088": 4,
+    "spot_089": 5,
+    "spot_091": 3,
+    "spot_092": 1,
+    "spot_093": 0,
+    "spot_095": 1,
+    "spot_096": 3,
+    "spot_097": 2,
+    "spot_098": 0,
+    "spot_099": 4,
+    "spot_101": 3,
+    "spot_102": 0,
+    "spot_103": 1,
+    "spot_105": 0,
+    "spot_106": 3,
+    "spot_107": 0,
+    "spot_109": 0,
+    "spot_110": 2,
+    "spot_111": 1,
+    "spot_112": 3,
+    "spot_113": 0,
+    "spot_114": 0,
+    "spot_115": 1,
+    "spot_116": 4,
+    "spot_117": 5,
+    "spot_121": 2,
+    "spot_122": 0,
+    "spot_123": 3,
+    "spot_125": 1
+  },
+  "place_overrides": {
+    "spot_025": {
+      "query": "こども自然公園",
+      "place_id": "ChIJ01v4evpZGGARl4P3h_7FCV0",
+      "matched_name": "こども自然公園",
+      "matched_address": "〒241-0834 神奈川県横浜市旭区大池町６５−１",
+      "use_address": false
+    },
+    "spot_024": {
+      "query": "箱根海賊船 ロワイヤルII",
+      "place_id": "ChIJPWp8On2YGWARFYJAfsRM3e8",
+      "matched_name": "箱根海賊船 元箱根港",
+      "matched_address": "〒250-0522 神奈川県足柄下郡箱根町元箱根６−４０",
+      "use_address": false
+    },
+    "spot_026": {
+      "query": "国立科学博物館",
+      "place_id": "ChIJ8Vuh65yOGGARyj4L5IBFiIk",
+      "matched_name": "国立科学博物館",
+      "matched_address": "〒110-8718 東京都台東区上野公園７−２０",
+      "use_address": true
+    },
+    "spot_027": {
+      "query": "teamLab Planets TOKYO",
+      "place_id": "ChIJSeco5wiJGGARItbTS8lQ5G0",
+      "matched_name": "チームラボプラネッツ TOKYO DMM",
+      "matched_address": "〒135-0061 東京都江東区豊洲６丁目１−１６",
+      "use_address": false
+    },
+    "spot_031": {
+      "query": "JAL SKY MUSEUM",
+      "place_id": "ChIJ0QY2_sRlGGAR7BJpx4rPOxE",
+      "matched_name": "JALスカイミュージアム",
+      "matched_address": "〒144-0041 東京都大田区羽田空港３丁目５−１ JALメインテナンスセンタ 1",
+      "use_address": false
+    },
+    "spot_033": {
+      "query": "JOYPOLIS SPORTS X",
+      "place_id": "ChIJm56sGoqJGGARwwf1AFwrTwA",
+      "matched_name": "ジョイポリススポーツX",
+      "matched_address": "〒135-0091 東京都港区台場１丁目６−１",
+      "use_address": false
+    },
+    "spot_051": {
+      "query": "新江ノ島水族館",
+      "place_id": "ChIJr6UTdvlOGGART30L2LcRlmc",
+      "matched_name": "新江ノ島水族館",
+      "matched_address": "〒251-0035 神奈川県藤沢市片瀬海岸２丁目１９−１",
+      "use_address": true
+    },
+    "spot_090": {
+      "query": "二子玉川ライズ",
+      "place_id": "ChIJVVWV3z_0GGARlmuWyKGhjH0",
+      "matched_name": "二子玉川ライズ",
+      "matched_address": "〒158-0094 東京都世田谷区玉川２丁目２１−１",
+      "use_address": true
+    },
+    "spot_093": {
+      "query": "COREDO室町",
+      "place_id": "ChIJ3wbbClWJGGARHXtIUuwJqW8",
+      "matched_name": "コレド室町1",
+      "matched_address": "〒103-0022 東京都中央区日本橋室町２丁目２−１",
+      "use_address": false
+    },
+    "spot_095": {
+      "query": "柏の葉 T-SITE",
+      "place_id": "ChIJhaco3BmcGGARJ-CDMjxMeOs",
+      "matched_name": "KASHIWANOHA T-SITE",
+      "matched_address": "〒277-0871 千葉県柏市若柴２２７−１",
+      "use_address": false
+    },
+    "spot_098": {
+      "query": "Think Coffee Japan 神田錦町",
+      "place_id": "ChIJKV27XcWNGGARUMPjYkQlDlQ",
+      "matched_name": "think coffee",
+      "matched_address": "〒101-0054 東京都千代田区神田錦町２丁目９−１５ 1F-2F",
+      "use_address": true
+    },
+    "spot_106": {
+      "query": "リビエラ逗子マリーナ",
+      "place_id": "ChIJT-vXGW5GGGARz4UQz4J8iVI",
+      "matched_name": "リビエラ逗子マリーナ",
+      "matched_address": "〒249-0008 神奈川県逗子市小坪５丁目２３−９",
+      "use_address": false
+    },
+    "spot_107": {
+      "query": "横浜ワールドポーターズ",
+      "place_id": "ChIJ-fqqvllcGGARA266GZ-xatU",
+      "matched_name": "横浜ワールドポーターズ",
+      "matched_address": "〒231-0001 神奈川県横浜市中区新港２丁目２−１",
+      "use_address": true
+    },
+    "spot_110": {
+      "query": "マクセル アクアパーク品川",
+      "place_id": "ChIJC1aZZFeKGGARGLX8IHTOn-c",
+      "matched_name": "マクセル アクアパーク 品川",
+      "matched_address": "〒108-8611 東京都港区高輪４丁目１０−３０ 品川プリンスホテル内",
+      "use_address": true
+    },
+    "spot_112": {
+      "query": "東京スカイツリータウン",
+      "place_id": "ChIJ35ov0dCOGGARKvdDH7NPHX0",
+      "matched_name": "東京スカイツリー",
+      "matched_address": "〒131-0045 東京都墨田区押上１丁目１−２",
+      "use_address": false
+    },
+    "spot_113": {
+      "query": "SHIBUYA SKY",
+      "place_id": "ChIJ4Rr2JWiLGGARcyRSHuZ-9G8",
+      "matched_name": "SHIBUYA SKY",
+      "matched_address": "〒150-6145 東京都渋谷区渋谷２丁目２４−１２ スクランブルスクエア 14階・45階 46階・屋上",
+      "use_address": true
+    },
+    "spot_115": {
+      "query": "国営昭和記念公園",
+      "place_id": "ChIJC9RL4azhGGAREzW1g7ZN2tc",
+      "matched_name": "国営昭和記念公園",
+      "matched_address": "〒190-0014 東京都立川市緑町３１７３",
+      "use_address": true
+    },
+    "spot_120": {
+      "query": "成田ゆめ牧場",
+      "place_id": "ChIJxX6CI3pfImARXOmVd4d8ne0",
+      "matched_name": "成田ゆめ牧場",
+      "matched_address": "〒289-0111 千葉県成田市名木730ｰ3",
+      "use_address": true
+    },
+    "spot_121": {
+      "query": "鴨川シーワールド",
+      "place_id": "ChIJhc6dSJdTPWARF6Kvf3gGDg8",
+      "matched_name": "鴨川シーワールド",
+      "matched_address": "〒296-0041 千葉県鴨川市東町１４６４−１８",
+      "use_address": true
+    },
+    "spot_122": {
+      "query": "ムーミンバレーパーク",
+      "place_id": "ChIJVRjsUcEnGWARAu2b3YkQWi4",
+      "matched_name": "ムーミンバレーパーク",
+      "matched_address": "〒357-0001 埼玉県飯能市宮沢３２７−６",
+      "use_address": false
+    },
+    "spot_123": {
+      "query": "東武動物公園",
+      "place_id": "ChIJESwwjhy4GGARa2x7ieVV01E",
+      "matched_name": "東武動物公園",
+      "matched_address": "〒345-0831 埼玉県南埼玉郡宮代町須賀１１０",
+      "use_address": true
+    },
+    "spot_124": {
+      "query": "さいたま水族館",
+      "place_id": "ChIJ5TXkrZwzH2ARTUJYQpVUnUo",
+      "matched_name": "さいたま水族館",
+      "matched_address": "〒348-0011 埼玉県羽生市三田ケ谷７５１−１",
+      "use_address": true
+    },
+    "spot_125": {
+      "query": "井の頭自然文化園",
+      "place_id": "ChIJLRZy90ruGGAR7AqksIECQr8",
+      "matched_name": "井の頭自然文化園",
+      "matched_address": "〒180-0005 東京都武蔵野市御殿山１丁目１７−６",
+      "use_address": true
+    }
+  }
+}
