@@ -9,7 +9,7 @@ window.KIBUN_CONFIG = {
   placePhotoMaxConcurrent: 3,
 
   geoloniaApiBase: "https://japanese-addresses-v2.geoloniamaps.com/api/ja",
-  travelEstimateCandidateLimit: 10,
+  travelEstimateCandidateLimit: 40,
 
   // ?heroAudit=1 のときだけHero写真監査UIを表示します。
   heroAuditCandidateCount: 6
@@ -18,6 +18,7 @@ window.KIBUN_CONFIG = {
 (function resolveKibunApiConfig(cfg){
   const base=String(cfg.apiBaseUrl||"").replace(/\/$/,"");
   cfg.travelApiUrl = cfg.travelApiUrl || (base ? `${base}/travel-times` : "");
+  cfg.locationSearchApiUrl = cfg.locationSearchApiUrl || (base ? `${base}/location-search` : "");
   cfg.placePhotoApiUrl = cfg.placePhotoApiUrl || (base ? `${base}/place-photo` : "");
   cfg.placePhotosApiUrl = cfg.placePhotosApiUrl || (base ? `${base}/place-photos` : "");
 })(window.KIBUN_CONFIG);

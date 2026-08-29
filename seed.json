@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v7_211spots_public_candidate",
-    "version": "0.19.3",
+    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_4_public_candidate",
+    "version": "0.19.4",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -31,7 +31,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-28",
+    "updated_at": "2026-08-29",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -42,7 +42,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-08-27: ユーザー目視監査のphoto_index 73件、Google Place ID 10件をseedへ固定。"
+      "hero_selection": "2026-08-29: latest user Hero audit export applied through spot_211."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -61,7 +61,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-28 V19.3: Instagram参考スポットと追加要望 37件を追加し、174→211 spotsへ拡張。アソボーノ/東京ドームシティの別名も補強。",
+    "expansion_note": "2026-08-29 V19.4: Hero監査最新版を反映。出発地を現在地または自由検索で指定できるようにし、Kibunロゴから地域・カテゴリ別ブラウズを追加。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -70,7 +70,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "V18.2: manual photo index overrides 96 spots; manual Google Place ID overrides 23 spots.",
+    "hero_audit_note": "V19.4: user Hero audit applied; photo index and Place ID overrides refreshed through spot_211.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -17006,7 +17006,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "キラナガーデン豊洲",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -17143,7 +17143,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "豊洲 千客万来",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -17280,7 +17280,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "サンシャインシティ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -17414,7 +17414,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜中華街",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -17539,7 +17539,7 @@
         "municipality": "世田谷区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJTX8Zq5P1GGAR_jXhPuiKVE4"
       },
       "media_strategy": {
         "hero_priority": [
@@ -17548,11 +17548,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJTX8Zq5P1GGAR_jXhPuiKVE4",
+          "status": "resolved_manual",
           "query": "PLAY! PARK ERIC CARLE",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 3,
+          "force": false,
+          "matched_name": "PLAY! PARK ERIC CARLE",
+          "matched_address": "〒158-0094 東京都世田谷区玉川２丁目２１−１ タウンフロント 二子玉川ライズ・ショッピングセンタ",
+          "use_address": false
         }
       },
       "recommendation_group": "futakotamagawa-rise",
@@ -17675,7 +17678,7 @@
         "municipality": "市原市",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJPxPwOzWlImARRAE47UTdS1I"
       },
       "media_strategy": {
         "hero_priority": [
@@ -17684,11 +17687,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJPxPwOzWlImARRAE47UTdS1I",
+          "status": "resolved_manual",
           "query": "市原ぞうの国",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 1,
+          "force": false,
+          "matched_name": "市原ぞうの国・サユリワールド～ANIMAL WONDER REZOURT～",
+          "matched_address": "〒290-0521 千葉県市原市山小川９３７−９３７",
+          "use_address": true
         }
       },
       "ui_tags": [
@@ -17821,7 +17827,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "西武園ゆうえんち",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -18346,7 +18352,7 @@
         "municipality": "港区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJQ5Sa1PqJGGARUSaNKKOrMVg"
       },
       "media_strategy": {
         "hero_priority": [
@@ -18355,11 +18361,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJQ5Sa1PqJGGARUSaNKKOrMVg",
+          "status": "resolved_manual",
           "query": "チームラボボーダレス",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 4,
+          "force": false,
+          "matched_name": "森ビル デジタルアート ミュージアム：エプソン チームラボボーダレス",
+          "matched_address": "〒106-0041 東京都港区虎ノ門５丁目９−９ 麻布台ヒルズ ガーデンプラザB B1",
+          "use_address": true
         }
       },
       "recommendation_group": "azabudai-hills",
@@ -18629,7 +18638,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "KITTE丸の内",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -18898,7 +18907,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜元町ショッピングストリート",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -19034,7 +19043,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "江の島",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -19169,7 +19178,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "鎌倉小町通り",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -19846,7 +19855,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京ドームシティ",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -19981,7 +19990,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京ジョイポリス",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -20115,7 +20124,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "お台場海浜公園",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -20249,7 +20258,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "RED° TOKYO TOWER",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -20383,7 +20392,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "アートアクアリウム美術館 GINZA",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -20517,7 +20526,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "国立新美術館",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -20784,7 +20793,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "川崎市 藤子・F・不二雄ミュージアム",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -20918,7 +20927,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "崎陽軒 横浜工場見学",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -21052,7 +21061,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "味の素KK 川崎工場",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -21186,7 +21195,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "グリコピア・イースト",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -21862,7 +21871,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京ドイツ村",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -22131,7 +22140,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "無人島・猿島",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -22265,7 +22274,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京湾フェリー",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -22640,7 +22649,7 @@
           "place_id": "ChIJ4aSHsn59GGARfY2L2mxW6qw",
           "status": "resolved_manual",
           "query": "魔法の文学館",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "matched_name": "魔法の文学館（江戸川区角野栄子児童文学館）",
           "matched_address": "日本、〒134-0085 東京都江戸川区南葛西７丁目３−１ 内 なぎさ公園",
@@ -22914,7 +22923,7 @@
           "place_id": "ChIJQ_0VB-SNGGARi7Ec7Ec3X4Q",
           "status": "resolved_manual",
           "query": "BAR PANORAMA",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false,
           "matched_name": "バール パノーラマ（イタリアン 池袋）",
           "matched_address": "日本、〒170-0013 東京都豊島区東池袋１丁目３０−３ グランドシネマサンシャイン 12F",
@@ -23191,7 +23200,7 @@
           "place_id": "ChIJZzjXkvLtGGARm2YFfi26zoU",
           "status": "resolved_manual",
           "query": "ワーナー ブラザース スタジオツアー東京",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "matched_name": "ワーナー ブラザース スタジオツアー東京 - メイキング・オブ・ハリー・ポッター",
           "matched_address": "日本、〒179-0074 東京都練馬区春日町１丁目１−７",
@@ -23328,7 +23337,7 @@
           "place_id": "ChIJp4YsATyIGGARYOiHh4_swns",
           "status": "resolved_manual",
           "query": "夢の島熱帯植物館",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "matched_name": "夢の島熱帯植物館",
           "matched_address": "日本、〒136-0081 東京都江東区夢の島２丁目１−２",
@@ -23465,7 +23474,7 @@
           "place_id": "ChIJveS7HwCJGGAReHlxW413Gxg",
           "status": "resolved_manual",
           "query": "RÊVE DES LUMIÈRES",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "matched_name": "レーヴ・デ・リュミエール | RÊVE DES LUMIÈRES",
           "matched_address": "日本、〒135-0063 東京都江東区有明３丁目３−８ 東京ドリームパーク 8F EX STUDIO8",
@@ -23637,7 +23646,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "MAHALO garden terrace",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -23768,7 +23777,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "うみかぜ公園",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -23901,7 +23910,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "コースカベイサイドストアーズ",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -24035,7 +24044,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "高輪ゲートウェイシティ",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -24301,7 +24310,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "池袋西口公園",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -24431,7 +24440,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "中野セントラルパーク",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -24562,7 +24571,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "潮風公園",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -24693,7 +24702,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "大磯ロングビーチ",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -25090,7 +25099,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京サマーランド",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -25221,7 +25230,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "蓮沼ウォーターガーデン",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -25354,7 +25363,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "龍宮城スパホテル三日月 ガーデンプール",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -26015,7 +26024,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "高座施設組合屋内温水プール",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -26283,7 +26292,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜市本牧市民プール",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -26548,7 +26557,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "HAYASHIウォーターパークさむかわ",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -26681,7 +26690,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "マホロバ・マインズ三浦 ウォーターパーク",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -26804,7 +26813,7 @@
         "municipality": "大和市",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJlUrSQR1WGGARiC-laMEpevs"
       },
       "media_strategy": {
         "hero_priority": [
@@ -26813,11 +26822,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJlUrSQR1WGGARiC-laMEpevs",
+          "status": "resolved_manual",
           "query": "引地台温水プール",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 2,
+          "force": false,
+          "matched_name": "ガイソーウォーターパーク引地台",
+          "matched_address": "〒242-0022 神奈川県大和市柳橋４丁目５０００",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -26950,7 +26962,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "保土ケ谷公園",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -27084,7 +27096,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "LATTEST GREEN",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -27216,7 +27228,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "IKUMOやしお",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -27350,7 +27362,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "宮ヶ瀬湖畔園地",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -27485,7 +27497,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ゆめが丘ソラトス",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -27616,7 +27628,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "板橋区立中央図書館",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -27738,7 +27750,7 @@
         "municipality": "横浜市西区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJUXuLqKtdGGAR28wlWtfc8Wo"
       },
       "media_strategy": {
         "hero_priority": [
@@ -27747,11 +27759,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJUXuLqKtdGGAR28wlWtfc8Wo",
+          "status": "resolved_manual",
           "query": "Mulabo!",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "ムラーボ！",
+          "matched_address": "〒220-0012 神奈川県横浜市西区みなとみらい４丁目３−８",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -27884,7 +27899,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "THE BBQ PARK イオン八王子滝山店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -28017,7 +28032,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "DINING RESTAURANT KITEKI",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -28286,7 +28301,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "クラッセンスこどもの広場",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -28420,7 +28435,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "絵と言葉のライブラリー ミッカ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },

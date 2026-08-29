@@ -91,5 +91,17 @@
     for(const x of resolved){const km=haversine(origin,x.point); times[x.spot.spot_id]=estimateMinutes(km,mode);}
     return {times,provider:'estimate_v1'};
   }
-  global.KibunTravel={getCurrentPosition,getTimes,spotPoint,haversine,estimateMinutes,classifyGeoError};
+
+  async function searchLocations(query){
+    const q=String(query||'').trim();
+    if(!q) return [];
+    if(!cfg.locationSearchApiUrl) throw locationError('search_unavailable','場所検索を利用できません');
+    const url=new URL(cfg.locationSearchApiUrl,location.href);
+    url.searchParams.set('q',q);
+    const r=await fetch(url.toString(),{headers:{'accept':'application/json'}});
+    if(!r.ok) throw locationError('search_failed',`場所検索に失敗しました (${r.status})`);
+    const data=await r.json();
+    return Array.isArray(data.candidates)?data.candidates:[];
+  }
+  global.KibunTravel={getCurrentPosition,getTimes,spotPoint,haversine,estimateMinutes,classifyGeoError,searchLocations};
 })(window);

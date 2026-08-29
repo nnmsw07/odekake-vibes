@@ -1,4 +1,4 @@
-# Kibun MVP v0.19.3 — 211 spots
+# Kibun MVP v0.19.4 — 211 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
@@ -8,13 +8,14 @@
 - 同行者: 子ども / パートナー / ひとり / 友だち
 - 気分・やりたいことを最大3つ選択
 - 子どもの年齢によるhard filter
-- 現在地からの移動時間絞り込み
-- Google Routes APIによる実ルート時間（Worker設定時）
+- 出発地を **現在地 / 駅名・地名・住所検索** から自由に指定して移動時間絞り込み
+- Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
+- Kibunロゴから **地域別 / カテゴリ別** に211スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
-V19.3の追加内容は `CHANGELOG_v19_3.md` と `SPOT_ADDITIONS_10_v19_3.md` を参照してください。直前の履歴は `CHANGELOG_v19_2.md` / `HANDOFF_v19_2.md` に残しています。
+V19.4の変更内容は `CHANGELOG_v19_4.md`、引き継ぎは `HANDOFF_v19_4.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
 
 ## ローカル確認
 
@@ -36,12 +37,12 @@ python -m http.server 8000
 - `recommender.js` — 推薦ロジック
 - `data.js` — ブラウザ用211スポットデータ
 - `seed.json` — 元データ
-- `travel.js` — ルート時間取得
+- `travel.js` — 出発地検索 / ルート時間取得
 - `media.js` — Google Places Hero取得
 - `config.js` — API URL / Places Hero設定
-- `worker/worker.js` — Cloudflare Worker (Places / Routes proxy)
+- `worker/worker.js` — Cloudflare Worker (場所検索 / Places Hero / Routes proxy)
 - `GOOGLE_PLACES_SETUP_v13.md` — Google Cloud / Worker設定
-- `HANDOFF_v19_3.md` — 現在地点と次の確認事項
+- `HANDOFF_v19_4.md` — 現在地点と次の確認事項
 
 ## Google Places Hero
 
@@ -74,6 +75,7 @@ node test_v17_1.js
 node test_v18.js
 node test_v19.js
 node test_v19_places.js
+node test_v19_4.js
 ```
 
 ## GitHub Pages

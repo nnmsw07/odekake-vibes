@@ -1,0 +1,30 @@
+const assert=require('assert');
+const fs=require('fs');
+const seed=JSON.parse(fs.readFileSync('seed.json','utf8'));
+const index=fs.readFileSync('index.html','utf8');
+const app=fs.readFileSync('app.js','utf8');
+const travel=fs.readFileSync('travel.js','utf8');
+const config=fs.readFileSync('config.js','utf8');
+const worker=fs.readFileSync('worker/worker.js','utf8');
+const overrides=JSON.parse(fs.readFileSync('HERO_OVERRIDES_v19_4.json','utf8'));
+
+assert.equal(seed.spots.length,211);
+assert.equal(seed.metadata.version,'0.19.4');
+assert.equal(Object.keys(overrides.photo_index_overrides).length,153);
+assert.equal(Object.keys(overrides.place_overrides).length,28);
+assert.equal(seed.spots.filter(s=>Number.isInteger(s.media_strategy?.google_places?.photo_index_override)).length,153);
+assert.ok(seed.spots.filter(s=>s.media_strategy?.google_places?.place_id).length>=37);
+
+assert.ok(index.includes('id="locationQuery"'),'free origin search input missing');
+assert.ok(index.includes('id="locationCandidates"'),'origin candidates missing');
+assert.ok(index.includes('id="browseDialog"'),'browse dialog missing');
+assert.ok(index.includes('data-browse-mode="region"'),'region browse missing');
+assert.ok(index.includes('data-browse-mode="category"'),'category browse missing');
+assert.ok(app.includes('searchOrigin'),'origin search wiring missing');
+assert.ok(app.includes('renderBrowseGrid'),'browse rendering missing');
+assert.ok(travel.includes('searchLocations'),'travel location search missing');
+assert.match(config,/locationSearchApiUrl/,'location search endpoint config missing');
+assert.ok(worker.includes("'/location-search'"),'Worker /location-search endpoint missing');
+assert.ok(worker.includes('places.location'),'location field mask missing');
+assert.ok(worker.includes("'/travel-times'"),'Worker travel endpoint missing');
+console.log('V19.4 PASS: Hero overrides + free origin search + logo browse + Worker location search');

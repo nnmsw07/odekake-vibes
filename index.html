@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f6f1e9" />
   <title>Kibun — 気分から見つける休日</title>
-  <meta name="description" content="誰と過ごすか、どんな気分か。今日の気分と現在地から、行き先を3つ提案します。" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <meta name="description" content="誰と過ごすか、どんな気分か。出発地も自由に選んで、今日の行き先を3つ提案します。" />
+  <link rel="stylesheet" href="styles.css?v=21" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Kibun ホーム"><span class="brand-dot"></span>Kibun</a>
+    <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun <span class="brand-menu-mark">⌄</span></button>
     <span class="topbar-tag">MOOD → PLACE</span>
     <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
   </header>
@@ -38,15 +38,25 @@
       <details class="conditions" open>
         <summary><strong>03　条件を少しだけ</strong><span>現在地・時間・天気で調整</span></summary>
         <div class="condition-grid">
-          <div class="field-card travel-card">
-            <span class="field-label">📍 現在地から</span>
-            <div class="travel-actions"><button id="locationBtn" class="location-btn" type="button">現在地を使う</button><span id="locationStatus" class="location-status">未取得</span></div>
+          <div class="field-card travel-card" id="originCard">
+            <span class="field-label">📍 どこから出かける？</span>
+            <div class="travel-actions">
+              <button id="locationBtn" class="location-btn" type="button">現在地を使う</button>
+              <button id="clearOriginBtn" class="origin-clear-btn" type="button" hidden>クリア</button>
+              <span id="locationStatus" class="location-status">出発地は指定なし</span>
+            </div>
+            <div class="origin-divider"><span>または</span></div>
+            <div class="place-search-row">
+              <input id="locationQuery" type="search" inputmode="search" autocomplete="off" placeholder="駅名・地名・住所（例：横浜駅）" aria-label="出発地を検索" />
+              <button id="locationSearchBtn" type="button">検索</button>
+            </div>
+            <div id="locationCandidates" class="location-candidates" hidden aria-live="polite"></div>
             <div id="locationHelp" class="location-help" hidden aria-live="polite"></div>
             <div class="compact-row">
               <select id="travelModeSelect" aria-label="移動手段"><option value="drive">🚗 車</option><option value="transit">🚃 公共交通</option></select>
-              <select id="travelLimitSelect" aria-label="所要時間"><option value="" selected>指定なし</option><option value="30">30分以内</option><option value="60">60分以内</option><option value="90">90分以内</option><option value="120">120分以内</option></select>
+              <select id="travelLimitSelect" aria-label="所要時間"><option value="" selected>時間は気にしない</option><option value="30">30分以内</option><option value="60">60分以内</option><option value="90">90分以内</option><option value="120">120分以内</option></select>
             </div>
-            <small class="field-note">現在地取得後は実ルート時間で絞り込み。取得できない場合は所要時間指定なしでも使えます。</small>
+            <small class="field-note">出発地は指定しなくてもOK。所要時間で絞りたいときだけ、現在地か好きな場所を選べます。</small>
           </div>
           <label class="field-card family-only" id="ageField">
             <span class="field-label">👶 子どもの年齢</span>
@@ -72,7 +82,23 @@
   </main>
 
   <dialog id="spotDialog" class="spot-dialog"><button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button><div id="dialogContent"></div></dialog>
+  <dialog id="browseDialog" class="browse-dialog">
+    <button id="browseClose" class="dialog-close browse-close" type="button" aria-label="閉じる">×</button>
+    <div class="browse-inner">
+      <p class="eyebrow">BROWSE KIBUN</p>
+      <h2>場所から、<br>ふらっと探す。</h2>
+      <p class="browse-lead">地域やカテゴリから、211スポットを自由に眺められます。</p>
+      <div class="browse-tabs" role="tablist" aria-label="探し方">
+        <button type="button" class="selected" data-browse-mode="region">地域から</button>
+        <button type="button" data-browse-mode="category">カテゴリから</button>
+      </div>
+      <div id="browseFilters" class="browse-filters"></div>
+      <div class="browse-search-row"><input id="browseSearch" type="search" placeholder="スポット名・地域で検索" aria-label="スポットを検索"></div>
+      <p id="browseCount" class="browse-count"></p>
+      <div id="browseGrid" class="browse-grid"></div>
+    </div>
+  </dialog>
   <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=20"></script><script src="data.js?v=20"></script><script src="recommender.js?v=20"></script><script src="travel.js?v=20"></script><script src="media.js?v=20"></script><script src="app.js?v=20"></script>
+  <script src="config.js?v=21"></script><script src="data.js?v=21"></script><script src="recommender.js?v=21"></script><script src="travel.js?v=21"></script><script src="media.js?v=21"></script><script src="app.js?v=21"></script>
 </body></html>
