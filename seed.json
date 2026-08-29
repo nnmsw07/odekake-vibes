@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_4_public_candidate",
-    "version": "0.19.5.3",
+    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_5_4_public_candidate",
+    "version": "0.19.5.4",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -61,7 +61,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-29 V19.5.3: 211件の公式URLを公開前監査。日産ウォーターパーク修正に続き、移転・URL再編・恒久リダイレクト等を確認した13件を現行URLへ正規化。スポット総数は211件のまま。",
+    "expansion_note": "2026-08-29 V19.5.4: 211件の名称・休館/休業・営業時間を公開前棚卸し。変動の大きい季節施設・新規施設・臨時休館スポットを重点照合し、2026年営業期間/既知休業を推薦ハードフィルターへ反映。スポット総数は211件のまま。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -101,7 +101,8 @@
       "ui_brand": "Kibun",
       "locale": "ja-JP",
       "release_stage": "domain-ready"
-    }
+    },
+    "operations_audit_note": "2026-08-29: 名称・営業時間・季節営業・既知メンテナンスを重点監査。2026年限定の営業期間は availability_constraints で保守的に除外し、翌シーズンは要再監査。"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -289,8 +290,8 @@
         "price_summary": "Music Canvasの現行Showは無料・予約不要。",
         "reservation_summary": "通常のMusic Canvas Showは予約不要。イベントにより例外あり。",
         "age_note": "特定の年齢制限は基本情報上なし。イベントごとの条件は要確認。",
-        "temporary_note": "2026年8月11日〜15日は休業案内あり。",
-        "checked_at": "2026-08-12",
+        "temporary_note": null,
+        "checked_at": "2026-08-29",
         "source_url": "https://retailing.jp.yamaha.com/shop/yokohama-minatomirai"
       },
       "hero_image": {
@@ -835,8 +836,8 @@
         "price_summary": "基本時間制：6〜11か月 平日400円/休日600円、1〜12歳 平日800円/休日1,000円、大人700円（料金体系は時期で変動）。",
         "reservation_summary": "パスの事前購入導線あり。混雑時はフリーパス完売等あり。",
         "age_note": "6か月〜18か月専用ベビーゾーンあり。授乳室・おむつ替えスペースあり。",
-        "temporary_note": "2026年8月8〜16日は休日料金扱いの案内あり。",
-        "checked_at": "2026-08-12",
+        "temporary_note": null,
+        "checked_at": "2026-08-29",
         "source_url": "https://kidokid.bornelund.co.jp/markis-minatomirai/"
       },
       "data_note": "ユーザー入力の『ボーネルンドあそびの世界』は、MVPではMARK ISみなとみらい店として登録。",
@@ -1269,13 +1270,13 @@
       },
       "editorial_reason": "駅前で、暑さや雨を避けながら“世界を旅するような”没入体験。文化・非日常を一気に補える。",
       "dynamic_snapshot": {
-        "opening_hours_text": "月〜木10:00〜19:00、金〜日・祝等10:00〜21:00。休館日は公式で確認。",
+        "opening_hours_text": "月〜木10:00〜19:00（最終入場18:00）、金〜日・祝・大型連休10:00〜21:00（最終入場20:00）。休館日は公式案内を確認。",
         "price_summary": "大人2,900円〜、幼児（4歳以上）1,000円、3歳以下無料。",
         "reservation_summary": "日時により料金変動。チケット情報は公式で確認。",
         "age_note": "3歳以下無料。館内ベビーカー不可、入口に置き場あり。",
         "temporary_note": null,
         "source_url": "https://wonderia.jp/",
-        "checked_at": "2026-08-17"
+        "checked_at": "2026-08-29"
       },
       "buzz": {
         "score": 94,
@@ -1664,13 +1665,13 @@
       },
       "editorial_reason": "無料でふらっと寄れて、映像・テクノロジーに触れられる。『文化×軽め』の良い回答になる。",
       "dynamic_snapshot": {
-        "opening_hours_text": "平日10:00〜17:00、土日祝10:00〜18:00。火曜・金曜ほか休館。",
+        "opening_hours_text": "平日10:00〜17:00（最終入場16:00）、土日祝10:00〜18:00（最終入場17:00）。火曜・金曜ほか休館。",
         "price_summary": "無料。",
         "reservation_summary": "通常入館の詳細は公式を確認。",
         "age_note": "子連れ利用可。静かめの展示のため親子でゆったり向き。",
         "temporary_note": null,
-        "source_url": "https://yumesaki-g.com/access/",
-        "checked_at": "2026-08-17"
+        "source_url": "https://yumesaki-g.com/",
+        "checked_at": "2026-08-29"
       },
       "buzz": {
         "score": 78,
@@ -4244,13 +4245,13 @@
       },
       "editorial_reason": "Buzzは強いが幼児適性は低い。『子連れ＝乳幼児だけではない』将来拡張と年齢filterの検証用。",
       "dynamic_snapshot": {
-        "opening_hours_text": "平日11:00〜19:00、土日祝・ハイシーズン11:00〜20:00。最新はカレンダー確認。",
+        "opening_hours_text": "平日11:00〜19:00、土日祝・ハイシーズン11:00〜20:00。最終入場は閉館1時間前。",
         "price_summary": "利用時間・券種で異なる。",
         "reservation_summary": "混雑・チケット運用は公式で確認。",
         "age_note": "未就学児は一部コンテンツ利用不可。幼児適合を低くseed。",
         "temporary_note": "2026年7月10日グランドオープン。",
         "source_url": "https://joypolis-sports.com/x-daiba/",
-        "checked_at": "2026-08-17"
+        "checked_at": "2026-08-29"
       },
       "buzz": {
         "score": 95,
@@ -6970,7 +6971,7 @@
         "reservation_summary": "通常入館は予約不要。",
         "age_note": "ベビーカー利用可・貸出あり。1階に授乳室あり。",
         "temporary_note": "施設改修のため2026年9月4日まで長期休館。9月5日再開予定。",
-        "checked_at": "2026-08-22",
+        "checked_at": "2026-08-29",
         "source_url": "https://www.yokosuka-moa.jp/"
       },
       "buzz": {
@@ -22625,13 +22626,13 @@
       },
       "editorial_reason": "児童文学・建築・映像体験を一度に味わえる、親子にも大人にも見栄えの良い文化スポット。",
       "dynamic_snapshot": {
-        "opening_hours_text": "9:30〜17:30。休館日・特別営業日は公式カレンダーを確認。",
+        "opening_hours_text": "9:30〜17:30（最終入館16:30）。火曜・年末年始休館（火曜が祝休日の場合は開館し次の平日休館）。",
         "price_summary": "入館料あり。最新料金は公式サイトを確認。",
-        "reservation_summary": "入館方法・チケット情報は公式サイトを確認。",
+        "reservation_summary": "日時指定のインターネット予約を受付。空きがある場合は予約なしの当日入館も可。",
         "age_note": "館内はベビーカーでも回りやすく、映像演出も楽しめる。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "https://kikismuseum.jp/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://kikismuseum.jp/guide/"
       },
       "public_copy": "角野栄子さんの作品世界にふれられる児童文学館。映像や空間演出、本に囲まれたライブラリーで物語の世界に入り込める。",
       "audience_fit": {
@@ -22762,12 +22763,12 @@
       },
       "editorial_reason": "天王洲で静かにこもりたい時の定番候補。familyよりsolo/partner向けの落ち着き枠。",
       "dynamic_snapshot": {
-        "opening_hours_text": "10:00〜22:00。",
+        "opening_hours_text": "10:00〜22:00（最終入場21:00）。貸切等による休館は公式NEWSを確認。",
         "price_summary": "時間制利用。ドリンクバー付きプランなど最新料金は公式サイトを確認。",
         "reservation_summary": "通常利用・貸切・イベント利用の詳細は公式サイトを確認。",
         "age_note": "静かに読書や作業を楽しむラウンジのため、乳幼児連れより大人向け。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
+        "checked_at": "2026-08-29",
         "source_url": "https://thelibrarylounge.jp/"
       },
       "public_copy": "本に囲まれた時間制のブックラウンジ。天王洲アイル直結で、読書やおしゃべり、ちょっとした作業まで落ち着いて過ごせる。",
@@ -23398,7 +23399,8 @@
       "slug": "reve-des-lumieres",
       "name": "RÊVE DES LUMIÈRES",
       "aliases": [
-        "レーヴ・デ・リュミエール"
+        "レーヴ・デ・リュミエール",
+        "RÊVE DES LUMIÈRES（レーヴ・デ・リュミエール<光の夢>）"
       ],
       "category_primary": "immersive_art",
       "categories": [
@@ -23450,13 +23452,13 @@
       },
       "editorial_reason": "有明の大空間で“アートを浴びる”タイプの没入展示。映え・非日常・屋内涼感が強い。",
       "dynamic_snapshot": {
-        "opening_hours_text": "10:00〜19:00。営業日・特別展示は公式サイトを確認。",
+        "opening_hours_text": "10:00〜19:00（最終入場18:30）。営業時間変更は公式チケットカレンダーを確認。",
         "price_summary": "料金は展示内容や時期により異なるため、公式サイトを確認。",
-        "reservation_summary": "チケット情報・入場方法は公式サイトを確認。",
+        "reservation_summary": "30分区切りの日時指定予約券あり。公式チケットで来場日時を確認。",
         "age_note": "光と音の演出が強く、暗い空間がある。乳幼児連れは刺激の強さに注意。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "https://tdp.tv-asahi.co.jp/reve-lumieres/index.html"
+        "checked_at": "2026-08-29",
+        "source_url": "https://tdp.tv-asahi.co.jp/reve-lumieres/outline.html"
       },
       "public_copy": "巨大な空間いっぱいに光と音、名画の世界が広がる没入型デジタルアート施設。涼しい屋内で、特別感のある時間を過ごしたい日に。",
       "audience_fit": {
@@ -24646,13 +24648,13 @@
       "editorial_reason": "夏の大型プールの定番。広さ・知名度ともに高く、家族のおでかけ候補に入れやすい。",
       "public_copy": "湘南の開放感の中でたっぷり遊べる夏の大型プール。家族で1日過ごしやすい定番スポット。",
       "dynamic_snapshot": {
-        "opening_hours_text": "夏季営業。営業時間は日程により異なるため公式サイトを確認。",
+        "opening_hours_text": "2026年7月4日〜9月13日。基本9:00〜17:00（7/6〜10、7/13〜17、9/1〜4、9/7〜11は10:00〜17:00）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.princehotels.co.jp/pool/oiso/"
+        "temporary_note": "2026年シーズンは9月13日まで。荒天・入場制限など当日情報は公式サイトを確認。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.princehotels.co.jp/pool/oiso/charge/"
       },
       "buzz": {
         "score": 88,
@@ -24719,7 +24721,16 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-04",
+            "until": "2026-09-13"
+          }
+        ],
+        "note": "2026年の営業期間外"
+      }
     },
     {
       "spot_id": "spot_184",
@@ -24738,7 +24749,7 @@
       "prefecture": "神奈川県",
       "city": "藤沢市",
       "address": "神奈川県藤沢市辻堂西海岸3-2",
-      "official_url": "https://www.kanagawa-kankou.or.jp/spot/7217",
+      "official_url": "https://www.kanagawa-park.or.jp/tujidou/pool.html",
       "environment": "outdoor",
       "stay_minutes_seed": 210,
       "experience_seed": {
@@ -24779,13 +24790,13 @@
       "editorial_reason": "海浜公園内の夏季限定プールで、幼児から遊びやすい規模感と料金感が魅力。",
       "public_copy": "海浜公園内で楽しめる夏季限定プール。大小のプールがあり、家族で遊びやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "9:00〜18:00（入場は17:00までの案内あり）。営業期間・荒天休止は公式確認推奨。",
+        "opening_hours_text": "2026年は7月11日〜9月13日。9:00〜18:00（入場17:00まで）。",
         "price_summary": "大人850円、中学生520円、小人210円の案内あり。最新料金は公式確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.kanagawa-kankou.or.jp/spot/7217"
+        "temporary_note": "ジャンボプールは夏季限定。荒天・混雑等による変更は公式案内を確認。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.kanagawa-park.or.jp/tujidou/pool.html"
       },
       "buzz": {
         "score": 82,
@@ -24852,7 +24863,16 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-11",
+            "until": "2026-09-13"
+          }
+        ],
+        "note": "2026年のジャンボプール営業期間外"
+      }
     },
     {
       "spot_id": "spot_185",
@@ -24912,13 +24932,13 @@
       "editorial_reason": "アンパンマンプールもあり、小さな子から楽しみやすい超定番プール。SNS人気も高い。",
       "public_copy": "小さな子向けエリアも充実した都内の人気プール。1日しっかり遊びたい家族に向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業日・営業時間は日程により変動。公式カレンダー確認推奨。",
+        "opening_hours_text": "2026年シーズンは6月27日〜9月23日。営業時間は日別カレンダー制（例：8月29日は9:00〜20:30、最終日は9:00〜17:00）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.yomiuriland.com/wai/"
+        "temporary_note": "2026年9月3日は休園、9月7〜11日・14〜18日はプール休場。最新カレンダー優先。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.yomiuriland.com/wai/calendar/"
       },
       "buzz": {
         "score": 90,
@@ -24985,7 +25005,48 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-06-27",
+            "until": "2026-09-23"
+          }
+        ],
+        "unavailable_ranges": [
+          {
+            "from": "2026-06-29",
+            "until": "2026-06-30",
+            "note": "プール休場日"
+          },
+          {
+            "from": "2026-07-02",
+            "until": "2026-07-03",
+            "note": "プール休場日"
+          },
+          {
+            "from": "2026-07-06",
+            "until": "2026-07-10",
+            "note": "プール休場日"
+          },
+          {
+            "from": "2026-09-03",
+            "until": "2026-09-03",
+            "note": "休園日"
+          },
+          {
+            "from": "2026-09-07",
+            "until": "2026-09-11",
+            "note": "プール休場日"
+          },
+          {
+            "from": "2026-09-14",
+            "until": "2026-09-18",
+            "note": "プール休場日"
+          }
+        ],
+        "note": "2026年のプールWAI営業期間外"
+      }
     },
     {
       "spot_id": "spot_186",
@@ -25174,12 +25235,12 @@
       "editorial_reason": "千葉の大型ウォーターガーデンとして夏需要が高い。スライダー系も選べて遠出先候補に向く。",
       "public_copy": "千葉でたっぷり遊べる大型ウォーターパーク。スライダーや広いプールで夏の遠出先にも向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "夏季営業。営業日と営業時間は公式サイトを確認。",
+        "opening_hours_text": "2026年7月4日〜9月23日、9:00〜17:00（最終入園15:00）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
+        "temporary_note": "休園：7/6〜10、7/13〜17、9月平日（2026年カレンダー）。来園前に最新情報を確認。",
+        "checked_at": "2026-08-29",
         "source_url": "https://watergarden.hasunuma.co.jp/"
       },
       "buzz": {
@@ -25247,7 +25308,43 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-04",
+            "until": "2026-09-23"
+          }
+        ],
+        "unavailable_ranges": [
+          {
+            "from": "2026-07-06",
+            "until": "2026-07-10",
+            "note": "休園日"
+          },
+          {
+            "from": "2026-07-13",
+            "until": "2026-07-17",
+            "note": "休園日"
+          },
+          {
+            "from": "2026-09-01",
+            "until": "2026-09-04",
+            "note": "9月平日の休園日"
+          },
+          {
+            "from": "2026-09-07",
+            "until": "2026-09-11",
+            "note": "9月平日の休園日"
+          },
+          {
+            "from": "2026-09-14",
+            "until": "2026-09-18",
+            "note": "9月平日の休園日"
+          }
+        ],
+        "note": "2026年の営業期間外"
+      }
     },
     {
       "spot_id": "spot_188",
@@ -25307,11 +25404,11 @@
       "editorial_reason": "宿泊・スパ・プールをまとめて楽しめるリゾート型施設。夏のおでかけ候補として根強い人気。",
       "public_copy": "宿泊やスパと合わせて楽しめるリゾート型プール。日帰りでも非日常感を味わいやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "プール営業時間は時期により変動。公式サイトを確認。",
+        "opening_hours_text": "2026年ガーデンプールは6月13日〜9月27日。7月10日までは土・日・月のみ、7月11日以降は毎日営業。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
+        "temporary_note": "夏季限定。天候・設備状況による変更は公式ページを確認。",
         "checked_at": "2026-08-29",
         "source_url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/garden/"
       },
@@ -25380,7 +25477,16 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-06-13",
+            "until": "2026-09-27"
+          }
+        ],
+        "note": "2026年のガーデンプール営業期間外"
+      }
     },
     {
       "spot_id": "spot_189",
@@ -25438,11 +25544,11 @@
       "editorial_reason": "海辺エリアの開放感があり、稲毛海浜公園のおでかけと組み合わせやすい。",
       "public_copy": "海辺の雰囲気を感じながら遊べる公園プール。周辺の公園や海沿い散策と組み合わせやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "夏季営業。営業日・営業時間は公式サイトを確認。",
+        "opening_hours_text": "2026年プール営業は7月11日〜9月23日。営業時間・ナイトプール実施日は公式ページを確認。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
+        "temporary_note": "2026年ナイトプールは8月1日〜31日。エリア別の営業変更は公式NEWSを確認。",
         "checked_at": "2026-08-29",
         "source_url": "https://sunsetbeachpark.jp/activity/pool/"
       },
@@ -25511,7 +25617,16 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-11",
+            "until": "2026-09-23"
+          }
+        ],
+        "note": "2026年のプール営業期間外"
+      }
     },
     {
       "spot_id": "spot_190",
@@ -25573,7 +25688,7 @@
         "price_summary": "1時間まで13歳以上500円、13歳未満250円。延長料金あり。最新料金は公式サイトを確認。",
         "reservation_summary": "通常利用の予約要否・混雑状況は公式サイトを確認。",
         "age_note": "スイミングキャップ必須。おむつ・トレーニングパンツが日常生活（移動時・夜間を含む）で完全に外れていない子どもは入場不可。",
-        "temporary_note": "2026年8月25日の換水清掃による臨時休館は終了。今後の臨時休館は公式NEWSを確認。",
+        "temporary_note": null,
         "checked_at": "2026-08-29",
         "source_url": "https://www.nissan-stadium.jp/shinyoko-park/waterpark/"
       },
@@ -25701,13 +25816,13 @@
       "editorial_reason": "温水プールと大浴場を備え、親子のおでかけと大人のリフレッシュを両立しやすい。",
       "public_copy": "温水プールと大浴場を備えた複合施設。水遊びとリフレッシュを1か所で済ませやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間・休館日は公式サイトを確認。",
+        "opening_hours_text": "4〜9月：平日9:00〜19:00、火曜9:00〜18:00、土日祝9:00〜20:00。10〜3月：平日9:00〜18:00、土日祝9:00〜19:00。最終入場は閉館1時間前。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://fure-yu.jp/"
+        "temporary_note": "毎月第2火曜休館（7・8月は休館日なし）。施設点検による長期休館は公式NEWSを確認。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://fure-yu.jp/riyou/"
       },
       "buzz": {
         "score": 76,
@@ -25836,13 +25951,13 @@
       "editorial_reason": "川崎北部で使いやすい屋内プール。通年利用しやすく日常使い候補にもなる。",
       "public_copy": "川崎北部で利用しやすい屋内プール。天候に左右されにくく、日常のおでかけ先として使いやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "プールは通常10:00〜21:00。7・8月は9:00〜21:00。休館日・長期休館は公式サイトを確認。",
+        "opening_hours_text": "9:00〜21:00。プール・教室の利用時間や休館日は公式案内を確認。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
         "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://ppp.s-re.jp/yonettiouzenji-sports-fac"
+        "checked_at": "2026-08-29",
+        "source_url": "https://ppp.s-re.jp/yonettiouzenji-sports-fac/"
       },
       "buzz": {
         "score": 74,
@@ -25968,13 +26083,13 @@
       "editorial_reason": "県央エリアで使いやすい屋内温水プール。夏以外も候補に入れやすい。",
       "public_copy": "県央エリアで通年使いやすい屋内温水プール。暑すぎる日や雨の日の水遊び候補にも向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "9:00〜21:00（プール利用は20:30まで）。休館日は月曜等。最新カレンダーを確認。",
+        "opening_hours_text": "施設9:00〜21:00、プール9:30〜20:30。月曜休館（月曜が祝祭日の場合は翌平日）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://kouzapool.jp/"
+        "temporary_note": "2026年12月7日〜21日はメンテナンス休館予定。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://kouzapool.jp/top/guide/"
       },
       "buzz": {
         "score": 70,
@@ -26042,7 +26157,16 @@
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "availability_constraints": {
+        "unavailable_ranges": [
+          {
+            "from": "2026-12-07",
+            "until": "2026-12-21",
+            "note": "メンテナンス休館"
+          }
+        ]
+      }
     },
     {
       "spot_id": "spot_194",
@@ -26102,12 +26226,12 @@
       "editorial_reason": "公共系で使いやすい屋内プール施設。日常の水遊び候補として加えやすい。",
       "public_copy": "相模原で利用しやすい公共系の屋内プール施設。天候を気にせず使いやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "施設9:00〜22:00。プールは通常9:30〜20:00（夏季は入場開始が早まる期間あり）。休所日は公式サイトを確認。",
+        "opening_hours_text": "施設9:00〜22:00。プール9:30〜20:00（最終入場19:30、7/1〜8/31は9:00入場開始）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
+        "temporary_note": "2026年10月5〜12日は全館休所。プール・浴室は10月5日〜11月1日休止予定。",
+        "checked_at": "2026-08-29",
         "source_url": "https://www.s-kenbun.jp/usage"
       },
       "buzz": {
@@ -26176,7 +26300,16 @@
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "availability_constraints": {
+        "unavailable_ranges": [
+          {
+            "from": "2026-10-05",
+            "until": "2026-11-01",
+            "note": "プール・浴室営業休止"
+          }
+        ]
+      }
     },
     {
       "spot_id": "spot_195",
@@ -26236,13 +26369,13 @@
       "editorial_reason": "横浜市内で夏に行きやすい屋外プール候補。近場需要が高い。",
       "public_copy": "横浜で夏に立ち寄りやすい屋外プール。近場でしっかり水遊びしたい日に向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "2026年Dayプールは9:00〜17:30。夏季営業日・Nightプール日程は公式サイトを確認。",
+        "opening_hours_text": "2026年Dayプール9:00〜17:30（最終入場16:00）。営業は7/11〜9/6および9/12〜13。Nightプール18:00〜21:00は指定日のみ。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "3歳以下無料。Dayプールは小学校3年生以下に保護者同伴条件あり。Nightプールは未就学児入場不可。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://honmoku-bp.com/usageguide.html"
+        "temporary_note": "Nightプールは未就学児入場不可。Day/Night完全入替制。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.honmoku-bp.com/usageguide.html"
       },
       "buzz": {
         "score": 77,
@@ -26309,7 +26442,20 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-11",
+            "until": "2026-09-06"
+          },
+          {
+            "from": "2026-09-12",
+            "until": "2026-09-13"
+          }
+        ],
+        "note": "2026年のDayプール営業期間外"
+      }
     },
     {
       "spot_id": "spot_196",
@@ -26369,13 +26515,13 @@
       "editorial_reason": "相模原エリアの通年利用しやすい公共施設。プールを中心に日常のおでかけ候補にしやすい。",
       "public_copy": "相模原で通年使いやすい公共施設。屋内プールがあり、天候に左右されにくい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間・休館日は公式サイトを確認。",
+        "opening_hours_text": "施設9:00〜22:00（7/1〜8/31は8:45開館）。プール9:30〜20:00、夏季は9:00〜20:00（最終入場19:15）。",
         "price_summary": "利用料金は公式サイトを確認。",
         "reservation_summary": "通常利用は予約不要。教室・イベントは申込制の場合あり。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.s-kitanooka.jp/"
+        "temporary_note": "2026年9月8日は休所日。毎月第2火曜・年末年始等は休所。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.s-kitanooka.jp/usage.html"
       },
       "buzz": {
         "score": 70,
@@ -26443,7 +26589,16 @@
         "室内",
         "雨の日",
         "暑い日"
-      ]
+      ],
+      "availability_constraints": {
+        "unavailable_ranges": [
+          {
+            "from": "2026-09-08",
+            "until": "2026-09-08",
+            "note": "休所日"
+          }
+        ]
+      }
     },
     {
       "spot_id": "spot_197",
@@ -26501,12 +26656,12 @@
       "editorial_reason": "県央〜湘南寄りで行きやすい夏季プールとして使える。",
       "public_copy": "寒川で夏に楽しめるプールスポット。近場で水遊びしたい日に使いやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "2026年度は7/1〜8/31、9:00〜16:30。学校授業による一般利用時間の変更あり。",
+        "opening_hours_text": "7月1日〜8月31日、9:00〜16:30。7月上旬の平日午前は学校授業により一般利用開始が遅れる場合あり。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
+        "temporary_note": "2026年シーズンは8月31日まで。臨時駐車場・当日運営は町/指定管理者の案内を確認。",
+        "checked_at": "2026-08-29",
         "source_url": "https://www.town.samukawa.kanagawa.jp/soshiki/chomin/sports/sportsshisetu/tantou/shisetsu/tyoueipuuru/index.html"
       },
       "buzz": {
@@ -26574,7 +26729,16 @@
         "水辺・水遊び",
         "夏限定",
         "体を動かす"
-      ]
+      ],
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-01",
+            "until": "2026-08-31"
+          }
+        ],
+        "note": "2026年の屋外プール営業期間外"
+      }
     },
     {
       "spot_id": "spot_198",
@@ -26593,7 +26757,7 @@
       "prefecture": "神奈川県",
       "city": "三浦市",
       "address": "神奈川県三浦市南下浦町上宮田3231",
-      "official_url": "https://www.maholova-minds.com/",
+      "official_url": "https://www.maholova-minds.com/kuapark/index.php",
       "environment": "mixed",
       "stay_minutes_seed": 210,
       "experience_seed": {
@@ -26634,13 +26798,13 @@
       "editorial_reason": "ホテル滞在とプールを組み合わせやすく、三浦エリアのおこもりレジャーにも向く。",
       "public_copy": "ホテル滞在と一緒に楽しみやすいウォーターパーク。三浦エリアでのんびり過ごしたい日に向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間・利用条件は公式サイトを確認。",
+        "opening_hours_text": "ウォーターパーク9:00〜20:00（最終入場19:30）。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
-        "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.maholova-minds.com/"
+        "age_note": "3歳未満またはオムツ着用の子どもは幼児専用プールのみ（水用オムツ着用）。小学生以下は18歳以上の保護者同伴が必要。",
+        "temporary_note": "2026年9月1〜3日は全休業。9月4〜7日は温水プール・ウォーターアスレチック休業、クアパークのみ営業。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.maholova-minds.com/kuapark/index.php"
       },
       "buzz": {
         "score": 79,
@@ -26708,15 +26872,30 @@
         "室内",
         "リゾート",
         "非日常"
-      ]
+      ],
+      "availability_constraints": {
+        "unavailable_ranges": [
+          {
+            "from": "2026-09-01",
+            "until": "2026-09-03",
+            "note": "ウォーターパーク全休業"
+          },
+          {
+            "from": "2026-09-04",
+            "until": "2026-09-07",
+            "note": "温水プール・ウォーターアスレチック休業（クアパークのみ営業）"
+          }
+        ]
+      }
     },
     {
       "spot_id": "spot_199",
       "slug": "hikichidai-onsui-pool",
-      "name": "引地台温水プール",
+      "name": "ガイソーウォーターパーク引地台",
       "aliases": [
         "ガイソーウォーターパーク引地台",
-        "ガイシーウォーターパーク引地台"
+        "ガイシーウォーターパーク引地台",
+        "引地台温水プール"
       ],
       "category_primary": "indoor_pool",
       "categories": [
@@ -26769,12 +26948,12 @@
       "editorial_reason": "大和エリアで利用しやすい全天候型の温水プール。",
       "public_copy": "大和で使いやすい全天候型の温水プール。暑すぎる日や雨の日の水遊び候補にも向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間・休館日は公式サイトを確認。",
+        "opening_hours_text": "開場時間は月ごとの予定表を確認。2026年7月20日〜8月31日は月曜も営業し、9:30開場。",
         "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
-        "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
+        "age_note": "おむつ・トレーニングパンツが日常生活で完全に外れていない子どもは入場不可。小学4年生未満は16歳以上の保護者同伴が必要。",
+        "temporary_note": "夏季は営業時間・料金体系が変わるため、来場日の予定表を確認。",
+        "checked_at": "2026-08-29",
         "source_url": "https://www.yamato-zaidan.or.jp/z_new/zaidan_hikichidai_p.php"
       },
       "buzz": {
@@ -27441,13 +27620,13 @@
       "editorial_reason": "新しさがあり、ファミリー向け設備も期待しやすい大型商業施設。",
       "public_copy": "新しい商業施設で、買い物・食事・休憩をまとめやすい。家族での半日おでかけ先として使いやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間はエリア・店舗により異なるため公式サイトを確認。",
+        "opening_hours_text": "ショッピング10:00〜20:00。飲食・シネマ等は店舗/エリアごとに異なる。",
         "price_summary": "入館無料。飲食・物販は各店ごと。",
         "reservation_summary": "通常利用は予約不要。",
         "age_note": "ベビーカー移動や子連れ休憩をしやすい設備は館内案内を確認。",
-        "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.yumegaoka-soratos.com/"
+        "temporary_note": "屋上「そうにゃんぱーく そらの広場にゃん」は季節で開園時間が変わるため公式案内を確認。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.yumegaoka-soratos.com/hour/"
       },
       "buzz": {
         "score": 88,
@@ -27706,12 +27885,12 @@
       "editorial_reason": "無料で科学体験ができる横浜の注目施設。知育系の親子おでかけ先として強い。",
       "public_copy": "無料で科学体験を楽しめる横浜の施設。遊びながら学べる親子のおでかけ先として使いやすい。",
       "dynamic_snapshot": {
-        "opening_hours_text": "火〜土 10:00〜17:00。日・月・その他村田製作所休業日は休館。",
+        "opening_hours_text": "火〜土10:00〜17:00（カフェL.O.16:30）。日・月・その他村田製作所休業日は休館。",
         "price_summary": "入館無料（カフェは有料）。",
         "reservation_summary": "通常利用可。混雑日や一部イベントは公式確認推奨。",
         "age_note": "親子で楽しめる展示が中心。開館カレンダーや貸切情報は事前確認推奨。",
-        "temporary_note": null,
-        "checked_at": "2026-08-28",
+        "temporary_note": "臨時休館・団体利用等は開館カレンダーを確認。",
+        "checked_at": "2026-08-29",
         "source_url": "https://mulabo.murata.com/"
       },
       "buzz": {
@@ -28248,9 +28427,9 @@
         "opening_hours_text": "7:00〜18:00。",
         "price_summary": "入場無料。",
         "reservation_summary": "通常利用は予約不要。貸切・スペースレンタルは申込制。",
-        "age_note": "0〜9歳専用。保護者の付き添い必須。",
-        "temporary_note": null,
-        "checked_at": "2026-08-28",
+        "age_note": "0〜9歳専用。保護者の付き添い必須。入場無料。",
+        "temporary_note": "天候・イベント等で運用変更の可能性があるため「本日の営業状況」を確認。",
+        "checked_at": "2026-08-29",
         "source_url": "https://classense-musashikosugi.com/classense-park/"
       },
       "buzz": {
@@ -28379,12 +28558,12 @@
       "editorial_reason": "子ども向けの小さな図書館として世界観が明確で、絵本・ことば体験の目的地として魅力が高い。",
       "public_copy": "絵本やことばの世界を親子で楽しめる小さな図書館。静かであたたかい時間を過ごしたい日に向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "入館時間・休館日は公式サイトを確認。",
+        "opening_hours_text": "10:00〜18:00。月曜・第4木曜休館（祝日の場合は翌日）、年末年始・リリオ館店休日も休館。",
         "price_summary": "利用料金やプログラム料金は公式案内を確認。",
-        "reservation_summary": "通常利用のほか、プログラムは事前申込制の場合あり。",
+        "reservation_summary": "通常入館のほか、プログラムは事前申込制の場合あり。混雑時は公式の待ち状況・順番受付を確認。",
         "age_note": "小さな子ども向けプログラムもあるため、対象年齢は公式案内を確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
+        "checked_at": "2026-08-29",
         "source_url": "https://micca.me/"
       },
       "buzz": {
