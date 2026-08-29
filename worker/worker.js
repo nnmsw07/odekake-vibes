@@ -53,6 +53,31 @@ export default {
     try{
       if(url.pathname==='/health') return json({ok:true,service:'kibun-api'},200,cors);
 
+      if(url.pathname.endsWith('/location-search') && request.method==='GET'){
+        const q=String(url.searchParams.get('q')||'').trim();
+        if(q.length<1) return json({candidates:[]},200,cors);
+        const r=await fetch('https://places.googleapis.com/v1/places:searchText',{
+          method:'POST',
+          headers:{
+            'content-type':'application/json',
+            'X-Goog-Api-Key':env.GOOGLE_MAPS_API_KEY,
+            'X-Goog-FieldMask':'places.id,places.displayName,places.formattedAddress,places.location,places.googleMapsUri'
+          },
+          body:JSON.stringify({textQuery:q,languageCode:'ja',regionCode:'JP',maxResultCount:5})
+        });
+        if(!r.ok) throw new Error(`Places location search ${r.status}: ${await r.text()}`);
+        const places=(await r.json()).places||[];
+        const candidates=places.filter(p=>p.location).map(p=>({
+          place_id:p.id||null,
+          name:p.displayName?.text||q,
+          address:p.formattedAddress||'',
+          lat:Number(p.location.latitude),
+          lng:Number(p.location.longitude),
+          google_maps_uri:p.googleMapsUri||null
+        }));
+        return json({candidates},200,cors);
+      }
+
       if(url.pathname.endsWith('/travel-times') && request.method==='POST'){
         const {origin,destinations,mode}=await request.json();
         if(!origin || !Array.isArray(destinations) || !destinations.length) return json({error:'origin and destinations required'},400,cors);
