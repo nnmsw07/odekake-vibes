@@ -1,4 +1,4 @@
-# Kibun MVP v0.19.4.1 — 211 spots
+# Kibun Trip MVP v0.19.5 — 211 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
@@ -12,10 +12,10 @@
 - Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
-- Kibunロゴから **地域別 / カテゴリ別** に211スポットをブラウズ
+- Kibunロゴから **地域 × カテゴリ** で211スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
-V19.4の変更内容は `CHANGELOG_v19_4.md`、引き継ぎは `HANDOFF_v19_4.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
+V19.5の公開準備は `CHANGELOG_v19_5.md` / `DOMAIN_SETUP_v19_5.md` / `HANDOFF_v19_5.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
 
 ## ローカル確認
 
@@ -87,3 +87,13 @@ node test_v19_4.js
 - 地域・カテゴリは自由入力ではなく、あらかじめ用意した選択肢（チップ）から選択。
 - 地域 × カテゴリのAND絞り込み。
 - 自由入力はスポット名検索のみ任意で残す。
+
+## v19.5 独自ドメイン公開準備
+
+- 正式ドメイン: `https://kibuntrip.com`
+- `CNAME`, `robots.txt`, `sitemap.xml`, OGP, favicon, Web App Manifestを追加
+- 正式サービス名は **Kibun Trip**、UI上の短いブランドは **Kibun** を継続
+- Worker CORSに `kibuntrip.com` / `.jp` / GitHub Pages移行元を追加
+- `.jp` はGitHub Pagesの第2 apexとして設定せず、`.com` への301リダイレクト推奨
+
+DNSとGitHub Pages設定の具体手順は `DOMAIN_SETUP_v19_5.md` を参照してください。

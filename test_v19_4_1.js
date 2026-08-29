@@ -7,5 +7,5 @@ assert.match(app,/regionMatch\(s,browseRegion\)&&categoryMatch\(s,browseCategory
 assert.ok(html.includes('browseRegionFilters'));
 assert.ok(html.includes('browseCategoryFilters'));
 assert.ok(!html.includes('data-browse-mode="region"'));
-assert.ok(html.includes('地域とカテゴリを掛け合わせて'));
+assert.ok(html.includes('地域とカテゴリは選ぶだけ。2つを掛け合わせて'));
 console.log('V19.4.1 PASS: browse supports region x category AND filtering');
