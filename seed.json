@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v7_211spots_v19_4_public_candidate",
-    "version": "0.19.5.1",
+    "version": "0.19.5.3",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -61,7 +61,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-29 V19.5.1: GA4本番計測を追加。Kibun Trip専用測定ID、主要UIイベント、プライバシーポリシーを反映。211 spotsは維持。",
+    "expansion_note": "2026-08-29 V19.5.3: 211件の公式URLを公開前監査。日産ウォーターパーク修正に続き、移転・URL再編・恒久リダイレクト等を確認した13件を現行URLへ正規化。スポット総数は211件のまま。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -6084,7 +6084,7 @@
       "prefecture": "神奈川県",
       "city": "横須賀市",
       "address": "神奈川県横須賀市鴨居4丁目",
-      "official_url": "https://www.kanagawaparks.com/kannonzaki/",
+      "official_url": "https://www.kanagawa-park.or.jp/kannonzaki/",
       "environment": "outdoor",
       "stay_minutes_seed": 180,
       "experience_seed": {
@@ -6130,8 +6130,8 @@
         "reservation_summary": "通常の公園利用は予約不要。",
         "age_note": "磯や坂道があるため、乳幼児は抱っこ・手つなぎ前提。ベビーカーで行きにくい区間あり。",
         "temporary_note": "夏季・連休は駐車場混雑。荒天・高波時は磯利用を避ける。",
-        "checked_at": "2026-08-22",
-        "source_url": "https://www.kanagawaparks.com/kannonzaki/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.kanagawa-park.or.jp/kannonzaki/"
       },
       "buzz": {
         "score": 76,
@@ -6146,8 +6146,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-22",
-            "url": "https://www.kanagawaparks.com/kannonzaki/"
+            "date": "2026-08-29",
+            "url": "https://www.kanagawa-park.or.jp/kannonzaki/"
           }
         ]
       },
@@ -7339,7 +7339,7 @@
       "prefecture": "神奈川県",
       "city": "横浜市緑区",
       "address": "神奈川県横浜市緑区寺山町291",
-      "official_url": "https://www.kanagawaparks.com/shikinomori/",
+      "official_url": "https://www.kanagawa-park.or.jp/shikinomori/",
       "environment": "outdoor",
       "stay_minutes_seed": 240,
       "experience_seed": {
@@ -7386,8 +7386,8 @@
         "reservation_summary": "通常の公園利用は予約不要。",
         "age_note": "じゃぶじゃぶ池・ジャンボすべり台あり。夏季は熱中症対策を。",
         "temporary_note": null,
-        "checked_at": "2026-08-23",
-        "source_url": "https://www.kanagawaparks.com/shikinomori/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.kanagawa-park.or.jp/shikinomori/"
       },
       "buzz": {
         "score": 66,
@@ -7402,8 +7402,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-23",
-            "url": "https://www.kanagawaparks.com/shikinomori/"
+            "date": "2026-08-29",
+            "url": "https://www.kanagawa-park.or.jp/shikinomori/"
           }
         ]
       },
@@ -7470,7 +7470,7 @@
       "prefecture": "神奈川県",
       "city": "相模原市",
       "address": "神奈川県相模原市南区下溝3277",
-      "official_url": "https://www.sagamihara.kanagawa-park.or.jp/",
+      "official_url": "https://www.kanagawa-park.or.jp/sagamihara/",
       "environment": "mixed",
       "stay_minutes_seed": 240,
       "experience_seed": {
@@ -7517,8 +7517,8 @@
         "reservation_summary": "通常利用は予約不要。",
         "age_note": "舗装路・バリアフリー設備あり。温室等の開館は個別確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-23",
-        "source_url": "https://www.sagamihara.kanagawa-park.or.jp/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.kanagawa-park.or.jp/sagamihara/"
       },
       "buzz": {
         "score": 70,
@@ -7533,8 +7533,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-23",
-            "url": "https://www.sagamihara.kanagawa-park.or.jp/"
+            "date": "2026-08-29",
+            "url": "https://www.kanagawa-park.or.jp/sagamihara/"
           }
         ]
       },
@@ -8827,7 +8827,7 @@
       "prefecture": "東京都",
       "city": "新宿区",
       "address": "東京都新宿区四谷3-10",
-      "official_url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html",
+      "official_url": "https://www.tfd.metro.tokyo.lg.jp/taiken/hkkan/",
       "environment": "indoor",
       "stay_minutes_seed": 120,
       "experience_seed": {
@@ -8874,8 +8874,8 @@
         "reservation_summary": "通常利用は予約不要。",
         "age_note": "消防車・ヘリ等の展示。館内設備は公式確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-23",
-        "source_url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.tfd.metro.tokyo.lg.jp/taiken/hkkan/"
       },
       "buzz": {
         "score": 82,
@@ -8890,8 +8890,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-23",
-            "url": "https://www.tfd.metro.tokyo.lg.jp/learning/contents/museum.html"
+            "date": "2026-08-29",
+            "url": "https://www.tfd.metro.tokyo.lg.jp/taiken/hkkan/"
           }
         ]
       },
@@ -12003,7 +12003,7 @@
       "prefecture": "東京都",
       "city": "世田谷区",
       "address": "東京都世田谷区玉川2-21-1",
-      "official_url": "https://sc.rise.sc/",
+      "official_url": "https://rise.sc/",
       "environment": "mixed",
       "stay_minutes_seed": 210,
       "experience_seed": {
@@ -12050,8 +12050,8 @@
         "reservation_summary": "通常利用は予約不要。店舗・イベントにより予約が必要な場合あり。",
         "age_note": "乳幼児同行可。設備・店舗ごとの条件は公式情報を確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-27",
-        "source_url": "https://sc.rise.sc/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://rise.sc/"
       },
       "buzz": {
         "score": 84,
@@ -12066,8 +12066,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-27",
-            "url": "https://sc.rise.sc/"
+            "date": "2026-08-29",
+            "url": "https://rise.sc/"
           }
         ]
       },
@@ -14720,7 +14720,7 @@
       "prefecture": "東京都",
       "city": "港区",
       "address": "東京都港区高輪4-10-30 品川プリンスホテル内",
-      "official_url": "https://www.aqua-park.jp/",
+      "official_url": "https://www.aqua-park.jp/aqua/",
       "environment": "indoor",
       "stay_minutes_seed": 150,
       "experience_seed": {
@@ -14767,8 +14767,8 @@
         "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
         "age_note": "4歳以上に料金区分あり。アトラクションは年齢・身長条件あり。",
         "temporary_note": null,
-        "checked_at": "2026-08-27",
-        "source_url": "https://www.aqua-park.jp/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.aqua-park.jp/aqua/"
       },
       "buzz": {
         "score": 96,
@@ -14783,8 +14783,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-27",
-            "url": "https://www.aqua-park.jp/"
+            "date": "2026-08-29",
+            "url": "https://www.aqua-park.jp/aqua/"
           }
         ]
       },
@@ -16356,7 +16356,7 @@
       "prefecture": "埼玉県",
       "city": "飯能市",
       "address": "埼玉県飯能市宮沢327-6 メッツァ",
-      "official_url": "https://metsa-hanno.com/moominvalleypark/",
+      "official_url": "https://metsa-hanno.com/",
       "environment": "mixed",
       "stay_minutes_seed": 300,
       "experience_seed": {
@@ -16403,8 +16403,8 @@
         "reservation_summary": "前売りチケットあり。繁忙日は事前購入推奨。",
         "age_note": "乳幼児同行可。夏季水遊び等はイベント条件を確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-27",
-        "source_url": "https://metsa-hanno.com/moominvalleypark/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://metsa-hanno.com/"
       },
       "buzz": {
         "score": 96,
@@ -16419,8 +16419,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-27",
-            "url": "https://metsa-hanno.com/moominvalleypark/"
+            "date": "2026-08-29",
+            "url": "https://metsa-hanno.com/"
           }
         ]
       },
@@ -16767,7 +16767,7 @@
       "prefecture": "東京都",
       "city": "武蔵野市",
       "address": "東京都武蔵野市御殿山1-17-6",
-      "official_url": "https://www.tokyo-zoo.net/zoo/ino/",
+      "official_url": "https://www.tokyo-zoo.net/inokashira/",
       "environment": "outdoor",
       "stay_minutes_seed": 180,
       "experience_seed": {
@@ -16814,8 +16814,8 @@
         "reservation_summary": "通常入園は予約不要。イベントは申込制の場合あり。",
         "age_note": "乳幼児同行可。屋外中心のため季節対策を。",
         "temporary_note": null,
-        "checked_at": "2026-08-27",
-        "source_url": "https://www.tokyo-zoo.net/zoo/ino/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.tokyo-zoo.net/inokashira/"
       },
       "buzz": {
         "score": 88,
@@ -16830,8 +16830,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-27",
-            "url": "https://www.tokyo-zoo.net/zoo/ino/"
+            "date": "2026-08-29",
+            "url": "https://www.tokyo-zoo.net/inokashira/"
           }
         ]
       },
@@ -17997,7 +17997,7 @@
       "prefecture": "東京都",
       "city": "江東区",
       "address": "東京都江東区豊洲6-6-1",
-      "official_url": "https://www.shijou.metro.tokyo.lg.jp/toyosu",
+      "official_url": "https://www.shijou.metro.tokyo.lg.jp/info/0/kenngaku/kenngaku1",
       "environment": "mixed",
       "stay_minutes_seed": 150,
       "experience_seed": {
@@ -18044,8 +18044,8 @@
         "reservation_summary": "通常利用は予約不要。日時指定・体験等は公式サイトを確認。",
         "age_note": "乳幼児同行可。個別コンテンツの年齢・身長条件は公式サイトを確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.shijou.metro.tokyo.lg.jp/toyosu"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.shijou.metro.tokyo.lg.jp/info/0/kenngaku/kenngaku1"
       },
       "buzz": {
         "score": 86,
@@ -18060,8 +18060,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
-            "url": "https://www.shijou.metro.tokyo.lg.jp/toyosu"
+            "date": "2026-08-29",
+            "url": "https://www.shijou.metro.tokyo.lg.jp/info/0/kenngaku/kenngaku1"
           }
         ]
       },
@@ -22859,7 +22859,7 @@
       "prefecture": "東京都",
       "city": "豊島区",
       "address": "東京都豊島区東池袋1-30-3 グランドシネマサンシャイン 12F",
-      "official_url": "https://www.cinemasunshine.co.jp/gdcs/",
+      "official_url": "https://www.cinemasunshine.co.jp/pages/gdcs/",
       "environment": "indoor",
       "stay_minutes_seed": 90,
       "experience_seed": {
@@ -22904,8 +22904,8 @@
         "reservation_summary": "最新の営業情報や貸切等は施設公式情報を確認。",
         "age_note": "映画館併設のバー／カフェで、大人向けの利用が中心。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.cinemasunshine.co.jp/gdcs/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.cinemasunshine.co.jp/pages/gdcs/"
       },
       "public_copy": "グランドシネマサンシャイン池袋の最上階にあるカフェ＆バー。天井映像とパノラマビューで、池袋にいながら少し特別な気分を味わえる。",
       "audience_fit": {
@@ -22962,8 +22962,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
-            "url": "https://www.cinemasunshine.co.jp/gdcs/"
+            "date": "2026-08-29",
+            "url": "https://www.cinemasunshine.co.jp/pages/gdcs/"
           }
         ]
       },
@@ -25266,7 +25266,7 @@
       "prefecture": "千葉県",
       "city": "木更津市",
       "address": "千葉県木更津市北浜町1",
-      "official_url": "https://www.mikazuki.co.jp/ryugu/",
+      "official_url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/garden/",
       "environment": "outdoor",
       "stay_minutes_seed": 240,
       "experience_seed": {
@@ -25312,8 +25312,8 @@
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
         "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.mikazuki.co.jp/ryugu/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/garden/"
       },
       "buzz": {
         "score": 83,
@@ -25328,8 +25328,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
-            "url": "https://www.mikazuki.co.jp/ryugu/"
+            "date": "2026-08-29",
+            "url": "https://www.mikazuki.co.jp/ryugujo/yutoasobi/pool/garden/"
           }
         ]
       },
@@ -25397,7 +25397,7 @@
       "prefecture": "千葉県",
       "city": "千葉市美浜区",
       "address": "千葉県千葉市美浜区高浜7-1-1",
-      "official_url": "https://sunsetbeachpark.jp/",
+      "official_url": "https://sunsetbeachpark.jp/activity/pool/",
       "environment": "outdoor",
       "stay_minutes_seed": 210,
       "experience_seed": {
@@ -25443,8 +25443,8 @@
         "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
         "age_note": "乳幼児向け設備の有無や身長制限は施設ごとに異なる。来場前に公式情報を確認。",
         "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://sunsetbeachpark.jp/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://sunsetbeachpark.jp/activity/pool/"
       },
       "buzz": {
         "score": 78,
@@ -25459,8 +25459,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
-            "url": "https://sunsetbeachpark.jp/"
+            "date": "2026-08-29",
+            "url": "https://sunsetbeachpark.jp/activity/pool/"
           }
         ]
       },
@@ -25528,7 +25528,7 @@
       "prefecture": "神奈川県",
       "city": "横浜市港北区",
       "address": "神奈川県横浜市港北区小机町3302-5",
-      "official_url": "https://www.nissan-stadium.jp/waterpark/",
+      "official_url": "https://www.nissan-stadium.jp/shinyoko-park/waterpark/",
       "environment": "indoor",
       "stay_minutes_seed": 160,
       "experience_seed": {
@@ -25569,13 +25569,13 @@
       "editorial_reason": "新横浜エリアで天候を気にせず利用しやすい屋内温水プール。",
       "public_copy": "新横浜で利用しやすい屋内温水プール。天候を気にせず水遊びしたい日に向く。",
       "dynamic_snapshot": {
-        "opening_hours_text": "営業時間・休館日は公式サイトを確認。",
-        "price_summary": "料金はシーズン・券種・年齢区分により異なるため、最新情報は公式サイトを確認。",
-        "reservation_summary": "混雑期は事前購入・事前予約推奨。運営方法は公式サイトを確認。",
-        "age_note": "乳幼児利用ルールやおむつ条件は事前確認推奨。",
-        "temporary_note": "営業期間・荒天休止・メンテナンス情報は変動しやすいため来場前確認推奨。",
-        "checked_at": "2026-08-28",
-        "source_url": "https://www.nissan-stadium.jp/waterpark/"
+        "opening_hours_text": "平日・土曜 9:00〜21:00、日曜・祝日 9:00〜17:00。2026年7月19日〜8月31日の日曜・祝日は9:00〜19:30。最終受付は終了時刻より前のため公式案内を確認。",
+        "price_summary": "1時間まで13歳以上500円、13歳未満250円。延長料金あり。最新料金は公式サイトを確認。",
+        "reservation_summary": "通常利用の予約要否・混雑状況は公式サイトを確認。",
+        "age_note": "スイミングキャップ必須。おむつ・トレーニングパンツが日常生活（移動時・夜間を含む）で完全に外れていない子どもは入場不可。",
+        "temporary_note": "2026年8月25日の換水清掃による臨時休館は終了。今後の臨時休館は公式NEWSを確認。",
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.nissan-stadium.jp/shinyoko-park/waterpark/"
       },
       "buzz": {
         "score": 76,
@@ -25585,13 +25585,13 @@
         "media_attention": 68,
         "popularity_momentum": 73,
         "reason": "新横浜で利用しやすい屋内温水プール。天候を気にせず水遊びしたい日に向く。",
-        "checked_at": "2026-08-28",
+        "checked_at": "2026-08-29",
         "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
             "date": "2026-08-28",
-            "url": "https://www.nissan-stadium.jp/waterpark/"
+            "url": "https://www.nissan-stadium.jp/shinyoko-park/waterpark/"
           }
         ]
       },
@@ -28068,7 +28068,7 @@
       "prefecture": "東京都",
       "city": "港区",
       "address": "東京都港区白金台3-2-19",
-      "official_url": "http://www.zuisho-ji.or.jp/",
+      "official_url": "https://www.gotokyo.org/jp/spot/1090/index.html",
       "environment": "mixed",
       "stay_minutes_seed": 70,
       "experience_seed": {
@@ -28114,8 +28114,8 @@
         "reservation_summary": "通常参拝は予約不要。行事参加は別途案内確認。",
         "age_note": "静かな場所のため、小さな子ども連れは周囲への配慮推奨。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
-        "source_url": "http://www.zuisho-ji.or.jp/"
+        "checked_at": "2026-08-29",
+        "source_url": "https://www.gotokyo.org/jp/spot/1090/index.html"
       },
       "buzz": {
         "score": 74,
@@ -28130,8 +28130,8 @@
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
-            "url": "https://www.zuisho-ji.or.jp/"
+            "date": "2026-08-29",
+            "url": "https://www.gotokyo.org/jp/spot/1090/index.html"
           }
         ]
       },

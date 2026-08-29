@@ -102,3 +102,7 @@ DNSとGitHub Pages設定の具体手順は `DOMAIN_SETUP_v19_5.md` を参照し�
 ## GA4 (v19.5.1)
 
 Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked without sending user-entered origin text or coordinates to GA4. See `HANDOFF_v19_5_1.md`.
+
+## V19.5.3 official URL audit
+
+公開前に211スポットの `official_url` を監査し、13件を現行URLへ正規化しました。詳細は `URL_AUDIT_v19_5_3.md`。今後は `node scripts/check_official_urls.mjs` で一括確認できます。
