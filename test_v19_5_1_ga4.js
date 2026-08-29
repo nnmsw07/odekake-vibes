@@ -1,0 +1,10 @@
+const fs=require('fs');
+const index=fs.readFileSync('index.html','utf8');
+const app=fs.readFileSync('app.js','utf8');
+const privacy=fs.readFileSync('privacy.html','utf8');
+const required=['G-M99DNGD18F','googletagmanager.com/gtag/js'];
+for(const x of required) if(!index.includes(x)) throw new Error('missing '+x);
+for(const e of ['recommendation_generate','spot_open','browse_open','browse_filter','origin_search','origin_select','external_link_click']) if(!app.includes(`'${e}'`)) throw new Error('missing event '+e);
+if(app.includes("trackEvent('origin_search',{query:")) throw new Error('origin query must not be sent');
+if(!privacy.includes('Google Analytics 4')) throw new Error('privacy missing GA4');
+console.log('V19.5.1 GA4 PASS: production tag + privacy-safe core events');

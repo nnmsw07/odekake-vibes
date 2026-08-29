@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_seed_v7_211spots_v19_4_public_candidate",
-    "version": "0.19.5",
+    "version": "0.19.5.1",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -61,7 +61,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-29 V19.5: kibuntrip.com 正式公開準備。独自ドメイン、SEO/OGP、robots/sitemap、ブランド表記、Worker CORSを整備。211 spotsは維持。",
+    "expansion_note": "2026-08-29 V19.5.1: GA4本番計測を追加。Kibun Trip専用測定ID、主要UIイベント、プライバシーポリシーを反映。211 spotsは維持。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
