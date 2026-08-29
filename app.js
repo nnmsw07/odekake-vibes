@@ -5,10 +5,13 @@ const AUDIENCE_UI={family:['👶','子どもと'],partner:['♡','パートナ�
 const COLLECTION_UI={family:[['c1','💦','暑い日は、水で遊ぶ','水遊び・涼しい場所へ',['cool','active','waterside']],['c2','🌿','近場でのびのび','公園・自然で体を動かす',['nature','active','relax']],['c3','☔','雨でもちゃんと遊びたい','屋内・学び・体験へ',['cool','creative','culture']],['c4','☕','親も楽しい日に','ごはんと散歩で無理しない',['food','stroll','relax']]],partner:[['c1','🌅','景色のいい方へ','眺めて、歩いて、ゆっくり',['scenic','stroll','relax']],['c2','🍽️','食べて、歩いて、寄り道','ごはん＋街歩き',['food','stroll','shopping']],['c3','✨','少し特別な一日に','非日常と文化を楽しむ',['extraordinary','culture','food']],['c4','🏛️','静かな大人時間','建築・本・庭園へ',['culture','relax','scenic']]],solo:[['c1','📚','ひとりで、じっくり','本・展示・街歩き',['culture','relax','stroll']],['c2','🌿','緑のある方へ','自然と景色で整える',['nature','relax','scenic']],['c3','☕','ふらっと寄り道','買い物とごはんを自分のペースで',['shopping','food','stroll']],['c4','🎨','ちょっと刺激がほしい','文化・創作・非日常',['culture','creative','extraordinary']]],friends:[['c1','🛍️','見て、食べて、しゃべる','買い物とごはん中心',['shopping','food','stroll']],['c2','🎢','せっかくなら盛り上がる','体験と非日常へ',['active','extraordinary','food']],['c3','🌊','外で遊ぶ日','自然・水辺・アクティブ',['nature','waterside','active']],['c4','🎨','一緒に何か体験','文化・創作・特別感',['culture','creative','extraordinary']]]};
 
 const BROWSE_REGIONS=[
-  ['all','すべて'],['kanagawa','神奈川'],['yokohama','横浜'],['kawasaki','川崎'],['shonan','湘南・鎌倉'],['miura','三浦・横須賀'],['hakone','箱根・県西'],['tokyo','東京'],['chiba','千葉'],['saitama','埼玉']
+  ['all','すべて'],
+  ['yokohama','横浜'],['kawasaki','川崎'],['shonan','湘南・鎌倉'],['miura','横須賀・三浦'],['kenou','県央・丹沢'],['hakone','箱根・県西'],
+  ['tokyo23','東京23区'],['tama','東京・多摩'],['chiba','千葉'],['saitama','埼玉']
 ];
 const BROWSE_CATEGORIES=[
-  ['all','すべて'],['kids','👶 子ども・遊び'],['nature','🌿 公園・自然'],['water','💦 水遊び・プール'],['animals','🐾 動物・水族館'],['culture','🏛️ アート・文化・本'],['food','🍽️ カフェ・グルメ'],['shopping','🛍️ 買い物・複合施設'],['relax','♨️ 温浴・リラックス'],['experience','🎨 体験・学び']
+  ['all','すべて'],['kids','👶 子ども・遊び'],['nature','🌿 公園・自然'],['water','💦 水遊び・プール'],['animals','🐾 動物・水族館'],
+  ['culture','🏛️ アート・文化・本'],['experience','🎨 体験・学び'],['food','🍽️ カフェ・グルメ'],['shopping','🛍️ 買い物・複合施設'],['relax','♨️ 温浴・のんびり']
 ];
 const vibeKeys=Object.keys(VIBE_UI);let selectedVibes=[],selectedAudience=localStorage.getItem('kibun-audience')||'family',lastResult=null,currentOrigin=null,currentOriginLabel='',lastTravelProvider=null,browseRegion='all',browseCategory='all';let favorites=new Set(JSON.parse(localStorage.getItem('kibun-favorites')||'[]'));
 const $=id=>document.getElementById(id),vibeGrid=$('vibeGrid'),recommendBtn=$('recommendBtn'),resultsSection=$('resultsSection'),resultsGrid=$('resultsGrid'),warningBox=$('coverageWarning'),dialog=$('spotDialog'),browseDialog=$('browseDialog'),trendingGrid=$('trendingGrid');
@@ -100,14 +103,19 @@ function installHeroAuditDock(){
   const sel=dock.querySelector('#heroAuditSpotSelect');dock.querySelector('#heroAuditOpen').addEventListener('click',()=>openSpot(sel.value));dock.querySelector('#heroAuditExport').addEventListener('click',()=>{const payload=JSON.stringify({photo_index_overrides:window.KibunMedia.getAuditOverrides?.()||{},place_overrides:window.KibunMedia.getAuditPlaceOverrides?.()||{}},null,2);const w=window.open('','_blank');if(w){w.document.write(`<meta name="viewport" content="width=device-width"><pre style="white-space:pre-wrap;font:14px/1.5 monospace;padding:20px">${escapeHtml(payload)}</pre>`);w.document.close();}else prompt('Hero audit export',payload);});
 }
 function regionMatch(s,key){
-  if(key==='all')return true;if(key==='kanagawa')return s.prefecture==='神奈川県';if(key==='tokyo')return s.prefecture==='東京都';if(key==='chiba')return s.prefecture==='千葉県';if(key==='saitama')return s.prefecture==='埼玉県';
-  const city=String(s.city||''),addr=String(s.address||'');
-  if(key==='yokohama')return city.startsWith('横浜市');
-  if(key==='kawasaki')return city.startsWith('川崎市');
-  if(key==='shonan')return /藤沢市|鎌倉市|茅ヶ崎市|平塚市|逗子市|葉山町|大磯町/.test(city+addr);
-  if(key==='miura')return /横須賀市|三浦市/.test(city+addr);
-  if(key==='hakone')return /箱根町|小田原市|南足柄市|足柄上郡|足柄下郡/.test(city+addr);
-  return true;
+  if(key==='all')return true;
+  if(key==='chiba')return s.prefecture==='千葉県';
+  if(key==='saitama')return s.prefecture==='埼玉県';
+  const city=String(s.city||''),addr=String(s.address||''),place=city+addr;
+  if(key==='yokohama')return s.prefecture==='神奈川県'&&city.startsWith('横浜市');
+  if(key==='kawasaki')return s.prefecture==='神奈川県'&&city.startsWith('川崎市');
+  if(key==='shonan')return s.prefecture==='神奈川県'&&/藤沢市|鎌倉市|茅ヶ崎市|平塚市|逗子市|葉山町|大磯町|寒川町/.test(place);
+  if(key==='miura')return s.prefecture==='神奈川県'&&/横須賀市|三浦市/.test(place);
+  if(key==='kenou')return s.prefecture==='神奈川県'&&/相模原市|厚木市|海老名市|大和市|座間市|綾瀬市|愛川町|清川村|秦野市/.test(place);
+  if(key==='hakone')return s.prefecture==='神奈川県'&&/箱根町|小田原市|南足柄市|足柄上郡|足柄下郡|山北町/.test(place);
+  if(key==='tokyo23')return s.prefecture==='東京都'&&/区$/.test(city);
+  if(key==='tama')return s.prefecture==='東京都'&&!/区$/.test(city);
+  return false;
 }
 function categoryMatch(s,key){
   if(key==='all')return true;const cats=[s.category_primary,...(s.categories||[]),...(s.ui_tags||[])].join('|').toLowerCase(),v=s.vibes_seed||{},e=s.experience_seed||{};
