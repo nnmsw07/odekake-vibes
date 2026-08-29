@@ -87,13 +87,16 @@
     <div class="browse-inner">
       <p class="eyebrow">BROWSE KIBUN</p>
       <h2>場所から、<br>ふらっと探す。</h2>
-      <p class="browse-lead">地域やカテゴリから、211スポットを自由に眺められます。</p>
-      <div class="browse-tabs" role="tablist" aria-label="探し方">
-        <button type="button" class="selected" data-browse-mode="region">地域から</button>
-        <button type="button" data-browse-mode="category">カテゴリから</button>
-      </div>
-      <div id="browseFilters" class="browse-filters"></div>
-      <div class="browse-search-row"><input id="browseSearch" type="search" placeholder="スポット名・地域で検索" aria-label="スポットを検索"></div>
+      <p class="browse-lead">地域とカテゴリを掛け合わせて、211スポットを自由に絞り込めます。</p>
+      <section class="browse-filter-section" aria-labelledby="browseRegionLabel">
+        <div class="browse-filter-head"><strong id="browseRegionLabel">どの地域？</strong><small>まず行きたいエリアを選ぶ</small></div>
+        <div id="browseRegionFilters" class="browse-filters"></div>
+      </section>
+      <section class="browse-filter-section" aria-labelledby="browseCategoryLabel">
+        <div class="browse-filter-head"><strong id="browseCategoryLabel">何をしたい？</strong><small>カテゴリを重ねて絞り込む</small></div>
+        <div id="browseCategoryFilters" class="browse-filters"></div>
+      </section>
+      <div class="browse-search-row"><input id="browseSearch" type="search" placeholder="スポット名・地名でさらに検索" aria-label="スポットを検索"></div>
       <p id="browseCount" class="browse-count"></p>
       <div id="browseGrid" class="browse-grid"></div>
     </div>
