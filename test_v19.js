@@ -2,8 +2,8 @@ const assert=require('assert');
 const fs=require('fs');
 const R=require('./recommender.js');
 const seed=JSON.parse(fs.readFileSync('seed.json','utf8'));
-assert.equal(seed.spots.length,241);
-for(let i=126;i<=241;i++) assert.ok(seed.spots.some(s=>s.spot_id===`spot_${String(i).padStart(3,'0')}`));
+assert.equal(seed.spots.length,256);
+for(let i=126;i<=256;i++) assert.ok(seed.spots.some(s=>s.spot_id===`spot_${String(i).padStart(3,'0')}`));
 for(const name of [
   'キラナガーデン豊洲','豊洲 千客万来','サンシャインシティ','横浜中華街','PLAY! PARK ERIC CARLE','市原ぞうの国','西武園ゆうえんち','サンリオピューロランド',
   '檜原 森のおもちゃ美術館','UE FANTASIA','魔法の文学館','The Library Lounge','BAR PANORAMA','渋谷区ふれあい植物センター','ワーナー ブラザース スタジオツアー東京','夢の島熱帯植物館','RÊVE DES LUMIÈRES',
@@ -20,4 +20,4 @@ const gids=rr.recommendations.map(x=>{const s=mini.spots.find(y=>y.spot_id===x.s
 assert.equal(new Set(gids).size,gids.length);
 const g=R.recommend(seed,{audience:'family',selectedVibes:['culture','extraordinary'],childAgeMonths:24,weather:'any'});
 assert.ok(g.excluded.some(x=>x.spot_id==='spot_158'));
-console.log('V19.3 PASS: 241 spots + recommendation-group diversity + age hard filter');
+console.log('V19.3 PASS: 256 spots + recommendation-group diversity + age hard filter');

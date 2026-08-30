@@ -1,8 +1,8 @@
 const assert = require('assert');
 const fs = require('fs');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
-assert.equal(seed.spots.length, 241);
-assert.ok(['0.19.5.4','0.19.6','0.19.7'].includes(seed.metadata.version));
+assert.equal(seed.spots.length, 256);
+assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?)$/.test(seed.metadata.version));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id, s]));
 const expected = {
   spot_047:'https://www.kanagawa-park.or.jp/kannonzaki/',
@@ -24,4 +24,4 @@ for (const s of seed.spots) {
   assert.ok(/^https:\/\//.test(s.official_url), `${s.spot_id} official_url must be HTTPS: ${s.official_url}`);
 }
 assert.ok(fs.existsSync('scripts/check_official_urls.mjs'));
-console.log('V19.5.3 URL PASS: 241 HTTPS official URLs + 13 canonical fixes + audit script');
+console.log('V19.5.3 URL PASS: 256 HTTPS official URLs + 13 canonical fixes + audit script');

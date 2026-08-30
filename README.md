@@ -1,10 +1,10 @@
-# Kibun Trip MVP v0.19.7 — 241 spots
+# Kibun Trip MVP v0.19.7.2 — 256 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
 ## v0.19 の状態
 
-- **241スポット**収録
+- **256スポット**収録
 - 同行者: 子ども / パートナー / ひとり / 友だち
 - 気分・やりたいことを最大3つ選択
 - 子どもの年齢によるhard filter
@@ -12,7 +12,7 @@
 - Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
-- Kibunロゴから **地域 × カテゴリ** で241スポットをブラウズ
+- Kibunロゴから **地域 × カテゴリ** で256スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
 V19.5の公開準備は `CHANGELOG_v19_5.md` / `DOMAIN_SETUP_v19_5.md` / `HANDOFF_v19_5.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
@@ -35,7 +35,7 @@ python -m http.server 8000
 - `styles.css` — スマホ優先デザイン
 - `app.js` — UI / 詳細 / Hero監査
 - `recommender.js` — 推薦ロジック
-- `data.js` — ブラウザ用241スポットデータ
+- `data.js` — ブラウザ用256スポットデータ
 - `seed.json` — 元データ
 - `travel.js` — 出発地検索 / ルート時間取得
 - `media.js` — Google Places Hero取得
@@ -124,3 +124,10 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - 提携後のPRリンクは `rel="sponsored noopener"`、GA4 `affiliate_click` で計測
 
 詳細: `SEO_PLAN_v19_6.md` / `AFFILIATE_AUDIT_v19_6.md`
+
+
+## v19.7.2 Experience / Stage expansion
+- 歌舞伎座 / 劇団四季 / 新橋演舞場 / KAATを「観劇・舞台」として追加。日時依存が強い劇場は `browse_only` とし、通常の「今日の3つ」へ無条件に混ぜない。
+- 陶芸、Paint & Sip、金継ぎ、江戸切子、食品サンプル、香りづくり、和紙など11件のものづくり体験を追加。
+- ブラウズに `🎭 観劇・舞台`、ホームに `MAKE / WATCH / TRY` を追加。
+- 241 → 256スポット。新規15件はGoogle Places Hero優先＋AI fallback。Hero写真は未監査。

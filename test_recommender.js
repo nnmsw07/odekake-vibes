@@ -4,7 +4,7 @@ const path = require('path');
 const R = require('./recommender.js');
 const seed = JSON.parse(fs.readFileSync(path.join(__dirname,'seed.json'),'utf8'));
 
-assert.equal(seed.spots.length,241);
+assert.equal(seed.spots.length,256);
 
 let r = R.recommend(seed,{selectedVibes:['cool','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.ok(r.recommendations[0].scores.vibe >= 70);
@@ -44,4 +44,4 @@ assert.ok(r.excluded.some(x => x.spot_id === 'spot_053'));
 r = R.recommend(seed,{selectedVibes:['culture','relax'],childAgeMonths:15,currentDate:'2026-09-05T12:00:00+09:00'});
 assert.ok(!r.excluded.some(x => x.spot_id === 'spot_053'));
 
-console.log('PASS: 241 spots + recommendation / age / buzz / temporary-closure scenarios');
+console.log('PASS: 256 spots + recommendation / age / buzz / temporary-closure scenarios');

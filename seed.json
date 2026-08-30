@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v8_241spots_public_candidate",
-    "version": "0.19.7",
+    "dataset_name": "kibun_kanto_izu_seed_v8_256spots_editorial_experience_candidate",
+    "version": "0.19.7.2",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -24,7 +24,9 @@
       "layer_vibe_groups": "UI上は mood 3軸（cool / extraordinary / relax）と activity 10軸に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
       "layer_audience_presentation": "同行者ごとに推薦枠名・紹介文・詳細の見せ方を変更。family以外では乳幼児指標を表示しない。",
       "layer_ui_tags": "UI用の短い閲覧タグ。推薦スコアには直接使用せず、コレクション・チップ表示用。",
-      "layer_monetization": "affiliate_fitは編集上の収益化適性。provider/productの実在を保証せず、提携・商品照合完了までUI非表示。"
+      "layer_monetization": "affiliate_fitは編集上の収益化適性。provider/productの実在を保証せず、提携・商品照合完了までUI非表示。",
+      "layer_editorial_story": "施設説明とは別に、そこで過ごす一日を想像させる編集見出し・リード・moment・collection・best_forを保持。事実情報を置き換えず、その手前の発見体験に使用。",
+      "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -62,7 +64,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-30 V19.7: Stay/Hotelカテゴリを追加。目的地型ホテル30件（箱根・横浜・湘南/三浦・千葉・東京・伊豆）を追加し、211→241 spotsへ拡張。日帰り推薦では宿泊候補を除外し「泊まりもあり」選択時のみ候補化。",
+    "expansion_note": "2026-08-30 V19.7.2: Editorial layerを継続し、観劇・陶芸・アート・伝統工芸など体験系15件を追加。241→256 spots。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -101,9 +103,36 @@
       "brand_name": "Kibun Trip",
       "ui_brand": "Kibun",
       "locale": "ja-JP",
-      "release_stage": "seo-affiliate-foundation"
+      "release_stage": "editorial-magazine-beta"
     },
-    "operations_audit_note": "2026-08-29: 名称・営業時間・季節営業・既知メンテナンスを重点監査。2026年限定の営業期間は availability_constraints で保守的に除外し、翌シーズンは要再監査。"
+    "operations_audit_note": "2026-08-29: 名称・営業時間・季節営業・既知メンテナンスを重点監査。2026年限定の営業期間は availability_constraints で保守的に除外し、翌シーズンは要再監査。",
+    "editorial_policy": {
+      "purpose": "検索条件の説明ではなく、「こんな一日いいな」と思える発見体験をつくる。",
+      "tone": [
+        "一日の情景から始める",
+        "具体的な体験を1〜2個だけ描く",
+        "広告コピーのように煽りすぎない",
+        "施設の事実情報と編集表現を混同しない"
+      ],
+      "avoid": [
+        "万能な褒め言葉",
+        "みんなで楽しみやすい等の汎用文",
+        "根拠のない最上級・限定表現"
+      ],
+      "pilot_spots": [
+        "spot_001",
+        "spot_027",
+        "spot_051",
+        "spot_113",
+        "spot_130",
+        "spot_136",
+        "spot_212",
+        "spot_219",
+        "spot_233",
+        "spot_238"
+      ],
+      "experience_expansion": "観劇・ものづくりは「場所」より「何をするか」が先に立つコピーで見せる。"
+    }
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -238,6 +267,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "今日は、「好き！」に全部つきあう。",
+        "lead": "アンパンマンに会いたい気持ちが最優先の日は、迷わずここへ。遊んで、見つけて、笑って。小さな子どもの「好き」を一日まるごと受け止めてくれる。",
+        "moment": "子どもの「好き」を主役にする日",
+        "collection": "親子で世界に入り込む",
+        "best_for": [
+          "子どもの好きが強い日",
+          "雨・暑さを避けたい日",
+          "親子で一日遊びたい日"
+        ],
+        "priority": 4
       }
     },
     {
@@ -3751,6 +3792,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "靴を脱いだら、東京の外側へ。",
+        "lead": "水の中を歩き、光に包まれ、花の世界へ。見るだけじゃないアートだから、いつもの休日が少し映画みたいになる。",
+        "moment": "日常から一気に離れたい日",
+        "collection": "光の中へ",
+        "best_for": [
+          "非日常デート",
+          "雨の日",
+          "写真より体験を楽しみたい日"
+        ],
+        "priority": 7
       }
     },
     {
@@ -7210,6 +7263,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "水族館のあと、海まで歩こう。",
+        "lead": "クラゲや相模湾の生きものを眺めたら、外には江の島の海。館内だけで終わらないから、半日のおでかけが小さな旅になる。",
+        "moment": "海のそばで半日過ごしたい日",
+        "collection": "水辺の余白",
+        "best_for": [
+          "親子の半日旅",
+          "海辺デート",
+          "暑い日の湘南"
+        ],
+        "priority": 2
       }
     },
     {
@@ -16203,6 +16268,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "夕方の渋谷を、空から待ち合わせ。",
+        "lead": "街が昼から夜へ変わる時間に、229mの展望空間へ。買い物や食事の前後に「ひとつ特別」を足したい日に。",
+        "moment": "いつもの街を特別にしたい夕方",
+        "collection": "街の夜まで",
+        "best_for": [
+          "夕方からのデート",
+          "東京らしい景色",
+          "友だちとの特別な一日"
+        ],
+        "priority": 8
       }
     },
     {
@@ -18677,6 +18754,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "絵本の中で、今日は遊ぶ。",
+        "lead": "色、形、音、からだ。エリック・カールの世界を、読むだけじゃなく全身で。雨の日でも、親子の一日をちゃんと特別にしてくれる。",
+        "moment": "親子で色と遊ぶ日",
+        "collection": "親子で世界に入り込む",
+        "best_for": [
+          "0歳からの室内遊び",
+          "雨・暑い日",
+          "親子でアートに触れたい日"
+        ],
+        "priority": 5
       }
     },
     {
@@ -19546,6 +19635,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "地図を見ないで、アートの中を迷う。",
+        "lead": "作品と作品の境目がほどけていく空間を、行き先を決めずに歩く。会話しながらでも、ひとりでも、「次は何がある？」が続く。",
+        "moment": "予定を決めすぎず刺激がほしい日",
+        "collection": "光の中へ",
+        "best_for": [
+          "アートデート",
+          "ひとりの没入時間",
+          "雨の日の東京"
+        ],
+        "priority": 6
       }
     },
     {
@@ -30586,6 +30687,18 @@
         ],
         "product_match_required": true,
         "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      },
+      "editorial": {
+        "title": "今日は、帰らなくてもいい日にする。",
+        "lead": "箱根の緑を眺めて、お湯に浸かって、夕食まで急がない。観光を詰め込むより、宿で過ごす時間そのものを楽しみたい日に。",
+        "moment": "何もしない時間まで旅にしたい日",
+        "collection": "今日は帰らない",
+        "best_for": [
+          "温泉でゆっくり",
+          "記念日",
+          "箱根で宿時間を楽しみたい日"
+        ],
+        "priority": 1
       }
     },
     {
@@ -31701,6 +31814,18 @@
         ],
         "product_match_required": true,
         "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      },
+      "editorial": {
+        "title": "横浜の夜まで、予定に入れる。",
+        "lead": "港のすぐそばで、景色が昼から夜へ変わるのを待つ。遠くへ行かなくても、いつもの横浜を「旅先」に変えてくれる一泊。",
+        "moment": "近場で旅気分に切り替えたい日",
+        "collection": "街の夜まで",
+        "best_for": [
+          "横浜ステイ",
+          "記念日デート",
+          "近場の非日常"
+        ],
+        "priority": 3
       }
     },
     {
@@ -33947,6 +34072,18 @@
         ],
         "product_match_required": true,
         "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      },
+      "editorial": {
+        "title": "畑とお風呂と、夜まで。",
+        "lead": "収穫して、外で遊んで、温まって、そのまま泊まる。子どもと一緒でも、大人だけでも、「何もしない時間」までちゃんと旅になる。",
+        "moment": "外遊びを夜まで続けたい日",
+        "collection": "今日は帰らない",
+        "best_for": [
+          "子どもと体験旅",
+          "自然の中で泊まりたい日",
+          "グランピング気分"
+        ],
+        "priority": 9
       }
     },
     {
@@ -34748,6 +34885,18 @@
         ],
         "product_match_required": true,
         "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      },
+      "editorial": {
+        "title": "海を見ながら、お湯に浸かるだけの旅。",
+        "lead": "窓の向こうに海があって、温泉があって、今日はそれだけでも十分。観光を詰め込まず、伊豆まで「休みに行く」日に選びたい。",
+        "moment": "目的をつくらず休みに行く日",
+        "collection": "水辺の余白",
+        "best_for": [
+          "海×温泉",
+          "伊豆の一泊",
+          "何もしない休日"
+        ],
+        "priority": 10
       }
     },
     {
@@ -35233,6 +35382,2513 @@
         ],
         "product_match_required": true,
         "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_242",
+      "slug": "kabukiza",
+      "name": "歌舞伎座",
+      "aliases": [
+        "Kabukiza"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts",
+        "traditional_culture"
+      ],
+      "prefecture": "東京都",
+      "city": "中央区",
+      "address": "東京都中央区銀座4-12-15",
+      "official_url": "https://www.kabuki-bito.jp/theaters/kabukiza/",
+      "environment": "indoor",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 5,
+        "hands_on": 10,
+        "quietness": 45,
+        "parent_rest": 72,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 98,
+        "baby_fit": 15,
+        "toddler_fit": 20,
+        "stroller_fit": 55,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 88
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 96,
+        "scenic": 58,
+        "stroll": 52,
+        "relax": 54,
+        "shopping": 35,
+        "food": 35,
+        "culture": 100,
+        "animals": 0,
+        "creative": 82,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "「観光名所を見る」ではなく、その日の演目を観ること自体を目的にできる文化体験。銀座の街歩きとも組み合わせやすい。",
+      "public_copy": "銀座にある歌舞伎専門劇場。月ごとの公演を、舞台・衣裳・音・劇場空間まで含めて味わえる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公演日・開演時刻は月ごとに変動。公式公演情報を確認。",
+        "price_summary": "席種・公演により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケット推奨。幕見席など当日利用可否も公演ごとに確認。",
+        "age_note": "長時間の観劇になる場合があるため、子どもの年齢・演目との相性を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.kabuki-bito.jp/theaters/kabukiza/"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "銀座にある歌舞伎専門劇場。月ごとの公演を、舞台・衣裳・音・劇場空間まで含めて味わえる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.kabuki-bito.jp/theaters/kabukiza/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "歌舞伎座の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 42,
+        "partner": 90,
+        "solo": 94,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "中央区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "歌舞伎座",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ひとり",
+        "雨の日",
+        "学び・文化",
+        "非日常",
+        "大人も楽しい",
+        "観劇"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "銀座で、幕が上がる午後。",
+        "lead": "赤い幕の向こうで、声と三味線と衣裳が一つの世界になる。買い物だけで終わらせず、「今日は舞台を観た」と言える銀座へ。",
+        "moment": "予定に文化をひとつ入れたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "歌舞伎を一度観てみたい",
+          "銀座デート",
+          "ひとり観劇"
+        ],
+        "priority": 30,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 20,
+        "reservation_expected": true,
+        "schedule_required": true
+      }
+    },
+    {
+      "spot_id": "spot_243",
+      "slug": "shiki-theatre-haru",
+      "name": "JR東日本四季劇場［春］",
+      "aliases": [
+        "劇団四季［春］",
+        "JR EAST Shiki Theatre HARU"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts",
+        "musical"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区海岸1-10-45",
+      "official_url": "https://www.shiki.jp/theatres/4023/",
+      "environment": "indoor",
+      "stay_minutes_seed": 190,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 40,
+        "parent_rest": 75,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 100,
+        "baby_fit": 5,
+        "toddler_fit": 20,
+        "stroller_fit": 65,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 90
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 98,
+        "scenic": 45,
+        "stroll": 38,
+        "relax": 48,
+        "shopping": 20,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 90,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "有名作品を「観る」だけでなく、劇場へ向かう時間から一日をイベントにできる。上演作品が変わるたびに違う目的地になる。",
+      "public_copy": "竹芝の劇団四季専用劇場。ミュージカルを舞台美術、音楽、ダンスまで含めて大きな劇場空間で楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公演日・開演時刻は作品ごとに変動。公式公演情報を確認。",
+        "price_summary": "席種・作品により変動。公式チケットを確認。",
+        "reservation_summary": "日時指定チケットが基本。作品ごとの販売状況を確認。",
+        "age_note": "年齢制限は演目ごとに異なるため必ず公式確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.shiki.jp/theatres/4023/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "竹芝の劇団四季専用劇場。ミュージカルを舞台美術、音楽、ダンスまで含めて大きな劇場空間で楽しめる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.shiki.jp/theatres/4023/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "JR東日本四季劇場［春］の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 94,
+        "solo": 88,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "JR東日本四季劇場 春",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "雨の日",
+        "非日常",
+        "学び・文化",
+        "大人も楽しい",
+        "観劇"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "予定表に、ミュージカルをひとつ。",
+        "lead": "照明が落ちて、音楽が始まった瞬間から別世界。竹芝まで出かける理由を、舞台そのものにしてみる。",
+        "moment": "少し先の休日を楽しみに変えたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "ミュージカル",
+          "記念日デート",
+          "友だちと観劇"
+        ],
+        "priority": 31,
+        "experience_feature": true
+      },
+      "recommendation_group": "shiki-theatres",
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 15,
+        "reservation_expected": true,
+        "schedule_required": true
+      }
+    },
+    {
+      "spot_id": "spot_244",
+      "slug": "shinbashi-enbujo",
+      "name": "新橋演舞場",
+      "aliases": [
+        "Shinbashi Enbujo"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts",
+        "stage"
+      ],
+      "prefecture": "東京都",
+      "city": "中央区",
+      "address": "東京都中央区銀座6-18-2",
+      "official_url": "https://www.shochiku.co.jp/play/theater/enbujyo/",
+      "environment": "indoor",
+      "stay_minutes_seed": 190,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 45,
+        "parent_rest": 72,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 94,
+        "baby_fit": 10,
+        "toddler_fit": 20,
+        "stroller_fit": 55,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 88
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 92,
+        "scenic": 38,
+        "stroll": 45,
+        "relax": 52,
+        "shopping": 28,
+        "food": 28,
+        "culture": 98,
+        "animals": 0,
+        "creative": 85,
+        "active": 6,
+        "waterside": 5
+      },
+      "editorial_reason": "「何を観るか」で街の見え方が変わる劇場。歌舞伎だけでなく演劇やコンサートもあり、大人の休日の目的地にしやすい。",
+      "public_copy": "歌舞伎から演劇、コンサートまで幅広い舞台を上演する銀座・築地エリアの劇場。公演ごとに違う一日をつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公演日・開演時刻は演目ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケットを確認。",
+        "reservation_summary": "事前購入推奨。販売状況は公演ごとに確認。",
+        "age_note": "演目ごとの年齢・入場条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.shochiku.co.jp/play/theater/enbujyo/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "歌舞伎から演劇、コンサートまで幅広い舞台を上演する銀座・築地エリアの劇場。公演ごとに違う一日をつくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.shochiku.co.jp/play/theater/enbujyo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "新橋演舞場の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 88,
+        "solo": 92,
+        "friends": 82
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "中央区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "新橋演舞場",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ひとり",
+        "雨の日",
+        "学び・文化",
+        "大人も楽しい",
+        "観劇"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "今日は、舞台を観るために銀座へ。",
+        "lead": "演劇の日もあれば、歌舞伎の日も、コンサートの日もある。演目をひとつ選ぶだけで、いつもの銀座が「出かける理由」のある街になる。",
+        "moment": "観るものから休日を決めたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "演劇",
+          "大人の休日",
+          "銀座・築地散歩"
+        ],
+        "priority": 38
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      }
+    },
+    {
+      "spot_id": "spot_245",
+      "slug": "kaat-kanagawa-arts-theatre",
+      "name": "KAAT 神奈川芸術劇場",
+      "aliases": [
+        "KAAT",
+        "神奈川芸術劇場"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts",
+        "stage",
+        "yokohama"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町281",
+      "official_url": "https://www.kaat.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 48,
+        "parent_rest": 74,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 94,
+        "baby_fit": 12,
+        "toddler_fit": 25,
+        "stroller_fit": 70,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 82
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 88,
+        "scenic": 42,
+        "stroll": 62,
+        "relax": 55,
+        "shopping": 18,
+        "food": 35,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 10,
+        "waterside": 5
+      },
+      "editorial_reason": "中華街や山下公園の「ついで」ではなく、舞台を一日の主役にできる横浜の劇場。作品との偶然の出会いもKibunらしい。",
+      "public_copy": "山下町にある舞台芸術の拠点。演劇、ダンス、ミュージカルなど多彩な公演を、横浜の街歩きと合わせて楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公演日・開演時刻は演目ごとに変動。公式スケジュールを確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "公演によって事前予約・購入が必要。",
+        "age_note": "演目ごとの推奨年齢・入場条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.kaat.jp/"
+      },
+      "buzz": {
+        "score": 85,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "山下町にある舞台芸術の拠点。演劇、ダンス、ミュージカルなど多彩な公演を、横浜の街歩きと合わせて楽しめる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.kaat.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "KAAT 神奈川芸術劇場の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 52,
+        "partner": 91,
+        "solo": 94,
+        "friends": 86
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "KAAT 神奈川芸術劇場",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "デート",
+        "ひとり",
+        "雨の日",
+        "学び・文化",
+        "大人も楽しい",
+        "観劇"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "横浜で、知らない舞台に会いに行く。",
+        "lead": "山下町まで出かけて、数時間だけ別の物語の中へ。終演後は中華街か海辺へ寄り道する余白も残して。",
+        "moment": "横浜で文化を主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "演劇・ダンス",
+          "横浜デート",
+          "ひとり観劇"
+        ],
+        "priority": 34,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 20,
+        "reservation_expected": true,
+        "schedule_required": true
+      }
+    },
+    {
+      "spot_id": "spot_246",
+      "slug": "artbar-yokohama",
+      "name": "Artbar Tokyo 横浜元町",
+      "aliases": [
+        "Artbar 横浜元町",
+        "アートバー横浜元町"
+      ],
+      "category_primary": "art_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "painting",
+        "art",
+        "experience",
+        "yokohama"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区元町1-27-2 エンセント横濱元町ビル2F",
+      "official_url": "https://artbar.co.jp/locations/yokohama",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 18,
+        "hands_on": 100,
+        "quietness": 50,
+        "parent_rest": 68,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 100,
+        "baby_fit": 10,
+        "toddler_fit": 20,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 90,
+        "scenic": 30,
+        "stroll": 58,
+        "relax": 72,
+        "shopping": 35,
+        "food": 50,
+        "culture": 92,
+        "animals": 0,
+        "creative": 100,
+        "active": 22,
+        "waterside": 5
+      },
+      "editorial_reason": "作品を見る休日から、自分で一枚つくる休日へ。元町散歩や食事と組み合わせると、記憶に残る半日になる。",
+      "public_copy": "ドリンクを片手に、インストラクターのガイドでキャンバス作品を仕上げる元町のPaint & Sipスタジオ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "クラスごとに開催時間が異なる。予約カレンダーを確認。",
+        "price_summary": "クラス・作品テーマにより異なる。",
+        "reservation_summary": "事前予約推奨。空席は公式予約画面を確認。",
+        "age_note": "子ども向け可否はクラスごとに確認。ノンアルコールドリンクあり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://artbar.co.jp/locations/yokohama"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "ドリンクを片手に、インストラクターのガイドでキャンバス作品を仕上げる元町のPaint & Sipスタジオ。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://artbar.co.jp/locations/yokohama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Artbar Tokyo 横浜元町の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 48,
+        "partner": 98,
+        "solo": 88,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Artbar Tokyo 横浜元町",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "デート",
+        "友だち",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "元町で、ふたりの絵を一枚ずつ。",
+        "lead": "上手に描くより、色を選んで手を動かす時間を楽しむ。描き終わったキャンバスまで、今日のおでかけの記念になる。",
+        "moment": "見るだけじゃなく何かつくりたい日",
+        "collection": "つくる休日",
+        "best_for": [
+          "デート",
+          "友だちとアート",
+          "雨の日"
+        ],
+        "priority": 20,
+        "experience_feature": true
+      },
+      "recommendation_group": "artbar-tokyo",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_247",
+      "slug": "artbar-daikanyama",
+      "name": "Artbar Tokyo 代官山",
+      "aliases": [
+        "Artbar 代官山",
+        "アートバー東京 代官山"
+      ],
+      "category_primary": "art_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "painting",
+        "art",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区代官山町7-2 ベルビュー代官山1F",
+      "official_url": "https://artbar.co.jp/locations/daikanyama",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 18,
+        "hands_on": 100,
+        "quietness": 50,
+        "parent_rest": 68,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 40,
+        "creative_sensory": 100,
+        "baby_fit": 10,
+        "toddler_fit": 20,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 90,
+        "scenic": 30,
+        "stroll": 68,
+        "relax": 72,
+        "shopping": 45,
+        "food": 50,
+        "culture": 92,
+        "animals": 0,
+        "creative": 100,
+        "active": 22,
+        "waterside": 5
+      },
+      "editorial_reason": "カフェ巡りだけでは物足りない日に、予定へ「描く」を足せる。完成品を持ち帰れるから休日の余韻も残る。",
+      "public_copy": "代官山でPaint & Sipを楽しめるアートスタジオ。ドリンクを片手に、ガイドを受けながら自分の作品を仕上げる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "クラスごとに開催時間が異なる。予約カレンダーを確認。",
+        "price_summary": "クラス・作品テーマにより異なる。",
+        "reservation_summary": "事前予約推奨。空席は公式予約画面を確認。",
+        "age_note": "子ども向け可否はクラスごとに確認。ノンアルコールドリンクあり。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://artbar.co.jp/locations/daikanyama"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "代官山でPaint & Sipを楽しめるアートスタジオ。ドリンクを片手に、ガイドを受けながら自分の作品を仕上げる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://artbar.co.jp/locations/daikanyama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Artbar Tokyo 代官山の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 45,
+        "partner": 100,
+        "solo": 90,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJDZzhvESLGGARN8dkUppuoAI"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJDZzhvESLGGARN8dkUppuoAI",
+          "status": "resolved_manual",
+          "query": "Artbar Tokyo Daikanyama",
+          "photo_index_override": null,
+          "force": false,
+          "matched_name": "Artbar Tokyo - Daikanyama アートバー東京 代官山",
+          "matched_address": "東京都渋谷区代官山町7-2 1F",
+          "use_address": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "代官山で、今日は絵を描く。",
+        "lead": "カフェに入る代わりにキャンバスの前へ。色を混ぜて、笑って、気づけば「自分でつくったもの」が休日の終わりに残っている。",
+        "moment": "いつものデートに何か足したい日",
+        "collection": "つくる休日",
+        "best_for": [
+          "Paint & Sip",
+          "代官山デート",
+          "友だちと"
+        ],
+        "priority": 21,
+        "experience_feature": true
+      },
+      "recommendation_group": "artbar-tokyo",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_248",
+      "slug": "crea-base-shinjuku",
+      "name": "CREA BASE 新宿御苑前店",
+      "aliases": [
+        "CREA BASE",
+        "クレアベース 新宿御苑前"
+      ],
+      "category_primary": "art_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "art",
+        "pottery",
+        "experience",
+        "cafe"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区新宿1-7-7 新宿内藤ビル2F",
+      "official_url": "https://creabase.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 130,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 15,
+        "hands_on": 100,
+        "quietness": 58,
+        "parent_rest": 72,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 45,
+        "creative_sensory": 100,
+        "baby_fit": 15,
+        "toddler_fit": 30,
+        "stroller_fit": 55,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 86,
+        "scenic": 20,
+        "stroll": 45,
+        "relax": 78,
+        "shopping": 15,
+        "food": 48,
+        "culture": 90,
+        "animals": 0,
+        "creative": 100,
+        "active": 18,
+        "waterside": 5
+      },
+      "editorial_reason": "「何か趣味がほしい」を、その日のうちに試せる場所。道具を揃えずに、コーヒーやワインと一緒に創作へ入れる。",
+      "public_copy": "陶芸や名画アート、たらし込みアートなどを、カフェ感覚の空間で体験できる新宿御苑前のアート&クラフト拠点。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日・土日で営業時間が異なる。ワークショップ開催日は公式予約を確認。",
+        "price_summary": "体験メニューにより異なる。",
+        "reservation_summary": "各回定員制のため事前予約推奨。",
+        "age_note": "メニューごとの対象年齢を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://creabase.jp/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "陶芸や名画アート、たらし込みアートなどを、カフェ感覚の空間で体験できる新宿御苑前のアート&クラフト拠点。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://creabase.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "CREA BASE 新宿御苑前店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 94,
+        "solo": 96,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJZzFKNteNGGARyU6ol1RsRkU"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJZzFKNteNGGARyU6ol1RsRkU",
+          "status": "resolved_manual",
+          "query": "CREA BASE 新宿御苑前店",
+          "photo_index_override": null,
+          "force": false,
+          "matched_name": "CREA BASE 新宿御苑前店",
+          "matched_address": "東京都新宿区新宿1-7-7 2F",
+          "use_address": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "趣味をひとつ、試しに行く。",
+        "lead": "陶芸でも、絵でも、たらし込みアートでもいい。上手く作る日じゃなくて、知らなかった「好き」を見つける日に。",
+        "moment": "新しいことを軽く始めたい日",
+        "collection": "つくる休日",
+        "best_for": [
+          "アート体験",
+          "ひとり時間",
+          "友だちと"
+        ],
+        "priority": 22,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 40,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_249",
+      "slug": "uzumako-pottery",
+      "name": "うづまこ陶芸教室",
+      "aliases": [
+        "うずまこ陶芸教室",
+        "Uzumako Ceramic Art School"
+      ],
+      "category_primary": "pottery_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "pottery",
+        "craft",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区芝3-29-11 シミズハウス1F",
+      "official_url": "https://www.uzumakotougei.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 24,
+        "hands_on": 100,
+        "quietness": 65,
+        "parent_rest": 62,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 98,
+        "baby_fit": 15,
+        "toddler_fit": 30,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 76,
+        "scenic": 15,
+        "stroll": 48,
+        "relax": 78,
+        "shopping": 5,
+        "food": 5,
+        "culture": 88,
+        "animals": 0,
+        "creative": 100,
+        "active": 25,
+        "waterside": 5
+      },
+      "editorial_reason": "東京タワーの近くで、観光ではなく手を動かす。土の感触に集中しているうちに、スマホを見ない時間ができる。",
+      "public_copy": "芝で一日陶芸体験や電動ろくろなどに挑戦できる陶芸教室。道具を持っていなくても、土に触れる時間をつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "毎日10:00〜19:00を基本。年末年始休み。",
+        "price_summary": "体験コースにより異なる。",
+        "reservation_summary": "WEB予約可。当日希望は電話で確認。",
+        "age_note": "体験コースごとの対象年齢を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.uzumakotougei.com/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "芝で一日陶芸体験や電動ろくろなどに挑戦できる陶芸教室。道具を持っていなくても、土に触れる時間をつくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.uzumakotougei.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "うづまこ陶芸教室の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 62,
+        "partner": 90,
+        "solo": 96,
+        "friends": 95
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJUWLjbrqLGGARlLf1_5b1xdY"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJUWLjbrqLGGARlLf1_5b1xdY",
+          "status": "resolved_manual",
+          "query": "うづまこ陶芸教室",
+          "photo_index_override": null,
+          "force": false,
+          "matched_name": "うづまこ陶芸教室",
+          "matched_address": "東京都港区芝3-29-11 清水ハウス1F",
+          "use_address": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "ものづくり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "土に触ると、時間がゆっくりになる。",
+        "lead": "ろくろの上で形が少しずつ立ち上がっていく。完成を急がず、手の感覚だけに集中する東京の午後。",
+        "moment": "頭を空っぽにして手を動かしたい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "陶芸初体験",
+          "ひとりでも",
+          "デート"
+        ],
+        "priority": 23,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 65,
+        "reservation_expected": false
+      }
+    },
+    {
+      "spot_id": "spot_250",
+      "slug": "darun-pottery",
+      "name": "ダルン陶芸教室",
+      "aliases": [
+        "DARUN Pottery Studio"
+      ],
+      "category_primary": "pottery_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "pottery",
+        "craft",
+        "experience",
+        "yokohama"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区大和町2-47-5 メゾン・ド・ポミエ102",
+      "official_url": "https://darun-pottery.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 24,
+        "hands_on": 100,
+        "quietness": 66,
+        "parent_rest": 62,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 98,
+        "baby_fit": 20,
+        "toddler_fit": 38,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 74,
+        "scenic": 12,
+        "stroll": 48,
+        "relax": 80,
+        "shopping": 5,
+        "food": 5,
+        "culture": 86,
+        "animals": 0,
+        "creative": 100,
+        "active": 25,
+        "waterside": 5
+      },
+      "editorial_reason": "中華街でもみなとみらいでもない横浜で、器をひとつ作って帰る。自分で作ったものが後日届くまで、おでかけが少し続く。",
+      "public_copy": "JR山手駅近くで、電動ろくろや手びねり、土鍋づくりなどの一日陶芸体験ができる横浜の教室。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "体験枠は公式予約画面で確認。営業時間は10:00〜19:00を基本。",
+        "price_summary": "体験コースにより異なる。",
+        "reservation_summary": "WEB・電話予約可。空き状況は事前確認推奨。",
+        "age_note": "親子向けプランあり。コースごとの対象年齢を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://darun-pottery.com/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "JR山手駅近くで、電動ろくろや手びねり、土鍋づくりなどの一日陶芸体験ができる横浜の教室。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://darun-pottery.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "ダルン陶芸教室の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 90,
+        "solo": 92,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJVVWhBtlcGGARZpqngnE2ruU"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJVVWhBtlcGGARZpqngnE2ruU",
+          "status": "resolved_manual",
+          "query": "ダルン陶芸教室",
+          "photo_index_override": null,
+          "force": false,
+          "matched_name": "ダルン陶芸教室 DARUN Pottery Studio",
+          "matched_address": "神奈川県横浜市中区大和町2-47-5 102",
+          "use_address": false
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "子どもと",
+        "デート",
+        "友だち",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "ものづくり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "横浜で、使う器を自分でつくる。",
+        "lead": "土を丸めて、削って、形を決める。完成した器を家で使うたびに、今日の横浜を思い出せる。",
+        "moment": "親子でもふたりでも何か残したい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "親子陶芸",
+          "横浜デート",
+          "ものづくり"
+        ],
+        "priority": 24,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 60,
+        "reservation_expected": false
+      }
+    },
+    {
+      "spot_id": "spot_251",
+      "slug": "yokohama-pottery-center",
+      "name": "横浜市陶芸センター",
+      "aliases": [
+        "横浜市陶芸センター 本牧"
+      ],
+      "category_primary": "pottery_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "pottery",
+        "craft",
+        "experience",
+        "family",
+        "yokohama"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区本牧三之谷59-3 本牧市民公園内",
+      "official_url": "https://www.yokohamasitougeicenter.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 28,
+        "hands_on": 100,
+        "quietness": 68,
+        "parent_rest": 58,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 96,
+        "baby_fit": 20,
+        "toddler_fit": 45,
+        "stroller_fit": 60,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 75
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 68,
+        "scenic": 25,
+        "stroll": 52,
+        "relax": 80,
+        "shopping": 5,
+        "food": 5,
+        "culture": 90,
+        "animals": 0,
+        "creative": 100,
+        "active": 28,
+        "waterside": 5
+      },
+      "editorial_reason": "公園へ行く日に、土に触れる予定をひとつ足す。親子でも大人でも、手を動かしたぶんだけ持ち帰れるものが増える。",
+      "public_copy": "本牧市民公園内で、一日陶芸体験や電動ろくろ、親子向け講座などを開催する陶芸施設。講座日程から選んで参加できる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "体験講座は開催日制。公式の講座日程を確認。",
+        "price_summary": "講座ごとに設定。材料・焼成費込みの講座あり。",
+        "reservation_summary": "事前申込制の講座が中心。受付開始日・定員を確認。",
+        "age_note": "未就学児から参加できる講座や子ども向け企画あり。各講座条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.yokohamasitougeicenter.com/course/index.html"
+      },
+      "buzz": {
+        "score": 75,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "本牧市民公園内で、一日陶芸体験や電動ろくろ、親子向け講座などを開催する陶芸施設。講座日程から選んで参加できる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.yokohamasitougeicenter.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜市陶芸センターの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 78,
+        "solo": 84,
+        "friends": 86
+      },
+      "adult_enjoyment_seed": 88,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜市陶芸センター",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "子どもと",
+        "雨の日",
+        "学び・体験",
+        "ものづくり",
+        "神奈川ローカル"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "公園の日に、陶芸をひとつ。",
+        "lead": "本牧の緑のそばで、手びねりやろくろに集中する。遊ぶだけでも見るだけでもない、親子の休日をつくれる。",
+        "moment": "親子で一緒に手を動かしたい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "親子体験",
+          "陶芸",
+          "本牧散歩"
+        ],
+        "priority": 27
+      },
+      "planning_profile": {
+        "style": "scheduled",
+        "same_day_fit": 20,
+        "reservation_expected": true,
+        "schedule_required": true
+      }
+    },
+    {
+      "spot_id": "spot_252",
+      "slug": "tsugutsugu-asakusa",
+      "name": "金継ぎ教室つぐつぐ 浅草店",
+      "aliases": [
+        "つぐつぐ 浅草",
+        "TSUGU TSUGU"
+      ],
+      "category_primary": "kintsugi_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "kintsugi",
+        "traditional_culture",
+        "craft",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区雷門1-1-2 1F",
+      "official_url": "https://kintsugi-girl.com/tsugutsugu/kintsugi-school/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 8,
+        "hands_on": 100,
+        "quietness": 82,
+        "parent_rest": 70,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 94,
+        "baby_fit": 5,
+        "toddler_fit": 10,
+        "stroller_fit": 40,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 68
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 84,
+        "scenic": 10,
+        "stroll": 55,
+        "relax": 88,
+        "shopping": 10,
+        "food": 5,
+        "culture": 100,
+        "animals": 0,
+        "creative": 100,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "壊れた跡を消すのではなく、金で残す。浅草観光とは少し違う、日本の手仕事と価値観に触れる時間。",
+      "public_copy": "割れた器を漆や金で繕う金継ぎを、浅草で体験できる教室。1日完結のワークショップも用意されている。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ワークショップ・教室ごとに開催日時が異なる。予約ページを確認。",
+        "price_summary": "コースにより異なる。",
+        "reservation_summary": "1日ワークショップ・本格教室とも事前予約推奨。",
+        "age_note": "漆を扱うため、体質・年齢条件や注意事項を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://kintsugi-girl.com/tsugutsugu/kintsugi-school/"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "割れた器を漆や金で繕う金継ぎを、浅草で体験できる教室。1日完結のワークショップも用意されている。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://kintsugi-girl.com/tsugutsugu/kintsugi-school/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "金継ぎ教室つぐつぐ 浅草店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 30,
+        "partner": 88,
+        "solo": 100,
+        "friends": 82
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "金継ぎ教室つぐつぐ 浅草店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・文化",
+        "学び・体験",
+        "ものづくり",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "傷を、きれいに隠さない。",
+        "lead": "欠けやひびを金でつなぎ、器の時間をそのまま残す。浅草で、ものを直すことまで作品にする日本の手仕事へ。",
+        "moment": "静かに集中できる体験がしたい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "金継ぎ",
+          "日本文化体験",
+          "ひとり時間"
+        ],
+        "priority": 25,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_253",
+      "slug": "glass-lab-kiyosumi",
+      "name": "椎名切子 SHOP & FACTORY（GLASS-LAB）",
+      "aliases": [
+        "GLASS-LAB",
+        "グラスラボ 清澄白河",
+        "椎名切子"
+      ],
+      "category_primary": "glass_craft_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "glass",
+        "edo_kiriko",
+        "traditional_culture",
+        "craft",
+        "experience",
+        "factory"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区平野1-13-11",
+      "official_url": "https://glass-labo.com/work/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 25,
+        "hands_on": 100,
+        "quietness": 58,
+        "parent_rest": 58,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 100,
+        "baby_fit": 15,
+        "toddler_fit": 28,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 88,
+        "scenic": 18,
+        "stroll": 62,
+        "relax": 68,
+        "shopping": 42,
+        "food": 10,
+        "culture": 100,
+        "animals": 0,
+        "creative": 100,
+        "active": 22,
+        "waterside": 5
+      },
+      "editorial_reason": "カフェの街・清澄白河で、職人の道具に触れる寄り道。自分の手でガラスに模様を刻むと、街歩きが小さな工房旅になる。",
+      "public_copy": "清澄白河のガラス工房で、江戸切子や醤油さし加工などの制作体験に参加できる。職人の仕事場に入る感覚も魅力。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "工房営業時間を基本に、制作体験は予約枠で実施。最新の体験ページを確認。",
+        "price_summary": "体験メニューにより異なる。",
+        "reservation_summary": "江戸切子体験は電話予約、その他はネット予約対応のメニューあり。",
+        "age_note": "メニューごとに対象年齢が異なる。子ども可の体験もあるため公式確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://glass-labo.com/work/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "清澄白河のガラス工房で、江戸切子や醤油さし加工などの制作体験に参加できる。職人の仕事場に入る感覚も魅力。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://glass-labo.com/work/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "椎名切子 SHOP & FACTORY（GLASS-LAB）の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 92,
+        "solo": 96,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "GLASS-LAB 清澄白河",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "学び・文化",
+        "学び・体験",
+        "ものづくり",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "清澄白河で、ガラスに光を刻む。",
+        "lead": "職人の工房で、透明なガラスに少しずつ模様を入れる。カフェ巡りの途中に、手仕事の記憶をひとつ持ち帰る。",
+        "moment": "街歩きにものづくりを足したい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "江戸切子",
+          "清澄白河散歩",
+          "工房体験"
+        ],
+        "priority": 26,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_254",
+      "slug": "ganso-food-sample-kappabashi",
+      "name": "元祖食品サンプル屋 合羽橋店",
+      "aliases": [
+        "元祖食品サンプル屋",
+        "食品サンプル製作体験 合羽橋"
+      ],
+      "category_primary": "craft_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "food_sample",
+        "craft",
+        "experience",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区西浅草3-7-6",
+      "official_url": "https://www.ganso-sample.com/experience/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 32,
+        "hands_on": 100,
+        "quietness": 38,
+        "parent_rest": 50,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 45,
+        "creative_sensory": 100,
+        "baby_fit": 5,
+        "toddler_fit": 15,
+        "stroller_fit": 50,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 92,
+        "scenic": 15,
+        "stroll": 72,
+        "relax": 48,
+        "shopping": 45,
+        "food": 70,
+        "culture": 82,
+        "animals": 0,
+        "creative": 100,
+        "active": 35,
+        "waterside": 5
+      },
+      "editorial_reason": "見るだけで楽しい合羽橋で、今日は「作る側」へ。完成した食品サンプルを持ち帰れば、浅草散歩の話の種まで残る。",
+      "public_copy": "合羽橋で、職人技をもとにした食品サンプル製作を体験できる店。定番の天ぷらやレタスなどを自分の手で形にする。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "店舗は10:00〜17:30を基本。体験時間は予約枠ごとに設定。",
+        "price_summary": "製作体験メニューにより異なる。",
+        "reservation_summary": "常設体験は予約制。空き状況を公式で確認。",
+        "age_note": "常時実施の天ぷら＆レタス体験は小学1年生以上。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.ganso-sample.com/experience/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "合羽橋で、職人技をもとにした食品サンプル製作を体験できる店。定番の天ぷらやレタスなどを自分の手で形にする。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.ganso-sample.com/experience/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "元祖食品サンプル屋 合羽橋店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 80,
+        "solo": 78,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 86,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "元祖食品サンプル屋 合羽橋店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "友だち",
+        "雨の日",
+        "学び・体験",
+        "ものづくり",
+        "非日常"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "合羽橋で、食べられない天ぷらをつくる。",
+        "lead": "蝋がレタスになって、衣が天ぷらになっていく。職人の工夫を手の中で体験すると、道具街の景色までちょっと面白くなる。",
+        "moment": "笑えるものづくりがしたい日",
+        "collection": "つくる休日",
+        "best_for": [
+          "食品サンプル",
+          "親子・友だち",
+          "浅草・合羽橋"
+        ],
+        "priority": 28,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 30,
+        "reservation_expected": true
+      },
+      "age_constraints": {
+        "min_months": 72,
+        "note": "常時実施の製作体験は小学1年生以上。"
+      }
+    },
+    {
+      "spot_id": "spot_255",
+      "slug": "atelier-ann-asakusa",
+      "name": "Atelier ann 浅草",
+      "aliases": [
+        "ann fragrance 浅草",
+        "アンフレグランス 浅草"
+      ],
+      "category_primary": "fragrance_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "fragrance",
+        "art",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区浅草2-32-10 山崎ビル101",
+      "official_url": "https://annfragrance.com/pages/atelier-ann",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 5,
+        "hands_on": 95,
+        "quietness": 72,
+        "parent_rest": 78,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 100,
+        "baby_fit": 5,
+        "toddler_fit": 10,
+        "stroller_fit": 45,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 78
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 94,
+        "scenic": 55,
+        "stroll": 70,
+        "relax": 88,
+        "shopping": 48,
+        "food": 5,
+        "culture": 72,
+        "animals": 0,
+        "creative": 100,
+        "active": 5,
+        "waterside": 5
+      },
+      "editorial_reason": "浅草で買うお土産ではなく、自分で香りをつくって持ち帰る。数週間後、その香りだけで休日を思い出せる。",
+      "public_copy": "浅草のカラフルなアトリエで、香りを選びながら自分だけのフレグランスを調合できる体験スタジオ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "浅草店は10:00〜18:00を基本。最新営業時間は公式確認。",
+        "price_summary": "体験プランにより異なる。",
+        "reservation_summary": "WEB予約は希望日の14日前〜前日。予約枠を公式で確認。",
+        "age_note": "香料を扱うため、年齢・体調に関する注意事項を公式で確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://annfragrance.com/pages/atelier-ann"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "浅草のカラフルなアトリエで、香りを選びながら自分だけのフレグランスを調合できる体験スタジオ。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://annfragrance.com/pages/atelier-ann"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Atelier ann 浅草の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 25,
+        "partner": 100,
+        "solo": 96,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Atelier ann 浅草",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "大人も楽しい",
+        "非日常"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "浅草の記憶を、香りにする。",
+        "lead": "いくつもの香りから好きなものを選び、自分だけの一本へ。浅草で過ごした時間を、写真じゃなく香りで持ち帰る。",
+        "moment": "五感で残る体験がしたい日",
+        "collection": "つくる休日",
+        "best_for": [
+          "香水づくり",
+          "デート",
+          "浅草散歩"
+        ],
+        "priority": 19,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 10,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_256",
+      "slug": "ozu-washi",
+      "name": "小津和紙 手漉き和紙体験工房",
+      "aliases": [
+        "小津和紙",
+        "OZU WASHI"
+      ],
+      "category_primary": "washi_workshop",
+      "categories": [
+        "creative",
+        "workshop",
+        "washi",
+        "traditional_culture",
+        "craft",
+        "experience",
+        "museum"
+      ],
+      "prefecture": "東京都",
+      "city": "中央区",
+      "address": "東京都中央区日本橋本町3-6-2 小津本館ビル1F",
+      "official_url": "https://www.ozuwashi.net/workshop.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 2,
+        "physical_activity": 12,
+        "hands_on": 100,
+        "quietness": 78,
+        "parent_rest": 68,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 96,
+        "baby_fit": 15,
+        "toddler_fit": 35,
+        "stroller_fit": 65,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 22,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 5,
+        "extraordinary": 78,
+        "scenic": 18,
+        "stroll": 62,
+        "relax": 88,
+        "shopping": 32,
+        "food": 5,
+        "culture": 100,
+        "animals": 0,
+        "creative": 100,
+        "active": 12,
+        "waterside": 5
+      },
+      "editorial_reason": "紙を「買う」前に、一枚つくってみる。水の中で繊維をすくい、乾かし、自分の手で紙になる瞬間を見る日本橋の寄り道。",
+      "public_copy": "日本橋の老舗和紙店で、日本の伝統的な手漉き和紙を自分で作れる体験工房。完成した和紙は当日持ち帰れる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "体験工房は火〜土に複数枠。月曜・日曜など休業条件あり。公式カレンダーを確認。",
+        "price_summary": "通常体験・貸切などメニューにより異なる。",
+        "reservation_summary": "3日前までの予約推奨。空きがあれば当日受付可。",
+        "age_note": "体験内容・子どもの参加条件は予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.ozuwashi.net/workshop.html"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 82,
+        "social_presence": 76,
+        "visual_appeal": 88,
+        "media_attention": 78,
+        "popularity_momentum": 78,
+        "reason": "日本橋の老舗和紙店で、日本の伝統的な手漉き和紙を自分で作れる体験工房。完成した和紙は当日持ち帰れる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.ozuwashi.net/workshop.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "小津和紙 手漉き和紙体験工房の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 88,
+        "solo": 98,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "中央区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "小津和紙",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "雨の日",
+        "学び・文化",
+        "学び・体験",
+        "ものづくり",
+        "日本橋"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "一枚の紙を、最初からつくる。",
+        "lead": "水の中の繊維をすくって、揺らして、乾かす。いつも何気なく触れている紙が、手仕事の集積に見えてくる。",
+        "moment": "日本の手仕事に静かに触れたい日",
+        "collection": "手仕事の時間",
+        "best_for": [
+          "和紙づくり",
+          "日本橋散歩",
+          "ひとり体験"
+        ],
+        "priority": 29
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 65,
+        "reservation_expected": false
       }
     }
   ]

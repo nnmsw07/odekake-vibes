@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29",
+  "generated_at": "2026-08-30",
   "guides": [
     {
       "slug": "yokohama-kids",
@@ -24,9 +24,9 @@
       "region_key": "yokohama",
       "region": "横浜",
       "category_key": "experience",
-      "category": "体験・学び",
-      "count": 22,
-      "title": "横浜の体験・学びスポット｜今日のおでかけ候補"
+      "category": "つくる・体験",
+      "count": 25,
+      "title": "横浜のものづくり・体験スポット｜今日のおでかけ候補"
     },
     {
       "slug": "yokohama-culture",
@@ -159,9 +159,9 @@
       "region_key": "tokyo23",
       "region": "東京23区",
       "category_key": "experience",
-      "category": "体験・学び",
-      "count": 29,
-      "title": "東京23区の体験・学びスポット｜今日のおでかけ候補"
+      "category": "つくる・体験",
+      "count": 37,
+      "title": "東京23区のものづくり・体験スポット｜今日のおでかけ候補"
     },
     {
       "slug": "chiba-kids",
@@ -200,5 +200,5 @@
       "title": "伊豆の泊まりたいホテル・温泉宿｜Kibun Trip"
     }
   ],
-  "version": "0.19.7"
+  "version": "0.19.7.2"
 }
