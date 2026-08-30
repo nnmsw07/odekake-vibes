@@ -27,7 +27,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=25" />
+  <link rel="stylesheet" href="styles.css?v=198" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -51,7 +51,7 @@
 <body>
   <header class="topbar">
     <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun <span class="brand-menu-mark">⌄</span></button>
-    <span class="topbar-tag">MOOD → PLACE</span>
+    <span class="topbar-tag">MOOD → DAY</span>
     <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
   </header>
 
@@ -104,16 +104,16 @@
           </label>
           <label class="field-card"><span class="field-label">☀️ 今日の空気</span><select id="weatherSelect"><option value="any">気にしない</option><option value="hot" selected>暑い</option><option value="rain">雨</option><option value="clear">晴れ</option><option value="cold">寒い</option></select></label>
           <label class="field-card"><span class="field-label">🕐 使える時間</span><select id="timeSelect"><option value="90">1〜2時間</option><option value="180" selected>半日くらい</option><option value="360">たっぷり半日</option><option value="480">1日</option></select></label>
-          <label class="field-card stay-mode-card"><span class="field-label">🌙 今日帰る？</span><select id="stayModeSelect"><option value="day" selected>今日は日帰り</option><option value="overnight">泊まりもあり</option></select><small class="field-note">「泊まりもあり」にすると、ホテル・温泉宿も今日の3つ候補に入ります。</small></label>
+          <label class="field-card stay-mode-card"><span class="field-label">🌙 今日帰る？</span><select id="stayModeSelect"><option value="day" selected>今日は日帰り</option><option value="overnight">泊まりもあり</option></select><small class="field-note">「泊まりもあり」にすると、ホテル・温泉宿も過ごし方の候補に入ります。</small></label>
         </div>
       </details>
 
-      <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の3つを見る <span>→</span></button>
+      <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の過ごし方を見る <span>→</span></button>
       <p class="microcopy">関東＋伊豆256スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
-      <div class="section-heading"><div><p class="eyebrow">TODAY'S PICKS</p><h2 id="resultsHeading">今日のあなたなら、<br>この3つ。</h2><p id="travelResultNote" class="result-note" hidden></p></div><button id="editBtn" class="outline-btn" type="button">条件を変える</button></div>
+      <div class="section-heading"><div><p class="eyebrow">TODAY'S PLANS</p><h2 id="resultsHeading">今日のあなたなら、<br>こんな3つの過ごし方。</h2><p id="travelResultNote" class="result-note" hidden></p></div><button id="editBtn" class="outline-btn" type="button">条件を変える</button></div>
       <div id="coverageWarning" class="warning" hidden></div><div id="resultsGrid" class="results-grid"></div>
     </section>
 
@@ -136,6 +136,7 @@
   </main>
 
   <dialog id="spotDialog" class="spot-dialog"><button id="dialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button><div id="dialogContent"></div></dialog>
+  <dialog id="planDialog" class="plan-dialog"><button id="planDialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button><div id="planDialogContent"></div></dialog>
   <dialog id="browseDialog" class="browse-dialog">
     <button id="browseClose" class="dialog-close browse-close" type="button" aria-label="閉じる">×</button>
     <div class="browse-inner">
@@ -158,7 +159,7 @@
   </dialog>
   <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="guide/">地域・テーマ別ガイド</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=26"></script><script src="data.js?v=26"></script><script src="recommender.js?v=26"></script><script src="travel.js?v=26"></script><script src="media.js?v=26"></script><script src="affiliate-config.js?v=197"></script>
+  <script src="config.js?v=26"></script><script src="data.js?v=26"></script><script src="recommender.js?v=198"></script><script src="plans.js?v=198"></script><script src="travel.js?v=26"></script><script src="media.js?v=26"></script><script src="affiliate-config.js?v=197"></script>
   <script src="affiliate.js?v=197"></script>
-  <script src="app.js?v=26"></script>
+  <script src="app.js?v=198"></script>
 </body></html>

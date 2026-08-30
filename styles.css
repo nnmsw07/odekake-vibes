@@ -82,3 +82,24 @@
 .experience-feature-media{height:190px;overflow:hidden;background:#e7e1d8}.experiencefeature-image{height:100%;position:relative}.experiencefeature-image img{width:100%;height:100%;object-fit:cover;display:block}
 .experience-feature-copy{padding:16px 16px 18px}.experience-feature-copy>span{font-size:8px;font-weight:900;letter-spacing:.13em;color:var(--green);text-transform:uppercase}.experience-feature-copy strong{display:block;font-family:Georgia,"Yu Mincho",serif;font-size:20px;line-height:1.32;margin:7px 0}.experience-feature-copy small{font-size:9px;color:var(--muted)}.experience-feature-copy p{font-size:10px;line-height:1.65;color:var(--muted);margin:10px 0 0}.experience-feature-link{text-align:center;margin-top:18px}.experience-feature-link button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 16px;font-weight:850;cursor:pointer}
 @media(max-width:880px){.experience-feature-grid{display:flex;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity}.experience-feature-card{min-width:min(78vw,310px);scroll-snap-align:start}}
+
+/* v19.8 Kibun Plans */
+.plan-card-meta{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:0 0 10px;font-size:9px;font-weight:900;letter-spacing:.1em;color:var(--green)}
+.plan-card-meta span:last-child{letter-spacing:0;color:var(--muted);font-weight:800}
+.plan-title{font-family:Georgia,"Yu Mincho",serif;font-size:27px!important;line-height:1.28!important;letter-spacing:-.035em;margin:0 0 8px!important}
+.plan-lead{font-size:11px!important;line-height:1.72!important;margin-bottom:14px!important}
+.plan-stops{display:grid;gap:7px;margin:12px 0 18px;padding:10px;border-radius:18px;background:var(--bg)}
+.plan-stop{display:grid;grid-template-columns:28px minmax(0,1fr);gap:9px;align-items:center;padding:7px 6px}
+.plan-stop+.plan-stop{border-top:1px solid var(--line)}
+.plan-stop-num{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:1px solid var(--line);font-size:9px;font-weight:900;color:var(--green-deep)}
+.plan-stop-copy{min-width:0;display:flex;flex-direction:column}.plan-stop-copy small{font-size:8px;color:var(--muted)}.plan-stop-copy strong{font-size:10px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.plan-detail-btn{width:100%;justify-content:space-between}
+.plan-dialog{width:min(720px,calc(100% - 22px));max-height:92vh;border:0;border-radius:34px;padding:0;background:var(--paper);box-shadow:0 32px 90px rgba(0,0,0,.27)}
+.plan-dialog::backdrop{background:rgba(24,22,19,.52);backdrop-filter:blur(5px)}
+.plan-dialog-media,.plandialog-image{height:min(42vh,360px);position:relative;overflow:hidden;background:#e7e1d8}.plandialog-image img{width:100%;height:100%;object-fit:cover;display:block}
+.plan-dialog-hero{padding:27px 30px 18px}.plan-dialog-hero h2{font-family:Georgia,"Yu Mincho",serif;font-size:42px;line-height:1.18;letter-spacing:-.045em;margin:4px 0 12px;font-weight:500}.plan-dialog-hero>p:not(.eyebrow){font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.plan-dialog-body{padding:7px 30px 34px}.plan-flow-title{font-family:Georgia,"Yu Mincho",serif;font-size:26px;margin:0 0 14px;font-weight:500}
+.plan-dialog-stops{display:grid;gap:10px}.plan-dialog-stop{display:grid;grid-template-columns:46px minmax(0,1fr);gap:14px;padding:18px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#fffdf9,#f6f1e9)}
+.plan-dialog-num{font-family:Georgia,serif;font-size:25px;color:var(--accent)}.plan-dialog-stop-copy p{margin:0 0 3px;font-size:8px;font-weight:900;color:var(--green);letter-spacing:.08em}.plan-dialog-stop-copy h3{font-family:Georgia,"Yu Mincho",serif;font-size:21px;margin:0 0 7px;line-height:1.3}.plan-dialog-stop-copy span{display:block;font-size:10px;line-height:1.65;color:var(--muted)}.plan-dialog-stop-copy button{border:0;background:transparent;padding:10px 0 0;text-align:left;font-size:10px;font-weight:900;text-decoration:underline;cursor:pointer}
+.plan-caution{margin:16px 2px 0;font-size:9px;line-height:1.6;color:#9a9389}
+@media(max-width:560px){.plan-title{font-size:25px!important}.plan-dialog{border-radius:28px}.plan-dialog-media,.plandialog-image{height:260px}.plan-dialog-hero{padding:22px 19px 14px}.plan-dialog-hero h2{font-size:31px}.plan-dialog-body{padding:6px 19px 28px}.plan-dialog-stop{grid-template-columns:36px minmax(0,1fr);padding:15px 13px}.plan-dialog-num{font-size:21px}}
