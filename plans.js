@@ -60,11 +60,12 @@
   function minCoverageMinutes(displayMinutes){const m=Number(displayMinutes||180);if(m<=120)return Math.max(45,m*.5);if(m<=240)return m*.62;if(m<=390)return m*.60;return m*.56;}
   function shouldStaySingle(s,displayMinutes){const stay=Number(s.stay_minutes_seed||120);if(s.overnight)return false;if(displayMinutes<=120)return true;if(stay>=Math.max(105,displayMinutes*.62))return true;if(stay>=150&&displayMinutes<=240)return true;return false;}
   function eligible(s,ctx,allowOvernight){if(!s)return false;const c={...ctx,allowOvernight,includeBrowseOnly:false};return typeof hardFilterReason==='function'?!hardFilterReason(s,c):s.recommendation_mode!=='browse_only'&&(allowOvernight||!s.overnight);}
+  function companionContext(ctx={}){return {...ctx,selectedVibes:(ctx.selectedVibes||[]).filter(v=>v!=='shopping')};}
   function rankedCompanions(seed,primary,ctx,remaining,used,opts={}){
     if(remaining<45)return[];const primaryKind=categoryKind(primary);
     return (seed.spots||[]).filter(s=>{
       if(s.spot_id===primary.spot_id||used.has(s.spot_id)||groupKey(s)===groupKey(primary)||!samePlanArea(primary,s))return false;
-      if(!eligible(s,ctx,!!opts.allowOvernight))return false;
+      if(!eligible(s,companionContext(ctx),!!opts.allowOvernight))return false;
       const stay=Number(s.stay_minutes_seed||120);if(stay>Math.max(60,remaining+25)||stay<35)return false;
       if(!opts.allowSameKind&&categoryKind(s)===primaryKind&&!isMealSpot(s))return false;
       if(opts.mealOnly&&!isMealSpot(s))return false;
@@ -72,7 +73,7 @@
       if(opts.familyRole&&!isMealSpot(s)){const pc=childFocusScore(primary,ctx),pa=adultFocusScore(primary),sc=childFocusScore(s,ctx),sa=adultFocusScore(s);if(pa>=pc+8&&sc<68)return false;if(pc>=pa+8&&sa<76)return false;}
       return true;
     }).map(s=>{
-      const sc=typeof baseScores==='function'?baseScores(s,{...ctx,allowOvernight:!!opts.allowOvernight,availableMinutes:remaining}):{overall:70};
+      const cctx=companionContext(ctx);const sc=typeof baseScores==='function'?baseScores(s,{...cctx,allowOvernight:!!opts.allowOvernight,availableMinutes:remaining}):{overall:70};
       const comp=complementScore(primary,s),family=ctx.audience==='family'?familyBalanceScore(primary,s,ctx):70;
       const sameKindPenalty=categoryKind(primary)===categoryKind(s)?28:0,mealBonus=opts.preferMeal&&isMealSpot(s)?18:0;
       const profileBonus=s.plan_profile?.role==='companion'?8:0,restBonus=opts.mealOnly&&s.plan_profile?.family_recovery?10:0;
@@ -89,12 +90,47 @@
   function threeStopLead(spots,ctx){const [a,b,c]=spots;if(ctx.audience==='family'&&isMealSpot(c)){const ac=childFocusScore(a,ctx),aa=adultFocusScore(a),bc=childFocusScore(b,ctx),ba=adultFocusScore(b);if(aa>=ac+8&&bc>=68)return`${a.name}で大人も楽しんだら、${b.name}では子どもの「やりたい」を。最後は${c.name}で座って休む。`;if(ac>=aa+8&&ba>=76)return`${a.name}では子どもが夢中に。そのあと${b.name}で大人も楽しみ、最後は${c.name}でひと休み。`;return`${a.name}と${b.name}で親子それぞれの楽しみをつくって、最後は${c.name}で少しペースを落とす。`;}return`${a.name}から始めて、${b.name}へ。最後は${c.name}で少しペースを落とす。`;}
   function coverageMinutes(spots){return spots.reduce((sum,s)=>sum+Number(s?.stay_minutes_seed||0),0)+Math.max(0,spots.length-1)*30;}
   function coverageOk(spots,displayMinutes){if(Number(displayMinutes||180)<=120)return true;return coverageMinutes(spots)>=minCoverageMinutes(displayMinutes);}
+  const CURATED_PLANS=[
+    {id:'family_yokohama_art_play_food',aud:['family'],min:360,max:540,vibes:['culture','creative','food','relax'],spots:['spot_101','spot_007','spot_259'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'アートも遊びも、最後のひと休みも。',lead:'横浜美術館で大人も楽しんだら、MARK ISでは子どもの時間。最後は赤レンガで、港を眺めながらひと休み。'},
+    {id:'family_yokohama_shopping_play_food',aud:['family'],min:420,max:570,vibes:['shopping','food','active','relax'],spots:['spot_107','spot_007','spot_259'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'買い物だけで終わらない、みなとみらいの一日。',lead:'ワールドポーターズを見て回ったら、子どもは思いきり遊ぶ時間へ。最後は港のそばで座ってごはん。'},
+    {id:'family_yokohama_station_shop_kids_food',aud:['family'],min:300,max:450,vibes:['shopping','culture','food'],spots:['spot_087','spot_015','spot_261'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'横浜駅から、買い物と電車とごはん。',lead:'ベイクォーターを見て歩き、京急ミュージアムでは子どもの「見たい」を。最後は水辺側でゆっくり食事。'},
+    {id:'family_odaiba_science_lego_food',aud:['family'],min:420,max:570,vibes:['culture','creative','active','food'],spots:['spot_286','spot_285','spot_267'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'未来をのぞいて、レゴで遊んで、最後は甘いもの。',lead:'日本科学未来館で親子の「なぜ？」を楽しみ、次はレゴの世界へ。遊び切ったら、お台場で座ってひと休み。'},
+    {id:'family_odaiba_sea_kids_food',aud:['family'],min:330,max:480,vibes:['nature','waterside','active','food','relax'],spots:['spot_149','spot_285','spot_267'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'海を眺めて、子どもは思いきり遊ぶ。',lead:'まずはお台場の海辺で気分転換。レゴで子どもの時間をつくったら、最後はカフェでゆっくり。'},
+    {id:'family_tachikawa_green_play_food',aud:['family'],min:420,max:570,vibes:['nature','shopping','active','food','relax'],spots:['spot_114','spot_028','spot_264'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'緑の街を歩いて、遊んで、ちゃんと食べる。',lead:'GREEN SPRINGSで大人も気分転換。PLAY! PARKで子どもが遊び切ったら、最後は親子で落ち着いてごはん。'},
+    {id:'family_futako_play_food',aud:['family'],min:240,max:360,vibes:['creative','active','food','relax'],spots:['spot_130','spot_262'],labels:['子どもの時間','ひと休み・ごはん'],title:'遊びに夢中になったら、そのままゆっくりごはん。',lead:'ERIC CARLEの世界でたっぷり遊んで、帰る前に100本のスプーンへ。親も座って休める半日に。'},
+    {id:'family_toyosu_shop_kids_food',aud:['family'],min:420,max:600,vibes:['shopping','food','relax'],spots:['spot_135','spot_027','spot_265'],labels:['大人も楽しむ','子どもの時間','ひと休み・ごはん'],title:'買い物も、不思議な世界も、親子でひとつの一日に。',lead:'ららぽーと豊洲を見て回ったら、teamLabで景色を変える。最後は子連れでも入りやすいごはんへ。'},
+    {id:'family_enoshima_aqua_garden_cafe',aud:['family'],min:360,max:510,vibes:['animals','nature','scenic','food','waterside'],spots:['spot_051','spot_105','spot_277'],labels:['子どもの時間','大人も楽しむ','ひと休み・ごはん'],title:'水族館のあと、江の島の上まで。',lead:'新江ノ島水族館では子どもが夢中に。そのあと島の景色を楽しみ、最後は高台のカフェでひと休み。'},
+    {id:'family_inage_park_food',aud:['family'],min:300,max:480,vibes:['nature','waterside','active','food','relax'],spots:['spot_076','spot_283'],labels:['子どもの時間','ひと休み・ごはん'],title:'海辺で遊んだら、景色のいいテーブルへ。',lead:'稲毛海浜公園で外の時間を楽しんで、そのまま海を眺められるレストランへ。移動を増やさない休日。'},
+    {id:'partner_yokohama_art_walk_food',aud:['partner'],min:360,max:510,vibes:['culture','stroll','food','scenic'],spots:['spot_101','spot_085','spot_259'],labels:['じっくり見る','海辺を歩く','ごはん'],title:'アートを見たあと、港の方へ歩いていく。',lead:'横浜美術館から海辺へ。MARINE & WALKをのぞきながら歩いて、最後は赤レンガで食事を。'},
+    {id:'partner_roppongi_art_design',aud:['partner','solo'],min:240,max:390,vibes:['culture','stroll','relax'],spots:['spot_152','spot_153'],labels:['じっくり見る','もうひとつ'],title:'大きな展示のあと、小さなデザインへ。',lead:'国立新美術館でじっくり見たら、21_21 DESIGN SIGHTへ。近い距離で、視点だけを少し変える。'},
+    {id:'partner_tennoz_library_dinner',aud:['partner','solo'],min:180,max:330,vibes:['culture','food','waterside','relax'],spots:['spot_169','spot_268'],labels:['静かな時間','ごはん'],title:'本のあるラウンジから、水辺のテーブルへ。',lead:'天王洲で静かな時間を過ごしたあと、そのまま運河沿いで食事へ。移動より、余韻を長くする半日。'},
+    {id:'partner_daikanyama_books_food',aud:['partner','solo'],min:210,max:360,vibes:['culture','shopping','food','stroll'],spots:['spot_091','spot_273'],labels:['本と買い物','ごはん'],title:'本を眺めて、緑のテラスで話す。',lead:'代官山 T-SITEを気ままに見て回り、最後はIVY PLACEへ。予定を詰めず、会話の時間を長めに。'},
+    {id:'partner_kiyosumi_garden_craft_food',aud:['partner','solo'],min:270,max:420,vibes:['nature','creative','culture','food'],spots:['spot_118','spot_253','spot_263'],labels:['庭を歩く','ものづくり','ひと休み・ごはん'],title:'庭園の静けさから、手仕事の町へ。',lead:'清澄庭園を歩き、江戸切子の工房へ。最後は近くで座って、今日見たものをゆっくり振り返る。'},
+    {id:'partner_toyosu_art_food',aud:['partner','friends'],min:300,max:450,vibes:['extraordinary','culture','food','waterside'],spots:['spot_027','spot_127'],labels:['今日の主役','ごはん・寄り道'],title:'境界のないアートから、豊洲の食へ。',lead:'teamLab Planetsで非日常に入り込んだあと、千客万来へ。体験と食事を近いエリアでつなぐ。'},
+    {id:'friends_yokohama_art_food',aud:['friends'],min:360,max:510,vibes:['creative','shopping','food','stroll'],spots:['spot_246','spot_085','spot_260'],labels:['一緒に体験','寄り道','ごはん'],title:'描いて、歩いて、パイを囲む。',lead:'Artbarで一緒に手を動かしたら、海辺をぶらぶら。最後はPie Holicで、今日の話をしながらごはん。'},
+    {id:'friends_odaiba_play_sea_food',aud:['friends'],min:390,max:540,vibes:['active','extraordinary','waterside','food'],spots:['spot_148','spot_149','spot_266'],labels:['思いきり遊ぶ','海辺でひと息','ごはん'],title:'遊び切ったあと、夕方は海の方へ。',lead:'東京ジョイポリスで盛り上がって、お台場海浜公園へ。最後は海を眺めながらごはんまで。'},
+    {id:'friends_kisarazu_shop_food',aud:['friends','family'],min:300,max:450,vibes:['shopping','food','stroll'],spots:['spot_160','spot_284'],labels:['買い物','ひと休み・ごはん'],title:'今日は買い物を主役に、途中でちゃんと休む。',lead:'木更津のアウトレットを気ままに見て回り、途中でMr.FARMERへ。買い物だけで疲れ切らない一日に。'}
+  ];
+  function curatedPlanForPrimary(seed,primary,r,ctx,displayMinutes,used,allPrimaryIds){
+    const map=spotMap(seed),selected=ctx.selectedVibes||[],aud=ctx.audience||'family';
+    const choices=CURATED_PLANS.filter(p=>p.spots[0]===primary.spot_id&&p.aud.includes(aud)&&displayMinutes>=p.min&&displayMinutes<=p.max&&(!selected.length||p.vibes.some(v=>selected.includes(v))));
+    for(const bp of choices){
+      const spots=bp.spots.map(id=>map.get(id));if(spots.some(x=>!x))continue;
+      if(spots.some((s,i)=>i>0&&(used.has(s.spot_id)||(allPrimaryIds.has(s.spot_id)&&s.spot_id!==primary.spot_id))))continue;
+      if(spots.some((s,i)=>!eligible(s,i===0?ctx:companionContext(ctx),false)))continue;
+      const total=coverageMinutes(spots);if(total>displayMinutes+90||total<minCoverageMinutes(displayMinutes))continue;
+      for(const s of spots.slice(1))used.add(s.spot_id);
+      return{plan_id:`plan_${r.slot||primary.spot_id}_${bp.id}`,slot:r.slot,slot_label:r.slot_label,score:Number(r.scores?.overall||70),travel_minutes:r.travel_minutes??null,why:r.why||[],primary_spot_id:primary.spot_id,requested_minutes:displayMinutes,type:'combo',duration_label:requestedDurationLabel(displayMinutes),estimated_minutes:total,title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:spots.map((s,i)=>({spot_id:s.spot_id,role:i===0?'MAIN':isMealSpot(s)?'FOOD':'PLUS',label:bp.labels[i]||'もうひとつ'})),curated:true,curated_id:bp.id};
+    }
+    return null;
+  }
   function buildOne(seed,r,ctx,used,allPrimaryIds,opts){
     const map=spotMap(seed),primary=map.get(r.spot_id);if(!primary)return null;
     const displayMinutes=Number(opts.displayMinutes||ctx.availableMinutes||180),requestedLabel=requestedDurationLabel(displayMinutes),overnightEligible=!!ctx.allowOvernight&&displayMinutes>=480;
     const base={plan_id:`plan_${r.slot||primary.spot_id}`,slot:r.slot,slot_label:r.slot_label,score:Number(r.scores?.overall||70),travel_minutes:r.travel_minutes??null,why:r.why||[],primary_spot_id:primary.spot_id,requested_minutes:displayMinutes};
     if(primary.overnight&&!overnightEligible)return null;
     if(primary.overnight){const dayCandidates=rankedCompanions(seed,primary,{...ctx,allowOvernight:false},300,new Set([...used,...allPrimaryIds]),{allowOvernight:false,allowSameKind:false});const day=dayCandidates[0]?.s;if(day){used.add(day.spot_id);return{...base,type:'overnight',duration_label:'1泊プラン',estimated_minutes:null,title:comboTitle(day,primary,'overnight',displayMinutes,ctx),lead:comboLead(day,primary,'overnight',ctx),spot_ids:[day.spot_id,primary.spot_id],steps:[{spot_id:day.spot_id,role:'DAY',label:'昼の主役'},{spot_id:primary.spot_id,role:'STAY',label:'泊まる'}]};}return{...base,type:'overnight',duration_label:'1泊プラン',estimated_minutes:null,title:naturalSingleTitle(primary,displayMinutes),lead:naturalSingleLead(primary,displayMinutes),spot_ids:[primary.spot_id],steps:[{spot_id:primary.spot_id,role:'STAY',label:'泊まる'}]};}
+    const curated=curatedPlanForPrimary(seed,primary,r,ctx,displayMinutes,used,allPrimaryIds);if(curated)return curated;
     if(shouldStaySingle(primary,displayMinutes)){const mins=coverageMinutes([primary]);return{...base,type:'single',duration_label:requestedLabel,estimated_minutes:mins,title:naturalSingleTitle(primary,displayMinutes),lead:naturalSingleLead(primary,displayMinutes),spot_ids:[primary.spot_id],steps:[{spot_id:primary.spot_id,role:'MAIN',label:'今日の主役'}]};}
     const remain=Math.max(0,displayMinutes-Number(primary.stay_minutes_seed||120)-30),blocked=new Set([...used,...allPrimaryIds]);
     const familyLong=ctx.audience==='family'&&displayMinutes>=360;
@@ -125,5 +161,5 @@
   function buildPlans(seed,recommendationResult,ctx={},opts={}){const recs=recommendationResult?.recommendations||[],displayMinutes=Number(opts.displayMinutes||ctx.availableMinutes||180),usedCompanions=new Set(),usedPrimaryIds=new Set(),usedGroups=new Set(),originalPrimaryIds=new Set(recs.map(r=>r.spot_id)),plans=[];for(const r of recs){let p=buildOne(seed,r,ctx,usedCompanions,originalPrimaryIds,opts);let chosenId=r.spot_id;if(!p){const slot=r.slot,slot_label=r.slot_label;const candidates=fallbackCandidates(seed,ctx,displayMinutes,new Set([...usedPrimaryIds,...usedCompanions,...originalPrimaryIds]),usedGroups);for(const c of candidates){const trial={...c,slot,slot_label};p=buildOne(seed,trial,ctx,usedCompanions,new Set([...originalPrimaryIds,...usedPrimaryIds]),opts);if(p){chosenId=c.spot_id;break;}}}
       if(p){plans.push(p);usedPrimaryIds.add(chosenId);const primary=spotMap(seed).get(chosenId);if(primary)usedGroups.add(groupKey(primary));}
     }return plans;}
-  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk};
+  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk,curatedPlanForPrimary,CURATED_PLANS};
 });
