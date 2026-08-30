@@ -38,7 +38,7 @@ assert.deepEqual(miniPlan.spot_ids,['a','b']);
 // Overnight mode can join a daytime destination and a nearby hotel.
 const stayCtx={selectedVibes:['relax','extraordinary'],audience:'partner',weather:'any',availableMinutes:1080,allowOvernight:true,currentDate:'2026-08-30T12:00:00+09:00'};
 const stayRec=R.recommend(seed,stayCtx);
-const stayPlans=P.buildPlans(seed,stayRec,stayCtx,{displayMinutes:360});
+const stayPlans=P.buildPlans(seed,stayRec,stayCtx,{displayMinutes:480});
 assert.ok(stayPlans.some(p=>p.type==='overnight'));
 assert.ok(stayPlans.filter(p=>p.type==='overnight').some(p=>p.spot_ids.some(id=>byId[id]?.overnight)));
 

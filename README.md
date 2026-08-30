@@ -1,4 +1,8 @@
-# Kibun Trip MVP v0.19.7.3 — 256 spots
+# Kibun Trip MVP v0.19.8.2 — 256 spots
+
+## v19.8.2 — Plan quality / family balance
+
+Plan生成を「時間を埋める組み合わせ」から「過ごし方として自然な流れ」へ寄せました。半日以下では宿泊Planを出さず、同系統の公園→公園などを原則回避。組み合わせ判定を横浜市・川崎市では区単位まで細分化し、子連れの長時間Planでは「大人も楽しめる主役 + 子どもの時間 + 食事/休憩」の役割バランスを優先します。飲食スポット自体の拡充は次段階で行います。詳細は `CHANGELOG_v19_8_2.md` / `HANDOFF_v19_8_2.md` を参照してください。
 
 ## v19.8.1 — Plan duration & copy polish
 
