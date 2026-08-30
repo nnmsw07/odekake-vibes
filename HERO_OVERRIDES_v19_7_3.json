@@ -1,0 +1,63 @@
+{
+  "photo_index_overrides": {
+    "spot_212": 5,
+    "spot_213": 2,
+    "spot_214": 0,
+    "spot_215": 2,
+    "spot_216": 1,
+    "spot_217": 0,
+    "spot_218": 5,
+    "spot_219": 1,
+    "spot_221": 5,
+    "spot_222": 1,
+    "spot_223": 1,
+    "spot_225": 0,
+    "spot_226": 4,
+    "spot_227": 2,
+    "spot_228": 1,
+    "spot_230": 0,
+    "spot_231": 2,
+    "spot_234": 5,
+    "spot_237": 4,
+    "spot_241": 5,
+    "spot_255": 2,
+    "spot_242": 5,
+    "spot_244": 2,
+    "spot_249": 4,
+    "spot_251": 1,
+    "spot_252": 5,
+    "spot_253": 2,
+    "spot_254": 2,
+    "spot_256": 5
+  },
+  "place_overrides": {
+    "spot_213": {
+      "query": "箱根・芦ノ湖 はなをり",
+      "place_id": "ChIJz7WQw9meGWAR8_Ijv9AMs4Q",
+      "matched_name": "箱根・芦ノ湖 はなをり",
+      "matched_address": "〒250-0522 神奈川県足柄下郡箱根町元箱根桃源台 160",
+      "use_address": true
+    },
+    "spot_225": {
+      "query": "MALIBU HOTEL",
+      "place_id": "ChIJy4fajMFHGGARY--QDTV8SY4",
+      "matched_name": "マリブホテル（リビエラ逗子マリーナ内）",
+      "matched_address": "〒249-0008 神奈川県逗子市小坪５丁目２３−１６",
+      "use_address": false
+    },
+    "spot_253": {
+      "query": "GLASS-LAB 清澄白河",
+      "place_id": "ChIJFeML4xaJGGAR9qblCXuLpCc",
+      "matched_name": "GLASS-LAB (グラス・ラボ)",
+      "matched_address": "〒135-0023 東京都江東区平野１丁目１３−１１",
+      "use_address": false
+    },
+    "spot_255": {
+      "query": "Atelier ann 浅草",
+      "place_id": "ChIJ-UvoWx-PGGAR-0_-mg948ck",
+      "matched_name": "ann fragrance 浅草アトリエ",
+      "matched_address": "〒111-0032 東京都台東区浅草２丁目３２−１０ 山崎ビル 101",
+      "use_address": false
+    }
+  }
+}

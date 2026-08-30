@@ -1,4 +1,4 @@
-# Kibun Trip MVP v0.19.7.2 — 256 spots
+# Kibun Trip MVP v0.19.7.3 — 256 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
@@ -126,8 +126,17 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 詳細: `SEO_PLAN_v19_6.md` / `AFFILIATE_AUDIT_v19_6.md`
 
 
+
+## v19.7.3 Hero audit refresh
+
+- Stay / Experience追加分について、ユーザー監査exportをseedへ反映。
+- `spot_212`〜`spot_256`のうち29件でGoogle Places `photo_index_override`を固定。
+- `spot_213` / `spot_225` / `spot_253` / `spot_255` はPlace IDも手動固定。
+- 監査exportは `HERO_OVERRIDES_v19_7_3.json` に保存。
+- Worker / assets の更新なし。
+
 ## v19.7.2 Experience / Stage expansion
 - 歌舞伎座 / 劇団四季 / 新橋演舞場 / KAATを「観劇・舞台」として追加。日時依存が強い劇場は `browse_only` とし、通常の「今日の3つ」へ無条件に混ぜない。
 - 陶芸、Paint & Sip、金継ぎ、江戸切子、食品サンプル、香りづくり、和紙など11件のものづくり体験を追加。
 - ブラウズに `🎭 観劇・舞台`、ホームに `MAKE / WATCH / TRY` を追加。
-- 241 → 256スポット。新規15件はGoogle Places Hero優先＋AI fallback。Hero写真は未監査。
+- 241 → 256スポット。新規15件はGoogle Places Hero優先＋AI fallback。V19.7.3でStay/Experience追加分のHero監査exportを反映し、29件のphoto index・4件のPlace IDを固定。

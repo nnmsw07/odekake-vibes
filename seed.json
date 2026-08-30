@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v8_256spots_editorial_experience_candidate",
-    "version": "0.19.7.2",
+    "dataset_name": "kibun_kanto_izu_seed_v8_256spots_editorial_experience_hero_audited_candidate",
+    "version": "0.19.7.3",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -45,7 +45,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-08-29: latest user Hero audit export applied through spot_211."
+      "hero_selection": "2026-08-30: user Hero audit export applied to Stay/Experience additions; 29 photo indices and 4 Place IDs fixed through spot_256."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -64,7 +64,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-30 V19.7.2: Editorial layerを継続し、観劇・陶芸・アート・伝統工芸など体験系15件を追加。241→256 spots。",
+    "expansion_note": "2026-08-30 V19.7.3: V19.7/V19.7.2追加の宿・体験スポットへユーザーHero監査結果を反映。29件のphoto indexと4件のPlace IDを固定。スポット総数は256のまま。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -73,7 +73,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "V19.4: user Hero audit applied; photo index and Place ID overrides refreshed through spot_211.",
+    "hero_audit_note": "V19.7.3: user Hero audit export applied to Stay/Experience additions. 29 photo index overrides and 4 manual Place IDs fixed through spot_256.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -30664,7 +30664,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "箱根小涌園 天悠",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -30824,7 +30824,7 @@
         "municipality": "足柄下郡箱根町",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJz7WQw9meGWAR8_Ijv9AMs4Q"
       },
       "media_strategy": {
         "hero_priority": [
@@ -30833,11 +30833,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJz7WQw9meGWAR8_Ijv9AMs4Q",
+          "status": "resolved_manual",
           "query": "箱根・芦ノ湖 はなをり",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 2,
+          "force": false,
+          "matched_name": "箱根・芦ノ湖 はなをり",
+          "matched_address": "〒250-0522 神奈川県足柄下郡箱根町元箱根桃源台 160",
+          "use_address": true
         }
       },
       "ui_tags": [
@@ -30996,7 +30999,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "富士屋ホテル",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -31156,7 +31159,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ホテルインディゴ箱根強羅",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -31315,7 +31318,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ハイアット リージェンシー 箱根 リゾート＆スパ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -31474,7 +31477,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "箱根ホテル小涌園",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -31631,7 +31634,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜ベイホテル東急",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -31791,7 +31794,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "インターコンチネンタル横浜Pier 8",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -32122,7 +32125,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ウェスティンホテル横浜",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -32279,7 +32282,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ヒルトン横浜",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -32439,7 +32442,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "鎌倉プリンスホテル",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -32748,7 +32751,7 @@
         "municipality": "逗子市",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJy4fajMFHGGARY--QDTV8SY4"
       },
       "media_strategy": {
         "hero_priority": [
@@ -32757,11 +32760,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJy4fajMFHGGARY--QDTV8SY4",
+          "status": "resolved_manual",
           "query": "MALIBU HOTEL",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "マリブホテル（リビエラ逗子マリーナ内）",
+          "matched_address": "〒249-0008 神奈川県逗子市小坪５丁目２３−１６",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -32922,7 +32928,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "葉山うみのホテル",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -33084,7 +33090,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "葉山ホテル音羽ノ森",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -33246,7 +33252,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ラビスタ横須賀観音崎テラス",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -33569,7 +33575,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "鴨川シーワールドホテル",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -33730,7 +33736,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "シェラトン・グランデ・トーキョーベイ・ホテル",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -34221,7 +34227,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ホテル椿山荘東京",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -34702,7 +34708,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "メズム東京、オートグラフ コレクション",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -35359,7 +35365,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "界 アンジン",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -35506,7 +35512,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "歌舞伎座",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -35837,7 +35843,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "新橋演舞場",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -36674,7 +36680,7 @@
           "place_id": "ChIJUWLjbrqLGGARlLf1_5b1xdY",
           "status": "resolved_manual",
           "query": "うづまこ陶芸教室",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "matched_name": "うづまこ陶芸教室",
           "matched_address": "東京都港区芝3-29-11 清水ハウス1F",
@@ -37012,7 +37018,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜市陶芸センター",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -37177,7 +37183,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "金継ぎ教室つぐつぐ 浅草店",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -37335,7 +37341,7 @@
         "municipality": "江東区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJFeML4xaJGGAR9qblCXuLpCc"
       },
       "media_strategy": {
         "hero_priority": [
@@ -37344,11 +37350,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJFeML4xaJGGAR9qblCXuLpCc",
+          "status": "resolved_manual",
           "query": "GLASS-LAB 清澄白河",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 2,
+          "force": false,
+          "matched_name": "GLASS-LAB (グラス・ラボ)",
+          "matched_address": "〒135-0023 東京都江東区平野１丁目１３−１１",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -37514,7 +37523,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "元祖食品サンプル屋 合羽橋店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -37670,7 +37679,7 @@
         "municipality": "台東区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJ-UvoWx-PGGAR-0_-mg948ck"
       },
       "media_strategy": {
         "hero_priority": [
@@ -37679,11 +37688,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJ-UvoWx-PGGAR-0_-mg948ck",
+          "status": "resolved_manual",
           "query": "Atelier ann 浅草",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 2,
+          "force": false,
+          "matched_name": "ann fragrance 浅草アトリエ",
+          "matched_address": "〒111-0032 東京都台東区浅草２丁目３２−１０ 山崎ビル 101",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -37850,7 +37862,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "小津和紙",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
