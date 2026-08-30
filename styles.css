@@ -106,3 +106,11 @@
 
 /* v19.8.3 curated booking provider */
 .affiliate-actions{display:block}.affiliate-choice{display:flex;flex-direction:column;align-items:flex-start;gap:5px}.affiliate-provider{font-size:8px;font-weight:850;letter-spacing:.04em;color:var(--green-deep)}.affiliate-raw>a{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;background:var(--ink);color:#fff!important;text-decoration:none;border-radius:999px;padding:10px 14px;font-size:10px;font-weight:850}.affiliate-raw>a::after{content:'→';margin-left:8px}.affiliate-raw>img{position:absolute;width:1px;height:1px;overflow:hidden}
+
+/* v19.8.6 short-plan after suggestion */
+.plan-after-hint{margin:12px 0 2px;padding:11px 13px;border-radius:16px;background:#f5efe6;display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:10px;color:var(--muted)}
+.plan-after-hint span{font-weight:800;color:var(--green);letter-spacing:.02em}.plan-after-hint strong{font-size:11px;color:var(--ink)}
+.plan-after-section{margin:22px 0 8px;padding:20px;border-radius:24px;background:linear-gradient(145deg,#eef3e8,#f7f1e7);border:1px solid rgba(78,99,70,.18)}
+.plan-after-section>h3{font-family:Georgia,"Yu Mincho",serif;font-size:25px;line-height:1.25;margin:2px 0 7px;font-weight:500}.plan-after-section>p:not(.eyebrow){margin:0 0 14px;color:var(--muted);font-size:10px;line-height:1.7}
+.plan-after-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:14px;padding:15px 16px;background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:18px}.plan-after-card div{min-width:0}.plan-after-card small{display:block;color:var(--green);font-size:8px;font-weight:900;letter-spacing:.12em;margin-bottom:4px}.plan-after-card strong{display:block;font-family:Georgia,"Yu Mincho",serif;font-size:18px;line-height:1.35;margin-bottom:5px}.plan-after-card span{display:block;color:var(--muted);font-size:9px;line-height:1.55}.plan-after-card button{border:0;background:transparent;font-size:10px;font-weight:900;text-decoration:underline;white-space:nowrap;cursor:pointer;padding:5px 0}
+@media(max-width:560px){.plan-after-section{padding:16px 14px}.plan-after-section>h3{font-size:22px}.plan-after-card{grid-template-columns:1fr}.plan-after-card button{text-align:left}}

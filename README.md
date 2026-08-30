@@ -1,4 +1,8 @@
-# Kibun Trip MVP v0.19.8.5 — 286 spots
+# Kibun Trip MVP v0.19.8.6 — 286 spots
+
+## v19.8.6 — Short-plan AFTER cafe / restaurant suggestion
+
+2〜3時間程度のPlanは、主役の過ごし方を無理に詰め込まず、同じローカルエリアに相性のよいカフェ・レストランがある場合だけ **「帰る前に、もう少し。」** として任意の寄り道候補を添えるようにしました。AFTER候補はPlan本体の滞在時間には含めず、行くかどうかをユーザーが選べます。子連れでは休みやすさ、ふたりでは余韻、ひとりでは寄りやすさなど同行者別のコピーを出します。データ件数は286スポットのままです。詳細は `CHANGELOG_v19_8_6.md` / `HANDOFF_v19_8_6.md` を参照してください。
 
 ## v19.8.5 — Editorial plan library / NOW ON KIBUN
 

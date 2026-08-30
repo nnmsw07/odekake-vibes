@@ -157,9 +157,20 @@
     if(displayMinutes<=120){const mins=coverageMinutes([primary]);return{...base,type:'single',duration_label:requestedLabel,estimated_minutes:mins,title:naturalSingleTitle(primary,displayMinutes),lead:naturalSingleLead(primary,displayMinutes),spot_ids:[primary.spot_id],steps:[{spot_id:primary.spot_id,role:'MAIN',label:'今日の主役'}]};}
     return null;
   }
+  function shortPlanAfterSuggestion(seed,plan,ctx,displayMinutes,usedAfter){
+    const minutes=Number(displayMinutes||180);if(minutes<=120||minutes>240||plan.type==='overnight')return null;
+    const map=spotMap(seed),core=(plan.spot_ids||[]).map(id=>map.get(id)).filter(Boolean);if(!core.length||core.some(isMealSpot))return null;
+    const anchor=core[core.length-1],blocked=new Set([...(plan.spot_ids||[]),...usedAfter]);
+    const picks=rankedCompanions(seed,anchor,{...ctx,allowOvernight:false},120,blocked,{allowOvernight:false,allowSameKind:false,mealOnly:true});
+    const meal=picks[0]?.s;if(!meal)return null;
+    usedAfter.add(meal.spot_id);
+    const lead=ctx.audience==='family'?'遊んだあとに、親も子どもも座ってひと息。予定に余裕があれば寄れる、近くのごはん・カフェ候補です。':ctx.audience==='partner'?'帰る前にもう少し話したい日に。予定に余裕があれば寄れる、近くのカフェ・レストランです。':ctx.audience==='solo'?'まだ少し時間がある日に。ひとりでも寄りやすい、近くのカフェ・レストラン候補です。':'楽しかった余韻をもう少し。予定に余裕があれば寄れる、近くのカフェ・レストランです。';
+    return{spot_id:meal.spot_id,label:'帰る前に、もう少し',title:meal.name,lead};
+  }
+  function attachShortPlanAfterSuggestions(seed,plans,ctx,displayMinutes){const usedAfter=new Set();return(plans||[]).map(plan=>{const after=shortPlanAfterSuggestion(seed,plan,ctx,displayMinutes,usedAfter);return after?{...plan,after_suggestion:after}:plan;});}
   function fallbackCandidates(seed,ctx,displayMinutes,blockedIds,blockedGroups){return(seed.spots||[]).filter(s=>!blockedIds.has(s.spot_id)&&!blockedGroups.has(groupKey(s))&&eligible(s,{...ctx,availableMinutes:displayMinutes},!!ctx.allowOvernight)).map(s=>{const scores=typeof baseScores==='function'?baseScores(s,{...ctx,availableMinutes:displayMinutes}):{overall:70};return{spot_id:s.spot_id,name:s.name,scores,travel_minutes:ctx.travelMinutesBySpot?.[s.spot_id]??null,why:[]};}).sort((a,b)=>Number(b.scores?.overall||0)-Number(a.scores?.overall||0));}
   function buildPlans(seed,recommendationResult,ctx={},opts={}){const recs=recommendationResult?.recommendations||[],displayMinutes=Number(opts.displayMinutes||ctx.availableMinutes||180),usedCompanions=new Set(),usedPrimaryIds=new Set(),usedGroups=new Set(),originalPrimaryIds=new Set(recs.map(r=>r.spot_id)),plans=[];for(const r of recs){let p=buildOne(seed,r,ctx,usedCompanions,originalPrimaryIds,opts);let chosenId=r.spot_id;if(!p){const slot=r.slot,slot_label=r.slot_label;const candidates=fallbackCandidates(seed,ctx,displayMinutes,new Set([...usedPrimaryIds,...usedCompanions,...originalPrimaryIds]),usedGroups);for(const c of candidates){const trial={...c,slot,slot_label};p=buildOne(seed,trial,ctx,usedCompanions,new Set([...originalPrimaryIds,...usedPrimaryIds]),opts);if(p){chosenId=c.spot_id;break;}}}
       if(p){plans.push(p);usedPrimaryIds.add(chosenId);const primary=spotMap(seed).get(chosenId);if(primary)usedGroups.add(groupKey(primary));}
-    }return plans;}
-  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk,curatedPlanForPrimary,CURATED_PLANS};
+    }return attachShortPlanAfterSuggestions(seed,plans,ctx,displayMinutes);}
+  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk,curatedPlanForPrimary,shortPlanAfterSuggestion,attachShortPlanAfterSuggestions,CURATED_PLANS};
 });
