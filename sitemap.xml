@@ -24,4 +24,6 @@
   <url><loc>https://kibuntrip.com/guide/saitama-kids/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kibuntrip.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.2</priority></url>
   <url><loc>https://kibuntrip.com/terms.html</loc><changefreq>monthly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://kibuntrip.com/guide/hakone-stay/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kibuntrip.com/guide/izu-stay/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -1,0 +1,56 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const R=require('./recommender.js');
+const root=__dirname;
+const seed=JSON.parse(fs.readFileSync(path.join(root,'seed.json'),'utf8'));
+const byId=Object.fromEntries(seed.spots.map(s=>[s.spot_id,s]));
+assert.equal(seed.metadata.version,'0.19.7');
+assert.equal(seed.spots.length,241);
+for(let i=212;i<=241;i++){
+  const id=`spot_${String(i).padStart(3,'0')}`;
+  assert.ok(byId[id],`missing ${id}`);
+  assert.equal(byId[id].overnight,true,`${id} overnight`);
+  assert.equal(byId[id].category_primary,'hotel_stay',`${id} category`);
+  assert.ok(byId[id].stay_profile?.overnight,`${id} stay profile`);
+  assert.ok(byId[id].media_strategy?.hero_priority?.includes('google_places'),`${id} places-first hero`);
+  assert.equal(byId[id].media_strategy?.current_provider,'ai',`${id} AI fallback`);
+}
+assert.equal(byId.spot_238.name,'赤沢温泉ホテル');
+assert.equal(byId.spot_238.prefecture,'静岡県');
+assert.ok(byId.spot_238.official_url.includes('izuakazawa.jp'));
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
+const rec=fs.readFileSync(path.join(root,'recommender.js'),'utf8');
+assert.ok(index.includes('id="stayModeSelect"'));
+assert.ok(index.includes('泊まりもあり'));
+assert.ok(app.includes("['izu','伊豆']"));
+assert.ok(app.includes("['stay','🛏️ 泊まる・ホテル']"));
+assert.ok(app.includes('allowOvernight'));
+assert.ok(rec.includes("spot.overnight&&!ctx.allowOvernight"));
+const base={selectedVibes:['relax','extraordinary'],audience:'partner',weather:'any',availableMinutes:1440,currentDate:'2026-08-30T12:00:00+09:00'};
+let r=R.recommend(seed,{...base,allowOvernight:false});
+const hotelIds=new Set(seed.spots.filter(s=>s.overnight).map(s=>s.spot_id));
+assert.ok(!r.recommendations.some(x=>hotelIds.has(x.spot_id)),'day mode must not recommend hotels');
+assert.ok(r.excluded.some(x=>x.spot_id==='spot_212'),'day mode should hard-filter hotels');
+r=R.recommend(seed,{...base,allowOvernight:true});
+assert.ok(r.recommendations.some(x=>hotelIds.has(x.spot_id)),`stay mode should surface a hotel: ${r.recommendations.map(x=>x.name).join(', ')}`);
+for(const slug of ['hakone-stay','izu-stay']){
+  const p=path.join(root,'guide',slug,'index.html');
+  assert.ok(fs.existsSync(p),`missing guide ${slug}`);
+  const h=fs.readFileSync(p,'utf8');
+  assert.ok(h.includes('<link rel="canonical"'),`canonical ${slug}`);
+  assert.ok(h.includes('G-M99DNGD18F'),`GA4 ${slug}`);
+}
+const guideData=JSON.parse(fs.readFileSync(path.join(root,'SEO_GUIDES_v19_7.json'),'utf8')).guides;
+assert.equal(guideData.length,22,'22 guides total');
+const sm=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
+assert.ok(sm.includes('https://kibuntrip.com/guide/hakone-stay/'));
+assert.ok(sm.includes('https://kibuntrip.com/guide/izu-stay/'));
+const aff=fs.readFileSync(path.join(root,'affiliate-config.js'),'utf8');
+assert.ok(/enabled:\s*true/.test(aff),'affiliate enabled');
+for(let i=212;i<=217;i++) assert.ok(aff.includes(`"spot_${i}"`),`Hakone affiliate ${i}`);
+for(let i=218;i<=241;i++) assert.ok(!aff.includes(`"spot_${i}"`),`affiliate must not be invented for spot_${i}`);
+assert.ok(aff.includes('a8mat=4BAI1K+EJC1IQ+14CS+BW8O2'),'provided A8 code retained');
+assert.ok(aff.includes('www15.a8.net/0.gif'),'provided A8 tracking pixel retained');
+console.log('V19.7 STAY PASS: 30 hotels + day/stay hard filter + Izu browse + 2 stay guides + exact Hakone A8 link');

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_seed_v7_211spots_v19_6_seo_affiliate_foundation",
-    "version": "0.19.6",
+    "dataset_name": "kibun_kanto_izu_seed_v8_241spots_public_candidate",
+    "version": "0.19.7",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -32,7 +32,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-29",
+    "updated_at": "2026-08-30",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -62,7 +62,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-29 V19.6: スポット追加は行わず、検索流入の入口となる地域×カテゴリSEOガイド20本とアフィリエイト候補棚卸しを追加。収益化リンクは未有効化。",
+    "expansion_note": "2026-08-30 V19.7: Stay/Hotelカテゴリを追加。目的地型ホテル30件（箱根・横浜・湘南/三浦・千葉・東京・伊豆）を追加し、211→241 spotsへ拡張。日帰り推薦では宿泊候補を除外し「泊まりもあり」選択時のみ候補化。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -30429,6 +30429,4810 @@
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      }
+    },
+    {
+      "spot_id": "spot_212",
+      "slug": "hakone-tenyu",
+      "name": "箱根小涌園 天悠",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "hakone"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町二ノ平1297",
+      "official_url": "https://www.ten-yu.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "onsen",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "全室温泉露天風呂と箱根の自然を楽しめる温泉宿。ホテルでゆっくりすること自体を目的にしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.ten-yu.com/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 78,
+        "social_presence": 91,
+        "visual_appeal": 99,
+        "media_attention": 83,
+        "popularity_momentum": 91,
+        "reason": "全室温泉露天風呂と箱根の自然を楽しめる温泉宿。ホテルでゆっくりすること自体を目的にしたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.ten-yu.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "箱根小涌園 天悠の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "箱根小涌園 天悠",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_213",
+      "slug": "hakone-hanaori",
+      "name": "箱根・芦ノ湖 はなをり",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "hakone",
+        "onsen",
+        "lake"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町元箱根桃源台160",
+      "official_url": "https://ashinoko-hanaori.orixhotelsandresorts.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "onsen",
+          "lake",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "芦ノ湖を望む水盤テラスと温泉が印象的なリゾート。景色を眺めてほどけたい一泊に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00〜／チェックアウト〜10:00。プランにより異なる場合あり。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://ashinoko-hanaori.orixhotelsandresorts.com/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 78,
+        "social_presence": 90,
+        "visual_appeal": 98,
+        "media_attention": 82,
+        "popularity_momentum": 90,
+        "reason": "芦ノ湖を望む水盤テラスと温泉が印象的なリゾート。景色を眺めてほどけたい一泊に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://ashinoko-hanaori.orixhotelsandresorts.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "箱根・芦ノ湖 はなをりの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "箱根・芦ノ湖 はなをり",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_214",
+      "slug": "fujiya-hotel",
+      "name": "富士屋ホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "hakone",
+        "classic",
+        "architecture"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町宮ノ下359",
+      "official_url": "https://www.fujiyahotel.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "classic",
+          "architecture",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "箱根・宮ノ下のクラシックホテル。建築や歴史も含め、ホテルそのものを味わう大人の一泊に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.fujiyahotel.jp/"
+      },
+      "buzz": {
+        "score": 93,
+        "freshness": 78,
+        "social_presence": 93,
+        "visual_appeal": 100,
+        "media_attention": 85,
+        "popularity_momentum": 93,
+        "reason": "箱根・宮ノ下のクラシックホテル。建築や歴史も含め、ホテルそのものを味わう大人の一泊に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.fujiyahotel.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "富士屋ホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "富士屋ホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_215",
+      "slug": "hotel-indigo-hakone-gora",
+      "name": "ホテルインディゴ箱根強羅",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "hakone",
+        "boutique",
+        "design"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町木賀924-1",
+      "official_url": "https://www.ihg.com/hotelindigo/hotels/jp/ja/hakone/hkhhg/hoteldetail",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "boutique",
+          "design",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "全室プライベート温泉付きのブティックホテル。箱根の文化とデザインを楽しむ少し特別な一泊に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.ihg.com/hotelindigo/hotels/jp/ja/hakone/hkhhg/hoteldetail"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 78,
+        "social_presence": 91,
+        "visual_appeal": 99,
+        "media_attention": 83,
+        "popularity_momentum": 91,
+        "reason": "全室プライベート温泉付きのブティックホテル。箱根の文化とデザインを楽しむ少し特別な一泊に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.ihg.com/hotelindigo/hotels/jp/ja/hakone/hkhhg/hoteldetail"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "ホテルインディゴ箱根強羅の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルインディゴ箱根強羅",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_216",
+      "slug": "hyatt-regency-hakone",
+      "name": "ハイアット リージェンシー 箱根 リゾート＆スパ",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "hakone",
+        "gora"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町強羅1320",
+      "official_url": "https://www.hyatt.com/hyatt-regency/ja-JP/hakhr-hyatt-regency-hakone-resort-and-spa",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "spa",
+          "gora",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "広い客室と温泉、スパを備えた強羅のリゾート。予定を詰めずにホテルで整えたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.hyatt.com/hyatt-regency/ja-JP/hakhr-hyatt-regency-hakone-resort-and-spa"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 78,
+        "social_presence": 89,
+        "visual_appeal": 97,
+        "media_attention": 81,
+        "popularity_momentum": 89,
+        "reason": "広い客室と温泉、スパを備えた強羅のリゾート。予定を詰めずにホテルで整えたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.hyatt.com/hyatt-regency/ja-JP/hakhr-hyatt-regency-hakone-resort-and-spa"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "ハイアット リージェンシー 箱根 リゾート＆スパの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ハイアット リージェンシー 箱根 リゾート＆スパ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_217",
+      "slug": "hakone-hotel-kowakien",
+      "name": "箱根ホテル小涌園",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "family_resort",
+        "hakone",
+        "onsen",
+        "yunessun"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町二ノ平1297",
+      "official_url": "https://www.hakone-hotelkowakien.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "hakone",
+          "onsen",
+          "yunessun",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 30,
+        "hands_on": 35,
+        "quietness": 82,
+        "parent_rest": 86,
+        "greenery": 30,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 94,
+        "toddler_fit": 94,
+        "stroller_fit": 90,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 35,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 40,
+        "relax": 90,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 38,
+        "waterside": 45
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "ユネッサンと一緒に楽しみやすく、赤ちゃん連れにも配慮された箱根のファミリーリゾート。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.hakone-hotelkowakien.jp/"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 78,
+        "social_presence": 92,
+        "visual_appeal": 100,
+        "media_attention": 84,
+        "popularity_momentum": 92,
+        "reason": "ユネッサンと一緒に楽しみやすく、赤ちゃん連れにも配慮された箱根のファミリーリゾート。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.hakone-hotelkowakien.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "箱根ホテル小涌園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 82,
+        "solo": 58,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 80,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "箱根ホテル小涌園",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "子どもと",
+        "赤ちゃん向け",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_218",
+      "slug": "yokohama-bay-hotel-tokyu",
+      "name": "横浜ベイホテル東急",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "yokohama",
+        "night_view"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい2-3-7",
+      "official_url": "https://ybht.co.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "yokohama",
+          "night_view",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "みなとみらい駅直結。夜景とバルコニーのある客室で、近場なのに旅行気分を作りやすいホテル。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://ybht.co.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 88,
+        "visual_appeal": 96,
+        "media_attention": 80,
+        "popularity_momentum": 88,
+        "reason": "みなとみらい駅直結。夜景とバルコニーのある客室で、近場なのに旅行気分を作りやすいホテル。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://ybht.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜ベイホテル東急の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜ベイホテル東急",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_219",
+      "slug": "intercontinental-yokohama-pier8",
+      "name": "インターコンチネンタル横浜Pier 8",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "yokohama",
+        "harbor",
+        "luxury"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-14-1",
+      "official_url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "yokohama",
+          "harbor",
+          "luxury",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "横浜港の海上にいるような景色を楽しめるホテル。ルーフトップも含め、ふたりの非日常に向く。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト12:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "横浜港の海上にいるような景色を楽しめるホテル。ルーフトップも含め、ふたりの非日常に向く。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "インターコンチネンタル横浜Pier 8の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "インターコンチネンタル横浜Pier 8",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_220",
+      "slug": "kahala-yokohama",
+      "name": "ザ・カハラ・ホテル＆リゾート 横浜",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "yokohama",
+        "luxury",
+        "anniversary"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい1-1-3",
+      "official_url": "https://thekahala.jp/yokohama/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "yokohama",
+          "luxury",
+          "anniversary",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "みなとみらいでホテルステイそのものを目的にできるラグジュアリーホテル。記念日にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://thekahala.jp/yokohama/"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 78,
+        "social_presence": 92,
+        "visual_appeal": 100,
+        "media_attention": 84,
+        "popularity_momentum": 92,
+        "reason": "みなとみらいでホテルステイそのものを目的にできるラグジュアリーホテル。記念日にも。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://thekahala.jp/yokohama/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "ザ・カハラ・ホテル＆リゾート 横浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ザ・カハラ・ホテル＆リゾート 横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_221",
+      "slug": "westin-yokohama",
+      "name": "ウェスティンホテル横浜",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "yokohama",
+        "wellness",
+        "pool"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい4-2-8",
+      "official_url": "https://www.marriott.com/ja/hotels/tyowy-the-westin-yokohama/overview/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "yokohama",
+          "wellness",
+          "pool",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "屋内プールやスパ、ウェルネスを軸に、街なかで心身を整えるホテルステイ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.marriott.com/ja/hotels/tyowy-the-westin-yokohama/overview/"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 78,
+        "social_presence": 89,
+        "visual_appeal": 97,
+        "media_attention": 81,
+        "popularity_momentum": 89,
+        "reason": "屋内プールやスパ、ウェルネスを軸に、街なかで心身を整えるホテルステイ。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.marriott.com/ja/hotels/tyowy-the-westin-yokohama/overview/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "ウェスティンホテル横浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ウェスティンホテル横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_222",
+      "slug": "hilton-yokohama",
+      "name": "ヒルトン横浜",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "yokohama",
+        "entertainment"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい6-2-13",
+      "official_url": "https://hiltonyokohama.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "yokohama",
+          "entertainment",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "Kアリーナ近くのエンターテインメントホテル。横浜駅からも行きやすく、ライブや街歩きと組み合わせやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://hiltonyokohama.jp/"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 78,
+        "social_presence": 90,
+        "visual_appeal": 98,
+        "media_attention": 82,
+        "popularity_momentum": 90,
+        "reason": "Kアリーナ近くのエンターテインメントホテル。横浜駅からも行きやすく、ライブや街歩きと組み合わせやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://hiltonyokohama.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "ヒルトン横浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ヒルトン横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_223",
+      "slug": "kamakura-prince-hotel",
+      "name": "鎌倉プリンスホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "shonan",
+        "kamakura",
+        "ocean"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市七里ガ浜東1-2-18",
+      "official_url": "https://www.princehotels.co.jp/kamakura/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "shonan",
+          "kamakura",
+          "ocean",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "七里ヶ浜の海と江の島、富士山を望むリゾートホテル。海を眺めて過ごす湘南の一泊に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.princehotels.co.jp/kamakura/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 88,
+        "visual_appeal": 96,
+        "media_attention": 80,
+        "popularity_momentum": 88,
+        "reason": "七里ヶ浜の海と江の島、富士山を望むリゾートホテル。海を眺めて過ごす湘南の一泊に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.princehotels.co.jp/kamakura/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "鎌倉プリンスホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "鎌倉プリンスホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_224",
+      "slug": "metropolitan-kamakura",
+      "name": "ホテルメトロポリタン 鎌倉",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "shonan",
+        "kamakura",
+        "station"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市小町1-8-1",
+      "official_url": "https://kamakura.metropolitan.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "shonan",
+          "kamakura",
+          "station",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "鎌倉駅東口から徒歩約2分。街歩きをしっかり楽しんで、移動を楽にしたい鎌倉ステイに。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://kamakura.metropolitan.jp/"
+      },
+      "buzz": {
+        "score": 87,
+        "freshness": 78,
+        "social_presence": 87,
+        "visual_appeal": 95,
+        "media_attention": 79,
+        "popularity_momentum": 87,
+        "reason": "鎌倉駅東口から徒歩約2分。街歩きをしっかり楽しんで、移動を楽にしたい鎌倉ステイに。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://kamakura.metropolitan.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "ホテルメトロポリタン 鎌倉の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルメトロポリタン 鎌倉",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_225",
+      "slug": "malibu-hotel",
+      "name": "MALIBU HOTEL",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "shonan",
+        "zushi",
+        "marina",
+        "luxury"
+      ],
+      "prefecture": "神奈川県",
+      "city": "逗子市",
+      "address": "神奈川県逗子市小坪5-23-16 リビエラ逗子マリーナ内",
+      "official_url": "https://www.riviera.co.jp/area/zushi/hotel/malibuhotel/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "shonan",
+          "zushi",
+          "marina",
+          "luxury",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "逗子マリーナの海と富士山を望む全11室のスモールラグジュアリー。何もしない贅沢を楽しむ日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.riviera.co.jp/area/zushi/hotel/malibuhotel/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "逗子マリーナの海と富士山を望む全11室のスモールラグジュアリー。何もしない贅沢を楽しむ日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.riviera.co.jp/area/zushi/hotel/malibuhotel/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "MALIBU HOTELの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "逗子市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "MALIBU HOTEL",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_226",
+      "slug": "hayama-umino-hotel",
+      "name": "葉山うみのホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "shonan",
+        "hayama",
+        "ocean",
+        "onsen"
+      ],
+      "prefecture": "神奈川県",
+      "city": "三浦郡葉山町",
+      "address": "神奈川県三浦郡葉山町堀内251-1",
+      "official_url": "https://www.umino-hotel.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "shonan",
+          "hayama",
+          "ocean",
+          "onsen",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "海の見えるラウンジと最上階の湯浴み。肩肘張らずに葉山の海辺でゆっくりしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "客室チェックイン15:00／チェックアウト11:00（バンクルームは16:00チェックイン）。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.umino-hotel.com/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 78,
+        "social_presence": 91,
+        "visual_appeal": 99,
+        "media_attention": 83,
+        "popularity_momentum": 91,
+        "reason": "海の見えるラウンジと最上階の湯浴み。肩肘張らずに葉山の海辺でゆっくりしたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.umino-hotel.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "葉山うみのホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "三浦郡葉山町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "葉山うみのホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_227",
+      "slug": "hayama-otowanomori",
+      "name": "葉山ホテル音羽ノ森",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "miura",
+        "hayama",
+        "luxury",
+        "spa"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市秋谷5596-1",
+      "official_url": "https://otowanomori.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "miura",
+          "hayama",
+          "luxury",
+          "spa",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "全室オーシャンビューのスイート。海と食事、スパを静かに楽しむ大人のリゾートステイ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://otowanomori.jp/"
+      },
+      "buzz": {
+        "score": 93,
+        "freshness": 78,
+        "social_presence": 93,
+        "visual_appeal": 100,
+        "media_attention": 85,
+        "popularity_momentum": 93,
+        "reason": "全室オーシャンビューのスイート。海と食事、スパを静かに楽しむ大人のリゾートステイ。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://otowanomori.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "葉山ホテル音羽ノ森の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "葉山ホテル音羽ノ森",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_228",
+      "slug": "lavista-kannonzaki",
+      "name": "ラビスタ横須賀観音崎テラス",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "miura",
+        "onsen",
+        "glamping",
+        "ocean"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市走水2-1157-2",
+      "official_url": "https://dormy-hotels.com/resort/hotels/la_kannonzaki/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "miura",
+          "onsen",
+          "glamping",
+          "ocean",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "東京湾を望む温泉露天風呂と海辺のリゾート。ホテル棟とグランピングを気分で選べる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00〜／チェックアウト〜11:00。プランにより異なる場合あり。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://dormy-hotels.com/resort/hotels/la_kannonzaki/"
+      },
+      "buzz": {
+        "score": 91,
+        "freshness": 78,
+        "social_presence": 91,
+        "visual_appeal": 99,
+        "media_attention": 83,
+        "popularity_momentum": 91,
+        "reason": "東京湾を望む温泉露天風呂と海辺のリゾート。ホテル棟とグランピングを気分で選べる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://dormy-hotels.com/resort/hotels/la_kannonzaki/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "ラビスタ横須賀観音崎テラスの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ラビスタ横須賀観音崎テラス",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_229",
+      "slug": "kamogawakan",
+      "name": "鴨川館",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "chiba",
+        "kamogawa",
+        "ocean",
+        "ryokan"
+      ],
+      "prefecture": "千葉県",
+      "city": "鴨川市",
+      "address": "千葉県鴨川市西町1179",
+      "official_url": "https://www.kamogawakan.co.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "chiba",
+          "kamogawa",
+          "ocean",
+          "ryokan",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "海と温泉、食をゆっくり味わえる鴨川の宿。大人のラウンジや温泉付き客室で滞在を楽しみたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.kamogawakan.co.jp/"
+      },
+      "buzz": {
+        "score": 89,
+        "freshness": 78,
+        "social_presence": 89,
+        "visual_appeal": 97,
+        "media_attention": 81,
+        "popularity_momentum": 89,
+        "reason": "海と温泉、食をゆっくり味わえる鴨川の宿。大人のラウンジや温泉付き客室で滞在を楽しみたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.kamogawakan.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "鴨川館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "鴨川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "鴨川館",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_230",
+      "slug": "kamogawa-seaworld-hotel",
+      "name": "鴨川シーワールドホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "family_resort",
+        "chiba",
+        "kamogawa",
+        "aquarium",
+        "ocean"
+      ],
+      "prefecture": "千葉県",
+      "city": "鴨川市",
+      "address": "千葉県鴨川市東町1464-18",
+      "official_url": "https://www.kamogawa-seaworld.jp/hotel/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "chiba",
+          "kamogawa",
+          "aquarium",
+          "ocean",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 30,
+        "hands_on": 35,
+        "quietness": 82,
+        "parent_rest": 86,
+        "greenery": 30,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 94,
+        "toddler_fit": 94,
+        "stroller_fit": 90,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 35,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 40,
+        "relax": 90,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 38,
+        "waterside": 45
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "鴨川シーワールド直結で、宿泊当日と翌日の入館を楽しみやすいファミリー向けホテル。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.kamogawa-seaworld.jp/hotel/"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 78,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 87,
+        "popularity_momentum": 95,
+        "reason": "鴨川シーワールド直結で、宿泊当日と翌日の入館を楽しみやすいファミリー向けホテル。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.kamogawa-seaworld.jp/hotel/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "鴨川シーワールドホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 82,
+        "solo": 58,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 80,
+      "routing": {
+        "municipality": "鴨川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "鴨川シーワールドホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "子どもと",
+        "赤ちゃん向け",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_231",
+      "slug": "sheraton-tokyo-bay",
+      "name": "シェラトン・グランデ・トーキョーベイ・ホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "family_resort",
+        "chiba",
+        "maihama",
+        "pool",
+        "kids"
+      ],
+      "prefecture": "千葉県",
+      "city": "浦安市",
+      "address": "千葉県浦安市舞浜1-9",
+      "official_url": "https://www.marriott.com/ja/hotels/tyosi-sheraton-grande-tokyo-bay-hotel/overview/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "chiba",
+          "maihama",
+          "pool",
+          "kids",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 30,
+        "hands_on": 35,
+        "quietness": 82,
+        "parent_rest": 86,
+        "greenery": 30,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 94,
+        "toddler_fit": 94,
+        "stroller_fit": 90,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 35,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 40,
+        "relax": 90,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 38,
+        "waterside": 45
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "舞浜の大型リゾートホテル。キッズエリアやプールもあり、ホテルでもしっかり遊びたい家族旅行に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.marriott.com/ja/hotels/tyosi-sheraton-grande-tokyo-bay-hotel/overview/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 78,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 96,
+        "reason": "舞浜の大型リゾートホテル。キッズエリアやプールもあり、ホテルでもしっかり遊びたい家族旅行に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.marriott.com/ja/hotels/tyosi-sheraton-grande-tokyo-bay-hotel/overview/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "シェラトン・グランデ・トーキョーベイ・ホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 82,
+        "solo": 58,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 80,
+      "routing": {
+        "municipality": "浦安市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "シェラトン・グランデ・トーキョーベイ・ホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "子どもと",
+        "赤ちゃん向け",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_232",
+      "slug": "grand-nikko-tokyo-bay",
+      "name": "グランドニッコー東京ベイ 舞浜",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "family_resort",
+        "chiba",
+        "maihama",
+        "disney"
+      ],
+      "prefecture": "千葉県",
+      "city": "浦安市",
+      "address": "千葉県浦安市舞浜1-7",
+      "official_url": "https://tokyobay.grandnikko.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "chiba",
+          "maihama",
+          "disney",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 30,
+        "hands_on": 35,
+        "quietness": 82,
+        "parent_rest": 86,
+        "greenery": 30,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 94,
+        "toddler_fit": 94,
+        "stroller_fit": 90,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 35,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 40,
+        "relax": 90,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 38,
+        "waterside": 45
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "大きなアトリウムが印象的な舞浜のオフィシャルホテル。パークの余韻をホテルまで続けたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://tokyobay.grandnikko.com/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "大きなアトリウムが印象的な舞浜のオフィシャルホテル。パークの余韻をホテルまで続けたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://tokyobay.grandnikko.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "グランドニッコー東京ベイ 舞浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 82,
+        "solo": 58,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 80,
+      "routing": {
+        "municipality": "浦安市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "グランドニッコー東京ベイ 舞浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "子どもと",
+        "赤ちゃん向け",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_233",
+      "slug": "the-farm-chiba",
+      "name": "THE FARM",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "farm",
+        "glamping",
+        "experience",
+        "chiba"
+      ],
+      "prefecture": "千葉県",
+      "city": "香取市",
+      "address": "千葉県香取市西田部1309-29",
+      "official_url": "https://www.thefarm.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "chiba",
+          "farm",
+          "glamping",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 92,
+        "physical_activity": 70,
+        "hands_on": 88,
+        "quietness": 75,
+        "parent_rest": 72,
+        "greenery": 100,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 82,
+        "toddler_fit": 94,
+        "stroller_fit": 68,
+        "rain_resilience": 52,
+        "heat_resilience": 45,
+        "walking_load": 18,
+        "planning_friction": 48
+      },
+      "vibes_seed": {
+        "cool": 42,
+        "nature": 100,
+        "extraordinary": 98,
+        "scenic": 82,
+        "stroll": 72,
+        "relax": 86,
+        "shopping": 20,
+        "food": 90,
+        "culture": 48,
+        "animals": 0,
+        "creative": 72,
+        "active": 82,
+        "waterside": 25
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "農園・グランピング・温浴・収穫体験をまとめて楽しめる、宿そのものが遊び場になる農園リゾート。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.thefarm.jp/"
+      },
+      "buzz": {
+        "score": 93,
+        "freshness": 78,
+        "social_presence": 93,
+        "visual_appeal": 100,
+        "media_attention": 85,
+        "popularity_momentum": 93,
+        "reason": "農園・グランピング・温浴・収穫体験をまとめて楽しめる、宿そのものが遊び場になる農園リゾート。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.thefarm.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "THE FARMの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 86,
+        "solo": 72,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 86,
+      "routing": {
+        "municipality": "香取市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE FARM",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "自然",
+        "体験",
+        "子どもと",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_234",
+      "slug": "hotel-chinzanso-tokyo",
+      "name": "ホテル椿山荘東京",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "tokyo23",
+        "garden",
+        "luxury"
+      ],
+      "prefecture": "東京都",
+      "city": "文京区",
+      "address": "東京都文京区関口2-10-8",
+      "official_url": "https://hotel-chinzanso-tokyo.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "tokyo23",
+          "garden",
+          "luxury",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "都心とは思えない庭園と東京雲海を楽しめるホテル。泊まって庭をゆっくり味わいたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://hotel-chinzanso-tokyo.jp/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "都心とは思えない庭園と東京雲海を楽しめるホテル。泊まって庭をゆっくり味わいたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://hotel-chinzanso-tokyo.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "ホテル椿山荘東京の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "文京区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテル椿山荘東京",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_235",
+      "slug": "hoshinoya-tokyo",
+      "name": "星のや東京",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "tokyo23",
+        "ryokan",
+        "luxury",
+        "onsen"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区大手町1-9-1",
+      "official_url": "https://hoshinoresorts.com/ja/hotels/hoshinoyatokyo/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "tokyo23",
+          "ryokan",
+          "luxury",
+          "onsen",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "大手町にある「塔の日本旅館」。東京の真ん中で日常を切り替える、ホテル自体が目的になる滞在に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://hoshinoresorts.com/ja/hotels/hoshinoyatokyo/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 78,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 96,
+        "reason": "大手町にある「塔の日本旅館」。東京の真ん中で日常を切り替える、ホテル自体が目的になる滞在に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://hoshinoresorts.com/ja/hotels/hoshinoyatokyo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "星のや東京の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "星のや東京",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_236",
+      "slug": "tokyo-station-hotel",
+      "name": "東京ステーションホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "tokyo23",
+        "classic",
+        "architecture"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区丸の内1-9-1",
+      "official_url": "https://www.tokyostationhotel.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "tokyo23",
+          "classic",
+          "architecture",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "東京駅丸の内駅舎の中に泊まるクラシックホテル。建築や歴史も含めた特別な東京ステイに。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00／チェックアウト12:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.tokyostationhotel.jp/"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 78,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 87,
+        "popularity_momentum": 95,
+        "reason": "東京駅丸の内駅舎の中に泊まるクラシックホテル。建築や歴史も含めた特別な東京ステイに。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.tokyostationhotel.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東京ステーションホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京ステーションホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_237",
+      "slug": "mesm-tokyo",
+      "name": "メズム東京、オートグラフ コレクション",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "city_hotel",
+        "tokyo23",
+        "art",
+        "music",
+        "waterfront"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区海岸1-10-30",
+      "official_url": "https://www.mesm.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "tokyo23",
+          "art",
+          "music",
+          "waterfront",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 10,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 82,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 70,
+        "toddler_fit": 68,
+        "stroller_fit": 92,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 86,
+        "stroll": 72,
+        "relax": 92,
+        "shopping": 64,
+        "food": 86,
+        "culture": 72,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 35
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "竹芝の水辺で、アート・音楽・食を五感で楽しむホテル。いつもと違う東京の夜に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.mesm.jp/"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 78,
+        "social_presence": 92,
+        "visual_appeal": 100,
+        "media_attention": 84,
+        "popularity_momentum": 92,
+        "reason": "竹芝の水辺で、アート・音楽・食を五感で楽しむホテル。いつもと違う東京の夜に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.mesm.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "メズム東京、オートグラフ コレクションの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 98,
+        "solo": 92,
+        "friends": 84
+      },
+      "adult_enjoyment_seed": 97,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "メズム東京、オートグラフ コレクション",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "街なか",
+        "ホテルステイ",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_238",
+      "slug": "akazawa-onsen-hotel",
+      "name": "赤沢温泉ホテル",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "onsen",
+        "spa",
+        "izu",
+        "ocean",
+        "family_resort"
+      ],
+      "prefecture": "静岡県",
+      "city": "伊東市",
+      "address": "静岡県伊東市赤沢字浮山163-1",
+      "official_url": "https://www.izuakazawa.jp/stay/onsen-hotel/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "izu",
+          "ocean",
+          "family_resort",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 94,
+        "parent_rest": 98,
+        "greenery": 60,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 76,
+        "toddler_fit": 72,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 70,
+        "extraordinary": 95,
+        "scenic": 86,
+        "stroll": 40,
+        "relax": 100,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 38
+      },
+      "editorial_reason": "2025年末にリニューアルした赤沢温泉ホテル。温泉だけでなくリゾート内で一日楽しめ、Kibunの「泊まる」拡張に特に相性が良い。",
+      "public_copy": "全室オーシャンビュー。温泉・スパ・ボウリングなど赤沢温泉郷を丸ごと楽しめる、伊豆の目的地型ホテル。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウト時刻は客室・プランで異なる場合があるため、予約時に公式情報を確認。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.izuakazawa.jp/stay/onsen-hotel/"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 78,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 96,
+        "reason": "全室オーシャンビュー。温泉・スパ・ボウリングなど赤沢温泉郷を丸ごと楽しめる、伊豆の目的地型ホテル。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.izuakazawa.jp/stay/onsen-hotel/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "赤沢温泉ホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 90,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "伊東市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "赤沢温泉ホテル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "温泉",
+        "のんびり",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_239",
+      "slug": "izu-hotel-resort-spa",
+      "name": "伊豆ホテル リゾート＆スパ",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "izu",
+        "onsen",
+        "ocean",
+        "all_inclusive"
+      ],
+      "prefecture": "静岡県",
+      "city": "賀茂郡東伊豆町",
+      "address": "静岡県賀茂郡東伊豆町奈良本1457-30",
+      "official_url": "https://www.izu-hotel.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "izu",
+          "onsen",
+          "ocean",
+          "all_inclusive",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "全室オーシャンビューの温泉露天風呂付き。景色と温泉に振り切って静かに過ごす伊豆の一泊に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン15:00〜19:00／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.izu-hotel.com/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "全室オーシャンビューの温泉露天風呂付き。景色と温泉に振り切って静かに過ごす伊豆の一泊に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.izu-hotel.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "伊豆ホテル リゾート＆スパの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "賀茂郡東伊豆町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "伊豆ホテル リゾート＆スパ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_240",
+      "slug": "anda-no-mori",
+      "name": "アンダの森 伊豆いっぺき湖",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "family_resort",
+        "izu",
+        "onsen",
+        "play",
+        "all_inclusive"
+      ],
+      "prefecture": "静岡県",
+      "city": "伊東市",
+      "address": "静岡県伊東市吉田836-2",
+      "official_url": "https://www.andanomori.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "izu",
+          "onsen",
+          "play",
+          "all_inclusive",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 30,
+        "hands_on": 35,
+        "quietness": 82,
+        "parent_rest": 86,
+        "greenery": 30,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 94,
+        "toddler_fit": 94,
+        "stroller_fit": 90,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 35,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 40,
+        "relax": 90,
+        "shopping": 20,
+        "food": 84,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 38,
+        "waterside": 45
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "遊び・温泉・食事を館内でまとめて楽しめるファミリーリゾート。三世代や小さな子どもとの旅行にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "事前受付13:00〜、客室利用15:00〜／チェックアウト11:00。チェックアウト後13:00まで一部館内利用可。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.andanomori.jp/"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 78,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 87,
+        "popularity_momentum": 95,
+        "reason": "遊び・温泉・食事を館内でまとめて楽しめるファミリーリゾート。三世代や小さな子どもとの旅行にも。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.andanomori.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "アンダの森 伊豆いっぺき湖の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 82,
+        "solo": 58,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 80,
+      "routing": {
+        "municipality": "伊東市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "アンダの森 伊豆いっぺき湖",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "子どもと",
+        "赤ちゃん向け",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
+      }
+    },
+    {
+      "spot_id": "spot_241",
+      "slug": "kai-anjin",
+      "name": "界 アンジン",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "hotel",
+        "overnight",
+        "scenic",
+        "resort",
+        "izu",
+        "onsen",
+        "ocean",
+        "culture"
+      ],
+      "prefecture": "静岡県",
+      "city": "伊東市",
+      "address": "静岡県伊東市渚町5-12",
+      "official_url": "https://hoshinoresorts.com/ja/hotels/kaianjin/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "izu",
+          "onsen",
+          "ocean",
+          "culture",
+          "hotel"
+        ]
+      },
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 28,
+        "physical_activity": 15,
+        "hands_on": 18,
+        "quietness": 92,
+        "parent_rest": 96,
+        "greenery": 42,
+        "water_contact": 5,
+        "animal_contact": 0,
+        "food_experience": 78,
+        "creative_sensory": 58,
+        "baby_fit": 66,
+        "toddler_fit": 64,
+        "stroller_fit": 78,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 18,
+        "planning_friction": 38
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 58,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 40,
+        "relax": 98,
+        "shopping": 20,
+        "food": 82,
+        "culture": 48,
+        "animals": 0,
+        "creative": 50,
+        "active": 12,
+        "waterside": 84
+      },
+      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
+      "public_copy": "大航海時代のロマンをテーマにした伊東の温泉旅館。海を眺めながら、静かに物語のある一泊を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "チェックイン14:30／チェックアウト11:00。",
+        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
+        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
+        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://hoshinoresorts.com/ja/hotels/kaianjin/"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 78,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 86,
+        "popularity_momentum": 94,
+        "reason": "大航海時代のロマンをテーマにした伊東の温泉旅館。海を眺めながら、静かに物語のある一泊を。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://hoshinoresorts.com/ja/hotels/kaianjin/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "界 アンジンの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 92,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "伊東市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "界 アンジン",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "非日常",
+        "大人も楽しい",
+        "景色",
+        "記念日",
+        "泊まりもあり"
+      ],
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "ready_for_provider_link",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com",
+          "JTB",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "宿泊予約導線と相性が高い。個別または地域リンクの承認条件に従って表示。"
       }
     }
   ]

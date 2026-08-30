@@ -1,7 +1,7 @@
 window.KIBUN_AFFILIATE_CONFIG = {
-  // 審査・提携・商品URL照合が終わるまで false のまま。
-  enabled: false,
+  enabled: true,
   disclosure: "PR：一部のリンクはアフィリエイト広告を含みます。",
-  // 例: "spot_027": [{ label: "チケットを見る", provider: "provider_name", url: "https://..." }]
-  links: {}
+  links: {
+    "spot_212": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }],"spot_213": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }],"spot_214": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }],"spot_215": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }],"spot_216": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }],"spot_217": [{ provider: "jalan", rawHtml: `<a href="https://px.a8.net/svt/ejp?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.jalan.net%2F140000%2FLRG_141600%2F" rel="nofollow">箱根のホテルを探す</a>\n<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BAI1K+EJC1IQ+14CS+BW8O2" alt="">`, note: "A8.net生成コードをそのまま使用" }]
+  }
 };

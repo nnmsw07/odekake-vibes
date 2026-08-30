@@ -4,8 +4,8 @@ const R = require('./recommender.js');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id,s]));
 
-assert.equal(seed.spots.length,211);
-assert.ok(['0.19.5.4','0.19.6'].includes(seed.metadata.version));
+assert.equal(seed.spots.length,241);
+assert.ok(['0.19.5.4','0.19.6','0.19.7'].includes(seed.metadata.version));
 
 // Operational copy / canonical naming.
 assert.equal(byId.spot_199.name,'ガイソーウォーターパーク引地台');

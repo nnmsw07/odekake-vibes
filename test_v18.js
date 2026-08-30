@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('seed.json','utf8'));
-if (data.spots.length !== 211) throw new Error(`expected 211 spots, got ${data.spots.length}`);
+if (data.spots.length !== 241) throw new Error(`expected 241 spots, got ${data.spots.length}`);
 const ids = new Set(data.spots.map(s => s.spot_id));
 for (let i=96;i<=165;i++){
   const id = `spot_${String(i).padStart(3,'0')}`;
@@ -16,4 +16,4 @@ for(const s of data.spots){
     if(!(a in s.audience_fit)) throw new Error(`${s.spot_id} missing audience ${a}`);
   }
 }
-console.log('V18 seed validation PASS: current seed 211 spots');
+console.log('V18 seed validation PASS: current seed 241 spots');

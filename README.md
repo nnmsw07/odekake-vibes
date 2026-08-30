@@ -1,10 +1,10 @@
-# Kibun Trip MVP v0.19.6 — 211 spots
+# Kibun Trip MVP v0.19.7 — 241 spots
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
 ## v0.19 の状態
 
-- **211スポット**収録
+- **241スポット**収録
 - 同行者: 子ども / パートナー / ひとり / 友だち
 - 気分・やりたいことを最大3つ選択
 - 子どもの年齢によるhard filter
@@ -12,7 +12,7 @@
 - Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
-- Kibunロゴから **地域 × カテゴリ** で211スポットをブラウズ
+- Kibunロゴから **地域 × カテゴリ** で241スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
 V19.5の公開準備は `CHANGELOG_v19_5.md` / `DOMAIN_SETUP_v19_5.md` / `HANDOFF_v19_5.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
@@ -35,7 +35,7 @@ python -m http.server 8000
 - `styles.css` — スマホ優先デザイン
 - `app.js` — UI / 詳細 / Hero監査
 - `recommender.js` — 推薦ロジック
-- `data.js` — ブラウザ用211スポットデータ
+- `data.js` — ブラウザ用241スポットデータ
 - `seed.json` — 元データ
 - `travel.js` — 出発地検索 / ルート時間取得
 - `media.js` — Google Places Hero取得
@@ -105,7 +105,7 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 
 ## V19.5.3 official URL audit
 
-公開前に211スポットの `official_url` を監査し、13件を現行URLへ正規化しました。詳細は `URL_AUDIT_v19_5_3.md`。今後は `node scripts/check_official_urls.mjs` で一括確認できます。
+公開前に241スポットの `official_url` を監査し、13件を現行URLへ正規化しました。詳細は `URL_AUDIT_v19_5_3.md`。今後は `node scripts/check_official_urls.mjs` で一括確認できます。
 
 
 ## V19.5.4 operations audit
@@ -119,7 +119,7 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - `sitemap.xml` にガイドページを追加
 - SEOガイドから `/?region=...&category=...` でKibunのブラウズを直接開ける
 - GA4イベント `seo_guide_cta` / `seo_guide_open` を追加
-- 211スポットへ内部 `monetization.affiliate_fit (A/B/C)` を付与
+- 241スポットへ内部 `monetization.affiliate_fit (A/B/C)` を付与
 - `affiliate-config.js` / `affiliate.js` を追加。ただし **enabled=false** で、提携前はPR導線を一切表示しない
 - 提携後のPRリンクは `rel="sponsored noopener"`、GA4 `affiliate_click` で計測
 
