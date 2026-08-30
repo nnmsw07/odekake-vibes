@@ -1,4 +1,4 @@
-const seed=window.ODEKAKE_SEED;const {recommend,baseScores}=window.OdekakeRecommender;const {buildPlans}=window.KibunPlans;
+const seed=window.ODEKAKE_SEED;const {recommend,baseScores,shoppingIntentEligible}=window.OdekakeRecommender;const {buildPlans}=window.KibunPlans;
 const VIBE_UI={cool:['🧊','涼しく過ごしたい','暑さから逃げる'],nature:['🌿','自然に浸りたい','緑・山・川へ'],extraordinary:['✨','いつもと違う日にしたい','少し特別な一日'],scenic:['🌅','いい景色を見たい','海・街・緑を眺める'],stroll:['🚶','ぶらぶらしたい','街歩き・寄り道'],relax:['🛋️','のんびりしたい','頑張らない一日'],shopping:['🛍️','買い物を楽しみたい','お店を見て回る'],food:['🍓','おいしいものを楽しみたい','食べる・採る・作る'],culture:['🏛️','文化にふれたい','アート・音楽・歴史'],animals:['🐾','生きものに会いたい','動物・魚と出会う'],creative:['🎨','何か作りたい','音・工作・表現'],active:['🏃','思いっきり遊びたい','身体を動かす'],waterside:['🌊','水辺へ行きたい','海・川・湖のそばへ']};
 const VIBE_GROUPS=[['mood','今日はどんな一日にしたい？',['cool','extraordinary','relax']],['activity','今日は何を楽しみたい？',['nature','scenic','stroll','shopping','food','culture','animals','creative','active','waterside']]];
 const AUDIENCE_UI={family:['👶','子どもと'],partner:['♡','パートナーと'],solo:['◯','ひとり'],friends:['👥','友だちと']};
@@ -129,7 +129,7 @@ function categoryMatch(s,key){
   if(key==='animals')return (v.animals||0)>=65||/animal|aquarium|zoo/.test(cats);
   if(key==='culture')return (v.culture||0)>=70||/culture|museum|art|library|literature|temple|architecture/.test(cats);
   if(key==='food')return (v.food||0)>=75||/food|cafe|restaurant|bbq|market/.test(cats);
-  if(key==='shopping')return (v.shopping||0)>=75||/shopping|mall|complex|shop|market/.test(cats);
+  if(key==='shopping')return typeof shoppingIntentEligible==='function'?shoppingIntentEligible(s):((v.shopping||0)>=75&& !/theme|amusement|aquarium|zoo|pool/.test(String(s.category_primary||'').toLowerCase()));
   if(key==='relax')return (v.relax||0)>=80||/spa|onsen|bath|lounge|relax/.test(cats);
   if(key==='experience')return (e.hands_on||0)>=70||(v.creative||0)>=75||/science|learning|creative|workshop|factory|interactive|hands_on|pottery|craft|kintsugi|glass|fragrance|washi/.test(cats);
   if(key==='stage')return /theater|performing_arts|musical|stage|kabuki/.test(cats);
