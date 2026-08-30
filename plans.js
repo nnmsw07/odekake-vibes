@@ -13,6 +13,36 @@
     for(const re of [/箱根町/,/鎌倉市/,/藤沢市/,/逗子市/,/三浦市/,/横須賀市/,/鴨川市/,/木更津市/,/浦安市/,/伊東市/,/東伊豆町/,/八王子市/,/町田市/,/立川市/,/飯能市/,/柏市/,/千葉市[^\s]{0,6}区/]){const m=text.match(re);if(m)return m[0];}
     return city||s.prefecture||'';
   }
+  function planZone(s){
+    if(s?.plan_profile?.zone)return String(s.plan_profile.zone);
+    const text=`${s?.city||''} ${s?.address||''}`;
+    if(/港区台場|江東区青海/.test(text))return'odaiba';
+    if(/江東区豊洲/.test(text))return'toyosu';
+    if(/品川区東品川2/.test(text))return'tennoz';
+    if(/港区赤坂9|港区六本木|港区麻布台/.test(text))return'roppongi';
+    if(/港区南青山|港区北青山/.test(text))return'aoyama';
+    if(/世田谷区玉川[12]/.test(text))return'futakotamagawa';
+    if(/世田谷区駒沢公園/.test(text))return'komazawa';
+    if(/江東区(?:三好|清澄|平野)/.test(text))return'kiyosumi';
+    if(/立川市緑町/.test(text))return'tachikawa';
+    if(/新宿区神楽坂/.test(text))return'kagurazaka';
+    if(/渋谷区猿楽町/.test(text))return'daikanyama';
+    if(/川崎市川崎区殿町/.test(text))return'tonomachi';
+    if(/横浜市中区(?:山下町|元町|新港|海岸通|北仲通|桜木町)|横浜市西区みなとみらい/.test(text))return'yokohama_bay';
+    if(/横浜市(?:神奈川区金港町|西区(?:高島|南幸|北幸))/.test(text))return'yokohama_station';
+    if(/横浜市青葉区大場町/.test(text))return'azamino';
+    if(/鎌倉市(?:小町|雪ノ下|御成町)/.test(text))return'kamakura_center';
+    if(/鎌倉市七里ガ浜/.test(text))return'shichirigahama';
+    if(/藤沢市(?:江の島|片瀬海岸)/.test(text))return'enoshima';
+    if(/箱根町宮ノ下/.test(text))return'miyanoshita';
+    if(/箱根町(?:強羅|木賀)/.test(text))return'gora';
+    if(/箱根町(?:元箱根|芦ノ湖)/.test(text))return'motohakone';
+    if(/箱根町二ノ平/.test(text))return'kowakudani';
+    if(/千葉市美浜区(?:磯辺|高浜)/.test(text))return'inage';
+    if(/木更津市金田東/.test(text))return'kisarazu_outlet';
+    return'';
+  }
+  function samePlanArea(a,b){const za=planZone(a),zb=planZone(b);if(za||zb)return Boolean(za&&zb&&za===zb);return areaKey(a)===areaKey(b);}
   function groupKey(s){return s.recommendation_group||s.spot_id;}
   function categoryKind(s){const p=String(s.category_primary||'').toLowerCase(),x=[s.category_primary,...(s.categories||[])].join('|').toLowerCase();if(s.overnight||/hotel|stay|ryokan|resort/.test(p))return'stay';if(/creative|workshop|experience|craft|pottery|glass|fragrance|washi|interactive|music/.test(p))return'experience';if(/food|cafe|restaurant|market|dining/.test(p))return'food';if(/relax|spa|onsen|bath/.test(p))return'relax';if(/culture|museum|gallery|library|temple|stage|theater|art|architecture/.test(p))return'culture';if(/theme|zoo|aquarium|pool|play|amusement/.test(p))return'activity';if(/park|nature|garden|waterside|beach/.test(p))return'nature';if(/shopping|mall/.test(p))return'shopping';if(/workshop|experience|craft|pottery|glass|fragrance|washi/.test(x))return'experience';if(/museum|gallery|library|temple|stage|theater|culture/.test(x))return'culture';if(/food|cafe|restaurant|market|dining/.test(x))return'food';if(/shopping|mall/.test(x))return'shopping';if(/park|nature|garden|waterside|beach/.test(x))return'nature';return'other';}
   function isMealSpot(s){
@@ -31,9 +61,9 @@
   function shouldStaySingle(s,displayMinutes){const stay=Number(s.stay_minutes_seed||120);if(s.overnight)return false;if(displayMinutes<=120)return true;if(stay>=Math.max(105,displayMinutes*.62))return true;if(stay>=150&&displayMinutes<=240)return true;return false;}
   function eligible(s,ctx,allowOvernight){if(!s)return false;const c={...ctx,allowOvernight,includeBrowseOnly:false};return typeof hardFilterReason==='function'?!hardFilterReason(s,c):s.recommendation_mode!=='browse_only'&&(allowOvernight||!s.overnight);}
   function rankedCompanions(seed,primary,ctx,remaining,used,opts={}){
-    if(remaining<45)return[];const primaryArea=areaKey(primary),primaryKind=categoryKind(primary);
+    if(remaining<45)return[];const primaryKind=categoryKind(primary);
     return (seed.spots||[]).filter(s=>{
-      if(s.spot_id===primary.spot_id||used.has(s.spot_id)||groupKey(s)===groupKey(primary)||areaKey(s)!==primaryArea)return false;
+      if(s.spot_id===primary.spot_id||used.has(s.spot_id)||groupKey(s)===groupKey(primary)||!samePlanArea(primary,s))return false;
       if(!eligible(s,ctx,!!opts.allowOvernight))return false;
       const stay=Number(s.stay_minutes_seed||120);if(stay>Math.max(60,remaining+25)||stay<35)return false;
       if(!opts.allowSameKind&&categoryKind(s)===primaryKind&&!isMealSpot(s))return false;
@@ -45,8 +75,9 @@
       const sc=typeof baseScores==='function'?baseScores(s,{...ctx,allowOvernight:!!opts.allowOvernight,availableMinutes:remaining}):{overall:70};
       const comp=complementScore(primary,s),family=ctx.audience==='family'?familyBalanceScore(primary,s,ctx):70;
       const sameKindPenalty=categoryKind(primary)===categoryKind(s)?28:0,mealBonus=opts.preferMeal&&isMealSpot(s)?18:0;
+      const profileBonus=s.plan_profile?.role==='companion'?8:0,restBonus=opts.mealOnly&&s.plan_profile?.family_recovery?10:0;
       const shortPenalty=Math.max(0,Number(s.stay_minutes_seed||120)-remaining)*.3;
-      return{s,score:.48*Number(sc.overall||70)+.30*comp+.22*family+mealBonus-sameKindPenalty-shortPenalty};
+      return{s,score:.46*Number(sc.overall||70)+.28*comp+.26*family+mealBonus+profileBonus+restBonus-sameKindPenalty-shortPenalty};
     }).filter(x=>opts.mealOnly||complementScore(primary,x.s)>=58).sort((a,b)=>b.score-a.score);
   }
   function naturalSingleTitle(s,displayMinutes){if(s.editorial?.title)return s.editorial.title;const k=categoryKind(s),d=requestedDurationLabel(displayMinutes);if(k==='activity')return`${s.name}を主役に、今日は思いきり楽しむ。`;if(k==='culture')return`${s.name}で、気になるものをゆっくり見る。`;if(k==='experience')return`${s.name}で、いつもと違う体験をひとつ。`;if(k==='nature')return`${s.name}で、のんびり過ごす${d==='1〜2時間'?'時間':'半日'}。`;if(k==='relax')return`${s.name}で、予定を詰めない時間を。`;if(k==='food')return`${s.name}を目的地に、おいしい時間を。`;if(k==='shopping')return`${s.name}を、気ままに見て歩く。`;if(k==='stay')return`${s.name}で、今日はそのまま泊まる。`;return`${s.name}を主役に、今日はここへ。`;}
@@ -54,8 +85,8 @@
   function naturalSingleLead(s,displayMinutes){if(s.editorial?.lead)return s.editorial.lead;const fact=firstSentence(s.public_copy),d=requestedDurationLabel(displayMinutes),k=categoryKind(s);const tail=d==='1〜2時間'?'短い時間でも、ここを目的地にする過ごし方。':`${d}を使って、予定を詰め込みすぎずここを中心に。`;if(fact)return`${fact}${tail}`;if(k==='experience')return`見るだけで終わらず、体験そのものを楽しむ。${tail}`;if(k==='culture')return`気になったものの前で立ち止まりながら、急がず見て回る。${tail}`;return tail;}
   function comboTitle(a,b,type,displayMinutes,ctx={}){if(type==='overnight')return`${a.name}を楽しんだあと、${b.name}に泊まる。`;const d=requestedDurationLabel(displayMinutes);if(ctx.audience==='family'){if(isMealSpot(b))return`${a.name}を楽しんだら、${b.name}でひと休み。`;return`子どもも大人も楽しめる、${areaKey(a)}の${d}。`;}if(isMealSpot(b)){const ka=categoryKind(a);if(ka==='nature')return`歩いたあとは、${b.name}でひと休み。`;if(ka==='culture')return`じっくり見たあとは、${b.name}へ。`;if(ka==='experience')return`体験のあとは、${b.name}で余韻を。`;return`${a.name}を楽しんで、${b.name}でひと休み。`;}if(isMealSpot(a))return`${a.name}から始める、${areaKey(a)}の${d==='1〜2時間'?'寄り道':'半日'}。`;return`${a.name}を主役に、${areaKey(a)}でもうひとつ寄り道。`;}
   function comboLead(a,b,type,ctx={}){if(type==='overnight')return`昼は${a.name}へ。そのあとは${b.name}へ移って、夜まで急がず過ごす。`;if(ctx.audience==='family'){if(isMealSpot(b))return`まず${a.name}を今日の主役に。遊んだあとは${b.name}で座ってひと休み。`;const pChild=childFocusScore(a,ctx),pAdult=adultFocusScore(a);return pChild>=pAdult?`まずは子どもが夢中になれる${a.name}へ。そのあと${b.name}で、大人も楽しめる時間を。`:`まずは大人も楽しめる${a.name}へ。そのあと${b.name}で、子どもの「やりたい」も叶える。`; }return`まず${a.name}へ。そのあと${b.name}へ。似た場所を重ねず、気分を少し変えながらつなぐプラン。`;}
-  function threeStopTitle(spots,ctx,displayMinutes){const [a,b,c]=spots;if(ctx.audience==='family'&&isMealSpot(c))return`${a.name}を主役に、親子それぞれの楽しみとひと休み。`;return`${a.name}を主役に、${areaKey(a)}でゆっくり一日。`;}
-  function threeStopLead(spots,ctx){const [a,b,c]=spots;if(ctx.audience==='family'&&isMealSpot(c))return`子どもが楽しめる場所と、大人も行きたくなる寄り道をひとつずつ。最後は${c.name}でひと休み。`;return`${a.name}から始めて、${b.name}へ。最後は${c.name}で少しペースを落とす。`;}
+  function threeStopTitle(spots,ctx,displayMinutes){const [a,b,c]=spots;if(ctx.audience==='family'&&isMealSpot(c)){const ac=childFocusScore(a,ctx),aa=adultFocusScore(a),bc=childFocusScore(b,ctx),ba=adultFocusScore(b);if(aa>=ac+8&&bc>=68)return`大人の「行きたい」も、子どもの「やりたい」も。`;if(ac>=aa+8&&ba>=76)return`子どもの「やりたい」を主役に、大人の寄り道も。`;return`${a.name}を主役に、親子で気分を変えながら。`;}return`${a.name}を主役に、${areaKey(a)}でゆっくり一日。`;}
+  function threeStopLead(spots,ctx){const [a,b,c]=spots;if(ctx.audience==='family'&&isMealSpot(c)){const ac=childFocusScore(a,ctx),aa=adultFocusScore(a),bc=childFocusScore(b,ctx),ba=adultFocusScore(b);if(aa>=ac+8&&bc>=68)return`${a.name}で大人も楽しんだら、${b.name}では子どもの「やりたい」を。最後は${c.name}で座って休む。`;if(ac>=aa+8&&ba>=76)return`${a.name}では子どもが夢中に。そのあと${b.name}で大人も楽しみ、最後は${c.name}でひと休み。`;return`${a.name}と${b.name}で親子それぞれの楽しみをつくって、最後は${c.name}で少しペースを落とす。`;}return`${a.name}から始めて、${b.name}へ。最後は${c.name}で少しペースを落とす。`;}
   function coverageMinutes(spots){return spots.reduce((sum,s)=>sum+Number(s?.stay_minutes_seed||0),0)+Math.max(0,spots.length-1)*30;}
   function coverageOk(spots,displayMinutes){if(Number(displayMinutes||180)<=120)return true;return coverageMinutes(spots)>=minCoverageMinutes(displayMinutes);}
   function buildOne(seed,r,ctx,used,allPrimaryIds,opts){
@@ -72,8 +103,10 @@
     if(!companion&&familyLong){companions=rankedCompanions(seed,primary,{...ctx,allowOvernight:false},remain,blocked,{allowOvernight:false,allowSameKind:false,preferMeal:true,familyRole:true});companion=companions.map(x=>x.s).find(s=>coverageOk([primary,s],displayMinutes))||null;}
     if(!companion&&overnightEligible){const hotels=rankedCompanions(seed,primary,{...ctx,allowOvernight:true},720,blocked,{allowOvernight:true,allowSameKind:false}).filter(x=>x.s.overnight);companion=hotels[0]?.s||null;if(companion){used.add(companion.spot_id);return{...base,type:'overnight',duration_label:'1泊プラン',estimated_minutes:null,title:comboTitle(primary,companion,'overnight',displayMinutes,ctx),lead:comboLead(primary,companion,'overnight',ctx),spot_ids:[primary.spot_id,companion.spot_id],steps:[{spot_id:primary.spot_id,role:'DAY',label:'昼の主役'},{spot_id:companion.spot_id,role:'STAY',label:'泊まる'}]};}}
     if(companion){
-      const spots=[primary,companion],steps=[{spot_id:primary.spot_id,role:'MAIN',label:'今日の主役'}];
+      const spots=[primary,companion];
       const primaryChild=childFocusScore(primary,ctx),primaryAdult=adultFocusScore(primary),compChild=childFocusScore(companion,ctx),compAdult=adultFocusScore(companion);
+      let mainLabel='今日の主役';if(ctx.audience==='family'&&familyLong){if(primaryAdult>=primaryChild+8)mainLabel='大人も楽しむ';else if(primaryChild>=primaryAdult+8)mainLabel='子どもの時間';}
+      const steps=[{spot_id:primary.spot_id,role:'MAIN',label:mainLabel}];
       let secondLabel='もうひとつ';if(ctx.audience==='family'){if(isMealSpot(companion))secondLabel='ひと休み';else if(primaryChild>=primaryAdult&&compAdult>compChild)secondLabel='大人も楽しむ';else if(primaryAdult>primaryChild&&compChild>=68)secondLabel='子どもの時間';}
       steps.push({spot_id:companion.spot_id,role:'PLUS',label:secondLabel});
       if(ctx.audience==='family'&&displayMinutes>=360&&!isMealSpot(primary)&&!isMealSpot(companion)){
@@ -92,5 +125,5 @@
   function buildPlans(seed,recommendationResult,ctx={},opts={}){const recs=recommendationResult?.recommendations||[],displayMinutes=Number(opts.displayMinutes||ctx.availableMinutes||180),usedCompanions=new Set(),usedPrimaryIds=new Set(),usedGroups=new Set(),originalPrimaryIds=new Set(recs.map(r=>r.spot_id)),plans=[];for(const r of recs){let p=buildOne(seed,r,ctx,usedCompanions,originalPrimaryIds,opts);let chosenId=r.spot_id;if(!p){const slot=r.slot,slot_label=r.slot_label;const candidates=fallbackCandidates(seed,ctx,displayMinutes,new Set([...usedPrimaryIds,...usedCompanions,...originalPrimaryIds]),usedGroups);for(const c of candidates){const trial={...c,slot,slot_label};p=buildOne(seed,trial,ctx,usedCompanions,new Set([...originalPrimaryIds,...usedPrimaryIds]),opts);if(p){chosenId=c.spot_id;break;}}}
       if(p){plans.push(p);usedPrimaryIds.add(chosenId);const primary=spotMap(seed).get(chosenId);if(primary)usedGroups.add(groupKey(primary));}
     }return plans;}
-  return{buildPlans,areaKey,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk};
+  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk};
 });

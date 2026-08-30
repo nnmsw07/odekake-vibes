@@ -1,4 +1,8 @@
-# Kibun Trip MVP v0.19.8.2 — 256 spots
+# Kibun Trip MVP v0.19.8.3 — 286 spots
+
+## v19.8.3 — Food / Cafe companions + curated booking
+
+Planを「場所のハシゴ」ではなく一日の流れとして成立させるため、カフェ・レストラン28件と、お台場の親子向け主役2件を追加しました。Planの組み合わせは区単位より細かい `plan zone` を優先し、お台場→赤坂のような同一区内の遠距離ハシゴを抑制します。子連れの長時間Planでは「大人も楽しむ / 子どもの時間 / ひと休み・ごはん」の役割を優先。予約導線は複数ASPを並べず、個別リンク＋編集優先順位で1件だけ表示します。富士屋ホテルはユーザー提供のA8生成コードをそのまま保持し、OZmall個別ページを第一候補、じゃらん箱根エリアをfallbackとして残しています。詳細は `FOOD_CAFE_EXPANSION_v19_8_3.md` / `CHANGELOG_v19_8_3.md` / `HANDOFF_v19_8_3.md`。
 
 ## v19.8.2 — Plan quality / family balance
 
@@ -16,7 +20,7 @@ Plan生成を「時間を埋める組み合わせ」から「過ごし方とし�
 
 ## v0.19 の状態
 
-- **256スポット**収録
+- **286スポット**収録
 - 同行者: 子ども / パートナー / ひとり / 友だち
 - 気分・やりたいことを最大3つ選択
 - 子どもの年齢によるhard filter
@@ -24,7 +28,7 @@ Plan生成を「時間を埋める組み合わせ」から「過ごし方とし�
 - Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
-- Kibunロゴから **地域 × カテゴリ** で256スポットをブラウズ
+- Kibunロゴから **地域 × カテゴリ** で286スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
 V19.5の公開準備は `CHANGELOG_v19_5.md` / `DOMAIN_SETUP_v19_5.md` / `HANDOFF_v19_5.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
@@ -47,7 +51,7 @@ python -m http.server 8000
 - `styles.css` — スマホ優先デザイン
 - `app.js` — UI / 詳細 / Hero監査
 - `recommender.js` — 推薦ロジック
-- `data.js` — ブラウザ用256スポットデータ
+- `data.js` — ブラウザ用286スポットデータ
 - `seed.json` — 元データ
 - `travel.js` — 出発地検索 / ルート時間取得
 - `media.js` — Google Places Hero取得

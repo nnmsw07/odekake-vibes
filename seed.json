@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v8_256spots_editorial_experience_hero_audited_candidate",
-    "version": "0.19.7.3",
+    "dataset_name": "kibun_kanto_izu_seed_v10_286spots_plan_food_candidate",
+    "version": "0.19.8.3",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -26,7 +26,9 @@
       "layer_ui_tags": "UI用の短い閲覧タグ。推薦スコアには直接使用せず、コレクション・チップ表示用。",
       "layer_monetization": "affiliate_fitは編集上の収益化適性。provider/productの実在を保証せず、提携・商品照合完了までUI非表示。",
       "layer_editorial_story": "施設説明とは別に、そこで過ごす一日を想像させる編集見出し・リード・moment・collection・best_forを保持。事実情報を置き換えず、その手前の発見体験に使用。",
-      "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。"
+      "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。",
+      "layer_plan_composition": "Planはmicro-area（plan zone）と役割補完を優先。「大人の楽しみ＋子どもの時間＋食事/休憩」を狙い、同系統ハシゴと遠距離の区内ハシゴを抑制。",
+      "layer_curated_booking": "予約導線は個別リンクを優先し、stay: OZmall→一休→じゃらん→JTB→Yahoo!トラベル、food: OZmall→一休.comレストラン、experience: アソビュー→OZmall の順で1件だけ表示。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -64,7 +66,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-30 V19.7.3: V19.7/V19.7.2追加の宿・体験スポットへユーザーHero監査結果を反映。29件のphoto indexと4件のPlace IDを固定。スポット総数は256のまま。",
+    "expansion_note": "2026-08-30 V19.8.3: Planの食事・休憩パーツを強化するため、編集選定のカフェ/レストラン28件と、お台場の親子向け主役2件を追加。256→286 spots。OZmall個別予約を第一候補にするcurated affiliate priorityも導入。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -37901,6 +37903,4645 @@
         "style": "bookable",
         "same_day_fit": 65,
         "reservation_expected": false
+      }
+    },
+    {
+      "spot_id": "spot_257",
+      "slug": "the-wharf-house-yamashita-koen",
+      "name": "THE WHARF HOUSE YAMASHITA KOEN",
+      "aliases": [],
+      "category_primary": "waterfront_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "waterside",
+        "family",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町279",
+      "official_url": "https://wharfhouse-yokohama.zetton.co.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 94,
+        "toddler_fit": 96,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 90,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのyokohama_bay編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "山下公園を歩いたあと、そのまま海のそばでひと休み。朝はカフェ、夜はレストランとして使え、横浜らしい水辺の時間をつなぎやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://wharfhouse-yokohama.zetton.co.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "山下公園を歩いたあと、そのまま海のそばでひと休み。朝はカフェ、夜はレストランとして使え、横浜らしい水辺の時間をつなぎやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://wharfhouse-yokohama.zetton.co.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "THE WHARF HOUSE YAMASHITA KOENの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 98,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE WHARF HOUSE YAMASHITA KOEN",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "wharf-house",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yokohama_bay",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_258",
+      "slug": "100spoons-azamino",
+      "name": "100本のスプーン あざみ野ガーデンズ",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市青葉区",
+      "address": "神奈川県横浜市青葉区大場町704-60 あざみ野ガーデンズ内",
+      "official_url": "https://100spoons.com/azamino/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 99,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのazamino編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "子ども用に妥協するのではなく、大人と同じ料理を小さなサイズでも楽しめる。絵本スペースや離乳食、授乳室もあり、親子の食事そのものを予定に入れやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://100spoons.com/azamino/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "子ども用に妥協するのではなく、大人と同じ料理を小さなサイズでも楽しめる。絵本スペースや離乳食、授乳室もあり、親子の食事そのものを予定に入れやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://100spoons.com/azamino/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "100本のスプーン あざみ野ガーデンズの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 99,
+        "partner": 94,
+        "solo": 88,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "横浜市青葉区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJ2aflHWf3GGAR-0VJssMRztw"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJ2aflHWf3GGAR-0VJssMRztw",
+          "status": "resolved_manual",
+          "query": "100本のスプーン あざみ野ガーデンズ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "100spoons",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "azamino",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_259",
+      "slug": "bills-yokohama-red-brick",
+      "name": "bills 横浜赤レンガ倉庫",
+      "aliases": [],
+      "category_primary": "waterfront_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "waterside",
+        "date",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港1-1-2 横浜赤レンガ倉庫2号館1F",
+      "official_url": "https://www.billsjapan.com/jp/locations/yokohama",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 88,
+        "toddler_fit": 90,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのyokohama_bay編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "赤レンガや海辺を歩いたあと、港を望むテラスで食事へ。朝から夜まで使えるので、横浜の一日に自然な区切りをつくってくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.billsjapan.com/jp/locations/yokohama"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "赤レンガや海辺を歩いたあと、港を望むテラスで食事へ。朝から夜まで使えるので、横浜の一日に自然な区切りをつくってくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.billsjapan.com/jp/locations/yokohama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "bills 横浜赤レンガ倉庫の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJacxNgvhcGGARXKShpXdikgU"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJacxNgvhcGGARXKShpXdikgU",
+          "status": "resolved_manual",
+          "query": "bills 横浜赤レンガ倉庫",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "bills",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yokohama_bay",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_260",
+      "slug": "pie-holic-yokohama",
+      "name": "Pie Holic",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "pie",
+        "family",
+        "date",
+        "waterside"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港1-3-1 MARINE & WALK YOKOHAMA内",
+      "official_url": "https://www.tgn.co.jp/restaurant/ph/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 88,
+        "toddler_fit": 90,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 90,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのyokohama_bay編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "MARINE & WALKで海を感じたあと、パイを主役にした食事へ。観光の途中のランチにも、しっかり食べたい夕方にも使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.tgn.co.jp/restaurant/ph/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "MARINE & WALKで海を感じたあと、パイを主役にした食事へ。観光の途中のランチにも、しっかり食べたい夕方にも使いやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.tgn.co.jp/restaurant/ph/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Pie Holicの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 96,
+        "solo": 90,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJE49iqFdcGGARnzjldry9nzY"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJE49iqFdcGGARnzjldry9nzY",
+          "status": "resolved_manual",
+          "query": "Pie Holic",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "pie-holic",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yokohama_bay",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_261",
+      "slug": "aloha-table-yokohama-bay-quarter",
+      "name": "アロハテーブル 横浜ベイクォーター",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "date",
+        "waterside"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市神奈川区",
+      "address": "神奈川県横浜市神奈川区金港町1-10 横浜ベイクォーター4F",
+      "official_url": "https://www.alohatable.com/shop",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 84,
+        "toddler_fit": 86,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 88,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 15
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのyokohama_station編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "横浜駅から少しだけ水辺側へ。買い物や遊びのあとに、ハワイアンな食事で気分をゆるめたい日に寄りやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.alohatable.com/shop"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 86,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "横浜駅から少しだけ水辺側へ。買い物や遊びのあとに、ハワイアンな食事で気分をゆるめたい日に寄りやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.alohatable.com/shop"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "アロハテーブル 横浜ベイクォーターの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 84,
+        "partner": 92,
+        "solo": 86,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "横浜市神奈川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJgXaR8BRcGGARMj3Y_X8zYJ0"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJgXaR8BRcGGARMj3Y_X8zYJ0",
+          "status": "resolved_manual",
+          "query": "アロハテーブル 横浜ベイクォーター",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "ごはん",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "aloha-table",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yokohama_station",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_262",
+      "slug": "100spoons-futakotamagawa",
+      "name": "100本のスプーン FUTAKOTAMAGAWA",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区玉川1-14-1 二子玉川ライズ S.C. テラスマーケット2F",
+      "official_url": "https://100spoons.com/futakotamagawa/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 99,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのfutakotamagawa編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "二子玉川で子どもを遊ばせたあと、親もちゃんと食事を楽しめる場所へ。ベビーカーや授乳室など、子連れで立ち寄る負担を減らしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://100spoons.com/futakotamagawa/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "二子玉川で子どもを遊ばせたあと、親もちゃんと食事を楽しめる場所へ。ベビーカーや授乳室など、子連れで立ち寄る負担を減らしやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://100spoons.com/futakotamagawa/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "100本のスプーン FUTAKOTAMAGAWAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 99,
+        "partner": 94,
+        "solo": 88,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "100本のスプーン FUTAKOTAMAGAWA",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "100spoons",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "futakotamagawa",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_263",
+      "slug": "100spoons-mot",
+      "name": "100本のスプーン 東京都現代美術館内",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids",
+        "art"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区三好4-1-1 東京都現代美術館内 B1F",
+      "official_url": "https://100spoons.com/mot/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 99,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 94,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのkiyosumi編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "アートを見た余韻のまま、家族で食卓へ。美術館の中にあり、食事中にもアートに触れられるから「大人の見たい」と「子どもの楽しい」をつなぎやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://100spoons.com/mot/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "アートを見た余韻のまま、家族で食卓へ。美術館の中にあり、食事中にもアートに触れられるから「大人の見たい」と「子どもの楽しい」をつなぎやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://100spoons.com/mot/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "100本のスプーン 東京都現代美術館内の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 99,
+        "partner": 96,
+        "solo": 90,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "100本のスプーン 東京都現代美術館内",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "100spoons",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "kiyosumi",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_264",
+      "slug": "100spoons-tachikawa",
+      "name": "100本のスプーン TACHIKAWA",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "立川市",
+      "address": "東京都立川市緑町3-1 GREEN SPRINGS 2F",
+      "official_url": "https://100spoons.com/tachikawa/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 99,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 93,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのtachikawa編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "GREEN SPRINGSやPLAY! PARKのあとに、家族でそのまま食事へ。大人と子どもが同じテーブルでそれぞれ楽しめるのがうれしい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://100spoons.com/tachikawa/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "GREEN SPRINGSやPLAY! PARKのあとに、家族でそのまま食事へ。大人と子どもが同じテーブルでそれぞれ楽しめるのがうれしい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://100spoons.com/tachikawa/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "100本のスプーン TACHIKAWAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 99,
+        "partner": 94,
+        "solo": 88,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "立川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJA1_KIxXhGGARh38s3ANoMJ4"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJA1_KIxXhGGARh38s3ANoMJ4",
+          "status": "resolved_manual",
+          "query": "100本のスプーン TACHIKAWA",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "100spoons",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "tachikawa",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_265",
+      "slug": "100spoons-toyosu",
+      "name": "100本のスプーン TOYOSU",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids",
+        "waterside"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区豊洲2-2-1 アーバンドック ららぽーと豊洲3 1F",
+      "official_url": "https://100spoons.com/toyosu/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 99,
+        "toddler_fit": 100,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 93,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのtoyosu編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "豊洲で遊んだ一日のごはんを、子どもだけに合わせすぎず楽しむ。ららぽーと内だから、天気や荷物を気にせず予定に組み込みやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://100spoons.com/toyosu/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "豊洲で遊んだ一日のごはんを、子どもだけに合わせすぎず楽しむ。ららぽーと内だから、天気や荷物を気にせず予定に組み込みやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://100spoons.com/toyosu/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "100本のスプーン TOYOSUの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 99,
+        "partner": 94,
+        "solo": 88,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "100本のスプーン TOYOSU",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "100spoons",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "toyosu",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_266",
+      "slug": "bills-odaiba",
+      "name": "bills お台場",
+      "aliases": [],
+      "category_primary": "waterfront_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "date",
+        "waterside"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区台場1-6-1 デックス東京ビーチ シーサイドモール3F",
+      "official_url": "https://www.billsjapan.com/jp/locations/odaiba",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 86,
+        "toddler_fit": 88,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのodaiba編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "海辺を歩いたあとは、テラスのある店で少し長めの休憩を。朝食からディナーまで使えるので、お台場の予定の間に入れやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.billsjapan.com/jp/locations/odaiba"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "海辺を歩いたあとは、テラスのある店で少し長めの休憩を。朝食からディナーまで使えるので、お台場の予定の間に入れやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.billsjapan.com/jp/locations/odaiba"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "bills お台場の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 86,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "bills お台場",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "bills",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "odaiba",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_267",
+      "slug": "eggs-n-things-odaiba",
+      "name": "Eggs ’n Things お台場店",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "kids",
+        "waterside"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区台場1-7-1 アクアシティお台場3F",
+      "official_url": "https://www.eggsnthingsjapan.com/odaiba/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 95,
+        "toddler_fit": 97,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 90,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのodaiba編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "遊んだあとにパンケーキや食事で一息。ベビーカーでも利用でき、お台場の親子プランに「座って休む時間」を入れやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.eggsnthingsjapan.com/odaiba/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "遊んだあとにパンケーキや食事で一息。ベビーカーでも利用でき、お台場の親子プランに「座って休む時間」を入れやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.eggsnthingsjapan.com/odaiba/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Eggs ’n Things お台場店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 95,
+        "partner": 90,
+        "solo": 84,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 88,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Eggs ’n Things お台場店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "水辺"
+      ],
+      "recommendation_group": "eggs-n-things",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "odaiba",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_268",
+      "slug": "ty-harbor",
+      "name": "T.Y.HARBOR",
+      "aliases": [],
+      "category_primary": "waterfront_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "waterside",
+        "date",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "品川区",
+      "address": "東京都品川区東品川2-1-3",
+      "official_url": "https://www.tysons.jp/tyharbor/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 110,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 82,
+        "toddler_fit": 84,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 95,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのtennoz編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "運河沿いの景色ごと食事を楽しむ、天王洲の定番。街歩きやアートのあとに、水辺でもう少しゆっくりしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.tysons.jp/tyharbor/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "運河沿いの景色ごと食事を楽しむ、天王洲の定番。街歩きやアートのあとに、水辺でもう少しゆっくりしたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.tysons.jp/tyharbor/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "T.Y.HARBORの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "品川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "T.Y.HARBOR",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "tysons-tennoz",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "tennoz",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_269",
+      "slug": "ride-tennoz",
+      "name": "RIDE",
+      "aliases": [],
+      "category_primary": "waterfront_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "waterside",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "品川区",
+      "address": "東京都品川区東品川2-2-24 天王洲セントラルタワー キャナルガーデン1F",
+      "official_url": "https://ride-tennoz.tokyo/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 74,
+        "toddler_fit": 76,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 94,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのtennoz編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "運河沿いのテラスと薪火の料理で、天王洲の散歩を食事につなぐ。昼にも夜にも使えて、大人の寄り道として入れやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://ride-tennoz.tokyo/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "運河沿いのテラスと薪火の料理で、天王洲の散歩を食事につなぐ。昼にも夜にも使えて、大人の寄り道として入れやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://ride-tennoz.tokyo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "RIDEの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "品川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJDWmH0ZKLGGARs6JrOhmYgT4"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJDWmH0ZKLGGARs6JrOhmYgT4",
+          "status": "resolved_manual",
+          "query": "RIDE",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "ride-tennoz",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "tennoz",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_270",
+      "slug": "canal-cafe-kagurazaka",
+      "name": "CANAL CAFE",
+      "aliases": [],
+      "category_primary": "waterfront_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "waterside",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区神楽坂1-9",
+      "official_url": "https://www.canalcafe.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 62,
+        "toddler_fit": 64,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 94,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのkagurazaka編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "神楽坂を歩いたあと、お堀の水辺へ降りて食事。街のにぎわいから少し離れて、景色と一緒に休憩できる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.canalcafe.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "神楽坂を歩いたあと、お堀の水辺へ降りて食事。街のにぎわいから少し離れて、景色と一緒に休憩できる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.canalcafe.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "CANAL CAFEの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 62,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJVVVwsESMGGARP1dWh0WXom4"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJVVVwsESMGGARP1dWh0WXom4",
+          "status": "resolved_manual",
+          "query": "CANAL CAFE",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "canal-cafe",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "kagurazaka",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_271",
+      "slug": "crisscross-aoyama",
+      "name": "crisscross",
+      "aliases": [],
+      "category_primary": "terrace_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "terrace",
+        "date",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区南青山5-7-28",
+      "official_url": "https://www.tysons.jp/crisscross/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 74,
+        "toddler_fit": 76,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 93,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのaoyama編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "表参道の街歩きの途中で、木陰のテラスへ。朝から夜までふらっと寄れて、予定を決めすぎない日の休憩にちょうどいい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.tysons.jp/crisscross/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "表参道の街歩きの途中で、木陰のテラスへ。朝から夜までふらっと寄れて、予定を決めすぎない日の休憩にちょうどいい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.tysons.jp/crisscross/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "crisscrossの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJhdvfaGCLGGARBC6YoRIkmUs"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJhdvfaGCLGGARBC6YoRIkmUs",
+          "status": "resolved_manual",
+          "query": "crisscross",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "tysons-aoyama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "aoyama",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_272",
+      "slug": "mr-farmer-komazawa",
+      "name": "Mr.FARMER 駒沢オリンピック公園店",
+      "aliases": [],
+      "category_primary": "park_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "park",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区駒沢公園1-1-2",
+      "official_url": "https://mr-farmer.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 88,
+        "toddler_fit": 90,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 89,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 15
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのkomazawa編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "公園で体を動かしたあと、野菜を中心にした食事でひと休み。外遊びの一日を無理なく締めやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://mr-farmer.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 86,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "公園で体を動かしたあと、野菜を中心にした食事でひと休み。外遊びの一日を無理なく締めやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://mr-farmer.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Mr.FARMER 駒沢オリンピック公園店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 92,
+        "solo": 86,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Mr.FARMER 駒沢オリンピック公園店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "mr-farmer",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "komazawa",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_273",
+      "slug": "ivy-place-daikanyama",
+      "name": "IVY PLACE",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "date",
+        "family",
+        "culture"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区猿楽町16-15",
+      "official_url": "https://www.tysons.jp/ivyplace/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 78,
+        "toddler_fit": 80,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのdaikanyama編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "本や街を見て歩いたあと、森のような空気の一軒家へ。未就学児も利用できるエリアがあり、大人の雰囲気を諦めたくない親子の食事にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.tysons.jp/ivyplace/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "本や街を見て歩いたあと、森のような空気の一軒家へ。未就学児も利用できるエリアがあり、大人の雰囲気を諦めたくない親子の食事にも。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.tysons.jp/ivyplace/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "IVY PLACEの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "IVY PLACE",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "tysons-daikanyama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "daikanyama",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_274",
+      "slug": "trex-kawasaki-river-cafe",
+      "name": "TREX KAWASAKI RIVER CAFE",
+      "aliases": [],
+      "category_primary": "river_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "river",
+        "activity",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "川崎市川崎区",
+      "address": "神奈川県川崎市川崎区殿町3-25-11 東急REIホテル1F",
+      "official_url": "https://www.trex.style/cafe/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 82,
+        "toddler_fit": 84,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのtonomachi編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "多摩川と羽田の空を眺めながら、食事だけでなく外遊びの気配も楽しむ。川沿いで過ごす日の拠点にしやすいカフェ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.trex.style/cafe/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "多摩川と羽田の空を眺めながら、食事だけでなく外遊びの気配も楽しむ。川沿いで過ごす日の拠点にしやすいカフェ。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.trex.style/cafe/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "TREX KAWASAKI RIVER CAFEの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "川崎市川崎区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJfXsa8BRhGGARCCchJqsPHW0"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJfXsa8BRhGGARCCchJqsPHW0",
+          "status": "resolved_manual",
+          "query": "TREX KAWASAKI RIVER CAFE",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "trex-kawasaki",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "tonomachi",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_275",
+      "slug": "bills-shichirigahama",
+      "name": "bills 七里ヶ浜",
+      "aliases": [],
+      "category_primary": "ocean_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "ocean",
+        "date",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市七里ガ浜1-1-1 WEEKEND HOUSE ALLEY 2F",
+      "official_url": "https://www.billsjapan.com/jp/locations/shichirigahama",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 82,
+        "toddler_fit": 84,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 98,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのshichirigahama編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "海を眺めることまで食事の一部に。七里ヶ浜を歩いた日の朝食にも、ゆっくりしたランチにも使える。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.billsjapan.com/jp/locations/shichirigahama"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "海を眺めることまで食事の一部に。七里ヶ浜を歩いた日の朝食にも、ゆっくりしたランチにも使える。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.billsjapan.com/jp/locations/shichirigahama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "bills 七里ヶ浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "bills 七里ヶ浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "bills",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "shichirigahama",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_276",
+      "slug": "pacific-drive-in-shichirigahama",
+      "name": "Pacific DRIVE-IN 七里ヶ浜",
+      "aliases": [],
+      "category_primary": "ocean_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "ocean",
+        "family",
+        "friends"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市七里ヶ浜東2-1-12",
+      "official_url": "https://pacificgeneralstore.com/pages/shop-list",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 85,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 88,
+        "toddler_fit": 90,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのshichirigahama編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "海沿いを歩いたら、ドライブインでハワイアンな休憩。テラスで風を感じながら、湘南らしい一日の続きをつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://pacificgeneralstore.com/pages/shop-list"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "海沿いを歩いたら、ドライブインでハワイアンな休憩。テラスで風を感じながら、湘南らしい一日の続きをつくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://pacificgeneralstore.com/pages/shop-list"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Pacific DRIVE-IN 七里ヶ浜の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 98,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJNd_D8ENPGGARSghaDpPudGE"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJNd_D8ENPGGARSghaDpPudGE",
+          "status": "resolved_manual",
+          "query": "Pacific DRIVE-IN 七里ヶ浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "pacific-drive-in",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "shichirigahama",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_277",
+      "slug": "loncafe-enoshima",
+      "name": "LONCAFE 湘南江の島本店",
+      "aliases": [],
+      "category_primary": "scenic_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "sweets",
+        "scenic",
+        "family",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "藤沢市",
+      "address": "神奈川県藤沢市江の島2-3-38 江の島サムエル・コッキング苑内",
+      "official_url": "https://loncafe.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 86,
+        "toddler_fit": 88,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのenoshima編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "江の島を上まで歩いたご褒美に、景色とフレンチトースト。島歩きの途中に「座って眺める時間」をつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://loncafe.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "江の島を上まで歩いたご褒美に、景色とフレンチトースト。島歩きの途中に「座って眺める時間」をつくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://loncafe.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "LONCAFE 湘南江の島本店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 86,
+        "partner": 98,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "藤沢市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJvVsEzuVOGGARkeWyGQg7G7A"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJvVsEzuVOGGARkeWyGQg7G7A",
+          "status": "resolved_manual",
+          "query": "LONCAFE 湘南江の島本店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "loncafe",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "enoshima",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_278",
+      "slug": "amalfi-della-sera",
+      "name": "Amalfi DELLA SERA",
+      "aliases": [],
+      "category_primary": "ocean_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "italian",
+        "ocean",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市七里ガ浜1-5-10",
+      "official_url": "https://amalfi-dellasera.com/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 110,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 55,
+        "toddler_fit": 57,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 98,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのshichirigahama編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "江ノ電の線路を越えた先で、七里ヶ浜を一望するイタリアンへ。海を見る休日を、少し特別な食事までつなげたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://amalfi-dellasera.com/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "江ノ電の線路を越えた先で、七里ヶ浜を一望するイタリアンへ。海を見る休日を、少し特別な食事までつなげたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://amalfi-dellasera.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Amalfi DELLA SERAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 55,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJZ_n2_j9PGGARmKy_cKnB4kM"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJZ_n2_j9PGGARmKy_cKnB4kM",
+          "status": "resolved_manual",
+          "query": "Amalfi DELLA SERA",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "amalfi",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "shichirigahama",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_279",
+      "slug": "bakery-table-hakone",
+      "name": "Bakery & Table 箱根",
+      "aliases": [],
+      "category_primary": "lake_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "bakery",
+        "onsen",
+        "lake",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町元箱根9-1",
+      "official_url": "https://www.bthjapan.com/hakone.php",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 80,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 90,
+        "toddler_fit": 92,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 94,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのmotohakone編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "芦ノ湖を眺めながらパンとコーヒー、気分が合えば足湯まで。海賊船や湖畔散歩の前後に入れやすい箱根の休憩地点。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.bthjapan.com/hakone.php"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "芦ノ湖を眺めながらパンとコーヒー、気分が合えば足湯まで。海賊船や湖畔散歩の前後に入れやすい箱根の休憩地点。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.bthjapan.com/hakone.php"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Bakery & Table 箱根の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 96,
+        "solo": 90,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJ10rntXyYGWARz9ZcBQYInMg"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJ10rntXyYGWARz9ZcBQYInMg",
+          "status": "resolved_manual",
+          "query": "Bakery & Table 箱根",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "bakery-table",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "motohakone",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_280",
+      "slug": "naraya-cafe",
+      "name": "NARAYA CAFE",
+      "aliases": [],
+      "category_primary": "onsen_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "onsen",
+        "gallery",
+        "family",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町宮ノ下404-13",
+      "official_url": "https://naraya-cafe.com/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 80,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 90,
+        "toddler_fit": 92,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 95,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのmiyanoshita編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "宮ノ下で、足湯につかりながらコーヒーを。古い建物を生かした空間で、観光の間にちゃんと休む時間をつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://naraya-cafe.com/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "宮ノ下で、足湯につかりながらコーヒーを。古い建物を生かした空間で、観光の間にちゃんと休む時間をつくれる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://naraya-cafe.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "NARAYA CAFEの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 98,
+        "solo": 92,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJfVf8vD2iGWAR4J3o-0WTbAE"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJfVf8vD2iGWAR4J3o-0WTbAE",
+          "status": "resolved_manual",
+          "query": "NARAYA CAFE",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "naraya-cafe",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "miyanoshita",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_281",
+      "slug": "gora-brewery-grill",
+      "name": "GORA BREWERY & GRILL",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "brewery",
+        "onsen",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町強羅1300-72",
+      "official_url": "https://itoh-dining.co.jp/gorabrewery/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 42,
+        "toddler_fit": 44,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのgora編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "強羅でアートや温泉を楽しんだあと、クラフトビールとグリルへ。足湯もある、箱根の大人時間を足せるレストラン。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://itoh-dining.co.jp/gorabrewery/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "強羅でアートや温泉を楽しんだあと、クラフトビールとグリルへ。足湯もある、箱根の大人時間を足せるレストラン。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://itoh-dining.co.jp/gorabrewery/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "GORA BREWERY & GRILLの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 42,
+        "partner": 100,
+        "solo": 96,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJQxbH_wGiGWAR4yjosTVcEfg"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJQxbH_wGiGWAR4yjosTVcEfg",
+          "status": "resolved_manual",
+          "query": "GORA BREWERY & GRILL",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "gora-brewery",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "gora",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_282",
+      "slug": "coffee-camp-hakone",
+      "name": "COFFEE CAMP",
+      "aliases": [],
+      "category_primary": "cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "coffee",
+        "family",
+        "solo"
+      ],
+      "prefecture": "神奈川県",
+      "city": "足柄下郡箱根町",
+      "address": "神奈川県足柄下郡箱根町強羅1320-261",
+      "official_url": "https://coffeecamp-hakone.com/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 78,
+        "toddler_fit": 80,
+        "stroller_fit": 65,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 90
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのgora編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "強羅駅の近くで、旅の予定をいったん止めてコーヒーを。朝から使いやすく、美術館や温泉の前後に気軽な余白を入れられる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://coffeecamp-hakone.com/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "強羅駅の近くで、旅の予定をいったん止めてコーヒーを。朝から使いやすく、美術館や温泉の前後に気軽な余白を入れられる。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://coffeecamp-hakone.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "COFFEE CAMPの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 96,
+        "solo": 90,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "足柄下郡箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJAy4zLzuhGWARR0A0X2lrHWY"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJAy4zLzuhGWARR0A0X2lrHWY",
+          "status": "resolved_manual",
+          "query": "COFFEE CAMP",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "coffee-camp",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "gora",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_283",
+      "slug": "the-surf-ocean-terrace",
+      "name": "THE SURF OCEAN TERRACE RESTAURANT",
+      "aliases": [],
+      "category_primary": "ocean_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "ocean",
+        "family",
+        "date"
+      ],
+      "prefecture": "千葉県",
+      "city": "千葉市美浜区",
+      "address": "千葉県千葉市美浜区磯辺2-8-3 稲毛海浜公園内",
+      "official_url": "https://dearsbrain.jp/the-surf/restaurant/contact/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 82,
+        "toddler_fit": 84,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのinage編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "稲毛の海で遊んだあと、海を眺めるレストランへ。外遊びから食事まで、公園の中で一日の流れをつくりやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子ども同伴時の席・設備などは公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://dearsbrain.jp/the-surf/restaurant/contact/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "稲毛の海で遊んだあと、海を眺めるレストランへ。外遊びから食事まで、公園の中で一日の流れをつくりやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://dearsbrain.jp/the-surf/restaurant/contact/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "THE SURF OCEAN TERRACE RESTAURANTの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "千葉市美浜区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": "ChIJj_1pMQCDImARw4XXsc2KzTM"
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": "ChIJj_1pMQCDImARw4XXsc2KzTM",
+          "status": "resolved_manual",
+          "query": "THE SURF OCEAN TERRACE RESTAURANT",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "ごはん",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "the-surf",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "inage",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_284",
+      "slug": "mr-farmer-kisarazu",
+      "name": "Mr.FARMER 三井アウトレットパーク木更津店",
+      "aliases": [],
+      "category_primary": "family_restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "shopping",
+        "family"
+      ],
+      "prefecture": "千葉県",
+      "city": "木更津市",
+      "address": "千葉県木更津市金田東3-1-1 三井アウトレットパーク木更津",
+      "official_url": "https://mr-farmer.jp/1192/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 12,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 68,
+        "parent_rest": 94,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 88,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 62,
+        "scenic": 89,
+        "stroll": 55,
+        "relax": 92,
+        "shopping": 25,
+        "food": 100,
+        "culture": 20,
+        "animals": 0,
+        "creative": 18,
+        "active": 5,
+        "waterside": 15
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのkisarazu_outlet編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "アウトレットを見て回る途中で、子どもも大人も食べやすいメニューへ。買い物を休憩込みの一日にしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://mr-farmer.jp/1192/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 86,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "アウトレットを見て回る途中で、子どもも大人も食べやすいメニューへ。買い物を休憩込みの一日にしやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://mr-farmer.jp/1192/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Mr.FARMER 三井アウトレットパーク木更津店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 92,
+        "solo": 86,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "木更津市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Mr.FARMER 三井アウトレットパーク木更津店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "mr-farmer",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "kisarazu_outlet",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 80,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_285",
+      "slug": "legoland-discovery-center-tokyo",
+      "name": "レゴランド・ディスカバリー・センター東京",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "creative",
+        "family",
+        "theme_park"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区台場1-6-1 デックス東京ビーチ アイランドモール3F",
+      "official_url": "https://www.legolanddiscoverycenter.com/tokyo/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 70,
+        "hands_on": 96,
+        "quietness": 48,
+        "parent_rest": 62,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 18,
+        "creative_sensory": 88,
+        "baby_fit": 82,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 45,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 92,
+        "scenic": 92,
+        "stroll": 55,
+        "relax": 34,
+        "shopping": 25,
+        "food": 18,
+        "culture": 45,
+        "animals": 0,
+        "creative": 98,
+        "active": 82,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのodaiba編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "レゴの世界で、つくる・乗る・見るをまとめて楽しむ屋内型アトラクション。お台場で子どもの「やりたい」を主役にしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.legolanddiscoverycenter.com/tokyo/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "レゴの世界で、つくる・乗る・見るをまとめて楽しむ屋内型アトラクション。お台場で子どもの「やりたい」を主役にしたい日に。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.legolanddiscoverycenter.com/tokyo/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "レゴランド・ディスカバリー・センター東京の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 74,
+        "solo": 68,
+        "friends": 80
+      },
+      "adult_enjoyment_seed": 72,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "レゴランド・ディスカバリー・センター東京",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "学び・体験",
+        "水辺"
+      ],
+      "recommendation_group": "legoland-discovery",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "odaiba",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "timed_or_ticketed",
+        "same_day_fit": 65,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_286",
+      "slug": "miraikan",
+      "name": "日本科学未来館",
+      "aliases": [],
+      "category_primary": "science_museum",
+      "categories": [
+        "culture",
+        "science",
+        "museum",
+        "hands_on",
+        "family",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区青海2-3-6",
+      "official_url": "https://www.miraikan.jst.go.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 38,
+        "hands_on": 82,
+        "quietness": 48,
+        "parent_rest": 62,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 18,
+        "creative_sensory": 88,
+        "baby_fit": 76,
+        "toddler_fit": 90,
+        "stroller_fit": 82,
+        "rain_resilience": 92,
+        "heat_resilience": 90,
+        "walking_load": 45,
+        "planning_friction": 70
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 30,
+        "extraordinary": 92,
+        "scenic": 96,
+        "stroll": 55,
+        "relax": 34,
+        "shopping": 25,
+        "food": 18,
+        "culture": 100,
+        "animals": 0,
+        "creative": 84,
+        "active": 48,
+        "waterside": 95
+      },
+      "editorial_reason": "Planの「主役＋余韻」をつくるためのodaiba編集候補。近隣スポットと組み合わせて一日の流れを整える。",
+      "public_copy": "宇宙や生命、最新テクノロジーを、展示を触りながら考える科学館。大人の知的好奇心と子どもの「なぜ？」を同じ一日に置きやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は曜日・時期で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-30",
+        "source_url": "https://www.miraikan.jst.go.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 80,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "宇宙や生命、最新テクノロジーを、展示を触りながら考える科学館。大人の知的好奇心と子どもの「なぜ？」を同じ一日に置きやすい。",
+        "checked_at": "2026-08-30",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-30",
+            "url": "https://www.miraikan.jst.go.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "日本科学未来館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 96,
+        "solo": 90,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "日本科学未来館",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "学び・体験",
+        "水辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "miraikan",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "odaiba",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "timed_or_ticketed",
+        "same_day_fit": 65,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
       }
     }
   ]

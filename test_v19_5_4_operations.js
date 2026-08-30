@@ -4,8 +4,8 @@ const R = require('./recommender.js');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id,s]));
 
-assert.equal(seed.spots.length,256);
-assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?)$/.test(seed.metadata.version));
+assert.equal(seed.spots.length,286);
+assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?)$/.test(seed.metadata.version));
 
 // Operational copy / canonical naming.
 assert.equal(byId.spot_199.name,'ガイソーウォーターパーク引地台');
