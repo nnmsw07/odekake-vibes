@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v10_286spots_plan_food_candidate",
-    "version": "0.19.8.3",
+    "dataset_name": "kibun_kanto_izu_seed_v11_291spots_magazine_candidate",
+    "version": "0.19.9",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -28,7 +28,8 @@
       "layer_editorial_story": "施設説明とは別に、そこで過ごす一日を想像させる編集見出し・リード・moment・collection・best_forを保持。事実情報を置き換えず、その手前の発見体験に使用。",
       "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。",
       "layer_plan_composition": "Planはmicro-area（plan zone）と役割補完を優先。「大人の楽しみ＋子どもの時間＋食事/休憩」を狙い、同系統ハシゴと遠距離の区内ハシゴを抑制。",
-      "layer_curated_booking": "予約導線は個別リンクを優先し、stay: OZmall→一休→じゃらん→JTB→Yahoo!トラベル、food: OZmall→一休.comレストラン、experience: アソビュー→OZmall の順で1件だけ表示。"
+      "layer_curated_booking": "予約導線は個別リンクを優先し、stay: OZmall→一休→じゃらん→JTB→Yahoo!トラベル、food: OZmall→一休.comレストラン、experience: アソビュー→OZmall の順で1件だけ表示。",
+      "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -36,7 +37,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-08-31",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -66,7 +67,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-30 V19.8.3: Planの食事・休憩パーツを強化するため、編集選定のカフェ/レストラン28件と、お台場の親子向け主役2件を追加。256→286 spots。OZmall個別予約を第一候補にするcurated affiliate priorityも導入。",
+    "expansion_note": "2026-08-31 V19.9: chano-ma系列5店を親子にも使いやすいFood companionとして追加し286→291 spots。KIBUN MAGAZINEと編集Plan一覧、モバイル下部ナビを追加。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -42542,6 +42543,781 @@
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_287",
+      "slug": "chano-ma-yokohama",
+      "name": "chano-ma 横浜",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "relax"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港1-1-2 横浜赤レンガ倉庫2号館3F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanoma/yokohama",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 76,
+        "parent_rest": 96,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 86,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 12,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 8,
+        "extraordinary": 55,
+        "scenic": 82,
+        "stroll": 45,
+        "relax": 96,
+        "shopping": 55,
+        "food": 100,
+        "culture": 28,
+        "animals": 0,
+        "creative": 20,
+        "active": 4,
+        "waterside": 74
+      },
+      "editorial_reason": "Planの食事・休憩パーツ。yokohama_bayで親子の休憩にも、大人のカフェ時間にも使いやすい編集候補。",
+      "public_copy": "赤レンガを歩いたあと、靴を脱いでくつろげる小上がり席へ。子どもとの休憩にも、海辺デートのカフェ時間にも使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は施設運用により変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "飲食内容により異なります。最新メニューは公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "公式サイトでは小上がりのマット席が案内されています。席の利用条件は当日確認を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/yokohama"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 72,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 68,
+        "popularity_momentum": 78,
+        "reason": "赤レンガを歩いたあと、靴を脱いでくつろげる小上がり席へ。子どもとの休憩にも、海辺デートのカフェ時間にも使いやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanoma/yokohama"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "chano-ma 横浜のくつろげるカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 97,
+        "partner": 94,
+        "solo": 86,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 91,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "chano-ma 横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "のんびり",
+        "大人も楽しい",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yokohama_bay",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_288",
+      "slug": "chano-ma-futakotamagawa",
+      "name": "chano-ma 二子玉川",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区玉川2-21-1 二子玉川ライズショッピングセンター7F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanoma/futakotamagawa",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 76,
+        "parent_rest": 96,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 86,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 12,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 8,
+        "extraordinary": 55,
+        "scenic": 48,
+        "stroll": 45,
+        "relax": 96,
+        "shopping": 55,
+        "food": 100,
+        "culture": 28,
+        "animals": 0,
+        "creative": 20,
+        "active": 4,
+        "waterside": 18
+      },
+      "editorial_reason": "Planの食事・休憩パーツ。futakotamagawaで親子の休憩にも、大人のカフェ時間にも使いやすい編集候補。",
+      "public_copy": "二子玉川で遊んだり買い物したあと、マット席のあるカフェでひと休み。親子の半日を無理なく締めやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は施設運用により変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "飲食内容により異なります。最新メニューは公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "公式サイトではマット席が案内されています。席の指定・利用条件は予約時または当日確認を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/futakotamagawa"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 72,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 68,
+        "popularity_momentum": 78,
+        "reason": "二子玉川で遊んだり買い物したあと、マット席のあるカフェでひと休み。親子の半日を無理なく締めやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanoma/futakotamagawa"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "chano-ma 二子玉川のくつろげるカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 90,
+        "solo": 82,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 91,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "chano-ma 二子玉川",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "のんびり",
+        "大人も楽しい",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "futakotamagawa",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_289",
+      "slug": "chano-ma-ikebukuro",
+      "name": "chano-ma 池袋",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "豊島区",
+      "address": "東京都豊島区西池袋1-11-1 ルミネ池袋9F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanoma/ikebukuro",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 76,
+        "parent_rest": 96,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 86,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 12,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 8,
+        "extraordinary": 55,
+        "scenic": 30,
+        "stroll": 45,
+        "relax": 96,
+        "shopping": 55,
+        "food": 100,
+        "culture": 28,
+        "animals": 0,
+        "creative": 20,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "Planの食事・休憩パーツ。ikebukuroで親子の休憩にも、大人のカフェ時間にも使いやすい編集候補。",
+      "public_copy": "池袋駅直結で、遊びや買い物の合間に座って休みやすいカフェ。マット席もあり、子ども連れの街歩きに余白をつくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は施設運用により変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "飲食内容により異なります。最新メニューは公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "公式サイトではマット席・テーブル席が案内されています。席の指定・利用条件は当日確認を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/ikebukuro"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 72,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 68,
+        "popularity_momentum": 78,
+        "reason": "池袋駅直結で、遊びや買い物の合間に座って休みやすいカフェ。マット席もあり、子ども連れの街歩きに余白をつくれる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanoma/ikebukuro"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "chano-ma 池袋のくつろげるカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 88,
+        "solo": 82,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 91,
+      "routing": {
+        "municipality": "豊島区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "chano-ma 池袋",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "のんびり",
+        "大人も楽しい",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "ikebukuro",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_290",
+      "slug": "yusoshi-chano-ma-ueno",
+      "name": "和カフェyusoshi chano-ma 上野",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区上野6-15-1 上野マルイ9F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanoma/ueno",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 76,
+        "parent_rest": 96,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 86,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 12,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 8,
+        "extraordinary": 55,
+        "scenic": 32,
+        "stroll": 45,
+        "relax": 96,
+        "shopping": 55,
+        "food": 100,
+        "culture": 28,
+        "animals": 0,
+        "creative": 20,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "Planの食事・休憩パーツ。uenoで親子の休憩にも、大人のカフェ時間にも使いやすい編集候補。",
+      "public_copy": "上野のミュージアム巡りや公園散歩のあと、駅近で落ち着いてごはんへ。子ども連れOKの和カフェで、歩いた日の休憩を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は施設運用により変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "飲食内容により異なります。最新メニューは公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "公式店舗検索で「子供連れOK」と案内されています。設備や席の詳細は当日確認を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/ueno"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 72,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 68,
+        "popularity_momentum": 78,
+        "reason": "上野のミュージアム巡りや公園散歩のあと、駅近で落ち着いてごはんへ。子ども連れOKの和カフェで、歩いた日の休憩を。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanoma/ueno"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "和カフェyusoshi chano-ma 上野のくつろげるカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 88,
+        "solo": 88,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 91,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "和カフェyusoshi chano-ma 上野",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "のんびり",
+        "大人も楽しい",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "ueno",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_291",
+      "slug": "yusoshi-chano-ma-tachikawa",
+      "name": "和カフェyusoshi chano-ma 立川",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family",
+        "relax"
+      ],
+      "prefecture": "東京都",
+      "city": "立川市",
+      "address": "東京都立川市曙町2-1-1 ルミネ立川8F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanoma/tachikawa",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 4,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 76,
+        "parent_rest": 96,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 42,
+        "baby_fit": 92,
+        "toddler_fit": 94,
+        "stroller_fit": 86,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 12,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 8,
+        "extraordinary": 55,
+        "scenic": 25,
+        "stroll": 45,
+        "relax": 96,
+        "shopping": 55,
+        "food": 100,
+        "culture": 28,
+        "animals": 0,
+        "creative": 20,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "Planの食事・休憩パーツ。tachikawaで親子の休憩にも、大人のカフェ時間にも使いやすい編集候補。",
+      "public_copy": "PLAY! PARKや昭和記念公園のあと、駅まで戻ってゆっくりごはん。座敷やソファ席があり、親子の一日に休憩を足しやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は施設運用により変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "飲食内容により異なります。最新メニューは公式サイトを確認。",
+        "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
+        "age_note": "公式サイトではソファー・座敷席が案内されています。席の指定・利用条件は当日確認を。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/tachikawa"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 72,
+        "social_presence": 80,
+        "visual_appeal": 88,
+        "media_attention": 68,
+        "popularity_momentum": 78,
+        "reason": "PLAY! PARKや昭和記念公園のあと、駅まで戻ってゆっくりごはん。座敷やソファ席があり、親子の一日に休憩を足しやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanoma/tachikawa"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "和カフェyusoshi chano-ma 立川のくつろげるカフェ空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified",
+        "dynamic_detail": "conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 97,
+        "partner": 87,
+        "solo": 82,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 91,
+      "routing": {
+        "municipality": "立川市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "和カフェyusoshi chano-ma 立川",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "ごはん",
+        "のんびり",
+        "大人も楽しい",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "tachikawa",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
       }
     }
   ]

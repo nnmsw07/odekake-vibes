@@ -2,8 +2,8 @@ const fs=require('fs'),path=require('path');
 const root=__dirname;
 const seed=JSON.parse(fs.readFileSync(path.join(root,'seed.json'),'utf8'));
 function ok(x,m){if(!x)throw new Error(m)}
-ok(/^0\.19\.(?:6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?)$/.test(seed.metadata.version),'version');
-ok(seed.spots.length=== 286,'286 spots');
+ok(/^0\.19\.(?:6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)$/.test(seed.metadata.version),'version');
+ok(seed.spots.length=== 291,'286 spots');
 ok(seed.spots.every(s=>s.monetization&&/[ABC]/.test(s.monetization.affiliate_fit)),'monetization grades');
 const guides=JSON.parse(fs.readFileSync(path.join(root,'SEO_GUIDES_v19_6.json'),'utf8')).guides;
 ok(guides.length===20,'20 v19.6 guides');
@@ -22,4 +22,4 @@ ok(aff.includes('KIBUN_AFFILIATE_CONFIG'),'affiliate config present');
 const app=fs.readFileSync(path.join(root,'app.js'),'utf8');
 ok(app.includes('affiliate_click'),'affiliate GA4');
 ok(app.includes('seo_guide_open'),'SEO GA4');
-console.log('V19.6 REGRESSION PASS: 20 SEO guides + 286 monetization grades + affiliate foundation retained');
+console.log('V19.6 REGRESSION PASS: 20 SEO guides + 291 monetization grades + affiliate foundation retained');

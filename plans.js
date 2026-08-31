@@ -111,6 +111,11 @@
     {id:'friends_odaiba_play_sea_food',aud:['friends'],min:390,max:540,vibes:['active','extraordinary','waterside','food'],spots:['spot_148','spot_149','spot_266'],labels:['思いきり遊ぶ','海辺でひと息','ごはん'],title:'遊び切ったあと、夕方は海の方へ。',lead:'東京ジョイポリスで盛り上がって、お台場海浜公園へ。最後は海を眺めながらごはんまで。'},
     {id:'friends_kisarazu_shop_food',aud:['friends','family'],min:300,max:450,vibes:['shopping','food','stroll'],spots:['spot_160','spot_284'],labels:['買い物','ひと休み・ごはん'],title:'今日は買い物を主役に、途中でちゃんと休む。',lead:'木更津のアウトレットを気ままに見て回り、途中でMr.FARMERへ。買い物だけで疲れ切らない一日に。'}
   ];
+  function curatedPlanPreview(seed,id){
+    const bp=CURATED_PLANS.find(p=>p.id===id);if(!bp)return null;const map=spotMap(seed),spots=bp.spots.map(x=>map.get(x)).filter(Boolean);if(spots.length!==bp.spots.length)return null;
+    const minutes=Math.round((Number(bp.min||180)+Number(bp.max||240))/2),audience=bp.aud?.[0]||'family';
+    return{plan_id:`curated_${bp.id}`,slot:'editorial',slot_label:'KIBUN EDIT',score:94,travel_minutes:null,why:[],primary_spot_id:spots[0].spot_id,requested_minutes:minutes,type:'combo',duration_label:requestedDurationLabel(minutes),estimated_minutes:coverageMinutes(spots),title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:spots.map((s,i)=>({spot_id:s.spot_id,role:i===0?'MAIN':isMealSpot(s)?'FOOD':'PLUS',label:bp.labels[i]||'もうひとつ'})),curated:true,curated_id:bp.id,audience};
+  }
   function curatedPlanForPrimary(seed,primary,r,ctx,displayMinutes,used,allPrimaryIds){
     const map=spotMap(seed),selected=ctx.selectedVibes||[],aud=ctx.audience||'family';
     const choices=CURATED_PLANS.filter(p=>p.spots[0]===primary.spot_id&&p.aud.includes(aud)&&displayMinutes>=p.min&&displayMinutes<=p.max&&(!selected.length||p.vibes.some(v=>selected.includes(v))));
@@ -172,5 +177,5 @@
   function buildPlans(seed,recommendationResult,ctx={},opts={}){const recs=recommendationResult?.recommendations||[],displayMinutes=Number(opts.displayMinutes||ctx.availableMinutes||180),usedCompanions=new Set(),usedPrimaryIds=new Set(),usedGroups=new Set(),originalPrimaryIds=new Set(recs.map(r=>r.spot_id)),plans=[];for(const r of recs){let p=buildOne(seed,r,ctx,usedCompanions,originalPrimaryIds,opts);let chosenId=r.spot_id;if(!p){const slot=r.slot,slot_label=r.slot_label;const candidates=fallbackCandidates(seed,ctx,displayMinutes,new Set([...usedPrimaryIds,...usedCompanions,...originalPrimaryIds]),usedGroups);for(const c of candidates){const trial={...c,slot,slot_label};p=buildOne(seed,trial,ctx,usedCompanions,new Set([...originalPrimaryIds,...usedPrimaryIds]),opts);if(p){chosenId=c.spot_id;break;}}}
       if(p){plans.push(p);usedPrimaryIds.add(chosenId);const primary=spotMap(seed).get(chosenId);if(primary)usedGroups.add(groupKey(primary));}
     }return attachShortPlanAfterSuggestions(seed,plans,ctx,displayMinutes);}
-  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk,curatedPlanForPrimary,shortPlanAfterSuggestion,attachShortPlanAfterSuggestions,CURATED_PLANS};
+  return{buildPlans,areaKey,planZone,samePlanArea,categoryKind,isMealSpot,childFocusScore,adultFocusScore,familyBalanceScore,complementScore,durationLabel,requestedDurationLabel,minCoverageMinutes,shouldStaySingle,coverageMinutes,coverageOk,curatedPlanForPrimary,shortPlanAfterSuggestion,attachShortPlanAfterSuggestions,CURATED_PLANS,curatedPlanPreview};
 });

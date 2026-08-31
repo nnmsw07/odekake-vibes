@@ -1,8 +1,8 @@
 const assert = require('assert');
 const fs = require('fs');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
-assert.equal(seed.spots.length, 286);
-assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?)$/.test(seed.metadata.version));
+assert.equal(seed.spots.length, 291);
+assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)$/.test(seed.metadata.version));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id, s]));
 const expected = {
   spot_047:'https://www.kanagawa-park.or.jp/kannonzaki/',

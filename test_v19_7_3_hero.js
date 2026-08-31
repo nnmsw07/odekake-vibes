@@ -3,8 +3,8 @@ const assert = require('assert');
 const seed = JSON.parse(fs.readFileSync('seed.json','utf8'));
 const audit = JSON.parse(fs.readFileSync('HERO_OVERRIDES_v19_7_3.json','utf8'));
 const byId = Object.fromEntries(seed.spots.map(s => [s.spot_id, s]));
-assert.ok(/^0\.19\.(?:7\.3|8(?:\.\d+)?)$/.test(seed.metadata.version));
-assert.equal(seed.spots.length, 286);
+assert.ok(/^0\.19\.(?:7\.3|8(?:\.\d+)?|9)$/.test(seed.metadata.version));
+assert.equal(seed.spots.length, 291);
 assert.equal(Object.keys(audit.photo_index_overrides).length, 29);
 assert.equal(Object.keys(audit.place_overrides).length, 4);
 for (const [id, idx] of Object.entries(audit.photo_index_overrides)) {

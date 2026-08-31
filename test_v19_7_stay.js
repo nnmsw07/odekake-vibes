@@ -5,8 +5,8 @@ const R=require('./recommender.js');
 const root=__dirname;
 const seed=JSON.parse(fs.readFileSync(path.join(root,'seed.json'),'utf8'));
 const byId=Object.fromEntries(seed.spots.map(s=>[s.spot_id,s]));
-assert.ok(/^0\.19\.(?:7(?:\.\d+)?|8(?:\.\d+)?)$/.test(seed.metadata.version));
-assert.equal(seed.spots.length,286);
+assert.ok(/^0\.19\.(?:7(?:\.\d+)?|8(?:\.\d+)?|9)$/.test(seed.metadata.version));
+assert.equal(seed.spots.length,291);
 for(let i=212;i<=241;i++){
   const id=`spot_${String(i).padStart(3,'0')}`;
   assert.ok(byId[id],`missing ${id}`);

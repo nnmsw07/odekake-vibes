@@ -46,7 +46,7 @@ const index=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
 const app=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
 assert.ok(index.includes('TODAY\'S PLANS'));
 assert.ok(index.includes('id="planDialog"'));
-assert.ok(index.includes('plans.js?v=198'));
+assert.ok(/plans\.js\?v=(?:198\d|1990)/.test(index));
 assert.ok(index.includes('今日の過ごし方を見る'));
 assert.ok(app.includes("trackEvent('plan_open'"));
 assert.ok(app.includes("trackEvent('plan_spot_open'"));
