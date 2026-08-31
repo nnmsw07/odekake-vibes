@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="つくる">
-<path d="M31 110c-3-16 5-35 20-49 19-17 43-25 61-15 18 10 24 33 14 52-7 14-18 17-30 16-8-1-12 2-13 10-2 12-14 18-27 13-14-5-23-14-25-27z" fill="#efe2c7" stroke="#34322e" stroke-width="6" stroke-linejoin="round"/>
-<circle cx="58" cy="78" r="10" fill="#e67a51"/><circle cx="83" cy="62" r="10" fill="#d5af4d"/><circle cx="108" cy="75" r="10" fill="#6e8b73"/><circle cx="105" cy="101" r="9" fill="#7ba3b5"/>
-<path d="M49 126l58-73" stroke="#34322e" stroke-width="8" stroke-linecap="round"/><path d="M103 57l19-19 7 8-18 19z" fill="#e67a51" stroke="#34322e" stroke-width="5" stroke-linejoin="round"/>
-<path d="M45 127c7-3 14-4 21-1-5 5-12 9-21 11z" fill="#6e8b73"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#36584f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 42c0-15 8-27 22-27 9 0 16 6 16 14 0 6-4 9-9 9h-5c-3 0-4 2-3 5l1 4c1 4-2 7-7 7-9 0-15-5-15-12Z" fill="#fffaf2"/><circle cx="26" cy="27" r="3" fill="#e78660" stroke="none"/><circle cx="36" cy="23" r="3" fill="#a7b99a" stroke="none"/><circle cx="45" cy="28" r="3" fill="#9dbdce" stroke="none"/><path d="M45 50 54 14M42 48l6 2"/></svg>

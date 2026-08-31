@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v11_291spots_magazine_candidate",
-    "version": "0.19.9",
+    "dataset_name": "kibun_kanto_izu_seed_v12_317spots_food_icons",
+    "version": "0.20.3",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -29,7 +29,8 @@
       "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。",
       "layer_plan_composition": "Planはmicro-area（plan zone）と役割補完を優先。「大人の楽しみ＋子どもの時間＋食事/休憩」を狙い、同系統ハシゴと遠距離の区内ハシゴを抑制。",
       "layer_curated_booking": "予約導線は個別リンクを優先し、stay: OZmall→一休→じゃらん→JTB→Yahoo!トラベル、food: OZmall→一休.comレストラン、experience: アソビュー→OZmall の順で1件だけ表示。",
-      "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。"
+      "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。",
+      "layer_navigation": "モバイル下部ナビは記事 / プラン / スポット / 今日の気分の4導線。スポットは既存browse dialogへ直結。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -67,7 +68,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-31 V19.9: chano-ma系列5店を親子にも使いやすいFood companionとして追加し286→291 spots。KIBUN MAGAZINEと編集Plan一覧、モバイル下部ナビを追加。",
+    "expansion_note": "2026-08-31 V20.3: 306→317 spots。横浜7・東京4のホテルラウンジ/アフタヌーンティーを追加。Browseに「アフタヌーンティー」を追加し、全Vibeと下部ナビを同一のミニマル線画アイコンへ統一。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -1541,7 +1542,7 @@
         "scenic": 0,
         "stroll": 16
       },
-      "editorial_reason": "“写真を撮りたくなる”体験の代表。新しさと非日常性をBuzzレイヤーで最大限活かす。",
+      "editorial_reason": "話題性は高いが、Kibunの「親も行きたい・余白のある休日」の中核とは少し離れるため、検索で見つけられる候補として保持し、通常推薦と特集面からは外す。",
       "dynamic_snapshot": {
         "opening_hours_text": "営業日時は公式のチケットカレンダーを確認。",
         "price_summary": "日時・券種で変動。公式で確認。",
@@ -1552,14 +1553,14 @@
         "checked_at": "2026-08-17"
       },
       "buzz": {
-        "score": 99,
-        "freshness": 100,
+        "score": 64,
+        "freshness": 82,
         "social_presence": 95,
         "visual_appeal": 100,
         "media_attention": 95,
         "popularity_momentum": 100,
-        "reason": "2026年8月1日開業直後。フォトジェニック性と話題性が突出。",
-        "checked_at": "2026-08-17",
+        "reason": "新規性・SNS映えは強い一方、Kibunの編集Vibeとは距離があるためBuzzを推薦優先度へ直結させない。",
+        "checked_at": "2026-08-31",
         "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
@@ -1630,6 +1631,10 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "recommendation_mode": "browse_only",
+      "feature_profile": {
+        "feature_until": "2026-08-30"
       }
     },
     {
@@ -4435,23 +4440,23 @@
       },
       "editorial_reason": "2026年7月にベビー専用エリア刷新。1歳前後の『今行きたい』候補として非常に強い。",
       "dynamic_snapshot": {
-        "opening_hours_text": "平日10:00〜18:00、土日祝9:30〜19:00。変動あり。",
-        "price_summary": "料金区分は公式で確認。",
-        "reservation_summary": "混雑時の入場運用は公式で確認。",
-        "age_note": "ベビー専用『ハイハイガーデン』あり。授乳・おむつ替えに便利なベビールーム隣接。",
-        "temporary_note": "2026年7月11日ベビー専用エリア全面リニューアル。",
+        "opening_hours_text": "平日10:00〜18:00、土日祝9:30〜19:00（営業カレンダーで変動あり）。",
+        "price_summary": "利用料金は時間・曜日・券種で異なるため公式案内を確認。",
+        "reservation_summary": "混雑状況・入場方法は公式サイトで最新情報を確認。",
+        "age_note": "ベビー専用「ハイハイガーデン」は2026年7月11日に全面リニューアル。五感遊具・築山・大きなボールプール・隣接ベビールームあり。",
+        "temporary_note": "15周年に合わせ、2026年7月11日にベビー専用「ハイハイガーデン」を全面リニューアル。",
         "source_url": "https://www.tokyo-dome.co.jp/asobono/15th/",
-        "checked_at": "2026-08-17"
+        "checked_at": "2026-08-31"
       },
       "buzz": {
-        "score": 94,
-        "freshness": 100,
+        "score": 96,
+        "freshness": 98,
         "social_presence": 90,
         "visual_appeal": 95,
-        "media_attention": 88,
+        "media_attention": 92,
         "popularity_momentum": 98,
-        "reason": "乳幼児向けリニューアル直後で、Kibunの現在ユーザー像に最も刺さるBuzz。",
-        "checked_at": "2026-08-17",
+        "reason": "15周年リニューアル直後。ベビー専用エリアの刷新で、0〜2歳の「今行きたい」理由が明確。",
+        "checked_at": "2026-08-31",
         "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
@@ -4476,7 +4481,7 @@
         "dynamic_detail": "verified_or_conservative",
         "needs_previsit_refresh": true
       },
-      "public_copy": "海・駅・森などをイメージしたエリアで、体を動かして遊べる大型屋内キッズ施設。赤ちゃん向け専用エリアもある。",
+      "public_copy": "海・駅・森などをイメージしたエリアで、体を動かして遊べる大型屋内キッズ施設。2026年夏にベビー専用「ハイハイガーデン」が刷新され、赤ちゃん連れの雨・暑い日にも特に使いやすい。",
       "social_embeds": [
         {
           "platform": "instagram",
@@ -4535,6 +4540,18 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "editorial": {
+        "title": "赤ちゃんの「今できる」が増えた日へ。",
+        "lead": "ハイハイ、触る、転がす。大きな子向けの遊び場とは少し違って、赤ちゃんの身体の動きそのものを楽しめるエリアがある。暑い日も雨の日も、今日は室内で思いきり。",
+        "moment": "赤ちゃんが主役の室内遊び",
+        "collection": "0〜2歳の雨・暑い日",
+        "best_for": [
+          "ハイハイ期〜よちよち期",
+          "暑さや雨を避けたい日",
+          "半日しっかり遊びたい日"
+        ],
+        "priority": 5
       }
     },
     {
@@ -5402,8 +5419,11 @@
     {
       "spot_id": "spot_039",
       "slug": "kobito-hakubutsukan",
-      "name": "こびと はくぶつかん",
-      "aliases": [],
+      "name": "こびとはくぶつかん",
+      "aliases": [
+        "こびと はくぶつかん",
+        "こびとづかん"
+      ],
       "category_primary": "immersive_character",
       "categories": [
         "immersive_character",
@@ -5413,7 +5433,7 @@
       "prefecture": "埼玉県",
       "city": "越谷市",
       "address": "埼玉県越谷市レイクタウン3-1-1 イオンレイクタウンmori 3F",
-      "official_url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html",
+      "official_url": "https://www.kobitos.com/",
       "environment": "indoor",
       "stay_minutes_seed": 75,
       "experience_seed": {
@@ -5453,29 +5473,29 @@
       },
       "editorial_reason": "『探す・観察する・発見する』というKibunらしい体験。キャラクター施設でも遊具一辺倒にならない。",
       "dynamic_snapshot": {
-        "opening_hours_text": "イオンレイクタウンmori専門店街の営業に準ずる（通常10:00〜21:00）。",
-        "price_summary": "料金/入場運用は店舗案内を確認。",
-        "reservation_summary": "最新の入場運用は店舗で確認。",
-        "age_note": "子どもから大人まで幅広い世代向け。",
-        "temporary_note": "2026年7月17日オープン。",
-        "source_url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html",
-        "checked_at": "2026-08-17"
+        "opening_hours_text": "10:00〜21:00（展示エリア最終入場20:30）。",
+        "price_summary": "大人1,200円、子ども600円（12歳以下）、3歳以下無料。",
+        "reservation_summary": "混雑時の入場方法・チケット販売状況は公式案内を確認。",
+        "age_note": "年齢制限なし。3歳以下は無料。幼児〜小学生は「探す・観察する」遊びとして楽しみやすい。",
+        "temporary_note": "物販は2026年7月17日先行オープン、展示エリアを含むグランドオープンは8月12日。",
+        "source_url": "https://www.kobitos.com/",
+        "checked_at": "2026-08-31"
       },
       "buzz": {
-        "score": 98,
+        "score": 96,
         "freshness": 100,
         "social_presence": 92,
         "visual_appeal": 100,
-        "media_attention": 88,
-        "popularity_momentum": 100,
-        "reason": "開業1か月以内。等身大コビトを探す世界観がSNSに非常に向く。",
-        "checked_at": "2026-08-17",
+        "media_attention": 92,
+        "popularity_momentum": 96,
+        "reason": "2026年8月12日に展示エリアがグランドオープン。20周年の「こびとづかん」を探す・観察する没入体験として楽しめる。",
+        "checked_at": "2026-08-31",
         "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
-            "kind": "new_opening",
-            "date": "2026-07-17",
-            "url": "https://www.aeon-laketown.jp/mori/shop/store/amusement-amu_321.html"
+            "kind": "grand_opening",
+            "date": "2026-08-12",
+            "url": "https://prtimes.jp/main/html/rd/p/000000140.000074811.html"
           }
         ]
       },
@@ -5491,7 +5511,7 @@
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
-        "dynamic_detail": "verified_or_conservative",
+        "dynamic_detail": "verified_current",
         "needs_previsit_refresh": true
       },
       "public_copy": "不思議な「こびと」たちを探しながら、観察や発見を楽しむ体験型施設。館内をめぐるほど新しい発見が見つかる。",
@@ -11828,6 +11848,12 @@
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "plan_profile": {
+        "role": "companion",
+        "zone": "hayama_isshiki",
+        "meal": false,
+        "family_recovery": false
       }
     },
     {
@@ -14543,7 +14569,10 @@
         "waterside",
         "active",
         "shopping",
-        "food"
+        "food",
+        "music",
+        "ai_experience",
+        "immersive_ride"
       ],
       "prefecture": "神奈川県",
       "city": "横浜市金沢区",
@@ -14562,7 +14591,7 @@
         "water_contact": 35,
         "animal_contact": 100,
         "food_experience": 80,
-        "creative_sensory": 70,
+        "creative_sensory": 72,
         "baby_fit": 88,
         "toddler_fit": 95,
         "stroller_fit": 88,
@@ -14583,36 +14612,36 @@
         "food": 80,
         "culture": 30,
         "animals": 100,
-        "creative": 15,
-        "active": 90,
+        "creative": 58,
+        "active": 95,
         "waterside": 100
       },
       "editorial_reason": "animals不足を最大級に補い、friendsにも強い大型候補。",
-      "public_copy": "4つの水族館とアトラクション、食事や買い物までそろう海のテーマパーク。生きものにも遊びにも振り切りたい一日に。",
+      "public_copy": "4つの水族館とアトラクション、食事や買い物までそろう海のテーマパーク。2026年夏からはAIが気分や天候などをもとに選曲する「OTO-RACTION PARK」も加わり、水族館だけではない非日常を選べる。",
       "dynamic_snapshot": {
         "opening_hours_text": "営業時間は日付・施設ごとに変動。公式の本日情報を確認。",
         "price_summary": "水族館・アトラクションの利用内容によりチケットが異なる。",
         "reservation_summary": "前売り券あり。繁忙日は事前購入推奨。",
-        "age_note": "乳幼児同行可。アトラクションは個別に身長・年齢条件あり。",
-        "temporary_note": null,
-        "checked_at": "2026-08-27",
-        "source_url": "https://www.seaparadise.co.jp/"
+        "age_note": "乳幼児同行可。アトラクションは個別に身長・年齢条件あり。OTO-RACTION PARKではSonic Tuneは身長120cm以上・小学生以上、Rocky Eagleは身長95cm以上（95〜110cm未満は18歳以上の付き添いが必要）。",
+        "temporary_note": "2026年8月1日にAI×音楽×ライドの「OTO-RACTION PARK」が始動。Sonic Tune / Rocky Eagleが開業し、Sound Waveは今秋オープン予定。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.seaparadise.co.jp/oto-ractionpark_new/index.html"
       },
       "buzz": {
-        "score": 96,
-        "freshness": 55,
+        "score": 97,
+        "freshness": 100,
         "social_presence": 96,
         "visual_appeal": 88,
-        "media_attention": 72,
-        "popularity_momentum": 96,
-        "reason": "animals不足を最大級に補い、friendsにも強い大型候補。",
-        "checked_at": "2026-08-27",
+        "media_attention": 94,
+        "popularity_momentum": 98,
+        "reason": "2026年8月1日にAI×音楽×アトラクションの新エリアが始動。既存の水族館・海辺に新しい体験軸が加わった。",
+        "checked_at": "2026-08-31",
         "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
-            "kind": "official_current",
-            "date": "2026-08-27",
-            "url": "https://www.seaparadise.co.jp/"
+            "kind": "new_attraction",
+            "date": "2026-08-01",
+            "url": "https://www.seaparadise.co.jp/oto-ractionpark_new/index.html"
           }
         ]
       },
@@ -43318,6 +43347,4077 @@
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_292",
+      "slug": "belbel-park-shinjuku",
+      "name": "べるべるパーク新宿本店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "cafe",
+        "creative"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区歌舞伎町1-3-16 パセラリゾーツ新宿本店1F",
+      "official_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shinjuku/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 88,
+        "hands_on": 92,
+        "quietness": 25,
+        "parent_rest": 82,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 72,
+        "creative_sensory": 92,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 15,
+        "extraordinary": 82,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 62,
+        "shopping": 12,
+        "food": 62,
+        "culture": 45,
+        "animals": 0,
+        "creative": 92,
+        "active": 90,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。shinjukuのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "大型遊具で遊び、工作やおしごと体験も。カフェスペースで子どもを見守りながら親もひと息つきやすい、雨の日の親子拠点。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は時期や曜日で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "大人料金制で子どもの扱い・パック料金はプランにより異なります。公式サイトで確認。",
+        "reservation_summary": "予約・入場方法は日付やプランで異なる場合があります。公式サイトで最新情報を確認。",
+        "age_note": "0歳〜未就学児を中心とした親子向け。利用条件・料金は店舗/プランごとに公式サイトを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shinjuku/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "大型遊具で遊び、工作やおしごと体験も。カフェスペースで子どもを見守りながら親もひと息つきやすい、雨の日の親子拠点。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shinjuku/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "べるべるパーク新宿本店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 28,
+        "solo": 15,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "べるべるパーク新宿本店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日",
+        "ごはん"
+      ],
+      "recommendation_group": "belbel-park",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "shinjuku",
+        "meal": false,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservable",
+        "same_day_fit": 72,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_293",
+      "slug": "belbel-park-shibuya",
+      "name": "べるべるパーク渋谷店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "creative"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区神南1-22-9 パセラリゾーツ渋谷店2F",
+      "official_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shibuya/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 88,
+        "hands_on": 92,
+        "quietness": 25,
+        "parent_rest": 82,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 72,
+        "creative_sensory": 92,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 15,
+        "extraordinary": 82,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 62,
+        "shopping": 12,
+        "food": 62,
+        "culture": 45,
+        "animals": 0,
+        "creative": 92,
+        "active": 90,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。shibuyaのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "渋谷の中心で、子どもが室内でしっかり遊べる場所。街歩きや買い物に、親子の遊ぶ時間を足したい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は時期や曜日で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "大人料金制で子どもの扱い・パック料金はプランにより異なります。公式サイトで確認。",
+        "reservation_summary": "予約・入場方法は日付やプランで異なる場合があります。公式サイトで最新情報を確認。",
+        "age_note": "0歳〜未就学児を中心とした親子向け。利用条件・料金は店舗/プランごとに公式サイトを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shibuya/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "渋谷の中心で、子どもが室内でしっかり遊べる場所。街歩きや買い物に、親子の遊ぶ時間を足したい日に。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shibuya/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "べるべるパーク渋谷店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 28,
+        "solo": 15,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "べるべるパーク渋谷店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日"
+      ],
+      "recommendation_group": "belbel-park",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "shibuya",
+        "meal": false,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservable",
+        "same_day_fit": 72,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_294",
+      "slug": "belbel-park-ikebukuro",
+      "name": "べるべるパーク池袋本店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "creative"
+      ],
+      "prefecture": "東京都",
+      "city": "豊島区",
+      "address": "東京都豊島区西池袋1-21-9 パセラリゾーツ池袋本店7F",
+      "official_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/ikebukuro/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 88,
+        "hands_on": 92,
+        "quietness": 25,
+        "parent_rest": 82,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 72,
+        "creative_sensory": 92,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 15,
+        "extraordinary": 82,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 62,
+        "shopping": 12,
+        "food": 62,
+        "culture": 45,
+        "animals": 0,
+        "creative": 92,
+        "active": 90,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。ikebukuroのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "池袋で買い物や用事のあとにも組み込みやすい室内遊び場。天気を気にせず、子どもの「遊びたい」をしっかり満たせる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は時期や曜日で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "大人料金制で子どもの扱い・パック料金はプランにより異なります。公式サイトで確認。",
+        "reservation_summary": "予約・入場方法は日付やプランで異なる場合があります。公式サイトで最新情報を確認。",
+        "age_note": "0歳〜未就学児を中心とした親子向け。利用条件・料金は店舗/プランごとに公式サイトを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/ikebukuro/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "池袋で買い物や用事のあとにも組み込みやすい室内遊び場。天気を気にせず、子どもの「遊びたい」をしっかり満たせる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/ikebukuro/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "べるべるパーク池袋本店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 28,
+        "solo": 15,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "豊島区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "べるべるパーク池袋本店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日"
+      ],
+      "recommendation_group": "belbel-park",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "ikebukuro",
+        "meal": false,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservable",
+        "same_day_fit": 72,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_295",
+      "slug": "belbel-park-yokohama-kannai",
+      "name": "べるべるパーク横浜関内店",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "cafe",
+        "creative"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区末広町3-95 パセラリゾーツ横浜関内店2F",
+      "official_url": "https://www.pasela.co.jp/mamakai/beruberu-park/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 88,
+        "hands_on": 92,
+        "quietness": 25,
+        "parent_rest": 82,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 72,
+        "creative_sensory": 92,
+        "baby_fit": 98,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 15,
+        "extraordinary": 82,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 62,
+        "shopping": 12,
+        "food": 62,
+        "culture": 45,
+        "animals": 0,
+        "creative": 92,
+        "active": 90,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。kannaiのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "遊ぶ・体験する・食べるを一か所にまとめやすい関内の全天候型キッズスペース。予定を増やしすぎず、親子で半日過ごしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・休館日は時期や曜日で変わる場合があります。最新情報は公式サイトを確認。",
+        "price_summary": "大人料金制で子どもの扱い・パック料金はプランにより異なります。公式サイトで確認。",
+        "reservation_summary": "予約・入場方法は日付やプランで異なる場合があります。公式サイトで最新情報を確認。",
+        "age_note": "0歳〜未就学児を中心とした親子向け。利用条件・料金は店舗/プランごとに公式サイトを確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "遊ぶ・体験する・食べるを一か所にまとめやすい関内の全天候型キッズスペース。予定を増やしすぎず、親子で半日過ごしたい日に。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.pasela.co.jp/mamakai/beruberu-park/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "べるべるパーク横浜関内店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 28,
+        "solo": 15,
+        "friends": 68
+      },
+      "adult_enjoyment_seed": 67,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "べるべるパーク横浜関内店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日",
+        "ごはん"
+      ],
+      "recommendation_group": "belbel-park",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "kannai",
+        "meal": false,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservable",
+        "same_day_fit": 72,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_296",
+      "slug": "co-shibuya",
+      "name": "coしぶや（渋谷区子育てネウボラ）",
+      "aliases": [],
+      "category_primary": "family_cafe_support",
+      "categories": [
+        "family",
+        "cafe",
+        "local_support",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区宇田川町5-6 渋谷区子育てネウボラ2-3F",
+      "official_url": "https://shibuya-city-neuvola.tokyo/facility/coshibuya/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 24,
+        "hands_on": 35,
+        "quietness": 72,
+        "parent_rest": 95,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 88,
+        "creative_sensory": 55,
+        "baby_fit": 100,
+        "toddler_fit": 90,
+        "stroller_fit": 92,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 15,
+        "extraordinary": 70,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 12,
+        "food": 86,
+        "culture": 34,
+        "animals": 0,
+        "creative": 55,
+        "active": 8,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。shibuyaのPlanで役割「companion」として使う編集候補。",
+      "public_copy": "2Fの「coの食卓」は登録不要で誰でも利用できるカフェ。子育てひろば等は利用条件があるため、対象・登録方法を公式で確認してから。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "施設9:00〜17:00。カフェ・ひろばは曜日により時間が異なるため公式サイトを確認。",
+        "price_summary": "2Fカフェは飲食代。子育て支援スペース等の利用条件・費用は公式情報を確認。",
+        "reservation_summary": "混雑時の予約推奨・受付方法は公式サイトで最新情報を確認。",
+        "age_note": "2Fカフェ「coの食卓」は登録不要で誰でも利用可能。子育てひろば・保育等は対象/登録/居住条件があるため公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://shibuya-city-neuvola.tokyo/facility/coshibuya/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "2Fの「coの食卓」は登録不要で誰でも利用できるカフェ。子育てひろば等は利用条件があるため、対象・登録方法を公式で確認してから。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://shibuya-city-neuvola.tokyo/facility/coshibuya/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "coしぶや（渋谷区子育てネウボラ）の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 42,
+        "solo": 50,
+        "friends": 55
+      },
+      "adult_enjoyment_seed": 74,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "coしぶや 渋谷区子育てネウボラ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "ごはん",
+        "近場穴場"
+      ],
+      "recommendation_group": "co-shibuya",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "shibuya",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_registration",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "none",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "公共・地域支援施設。広告導線を主目的にしない。"
+      }
+    },
+    {
+      "spot_id": "spot_297",
+      "slug": "latte-chano-mama-shinjuku",
+      "name": "latte chano-mama",
+      "aliases": [],
+      "category_primary": "family_cafe",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区新宿3-14-1 伊勢丹新宿店本館6F",
+      "official_url": "https://www.dd-holdings.jp/shops/chanomama/shinjuku",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 70,
+        "parent_rest": 100,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 98,
+        "creative_sensory": 55,
+        "baby_fit": 100,
+        "toddler_fit": 95,
+        "stroller_fit": 88,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 12,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 15,
+        "extraordinary": 70,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 100,
+        "shopping": 62,
+        "food": 100,
+        "culture": 45,
+        "animals": 0,
+        "creative": 55,
+        "active": 2,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。shinjukuのPlanで役割「companion」として使う編集候補。",
+      "public_copy": "伊勢丹の中で、ベッド席やソファ席を選びながら親子で休めるカフェ。新宿で遊んだ日の「最後に座れる場所」として使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜20:00を基本に、施設営業日に準じます。最新情報は公式サイトを確認。",
+        "price_summary": "飲食代。メニュー・予約条件は公式サイトを確認。",
+        "reservation_summary": "混雑時の予約推奨・受付方法は公式サイトで最新情報を確認。",
+        "age_note": "対象年齢・利用条件は最新の公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.dd-holdings.jp/shops/chanomama/shinjuku"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "伊勢丹の中で、ベッド席やソファ席を選びながら親子で休めるカフェ。新宿で遊んだ日の「最後に座れる場所」として使いやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.dd-holdings.jp/shops/chanomama/shinjuku"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "latte chano-mamaの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 72,
+        "solo": 66,
+        "friends": 78
+      },
+      "adult_enjoyment_seed": 86,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "latte chano-mama 伊勢丹新宿",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "ごはん",
+        "雨の日"
+      ],
+      "recommendation_group": "chano-ma",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "shinjuku",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_298",
+      "slug": "keio-hughug",
+      "name": "京王あそびの森 HUGHUG〈ハグハグ〉",
+      "aliases": [],
+      "category_primary": "indoor_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "active",
+        "learning"
+      ],
+      "prefecture": "東京都",
+      "city": "日野市",
+      "address": "東京都日野市程久保3-36-60",
+      "official_url": "https://www.keio-hughug.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 15,
+        "physical_activity": 100,
+        "hands_on": 88,
+        "quietness": 45,
+        "parent_rest": 54,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 25,
+        "creative_sensory": 88,
+        "baby_fit": 86,
+        "toddler_fit": 100,
+        "stroller_fit": 72,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 58,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 15,
+        "extraordinary": 84,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 36,
+        "shopping": 12,
+        "food": 25,
+        "culture": 45,
+        "animals": 0,
+        "creative": 88,
+        "active": 100,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。tama_zooのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "木のぬくもりの中で、ネット遊具やボールプールなどを思いきり。半日を一か所で過ごしやすい、全天候型の「あそびの森」。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:30（最終入館17:00）を基本に、休館日・特別営業は公式カレンダーを確認。",
+        "price_summary": "入館料・フリーパス等があります。販売日・料金は公式サイトを確認。",
+        "reservation_summary": "混雑時の予約推奨・受付方法は公式サイトで最新情報を確認。",
+        "age_note": "対象年齢・利用条件は最新の公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.keio-hughug.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "木のぬくもりの中で、ネット遊具やボールプールなどを思いきり。半日を一か所で過ごしやすい、全天候型の「あそびの森」。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.keio-hughug.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "京王あそびの森 HUGHUG〈ハグハグ〉の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 25,
+        "solo": 12,
+        "friends": 58
+      },
+      "adult_enjoyment_seed": 64,
+      "routing": {
+        "municipality": "日野市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "京王あそびの森 HUGHUG",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "雨の日",
+        "暑い日",
+        "体を動かす",
+        "学び・体験"
+      ],
+      "recommendation_group": "hughug",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "tama_zoo",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "ticketed",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_299",
+      "slug": "galaxcity",
+      "name": "ギャラクシティ",
+      "aliases": [],
+      "category_primary": "learning_play",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "learning",
+        "planetarium",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "足立区",
+      "address": "東京都足立区栗原1-3-1",
+      "official_url": "https://www.galaxcity.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 15,
+        "physical_activity": 92,
+        "hands_on": 88,
+        "quietness": 45,
+        "parent_rest": 55,
+        "greenery": 15,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 25,
+        "creative_sensory": 90,
+        "baby_fit": 82,
+        "toddler_fit": 98,
+        "stroller_fit": 78,
+        "rain_resilience": 98,
+        "heat_resilience": 98,
+        "walking_load": 50,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 94,
+        "nature": 15,
+        "extraordinary": 84,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 38,
+        "shopping": 12,
+        "food": 25,
+        "culture": 82,
+        "animals": 0,
+        "creative": 94,
+        "active": 92,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。nishiaraiのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "大型ネット遊具や体験プログラム、プラネタリウムなどを組み合わせられる学びと遊びの複合施設。天気を気にせず半日使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・休館、各アトラクションの運用は日によって異なるため公式サイトを確認。",
+        "price_summary": "入館自体と有料コンテンツで扱いが異なります。プラネタリウム・イベント等の料金は公式サイトを確認。",
+        "reservation_summary": "混雑時の予約推奨・受付方法は公式サイトで最新情報を確認。",
+        "age_note": "対象年齢・利用条件は最新の公式情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.galaxcity.jp/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "大型ネット遊具や体験プログラム、プラネタリウムなどを組み合わせられる学びと遊びの複合施設。天気を気にせず半日使いやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.galaxcity.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "ギャラクシティの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 40,
+        "solo": 36,
+        "friends": 62
+      },
+      "adult_enjoyment_seed": 70,
+      "routing": {
+        "municipality": "足立区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ギャラクシティ 足立区",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "雨の日",
+        "暑い日",
+        "体を動かす",
+        "学び・体験"
+      ],
+      "recommendation_group": "galaxcity",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "nishiarai",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_ticketed",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_300",
+      "slug": "shinjuku-gyoen",
+      "name": "新宿御苑",
+      "aliases": [],
+      "category_primary": "garden",
+      "categories": [
+        "nature",
+        "garden",
+        "culture",
+        "family",
+        "stroll"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区内藤町11",
+      "official_url": "https://policies.env.go.jp/national-garden/shinjukugyoen/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 12,
+        "outdoor": 100,
+        "physical_activity": 50,
+        "hands_on": 15,
+        "quietness": 90,
+        "parent_rest": 84,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 25,
+        "creative_sensory": 55,
+        "baby_fit": 78,
+        "toddler_fit": 76,
+        "stroller_fit": 82,
+        "rain_resilience": 20,
+        "heat_resilience": 28,
+        "walking_load": 62,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 30,
+        "nature": 100,
+        "extraordinary": 65,
+        "scenic": 90,
+        "stroll": 100,
+        "relax": 96,
+        "shopping": 12,
+        "food": 25,
+        "culture": 65,
+        "animals": 0,
+        "creative": 55,
+        "active": 40,
+        "waterside": 0
+      },
+      "editorial_reason": "V20.0追加。shinjukuのPlanで役割「anchor」として使う編集候補。",
+      "public_copy": "広い芝生や庭園を歩き、季節の植物を眺める新宿の緑の時間。子どもの遊び場と組み合わせる前に、大人も気分を整えられる主役に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "季節により開園時間が変わります。休園日・最終入園時刻は公式サイトを確認。",
+        "price_summary": "一般入園料等があります。年齢・団体等の条件を含め最新の公式案内を確認。",
+        "reservation_summary": "混雑時の予約推奨・受付方法は公式サイトで最新情報を確認。",
+        "age_note": "子ども連れで利用可能。遊具施設ではなく庭園・自然散策を中心に楽しむ場所です。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://policies.env.go.jp/national-garden/shinjukugyoen/"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 78,
+        "social_presence": 80,
+        "visual_appeal": 84,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "広い芝生や庭園を歩き、季節の植物を眺める新宿の緑の時間。子どもの遊び場と組み合わせる前に、大人も気分を整えられる主役に。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://policies.env.go.jp/national-garden/shinjukugyoen/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "新宿御苑の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 86,
+        "partner": 96,
+        "solo": 96,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "新宿御苑",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "自然",
+        "のんびり"
+      ],
+      "recommendation_group": "shinjuku-gyoen",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "shinjuku",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_ticketed",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_301",
+      "slug": "yokohama-umi-no-koen",
+      "name": "海の公園",
+      "aliases": [
+        "横浜 海の公園"
+      ],
+      "category_primary": "beach_park",
+      "categories": [
+        "beach",
+        "park",
+        "waterside",
+        "nature",
+        "family",
+        "stroll"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市金沢区",
+      "address": "神奈川県横浜市金沢区海の公園10",
+      "official_url": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 68,
+        "hands_on": 70,
+        "quietness": 72,
+        "parent_rest": 78,
+        "greenery": 72,
+        "water_contact": 82,
+        "animal_contact": 25,
+        "food_experience": 10,
+        "creative_sensory": 55,
+        "baby_fit": 88,
+        "toddler_fit": 98,
+        "stroller_fit": 78,
+        "rain_resilience": 12,
+        "heat_resilience": 34,
+        "walking_load": 45,
+        "planning_friction": 15
+      },
+      "vibes_seed": {
+        "cool": 38,
+        "nature": 92,
+        "extraordinary": 58,
+        "scenic": 94,
+        "stroll": 92,
+        "relax": 92,
+        "shopping": 0,
+        "food": 10,
+        "culture": 15,
+        "animals": 15,
+        "creative": 35,
+        "active": 72,
+        "waterside": 100
+      },
+      "editorial_reason": "巨大施設ではなく、遠浅の海と砂浜・芝生で過ごせる横浜の水辺。文化財スタバと組み合わせると「子どもが遊ぶ＋親が休む」の小さな休日になる。",
+      "public_copy": "約1kmの砂浜と緑が広がる横浜の海辺の公園。波が比較的静かで遠浅の浜なので、砂遊びや海辺散歩をゆっくり楽しみやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "公園は常時利用可能。施設ごとの営業時間は公式案内を確認。",
+        "price_summary": "公園利用は無料。駐車場・バーベキュー等は別途。",
+        "reservation_summary": "通常の公園・砂浜利用は予約不要。",
+        "age_note": "乳幼児同行可。海水浴場の開設期間は7月第2土曜〜8月31日、8:30〜17:00でライフガード監視あり。期間外は監視体制が異なるため水遊びは現地案内を確認。",
+        "temporary_note": "2026年の海水浴場開設は8月31日まで。公園・砂浜は季節を問わず利用可。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/sea.php"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 78,
+        "social_presence": 72,
+        "visual_appeal": 92,
+        "media_attention": 78,
+        "popularity_momentum": 84,
+        "reason": "新しい文化財スターバックスの開業で、公園単体より「海辺＋カフェ」の過ごし方として再発見しやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.hama-midorinokyokai.or.jp/park/uminokouen/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "横浜の穏やかな海辺と砂浜をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 88,
+        "solo": 90,
+        "friends": 82
+      },
+      "adult_enjoyment_seed": 84,
+      "routing": {
+        "municipality": "横浜市金沢区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "海の公園 横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "水辺・水遊び",
+        "自然",
+        "のんびり",
+        "赤ちゃん向け"
+      ],
+      "recommendation_group": "umi-no-koen",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "umi_no_koen",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 100,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_302",
+      "slug": "starbucks-yokohama-umi-no-koen",
+      "name": "スターバックス コーヒー 横浜海の公園店",
+      "aliases": [
+        "スターバックス 横浜海の公園店",
+        "海の公園スタバ"
+      ],
+      "category_primary": "heritage_cafe",
+      "categories": [
+        "cafe",
+        "coffee",
+        "architecture",
+        "heritage",
+        "waterside",
+        "park_cafe"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市金沢区",
+      "address": "神奈川県横浜市金沢区海の公園10",
+      "official_url": "https://stories.starbucks.co.jp/press/2026/pr-2026-08-07-umi/",
+      "environment": "mixed",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 40,
+        "physical_activity": 8,
+        "hands_on": 10,
+        "quietness": 82,
+        "parent_rest": 98,
+        "greenery": 78,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 82,
+        "creative_sensory": 48,
+        "baby_fit": 88,
+        "toddler_fit": 82,
+        "stroller_fit": 86,
+        "rain_resilience": 84,
+        "heat_resilience": 88,
+        "walking_load": 12,
+        "planning_friction": 5
+      },
+      "vibes_seed": {
+        "cool": 80,
+        "nature": 68,
+        "extraordinary": 76,
+        "scenic": 96,
+        "stroll": 84,
+        "relax": 100,
+        "shopping": 12,
+        "food": 88,
+        "culture": 92,
+        "animals": 0,
+        "creative": 36,
+        "active": 5,
+        "waterside": 96
+      },
+      "editorial_reason": "「目的地になるカフェ」の好例。海の公園で遊ぶ時間に、登録有形文化財とコーヒーという大人の楽しみを足せる。",
+      "public_copy": "1895年築の「旧長濱検疫所一号停留所」を活用した、横浜市内初の公園型スターバックス。海を眺めながら、歴史ある洋館でひと休みできる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "5〜10月 8:00〜21:00、11〜4月 8:00〜19:00。",
+        "price_summary": "通常のスターバックス商品価格。",
+        "reservation_summary": "通常利用は予約不要。混雑時は待ち時間が発生する場合あり。",
+        "age_note": "全年齢で利用可。ベビーカー散歩や海の公園で遊んだあとの休憩先として使いやすい。",
+        "temporary_note": "2026年8月10日オープン。国の登録有形文化財「旧長濱検疫所一号停留所」を活用。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://stories.starbucks.co.jp/press/2026/pr-2026-08-07-umi/"
+      },
+      "buzz": {
+        "score": 98,
+        "freshness": 100,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 98,
+        "popularity_momentum": 98,
+        "reason": "2026年8月10日新規開業。文化財建築・海・公園型店舗という「行く理由」が重なり、Kibunの水辺・文化・カフェ軸に非常に強い。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-08-10",
+            "url": "https://stories.starbucks.co.jp/press/2026/pr-2026-08-07-umi/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/waterfront-walk.webp",
+        "type": "ai",
+        "alt": "海辺の歴史ある洋館カフェをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 100,
+        "solo": 98,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市金沢区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "スターバックス コーヒー 横浜海の公園店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "水辺・水遊び",
+        "のんびり",
+        "学び・文化",
+        "ごはん"
+      ],
+      "recommendation_group": "starbucks-umi-no-koen",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "umi_no_koen",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 100,
+        "reservation_expected": false
+      },
+      "feature_profile": {
+        "feature_from": "2026-08-10",
+        "feature_until": "2026-11-30"
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_303",
+      "slug": "the-sunset-of-mars-yokohama",
+      "name": "THE SUNSET OF MARS -火星旅行- 横浜",
+      "aliases": [
+        "THE SUNSET OF MARS 横浜",
+        "火星旅行 横浜"
+      ],
+      "category_primary": "xr_experience",
+      "categories": [
+        "xr",
+        "vr",
+        "immersive",
+        "science",
+        "experience",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい4-3-1 横浜PLOT48",
+      "official_url": "https://thesunsetofmars.abal.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 80,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 62,
+        "hands_on": 92,
+        "quietness": 30,
+        "parent_rest": 20,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 0,
+        "toddler_fit": 0,
+        "stroller_fit": 15,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 30,
+        "planning_friction": 72
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "scenic": 82,
+        "stroll": 15,
+        "relax": 20,
+        "shopping": 0,
+        "food": 0,
+        "culture": 96,
+        "animals": 0,
+        "creative": 100,
+        "active": 62,
+        "waterside": 0
+      },
+      "editorial_reason": "乳幼児向けではないが、Kibunの年齢・同行者を広げる本格没入体験。デート・友人・小学生以上の家族で「いつもと違う」に強い。",
+      "public_copy": "ロケット発射から火星探検まで、XRで宇宙旅行を歩いて体験するアトラクション。火星の大地や青く沈むサンセットを、自分の足で進みながら楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:00〜18:00（最終受付17:30）、土日祝10:00〜19:00（最終受付18:30）。",
+        "price_summary": "平日：大人2,980円・中高生1,800円・小学生1,600円。土日祝：大人3,480円・中高生2,500円・小学生2,300円。",
+        "reservation_summary": "日時指定チケット制。購入後の取消・変更・払戻不可。",
+        "age_note": "7歳未満または身長110cm未満は体験不可。13歳未満だけでの体験はできず、1グループにつき18歳以上の保護者1名の付き添いが必要。",
+        "temporary_note": "2026年8月8日開始。終了日は未定。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://thesunsetofmars.abal.jp/"
+      },
+      "age_constraints": {
+        "min_months": 84,
+        "note": "7歳未満は体験できません。年齢を満たしていても身長110cm未満は体験不可。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 100,
+        "social_presence": 92,
+        "visual_appeal": 100,
+        "media_attention": 96,
+        "popularity_momentum": 94,
+        "reason": "2026年8月8日みなとみらいで開始。科学×XRの本格没入体験として、Kibunの小学生以上・デート・友人領域を広げる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "new_opening",
+            "date": "2026-08-08",
+            "url": "https://thesunsetofmars.abal.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "火星の赤い大地を歩くXR体験をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 55,
+        "partner": 96,
+        "solo": 90,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE SUNSET OF MARS 横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "雨の日",
+        "暑い日",
+        "非日常",
+        "学び・文化"
+      ],
+      "recommendation_group": "sunset-of-mars",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "yokohama_bay",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "ticketed",
+        "same_day_fit": 65,
+        "reservation_expected": true
+      },
+      "feature_profile": {
+        "feature_from": "2026-08-08",
+        "feature_until": "2026-11-30"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_304",
+      "slug": "moma-kanagawa-hayama",
+      "name": "神奈川県立近代美術館 葉山",
+      "aliases": [
+        "神奈川県立近代美術館 葉山館",
+        "近代美術館 葉山"
+      ],
+      "category_primary": "art_museum",
+      "categories": [
+        "museum",
+        "art",
+        "architecture",
+        "culture",
+        "waterside",
+        "garden"
+      ],
+      "prefecture": "神奈川県",
+      "city": "葉山町",
+      "address": "神奈川県三浦郡葉山町一色2208-1",
+      "official_url": "https://www.moma.pref.kanagawa.jp/hayama/",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 48,
+        "physical_activity": 20,
+        "hands_on": 12,
+        "quietness": 98,
+        "parent_rest": 88,
+        "greenery": 72,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 38,
+        "creative_sensory": 82,
+        "baby_fit": 70,
+        "toddler_fit": 64,
+        "stroller_fit": 86,
+        "rain_resilience": 88,
+        "heat_resilience": 86,
+        "walking_load": 35,
+        "planning_friction": 18
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 68,
+        "extraordinary": 82,
+        "scenic": 100,
+        "stroll": 78,
+        "relax": 96,
+        "shopping": 12,
+        "food": 35,
+        "culture": 100,
+        "animals": 0,
+        "creative": 88,
+        "active": 12,
+        "waterside": 96
+      },
+      "editorial_reason": "「子どものためだけじゃない休日」をつくれる大人主役の文化スポット。海辺の立地と建築・庭園があり、乳幼児連れでも親の満足をつくりやすい。",
+      "public_copy": "相模湾を望む葉山の美術館。近現代美術をじっくり見たあと、庭園や海の景色まで含めてゆっくり過ごせる。中学生以下は観覧無料。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:00（入場16:30まで）。月曜（祝休日は開館）、年末年始、展示替期間は休館。",
+        "price_summary": "2026年度：企画展 一般1,200円、20歳未満・学生1,050円、65歳以上600円、高校生100円。中学生以下無料。コレクション展は別料金設定。",
+        "reservation_summary": "通常観覧は予約不要。展覧会・イベントごとの案内を確認。",
+        "age_note": "全年齢で来館可。中学生以下は無料。展示室では作品に触れず、館内ルールに従って観覧。",
+        "temporary_note": "2026年8月31日〜9月11日は展示替えのため休館。レストラン・駐車場は月曜を除き営業、庭園は利用可。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.moma.pref.kanagawa.jp/hayama/visit/"
+      },
+      "availability_constraints": {
+        "unavailable_until": "2026-09-12",
+        "note": "展示替えのため2026年9月11日まで休館。"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 76,
+        "social_presence": 72,
+        "visual_appeal": 98,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "新規施設ではないが、海・建築・近現代美術を一度に味わえる「大人も行きたい」葉山の核。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.moma.pref.kanagawa.jp/hayama/visit/"
+          },
+          {
+            "kind": "temporary_closure",
+            "date": "2026-08-31",
+            "url": "https://www.moma.pref.kanagawa.jp/news/20260831-2/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "海辺の近代美術館と静かな展示空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 84,
+        "partner": 100,
+        "solo": 100,
+        "friends": 76
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "葉山町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "神奈川県立近代美術館 葉山",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "学び・文化",
+        "水辺・水遊び",
+        "のんびり"
+      ],
+      "recommendation_group": "moma-hayama",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "hayama_isshiki",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in_or_ticketed",
+        "same_day_fit": 92,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_305",
+      "slug": "orange-bleue-hayama",
+      "name": "レストラン オランジュ・ブルー",
+      "aliases": [
+        "オランジュ・ブルー 葉山"
+      ],
+      "category_primary": "museum_restaurant",
+      "categories": [
+        "restaurant",
+        "cafe",
+        "museum",
+        "scenic",
+        "waterside"
+      ],
+      "prefecture": "神奈川県",
+      "city": "葉山町",
+      "address": "神奈川県三浦郡葉山町一色2208-1 神奈川県立近代美術館 葉山",
+      "official_url": "https://www.moma.pref.kanagawa.jp/restaurant-cafe/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 10,
+        "physical_activity": 0,
+        "hands_on": 5,
+        "quietness": 90,
+        "parent_rest": 100,
+        "greenery": 65,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 96,
+        "creative_sensory": 40,
+        "baby_fit": 82,
+        "toddler_fit": 78,
+        "stroller_fit": 84,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 5,
+        "planning_friction": 12
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 55,
+        "extraordinary": 70,
+        "scenic": 100,
+        "stroll": 30,
+        "relax": 100,
+        "shopping": 0,
+        "food": 100,
+        "culture": 76,
+        "animals": 0,
+        "creative": 25,
+        "active": 0,
+        "waterside": 90
+      },
+      "editorial_reason": "葉山館の「アート＋海」に、座って食事する余白を足せる。美術館の観覧券なしでも利用できるため、単体カフェ候補としても扱いやすい。",
+      "public_copy": "神奈川県立近代美術館 葉山にある、海を望むレストラン。美術鑑賞の合間はもちろん、観覧券なしでもランチやティータイムに利用できる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ティータイム10:00〜17:00（L.O.16:30）、ランチ11:00〜15:00。",
+        "price_summary": "メニュー・価格は公式案内を確認。",
+        "reservation_summary": "混雑時の利用方法・予約可否は店舗へ確認。",
+        "age_note": "子ども連れ利用可。館内・店舗の最新案内を確認。",
+        "temporary_note": "葉山館が展示替え休館中でも、月曜を除き営業予定。臨時休業あり。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.moma.pref.kanagawa.jp/restaurant-cafe/"
+      },
+      "buzz": {
+        "score": 80,
+        "freshness": 72,
+        "social_presence": 68,
+        "visual_appeal": 96,
+        "media_attention": 72,
+        "popularity_momentum": 78,
+        "reason": "海を望む美術館レストランとして、Kibunの「文化のあとに休む」導線に強い。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.moma.pref.kanagawa.jp/restaurant-cafe/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "海を望む美術館レストランをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 100,
+        "solo": 96,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "葉山町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "レストラン オランジュ・ブルー 葉山",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "ごはん",
+        "水辺・水遊び",
+        "のんびり"
+      ],
+      "recommendation_group": "orange-bleue-hayama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "hayama_isshiki",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "walk_in_or_reservable",
+        "same_day_fit": 96,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_306",
+      "slug": "daiyuzan-saijoji",
+      "name": "大雄山最乗寺",
+      "aliases": [
+        "道了尊",
+        "最乗寺"
+      ],
+      "category_primary": "temple_forest",
+      "categories": [
+        "temple",
+        "forest",
+        "culture",
+        "nature",
+        "stroll"
+      ],
+      "prefecture": "神奈川県",
+      "city": "南足柄市",
+      "address": "神奈川県南足柄市大雄町1157",
+      "official_url": "https://daiyuuzan.or.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 18,
+        "outdoor": 96,
+        "physical_activity": 62,
+        "hands_on": 12,
+        "quietness": 100,
+        "parent_rest": 72,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 18,
+        "creative_sensory": 58,
+        "baby_fit": 68,
+        "toddler_fit": 72,
+        "stroller_fit": 35,
+        "rain_resilience": 28,
+        "heat_resilience": 62,
+        "walking_load": 78,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 62,
+        "nature": 100,
+        "extraordinary": 90,
+        "scenic": 88,
+        "stroll": 88,
+        "relax": 96,
+        "shopping": 5,
+        "food": 15,
+        "culture": 100,
+        "animals": 0,
+        "creative": 35,
+        "active": 45,
+        "waterside": 0
+      },
+      "editorial_reason": "大型商業施設の逆側にある「森×寺×静けさ」。検索では拾いにくいが、静かに気分を変えたい日にKibunらしい意外性を出せる。",
+      "public_copy": "深い杉林と歴史ある堂宇が続く、南足柄の禅寺。天狗伝説の残る山の空気の中を歩きながら、商業施設とは違う静かな非日常を味わえる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "境内参拝の最新時間・授与所等の受付は公式案内を確認。",
+        "price_summary": "通常参拝の最新案内を公式サイトで確認。駐車場は無料（250台）。",
+        "reservation_summary": "通常参拝は予約不要。体験・催事は個別申込の場合あり。",
+        "age_note": "通常参拝は子ども同行可。ただし山内は階段が多く、ベビーカー移動には不向きな区間がある。",
+        "temporary_note": "2026年の第27回「大雄山子ども禅のつどい」は8月6〜7日に開催済み（対象：小学3〜6年生）。",
+        "checked_at": "2026-08-31",
+        "source_url": "https://daiyuuzan.or.jp/"
+      },
+      "buzz": {
+        "score": 74,
+        "freshness": 62,
+        "social_presence": 55,
+        "visual_appeal": 94,
+        "media_attention": 66,
+        "popularity_momentum": 72,
+        "reason": "SNS大型施設とは逆方向の穴場。600年の歴史・杉林・天狗伝説を、静かな非日常として編集できる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://daiyuuzan.or.jp/"
+          },
+          {
+            "kind": "family_program",
+            "date": "2026-08-06",
+            "url": "https://daiyuuzan.or.jp/?p=6415"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "杉林の中に続く静かな寺院の参道をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 76,
+        "partner": 88,
+        "solo": 100,
+        "friends": 64
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "南足柄市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "大雄山最乗寺",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "ひとり",
+        "自然",
+        "学び・文化",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "daiyuzan-saijoji",
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "daiyuzan",
+        "meal": false,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 96,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_307",
+      "slug": "westin-yokohama-lobby-lounge",
+      "name": "ロビーラウンジ／ウェスティンホテル横浜",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい4-2-8",
+      "official_url": "https://lobbylounge.westinyokohama.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 72,
+        "toddler_fit": 74,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 5,
+        "extraordinary": 88,
+        "scenic": 95,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 45
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "最上階の開放的なラウンジで、季節のアフタヌーンティーを。景色とスイーツの両方を目的にしたい日に似合う。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜22:00。アフタヌーンティーは開催プランごとの時間設定。",
+        "price_summary": "2026年夏〜秋のアフタヌーンティーは平日8,200円〜、土日祝9,200円〜。",
+        "reservation_summary": "事前予約がおすすめ。4名以上のアフタヌーンティー予約は電話案内あり。",
+        "age_note": "キッズメニューあり。子ども同伴時の席・プラン条件は予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://lobbylounge.westinyokohama.com/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "最上階の開放的なラウンジで、季節のアフタヌーンティーを。景色とスイーツの両方を目的にしたい日に似合う。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://lobbylounge.westinyokohama.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ロビーラウンジ／ウェスティンホテル横浜のティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 80,
+        "partner": 100,
+        "solo": 92,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ウェスティンホテル横浜 ロビーラウンジ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "westin-yokohama-lobby-lounge",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "minatomirai",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_308",
+      "slug": "somerhouse-yokohama-bay-tokyu",
+      "name": "ソマーハウス／横浜ベイホテル東急",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい2-3-7",
+      "official_url": "https://www.ybht.co.jp/restaurant/somerhouse.php",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 70,
+        "toddler_fit": 72,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 98,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 55
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "観覧車を望むみなとみらいのラウンジで、季節のフルーツを主役にしたアフタヌーンティー。散歩の後を少し特別にしてくれる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・アフタヌーンティー提供時間は季節プランごとに公式案内を確認。",
+        "price_summary": "季節のアフタヌーンティーを提供。料金は開催プランごとに確認。",
+        "reservation_summary": "アフタヌーンティーは予約推奨。",
+        "age_note": "子ども同伴時の席・利用条件はホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.ybht.co.jp/restaurant/somerhouse.php"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "観覧車を望むみなとみらいのラウンジで、季節のフルーツを主役にしたアフタヌーンティー。散歩の後を少し特別にしてくれる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.ybht.co.jp/restaurant/somerhouse.php"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ソマーハウス／横浜ベイホテル東急のティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 100,
+        "solo": 92,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ソマーハウス 横浜ベイホテル東急",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "somerhouse-yokohama-bay-tokyu",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "minatomirai",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 38,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_309",
+      "slug": "marine-blue-intercontinental-yokohama",
+      "name": "ラウンジ＆バー「マリンブルー」",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい1-1-1",
+      "official_url": "https://www.icyokohama-grand.com/restaurant/marine_blue/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 68,
+        "toddler_fit": 70,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 58
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 100,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 92
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "海を一望するラウンジで、旬の果実を使ったアフタヌーンティー。港の景色まで含めて「今日はティータイムが主役」にできる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "アフタヌーンティーは12:00〜、120分制の季節プランあり。通常営業時間は公式案内を確認。",
+        "price_summary": "2026年の季節アフタヌーンティーは7,000円〜。",
+        "reservation_summary": "オンライン予約可。季節プランは事前予約がおすすめ。",
+        "age_note": "子ども同伴時の利用条件・席はホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.icyokohama-grand.com/restaurant/marine_blue/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "海を一望するラウンジで、旬の果実を使ったアフタヌーンティー。港の景色まで含めて「今日はティータイムが主役」にできる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.icyokohama-grand.com/restaurant/marine_blue/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ラウンジ＆バー「マリンブルー」のティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 76,
+        "partner": 100,
+        "solo": 92,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "マリンブルー ヨコハマ グランド インターコンチネンタル",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "marine-blue-intercontinental-yokohama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "minatomirai",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 42,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_310",
+      "slug": "union-bar-lounge-hyatt-yokohama",
+      "name": "The Union Bar & Lounge",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町280-2",
+      "official_url": "https://www.hyatt.com/hyatt-regency/ja-JP/hndry-hyatt-regency-yokohama/dining/the-union-bar-lounge",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 70,
+        "toddler_fit": 72,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 72
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 60,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 28
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "大きなシャンデリアの下で、季節のフルーツとロンネフェルトの紅茶を。山下町散歩の締めをゆっくり過ごしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ティータイム11:00〜17:00。アフタヌーンティーは12:00〜16:30（最終入店14:30）の案内。",
+        "price_summary": "2026年夏の季節アフタヌーンティーは6,500円。",
+        "reservation_summary": "アフタヌーンティーは前日19:00までのオンライン予約制。",
+        "age_note": "ティータイムは子ども同伴可。17時以降のバータイムは法令上20歳未満利用不可。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.hyatt.com/hyatt-regency/ja-JP/hndry-hyatt-regency-yokohama/dining/the-union-bar-lounge"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "大きなシャンデリアの下で、季節のフルーツとロンネフェルトの紅茶を。山下町散歩の締めをゆっくり過ごしたい日に。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.hyatt.com/hyatt-regency/ja-JP/hndry-hyatt-regency-yokohama/dining/the-union-bar-lounge"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "The Union Bar & Loungeのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 100,
+        "solo": 90,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "The Union Bar & Lounge Hyatt Regency Yokohama",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "union-bar-lounge-hyatt-yokohama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yamashita",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_311",
+      "slug": "kahala-lounge-yokohama",
+      "name": "THE KAHALA Lounge",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい1-1-3",
+      "official_url": "https://thekahala.jp/yokohama/event/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 60,
+        "toddler_fit": 62,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 80
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 100,
+        "scenic": 90,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 55
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "ホテル最上階の落ち着いた空間で、季節の物語までつくり込まれたアフタヌーンティー。記念日や「今日は少し贅沢に」に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "季節のアフタヌーンティーは複数の開始時間で提供。開催時間は公式サイトを確認。",
+        "price_summary": "季節のアフタヌーンティーはプランごとに料金が変わります。最新料金は公式サイトを確認。",
+        "reservation_summary": "事前予約制の季節プラン。",
+        "age_note": "子ども同伴時の年齢・席条件は予約前にホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://thekahala.jp/yokohama/event/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "ホテル最上階の落ち着いた空間で、季節の物語までつくり込まれたアフタヌーンティー。記念日や「今日は少し贅沢に」に。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://thekahala.jp/yokohama/event/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "THE KAHALA Loungeのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 68,
+        "partner": 100,
+        "solo": 84,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE KAHALA Lounge 横浜",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "kahala-lounge-yokohama",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "minatomirai",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_312",
+      "slug": "la-terrasse-hotel-new-grand",
+      "name": "ロビーラウンジ ラ・テラス",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町10",
+      "official_url": "https://hotel-newgrand.co.jp/restaurants/la-terrasse/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 68,
+        "toddler_fit": 70,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 78,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 58
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "クラシックホテルの空気の中で楽しむアフタヌーンティー。山下公園や港の散歩とつなげると、横浜らしい半日になる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "アフタヌーンティーの提供時間は季節プランごとに変わります。最新情報は公式サイトを確認。",
+        "price_summary": "季節のアフタヌーンティー料金は開催プランごとに公式サイトを確認。",
+        "reservation_summary": "オンライン予約可。土日祝は時間制限の案内あり。",
+        "age_note": "子ども同伴時の利用条件はホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://hotel-newgrand.co.jp/restaurants/la-terrasse/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "クラシックホテルの空気の中で楽しむアフタヌーンティー。山下公園や港の散歩とつなげると、横浜らしい半日になる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://hotel-newgrand.co.jp/restaurants/la-terrasse/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ロビーラウンジ ラ・テラスのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 76,
+        "partner": 100,
+        "solo": 94,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルニューグランド ラ・テラス",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "la-terrasse-hotel-new-grand",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "yamashita",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_313",
+      "slug": "karyu-dim-sum-afternoon-tea",
+      "name": "中国料理「カリュウ」飲茶アフタヌーンティー",
+      "aliases": [],
+      "category_primary": "dim_sum_afternoon_tea",
+      "categories": [
+        "food",
+        "restaurant",
+        "afternoon_tea",
+        "dim_sum_afternoon_tea",
+        "hotel",
+        "scenic",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい1-1-1 31F",
+      "official_url": "https://www.icyokohama-grand.com/restaurant/karyu/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 64,
+        "toddler_fit": 66,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 68
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 10,
+        "extraordinary": 96,
+        "scenic": 100,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 75
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "甘いものだけではなく、点心や炒飯も少しずつ。最上階の景色と一緒に楽しむ「ランチ代わりのアフタヌーンティー」という選択肢。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "提供時間・営業日は公式のアフタヌーンティー案内を確認。",
+        "price_summary": "季節・プランにより異なるため公式案内を確認。",
+        "reservation_summary": "事前予約推奨。",
+        "age_note": "子ども同伴時の席・メニュー条件はホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.icyokohama-grand.com/restaurant/karyu/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "甘いものだけではなく、点心や炒飯も少しずつ。最上階の景色と一緒に楽しむ「ランチ代わりのアフタヌーンティー」という選択肢。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.icyokohama-grand.com/restaurant/karyu/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "中国料理「カリュウ」飲茶アフタヌーンティーのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 88,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "中国料理 カリュウ 飲茶アフタヌーンティー",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "karyu-dim-sum-afternoon-tea",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "minatomirai",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_314",
+      "slug": "garden-lounge-new-otani",
+      "name": "ガーデンラウンジ／ホテルニューオータニ（東京）",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "東京都千代田区",
+      "address": "東京都千代田区紀尾井町4-1",
+      "official_url": "https://www.newotani.co.jp/tokyo/restaurant/gardenlounge/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 74,
+        "toddler_fit": 76,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 58
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 100,
+        "extraordinary": 88,
+        "scenic": 100,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 25
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "400年以上の歴史をもつ日本庭園を眺めながら、季節のスイーツを。都心でも景色と余白を取り戻せるティーラウンジ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜18:00（L.O.17:30）。アフタヌーンティーは15:15頃からの時間設定。",
+        "price_summary": "2026年8月・9〜11月のアフタヌーンティーは8,200円。",
+        "reservation_summary": "アフタヌーンティーは予約制。",
+        "age_note": "サンドウィッチ＆スイーツビュッフェには4〜12歳の子ども料金設定あり。アフタヌーンティーの子ども利用は予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.newotani.co.jp/tokyo/restaurant/gardenlounge/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "400年以上の歴史をもつ日本庭園を眺めながら、季節のスイーツを。都心でも景色と余白を取り戻せるティーラウンジ。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.newotani.co.jp/tokyo/restaurant/gardenlounge/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ガーデンラウンジ／ホテルニューオータニ（東京）のティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 100,
+        "solo": 98,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "東京都千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルニューオータニ ガーデンラウンジ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "garden-lounge-new-otani",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "kioicho",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 42,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_315",
+      "slug": "palace-lounge-palace-hotel-tokyo",
+      "name": "ザ パレス ラウンジ／パレスホテル東京",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "東京都千代田区",
+      "address": "東京都千代田区丸の内1-1-1",
+      "official_url": "https://www.palacehoteltokyo.com/restaurant/the-palace-lounge/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 65,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 54,
+        "toddler_fit": 56,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 78
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 65,
+        "extraordinary": 100,
+        "scenic": 94,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 30
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "輪島塗の器で楽しむアフタヌーンティー。皇居外苑の緑を感じながら、食そのものを文化体験のように味わえる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜23:30 L.O.。アフタヌーンティーは季節ごとの開始時間設定。",
+        "price_summary": "2026年夏のアフタヌーンティー “Stones” は9,000円。別途サービス料。",
+        "reservation_summary": "アフタヌーンティーは事前予約制。",
+        "age_note": "子どもの利用条件はホテル公式案内を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.palacehoteltokyo.com/restaurant/the-palace-lounge/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "輪島塗の器で楽しむアフタヌーンティー。皇居外苑の緑を感じながら、食そのものを文化体験のように味わえる。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.palacehoteltokyo.com/restaurant/the-palace-lounge/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ザ パレス ラウンジ／パレスホテル東京のティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 62,
+        "partner": 100,
+        "solo": 98,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "東京都千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "パレスホテル東京 ザ パレス ラウンジ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "palace-lounge-palace-hotel-tokyo",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "marunouchi",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_316",
+      "slug": "tokyo-station-hotel-lobby-lounge",
+      "name": "ロビーラウンジ／東京ステーションホテル",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "東京都千代田区",
+      "address": "東京都千代田区丸の内1-9-1",
+      "official_url": "https://www.tokyostationhotel.jp/restaurants/lobbylounge/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 60,
+        "toddler_fit": 62,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 76
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 5,
+        "extraordinary": 95,
+        "scenic": 45,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 5
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "東京駅の歴史あるホテルで、移動の途中を特別なティータイムに。丸の内散歩や美術館の前後にもつなぎやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常8:00〜20:00。季節のアフタヌーンティーは13:00〜18:00・2時間制などの設定。",
+        "price_summary": "2026年8〜9月の季節アフタヌーンティーは7,900円〜8,400円。",
+        "reservation_summary": "季節のアフタヌーンティーは前日までの事前予約制・数量限定の場合あり。",
+        "age_note": "子ども同伴時の席・プラン条件はホテルへ確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://www.tokyostationhotel.jp/restaurants/lobbylounge/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "東京駅の歴史あるホテルで、移動の途中を特別なティータイムに。丸の内散歩や美術館の前後にもつなぎやすい。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://www.tokyostationhotel.jp/restaurants/lobbylounge/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "ロビーラウンジ／東京ステーションホテルのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 68,
+        "partner": 100,
+        "solo": 98,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "東京都千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京ステーションホテル ロビーラウンジ",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "tokyo-station-hotel-lobby-lounge",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "marunouchi",
+        "meal": true,
+        "family_recovery": false
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_317",
+      "slug": "lounge-dining-g-tokyo-marriott",
+      "name": "Lounge & Dining G／東京マリオットホテル",
+      "aliases": [],
+      "category_primary": "hotel_lounge",
+      "categories": [
+        "food",
+        "cafe",
+        "restaurant",
+        "afternoon_tea",
+        "hotel_lounge",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "東京都品川区",
+      "address": "東京都品川区北品川4-7-36",
+      "official_url": "https://g.tokyomarriotthotel.com/afternoon-tea",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 2,
+        "hands_on": 2,
+        "quietness": 88,
+        "parent_rest": 98,
+        "greenery": 88,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 48,
+        "baby_fit": 78,
+        "toddler_fit": 80,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 8,
+        "planning_friction": 58
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 88,
+        "extraordinary": 88,
+        "scenic": 78,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 15,
+        "food": 100,
+        "culture": 40,
+        "animals": 0,
+        "creative": 22,
+        "active": 0,
+        "waterside": 5
+      },
+      "editorial_reason": "食事そのものを目的地にするKibunの「food destination」候補。季節のアフタヌーンティーやホテル空間を、散歩・文化スポットと組み合わせる。",
+      "public_copy": "17mの吹き抜けと御殿山の緑を感じるラウンジ。季節のアフタヌーンティーのあと、そのまま庭園を歩けるのがKibun向き。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ティー11:00〜17:00（L.O.16:30）。アフタヌーンティーは13:00／15:30の2部制。",
+        "price_summary": "2026年夏〜秋のアフタヌーンティーは7,500円。",
+        "reservation_summary": "オンライン予約可。季節プランは事前予約推奨。",
+        "age_note": "施設にはハイチェア・キッズメニュー等の案内あり。アフタヌーンティー利用条件は予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-08-31",
+        "source_url": "https://g.tokyomarriotthotel.com/afternoon-tea"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 82,
+        "social_presence": 82,
+        "visual_appeal": 96,
+        "media_attention": 82,
+        "popularity_momentum": 84,
+        "reason": "17mの吹き抜けと御殿山の緑を感じるラウンジ。季節のアフタヌーンティーのあと、そのまま庭園を歩けるのがKibun向き。",
+        "checked_at": "2026-08-31",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-08-31",
+            "url": "https://g.tokyomarriotthotel.com/afternoon-tea"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "assets/plans/family-cafe.webp",
+        "type": "ai",
+        "alt": "Lounge & Dining G／東京マリオットホテルのティータイムをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 86,
+        "partner": 100,
+        "solo": 92,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "東京都品川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京マリオットホテル Lounge & Dining G",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "友だち",
+        "ごはん",
+        "のんびり",
+        "非日常"
+      ],
+      "recommendation_group": "lounge-dining-g-tokyo-marriott",
+      "plan_profile": {
+        "role": "companion",
+        "zone": "gotenyama",
+        "meal": true,
+        "family_recovery": true
+      },
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 42,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
       }
     }
   ]

@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="水辺">
-<circle cx="112" cy="47" r="21" fill="#e9b84f" stroke="#34322e" stroke-width="5"/>
-<path d="M18 94c15-12 30-12 45 0s30 12 45 0 30-12 42 0v22c-14-10-28-10-42 1-15 12-30 12-45 0s-30-12-45 0z" fill="#75a9ba" stroke="#34322e" stroke-width="6" stroke-linejoin="round"/>
-<path d="M18 118c15-10 30-10 45 0s30 10 45 0 30-10 42 0" fill="none" stroke="#4e7f8e" stroke-width="8" stroke-linecap="round"/>
-<path d="M29 83c12-20 27-29 45-28 12 1 25 7 35 19-17-4-31 0-43 10-14 11-25 12-37-1z" fill="#70896c" stroke="#34322e" stroke-width="5" stroke-linejoin="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#36584f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="44" cy="18" r="6" fill="#e0b550"/><path d="M8 37c7-6 13-6 20 0s13 6 28 0M8 47c7-6 13-6 20 0s13 6 28 0"/><path d="M10 28c7-5 13-5 19-1" stroke="#a7b99a"/></svg>
