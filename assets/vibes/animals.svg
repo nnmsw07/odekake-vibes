@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="生きもの">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fa783"/><stop offset="1" stop-color="#5d765f"/></linearGradient></defs>
+<path d="M31 105c0-25 22-43 49-43s49 18 49 43c0 20-14 31-31 31-10 0-13-7-18-7s-8 7-18 7c-17 0-31-11-31-31z" fill="url(#g)" stroke="#34322e" stroke-width="6" stroke-linejoin="round"/>
+<ellipse cx="52" cy="50" rx="13" ry="17" fill="#d9b35a" stroke="#34322e" stroke-width="6" transform="rotate(-22 52 50)"/>
+<ellipse cx="81" cy="40" rx="13" ry="18" fill="#e58a5d" stroke="#34322e" stroke-width="6"/>
+<ellipse cx="109" cy="51" rx="13" ry="17" fill="#7f9980" stroke="#34322e" stroke-width="6" transform="rotate(22 109 51)"/>
+<path d="M78 85c-9 1-18 8-18 17 0 8 7 14 17 14 6 0 8-4 13-4s7 4 13 4c10 0 17-6 17-14 0-9-9-16-18-17-7-1-10 4-12 8-2-4-5-9-12-8z" fill="#fff6e8" opacity=".88"/>
+</svg>

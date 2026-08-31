@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f6f1e9" />
   <meta name="color-scheme" content="light" />
   <title>Kibun Trip｜気分から見つける、今日のおでかけ</title>
-  <meta name="description" content="誰と過ごす？どんな気分？Kibun Tripは、気分・同行者・出発地から、関東＋伊豆291スポットの中から今日のおでかけ先を提案します。" />
+  <meta name="description" content="誰と過ごす？どんな気分？Kibun Tripは、気分・同行者・出発地から、関東＋伊豆306スポットの中から今日のおでかけ先を提案します。" />
   <meta name="application-name" content="Kibun Trip" />
   <meta name="apple-mobile-web-app-title" content="Kibun Trip" />
   <link rel="canonical" href="https://kibuntrip.com/" />
@@ -27,7 +27,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=1990" />
+  <link rel="stylesheet" href="styles.css?v=2000" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -79,7 +79,7 @@
         <summary><strong>03　条件を少しだけ</strong><span>現在地・時間・天気で調整</span></summary>
         <div class="condition-grid">
           <div class="field-card travel-card" id="originCard">
-            <span class="field-label">📍 どこから出かける？</span>
+            <span class="field-label"><span class="field-mark">FROM</span>どこから出かける？</span>
             <div class="travel-actions">
               <button id="locationBtn" class="location-btn" type="button">現在地を使う</button>
               <button id="clearOriginBtn" class="origin-clear-btn" type="button" hidden>クリア</button>
@@ -93,23 +93,23 @@
             <div id="locationCandidates" class="location-candidates" hidden aria-live="polite"></div>
             <div id="locationHelp" class="location-help" hidden aria-live="polite"></div>
             <div class="compact-row">
-              <select id="travelModeSelect" aria-label="移動手段"><option value="drive">🚗 車</option><option value="transit">🚃 公共交通</option></select>
+              <select id="travelModeSelect" aria-label="移動手段"><option value="drive">車</option><option value="transit">公共交通</option></select>
               <select id="travelLimitSelect" aria-label="所要時間"><option value="" selected>時間は気にしない</option><option value="30">30分以内</option><option value="60">60分以内</option><option value="90">90分以内</option><option value="120">120分以内</option><option value="180">3時間以内</option><option value="240">4時間以内</option></select>
             </div>
             <small class="field-note">出発地は指定しなくてもOK。所要時間で絞りたいときだけ、現在地か好きな場所を選べます。</small>
           </div>
           <label class="field-card family-only" id="ageField">
-            <span class="field-label">👶 子どもの年齢</span>
+            <span class="field-label"><span class="field-mark">AGE</span>子どもの年齢</span>
             <select id="ageSelect"><option value="">指定しない</option><option value="6">0歳</option><option value="15" selected>1歳</option><option value="30">2歳</option><option value="42">3歳</option><option value="54">4歳以上</option></select>
           </label>
-          <label class="field-card"><span class="field-label">☀️ 今日の空気</span><select id="weatherSelect"><option value="any">気にしない</option><option value="hot" selected>暑い</option><option value="rain">雨</option><option value="clear">晴れ</option><option value="cold">寒い</option></select></label>
-          <label class="field-card"><span class="field-label">🕐 使える時間</span><select id="timeSelect"><option value="90">1〜2時間</option><option value="180" selected>半日くらい</option><option value="360">たっぷり半日</option><option value="480">1日</option></select></label>
-          <label class="field-card stay-mode-card"><span class="field-label">🌙 今日帰る？</span><select id="stayModeSelect"><option value="day" selected>今日は日帰り</option><option value="overnight">泊まりもあり</option></select><small class="field-note">「泊まりもあり」は「1日」を選んだときに宿泊プランも候補に入ります。短時間・半日は日帰りで提案します。</small></label>
+          <label class="field-card"><span class="field-label"><span class="field-mark">WEATHER</span>今日の空気</span><select id="weatherSelect"><option value="any">気にしない</option><option value="hot" selected>暑い</option><option value="rain">雨</option><option value="clear">晴れ</option><option value="cold">寒い</option></select></label>
+          <label class="field-card"><span class="field-label"><span class="field-mark">TIME</span>使える時間</span><select id="timeSelect"><option value="90">1〜2時間</option><option value="180" selected>半日くらい</option><option value="360">たっぷり半日</option><option value="480">1日</option></select></label>
+          <label class="field-card stay-mode-card"><span class="field-label"><span class="field-mark">STAY</span>今日帰る？</span><select id="stayModeSelect"><option value="day" selected>今日は日帰り</option><option value="overnight">泊まりもあり</option></select><small class="field-note">「泊まりもあり」は「1日」を選んだときに宿泊プランも候補に入ります。短時間・半日は日帰りで提案します。</small></label>
         </div>
       </details>
 
       <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の過ごし方を見る <span>→</span></button>
-      <p class="microcopy">関東＋伊豆291スポット。子どもと、パートナーと、ひとりでも。</p>
+      <p class="microcopy">関東＋伊豆306スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
@@ -154,7 +154,7 @@
     <div class="browse-inner">
       <p class="eyebrow">BROWSE KIBUN</p>
       <h2>場所から、<br>ふらっと探す。</h2>
-      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、291スポットから探せます。</p>
+      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、306スポットから探せます。</p>
       <section class="browse-filter-section" aria-labelledby="browseRegionLabel">
         <div class="browse-filter-head"><strong id="browseRegionLabel">① どの地域？</strong><small>候補から1つ選ぶ</small></div>
         <div id="browseRegionFilters" class="browse-filters"></div>
@@ -171,13 +171,14 @@
   </dialog>
 
   <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Kibun Trip メニュー">
-    <a href="magazine/" data-bottom-nav="articles"><span>▤</span><strong>記事</strong></a>
-    <a href="plans/" data-bottom-nav="plans"><span>⌘</span><strong>プラン</strong></a>
-    <a href="#mood" class="active" data-bottom-nav="mood"><span>●</span><strong>今日の気分</strong></a>
+    <a href="magazine/" data-bottom-nav="articles"><img src="assets/nav/article.png" alt=""><strong>記事</strong></a>
+    <a href="plans/" data-bottom-nav="plans"><img src="assets/nav/plan.png" alt=""><strong>プラン</strong></a>
+    <button type="button" id="bottomBrowseBtn" data-bottom-nav="spots"><img src="assets/nav/spot.png" alt=""><strong>スポット</strong></button>
+    <a href="#mood" class="active" data-bottom-nav="mood"><img src="assets/nav/mood.png" alt=""><strong>今日の気分</strong></a>
   </nav>
   <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="guide/">地域・テーマ別ガイド</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=26"></script><script src="data.js?v=1990"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=1990"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=26"></script><script src="affiliate-config.js?v=1983"></script>
+  <script src="config.js?v=26"></script><script src="data.js?v=2000"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=2000"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=26"></script><script src="affiliate-config.js?v=1983"></script>
   <script src="affiliate.js?v=1983"></script>
-  <script src="app.js?v=1990"></script>
+  <script src="app.js?v=2000"></script>
 </body></html>
