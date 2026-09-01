@@ -1,0 +1,17 @@
+const fs = require('fs');
+const vm = require('vm');
+const assert = require('assert');
+const src = fs.readFileSync('data.js', 'utf8');
+const sandbox = { window: {} };
+vm.createContext(sandbox);
+vm.runInContext(src, sandbox);
+const spot = sandbox.window.ODEKAKE_SEED.spots.find(s => s.spot_id === 'spot_301');
+assert.ok(spot, 'spot_301 missing');
+assert.strictEqual(spot.routing.google_place_id, 'ChIJG_h8q9hDGGARjY2rT-yJpAA');
+assert.strictEqual(spot.media_strategy.google_places.place_id, 'ChIJG_h8q9hDGGARjY2rT-yJpAA');
+assert.strictEqual(spot.media_strategy.google_places.status, 'resolved_manual');
+assert.strictEqual(spot.media_strategy.google_places.photo_index_override, 0);
+assert.strictEqual(spot.media_strategy.google_places.use_address, true);
+const index = fs.readFileSync('index.html','utf8');
+assert.ok(index.includes('data.js?v=2042'), 'data.js cache key not bumped');
+console.log('v20.4.1 海の公園 Place ID + hero index PASS');

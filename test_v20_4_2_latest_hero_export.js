@@ -1,0 +1,12 @@
+const fs = require("fs");
+const vm = require("vm");
+const src = fs.readFileSync("data.js", "utf8");
+const ctx = { window: {} };
+vm.createContext(ctx); vm.runInContext(src, ctx);
+const spots = ctx.window.ODEKAKE_SEED.spots;
+const s = spots.find(x => x.spot_id === "spot_301");
+if (!s) throw new Error("spot_301 missing");
+const gp = s.media_strategy.google_places;
+if (gp.photo_index_override !== 0) throw new Error(`spot_301 photo_index_override=${gp.photo_index_override}`);
+if (gp.place_id !== "ChIJG_h8q9hDGGARjY2rT-yJpAA") throw new Error(`spot_301 place_id=${gp.place_id}`);
+console.log("v20.4.2 latest hero export test passed");
