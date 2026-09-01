@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_izu_seed_v12_317spots_food_icons",
-    "version": "0.20.3",
+    "version": "0.20.4",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -38,7 +38,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-09-01",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -49,7 +49,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-08-30: user Hero audit export applied to Stay/Experience additions; 29 photo indices and 4 Place IDs fixed through spot_256."
+      "hero_selection": "2026-09-01: latest user Hero audit export applied through spot_316; 75 photo indices and 4 Place IDs fixed."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -77,7 +77,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "V19.7.3: user Hero audit export applied to Stay/Experience additions. 29 photo index overrides and 4 manual Place IDs fixed through spot_256.",
+    "hero_audit_note": "2026-09-01: latest user Hero audit export applied through spot_316 (photo indices + 4 Place ID overrides).",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -136,7 +136,8 @@
         "spot_238"
       ],
       "experience_expansion": "観劇・ものづくりは「場所」より「何をするか」が先に立つコピーで見せる。"
-    }
+    },
+    "monetization_note": "2026-09-01: Affiliate Audit workflow added. LinkSwitch source URLs are managed separately from manual affiliate links; public rendering remains disabled until account-specific LinkSwitch tag is installed."
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -38057,7 +38058,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "THE WHARF HOUSE YAMASHITA KOEN",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -38523,7 +38524,7 @@
           "place_id": "ChIJE49iqFdcGGARnzjldry9nzY",
           "status": "resolved_manual",
           "query": "Pie Holic",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -38831,7 +38832,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "100本のスプーン FUTAKOTAMAGAWA",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -38986,7 +38987,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "100本のスプーン 東京都現代美術館内",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -39141,7 +39142,7 @@
           "place_id": "ChIJA1_KIxXhGGARh38s3ANoMJ4",
           "status": "resolved_manual",
           "query": "100本のスプーン TACHIKAWA",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -39296,7 +39297,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "100本のスプーン TOYOSU",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -39606,7 +39607,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "Eggs ’n Things お台場店",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -39760,7 +39761,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "T.Y.HARBOR",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -40223,7 +40224,7 @@
           "place_id": "ChIJhdvfaGCLGGARBC6YoRIkmUs",
           "status": "resolved_manual",
           "query": "crisscross",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -40531,7 +40532,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "IVY PLACE",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -41152,7 +41153,7 @@
           "place_id": "ChIJvVsEzuVOGGARkeWyGQg7G7A",
           "status": "resolved_manual",
           "query": "LONCAFE 湘南江の島本店",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -41306,7 +41307,7 @@
           "place_id": "ChIJZ_n2_j9PGGARmKy_cKnB4kM",
           "status": "resolved_manual",
           "query": "Amalfi DELLA SERA",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -41461,7 +41462,7 @@
           "place_id": "ChIJ10rntXyYGWARz9ZcBQYInMg",
           "status": "resolved_manual",
           "query": "Bakery & Table 箱根",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -41617,7 +41618,7 @@
           "place_id": "ChIJfVf8vD2iGWAR4J3o-0WTbAE",
           "status": "resolved_manual",
           "query": "NARAYA CAFE",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -42081,7 +42082,7 @@
           "place_id": "ChIJj_1pMQCDImARw4XXsc2KzTM",
           "status": "resolved_manual",
           "query": "THE SURF OCEAN TERRACE RESTAURANT",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -42235,7 +42236,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "Mr.FARMER 三井アウトレットパーク木更津店",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -42695,7 +42696,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "chano-ma 横浜",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -42850,7 +42851,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "chano-ma 二子玉川",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -43005,7 +43006,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "chano-ma 池袋",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -43160,7 +43161,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "和カフェyusoshi chano-ma 上野",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -43315,7 +43316,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "和カフェyusoshi chano-ma 立川",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -43470,7 +43471,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "べるべるパーク新宿本店",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -43623,7 +43624,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "べるべるパーク渋谷店",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -43775,7 +43776,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "べるべるパーク池袋本店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -43928,7 +43929,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "べるべるパーク横浜関内店",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -44231,7 +44232,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "latte chano-mama 伊勢丹新宿",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -44385,7 +44386,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "京王あそびの森 HUGHUG",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -44539,7 +44540,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ギャラクシティ 足立区",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -44693,7 +44694,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "新宿御苑",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -44851,7 +44852,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "海の公園 横浜",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -45007,7 +45008,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "スターバックス コーヒー 横浜海の公園店",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -45176,7 +45177,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "THE SUNSET OF MARS 横浜",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -45348,7 +45349,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "神奈川県立近代美術館 葉山",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -45503,7 +45504,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "レストラン オランジュ・ブルー 葉山",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -45667,7 +45668,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "大雄山最乗寺",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -45822,7 +45823,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ウェスティンホテル横浜 ロビーラウンジ",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -45979,7 +45980,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ソマーハウス 横浜ベイホテル東急",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -46135,7 +46136,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "マリンブルー ヨコハマ グランド インターコンチネンタル",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -46291,7 +46292,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "The Union Bar & Lounge Hyatt Regency Yokohama",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -46447,7 +46448,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "THE KAHALA Lounge 横浜",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -46603,7 +46604,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ホテルニューグランド ラ・テラス",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -46760,7 +46761,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "中国料理 カリュウ 飲茶アフタヌーンティー",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -46916,7 +46917,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ホテルニューオータニ ガーデンラウンジ",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -47073,7 +47074,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "パレスホテル東京 ザ パレス ラウンジ",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -47229,7 +47230,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京ステーションホテル ロビーラウンジ",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
