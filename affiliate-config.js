@@ -4,8 +4,8 @@ window.KIBUN_AFFILIATE_CONFIG = {
   linkSwitch: {
     enabled: true,
     tagInstalled: true,
-    providers: ["ozmall", "ikyu", "ikyu_restaurant", "jalan", "jtb", "yahoo_travel"],
-    note: "ValueCommerce LinkSwitch live for Kibun Trip. Asoview is handled manually until provider-specific behavior is verified."
+    providers: ["ozmall", "ikyu", "ikyu_restaurant", "jalan", "jtb", "yahoo_travel", "asoview", "jalan_activity", "klook"],
+    note: "ValueCommerce LinkSwitch live for Kibun Trip. OZmall / 一休 / じゃらん / アソビュー / じゃらん遊び・体験 / KLOOK are treated as LinkSwitch-ready. Activity Japan stays manual-safe until its LinkSwitch flag is re-verified in the account UI."
   },
   sourceLinks: {
     "spot_212": [{ provider: "jalan", intent: "stay", scope: "spot", url: "https://www.jalan.net/yad396617/", label: "じゃらんnetで宿泊プランを見る", verified_at: "2026-09-02" }],
@@ -28,7 +28,12 @@ window.KIBUN_AFFILIATE_CONFIG = {
   providerPriority: {
     stay: ["ozmall", "ikyu", "jalan", "jtb", "yahoo_travel"],
     food: ["ozmall", "ikyu_restaurant"],
-    experience: ["asoview", "ozmall"]
+    experience: ["asoview", "jalan_activity", "activity_japan", "klook", "ozmall"]
+  },
+  providerPriorityOverseas: {
+    stay: ["klook"],
+    food: [],
+    experience: ["klook"]
   },
   providerLabels: {
     ozmall: "OZmall",
@@ -37,7 +42,10 @@ window.KIBUN_AFFILIATE_CONFIG = {
     jalan: "じゃらんnet",
     jtb: "JTB",
     yahoo_travel: "Yahoo!トラベル",
-    asoview: "アソビュー！"
+    asoview: "アソビュー！",
+    jalan_activity: "じゃらん 遊び・体験予約",
+    activity_japan: "アクティビティジャパン",
+    klook: "KLOOK"
   },
   links: {}
 };
