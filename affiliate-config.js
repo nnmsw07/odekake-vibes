@@ -8,6 +8,8 @@ window.KIBUN_AFFILIATE_CONFIG = {
     note: "ValueCommerce LinkSwitch live for Kibun Trip. Asoview is handled manually until provider-specific behavior is verified."
   },
   sourceLinks: {
+    "spot_315": [{ provider: "ikyu_restaurant", intent: "food", scope: "spot", url: "https://restaurant.ikyu.com/115431", label: "一休.comレストランで予約を見る", verified_at: "2026-09-02" }],
+    "spot_316": [{ provider: "ozmall", intent: "food", scope: "spot", url: "https://www.ozmall.co.jp/restaurant/7870/", label: "OZmallで予約を見る", verified_at: "2026-09-02" }],
     "spot_307": [{ provider: "ozmall", intent: "food", scope: "spot", url: "https://www.ozmall.co.jp/restaurant/8313/", label: "OZmallで予約を見る", verified_at: "2026-09-01" }],
     "spot_308": [{ provider: "ozmall", intent: "food", scope: "spot", url: "https://www.ozmall.co.jp/restaurant/2011/", label: "OZmallで予約を見る", verified_at: "2026-09-01" }],
     "spot_309": [{ provider: "ozmall", intent: "food", scope: "spot", url: "https://www.ozmall.co.jp/restaurant/335/", label: "OZmallで予約を見る", verified_at: "2026-09-01" }],

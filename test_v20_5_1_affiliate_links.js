@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const read=f=>fs.readFileSync(__dirname+'/'+f,'utf8');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('data.js'),ctx);vm.runInContext(read('affiliate-config.js'),ctx);
+const seed=ctx.window.ODEKAKE_SEED,cfg=ctx.window.KIBUN_AFFILIATE_CONFIG;
+const s315=seed.spots.find(s=>s.spot_id==='spot_315'),s316=seed.spots.find(s=>s.spot_id==='spot_316');
+assert.deepStrictEqual(Array.from(s315.monetization.channel_candidates),['一休.comレストラン']);
+assert.ok(s316.monetization.channel_candidates.includes('OZmall'));
+assert.strictEqual(cfg.sourceLinks.spot_315[0].provider,'ikyu_restaurant');
+assert.strictEqual(cfg.sourceLinks.spot_315[0].url,'https://restaurant.ikyu.com/115431');
+assert.strictEqual(cfg.sourceLinks.spot_316[0].provider,'ozmall');
+assert.strictEqual(cfg.sourceLinks.spot_316[0].url,'https://www.ozmall.co.jp/restaurant/7870/');
+assert.ok(/data\.js\?v=2051/.test(read('index.html')));assert.ok(/affiliate-config\.js\?v=2051/.test(read('affiliate-audit/index.html')));
+console.log('v20.5.1 affiliate link resolution passed');

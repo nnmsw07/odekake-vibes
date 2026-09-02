@@ -9,7 +9,7 @@ for(const id of ['family_umi_no_koen_sea_cafe','partner_yokohama_art_walk_food',
   const p=P.curatedPlanPreview(ctx.window.ODEKAKE_SEED,id);assert.ok(p,`deep link plan does not resolve ${id}`);assert.ok(p.spot_ids.length>=2);
 }
 const root=fs.readFileSync('index.html','utf8');
-for(const f of ['data.js?v=2050','plans.js?v=2040','app.js?v=2050']) assert.ok(root.includes(f),`cache key missing ${f}`);
+for(const f of ['data.js?v=2051','plans.js?v=2040','app.js?v=2050']) assert.ok(root.includes(f),`cache key missing ${f}`);
 const hub=fs.readFileSync('magazine/index.html','utf8');
 assert.ok(/magazine-media\.js\?v=(?:2033|2040)/.test(hub));
 const reps={
