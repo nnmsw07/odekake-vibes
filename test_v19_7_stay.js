@@ -5,7 +5,7 @@ const R=require('./recommender.js');
 const root=__dirname;
 const seed=JSON.parse(fs.readFileSync(path.join(root,'seed.json'),'utf8'));
 const byId=Object.fromEntries(seed.spots.map(s=>[s.spot_id,s]));
-assert.ok(/^(?:0\.19\.(?:7(?:\.\d+)?|8(?:\.\d+)?|9)|0\.20\.\d+)$/.test(seed.metadata.version));
+assert.ok(/^(?:0\.19\.(?:7(?:\.\d+)?|8(?:\.\d+)?|9)|0\.20\.\d+(?:\.\d+)?(?:\.\d+)?)$/.test(seed.metadata.version));
 assert.ok(seed.spots.length>=291);
 for(let i=212;i<=241;i++){
   const id=`spot_${String(i).padStart(3,'0')}`;
@@ -48,7 +48,7 @@ const sm=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 assert.ok(sm.includes('https://kibuntrip.com/guide/hakone-stay/'));
 assert.ok(sm.includes('https://kibuntrip.com/guide/izu-stay/'));
 const aff=fs.readFileSync(path.join(root,'affiliate-config.js'),'utf8');
-assert.ok(/enabled:\s*true/.test(aff),'affiliate enabled');
+assert.ok(/[\"']?enabled[\"']?\s*:\s*true/.test(aff),'affiliate enabled');
 for(const i of [212,213,214,215,217]) assert.ok(aff.includes(`"spot_${i}"`),`Hakone individual affiliate ${i}`);
 for(let i=218;i<=241;i++) assert.ok(!aff.includes(`"spot_${i}"`),`affiliate must not be invented for spot_${i}`);
 assert.ok(!aff.includes('LRG_141600'),'legacy Hakone area fallback must be removed');

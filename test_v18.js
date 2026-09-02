@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 const data = JSON.parse(fs.readFileSync('seed.json','utf8'));
-if (data.spots.length !== 291) throw new Error(`expected 286 spots, got ${data.spots.length}`);
+if (data.spots.length < 291) throw new Error(`expected current seed >=291 spots, got ${data.spots.length}`);
 const ids = new Set(data.spots.map(s => s.spot_id));
 for (let i=96;i<=165;i++){
   const id = `spot_${String(i).padStart(3,'0')}`;

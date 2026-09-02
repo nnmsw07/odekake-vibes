@@ -2,8 +2,8 @@ const fs=require('fs'),path=require('path');
 const root=__dirname;
 const seed=JSON.parse(fs.readFileSync(path.join(root,'seed.json'),'utf8'));
 function ok(x,m){if(!x)throw new Error(m)}
-ok(/^0\.19\.(?:6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)$/.test(seed.metadata.version),'version');
-ok(seed.spots.length=== 291,'286 spots');
+ok(/^(?:0\.19\.(?:6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)|0\.20\.\d+(?:\.\d+)?(?:\.\d+)?)$/.test(seed.metadata.version),'version');
+ok(seed.spots.length>=291,'current spots');
 ok(seed.spots.every(s=>s.monetization&&/[ABC]/.test(s.monetization.affiliate_fit)),'monetization grades');
 const guides=JSON.parse(fs.readFileSync(path.join(root,'SEO_GUIDES_v19_6.json'),'utf8')).guides;
 ok(guides.length===20,'20 v19.6 guides');

@@ -5,7 +5,7 @@ const path=require('path');
 const P=require('./plans.js');
 const seed=JSON.parse(fs.readFileSync(path.join(__dirname,'seed.json'),'utf8'));
 assert.ok(seed.spots.length>=286,'v19.8.3 additions must be retained');
-assert.ok(/^(?:0\.19\.(?:8\.3|8\.[4-9]|9)|0\.20\.\d+)$/.test(seed.metadata.version));
+assert.ok(/^(?:0\.19\.(?:8\.3|8\.[4-9]|9)|0\.20\.\d+(?:\.\d+)?(?:\.\d+)?)$/.test(seed.metadata.version));
 for(let i=257;i<=286;i++)assert.ok(seed.spots.some(s=>s.spot_id===`spot_${String(i).padStart(3,'0')}`),`missing spot_${i}`);
 const foodNew=seed.spots.filter(s=>Number(s.spot_id.slice(5))>=257&&Number(s.spot_id.slice(5))<=284);
 assert.equal(foodNew.length,28,'28 food/cafe additions');

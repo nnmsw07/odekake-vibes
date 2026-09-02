@@ -4,7 +4,7 @@ const seed=JSON.parse(fs.readFileSync('seed.json','utf8'));
 const config=fs.readFileSync('config.js','utf8');
 const worker=fs.readFileSync('worker/worker.js','utf8');
 
-assert.equal(seed.spots.length,291,'current dataset must contain 291 spots');
+assert.ok(seed.spots.length>=291,'current dataset must contain at least V19.9 spots');
 const added=seed.spots.filter(s=>/^spot_(17[5-9]|18[0-9]|19[0-9]|20[0-9]|21[0-1])$/.test(s.spot_id));
 assert.equal(added.length,37,'V19.3 must contain 37 newly added spots');
 

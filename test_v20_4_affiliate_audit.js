@@ -1,6 +1,6 @@
 const fs=require('fs');const vm=require('vm');const assert=require('assert');const root=__dirname;const read=f=>fs.readFileSync(root+'/'+f,'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('data.js'),ctx);vm.runInContext(read('affiliate-config.js'),ctx);const seed=ctx.window.ODEKAKE_SEED,cfg=ctx.window.KIBUN_AFFILIATE_CONFIG;
-assert.equal(seed.spots.length,317,'spot count');assert.equal(seed.metadata.version,'0.20.5');
+assert.ok(seed.spots.length>=317,'spot count');assert.ok(/^0\.20\.\d+(?:\.\d+)?(?:\.\d+)?$/.test(seed.metadata.version));
 assert.equal(seed.spots.find(s=>s.spot_id==='spot_301').media_strategy.google_places.photo_index_override,0);
 assert.equal(seed.spots.find(s=>s.spot_id==='spot_213').media_strategy.google_places.place_id,'ChIJz7WQw9meGWAR8_Ijv9AMs4Q');
 assert.equal(cfg.linkSwitch.enabled,true);assert.equal(cfg.linkSwitch.tagInstalled,true);assert.ok(cfg.linkSwitch.providers.includes('ozmall'));assert.ok(cfg.sourceLinks.spot_307[0].url.includes('ozmall.co.jp/restaurant/8313'));

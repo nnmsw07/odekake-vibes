@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v12_317spots_food_icons",
-    "version": "0.20.4",
+    "dataset_name": "kibun_kanto_izu_seed_v12_324spots_new_family_spots",
+    "version": "0.20.6.2",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -28,9 +28,10 @@
       "layer_editorial_story": "施設説明とは別に、そこで過ごす一日を想像させる編集見出し・リード・moment・collection・best_forを保持。事実情報を置き換えず、その手前の発見体験に使用。",
       "layer_planning_profile": "予約・公演日時への依存度を保持。browse_onlyは「今日の3つ」から除外し、ブラウズ/編集導線で発見させる。",
       "layer_plan_composition": "Planはmicro-area（plan zone）と役割補完を優先。「大人の楽しみ＋子どもの時間＋食事/休憩」を狙い、同系統ハシゴと遠距離の区内ハシゴを抑制。",
-      "layer_curated_booking": "予約導線は個別リンクを優先し、stay: OZmall→一休→じゃらん→JTB→Yahoo!トラベル、food: OZmall→一休.comレストラン、experience: アソビュー→OZmall の順で1件だけ表示。",
+      "layer_curated_booking": "予約導線は個別施設・個別体験ページを優先。stay: OZmall→一休→じゃらん、food: OZmall→一休.comレストラン、experience: アソビュー→じゃらん遊び・体験→アクティビティジャパン→KLOOKを基本に、公開画面では最適な1件だけ表示。",
       "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。",
-      "layer_navigation": "モバイル下部ナビは記事 / プラン / スポット / 今日の気分の4導線。スポットは既存browse dialogへ直結。"
+      "layer_navigation": "モバイル下部ナビは記事 / プラン / スポット / 今日の気分の4導線。スポットは既存browse dialogへ直結。",
+      "layer_inbound_support": "訪日向け情報は booking_languages（予約導線の表示言語）と onsite_languages / onsite_note（現地対応）を分けて保持。予約サイトが英語表示できるだけで「現地英語対応」とは表示しない。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -38,7 +39,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-01",
+    "updated_at": "2026-09-02",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -49,7 +50,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-09-01: latest user Hero audit export applied through spot_316; 75 photo indices and 4 Place IDs fixed."
+      "hero_selection": "2026-09-02: latest user Hero audit export re-applied; spot_301 corrected to photo index 0 while retaining pinned Google Place ID."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -68,7 +69,7 @@
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "2026-08-31 V20.3: 306→317 spots。横浜7・東京4のホテルラウンジ/アフタヌーンティーを追加。Browseに「アフタヌーンティー」を追加し、全Vibeと下部ナビを同一のミニマル線画アイコンへ統一。",
+    "expansion_note": "2026-09-02 V20.6.2: 320→324 spots。UE FANTASIA＋の大型拡張を反映し、富士山木のおもちゃ美術館、NICOPA & nico ground 丸井錦糸町店、ホテルニューアカオ キッズパーク、CAPCOMIX みなとみらい店を追加。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -77,7 +78,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-01: latest user Hero audit export applied through spot_316 (photo indices + 4 Place ID overrides).",
+    "hero_audit_note": "2026-09-02: latest user Hero audit export applied; spot_301 photo index corrected from 2 to 0, pinned Place ID retained.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -137,7 +138,7 @@
       ],
       "experience_expansion": "観劇・ものづくりは「場所」より「何をするか」が先に立つコピーで見せる。"
     },
-    "monetization_note": "2026-09-01: Affiliate Audit workflow added. LinkSwitch source URLs are managed separately from manual affiliate links; public rendering remains disabled until account-specific LinkSwitch tag is installed."
+    "monetization_note": "2026-09-02: ValueCommerce LinkSwitch運用。OZmall / 一休 / じゃらん / KLOOK / アクティビティジャパンを通常URL中心で管理。アソビューはLinkSwitch対象範囲をURL単位で確認する。"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -23984,77 +23985,83 @@
     },
     {
       "slug": "ue-fantasia",
-      "name": "UE FANTASIA",
+      "name": "UE FANTASIA＋",
       "aliases": [
+        "UE FANTASIA+",
+        "UE FANTASIA",
         "UE FANTASIA ユイファンタジア",
-        "ユイファンタジア"
+        "ユイファンタジア",
+        "ユイファンタジアプラス"
       ],
       "category_primary": "indoor_playground",
       "categories": [
         "indoor_play",
         "active",
-        "extraordinary",
-        "family"
+        "adventure",
+        "athletic",
+        "family",
+        "resort_activity",
+        "extraordinary"
       ],
       "prefecture": "千葉県",
       "city": "東金市",
       "address": "千葉県東金市八坂台1-8-1",
       "official_url": "https://ue-fantasia.com/",
       "environment": "indoor",
-      "stay_minutes_seed": 180,
+      "stay_minutes_seed": 240,
       "experience_seed": {
         "indoor": 100,
         "outdoor": 0,
-        "physical_activity": 95,
+        "physical_activity": 100,
         "hands_on": 40,
         "quietness": 5,
-        "parent_rest": 35,
+        "parent_rest": 45,
         "greenery": 0,
         "water_contact": 0,
         "animal_contact": 0,
         "food_experience": 20,
-        "creative_sensory": 70,
+        "creative_sensory": 78,
         "baby_fit": 35,
-        "toddler_fit": 82,
+        "toddler_fit": 88,
         "stroller_fit": 70,
         "rain_resilience": 100,
         "heat_resilience": 100,
         "walking_load": 40,
-        "planning_friction": 35
+        "planning_friction": 38
       },
       "vibes_seed": {
         "cool": 100,
         "nature": 0,
-        "extraordinary": 95,
+        "extraordinary": 100,
         "scenic": 5,
         "stroll": 5,
-        "relax": 15,
+        "relax": 22,
         "shopping": 5,
         "food": 15,
         "culture": 5,
         "animals": 0,
-        "creative": 40,
+        "creative": 48,
         "active": 100,
         "waterside": 0
       },
-      "editorial_reason": "天候に左右されずに体を動かしたい日に強い大型屋内アドベンチャー施設。",
+      "editorial_reason": "約3,000㎡へ拡張し、ジップラインやスカイチャレンジ、ボルダリングに加えて大人も遊べるコンテンツが増えた全天候型アドベンチャー。",
       "dynamic_snapshot": {
-        "opening_hours_text": "9:30〜18:00。",
+        "opening_hours_text": "9:30〜18:00を基本に営業。最新の営業日・受付時間は公式サイトを確認。",
         "price_summary": "子ども（85cm以上）全日券3,800円／半日券（3時間）2,500円／トワイライト券（15:30〜）2,000円。中学生〜大人は全日1,600円・半日1,300円・トワイライト1,000円。土日祝は各+300円。",
-        "reservation_summary": "最新の料金・混雑状況・利用条件は公式サイトを確認。",
-        "age_note": "子どもは専用靴下（400円）着用。身長85cm以下はボールプールのみ可。アドベンチャーゾーンは身長100cm以上。",
+        "reservation_summary": "全日券・半日券（3時間）・トワイライト券あり。混雑状況や利用条件は公式サイトを確認。",
+        "age_note": "従来エリアは小さな子向け遊具あり。アドベンチャー設備は身長など利用条件があるため来場前に確認。",
         "temporary_note": null,
-        "checked_at": "2026-08-28",
+        "checked_at": "2026-09-02",
         "source_url": "https://ue-fantasia.com/"
       },
-      "public_copy": "ホテル敷地内にある大型の屋内遊び場。ふわふわ遊具やアドベンチャーゾーンで、雨の日でも思いきり体を動かせる。",
+      "public_copy": "約3,000㎡の完全屋内空間に、ジップラインやスカイチャレンジ、ボルダリングなどを備えた大型アドベンチャーパーク。子どもを見守るだけでなく、大人も一緒に遊びやすい。",
       "audience_fit": {
-        "family": 88,
-        "partner": 20,
+        "family": 98,
+        "partner": 45,
         "solo": 5,
-        "friends": 48
+        "friends": 72
       },
-      "adult_enjoyment_seed": 40,
+      "adult_enjoyment_seed": 72,
       "routing": {
         "municipality": "東金市",
         "geocode_provider": "geolonia_japanese_addresses_v2",
@@ -24070,7 +24077,7 @@
         "google_places": {
           "place_id": "ChIJr8z4NgDrImARbX0y7gK6204",
           "status": "resolved_manual",
-          "query": "UE FANTASIA",
+          "query": "UE FANTASIA＋",
           "photo_index_override": null,
           "force": false,
           "matched_name": "UE FANTASIA ユイファンタジア",
@@ -24081,7 +24088,7 @@
       "hero_image": {
         "url": "images/ai/kids-play-a.jpg",
         "type": "ai",
-        "alt": "UE FANTASIAの雰囲気をイメージした画像",
+        "alt": "UE FANTASIA＋の雰囲気をイメージした画像",
         "label": "イメージ",
         "credit": "AI生成イメージ",
         "source_url": null,
@@ -24090,19 +24097,19 @@
       },
       "spot_id": "spot_167",
       "buzz": {
-        "score": 86,
-        "freshness": 70,
-        "social_presence": 86,
-        "visual_appeal": 90,
-        "media_attention": 80,
-        "popularity_momentum": 86,
-        "reason": "ホテル敷地内にある大型の屋内遊び場。ふわふわ遊具やアドベンチャーゾーンで、雨の日でも思いきり体を動かせる。",
-        "checked_at": "2026-08-28",
+        "score": 96,
+        "freshness": 100,
+        "social_presence": 91,
+        "visual_appeal": 96,
+        "media_attention": 94,
+        "popularity_momentum": 96,
+        "reason": "2026年7月に約3,000㎡へ拡張。親子で挑戦できる本格アドベンチャーが加わった。",
+        "checked_at": "2026-09-02",
         "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-28",
+            "date": "2026-09-02",
             "url": "https://ue-fantasia.com/"
           }
         ]
@@ -24117,7 +24124,8 @@
         "雨の日",
         "暑い日",
         "体を動かす",
-        "非日常"
+        "非日常",
+        "大人も楽しい"
       ],
       "monetization": {
         "affiliate_fit": "B",
@@ -24127,6 +24135,11 @@
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "planning_profile": {
+        "style": "ticketed",
+        "same_day_fit": 82,
+        "reservation_expected": false
       }
     },
     {
@@ -35435,7 +35448,8 @@
         "culture",
         "theater",
         "performing_arts",
-        "traditional_culture"
+        "traditional_culture",
+        "japanese_culture"
       ],
       "prefecture": "東京都",
       "city": "中央区",
@@ -35556,7 +35570,8 @@
         "学び・文化",
         "非日常",
         "大人も楽しい",
-        "観劇"
+        "観劇",
+        "日本文化"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -35586,6 +35601,10 @@
         "same_day_fit": 20,
         "reservation_expected": true,
         "schedule_required": true
+      },
+      "inbound_profile": {
+        "inbound_fit": "B",
+        "japanese_culture": true
       }
     },
     {
@@ -36603,7 +36622,8 @@
         "workshop",
         "pottery",
         "craft",
-        "experience"
+        "experience",
+        "japanese_culture"
       ],
       "prefecture": "東京都",
       "city": "港区",
@@ -36727,7 +36747,10 @@
         "雨の日",
         "室内",
         "学び・体験",
-        "ものづくり"
+        "ものづくり",
+        "日本文化",
+        "訪日向け",
+        "英語対応あり"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -36755,6 +36778,25 @@
         "style": "bookable",
         "same_day_fit": 65,
         "reservation_expected": false
+      },
+      "inbound_profile": {
+        "inbound_fit": "A",
+        "japanese_culture": true,
+        "booking_languages": [
+          "ja",
+          "en",
+          "zh-CN",
+          "zh-TW",
+          "ko",
+          "th"
+        ],
+        "booking_language_note": "アクティビティジャパン側は多言語予約ページあり。現地言語対応は別途確認。",
+        "onsite_languages": [
+          "ja",
+          "en"
+        ],
+        "onsite_note": "じゃらん掲載で「英語で出来る陶芸体験もあります」と案内。対象プラン・日時は予約時に確認。",
+        "verified_at": "2026-09-02"
       }
     },
     {
@@ -36771,7 +36813,8 @@
         "pottery",
         "craft",
         "experience",
-        "yokohama"
+        "yokohama",
+        "japanese_culture"
       ],
       "prefecture": "神奈川県",
       "city": "横浜市中区",
@@ -36896,7 +36939,8 @@
         "雨の日",
         "室内",
         "学び・体験",
-        "ものづくり"
+        "ものづくり",
+        "日本文化"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -36924,6 +36968,20 @@
         "style": "bookable",
         "same_day_fit": 60,
         "reservation_expected": false
+      },
+      "inbound_profile": {
+        "inbound_fit": "B",
+        "japanese_culture": true,
+        "booking_languages": [
+          "ja",
+          "en",
+          "zh-CN",
+          "zh-TW",
+          "ko",
+          "th"
+        ],
+        "booking_language_note": "アクティビティジャパン側は多言語予約ページあり。現地での外国語対応は未確認。",
+        "verified_at": "2026-09-02"
       }
     },
     {
@@ -37106,7 +37164,8 @@
         "kintsugi",
         "traditional_culture",
         "craft",
-        "experience"
+        "experience",
+        "japanese_culture"
       ],
       "prefecture": "東京都",
       "city": "台東区",
@@ -37228,7 +37287,8 @@
         "学び・文化",
         "学び・体験",
         "ものづくり",
-        "大人も楽しい"
+        "大人も楽しい",
+        "日本文化"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -37256,6 +37316,10 @@
         "style": "bookable",
         "same_day_fit": 35,
         "reservation_expected": true
+      },
+      "inbound_profile": {
+        "inbound_fit": "B",
+        "japanese_culture": true
       }
     },
     {
@@ -37276,7 +37340,8 @@
         "traditional_culture",
         "craft",
         "experience",
-        "factory"
+        "factory",
+        "japanese_culture"
       ],
       "prefecture": "東京都",
       "city": "江東区",
@@ -37401,7 +37466,8 @@
         "学び・文化",
         "学び・体験",
         "ものづくり",
-        "大人も楽しい"
+        "大人も楽しい",
+        "日本文化"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -37429,6 +37495,10 @@
         "style": "bookable",
         "same_day_fit": 35,
         "reservation_expected": true
+      },
+      "inbound_profile": {
+        "inbound_fit": "B",
+        "japanese_culture": true
       }
     },
     {
@@ -37739,7 +37809,8 @@
         "室内",
         "学び・体験",
         "大人も楽しい",
-        "非日常"
+        "非日常",
+        "訪日向け"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -37767,6 +37838,16 @@
         "style": "bookable",
         "same_day_fit": 10,
         "reservation_expected": true
+      },
+      "inbound_profile": {
+        "inbound_fit": "B",
+        "japanese_culture": false,
+        "booking_languages": [
+          "ja",
+          "en"
+        ],
+        "booking_language_note": "公式サイトに英語ページ・浅草店案内あり。現地スタッフの英語対応は未確認。",
+        "verified_at": "2026-09-02"
       }
     },
     {
@@ -44840,7 +44921,7 @@
         "municipality": "横浜市金沢区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJG_h8q9hDGGARjY2rT-yJpAA"
       },
       "media_strategy": {
         "hero_priority": [
@@ -44849,11 +44930,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
-          "query": "海の公園 横浜",
-          "photo_index_override": 2,
-          "force": false
+          "place_id": "ChIJG_h8q9hDGGARjY2rT-yJpAA",
+          "status": "resolved_manual",
+          "query": "海の公園 横浜市金沢区",
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "海の公園",
+          "matched_address": "〒236-0013 神奈川県横浜市金沢区海の公園10番",
+          "use_address": true
         }
       },
       "ui_tags": [
@@ -47101,11 +47185,10 @@
         "affiliate_fit": "A",
         "status": "candidate_only",
         "channel_candidates": [
-          "OZmall",
           "一休.comレストラン"
         ],
         "product_match_required": true,
-        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+        "note": "一休.comレストランの個別予約ページを確認済み。OZmallは編集記事のみ確認でき、直接予約ページは未確認のため現時点では候補から除外。"
       }
     },
     {
@@ -47261,7 +47344,7 @@
           "一休.comレストラン"
         ],
         "product_match_required": true,
-        "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+        "note": "OZmallの個別レストラン予約ページを確認済み。"
       }
     },
     {
@@ -47419,6 +47502,1155 @@
         ],
         "product_match_required": true,
         "note": "個別プランの掲載・提携条件を確認した場合のみ予約導線を表示。"
+      }
+    },
+    {
+      "spot_id": "spot_318",
+      "slug": "an-tokyo-japanese-culture",
+      "name": "日本文化体験 庵an東京",
+      "aliases": [
+        "庵an東京",
+        "AN TOKYO"
+      ],
+      "category_primary": "japanese_culture_workshop",
+      "categories": [
+        "japanese_culture",
+        "traditional_culture",
+        "workshop",
+        "wagashi",
+        "tea_ceremony",
+        "food_experience",
+        "creative",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区鍛冶町2-2-9 第2登栄ビル3階",
+      "official_url": "https://tokyo.nipponbunkan.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 95,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 10,
+        "hands_on": 100,
+        "quietness": 82,
+        "parent_rest": 78,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 95,
+        "creative_sensory": 92,
+        "baby_fit": 20,
+        "toddler_fit": 38,
+        "stroller_fit": 45,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 15,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 2,
+        "extraordinary": 94,
+        "scenic": 12,
+        "stroll": 55,
+        "relax": 88,
+        "shopping": 5,
+        "food": 92,
+        "culture": 100,
+        "animals": 0,
+        "creative": 95,
+        "active": 12,
+        "waterside": 0
+      },
+      "editorial_reason": "和菓子を作り、自分で抹茶を点てる。見る観光ではなく、日本文化を手と味覚で持ち帰れる。",
+      "public_copy": "神田で練り切り和菓子づくりや抹茶のお点前を体験できる日本文化体験施設。短時間のプランから組み合わせ体験まで選べる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "店舗運営は7:30〜22:00。体験ごとに開始時間が設定される。",
+        "price_summary": "練り切り和菓子作り1,870円、抹茶2点体験2,870円など（2026年9月確認）。",
+        "reservation_summary": "オンライン予約可。体験ごとの空き時間を確認。",
+        "age_note": "子ども参加可のプランあり。各プラン条件を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-02",
+        "source_url": "https://tokyo.nipponbunkan.com/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 74,
+        "partner": 94,
+        "solo": 96,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 98,
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "日本文化体験 庵an東京の体験をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "日本文化体験 庵an東京",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "日本文化",
+        "訪日向け",
+        "英語対応相談可",
+        "デート",
+        "友だち",
+        "ひとり",
+        "雨の日",
+        "室内",
+        "学び・体験",
+        "ものづくり",
+        "ごはん",
+        "大人も楽しい"
+      ],
+      "inbound_profile": {
+        "inbound_fit": "A",
+        "japanese_culture": true,
+        "booking_languages": [
+          "ja",
+          "en",
+          "zh-CN",
+          "zh-TW",
+          "ko",
+          "th"
+        ],
+        "onsite_languages": [
+          "ja"
+        ],
+        "onsite_note": "英語対応保証オプションあり。未申込時も可能な範囲で英語対応と公式案内。",
+        "verified_at": "2026-09-02"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アクティビティジャパン"
+        ],
+        "provider_candidates": [
+          "activity_japan"
+        ],
+        "product_match_required": false,
+        "note": "アクティビティジャパンの施設別プラン一覧を確認済み。"
+      },
+      "editorial": {
+        "title": "和菓子をつくって、抹茶を点てる。",
+        "lead": "神田の一室で、練り切りの形を整え、自分で抹茶を点てる。観光地を眺めるだけでは残らない、日本の味と手仕事の時間。",
+        "moment": "日本文化を手で体験したい日",
+        "collection": "日本を、体験する",
+        "best_for": [
+          "和菓子づくり",
+          "茶道の入口",
+          "訪日ゲストと"
+        ],
+        "priority": 17,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_319",
+      "slug": "asakusa-sumo-club",
+      "name": "浅草相撲部屋",
+      "aliases": [
+        "Asakusa Sumo Club",
+        "浅草相撲クラブ"
+      ],
+      "category_primary": "sumo_culture_show",
+      "categories": [
+        "japanese_culture",
+        "traditional_culture",
+        "sumo",
+        "show",
+        "food_experience",
+        "experience"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区浅草2-10-12 1F",
+      "official_url": "https://asakusa-sumo.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 45,
+        "hands_on": 45,
+        "quietness": 20,
+        "parent_rest": 82,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 95,
+        "creative_sensory": 82,
+        "baby_fit": 28,
+        "toddler_fit": 45,
+        "stroller_fit": 45,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 18,
+        "planning_friction": 80
+      },
+      "vibes_seed": {
+        "cool": 95,
+        "nature": 0,
+        "extraordinary": 100,
+        "scenic": 25,
+        "stroll": 60,
+        "relax": 65,
+        "shopping": 5,
+        "food": 90,
+        "culture": 100,
+        "animals": 0,
+        "creative": 65,
+        "active": 45,
+        "waterside": 0
+      },
+      "editorial_reason": "相撲のルールや所作を知ってから、元力士の取り組みを間近で見る。食事まで含めて、日本文化が一つの夜になる。",
+      "public_copy": "浅草で、相撲の歴史やルールの解説、元力士による実演、ちゃんこ料理をまとめて楽しめる文化体験型のショー。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "店舗営業時間は12:00〜22:30。ショー開始時刻は予約プランで確認。",
+        "price_summary": "座席・食事プランにより異なる。予約画面で確認。",
+        "reservation_summary": "事前予約推奨。KLOOK等で日時・座席プランを確認。",
+        "age_note": "子どもも参加できる案内あり。座席・食事条件を予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-02",
+        "source_url": "https://asakusa-sumo.com/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 94,
+        "solo": 90,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "浅草相撲部屋 Asakusa Sumo Clubの体験をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "浅草相撲部屋 Asakusa Sumo Club",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "日本文化",
+        "訪日向け",
+        "英語対応あり",
+        "子どもと",
+        "デート",
+        "友だち",
+        "雨の日",
+        "ごはん",
+        "非日常",
+        "大人も楽しい"
+      ],
+      "inbound_profile": {
+        "inbound_fit": "A",
+        "japanese_culture": true,
+        "booking_languages": [
+          "ja",
+          "en"
+        ],
+        "onsite_languages": [
+          "ja",
+          "en"
+        ],
+        "onsite_note": "KLOOK掲載プランで日本語・英語のライブ解説を確認。",
+        "verified_at": "2026-09-02"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "KLOOK",
+          "訪日OTA"
+        ],
+        "provider_candidates": [
+          "klook"
+        ],
+        "product_match_required": false,
+        "note": "KLOOKの浅草相撲部屋個別体験ページを確認済み。"
+      },
+      "editorial": {
+        "title": "ちゃんこを囲んで、相撲を知る夜。",
+        "lead": "ルールを聞いて、元力士の取り組みを目の前で見る。浅草観光の続きではなく、それ自体を目的にしたくなる日本文化の夜。",
+        "moment": "海外の友人にも日本を楽しんでほしい日",
+        "collection": "日本を、体験する",
+        "best_for": [
+          "相撲を初めて見る",
+          "訪日ゲストと",
+          "食事も一緒に"
+        ],
+        "priority": 15,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "reservation_required",
+        "same_day_fit": 25,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_320",
+      "slug": "yae-kimono-asakusa",
+      "name": "YAE Kimono Rental Asakusa Tokyo",
+      "aliases": [
+        "YAE 着物レンタル 浅草",
+        "Kimono Rental YAE"
+      ],
+      "category_primary": "kimono_rental",
+      "categories": [
+        "japanese_culture",
+        "traditional_culture",
+        "kimono",
+        "rental",
+        "experience",
+        "stroll"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区花川戸1-2-6 中傳ビル3F",
+      "official_url": "https://yae-japan.com/en/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 210,
+      "experience_seed": {
+        "indoor": 55,
+        "outdoor": 65,
+        "physical_activity": 40,
+        "hands_on": 45,
+        "quietness": 55,
+        "parent_rest": 55,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 90,
+        "baby_fit": 30,
+        "toddler_fit": 55,
+        "stroller_fit": 30,
+        "rain_resilience": 45,
+        "heat_resilience": 35,
+        "walking_load": 55,
+        "planning_friction": 68
+      },
+      "vibes_seed": {
+        "cool": 45,
+        "nature": 8,
+        "extraordinary": 100,
+        "scenic": 92,
+        "stroll": 100,
+        "relax": 72,
+        "shopping": 48,
+        "food": 10,
+        "culture": 100,
+        "animals": 0,
+        "creative": 82,
+        "active": 42,
+        "waterside": 8
+      },
+      "editorial_reason": "着物を借りること自体より、その姿で浅草を歩く時間が体験になる。多言語対応が明示され、訪日ゲストとも組みやすい。",
+      "public_copy": "浅草駅近くで着物・浴衣を選び、着付けやヘアセットのあと街歩きを楽しめるレンタル店。英語での案内にも対応している。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:30〜17:30、定休日なしを基本。",
+        "price_summary": "女性スタンダード6,900円など。プランにより異なる。",
+        "reservation_summary": "公式サイト・KLOOKから予約可。ウォークインも可能だが予約推奨。",
+        "age_note": "子ども用プランあり。サイズ・年齢条件を予約時に確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-02",
+        "source_url": "https://yae-japan.com/en/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 100,
+        "solo": 94,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 98,
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "YAE Kimono Rental Asakusa Tokyoの体験をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "YAE Kimono Rental Asakusa Tokyo",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "日本文化",
+        "訪日向け",
+        "英語対応あり",
+        "デート",
+        "友だち",
+        "ひとり",
+        "街歩き",
+        "非日常",
+        "大人も楽しい"
+      ],
+      "inbound_profile": {
+        "inbound_fit": "A",
+        "japanese_culture": true,
+        "booking_languages": [
+          "ja",
+          "en"
+        ],
+        "onsite_languages": [
+          "ja",
+          "en",
+          "zh",
+          "ko"
+        ],
+        "onsite_note": "公式は英語対応ありと案内。KLOOK掲載では英語・日本語・韓国語・中国語対応を案内。",
+        "verified_at": "2026-09-02"
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "KLOOK",
+          "訪日OTA"
+        ],
+        "provider_candidates": [
+          "klook"
+        ],
+        "product_match_required": false,
+        "note": "KLOOKのYAE着物レンタル個別体験ページを確認済み。"
+      },
+      "editorial": {
+        "title": "着物に着替えて、浅草を歩く。",
+        "lead": "雷門を見るだけの日から、街そのものを体験する日へ。着物を選び、髪を整え、そのまま浅草の路地へ出る。",
+        "moment": "東京観光を少し特別にしたい日",
+        "collection": "日本を、体験する",
+        "best_for": [
+          "浅草街歩き",
+          "訪日ゲストと",
+          "写真を残したい"
+        ],
+        "priority": 16,
+        "experience_feature": true
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 55,
+        "reservation_expected": true
+      }
+    },
+    {
+      "spot_id": "spot_321",
+      "slug": "mt-fuji-wooden-toy-museum",
+      "name": "富士山木のおもちゃ美術館",
+      "aliases": [
+        "Mt.FUJI WOODEN TOY MUSEUM",
+        "富士山 木のおもちゃ美術館"
+      ],
+      "category_primary": "toy_museum",
+      "categories": [
+        "kids",
+        "museum",
+        "wooden_toys",
+        "wood_education",
+        "indoor_play",
+        "learning",
+        "culture",
+        "creative",
+        "family"
+      ],
+      "prefecture": "静岡県",
+      "city": "御殿場市",
+      "address": "静岡県御殿場市印野1388-1",
+      "official_url": "https://mtfuji-toymuseum.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 5,
+        "physical_activity": 55,
+        "hands_on": 100,
+        "quietness": 62,
+        "parent_rest": 68,
+        "greenery": 30,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 100,
+        "baby_fit": 96,
+        "toddler_fit": 100,
+        "stroller_fit": 82,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 28,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 42,
+        "extraordinary": 82,
+        "scenic": 35,
+        "stroll": 42,
+        "relax": 78,
+        "shopping": 8,
+        "food": 5,
+        "culture": 92,
+        "animals": 0,
+        "creative": 100,
+        "active": 58,
+        "waterside": 0
+      },
+      "editorial_reason": "富士山麓の木材と木のおもちゃに触れながら遊べる、赤ちゃんから楽しみやすい木育ミュージアム。",
+      "public_copy": "富士山の麓で、地元の木や木のおもちゃに触れながら遊べる木育ミュージアム。赤ちゃん向けエリアもあり、雨の日の御殿場ドライブにも組み込みやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜16:00を基本に開館。休館日・団体利用日は公式のお知らせを確認。",
+        "price_summary": "入館料は年齢区分があります。最新料金は公式チケット案内を確認。",
+        "reservation_summary": "チケット購入方法・混雑時の案内は公式サイトを確認。",
+        "age_note": "赤ちゃん専用エリアを備え、乳幼児から楽しみやすい。",
+        "temporary_note": "2026年8月8日グランドオープン。",
+        "checked_at": "2026-09-02",
+        "source_url": "https://mtfuji-toymuseum.jp/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 36,
+        "solo": 28,
+        "friends": 54
+      },
+      "adult_enjoyment_seed": 62,
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "富士山木のおもちゃ美術館の木育空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "御殿場市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "富士山木のおもちゃ美術館",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日",
+        "学び・体験",
+        "室内",
+        "ものづくり"
+      ],
+      "planning_profile": {
+        "style": "ticketed",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "個別チケット掲載を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 100,
+        "social_presence": 87,
+        "visual_appeal": 96,
+        "media_attention": 90,
+        "popularity_momentum": 94,
+        "reason": "2026年8月に御殿場に誕生した、木育をテーマにした新しい体験型ミュージアム。",
+        "checked_at": "2026-09-02",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-02",
+            "url": "https://mtfuji-toymuseum.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_322",
+      "slug": "nicopa-nico-ground-kinshicho",
+      "name": "NICOPA & nico ground 丸井錦糸町店",
+      "aliases": [
+        "NICOPA 錦糸町",
+        "nico ground 錦糸町",
+        "ニコパ 錦糸町"
+      ],
+      "category_primary": "indoor_playground",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "playground",
+        "family",
+        "active",
+        "baby",
+        "mall"
+      ],
+      "prefecture": "東京都",
+      "city": "墨田区",
+      "address": "東京都墨田区江東橋3-9-10 錦糸町マルイ4F",
+      "official_url": "https://www.0101.co.jp/054/info/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 82,
+        "hands_on": 82,
+        "quietness": 25,
+        "parent_rest": 72,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 72,
+        "baby_fit": 92,
+        "toddler_fit": 96,
+        "stroller_fit": 90,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 15,
+        "planning_friction": 8
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 46,
+        "scenic": 0,
+        "stroll": 52,
+        "relax": 55,
+        "shopping": 58,
+        "food": 10,
+        "culture": 12,
+        "animals": 0,
+        "creative": 58,
+        "active": 85,
+        "waterside": 0
+      },
+      "editorial_reason": "錦糸町駅近くで、短時間でも使いやすいコンパクトな屋内遊び場。授乳・おむつ替えと同じフロアで完結しやすい。",
+      "public_copy": "錦糸町マルイ4階にある屋内キッズパーク。ボールプールや木製遊具などで遊べ、駅近で「少しだけ遊ばせたい日」にも使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "NICOPAは10:30〜20:00、キッズパークは10:30〜18:00を基本に営業。",
+        "price_summary": "キッズパークは有料・時間制。最新料金は現地・店舗案内を確認。",
+        "reservation_summary": "通常は当日利用。混雑・入場条件は店舗で確認。",
+        "age_note": "小さな子向けの遊びがある屋内施設。年齢別の利用条件は現地案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-02",
+        "source_url": "https://www.0101.co.jp/054/info/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 12,
+        "solo": 5,
+        "friends": 38
+      },
+      "adult_enjoyment_seed": 38,
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "NICOPA & nico ground 丸井錦糸町店の屋内遊び場をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "墨田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "NICOPA & nico ground 丸井錦糸町店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日",
+        "近場穴場",
+        "室内",
+        "体を動かす"
+      ],
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 100,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "現時点では予約導線を出さず、施設情報として掲載。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 100,
+        "social_presence": 78,
+        "visual_appeal": 84,
+        "media_attention": 78,
+        "popularity_momentum": 82,
+        "reason": "駅前・室内・短時間利用のしやすさが強い、錦糸町の子連れ向け屋内スポット。",
+        "checked_at": "2026-09-02",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-02",
+            "url": "https://www.0101.co.jp/054/info/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_323",
+      "slug": "hotel-new-akao-kids-park",
+      "name": "ホテルニューアカオ キッズパーク",
+      "aliases": [
+        "ホテルニューアカオ キッズフロア",
+        "Kid’s Carnival ホテルニューアカオ",
+        "ホテルニューアカオ"
+      ],
+      "category_primary": "indoor_playground",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "family",
+        "resort_activity",
+        "atami",
+        "day_use",
+        "active"
+      ],
+      "prefecture": "静岡県",
+      "city": "熱海市",
+      "address": "静岡県熱海市熱海1993-250 ホテルニューアカオ オーシャン・ウイング12F",
+      "official_url": "https://hotel-new-akao.com/facilities/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 90,
+        "hands_on": 72,
+        "quietness": 18,
+        "parent_rest": 72,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 20,
+        "creative_sensory": 75,
+        "baby_fit": 86,
+        "toddler_fit": 98,
+        "stroller_fit": 78,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 18,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 88,
+        "scenic": 48,
+        "stroll": 20,
+        "relax": 62,
+        "shopping": 5,
+        "food": 20,
+        "culture": 12,
+        "animals": 0,
+        "creative": 45,
+        "active": 92,
+        "waterside": 38
+      },
+      "editorial_reason": "海景色と昭和レトロなホテルの中に、日帰りでも使える全天候型キッズパークが加わった。親は温泉・宿時間まで含めて楽しめる。",
+      "public_copy": "熱海のホテルニューアカオ12階にできた全天候型キッズパーク。7つのエリアで体を動かして遊べ、日帰り利用もできるので、温泉や海景色と組み合わせた一日にしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "14:00〜20:00／翌朝9:00〜12:00。",
+        "price_summary": "1人500円。2歳以下無料。",
+        "reservation_summary": "日帰り利用可。利用時は同意書記入・保護者付き添いが必要。",
+        "age_note": "対象は小学生以下。2歳以下は無料。",
+        "temporary_note": "2026年7月17日、オーシャン・ウイング12階にキッズフロアとしてオープン。",
+        "checked_at": "2026-09-02",
+        "source_url": "https://hotel-new-akao.com/facilities/"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 32,
+        "solo": 5,
+        "friends": 52
+      },
+      "adult_enjoyment_seed": 72,
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "ホテルニューアカオ キッズパークの屋内遊び場をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "熱海市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルニューアカオ キッズパーク",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "赤ちゃん向け",
+        "雨の日",
+        "暑い日",
+        "体を動かす",
+        "非日常",
+        "大人も楽しい"
+      ],
+      "planning_profile": {
+        "style": "day_use",
+        "same_day_fit": 72,
+        "reservation_expected": false
+      },
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "atami_akao",
+        "meal": false,
+        "family_recovery": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com"
+        ],
+        "product_match_required": true,
+        "note": "キッズパーク単体の予約ではなく、ホテル宿泊導線は別途個別ページ確認後に表示。"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 100,
+        "social_presence": 88,
+        "visual_appeal": 97,
+        "media_attention": 91,
+        "popularity_momentum": 95,
+        "reason": "2026年7月にホテルニューアカオへ誕生した、日帰りでも使える全天候型キッズパーク。",
+        "checked_at": "2026-09-02",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-02",
+            "url": "https://hotel-new-akao.com/facilities/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_324",
+      "slug": "capcomix-minatomirai",
+      "name": "CAPCOMIX みなとみらい店",
+      "aliases": [
+        "CAPCOMIX",
+        "カプコミクス みなとみらい",
+        "カプコミクス"
+      ],
+      "category_primary": "interactive_amusement",
+      "categories": [
+        "kids",
+        "indoor_play",
+        "amusement",
+        "active",
+        "vr",
+        "game",
+        "shopping",
+        "family",
+        "friends"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい3-5-1 MARK IS みなとみらい4F",
+      "official_url": "https://www.capcom.co.jp/amusement/game/shop/minatomirai",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 92,
+        "hands_on": 85,
+        "quietness": 8,
+        "parent_rest": 35,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 5,
+        "creative_sensory": 92,
+        "baby_fit": 28,
+        "toddler_fit": 72,
+        "stroller_fit": 72,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 45,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 92,
+        "scenic": 0,
+        "stroll": 22,
+        "relax": 12,
+        "shopping": 62,
+        "food": 5,
+        "culture": 18,
+        "animals": 0,
+        "creative": 60,
+        "active": 100,
+        "waterside": 0
+      },
+      "editorial_reason": "大型フィジカルアクティビティ、VR、ゲーム、カプコンストアが一か所に集まり、子どもだけでなく大人も遊べる新しいみなとみらいの室内目的地。",
+      "public_copy": "MARK IS みなとみらい4階の体験型アミューズメント施設。大型アクティビティやVR、ゲーム、カプコンストアまでまとまり、親子でも友だち同士でも遊びやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "施設10:00〜23:00。Crazy BANeTは10:00〜21:00、Kids BANeTは10:00〜19:30、VR-Xは10:00〜21:00を基本に営業。",
+        "price_summary": "各有料コンテンツで料金が異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "エリアごとに受付・最終受付時刻が異なる。混雑時の運用は公式案内を確認。",
+        "age_note": "Kids BANeTなど子ども向けエリアあり。各コンテンツの年齢・身長・利用条件を確認。",
+        "temporary_note": "2026年7月17日グランドオープン。",
+        "checked_at": "2026-09-02",
+        "source_url": "https://www.capcom.co.jp/amusement/game/shop/minatomirai"
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 70,
+        "solo": 48,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 88,
+      "hero_image": {
+        "url": "images/ai/kids-play-a.jpg",
+        "type": "ai",
+        "alt": "CAPCOMIX みなとみらい店の体験型アミューズメント空間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "CAPCOMIX みなとみらい店",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "友だち",
+        "雨の日",
+        "暑い日",
+        "体を動かす",
+        "非日常",
+        "大人も楽しい",
+        "買い物"
+      ],
+      "planning_profile": {
+        "style": "walk_in_or_ticketed",
+        "same_day_fit": 92,
+        "reservation_expected": false
+      },
+      "plan_profile": {
+        "role": "anchor",
+        "zone": "minatomirai",
+        "meal": false,
+        "family_recovery": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "国内レジャーチケットASP"
+        ],
+        "product_match_required": true,
+        "note": "個別チケット掲載を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 97,
+        "freshness": 100,
+        "social_presence": 90,
+        "visual_appeal": 99,
+        "media_attention": 93,
+        "popularity_momentum": 97,
+        "reason": "2026年7月に東日本初出店。カプコンの大型アクティビティ・VR・ゲームをまとめて体験できる新スポット。",
+        "checked_at": "2026-09-02",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-02",
+            "url": "https://www.capcom.co.jp/amusement/game/shop/minatomirai"
+          }
+        ]
       }
     }
   ]

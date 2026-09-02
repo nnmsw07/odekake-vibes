@@ -1,0 +1,11 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/data.js','utf8'),ctx);vm.runInContext(fs.readFileSync(__dirname+'/affiliate-config.js','utf8'),ctx);const seed=ctx.window.ODEKAKE_SEED,cfg=ctx.window.KIBUN_AFFILIATE_CONFIG;
+const by=id=>seed.spots.find(s=>s.spot_id===id);
+assert.strictEqual(seed.metadata.version,'0.20.6.2');assert.strictEqual(seed.spots.length,324);
+assert.strictEqual(by('spot_167').name,'UE FANTASIA＋');assert.ok(by('spot_167').public_copy.includes('3,000'));
+for(const [id,name] of [['spot_321','富士山木のおもちゃ美術館'],['spot_322','NICOPA & nico ground 丸井錦糸町店'],['spot_323','ホテルニューアカオ キッズパーク'],['spot_324','CAPCOMIX みなとみらい店']])assert.strictEqual(by(id).name,name);
+assert.strictEqual(by('spot_321').city,'御殿場市');assert.ok(by('spot_321').ui_tags.includes('赤ちゃん向け'));
+assert.strictEqual(by('spot_323').city,'熱海市');assert.match(by('spot_323').dynamic_snapshot.price_summary,/500円/);assert.match(by('spot_323').dynamic_snapshot.age_note,/小学生以下/);
+assert.strictEqual(by('spot_324').city,'横浜市西区');assert.strictEqual(cfg.sourceLinks.spot_323[0].url,'https://www.jalan.net/yad333583/');assert.match(by('spot_324').dynamic_snapshot.opening_hours_text,/10:00〜23:00/);
+const app=fs.readFileSync(__dirname+'/app.js','utf8'),idx=fs.readFileSync(__dirname+'/index.html','utf8');assert.ok(app.includes("['fuji','御殿場・富士']"));assert.ok(app.includes("key==='fuji'"));assert.ok(idx.includes('324スポット'));
+console.log('v20.6.2 new family spots PASS');

@@ -4,7 +4,7 @@ const path = require('path');
 const R = require('./recommender.js');
 const seed = JSON.parse(fs.readFileSync(path.join(__dirname,'seed.json'),'utf8'));
 
-assert.equal(seed.spots.length,291);
+assert.ok(seed.spots.length>=291);
 
 let r = R.recommend(seed,{selectedVibes:['cool','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.ok(r.recommendations[0].scores.vibe >= 70);

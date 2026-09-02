@@ -1,0 +1,22 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const read=f=>fs.readFileSync(__dirname+'/'+f,'utf8');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('data.js'),ctx);vm.runInContext(read('affiliate-config.js'),ctx);
+const seed=ctx.window.ODEKAKE_SEED,cfg=ctx.window.KIBUN_AFFILIATE_CONFIG,by=id=>seed.spots.find(s=>s.spot_id===id);
+assert.ok(seed.spots.length>=320);assert.ok(/^0\.20\.6\.[1-9]$/.test(seed.metadata.version));
+for(const id of ['spot_318','spot_319','spot_320'])assert.ok(by(id),id);
+assert.strictEqual(by('spot_301').routing.google_place_id,'ChIJG_h8q9hDGGARjY2rT-yJpAA');assert.strictEqual(by('spot_301').media_strategy.google_places.photo_index_override,0);
+for(const p of ['asoview','jalan_activity','activity_japan','klook'])assert.ok(cfg.linkSwitch.providers.includes(p),p);
+assert.ok(cfg.providerCapabilities.activity_japan.linkSwitch);assert.ok(cfg.providerCapabilities.jalan_activity.linkSwitch);assert.ok(!cfg.providerPriority.international_experience);
+assert.ok(cfg.providerPriority.inbound_experience.includes('klook'));
+const auditHtml=read('affiliate-audit/index.html'),auditJs=read('affiliate-audit/audit.js'),app=read('app.js'),idx=read('index.html');
+assert.ok(auditHtml.includes('id="inboundFilter"'));assert.ok(auditHtml.includes('訪日・多言語向け'));assert.ok(!auditHtml.includes('国内 + 海外'));assert.ok(!auditHtml.includes('value="international"'));
+assert.ok(auditJs.includes("jalan_activity:{label:'じゃらん 遊び・体験予約'"));assert.ok(auditJs.includes("activity_japan:{label:'アクティビティジャパン',domain:'activityjapan.com',linkswitch:true"));
+assert.ok(app.includes("['inbound','日本文化・訪日向け']"));assert.ok(app.includes('VISITOR SUPPORT'));assert.ok(/(?:320|324)スポット/.test(idx));
+assert.deepStrictEqual(Array.from(by('spot_249').inbound_profile.onsite_languages),['ja','en']);assert.match(by('spot_249').inbound_profile.onsite_note,/英語で出来る陶芸体験/);
+assert.ok(!('onsite_languages' in by('spot_250').inbound_profile));assert.match(by('spot_250').inbound_profile.booking_language_note,/現地での外国語対応は未確認/);
+assert.match(by('spot_318').inbound_profile.onsite_note,/英語対応保証オプション/);assert.deepStrictEqual(Array.from(by('spot_318').inbound_profile.onsite_languages),['ja']);
+assert.ok(by('spot_319').inbound_profile.onsite_languages.includes('en'));assert.ok(by('spot_320').inbound_profile.onsite_languages.includes('en'));
+for(const [id,p,part] of [['spot_001','asoview','asoview.com/base/155472'],['spot_007','jalan_activity','guide000000229925'],['spot_249','activity_japan','publish/plan_list/1705'],['spot_023','klook','klook.com/ja/activity/13954'],['spot_133','klook','klook.com/activity/2276'],['spot_319','klook','activity/109994'],['spot_320','klook','activity/13746']]){const x=(cfg.sourceLinks[id]||[]).find(x=>x.provider===p);assert.ok(x,`${id} ${p}`);assert.ok(x.url.includes(part),x.url);}
+assert.ok(!(cfg.sourceLinks.spot_165||[]).some(x=>x.provider==='klook'),'Tokyo Bay Ferry must not get an unverified KLOOK direct link');
+assert.strictEqual(cfg.sourceLinks.spot_217[0].url,'https://www.jalan.net/yad322559/');
+assert.ok(/892690966/.test(idx));assert.ok(/aml\.valuecommerce\.com\/vcdal\.js/.test(idx));
+console.log('v20.6.1 inbound culture + activity affiliate tests passed');

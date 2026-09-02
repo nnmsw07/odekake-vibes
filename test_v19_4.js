@@ -8,8 +8,8 @@ const config=fs.readFileSync('config.js','utf8');
 const worker=fs.readFileSync('worker/worker.js','utf8');
 const overrides=JSON.parse(fs.readFileSync('HERO_OVERRIDES_v19_4.json','utf8'));
 
-assert.equal(seed.spots.length,291);
-assert.ok(/^0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)$/.test(seed.metadata.version));
+assert.ok(seed.spots.length>=291);
+assert.ok(/^(?:0\.19\.(?:5(?:\.\d+)?|6(?:\.\d+)?|7(?:\.\d+)?|8(?:\.\d+)?|9)|0\.20\.\d+(?:\.\d+)?(?:\.\d+)?)$/.test(seed.metadata.version));
 assert.equal(Object.keys(overrides.photo_index_overrides).length,153);
 assert.equal(Object.keys(overrides.place_overrides).length,28);
 assert.ok(seed.spots.filter(s=>Number.isInteger(s.media_strategy?.google_places?.photo_index_override)).length>=153);

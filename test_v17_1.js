@@ -1,6 +1,6 @@
 const fs=require('fs');
 const seed=JSON.parse(fs.readFileSync('seed.json','utf8'));
-if(seed.spots.length!== 291) throw new Error(`expected 286 spots, got ${seed.spots.length}`);
+if(seed.spots.length<291) throw new Error(`expected current seed >=291 spots, got ${seed.spots.length}`);
 const expectedMood=['cool','extraordinary','relax'];
 for(const k of expectedMood){if(!(k in seed.vibe_definitions)) throw new Error(`missing vibe ${k}`)}
 const staticPhotos=seed.spots.filter(s=>s.hero_image?.type==='photo' && s.media_strategy?.current_provider!=='official_permission');
