@@ -213,3 +213,10 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - Added three original Kibun Magazine stories: outdoor stays, tools/craft, and an after-five Takanawa walk.
 - Editorial framing is original to Kibun; external editorial references are used only as inspiration for topic discovery, never copied in wording or page structure.
 - Affiliate audit status now covers all 446 spots.
+
+
+## v20.10.1 Hero Audit refresh
+- Latest Hero Audit export saved as `HERO_OVERRIDES_v20_10_1.json`.
+- 182 photo selections and 14 manual Google Place pins applied to seed/data.
+- New spots 432–446 are included in the audited Hero selection.
+- `data.js?v=20101`; no Worker or image asset change.

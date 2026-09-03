@@ -22,7 +22,7 @@ assert.ok(worker.includes("url.searchParams.get('limit')||10"));
 assert.ok(worker.includes('photos.slice(0,10)'));
 assert.ok(app.includes('最大10枚'));
 assert.ok(app.includes('heroAuditCandidateCount||10'));
-assert.ok(/affiliate-audit-status\.js\?v=(?:2090|20100)/.test(auditHtml));
+assert.ok(/affiliate-audit-status\.js\?v=(?:2090|20100|20101)/.test(auditHtml));
 assert.ok(auditHtml.includes('id="auditOutcomeFilter"'));
 assert.ok(auditHtml.includes('<option value="recheck_needed" selected>再調査</option>'));
 assert.ok(css.includes('.image-shell{position:relative;display:block;width:100%;height:100%;overflow:hidden}'));

@@ -13,5 +13,5 @@ assert.strictEqual(spot.media_strategy.google_places.status, 'resolved_manual');
 assert.strictEqual(spot.media_strategy.google_places.photo_index_override, 0);
 assert.strictEqual(spot.media_strategy.google_places.use_address, true);
 const index = fs.readFileSync('index.html','utf8');
-assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082|20100)/.test(index), 'data.js cache key not bumped');
+assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082|20100|20101)/.test(index), 'data.js cache key not bumped');
 console.log('v20.4.1 海の公園 Place ID + hero index PASS');
