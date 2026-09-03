@@ -196,7 +196,18 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - `?heroAudit=1` now requests and displays up to 10 Google Places photo candidates instead of 6.
 - `worker/worker.js` changed for the 10-photo limit, so Cloudflare Worker redeploy is required.
 
-
 ## v20.9.1 SNS Audit
 
-`/sns-audit/` is a private, noindex operations page for the September 2026 30-post calendar. It connects each post to an article, curated plan or spot and tracks the Hero image, Instagram path, Affiliate readiness and post-performance results. Audit values are saved locally and can be exported/imported as JSON. Affiliate Audit / SNS Audit / Hero Audit are cross-linked.
+管理用SNS投稿監査ページを追加しました。
+
+- `/sns-audit/` または `/?snsAudit=1`
+- 記事 / プラン / スポット遷移先、Hero、Instagram導線、Affiliate準備状況、投稿実績を投稿単位で管理
+- 編集値は端末に保存し、JSONで書き出し / 読み込み可能
+- Hero Audit / Affiliate Audit / SNS Audit間を管理画面から移動可能
+
+
+## v20.9.2 SNS Audit
+
+- `/sns-audit/` に9月30投稿の完成原稿を収録。
+- Instagram / Threadsをタブ切替し、原稿＋ハッシュタグをワンタップコピー。
+- CTA、クリエイティブ指示、記事/プラン遷移、Hero、Affiliate、投稿実績を一画面で管理。

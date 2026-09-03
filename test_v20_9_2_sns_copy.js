@@ -1,0 +1,11 @@
+const fs=require('fs'),assert=require('assert');
+const seed=fs.readFileSync('sns-audit-data.js','utf8');
+const js=fs.readFileSync('sns-audit/audit.js','utf8');
+const html=fs.readFileSync('sns-audit/index.html','utf8');
+assert.ok(seed.includes("sep26_30"),'30th post missing');
+assert.strictEqual((seed.match(/\"id\": \"sep26_/g)||[]).length,30,'seed should have 30 posts');
+assert.ok(seed.includes('"instagram"')&&seed.includes('"threads"'),'paired copy missing');
+assert.ok(js.includes('原稿＋ハッシュタグ')&&js.includes('data-copy-tab'),'copy/tabs missing');
+assert.ok(js.includes('OLD_KEY')&&js.includes('v2091'),'v20.9.1 migration missing');
+assert.ok(html.includes('audit.css?v=2092')&&html.includes('sns-audit-data.js?v=2092'),'2092 assets missing');
+console.log('v20.9.2 SNS Audit tests passed');
