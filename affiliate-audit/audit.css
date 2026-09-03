@@ -6,6 +6,4 @@
 /* v20.9 audit outcomes */
 .audit-outcome-note{margin:-5px 0 13px;padding:8px 10px;border-radius:11px;background:#f7f3ec;color:var(--muted);font-size:9px;line-height:1.55}
 .chip.audit-recheck_needed{background:#fff0eb;color:#9d503d}.chip.audit-configured{background:#edf4ea;color:#466447}.chip.audit-direct_only{background:#f5eed6;color:#806d2e}.chip.audit-researched_no_partner{background:#ece9e4;color:#676159}.chip.audit-provider_found_unavailable{background:#f4e5e5;color:#8d4444}
-
-/* v20.9.1 shared audit navigation */
-.top{display:grid;grid-template-columns:auto 1fr auto;gap:18px}.audit-nav{display:flex;justify-content:center;gap:5px;flex-wrap:wrap}.audit-nav a{padding:7px 10px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:9px;font-weight:900}.audit-nav a.active{background:var(--ink);color:#fff}@media(max-width:720px){.top{height:auto;min-height:64px;padding-top:8px;padding-bottom:8px;grid-template-columns:1fr auto}.audit-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.private{grid-column:2;grid-row:1}}
+.audit-nav{display:flex;gap:6px;flex-wrap:wrap}.audit-nav a,.audit-nav strong{font-size:9px;text-decoration:none;color:var(--green);border:1px solid var(--line);border-radius:999px;padding:5px 8px;background:var(--paper)}.audit-nav strong{background:var(--green);color:#fff;border-color:var(--green)}@media(max-width:680px){.top{height:auto;min-height:64px;flex-wrap:wrap;gap:8px;padding-top:8px;padding-bottom:8px}.audit-nav{order:3;width:100%}}

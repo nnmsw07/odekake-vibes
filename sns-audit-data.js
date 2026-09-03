@@ -1,5 +1,5 @@
 window.KIBUN_SNS_AUDIT_SEED = {
-  version: '20.10.1',
+  version: '20.9.1',
   posts: [
     {
       id: 'post_2026_09_30',

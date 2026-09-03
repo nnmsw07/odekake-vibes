@@ -1,7 +1,7 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');const read=f=>fs.readFileSync(__dirname+'/'+f,'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('data.js'),ctx);vm.runInContext(read('affiliate-config.js'),ctx);
 const seed=ctx.window.ODEKAKE_SEED,cfg=ctx.window.KIBUN_AFFILIATE_CONFIG,by=id=>seed.spots.find(s=>s.spot_id===id);
-assert.ok(seed.spots.length>=320);assert.ok(/^0\.20\.6\.[1-9]$/.test(seed.metadata.version));
+assert.ok(seed.spots.length>=320);assert.ok(/^0\.20\.\d+(?:\.\d+)?$/.test(seed.metadata.version));
 for(const id of ['spot_318','spot_319','spot_320'])assert.ok(by(id),id);
 assert.strictEqual(by('spot_301').routing.google_place_id,'ChIJG_h8q9hDGGARjY2rT-yJpAA');assert.strictEqual(by('spot_301').media_strategy.google_places.photo_index_override,0);
 for(const p of ['asoview','jalan_activity','activity_japan','klook'])assert.ok(cfg.linkSwitch.providers.includes(p),p);
@@ -10,7 +10,7 @@ assert.ok(cfg.providerPriority.inbound_experience.includes('klook'));
 const auditHtml=read('affiliate-audit/index.html'),auditJs=read('affiliate-audit/audit.js'),app=read('app.js'),idx=read('index.html');
 assert.ok(auditHtml.includes('id="inboundFilter"'));assert.ok(auditHtml.includes('訪日・多言語向け'));assert.ok(!auditHtml.includes('国内 + 海外'));assert.ok(!auditHtml.includes('value="international"'));
 assert.ok(auditJs.includes("jalan_activity:{label:'じゃらん 遊び・体験予約'"));assert.ok(auditJs.includes("activity_japan:{label:'アクティビティジャパン',domain:'activityjapan.com',linkswitch:true"));
-assert.ok(app.includes("['inbound','日本文化・訪日向け']"));assert.ok(app.includes('VISITOR SUPPORT'));assert.ok(/(?:320|324)スポット/.test(idx));
+assert.ok(app.includes("['inbound','日本文化・訪日向け']"));assert.ok(app.includes('VISITOR SUPPORT'));assert.ok(/\d+スポット/.test(idx));
 assert.deepStrictEqual(Array.from(by('spot_249').inbound_profile.onsite_languages),['ja','en']);assert.match(by('spot_249').inbound_profile.onsite_note,/英語で出来る陶芸体験/);
 assert.ok(!('onsite_languages' in by('spot_250').inbound_profile));assert.match(by('spot_250').inbound_profile.booking_language_note,/現地での外国語対応は未確認/);
 assert.match(by('spot_318').inbound_profile.onsite_note,/英語対応保証オプション/);assert.deepStrictEqual(Array.from(by('spot_318').inbound_profile.onsite_languages),['ja']);

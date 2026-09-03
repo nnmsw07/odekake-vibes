@@ -1,0 +1,6 @@
+name = "kibun-api"
+main = "worker.js"
+compatibility_date = "2026-08-26"
+
+[vars]
+ALLOWED_ORIGIN = "https://kibuntrip.com,https://www.kibuntrip.com,https://kibuntrip.jp,https://www.kibuntrip.jp,https://nnmsw07.github.io"
