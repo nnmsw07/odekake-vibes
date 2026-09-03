@@ -30,7 +30,7 @@ function photoScore(p,index){
 }
 function pickPhoto(photos, override){
   if(Number.isInteger(override) && photos[override]) return {photo:photos[override],index:override};
-  return photos.slice(0,8).map((p,i)=>({photo:p,index:i,score:photoScore(p,i)})).sort((a,b)=>b.score-a.score)[0]||null;
+  return photos.slice(0,10).map((p,i)=>({photo:p,index:i,score:photoScore(p,i)})).sort((a,b)=>b.score-a.score)[0]||null;
 }
 async function getPlace(env,{name,address,placeId}){
   const fields='id,displayName,formattedAddress,googleMapsUri,photos';
@@ -125,7 +125,7 @@ export default {
       // 通常UIからは呼ばず、?heroAudit=1 の管理用UIだけで使用する。
       if(url.pathname.endsWith('/place-photos') && request.method==='GET'){
         const name=url.searchParams.get('name'),address=url.searchParams.get('address')||'',placeId=url.searchParams.get('placeId')||'';
-        const requested=Math.max(1,Math.min(8,Number(url.searchParams.get('limit')||6)));
+        const requested=Math.max(1,Math.min(10,Number(url.searchParams.get('limit')||10)));
         if(!name && !placeId) return json({error:'name or placeId required'},400,cors);
         const place=await getPlace(env,{name,address,placeId});
         if(!place) return json({candidates:[],reason:'place_not_found'},200,cors);

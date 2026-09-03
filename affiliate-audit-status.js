@@ -1,0 +1,3338 @@
+window.KIBUN_AFFILIATE_AUDIT_STATUS = {
+  "version": "20.9.0",
+  "checked_at": "2026-09-03",
+  "spot_count": 431,
+  "distribution": {
+    "configured": 148,
+    "recheck_needed": 127,
+    "not_target": 140,
+    "researched_no_partner": 5,
+    "direct_only": 11
+  },
+  "spots": {
+    "spot_001": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_002": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_003": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_004": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_005": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_006": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_007": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview",
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_008": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_009": {
+      "status": "researched_no_partner",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "じゃらん等で施設情報は確認できるが、対応ASPの予約商品は確認できず。"
+    },
+    "spot_010": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_011": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_012": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "jalan_activity",
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_013": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_014": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_015": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_016": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_017": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_018": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_019": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_020": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_021": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_022": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_023": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_024": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_025": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_026": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_027": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_028": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_029": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_030": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_031": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_032": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_033": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_034": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_035": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_036": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_037": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_038": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_039": {
+      "status": "researched_no_partner",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式施設情報を確認。対応ASPの施設別予約商品は今回確認できず。"
+    },
+    "spot_040": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_041": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_042": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_043": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_044": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_045": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_046": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_047": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_048": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_049": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_050": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_051": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_052": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview",
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_053": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_054": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_055": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_056": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_057": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_058": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_059": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_060": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_061": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_062": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_063": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_064": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_065": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_066": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_067": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_068": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_069": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_070": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_071": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_072": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_073": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_074": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_075": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_076": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_077": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_078": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_079": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_080": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_081": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_082": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_083": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_084": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_085": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_086": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_087": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_088": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_089": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_090": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_091": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_092": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_093": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_094": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_095": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_096": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_097": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_098": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_099": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_100": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_101": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_102": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_103": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_104": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_105": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_106": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_107": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_108": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_109": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_110": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_111": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_112": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_113": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_114": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_115": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_116": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_117": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_118": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_119": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_120": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_121": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_122": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_123": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_124": {
+      "status": "researched_no_partner",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "アソビューの紹介記事・じゃらん施設情報はあるが、予約商品は今回確認できず。"
+    },
+    "spot_125": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_126": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_127": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_128": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_129": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_130": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_131": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_132": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_133": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_134": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_135": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_136": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_137": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_138": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_139": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_140": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_141": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_142": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_143": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_144": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_145": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_146": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_147": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_148": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook",
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_149": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_150": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_151": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook",
+        "asoview",
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_152": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_153": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_154": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_155": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_156": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_157": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_158": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_159": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_160": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_161": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_162": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_163": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式サイトに乗船予約導線あり。対応ASPの施設別商品は今回確認できず。"
+    },
+    "spot_164": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式の猿島航路・入園導線を優先。対応ASPの施設単体商品は今回確認できず。"
+    },
+    "spot_165": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式フェリー乗船導線を優先。対応ASPの東京湾フェリー単体商品は今回確認できず。"
+    },
+    "spot_166": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_167": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_168": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_169": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_170": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_171": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_172": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook",
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_173": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_174": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_175": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_176": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_177": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_178": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_179": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_180": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_181": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_182": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_183": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_184": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_185": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_186": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_187": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_188": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_189": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_190": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_191": {
+      "status": "researched_no_partner",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "じゃらん施設情報はあるが、ネット予約商品は今回確認できず。"
+    },
+    "spot_192": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_193": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_194": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_195": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_196": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_197": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_198": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "yahoo_travel"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_199": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_200": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_201": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_202": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_203": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_204": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_205": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_206": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_207": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_208": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_209": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_210": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_211": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_212": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_213": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_214": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_215": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_216": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_217": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_218": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_219": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_220": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_221": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_222": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_223": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_224": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_225": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_226": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_227": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_228": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_229": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_230": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "yahoo_travel"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_231": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_232": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_233": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_234": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_235": {
+      "status": "recheck_needed",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_236": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_237": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_238": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "yahoo_travel"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_239": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_240": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_241": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_242": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式の歌舞伎座公演チケット導線を優先。対応ASPの恒常的な座席商品は今回確認できず。"
+    },
+    "spot_243": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "劇団四季の公式チケット導線を優先。対応ASPの劇場単体商品は今回確認できず。"
+    },
+    "spot_244": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "松竹の公式公演チケット導線を優先。対応ASPの恒常的な座席商品は今回確認できず。"
+    },
+    "spot_245": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "KAAT公式の公演チケット導線を優先。対応ASPの恒常的な座席商品は今回確認できず。"
+    },
+    "spot_246": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_247": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_248": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "CREA BASE公式に新宿御苑前店の予約導線あり。対応ASPの商品は今回確認できず。"
+    },
+    "spot_249": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "activity_japan",
+        "asoview",
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_250": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview",
+        "jalan_activity",
+        "activity_japan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_251": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_252": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "つぐつぐ公式予約ページを確認。対応ASPの商品は今回確認できず。"
+    },
+    "spot_253": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_254": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "元祖食品サンプル屋公式の製作体験予約を確認。対応ASPの商品は今回確認できず。"
+    },
+    "spot_255": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_256": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_257": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_258": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_259": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_260": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_261": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_262": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_263": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_264": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_265": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_266": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_267": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_268": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_269": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_270": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_271": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_272": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_273": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_274": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_275": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_276": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_277": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_278": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_279": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_280": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_281": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_282": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_283": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_284": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_285": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_286": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_287": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_288": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_289": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_290": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_291": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_292": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_293": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_294": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_295": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_296": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_297": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_298": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_299": {
+      "status": "researched_no_partner",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式施設情報を確認。対応ASPの施設別予約商品は今回確認できず。"
+    },
+    "spot_300": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_301": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_302": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_303": {
+      "status": "direct_only",
+      "affiliate_fit": "A",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "公式サイトにチケットカレンダーあり。対応ASPの商品は今回確認できず。"
+    },
+    "spot_304": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_305": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_306": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_307": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_308": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_309": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_310": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_311": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_312": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_313": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_314": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_315": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu_restaurant"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_316": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_317": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_318": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "activity_japan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_319": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_320": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_321": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_322": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_323": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_324": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_325": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_326": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_327": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_328": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_329": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_330": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_331": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_332": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_333": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_334": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_335": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_336": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_337": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_338": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_339": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_340": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_341": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_342": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_343": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_344": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_345": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_346": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_347": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_348": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_349": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_350": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_351": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_352": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_353": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_354": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_355": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_356": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_357": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_358": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_359": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_360": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_361": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_362": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_363": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_364": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_365": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_366": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_367": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_368": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_369": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_370": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_371": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_372": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_373": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_374": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_375": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_376": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_377": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_378": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_379": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_380": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_381": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_382": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_383": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_384": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_385": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_386": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_387": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_388": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_389": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_390": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_391": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_392": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_393": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_394": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_395": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_396": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_397": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_398": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_399": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_400": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_401": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_402": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_403": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_404": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_405": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_406": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_407": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_408": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_409": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_410": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_411": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_412": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_413": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_414": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_415": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "現時点では予約・購入導線による収益化優先度が低いC判定。"
+    },
+    "spot_416": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_417": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_418": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_419": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "klook"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_420": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_421": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_422": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_423": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_424": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_425": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_426": {
+      "status": "configured",
+      "affiliate_fit": "B",
+      "providers": [
+        "jalan_activity"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_427": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_428": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_429": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    },
+    "spot_430": {
+      "status": "recheck_needed",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-03",
+      "reason": "A/B候補。施設別の商品ページを継続調査する。"
+    },
+    "spot_431": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-03",
+      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+    }
+  }
+};

@@ -51,8 +51,8 @@ const aff=fs.readFileSync(path.join(root,'affiliate-config.js'),'utf8');
 assert.ok(/[\"']?enabled[\"']?\s*:\s*true/.test(aff),'affiliate enabled');
 for(const i of [212,213,214,215,217]) assert.ok(aff.includes(`"spot_${i}"`),`Hakone individual affiliate ${i}`);
 // Later sweeps may add a hotel only after a facility-specific booking page is verified.
-for(const i of [216,218,219,220,221,222,223,224,225,226,227,228,229,231,232,234,236,237,239,240]) assert.ok(aff.includes(`"spot_${i}"`),`verified hotel affiliate ${i}`);
-for(const i of [230,233,235,238,241]) assert.ok(!aff.includes(`"spot_${i}"`),`unverified hotel affiliate must remain absent spot_${i}`);
+for(const i of [216,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,236,237,238,239,240,241]) assert.ok(aff.includes(`"spot_${i}"`),`verified hotel affiliate ${i}`);
+assert.ok(!aff.includes(`"spot_235"`),'星のや東京 has no verified supported affiliate source yet');
 assert.ok(!aff.includes('LRG_141600'),'legacy Hakone area fallback must be removed');
 assert.ok(!aff.includes('a8mat=4BAI1K+EJC1IQ+14CS+BW8O2'),'legacy A8 area link must be removed');
 console.log('V19.7 STAY PASS: 30 hotels + day/stay hard filter + Izu browse + 2 stay guides + individual booking links');

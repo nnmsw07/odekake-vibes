@@ -82,6 +82,25 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "conversion_check_required": true
       }
     ],
+    "spot_012": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000231082/",
+        "label": "じゃらんでうんこミュージアム YOKOHAMAの体験プランを見る",
+        "verified_at": "2026-09-03"
+      },
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/164592/",
+        "label": "アソビュー！でうんこミュージアム YOKOHAMA BAYのチケットを見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
+    ],
     "spot_020": [
       {
         "provider": "asoview",
@@ -187,6 +206,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "label": "アソビュー！でチケット・体験を見る",
         "verified_at": "2026-09-03",
         "conversion_check_required": true
+      }
+    ],
+    "spot_038": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000230834/",
+        "label": "じゃらんで西武アグリパーク所沢の収穫体験を見る",
+        "verified_at": "2026-09-03"
       }
     ],
     "spot_050": [
@@ -405,6 +434,26 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "conversion_check_required": true
       }
     ],
+    "spot_127": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000224515/activity_plan/",
+        "label": "じゃらんで東京豊洲 万葉倶楽部の温泉・体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_128": [
+      {
+        "provider": "klook",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.klook.com/ja/activity/14547-sunshine-aquarium-ticket-tokyo/",
+        "label": "KLOOKでサンシャイン水族館のチケットを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
     "spot_130": [
       {
         "provider": "asoview",
@@ -456,6 +505,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "url": "https://www.klook.com/ja/activity/20707-teamlab-borderless-admission-ticket-tokyo/",
         "label": "Klookでチケットを見る",
         "verified_at": "2026-09-02"
+      }
+    ],
+    "spot_146": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000226104/",
+        "label": "じゃらんで泉天空の湯 有明ガーデンの入浴プランを見る",
+        "verified_at": "2026-09-03"
       }
     ],
     "spot_147": [
@@ -598,6 +657,27 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "label": "アソビュー！でチケット・体験を見る",
         "verified_at": "2026-09-02",
         "conversion_check_required": true
+      }
+    ],
+    "spot_188": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/159933/",
+        "label": "アソビュー！で龍宮城スパホテル三日月のチケット・体験を見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_198": [
+      {
+        "provider": "yahoo_travel",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://travel.yahoo.co.jp/00900378/",
+        "label": "Yahoo!トラベルでマホロバ・マインズ三浦の宿泊プランを見る",
+        "verified_at": "2026-09-03"
       }
     ],
     "spot_212": [
@@ -780,6 +860,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "verified_at": "2026-09-03"
       }
     ],
+    "spot_230": [
+      {
+        "provider": "yahoo_travel",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://travel.yahoo.co.jp/00900120/",
+        "label": "Yahoo!トラベルで鴨川シーワールドホテルの宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
     "spot_231": [
       {
         "provider": "ikyu",
@@ -797,6 +887,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "scope": "spot",
         "url": "https://www.ikyu.com/00002764/",
         "label": "一休.comで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_233": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad348508/",
+        "label": "じゃらんnetでTHE FARMの宿泊プランを見る",
         "verified_at": "2026-09-03"
       }
     ],
@@ -830,6 +930,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "verified_at": "2026-09-03"
       }
     ],
+    "spot_238": [
+      {
+        "provider": "yahoo_travel",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://travel.yahoo.co.jp/00913767/",
+        "label": "Yahoo!トラベルで赤沢温泉ホテルの宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
     "spot_239": [
       {
         "provider": "ikyu",
@@ -847,6 +957,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "scope": "spot",
         "url": "https://www.ikyu.com/00030052/",
         "label": "一休.comで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_241": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad330634/",
+        "label": "じゃらんnetで界 アンジンの宿泊プランを見る",
         "verified_at": "2026-09-03"
       }
     ],
@@ -1132,6 +1252,16 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "url": "https://www.jalan.net/yad333583/",
         "label": "じゃらんnetで宿泊プランを見る",
         "verified_at": "2026-09-02"
+      }
+    ],
+    "spot_370": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000207709/activity_plan/",
+        "label": "じゃらんでAIGIS東京・表参道店の体験プランを見る",
+        "verified_at": "2026-09-03"
       }
     ],
     "spot_388": [
@@ -1437,6 +1567,109 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "verified_at": "2026-09-03",
         "conversion_check_required": true
       }
+    ],
+    "spot_040": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/164779/",
+        "label": "アソビュー！でキッズランドUS MAX 川越南古谷店のチケットを見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_174": [
+      {
+        "provider": "klook",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.klook.com/activity/222645-reve-des-lumieres-immersive-digital-art-experience-van-gogh-gaudi/",
+        "label": "KLOOKでRÊVE DES LUMIÈRESのチケットを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_246": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000230230/",
+        "label": "じゃらんでArtbar Yokohama Motomachiの体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_247": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000230228/",
+        "label": "じゃらんでArtbar Daikanyamaの体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_255": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000231321/",
+        "label": "じゃらんでann fragrance浅草アトリエの体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_286": [
+      {
+        "provider": "klook",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.klook.com/ja/activity/159348-miraikan-national-museum-of-emerging-science-and-innovation-permanent-exhibition/",
+        "label": "KLOOKで日本科学未来館 常設展のチケットを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_321": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/164667/",
+        "label": "アソビュー！で富士山木のおもちゃ美術館のチケットを見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_368": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/562/",
+        "label": "アソビュー！でちいさな硝子の本の博物館の体験を見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_386": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000230015/",
+        "label": "じゃらんでmy clay storyの体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_426": [
+      {
+        "provider": "jalan_activity",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.jalan.net/kankou/spt_guide000000179641/activity_plan/",
+        "label": "じゃらんで沼津港深海水族館の体験プランを見る",
+        "verified_at": "2026-09-03"
+      }
     ]
   },
   "providerPriority": {
@@ -1499,5 +1732,5 @@ window.KIBUN_AFFILIATE_CONFIG = {
     }
   },
   "last_sweep_at": "2026-09-03",
-  "sweep_note": "全431スポットを再監査。施設別の直接予約・チケットページを確認できたものだけsourceLinksへ追加し、126スポット・136リンクまで拡張。検索結果ページや施設一致が曖昧なページは未登録。アソビューはLinkSwitch変換可否をURL単位で継続確認。"
+  "sweep_note": "Affiliate Audit v2: 全431スポットを明示ステータス化。施設別の直接予約・チケットページを再検証し、148スポット・159リンクまで拡張。検索結果ページや施設一致が曖昧なページは登録せず、未確定候補はrecheck_neededとして残す。アソビューはLinkSwitch変換可否をURL単位で継続確認。"
 };

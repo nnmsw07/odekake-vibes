@@ -187,3 +187,16 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 ## v20.8.3 mobile image overlay fix
 
 モバイルChromeで画像用グラデーションや「イメージ」バッジがカード外へはみ出し、画面中央に大きな黒い帯が出ることがある問題を修正。`.image-shell` を positioned + clipped container として定義し、stylesheet cache-buster を `2083` に更新。
+
+## v20.9.0 Affiliate Audit v2 + Hero Audit 10-photo mode
+
+- Affiliate direct-source coverage: 148 spots / 159 links.
+- All 431 spots have an explicit affiliate audit status in `AFFILIATE_AUDIT_v20_9_0.json`.
+- `/affiliate-audit/` now defaults to the unresolved `再調査` queue and can filter by static audit outcome.
+- `?heroAudit=1` now requests and displays up to 10 Google Places photo candidates instead of 6.
+- `worker/worker.js` changed for the 10-photo limit, so Cloudflare Worker redeploy is required.
+
+
+## v20.9.1 SNS Audit
+
+`/sns-audit/` is a private, noindex operations page for the September 2026 30-post calendar. It connects each post to an article, curated plan or spot and tracks the Hero image, Instagram path, Affiliate readiness and post-performance results. Audit values are saved locally and can be exported/imported as JSON. Affiliate Audit / SNS Audit / Hero Audit are cross-linked.

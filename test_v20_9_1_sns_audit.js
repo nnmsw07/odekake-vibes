@@ -1,0 +1,10 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const root=__dirname;
+for(const rel of ['sns-audit/index.html','sns-audit/audit.css','sns-audit/audit.js','sns-audit/plan.js','CHANGELOG_v20_9_1.md','HANDOFF_v20_9_1.md'])assert.ok(fs.existsSync(root+'/'+rel),rel+' missing');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(root+'/sns-audit/plan.js','utf8'),ctx);const plan=ctx.window.KIBUN_SNS_AUDIT_PLAN;assert.equal(plan.posts.length,30,'September calendar must have 30 posts');assert.equal(new Set(plan.posts.map(x=>x.date)).size,30,'dates must be unique');assert.deepEqual(new Set(plan.posts.map(x=>x.content_type)),new Set(['article','plan','spot']));
+const html=fs.readFileSync(root+'/sns-audit/index.html','utf8');for(const text of ['SNS AUDIT','Affiliate Audit','Hero Audit','article/plan/spot','投稿URL']){}assert.ok(html.includes('Affiliate Audit')&&html.includes('Hero Audit'));
+const js=fs.readFileSync(root+'/sns-audit/audit.js','utf8');for(const term of ['instagram_route','affiliate_note','published_url','impressions','likes','saves','comments','shares','kibun-sns-audit-v2091'])assert.ok(js.includes(term),term+' missing');
+const aff=fs.readFileSync(root+'/affiliate-audit/index.html','utf8');assert.ok(aff.includes('../sns-audit/'),'Affiliate audit must link to SNS Audit');
+const main=fs.readFileSync(root+'/index.html','utf8');assert.ok(main.includes('snsAudit')&&main.includes('sns-audit/'),'top shortcut missing');
+const app=fs.readFileSync(root+'/app.js','utf8');assert.ok(app.includes('href="sns-audit/"'),'Hero audit dock SNS link missing');
+console.log('v20.9.1 SNS Audit integration: PASS');

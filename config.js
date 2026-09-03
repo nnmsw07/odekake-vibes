@@ -12,7 +12,7 @@ window.KIBUN_CONFIG = {
   travelEstimateCandidateLimit: 40,
 
   // ?heroAudit=1 のときだけHero写真監査UIを表示します。
-  heroAuditCandidateCount: 6
+  heroAuditCandidateCount: 10
 };
 
 (function resolveKibunApiConfig(cfg){
