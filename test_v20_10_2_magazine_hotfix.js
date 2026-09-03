@@ -1,0 +1,11 @@
+const fs=require("fs"),assert=require("assert");
+const hub=fs.readFileSync("magazine/index.html","utf8");
+const css=fs.readFileSync("magazine/magazine.css","utf8");
+const home=fs.readFileSync("index.html","utf8");
+assert.ok(hub.includes("magazine.css?v=2102"),"magazine hub cache buster missing");
+assert.ok(css.includes("v20.10.2 magazine card hotfix"),"hotfix css block missing");
+assert.ok(css.includes(".plan-preview-card:hover"),"plan preview hover block missing");
+assert.ok(!home.includes('<span class="image-badge">イメージ</span>'),"image badge should be removed from magazine previews");
+assert.ok(home.includes('href="magazine/art-and-cafe/"'),"art-and-cafe preview missing");
+assert.ok(home.includes('data-media-spot="spot_101"'),"art-and-cafe preview hero spot not aligned");
+console.log("v20.10.2 magazine hotfix PASS");
