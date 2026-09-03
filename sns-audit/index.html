@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f6f1e9">
   <meta name="robots" content="noindex,nofollow">
-  <title>SNS Audit｜Kibun Trip</title>
+  <title>Kibun Editors｜SNS Audit</title>
   <link rel="icon" href="../favicon.svg">
-  <link rel="stylesheet" href="audit.css?v=2091">
+  <link rel="stylesheet" href="audit.css?v=20101">
 </head>
 <body>
 <header class="top">
@@ -21,34 +21,81 @@
 </header>
 <main class="shell">
   <section class="hero">
-    <p class="eyebrow">SNS AUDIT</p>
-    <h1>投稿前も、<br>投稿後もひとつに。</h1>
-    <p>記事・プラン・スポットの遷移先、使用Hero、Instagram導線、Affiliate準備状況、投稿実績を投稿単位で管理します。編集内容はこの端末に自動保存され、JSONで書き出せます。</p>
+    <p class="eyebrow">KIBUN EDITORS · SNS AUDIT</p>
+    <h1>おでかけヒントを、<br>次の投稿に。</h1>
+    <p>サービス紹介ではなく、保存したくなるおでかけ情報からKibunへ。スポット・記事・プランを材料に「今なにを投稿するか」からカルーセル原稿まで組み立てます。</p>
   </section>
 
-  <section class="summary" id="summary" aria-live="polite"></section>
+  <nav class="workspace-tabs" aria-label="SNS Audit ワークスペース">
+    <button class="workspace-tab active" type="button" data-workspace="ideas" aria-selected="true">IDEA / DRAFT</button>
+    <button class="workspace-tab" type="button" data-workspace="operations" aria-selected="false">PUBLISH / LEARN</button>
+  </nav>
 
-  <section class="actions">
-    <button id="addPost" type="button">投稿を追加</button>
-    <button id="copyJson" type="button" class="secondary">設定JSONをコピー</button>
-    <button id="downloadJson" type="button" class="secondary">JSONを保存</button>
-    <label class="import-button">JSONを読み込む<input id="importJson" type="file" accept="application/json,.json"></label>
-    <button id="resetLocal" type="button" class="danger">端末保存をリセット</button>
+  <section id="ideasWorkspace" class="workspace" data-workspace-panel="ideas">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">WHAT TO POST</p>
+        <h2>今おすすめの投稿企画</h2>
+        <p>複数スポットをひとつのテーマに編集。保存期待・旬・流入・見せやすさから優先度を出します。</p>
+      </div>
+      <div class="editorial-rule">おでかけ情報 80% <span>·</span> 旬 15% <span>·</span> Kibun紹介 5%</div>
+    </div>
+
+    <section id="ideaSummary" class="idea-summary" aria-live="polite"></section>
+
+    <section class="idea-toolbar" aria-label="投稿企画の絞り込み">
+      <label class="idea-search">検索<input id="ideaTextFilter" type="search" placeholder="雨・横浜・1歳・アート…"></label>
+      <label>投稿タイプ<select id="ideaTypeFilter"><option value="all">すべて</option><option value="save">保存系</option><option value="seasonal">季節・旬</option><option value="mood">気分・シーン</option><option value="area">エリア攻略</option><option value="discovery">発見・穴場</option><option value="plan">プラン</option></select></label>
+      <label>対象<select id="ideaAudienceFilter"><option value="all">すべて</option><option value="family">子どもと</option><option value="partner">ふたりで</option><option value="solo">ひとり</option><option value="friends">友だちと</option></select></label>
+      <label>エリア<select id="ideaAreaFilter"><option value="all">すべて</option><option value="yokohama">横浜</option><option value="tokyo">東京</option><option value="kanagawa">神奈川</option><option value="tokyo-kanagawa">東京・神奈川</option><option value="hakone">箱根</option><option value="other">その他</option></select></label>
+      <label>企画元<select id="ideaSourceFilter"><option value="all">すべて</option><option value="generated">データから生成</option><option value="article">記事</option><option value="plan">プラン</option></select></label>
+    </section>
+
+    <section id="ideaList" class="idea-list"></section>
   </section>
-  <p id="flash" class="flash" role="status" aria-live="polite"></p>
 
-  <section class="toolbar" aria-label="絞り込み">
-    <label>検索<input id="textFilter" type="search" placeholder="投稿名・spot ID・URL"></label>
-    <label>状態<select id="statusFilter"><option value="all">すべて</option><option value="planned" selected>予定</option><option value="draft">下書き</option><option value="scheduled">予約済み</option><option value="published">投稿済み</option></select></label>
+  <section id="operationsWorkspace" class="workspace" data-workspace-panel="operations" hidden>
+    <div class="section-heading operations-heading">
+      <div>
+        <p class="eyebrow">PUBLISH / LEARN</p>
+        <h2>投稿の準備と実績</h2>
+        <p>企画から追加した原稿もここで管理できます。使用Hero・Instagram導線・Affiliate準備状況・投稿実績を投稿単位で確認します。</p>
+      </div>
+    </div>
+
+    <section class="summary" id="summary" aria-live="polite"></section>
+
+    <section class="actions">
+      <button id="addPost" type="button">投稿を追加</button>
+      <button id="copyJson" type="button" class="secondary">設定JSONをコピー</button>
+      <button id="downloadJson" type="button" class="secondary">JSONを保存</button>
+      <label class="import-button">JSONを読み込む<input id="importJson" type="file" accept="application/json,.json"></label>
+      <button id="resetLocal" type="button" class="danger">端末保存をリセット</button>
+    </section>
+    <p id="flash" class="flash" role="status" aria-live="polite"></p>
+
+    <section class="toolbar" aria-label="投稿管理の絞り込み">
+      <label>検索<input id="textFilter" type="search" placeholder="投稿名・spot ID・URL"></label>
+      <label>状態<select id="statusFilter"><option value="all">すべて</option><option value="planned" selected>予定</option><option value="draft">下書き</option><option value="scheduled">予約済み</option><option value="published">投稿済み</option></select></label>
+    </section>
+
+    <section id="auditList" class="audit-list"></section>
   </section>
-
-  <section id="auditList" class="audit-list"></section>
 </main>
+
+<dialog id="ideaDialog" class="idea-dialog">
+  <div class="dialog-frame">
+    <button id="ideaDialogClose" class="dialog-close" type="button" aria-label="閉じる">×</button>
+    <div id="ideaDetail"></div>
+  </div>
+</dialog>
+
 <footer><a href="../">Kibun Tripへ戻る</a><span>このページは検索エンジン非公開です。</span></footer>
 <script src="../data.js?v=20100"></script>
 <script src="../affiliate-config.js?v=20100"></script>
 <script src="../affiliate-audit-status.js?v=20100"></script>
-<script src="../sns-audit-data.js?v=2091"></script>
-<script src="audit.js?v=2091"></script>
+<script src="../sns-editorial-data.js?v=20101"></script>
+<script src="../sns-audit-data.js?v=20101"></script>
+<script src="audit.js?v=20101"></script>
 </body>
 </html>
