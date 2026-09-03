@@ -1,8 +1,13 @@
-# Kibun Trip MVP v0.19.9 — 291 spots
+# Kibun Trip MVP v20.1 — 306 spots
+
+
+## v20.1 — 横浜・葉山のVibe拡張
+
+海の公園＋文化財スターバックス、THE SUNSET OF MARS、葉山の近代美術館＋海景色レストラン、大雄山最乗寺を追加し、ASOBono!・こびとはくぶつかん・八景島の最新情報も更新しました。うんこミュージアムは削除せずスポット検索には残しつつ、Kibunの編集軸との相性を考えて通常推薦・特集から外しています。詳細は `CHANGELOG_v20_1.md` / `HANDOFF_v20_1.md` を参照してください。
 
 ## v19.9 — Magazine / Plans / chano-ma
 
-chano-ma系列5店をFood companionとして追加。トップにKIBUN MAGAZINEを置き、6本のevergreen記事と編集Plan一覧を新設しました。スマホでは「記事 / プラン / 今日の気分」を下部ナビで往復できます。記事からSpot詳細、Plan一覧から編集Plan詳細へdeep linkできます。詳細は `CHANGELOG_v19_9.md` / `HANDOFF_v19_9.md` を参照してください。
+chano-ma系列5店をFood companionとして追加。トップにKIBUN MAGAZINEを置き、6本のevergreen記事と編集Plan一覧を新設しました。スマホでは「記事 / プラン / 今日の気分」を下部ナビで往復できます。記事からSpot詳細、Plan一覧から編集Plan詳細へdeep linkできます。詳細は `CHANGELOG_v19_9.md` / `HANDOFF_v20_0.md` を参照してください。
 
 ## v19.8.6 — Short-plan AFTER cafe / restaurant suggestion
 
@@ -34,9 +39,9 @@ Plan生成を「時間を埋める組み合わせ」から「過ごし方とし�
 
 「今日はどんな気分？」から始める、関東近郊のおでかけ推薦Web MVPです。同行者・気分・子どもの年齢・移動時間などを使い、「今日の3つ」を返します。
 
-## v0.19 の状態
+## 現在の状態
 
-- **291スポット**収録
+- **306スポット**収録
 - 同行者: 子ども / パートナー / ひとり / 友だち
 - 気分・やりたいことを最大3つ選択
 - 子どもの年齢によるhard filter
@@ -44,7 +49,7 @@ Plan生成を「時間を埋める組み合わせ」から「過ごし方とし�
 - Google Placesによる出発地検索 + Google Routes APIによる実ルート時間（Worker設定時）
 - Google Places Heroによる施設実写（取得失敗時はAIイメージへfallback）
 - `recommendation_group` による同一複合施設の3枠重複抑制
-- Kibunロゴから **地域 × カテゴリ** で291スポットをブラウズ
+- Kibunロゴから **地域 × カテゴリ** で306スポットをブラウズ
 - Hero監査UI (`?heroAudit=1`)
 
 V19.5の公開準備は `CHANGELOG_v19_5.md` / `DOMAIN_SETUP_v19_5.md` / `HANDOFF_v19_5.md` を参照してください。スポット追加履歴は `CHANGELOG_v19_3.md` / `SPOT_ADDITIONS_10_v19_3.md` に残しています。
@@ -67,7 +72,7 @@ python -m http.server 8000
 - `styles.css` — スマホ優先デザイン
 - `app.js` — UI / 詳細 / Hero監査
 - `recommender.js` — 推薦ロジック
-- `data.js` — ブラウザ用291スポットデータ
+- `data.js` — ブラウザ用306スポットデータ
 - `seed.json` — 元データ
 - `travel.js` — 出発地検索 / ルート時間取得
 - `media.js` — Google Places Hero取得
@@ -159,6 +164,13 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 
 
 
+## v20.8.2 Hero audit refresh
+
+- 最新のユーザーHero監査exportを `HERO_OVERRIDES_v20_8_2.json` に保存。
+- 167件のphoto index選択と10件のPlace ID固定をseed/dataへ反映。
+- spot_334 / 336 / 338 / 357 / 373 / 419 は今回新たにPlace IDを固定。
+- Worker / assets変更なし。
+
 ## v19.7.3 Hero audit refresh
 
 - Stay / Experience追加分について、ユーザー監査exportをseedへ反映。
@@ -172,3 +184,6 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - 陶芸、Paint & Sip、金継ぎ、江戸切子、食品サンプル、香りづくり、和紙など11件のものづくり体験を追加。
 - ブラウズに `🎭 観劇・舞台`、ホームに `MAKE / WATCH / TRY` を追加。
 - 241 → 256スポット。新規15件はGoogle Places Hero優先＋AI fallback。V19.7.3でStay/Experience追加分のHero監査exportを反映し、29件のphoto index・4件のPlace IDを固定。
+## v20.8.3 mobile image overlay fix
+
+モバイルChromeで画像用グラデーションや「イメージ」バッジがカード外へはみ出し、画面中央に大きな黒い帯が出ることがある問題を修正。`.image-shell` を positioned + clipped container として定義し、stylesheet cache-buster を `2083` に更新。
