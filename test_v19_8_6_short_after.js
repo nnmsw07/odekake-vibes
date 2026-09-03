@@ -20,7 +20,7 @@ assert(!long.after_suggestion,'full-day plan should not get the short-plan AFTER
 const app=fs.readFileSync('app.js','utf8'),idx=fs.readFileSync('index.html','utf8');
 assert(app.includes('帰る前に、もう少し。'));
 assert(app.includes('plan_after_spot_open'));
-assert(/plans\.js\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091)/.test(idx));
-assert(/app\.js\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091)/.test(idx));
-assert(/styles\.css\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091)/.test(idx));
+assert(/plans\.js\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091|20100)/.test(idx));
+assert(/app\.js\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091|20100)/.test(idx));
+assert(/styles\.css\?v=(?:1986|1990|2000|2030|2033|2040|2050|2061|2063|2070|2080|2081|2083|2090|2091|20100)/.test(idx));
 console.log(`V19.8.6 PASS: optional AFTER cafe suggestion -> ${after.name}`);

@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v14_431spots_diversity_affiliate",
-    "version": "0.20.8.0",
+    "dataset_name": "kibun_kanto_izu_seed_v20_10_0_446spots_editorial_destination_expansion",
+    "version": "0.20.10.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -50,7 +50,7 @@ window.ODEKAKE_SEED = {
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-09-02: latest user Hero audit export re-applied; spot_301 corrected to photo index 0 while retaining pinned Google Place ID."
+      "hero_selection": "2026-09-03: user Hero audit export applied across spots 212–431; 167 photo index choices preserved/applied and 10 manual Google Place matches pinned."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -78,7 +78,7 @@ window.ODEKAKE_SEED = {
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-02: latest user Hero audit export applied; spot_301 photo index corrected from 2 to 0, pinned Place ID retained.",
+    "hero_audit_note": "2026-09-03: Hero audit export applied. 167 photo_index_overrides and 10 place_overrides recorded; new manual Place IDs include spot_334/336/338/357/373/419.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -139,7 +139,8 @@ window.ODEKAKE_SEED = {
       "experience_expansion": "観劇・ものづくりは「場所」より「何をするか」が先に立つコピーで見せる。"
     },
     "monetization_note": "2026-09-02: ValueCommerce LinkSwitch運用。OZmall / 一休 / じゃらん / KLOOK / アクティビティジャパンを通常URL中心で管理。アソビューはLinkSwitch対象範囲をURL単位で確認する。",
-    "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。"
+    "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。",
+    "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login."
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -47823,7 +47824,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "浅草相撲部屋 Asakusa Sumo Club",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -47992,7 +47993,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "YAE Kimono Rental Asakusa Tokyo",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -48320,7 +48321,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "NICOPA & nico ground 丸井錦糸町店",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -48473,7 +48474,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ホテルニューアカオ キッズパーク",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -48637,7 +48638,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "CAPCOMIX みなとみらい店",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -48791,7 +48792,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "清里テラス",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -48933,7 +48934,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "城ヶ島",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -49075,7 +49076,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "長瀞岩畳",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -49217,7 +49218,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "大山寺",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -49359,7 +49360,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "アサヒスカイルーム",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -49501,7 +49502,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "表参道バンブー",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -49643,7 +49644,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Cafe Bell",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -49785,7 +49786,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "オリエント・カフェ",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -49927,7 +49928,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "BUNDAN COFFEE & BEER",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -50057,7 +50058,7 @@ window.ODEKAKE_SEED = {
         "municipality": "目黒区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJTfH86l-NGGARZ6su3jr-CHs"
       },
       "media_strategy": {
         "hero_priority": [
@@ -50066,11 +50067,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJTfH86l-NGGARZ6su3jr-CHs",
+          "status": "resolved_manual",
           "query": "CANADE LOUNGE",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "Canade",
+          "matched_address": "〒113-0033 東京都文京区本郷２丁目３１−３ 二木ビル 1F",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -50211,7 +50215,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "迎賓館赤坂離宮",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -50341,7 +50345,7 @@ window.ODEKAKE_SEED = {
         "municipality": "港区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJRcHlp2GLGGARmGab9YzR3m4"
       },
       "media_strategy": {
         "hero_priority": [
@@ -50350,11 +50354,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJRcHlp2GLGGARmGab9YzR3m4",
+          "status": "resolved_manual",
           "query": "café TEIEN",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 3,
+          "force": false,
+          "matched_name": "カフェ庭園",
+          "matched_address": "〒108-0071 東京都港区白金台５丁目２１−９ 新館",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -50495,7 +50502,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Café 1894",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -50625,7 +50632,7 @@ window.ODEKAKE_SEED = {
         "municipality": "台東区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJs_03VgCPGGARKN4unUiFzv4"
       },
       "media_strategy": {
         "hero_priority": [
@@ -50634,11 +50641,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJs_03VgCPGGARKN4unUiFzv4",
+          "status": "resolved_manual",
           "query": "dotcom coffee Asakusabashi",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "dotcom coffee 浅草橋",
+          "matched_address": "〒111-0053 東京都台東区浅草橋５丁目６−１３ KADビル 1F",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -50794,7 +50804,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ARC",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -50951,7 +50961,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "UNISON TAILOR",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -51093,7 +51103,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "CONTAINER",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -51549,7 +51559,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "uRn.chAi&TeA ルミネ新宿店",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -51691,7 +51701,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "OMOカフェ＆バル（OMO5東京五反田）",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -51833,7 +51843,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "EAT GOOD PLACE",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -51975,7 +51985,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "OGAWA COFFEE LABORATORY 高輪",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -52259,7 +52269,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "サロン・ド・テ ロンド",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -52401,7 +52411,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "goodcoffee 新橋",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -52558,7 +52568,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Sfumato",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -52715,7 +52725,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "田園調布せせらぎ館",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -52856,7 +52866,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "VAT BAKERY",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -52998,7 +53008,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "PARC CAFE at TOE LIBRARY",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -53139,7 +53149,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "BREWS",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -53296,7 +53306,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "felice domani nakameguro",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -53441,7 +53451,7 @@ window.ODEKAKE_SEED = {
         "municipality": "目黒区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJoSBYny2LGGARufMMbIV8mnI"
       },
       "media_strategy": {
         "hero_priority": [
@@ -53450,11 +53460,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJoSBYny2LGGARufMMbIV8mnI",
+          "status": "resolved_manual",
           "query": "Factory & Labo 神乃珈琲",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 0,
+          "force": false,
+          "matched_name": "神乃珈琲 目黒店",
+          "matched_address": "日本、〒152-0001 東京都目黒区中央町１丁目４−１４",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -53595,7 +53608,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "橙子猫 Orange Cat",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -53879,7 +53892,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ampere 本の森ちゅうおう",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -54035,7 +54048,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "WeLoveDonut 神楽坂店",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -54177,7 +54190,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "SISIRI 恵比寿店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -54319,7 +54332,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Monkey Cafe",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -54476,7 +54489,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "GLITCH COFFEE TOKYO 日本橋本町",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -54618,7 +54631,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "yoka／余暇",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -54688,7 +54701,7 @@ window.ODEKAKE_SEED = {
       "prefecture": "東京都",
       "city": "墨田区",
       "address": "東京都墨田区亀沢4-17-18",
-      "official_url": "https://www.instagram.com/explore/search/keyword/?q=EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA",
+      "official_url": "https://www.instagram.com/popular/EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA/",
       "environment": "indoor",
       "stay_minutes_seed": 75,
       "experience_seed": {
@@ -54735,7 +54748,7 @@ window.ODEKAKE_SEED = {
         "age_note": "子連れ条件・設備は店舗へ確認。",
         "temporary_note": null,
         "checked_at": "2026-09-03",
-        "source_url": "https://www.instagram.com/explore/search/keyword/?q=EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA"
+        "source_url": "https://www.instagram.com/popular/EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA/"
       },
       "hero_image": {
         "url": "assets/editorial/cafe.webp",
@@ -54811,7 +54824,7 @@ window.ODEKAKE_SEED = {
           {
             "kind": "user_social_discovery",
             "date": "2026-09-02",
-            "url": "https://www.instagram.com/explore/search/keyword/?q=EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA"
+            "url": "https://www.instagram.com/popular/EN%20%E9%8C%A6%E7%B3%B8%E7%94%BA/"
           }
         ]
       }
@@ -54917,7 +54930,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Bacha Coffee 新丸ビル",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -55059,7 +55072,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ちいさな硝子の本の博物館",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -55205,7 +55218,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "みそめぼれ",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -55347,7 +55360,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "AIGIS 東京・表参道店",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -55407,7 +55420,7 @@ window.ODEKAKE_SEED = {
       "prefecture": "埼玉県",
       "city": "さいたま市浦和区",
       "address": "埼玉県さいたま市浦和区仲町4-2-14 掛川ビル1階東側",
-      "official_url": "https://www.instagram.com/explore/search/keyword/?q=%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B",
+      "official_url": "https://www.instagram.com/popular/%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B/",
       "environment": "indoor",
       "stay_minutes_seed": 75,
       "experience_seed": {
@@ -55454,7 +55467,7 @@ window.ODEKAKE_SEED = {
         "age_note": "小規模店のため子連れ・ベビーカーは事前確認。",
         "temporary_note": null,
         "checked_at": "2026-09-03",
-        "source_url": "https://www.instagram.com/explore/search/keyword/?q=%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B"
+        "source_url": "https://www.instagram.com/popular/%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B/"
       },
       "hero_image": {
         "url": "assets/editorial/cafe.webp",
@@ -55494,7 +55507,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "喫茶ゆうびん屋",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -55530,7 +55543,7 @@ window.ODEKAKE_SEED = {
           {
             "kind": "user_social_discovery",
             "date": "2026-09-02",
-            "url": "https://www.instagram.com/explore/search/keyword/?q=%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B"
+            "url": "https://www.instagram.com/popular/%E5%96%AB%E8%8C%B6%E3%82%86%E3%81%86%E3%81%B3%E3%82%93%E5%B1%8B/"
           }
         ]
       }
@@ -55636,7 +55649,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "HININE NOTE 代々木公園店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -55771,7 +55784,7 @@ window.ODEKAKE_SEED = {
         "municipality": "横浜市中区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJe3EcxT1dGGARb0nHAki7bTg"
       },
       "media_strategy": {
         "hero_priority": [
@@ -55780,11 +55793,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJe3EcxT1dGGARb0nHAki7bTg",
+          "status": "resolved_manual",
           "query": "VANILLABEANS THE ROASTERY HAMMERHEAD",
-          "photo_index_override": null,
-          "force": false
+          "photo_index_override": 1,
+          "force": false,
+          "matched_name": "バニラビーンズ ザ ロースタリー ハンマーヘッド",
+          "matched_address": "〒231-0001 神奈川県横浜市中区新港２丁目１４−１ 横浜ハンマーヘッド 2F",
+          "use_address": false
         }
       },
       "ui_tags": [
@@ -55930,7 +55946,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "もみの気ハウス 渋谷道玄坂店",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -56072,7 +56088,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "梅体験専門店「蝶矢」鎌倉店",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -56219,7 +56235,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "AP LAB Tokyo",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -56365,7 +56381,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Re:MAKE OUTLET レイクタウンアウトレット",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false
         }
       },
@@ -56506,7 +56522,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "クレヨンしんちゃん オカシナもぐもぐワールド",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false
         }
       },
@@ -56648,7 +56664,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "丸亀製麺 手づくり体験教室 東京立川",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -56795,7 +56811,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "シルバニアファミリー 森の大きなお家 東京ソラマチ店",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -56942,7 +56958,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "大慶園",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false
         }
       },
@@ -56997,7 +57013,7 @@ window.ODEKAKE_SEED = {
       "prefecture": "東京都",
       "city": "渋谷区",
       "address": "東京都渋谷区神宮前5-11-13 1F",
-      "official_url": "https://www.instagram.com/explore/search/keyword/?q=nanetokyo",
+      "official_url": "https://www.instagram.com/popular/nanetokyo/",
       "environment": "indoor",
       "stay_minutes_seed": 120,
       "experience_seed": {
@@ -57044,7 +57060,7 @@ window.ODEKAKE_SEED = {
         "age_note": "細かな素材を使う場合があるため幼児は保護者同伴。",
         "temporary_note": null,
         "checked_at": "2026-09-03",
-        "source_url": "https://www.instagram.com/explore/search/keyword/?q=nanetokyo"
+        "source_url": "https://www.instagram.com/popular/nanetokyo/"
       },
       "hero_image": {
         "url": "images/ai/culture-interior.jpg",
@@ -57125,7 +57141,7 @@ window.ODEKAKE_SEED = {
           {
             "kind": "user_social_discovery",
             "date": "2026-09-02",
-            "url": "https://www.instagram.com/explore/search/keyword/?q=nanetokyo"
+            "url": "https://www.instagram.com/popular/nanetokyo/"
           }
         ]
       }
@@ -57144,7 +57160,7 @@ window.ODEKAKE_SEED = {
       "prefecture": "東京都",
       "city": "新宿区",
       "address": "東京都新宿区大久保2-7-1 大久保フジビル104",
-      "official_url": "https://www.instagram.com/explore/search/keyword/?q=Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D",
+      "official_url": "https://www.instagram.com/popular/Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/",
       "environment": "indoor",
       "stay_minutes_seed": 120,
       "experience_seed": {
@@ -57191,7 +57207,7 @@ window.ODEKAKE_SEED = {
         "age_note": "小さなパーツを扱うため幼児は保護者同伴。",
         "temporary_note": null,
         "checked_at": "2026-09-03",
-        "source_url": "https://www.instagram.com/explore/search/keyword/?q=Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"
+        "source_url": "https://www.instagram.com/popular/Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/"
       },
       "hero_image": {
         "url": "images/ai/culture-interior.jpg",
@@ -57231,7 +57247,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Pippi",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -57272,7 +57288,7 @@ window.ODEKAKE_SEED = {
           {
             "kind": "user_social_discovery",
             "date": "2026-09-02",
-            "url": "https://www.instagram.com/explore/search/keyword/?q=Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"
+            "url": "https://www.instagram.com/popular/Pippi%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/"
           }
         ]
       }
@@ -57378,7 +57394,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "まもなく済州ビーチ",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -57520,7 +57536,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Animal Cafe 爬にまるカフェ",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false
         }
       },
@@ -57723,7 +57739,7 @@ window.ODEKAKE_SEED = {
       "prefecture": "東京都",
       "city": "新宿区",
       "address": "東京都新宿区大久保1-16-30 2F",
-      "official_url": "https://www.instagram.com/explore/search/keyword/?q=%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D",
+      "official_url": "https://www.instagram.com/popular/%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/",
       "environment": "indoor",
       "stay_minutes_seed": 120,
       "experience_seed": {
@@ -57770,7 +57786,7 @@ window.ODEKAKE_SEED = {
         "age_note": "小さなパーツを扱う場合は幼児の誤飲等に注意。",
         "temporary_note": null,
         "checked_at": "2026-09-03",
-        "source_url": "https://www.instagram.com/explore/search/keyword/?q=%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"
+        "source_url": "https://www.instagram.com/popular/%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/"
       },
       "hero_image": {
         "url": "images/ai/culture-interior.jpg",
@@ -57810,7 +57826,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "＋add",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false
         }
       },
@@ -57851,7 +57867,7 @@ window.ODEKAKE_SEED = {
           {
             "kind": "user_social_discovery",
             "date": "2026-09-02",
-            "url": "https://www.instagram.com/explore/search/keyword/?q=%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D"
+            "url": "https://www.instagram.com/popular/%2Badd%20%E6%96%B0%E5%A4%A7%E4%B9%85%E4%BF%9D/"
           }
         ]
       }
@@ -57958,7 +57974,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "国営ひたち海浜公園",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -58105,7 +58121,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "アクアワールド茨城県大洗水族館",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -58401,7 +58417,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "つくばエキスポセンター",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "use_address": true
         }
@@ -58546,7 +58562,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "地質標本館",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -58983,7 +58999,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "筑波山ロープウェイ",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "use_address": true
         }
@@ -59132,7 +59148,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "那須どうぶつ王国",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -59279,7 +59295,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "那須ハイランドパーク",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -59426,7 +59442,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "モビリティリゾートもてぎ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -59573,7 +59589,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "大谷資料館",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -59871,7 +59887,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "江戸ワンダーランド 日光江戸村",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -60018,7 +60034,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "あしかがフラワーパーク",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "use_address": true
         }
@@ -60316,7 +60332,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "群馬サファリパーク",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "use_address": true
         }
@@ -60463,7 +60479,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "伊香保グリーン牧場",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -60610,7 +60626,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "碓氷峠鉄道文化むら",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -60757,7 +60773,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ロックハート城",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -60904,7 +60920,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "こんにゃくパーク",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "use_address": true
         }
@@ -61053,7 +61069,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ぐんまこどもの国",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -61198,7 +61214,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "めんたいパーク群馬",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -61343,7 +61359,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "世界の名犬牧場",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -61490,7 +61506,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "富士急ハイランド",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -61639,7 +61655,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "富士すばるランド",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "use_address": true
         }
@@ -61786,7 +61802,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "山梨県立リニア見学センター",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -61931,7 +61947,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "山梨県立科学館",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "use_address": true
         }
@@ -62223,7 +62239,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "忍野 しのびの里",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -62370,7 +62386,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "桔梗信玄餅工場テーマパーク",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -62507,7 +62523,7 @@ window.ODEKAKE_SEED = {
         "municipality": "富士河口湖町",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJVVWpiyZeGWARQnEv2dEkp08"
       },
       "media_strategy": {
         "hero_priority": [
@@ -62516,12 +62532,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
-          "query": "富士山パノラマロープウェイ",
-          "photo_index_override": null,
+          "place_id": "ChIJVVWpiyZeGWARQnEv2dEkp08",
+          "status": "resolved_manual",
+          "query": "富士 ロープウェイ",
+          "photo_index_override": 1,
           "force": false,
-          "use_address": true
+          "use_address": true,
+          "matched_name": "河口湖 富士山パノラマロープウェイ",
+          "matched_address": "〒401-0303 山梨県南都留郡富士河口湖町浅川１１６３−１"
         }
       },
       "ui_tags": [
@@ -62668,7 +62686,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "伊豆シャボテン動物公園",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -62815,7 +62833,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "伊豆ぐらんぱる公園",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -63111,7 +63129,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "三島スカイウォーク",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false,
           "use_address": true
         }
@@ -63258,7 +63276,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "ACAO FOREST",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "use_address": true
         }
@@ -63405,7 +63423,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "伊豆パノラマパーク",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false,
           "use_address": true
         }
@@ -64291,7 +64309,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "大井川鐵道",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -64332,6 +64350,2320 @@ window.ODEKAKE_SEED = {
             "kind": "official_current",
             "date": "2026-09-03",
             "url": "https://daitetsu.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_432",
+      "slug": "etowa-kasama",
+      "name": "ETOWA KASAMA",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "overnight",
+        "glamping",
+        "forest",
+        "sauna",
+        "ibaraki"
+      ],
+      "prefecture": "茨城県",
+      "city": "笠間市",
+      "address": "茨城県笠間市上郷2775-7",
+      "official_url": "https://www.cigr.co.jp/etowa/kasama/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 1080,
+      "experience_seed": {
+        "indoor": 42,
+        "outdoor": 96,
+        "physical_activity": 50,
+        "hands_on": 58,
+        "quietness": 88,
+        "parent_rest": 86,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 90,
+        "creative_sensory": 72,
+        "baby_fit": 75,
+        "toddler_fit": 82,
+        "stroller_fit": 55,
+        "rain_resilience": 58,
+        "heat_resilience": 50,
+        "walking_load": 28,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 70,
+        "nature": 100,
+        "extraordinary": 100,
+        "scenic": 95,
+        "stroll": 68,
+        "relax": 98,
+        "shopping": 8,
+        "food": 88,
+        "culture": 38,
+        "animals": 0,
+        "creative": 42,
+        "active": 55,
+        "waterside": 0
+      },
+      "editorial_reason": "OZmallのグランピング特集のように、宿そのものを休日の目的地にする選択肢を増やす。",
+      "public_copy": "標高約300mの森で、星空・焚き火・食事までひと続きに楽しめる笠間のアウトドアリゾート。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。チェックイン・チェックアウトや共用施設の利用時間は予約プランで確認。",
+        "price_summary": "宿泊料金は日程・客室・人数・プランで変動。",
+        "reservation_summary": "宿泊は事前予約。公式・予約サイトで空室確認。",
+        "age_note": "子どもの宿泊条件・食事・寝具はプランごとに確認。",
+        "temporary_note": "2026年秋冬は笠間の栗など地域食材を使う季節メニューを案内。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.cigr.co.jp/etowa/kasama/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "ETOWA KASAMAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 84,
+        "partner": 100,
+        "solo": 62,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "笠間市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ETOWA KASAMA",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "グランピング",
+        "自然",
+        "デート",
+        "友だち",
+        "非日常"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 15,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "じゃらんnet"
+        ],
+        "product_match_required": true,
+        "note": "じゃらんnetの施設別宿泊ページを2026-09-03に確認。"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 88,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 89,
+        "popularity_momentum": 94,
+        "reason": "標高約300mの森で、星空・焚き火・食事までひと続きに楽しめる笠間のアウトドアリゾート。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.cigr.co.jp/etowa/kasama/"
+          }
+        ]
+      },
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "茨城県",
+          "笠間市",
+          "glamping",
+          "stay"
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_433",
+      "slug": "pica-fujiyama",
+      "name": "PICA Fujiyama",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "overnight",
+        "camp",
+        "glamping",
+        "cottage",
+        "fuji",
+        "yamanashi"
+      ],
+      "prefecture": "山梨県",
+      "city": "富士河口湖町",
+      "address": "山梨県南都留郡富士河口湖町船津6662-10",
+      "official_url": "https://www.pica-resort.jp/fujiyama/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 1080,
+      "experience_seed": {
+        "indoor": 40,
+        "outdoor": 100,
+        "physical_activity": 72,
+        "hands_on": 78,
+        "quietness": 82,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 88,
+        "creative_sensory": 68,
+        "baby_fit": 72,
+        "toddler_fit": 84,
+        "stroller_fit": 52,
+        "rain_resilience": 55,
+        "heat_resilience": 55,
+        "walking_load": 35,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 100,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 62,
+        "relax": 90,
+        "shopping": 5,
+        "food": 82,
+        "culture": 28,
+        "animals": 0,
+        "creative": 50,
+        "active": 82,
+        "waterside": 5
+      },
+      "editorial_reason": "富士山エリアで「泊まる＋外遊び」を提案できる宿泊体験を追加。",
+      "public_copy": "富士山の麓で、コテージやドーム、焚き火、アウトドア料理まで選べるキャンプリゾート。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新情報は公式サイトを確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "予約条件は公式サイトを確認。",
+        "age_note": null,
+        "temporary_note": null,
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.pica-resort.jp/fujiyama/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "PICA Fujiyamaの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 98,
+        "solo": 68,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "富士河口湖町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "PICA Fujiyama",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "富士山",
+        "グランピング",
+        "自然",
+        "子どもと",
+        "デート"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 12,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "じゃらんnet"
+        ],
+        "product_match_required": true,
+        "note": "じゃらんnetの施設別宿泊ページを2026-09-03に確認。"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 88,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 87,
+        "popularity_momentum": 92,
+        "reason": "富士山の麓で、コテージやドーム、焚き火、アウトドア料理まで選べるキャンプリゾート。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.pica-resort.jp/fujiyama/"
+          }
+        ]
+      },
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "山梨県",
+          "富士河口湖町",
+          "glamping",
+          "stay"
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_434",
+      "slug": "the-bamboo-forest",
+      "name": "THE BAMBOO FOREST",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "overnight",
+        "glamping",
+        "bamboo",
+        "animal",
+        "chiba"
+      ],
+      "prefecture": "千葉県",
+      "city": "市原市",
+      "address": "千葉県市原市山小川790",
+      "official_url": "https://bamboo-forest.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 1080,
+      "experience_seed": {
+        "indoor": 38,
+        "outdoor": 96,
+        "physical_activity": 55,
+        "hands_on": 38,
+        "quietness": 82,
+        "parent_rest": 82,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 78,
+        "food_experience": 88,
+        "creative_sensory": 72,
+        "baby_fit": 82,
+        "toddler_fit": 90,
+        "stroller_fit": 48,
+        "rain_resilience": 55,
+        "heat_resilience": 52,
+        "walking_load": 30,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 65,
+        "nature": 100,
+        "extraordinary": 100,
+        "scenic": 92,
+        "stroll": 65,
+        "relax": 94,
+        "shopping": 5,
+        "food": 82,
+        "culture": 25,
+        "animals": 95,
+        "creative": 32,
+        "active": 58,
+        "waterside": 0
+      },
+      "editorial_reason": "動物園とグランピングを一日にでき、親子・カップル双方に強い非日常宿泊として追加。",
+      "public_copy": "竹林の中のドームやツリーハウスに泊まり、隣接する動物園の気配まで楽しめる市原のグランピング。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新情報は公式サイトを確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "予約条件は公式サイトを確認。",
+        "age_note": null,
+        "temporary_note": null,
+        "checked_at": "2026-09-03",
+        "source_url": "https://bamboo-forest.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "THE BAMBOO FORESTの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 96,
+        "solo": 55,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "市原市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE BAMBOO FOREST 市原",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "グランピング",
+        "動物",
+        "子どもと",
+        "デート",
+        "自然"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 12,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "じゃらんnet"
+        ],
+        "product_match_required": true,
+        "note": "じゃらんnetの施設別宿泊ページを2026-09-03に確認。"
+      },
+      "buzz": {
+        "score": 93,
+        "freshness": 88,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 88,
+        "popularity_momentum": 93,
+        "reason": "竹林の中のドームやツリーハウスに泊まり、隣接する動物園の気配まで楽しめる市原のグランピング。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://bamboo-forest.jp/"
+          }
+        ]
+      },
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "千葉県",
+          "市原市",
+          "glamping",
+          "stay"
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_435",
+      "slug": "inn-the-park-numazu",
+      "name": "泊まれる公園 INN THE PARK 沼津",
+      "aliases": [],
+      "category_primary": "hotel_stay",
+      "categories": [
+        "stay",
+        "overnight",
+        "glamping",
+        "park",
+        "forest",
+        "shizuoka"
+      ],
+      "prefecture": "静岡県",
+      "city": "沼津市",
+      "address": "静岡県沼津市足高220-4",
+      "official_url": "https://www.innthepark.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 1080,
+      "experience_seed": {
+        "indoor": 48,
+        "outdoor": 98,
+        "physical_activity": 62,
+        "hands_on": 45,
+        "quietness": 90,
+        "parent_rest": 88,
+        "greenery": 100,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 90,
+        "creative_sensory": 78,
+        "baby_fit": 88,
+        "toddler_fit": 95,
+        "stroller_fit": 62,
+        "rain_resilience": 60,
+        "heat_resilience": 52,
+        "walking_load": 32,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 78,
+        "nature": 100,
+        "extraordinary": 100,
+        "scenic": 92,
+        "stroll": 80,
+        "relax": 98,
+        "shopping": 8,
+        "food": 86,
+        "culture": 65,
+        "animals": 0,
+        "creative": 48,
+        "active": 68,
+        "waterside": 5
+      },
+      "editorial_reason": "元・林間学校と球体テント、公園を組み合わせた「泊まる場所そのものが体験」の候補。",
+      "public_copy": "元・林間学校の建物と球体テント、広い芝生。公園で遊ぶ時間を、そのまま夜まで伸ばせる沼津の宿。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "宿泊施設。公園・カフェ・ショップは日帰り利用可能な時間帯あり。最新営業を公式で確認。",
+        "price_summary": "宿泊料金は客室・日程・プランで変動。",
+        "reservation_summary": "宿泊は事前予約推奨。カフェ・ディナーも予約条件を公式で確認。",
+        "age_note": "家族向け案内あり。客室・食事の子ども条件は予約時に確認。",
+        "temporary_note": "2026年9月のサロンカフェ営業情報を公式で案内中。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.innthepark.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "泊まれる公園 INN THE PARK 沼津の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 96,
+        "solo": 72,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "沼津市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "INN THE PARK 沼津",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "泊まり",
+        "公園",
+        "グランピング",
+        "子どもと",
+        "自然",
+        "非日常"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 18,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "じゃらんnet"
+        ],
+        "product_match_required": true,
+        "note": "じゃらんnetの施設別宿泊ページを2026-09-03に確認。"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 88,
+        "social_presence": 94,
+        "visual_appeal": 100,
+        "media_attention": 87,
+        "popularity_momentum": 92,
+        "reason": "元・林間学校の建物と球体テント、広い芝生。公園で遊ぶ時間を、そのまま夜まで伸ばせる沼津の宿。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.innthepark.jp/"
+          }
+        ]
+      },
+      "overnight": true,
+      "stay_profile": {
+        "overnight": true,
+        "day_use": false,
+        "stay_tags": [
+          "静岡県",
+          "沼津市",
+          "glamping",
+          "stay"
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_436",
+      "slug": "japan-folk-crafts-museum",
+      "name": "日本民藝館",
+      "aliases": [],
+      "category_primary": "museum_culture",
+      "categories": [
+        "museum",
+        "culture",
+        "craft",
+        "design",
+        "architecture",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "目黒区",
+      "address": "東京都目黒区駒場4-3-33",
+      "official_url": "https://mingeikan.or.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 10,
+        "physical_activity": 18,
+        "hands_on": 0,
+        "quietness": 100,
+        "parent_rest": 72,
+        "greenery": 20,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 88,
+        "baby_fit": 42,
+        "toddler_fit": 35,
+        "stroller_fit": 48,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 18,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 18,
+        "extraordinary": 78,
+        "scenic": 72,
+        "stroll": 55,
+        "relax": 90,
+        "shopping": 48,
+        "food": 0,
+        "culture": 100,
+        "animals": 0,
+        "creative": 95,
+        "active": 5,
+        "waterside": 0
+      },
+      "editorial_reason": "OZmagazineの器・道具記事のような「暮らしの視点で出かける」記事を作れる文化拠点。",
+      "public_copy": "柳宗悦が集めた民藝の世界を、建物ごと静かに味わう駒場の美術館。器や染織を見る目が少し変わる場所。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜17:00（最終入館16:30）。原則月曜休館。",
+        "price_summary": "一般1,500円、大高生800円。展示により変更の可能性あり。",
+        "reservation_summary": "通常入館は公式案内を確認。講演会等は別途予約の場合あり。",
+        "age_note": "館内は静かな鑑賞向け。段差が多く、完全なバリアフリーではありません。",
+        "temporary_note": "創設90年記念「琉球王国の染織」を2026年8月22日〜11月3日に開催。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://mingeikan.or.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "日本民藝館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 52,
+        "partner": 96,
+        "solo": 100,
+        "friends": 86
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "目黒区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "日本民藝館",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ひとり",
+        "デート",
+        "アート・文化",
+        "器・手仕事",
+        "雨の日",
+        "建築"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "2026-09-03時点で施設別の予約型ASP商品は確認できず。"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 72,
+        "social_presence": 88,
+        "visual_appeal": 94,
+        "media_attention": 81,
+        "popularity_momentum": 86,
+        "reason": "柳宗悦が集めた民藝の世界を、建物ごと静かに味わう駒場の美術館。器や染織を見る目が少し変わる場所。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://mingeikan.or.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_437",
+      "slug": "d-department-tokyo",
+      "name": "D&DEPARTMENT TOKYO",
+      "aliases": [],
+      "category_primary": "design_shop",
+      "categories": [
+        "shopping",
+        "design",
+        "culture",
+        "lifestyle",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区奥沢8-3-2 田園マンション2F",
+      "official_url": "https://www.d-department.com/ext/shop/tokyo.html",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 12,
+        "hands_on": 25,
+        "quietness": 78,
+        "parent_rest": 55,
+        "greenery": 5,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 25,
+        "creative_sensory": 82,
+        "baby_fit": 55,
+        "toddler_fit": 48,
+        "stroller_fit": 65,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 10,
+        "planning_friction": 18
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 5,
+        "extraordinary": 58,
+        "scenic": 52,
+        "stroll": 72,
+        "relax": 80,
+        "shopping": 100,
+        "food": 35,
+        "culture": 92,
+        "animals": 0,
+        "creative": 88,
+        "active": 5,
+        "waterside": 0
+      },
+      "editorial_reason": "「長く使いたいものを探しに行く」という買い物目的の休日を増やす。",
+      "public_copy": "ロングライフデザインを軸に、家具や器、日用品を「なぜ長く使えるか」まで見ながら選べる東京店。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間・定休日は公式SNSで最新情報を案内。",
+        "price_summary": "入店無料。商品購入は各商品価格。",
+        "reservation_summary": "通常の買い物は予約不要。イベントは個別案内を確認。",
+        "age_note": null,
+        "temporary_note": "2026年9月には器修理など東京店イベントの案内あり。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.d-department.com/ext/shop/tokyo.html"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "D&DEPARTMENT TOKYOの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 98,
+        "solo": 100,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "D&DEPARTMENT TOKYO",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "買い物",
+        "デザイン",
+        "器・手仕事",
+        "ひとり",
+        "デート",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 96,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "not_target",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "物販中心のため現時点のKibun予約型アフィリエイト対象外。"
+      },
+      "buzz": {
+        "score": 84,
+        "freshness": 72,
+        "social_presence": 86,
+        "visual_appeal": 92,
+        "media_attention": 79,
+        "popularity_momentum": 84,
+        "reason": "ロングライフデザインを軸に、家具や器、日用品を「なぜ長く使えるか」まで見ながら選べる東京店。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.d-department.com/ext/shop/tokyo.html"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_438",
+      "slug": "kama-asa-kappabashi",
+      "name": "釜浅商店 合羽橋店",
+      "aliases": [],
+      "category_primary": "kitchenware_shop",
+      "categories": [
+        "shopping",
+        "kitchenware",
+        "craft",
+        "design",
+        "kappabashi",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "台東区",
+      "address": "東京都台東区松が谷2-24-1",
+      "official_url": "https://kama-asa.co.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 10,
+        "hands_on": 35,
+        "quietness": 65,
+        "parent_rest": 35,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 35,
+        "creative_sensory": 88,
+        "baby_fit": 50,
+        "toddler_fit": 42,
+        "stroller_fit": 55,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 12,
+        "planning_friction": 18
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 0,
+        "extraordinary": 62,
+        "scenic": 40,
+        "stroll": 82,
+        "relax": 62,
+        "shopping": 100,
+        "food": 55,
+        "culture": 92,
+        "animals": 0,
+        "creative": 92,
+        "active": 5,
+        "waterside": 0
+      },
+      "editorial_reason": "キッチン雑貨・器を「使い続けたい道具」として探す編集企画の中核スポット。",
+      "public_copy": "包丁や料理道具を、実際に手に取って選ぶ合羽橋の老舗。道具街を歩く理由になる一軒。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜17:30。毎月末日は社内研修のため16:30閉店。",
+        "price_summary": "入店無料。商品価格は店頭・公式で確認。",
+        "reservation_summary": "通常の買い物は予約不要。",
+        "age_note": null,
+        "temporary_note": "年末年始を除き年中無休。最新の営業変更は公式のお知らせ・SNSを確認。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://kama-asa.co.jp/pages/shops"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "釜浅商店 合羽橋店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 54,
+        "partner": 94,
+        "solo": 100,
+        "friends": 94
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "台東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "釜浅商店 合羽橋店",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "買い物",
+        "合羽橋",
+        "器・手仕事",
+        "ひとり",
+        "友だち",
+        "デザイン"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 98,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "not_target",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "実店舗物販中心のため現時点のKibun予約型アフィリエイト対象外。"
+      },
+      "buzz": {
+        "score": 85,
+        "freshness": 72,
+        "social_presence": 87,
+        "visual_appeal": 93,
+        "media_attention": 80,
+        "popularity_momentum": 85,
+        "reason": "包丁や料理道具を、実際に手に取って選ぶ合羽橋の老舗。道具街を歩く理由になる一軒。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://kama-asa.co.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_439",
+      "slug": "mashiko-museum-ceramic-art",
+      "name": "益子陶芸美術館",
+      "aliases": [],
+      "category_primary": "museum_culture",
+      "categories": [
+        "museum",
+        "ceramics",
+        "craft",
+        "culture",
+        "tochigi"
+      ],
+      "prefecture": "栃木県",
+      "city": "益子町",
+      "address": "栃木県芳賀郡益子町大字益子3021",
+      "official_url": "https://www.mashiko-museum.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 35,
+        "physical_activity": 20,
+        "hands_on": 0,
+        "quietness": 95,
+        "parent_rest": 68,
+        "greenery": 45,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 92,
+        "baby_fit": 55,
+        "toddler_fit": 48,
+        "stroller_fit": 62,
+        "rain_resilience": 90,
+        "heat_resilience": 88,
+        "walking_load": 20,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 38,
+        "extraordinary": 72,
+        "scenic": 68,
+        "stroll": 72,
+        "relax": 88,
+        "shopping": 58,
+        "food": 5,
+        "culture": 100,
+        "animals": 0,
+        "creative": 100,
+        "active": 8,
+        "waterside": 0
+      },
+      "editorial_reason": "東京だけでなく「器の町そのものへ行く」小旅行を増やすための文化拠点。",
+      "public_copy": "益子を代表する陶芸家から現代陶芸まで。旧濱田庄司邸や登り窯も含め、器の町の背景まで見られる美術館。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "通常9:30〜17:00（季節により閉館時刻が変わる場合あり）。休館日は公式カレンダーを確認。",
+        "price_summary": "企画展により入館料が異なる。幼児無料の設定あり。",
+        "reservation_summary": "通常観覧は予約不要。イベントは個別案内を確認。",
+        "age_note": "家族での鑑賞可。",
+        "temporary_note": "展示替えのため2026年9月5日まで休館。次回企画展は9月6日〜11月29日。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.mashiko-museum.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "益子陶芸美術館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 64,
+        "partner": 96,
+        "solo": 100,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "益子町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "益子陶芸美術館",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "器・手仕事",
+        "アート・文化",
+        "小旅行",
+        "ひとり",
+        "デート",
+        "栃木"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 82,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "2026-09-03時点で施設別の予約型ASP商品は確認できず。"
+      },
+      "buzz": {
+        "score": 85,
+        "freshness": 72,
+        "social_presence": 87,
+        "visual_appeal": 93,
+        "media_attention": 80,
+        "popularity_momentum": 85,
+        "reason": "益子を代表する陶芸家から現代陶芸まで。旧濱田庄司邸や登り窯も含め、器の町の背景まで見られる美術館。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.mashiko-museum.jp/"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "unavailable_until": "2026-09-05",
+        "note": "展示替えのため2026年9月5日まで休館。"
+      }
+    },
+    {
+      "spot_id": "spot_440",
+      "slug": "enoura-observatory",
+      "name": "小田原文化財団 江之浦測候所",
+      "aliases": [],
+      "category_primary": "art_architecture",
+      "categories": [
+        "art",
+        "architecture",
+        "museum",
+        "scenic",
+        "garden",
+        "odawara"
+      ],
+      "prefecture": "神奈川県",
+      "city": "小田原市",
+      "address": "神奈川県小田原市江之浦362-1",
+      "official_url": "https://www.odawara-af.com/ja/enoura/",
+      "environment": "mixed",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 35,
+        "outdoor": 88,
+        "physical_activity": 55,
+        "hands_on": 0,
+        "quietness": 100,
+        "parent_rest": 55,
+        "greenery": 82,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 100,
+        "baby_fit": 0,
+        "toddler_fit": 0,
+        "stroller_fit": 10,
+        "rain_resilience": 35,
+        "heat_resilience": 35,
+        "walking_load": 68,
+        "planning_friction": 82
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 88,
+        "extraordinary": 100,
+        "scenic": 100,
+        "stroll": 92,
+        "relax": 92,
+        "shopping": 0,
+        "food": 0,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 35,
+        "waterside": 82
+      },
+      "editorial_reason": "建築・アート・海景を一つの目的地にできる、大人向け小旅行の強い選択肢。",
+      "public_copy": "杉本博司が構想した建築とランドスケープを、相模湾の光まで含めて歩く。予約してでも行く価値のある小田原のアート体験。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "事前予約・入替制。通常は午前10:00〜13:00／午後13:30〜16:30。火・水休館。",
+        "price_summary": "事前購入3,300円、当日券3,850円（当日券は空きがある場合のみ）。",
+        "reservation_summary": "原則、見学日の2日前までに日時指定予約。",
+        "age_note": "中学生未満（乳幼児含む）は来館不可。",
+        "temporary_note": "2026年9月23日は秋分光遥拝の会を開催予定。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.odawara-af.com/ja/enoura/ticket/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/scenic.webp",
+        "type": "ai",
+        "alt": "小田原文化財団 江之浦測候所の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 5,
+        "partner": 100,
+        "solo": 100,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "小田原市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "江之浦測候所",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "建築",
+        "アート・文化",
+        "絶景",
+        "デート",
+        "ひとり",
+        "予約推奨"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 18,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "direct_booking_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "日時指定の公式チケット販売あり。2026-09-03時点で対応ASPの施設別商品は確認できず。"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 88,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 89,
+        "popularity_momentum": 94,
+        "reason": "杉本博司が構想した建築とランドスケープを、相模湾の光まで含めて歩く。予約してでも行く価値のある小田原のアート体験。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.odawara-af.com/ja/enoura/"
+          }
+        ]
+      },
+      "age_constraints": {
+        "min_months": 156,
+        "note": "施設の安全上、中学生未満（乳幼児含む）は来館不可。"
+      }
+    },
+    {
+      "spot_id": "spot_441",
+      "slug": "snoopy-museum-tokyo",
+      "name": "スヌーピーミュージアム",
+      "aliases": [],
+      "category_primary": "museum_culture",
+      "categories": [
+        "museum",
+        "character",
+        "culture",
+        "family",
+        "tama",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "町田市",
+      "address": "東京都町田市鶴間3-1-4",
+      "official_url": "https://snoopymuseum.tokyo/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 28,
+        "hands_on": 35,
+        "quietness": 65,
+        "parent_rest": 62,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 15,
+        "creative_sensory": 90,
+        "baby_fit": 72,
+        "toddler_fit": 88,
+        "stroller_fit": 88,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 22,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 78,
+        "nature": 0,
+        "extraordinary": 88,
+        "scenic": 82,
+        "stroll": 70,
+        "relax": 76,
+        "shopping": 88,
+        "food": 20,
+        "culture": 88,
+        "animals": 0,
+        "creative": 82,
+        "active": 28,
+        "waterside": 0
+      },
+      "editorial_reason": "南町田で買い物・公園と組み合わせられる、親子にも大人にも通用するキャラクター文化スポット。",
+      "public_copy": "「ピーナッツ」の原画や世界観を楽しむ南町田のミュージアム。グランベリーパークとつなげれば半日〜一日にしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "平日10:00〜18:00、土日祝10:00〜19:00（最終入場は各30分前）。",
+        "price_summary": "前売：一般・大学生2,000円、中高生900円、4歳〜小学生500円。当日券は各200円増。",
+        "reservation_summary": "前売券推奨。混雑状況により当日券販売が変わる可能性あり。",
+        "age_note": "4歳未満はチケット料金設定なし。館内ルールは公式で確認。",
+        "temporary_note": "季節展示・親子向けイベント等は時期ごとに更新。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://snoopymuseum.tokyo/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "スヌーピーミュージアムの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 98,
+        "solo": 94,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "町田市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "スヌーピーミュージアム 南町田",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "子どもと",
+        "デート",
+        "キャラクター",
+        "雨の日",
+        "買い物と一緒",
+        "南町田"
+      ],
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 68,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "direct_booking_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "日時指定の公式前売券あり。2026-09-03時点で対応ASPの施設別商品は未確認。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 88,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 91,
+        "popularity_momentum": 96,
+        "reason": "「ピーナッツ」の原画や世界観を楽しむ南町田のミュージアム。グランベリーパークとつなげれば半日〜一日にしやすい。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://snoopymuseum.tokyo/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_442",
+      "slug": "new-otani-garden-pool",
+      "name": "GARDEN POOL／ホテルニューオータニ（東京）",
+      "aliases": [],
+      "category_primary": "resort_pool",
+      "categories": [
+        "pool",
+        "hotel",
+        "night_pool",
+        "family",
+        "date",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区紀尾井町4-1",
+      "official_url": "https://www.newotani.co.jp/group/pools/tokyo/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 75,
+        "hands_on": 25,
+        "quietness": 48,
+        "parent_rest": 82,
+        "greenery": 88,
+        "water_contact": 100,
+        "animal_contact": 0,
+        "food_experience": 62,
+        "creative_sensory": 82,
+        "baby_fit": 82,
+        "toddler_fit": 88,
+        "stroller_fit": 70,
+        "rain_resilience": 10,
+        "heat_resilience": 92,
+        "walking_load": 18,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 72,
+        "extraordinary": 100,
+        "scenic": 95,
+        "stroll": 28,
+        "relax": 96,
+        "shopping": 8,
+        "food": 65,
+        "culture": 28,
+        "animals": 0,
+        "creative": 35,
+        "active": 82,
+        "waterside": 100
+      },
+      "editorial_reason": "OZmallのナイトプール記事のような季節性の高い目的地をKibunに取り込む。",
+      "public_copy": "日本庭園に囲まれた都心のプール。昼はファミリー、夏の夜はライトアップされたリゾート時間へ。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026/7/10〜9/6は10:00〜22:00、NIGHT POOLは18:00〜22:00。9/7〜9/23は11:00〜19:00。",
+        "price_summary": "外来料金は時期・曜日・時間帯で異なる。宿泊者は滞在中無料の案内あり。",
+        "reservation_summary": "通常入場は事前予約不要の期間あり。イベント・特別席は別条件。",
+        "age_note": "幼児用プールあり。3歳以下無料の設定あり。",
+        "temporary_note": "2026年営業は9月23日まで。営業変更・臨時休業は公式で確認。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.newotani.co.jp/group/pools/tokyo/"
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "GARDEN POOL／ホテルニューオータニ（東京）の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 100,
+        "solo": 72,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ホテルニューオータニ GARDEN POOL",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "プール",
+        "ナイトプール",
+        "子どもと",
+        "デート",
+        "友だち",
+        "季節限定"
+      ],
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 55,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "一休.com",
+          "じゃらんnet"
+        ],
+        "product_match_required": true,
+        "note": "ホテル宿泊との収益導線候補。プール単体の対応ASP商品は再調査。"
+      },
+      "buzz": {
+        "score": 98,
+        "freshness": 88,
+        "social_presence": 100,
+        "visual_appeal": 100,
+        "media_attention": 93,
+        "popularity_momentum": 98,
+        "reason": "日本庭園に囲まれた都心のプール。昼はファミリー、夏の夜はライトアップされたリゾート時間へ。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.newotani.co.jp/group/pools/tokyo/"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-06-01",
+            "until": "2026-09-23"
+          }
+        ],
+        "note": "2026年のGARDEN POOL営業期間外"
+      }
+    },
+    {
+      "spot_id": "spot_443",
+      "slug": "cancam-night-pool-tokyo-prince",
+      "name": "CanCam NIGHT POOL／東京プリンスホテル",
+      "aliases": [],
+      "category_primary": "resort_pool",
+      "categories": [
+        "pool",
+        "night_pool",
+        "hotel",
+        "date",
+        "friends",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区芝公園3-3-1",
+      "official_url": "https://www.princehotels.co.jp/tokyo/garden_pool/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 62,
+        "hands_on": 20,
+        "quietness": 25,
+        "parent_rest": 72,
+        "greenery": 60,
+        "water_contact": 100,
+        "animal_contact": 0,
+        "food_experience": 48,
+        "creative_sensory": 95,
+        "baby_fit": 0,
+        "toddler_fit": 0,
+        "stroller_fit": 20,
+        "rain_resilience": 20,
+        "heat_resilience": 90,
+        "walking_load": 12,
+        "planning_friction": 65
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 40,
+        "extraordinary": 100,
+        "scenic": 100,
+        "stroll": 20,
+        "relax": 88,
+        "shopping": 5,
+        "food": 52,
+        "culture": 22,
+        "animals": 0,
+        "creative": 55,
+        "active": 70,
+        "waterside": 100
+      },
+      "editorial_reason": "「夜を目的地にする」季節記事の象徴として、東京タワーを望む大人向けナイトプールを追加。",
+      "public_copy": "東京タワーを間近に、ライトアップとフォトスポットを楽しむ夏の夜。18歳以上限定のCanCamプロデュース・ナイトプール。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026/7/17〜9/13、17:30〜21:00（最終受付20:30）。一部休業日あり。",
+        "price_summary": "2026年は7月・9月5,500円、8月6,400円。",
+        "reservation_summary": "入場券の事前購入、または対象宿泊プランが必要。",
+        "age_note": "18歳以上限定。",
+        "temporary_note": "2026年9月13日までの季節営業。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://www.princehotels.co.jp/tokyo/garden_pool/"
+      },
+      "hero_image": {
+        "url": "images/ai/cool-water.jpg",
+        "type": "ai",
+        "alt": "CanCam NIGHT POOL／東京プリンスホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 0,
+        "partner": 100,
+        "solo": 72,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京プリンスホテル ガーデンプール",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ナイトプール",
+        "18歳以上",
+        "デート",
+        "友だち",
+        "東京タワー",
+        "季節限定"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 35,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "じゃらんnet",
+          "一休.com"
+        ],
+        "product_match_required": true,
+        "note": "入場券・宿泊プランの収益導線候補。対応ASPの施設別商品は再調査。"
+      },
+      "buzz": {
+        "score": 100,
+        "freshness": 88,
+        "social_presence": 100,
+        "visual_appeal": 100,
+        "media_attention": 95,
+        "popularity_momentum": 100,
+        "reason": "東京タワーを間近に、ライトアップとフォトスポットを楽しむ夏の夜。18歳以上限定のCanCamプロデュース・ナイトプール。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://www.princehotels.co.jp/tokyo/garden_pool/"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-17",
+            "until": "2026-09-13"
+          }
+        ],
+        "note": "2026年CanCam NIGHT POOL営業期間外"
+      },
+      "age_constraints": {
+        "min_months": 216,
+        "note": "CanCam NIGHT POOLは18歳以上限定。"
+      }
+    },
+    {
+      "spot_id": "spot_444",
+      "slug": "sayuri-world",
+      "name": "サユリワールド",
+      "aliases": [],
+      "category_primary": "zoo",
+      "categories": [
+        "zoo",
+        "animal",
+        "outdoor",
+        "family",
+        "chiba"
+      ],
+      "prefecture": "千葉県",
+      "city": "市原市",
+      "address": "千葉県市原市山小川771",
+      "official_url": "https://sayuri-world.com/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 5,
+        "outdoor": 100,
+        "physical_activity": 62,
+        "hands_on": 80,
+        "quietness": 42,
+        "parent_rest": 42,
+        "greenery": 88,
+        "water_contact": 0,
+        "animal_contact": 100,
+        "food_experience": 10,
+        "creative_sensory": 88,
+        "baby_fit": 68,
+        "toddler_fit": 92,
+        "stroller_fit": 0,
+        "rain_resilience": 8,
+        "heat_resilience": 35,
+        "walking_load": 48,
+        "planning_friction": 35
+      },
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 88,
+        "extraordinary": 100,
+        "scenic": 72,
+        "stroll": 75,
+        "relax": 58,
+        "shopping": 5,
+        "food": 5,
+        "culture": 35,
+        "animals": 100,
+        "creative": 30,
+        "active": 78,
+        "waterside": 0
+      },
+      "editorial_reason": "動物との距離が近い体験型スポットとして、動物カテゴリの選択肢を広げる。",
+      "public_copy": "キリンやカピバラ、カンガルーたちと同じ空間を歩く。見るより「近さ」を体験する市原のふれあい動物園。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "3〜10月は9:30〜16:30（入園受付15:30）を基本。天候等で変更・臨時休園あり。",
+        "price_summary": "アソビュー前売：大人1,500円、3歳〜小人800円（2026-09-03確認）。",
+        "reservation_summary": "前売券あり。混雑時は入園制限の場合あり。",
+        "age_note": "小学生以下は大人と一緒に行動。ベビールームあり。",
+        "temporary_note": "2026年9月10日・17日は休園。園内は傘・ベビーカーの持ち込み/使用不可。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://sayuri-world.com/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "サユリワールドの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 94,
+        "solo": 82,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "市原市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "サユリワールド 市原",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "動物",
+        "子どもと",
+        "デート",
+        "屋外",
+        "体験",
+        "千葉"
+      ],
+      "planning_profile": {
+        "style": "reservation_recommended",
+        "same_day_fit": 78,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": true,
+        "note": "アソビュー！にサユリワールド前売入園券の直接商品を2026-09-03に確認。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 88,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 91,
+        "popularity_momentum": 96,
+        "reason": "キリンやカピバラ、カンガルーたちと同じ空間を歩く。見るより「近さ」を体験する市原のふれあい動物園。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://sayuri-world.com/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_445",
+      "slug": "michinoeki-kasama",
+      "name": "道の駅かさま",
+      "aliases": [],
+      "category_primary": "market",
+      "categories": [
+        "market",
+        "food",
+        "shopping",
+        "local",
+        "ibaraki"
+      ],
+      "prefecture": "茨城県",
+      "city": "笠間市",
+      "address": "茨城県笠間市手越22-1",
+      "official_url": "https://m-kasama.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 75,
+        "outdoor": 42,
+        "physical_activity": 15,
+        "hands_on": 5,
+        "quietness": 45,
+        "parent_rest": 85,
+        "greenery": 25,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 95,
+        "rain_resilience": 82,
+        "heat_resilience": 80,
+        "walking_load": 8,
+        "planning_friction": 5
+      },
+      "vibes_seed": {
+        "cool": 58,
+        "nature": 28,
+        "extraordinary": 55,
+        "scenic": 42,
+        "stroll": 70,
+        "relax": 82,
+        "shopping": 92,
+        "food": 100,
+        "culture": 58,
+        "animals": 0,
+        "creative": 25,
+        "active": 8,
+        "waterside": 0
+      },
+      "editorial_reason": "観光地の前後に「地域の食」を置くプランを作りやすくするため追加。",
+      "public_copy": "笠間の栗、地元野菜、土産、フードコート。目的地の前後に寄るだけで「土地を食べる」時間が増える道の駅。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "店舗・施設ごとに異なる。2026年8〜11月は休まず営業の案内あり。",
+        "price_summary": "入場無料。飲食・物販は各店ごと。",
+        "reservation_summary": "通常利用は予約不要。",
+        "age_note": "ベビーカーでも立ち寄りやすい道の駅。",
+        "temporary_note": "笠間の栗専門Café & Shop、直売所、フードコートなどを展開。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://m-kasama.com/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "道の駅かさまの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 90,
+        "solo": 94,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "笠間市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "道の駅かさま",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ごはん",
+        "買い物",
+        "子どもと",
+        "ドライブ",
+        "茨城",
+        "栗"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 100,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "not_target",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "物販・飲食中心のため現時点の予約型アフィリエイト対象外。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 88,
+        "social_presence": 90,
+        "visual_appeal": 96,
+        "media_attention": 83,
+        "popularity_momentum": 88,
+        "reason": "笠間の栗、地元野菜、土産、フードコート。目的地の前後に寄るだけで「土地を食べる」時間が増える道の駅。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://m-kasama.com/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_446",
+      "slug": "mon-takanawa",
+      "name": "MoN Takanawa: The Museum of Narratives",
+      "aliases": [],
+      "category_primary": "museum_culture",
+      "categories": [
+        "museum",
+        "culture",
+        "art",
+        "architecture",
+        "garden",
+        "takanawa",
+        "tokyo"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区三田3-16-1（TAKANAWA GATEWAY CITY内）",
+      "official_url": "https://montakanawa.jp/",
+      "environment": "mixed",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 52,
+        "physical_activity": 28,
+        "hands_on": 38,
+        "quietness": 72,
+        "parent_rest": 82,
+        "greenery": 60,
+        "water_contact": 12,
+        "animal_contact": 0,
+        "food_experience": 55,
+        "creative_sensory": 100,
+        "baby_fit": 90,
+        "toddler_fit": 88,
+        "stroller_fit": 96,
+        "rain_resilience": 95,
+        "heat_resilience": 92,
+        "walking_load": 22,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 52,
+        "extraordinary": 100,
+        "scenic": 92,
+        "stroll": 88,
+        "relax": 88,
+        "shopping": 45,
+        "food": 65,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 22,
+        "waterside": 15
+      },
+      "editorial_reason": "OZmallの新施設・季節イベント記事のように「今行く理由」がある文化拠点を追加。",
+      "public_copy": "高輪ゲートウェイ駅直結の新しい文化施設。展示だけでなく、足湯テラスや屋上庭園、食まで一つの建物で行き来できる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜21:00。屋上の花見テラス・門神社・MoNファームは10:00〜20:00。",
+        "price_summary": "館内は無料で入館可能。有料プログラム・ワークショップは内容ごとに料金設定。",
+        "reservation_summary": "無料エリアは通常予約不要。有料プログラムは公式チケット等を確認。",
+        "age_note": "貸出ベビーカー、授乳室、オムツ交換スペースあり。",
+        "temporary_note": "毎月第2火曜を基本に休館。2026年秋は新シーズン企画も順次開始。",
+        "checked_at": "2026-09-03",
+        "source_url": "https://montakanawa.jp/visit/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "MoN Takanawa: The Museum of Narrativesの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 94,
+        "partner": 100,
+        "solo": 100,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "MoN Takanawa",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "新スポット",
+        "アート・文化",
+        "高輪",
+        "子どもと",
+        "デート",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "spontaneous",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "direct_booking_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "館内は無料エリアあり。有料プログラムは公式チケットで販売。対応ASPは継続調査。"
+      },
+      "buzz": {
+        "score": 100,
+        "freshness": 88,
+        "social_presence": 100,
+        "visual_appeal": 100,
+        "media_attention": 95,
+        "popularity_momentum": 100,
+        "reason": "高輪ゲートウェイ駅直結の新しい文化施設。展示だけでなく、足湯テラスや屋上庭園、食まで一つの建物で行き来できる。",
+        "checked_at": "2026-09-03",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-03",
+            "url": "https://montakanawa.jp/"
           }
         ]
       }

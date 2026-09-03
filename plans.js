@@ -122,12 +122,21 @@
     {id:'partner_toyosu_art_food',aud:['partner','friends'],min:300,max:450,vibes:['extraordinary','culture','food','waterside'],spots:['spot_027','spot_127'],labels:['今日の主役','ごはん・寄り道'],title:'境界のないアートから、豊洲の食へ。',lead:'teamLab Planetsで非日常に入り込んだあと、千客万来へ。体験と食事を近いエリアでつなぐ。'},
     {id:'friends_yokohama_art_food',aud:['friends'],min:360,max:510,vibes:['creative','shopping','food','stroll'],spots:['spot_246','spot_085','spot_260'],labels:['一緒に体験','寄り道','ごはん'],title:'描いて、歩いて、パイを囲む。',lead:'Artbarで一緒に手を動かしたら、海辺をぶらぶら。最後はPie Holicで、今日の話をしながらごはん。'},
     {id:'friends_odaiba_play_sea_food',aud:['friends'],min:390,max:540,vibes:['active','extraordinary','waterside','food'],spots:['spot_148','spot_149','spot_266'],labels:['思いきり遊ぶ','海辺でひと息','ごはん'],title:'遊び切ったあと、夕方は海の方へ。',lead:'東京ジョイポリスで盛り上がって、お台場海浜公園へ。最後は海を眺めながらごはんまで。'},
-    {id:'friends_kisarazu_shop_food',aud:['friends','family'],min:300,max:450,vibes:['shopping','food','stroll'],spots:['spot_160','spot_284'],labels:['買い物','ひと休み・ごはん'],title:'今日は買い物を主役に、途中でちゃんと休む。',lead:'木更津のアウトレットを気ままに見て回り、途中でMr.FARMERへ。買い物だけで疲れ切らない一日に。'}
+    {id:'friends_kisarazu_shop_food',aud:['friends','family'],min:300,max:450,vibes:['shopping','food','stroll'],spots:['spot_160','spot_284'],labels:['買い物','ひと休み・ごはん'],title:'今日は買い物を主役に、途中でちゃんと休む。',lead:'木更津のアウトレットを気ままに見て回り、途中でMr.FARMERへ。買い物だけで疲れ切らない一日に。'},
+    {id:'family_minamimachida_snoopy_shop',aud:['family','partner'],min:240,max:420,vibes:['culture','shopping','relax','food'],spots:['spot_441','spot_139'],labels:['スヌーピーの世界へ','街をゆっくり歩く'],title:'スヌーピーの世界を見たあと、そのまま南町田を歩く。',lead:'スヌーピーミュージアムを今日の主役にして、グランベリーパークへ。展示・ショップ・食事を近い範囲でつなげる、親子にもふたりにも使いやすい半日。'},
+    {id:'partner_komaba_mingei_bundan',aud:['partner','solo'],min:180,max:330,vibes:['culture','stroll','food','relax'],spots:['spot_436','spot_333'],labels:['手仕事を見る','本のそばでひと休み'],title:'民藝を見たあと、本のあるカフェへ。',lead:'日本民藝館で器や手仕事をじっくり見たら、駒場を少し歩いてBUNDANへ。ものを見る時間と、余韻を言葉にする時間を近いエリアでつなぐ。'},
+    {id:'friends_kappabashi_tools_sample',aud:['friends','partner','solo'],min:180,max:330,vibes:['shopping','creative','culture','stroll'],spots:['spot_438','spot_254'],labels:['道具を選ぶ','食品サンプルを見る'],title:'包丁と道具を見て、合羽橋でもうひとつ遊ぶ。',lead:'釜浅商店で長く使いたい道具を見たら、食品サンプルの世界へ。買い物だけで終わらず、手仕事の面白さを二つの角度から楽しむ合羽橋の半日。'},
+    {id:'partner_takanawa_mon_cafe',aud:['partner','solo','friends','family'],min:180,max:360,vibes:['culture','stroll','food','extraordinary'],spots:['spot_446','spot_347'],labels:['新しい文化拠点へ','コーヒーで余韻'],title:'高輪の新しい物語を見て、コーヒーでひと休み。',lead:'MoN Takanawaで展示や建築を楽しんだら、街を少し歩いてOGAWA COFFEE LABORATORYへ。新しい街を一気に回らず、文化と休憩をひとつずつ。'},
+    {id:'family_ichihara_animals_glamping',aud:['family','partner'],min:480,max:720,vibes:['animals','nature','extraordinary','relax'],spots:['spot_444','spot_434'],labels:['動物と近くで過ごす','竹林のそばに泊まる'],title:'動物と過ごしたあと、竹林のそばに泊まる。',lead:'サユリワールドで動物との距離が近い時間を楽しんだら、THE BAMBOO FORESTへ。市原まで来た日を日帰りで急いで終わらせず、夜まで非日常を続ける1泊。',overnight:true},
+    {id:'partner_kawaguchiko_ropeway_pica',aud:['partner','family','friends'],min:480,max:720,vibes:['scenic','nature','extraordinary','relax'],spots:['spot_419','spot_433'],labels:['富士山を見に上がる','森のそばに泊まる'],title:'富士山を眺めたあと、今日はそのまま河口湖に泊まる。',lead:'富士山パノラマロープウェイで景色を楽しみ、夕方はPICA Fujiyamaへ。遠出の日に帰り時間を気にせず、景色から森へ気分をつなぐ1泊。',overnight:true},
+    {id:'family_kasama_market_etowa',aud:['family','partner','friends'],min:480,max:720,vibes:['food','shopping','nature','relax'],spots:['spot_445','spot_432'],labels:['笠間のものを選ぶ','森の中に泊まる'],title:'笠間のおいしいものを選んで、森の中に泊まる。',lead:'道の駅かさまで栗や地域のものを見たあと、ETOWA KASAMAへ。ドライブの目的を「帰ること」にせず、森で夜を迎えるところまでを一日にする。',overnight:true},
+    {id:'partner_numazu_deepsea_inn',aud:['partner','family','friends'],min:480,max:720,vibes:['animals','extraordinary','nature','relax'],spots:['spot_426','spot_435'],labels:['深海の世界を見る','公園の中に泊まる'],title:'深海を見たあと、公園の中で夜を迎える。',lead:'沼津港深海水族館で不思議な生きものを見たら、INN THE PARKへ。港のにぎわいから森の静けさへ移って、沼津を一泊で味わう。',overnight:true}
   ];
+  function curatedSteps(bp,spots){return spots.map((s,i)=>({spot_id:s.spot_id,role:s.overnight?'STAY':i===0?'MAIN':isMealSpot(s)?'FOOD':'PLUS',label:bp.labels[i]||'もうひとつ'}));}
   function curatedPlanPreview(seed,id){
     const bp=CURATED_PLANS.find(p=>p.id===id);if(!bp)return null;const map=spotMap(seed),spots=bp.spots.map(x=>map.get(x)).filter(Boolean);if(spots.length!==bp.spots.length)return null;
-    const minutes=Math.round((Number(bp.min||180)+Number(bp.max||240))/2),audience=bp.aud?.[0]||'family';
-    return{plan_id:`curated_${bp.id}`,slot:'editorial',slot_label:'KIBUN EDIT',score:94,travel_minutes:null,why:[],primary_spot_id:spots[0].spot_id,requested_minutes:minutes,type:'combo',duration_label:requestedDurationLabel(minutes),estimated_minutes:coverageMinutes(spots),title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:spots.map((s,i)=>({spot_id:s.spot_id,role:i===0?'MAIN':isMealSpot(s)?'FOOD':'PLUS',label:bp.labels[i]||'もうひとつ'})),curated:true,curated_id:bp.id,audience,availability_note:bp.availability_note||null};
+    const minutes=Math.round((Number(bp.min||180)+Number(bp.max||240))/2),audience=bp.aud?.[0]||'family',overnight=bp.overnight===true;
+    return{plan_id:`curated_${bp.id}`,slot:'editorial',slot_label:'KIBUN EDIT',score:94,travel_minutes:null,why:[],primary_spot_id:spots[0].spot_id,requested_minutes:minutes,type:overnight?'overnight':'combo',duration_label:overnight?'1泊プラン':requestedDurationLabel(minutes),estimated_minutes:overnight?null:coverageMinutes(spots),title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:curatedSteps(bp,spots),curated:true,curated_id:bp.id,audience,availability_note:bp.availability_note||null};
   }
   function curatedPlanForPrimary(seed,primary,r,ctx,displayMinutes,used,allPrimaryIds){
     const map=spotMap(seed),selected=ctx.selectedVibes||[],aud=ctx.audience||'family';
@@ -135,10 +144,11 @@
     for(const bp of choices){
       const spots=bp.spots.map(id=>map.get(id));if(spots.some(x=>!x))continue;
       if(spots.some((s,i)=>i>0&&(used.has(s.spot_id)||(allPrimaryIds.has(s.spot_id)&&s.spot_id!==primary.spot_id))))continue;
-      if(spots.some((s,i)=>!eligible(s,i===0?ctx:companionContext(ctx),false)))continue;
-      const total=coverageMinutes(spots);if(total>displayMinutes+90||total<minCoverageMinutes(displayMinutes))continue;
+      const overnight=bp.overnight===true;if(overnight&&(!ctx.allowOvernight||displayMinutes<480))continue;
+      if(spots.some((s,i)=>!eligible(s,i===0?ctx:companionContext(ctx),overnight)))continue;
+      const total=coverageMinutes(spots);if(!overnight&&(total>displayMinutes+90||total<minCoverageMinutes(displayMinutes)))continue;
       for(const s of spots.slice(1))used.add(s.spot_id);
-      return{plan_id:`plan_${r.slot||primary.spot_id}_${bp.id}`,slot:r.slot,slot_label:r.slot_label,score:Number(r.scores?.overall||70),travel_minutes:r.travel_minutes??null,why:r.why||[],primary_spot_id:primary.spot_id,requested_minutes:displayMinutes,type:'combo',duration_label:requestedDurationLabel(displayMinutes),estimated_minutes:total,title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:spots.map((s,i)=>({spot_id:s.spot_id,role:i===0?'MAIN':isMealSpot(s)?'FOOD':'PLUS',label:bp.labels[i]||'もうひとつ'})),curated:true,curated_id:bp.id,availability_note:bp.availability_note||null};
+      return{plan_id:`plan_${r.slot||primary.spot_id}_${bp.id}`,slot:r.slot,slot_label:r.slot_label,score:Number(r.scores?.overall||70),travel_minutes:r.travel_minutes??null,why:r.why||[],primary_spot_id:primary.spot_id,requested_minutes:displayMinutes,type:overnight?'overnight':'combo',duration_label:overnight?'1泊プラン':requestedDurationLabel(displayMinutes),estimated_minutes:overnight?null:total,title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:curatedSteps(bp,spots),curated:true,curated_id:bp.id,availability_note:bp.availability_note||null};
     }
     return null;
   }

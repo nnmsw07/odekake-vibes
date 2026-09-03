@@ -16,5 +16,5 @@ for(const [id,[provider,url]] of Object.entries(expected)){
 assert.ok(!cfg.links.spot_212 && !cfg.links.spot_217,'legacy A8 Hakone links removed');
 assert.ok(!(cfg.sourceLinks.spot_216||[]).some(x=>x.provider==='jalan'),'Hyatt Hakone must not get an unverified Jalan link');assert.ok((cfg.sourceLinks.spot_216||[]).some(x=>x.provider==='ikyu'&&x.url==='https://www.ikyu.com/00001254/'),'Hyatt Hakone verified Ikyu link');
 assert.ok(!read('affiliate-config.js').includes('LRG_141600'),'Hakone area URL removed');
-assert.ok(/affiliate-config\.js\?v=(?:2052|2061|2080|2081|2090|2091)/.test(read('index.html')));assert.ok(/affiliate-config\.js\?v=(?:2052|2061|2080|2081|2090|2091)/.test(read('affiliate-audit/index.html')));
+assert.ok(/affiliate-config\.js\?v=(?:2052|2061|2080|2081|2090|2091|20100)/.test(read('index.html')));assert.ok(/affiliate-config\.js\?v=(?:2052|2061|2080|2081|2090|2091|20100)/.test(read('affiliate-audit/index.html')));
 console.log('v20.5.2 hotel-specific booking links passed');

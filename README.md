@@ -191,7 +191,7 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 ## v20.9.0 Affiliate Audit v2 + Hero Audit 10-photo mode
 
 - Affiliate direct-source coverage: 148 spots / 159 links.
-- All 431 spots have an explicit affiliate audit status in `AFFILIATE_AUDIT_v20_9_0.json`.
+- All 446 spots have an explicit affiliate audit status in `affiliate-audit-status.js`; `AFFILIATE_AUDIT_v20_10_0.json` is the current snapshot and v20.9.0 remains as the previous 431-spot audit snapshot.
 - `/affiliate-audit/` now defaults to the unresolved `再調査` queue and can filter by static audit outcome.
 - `?heroAudit=1` now requests and displays up to 10 Google Places photo candidates instead of 6.
 - `worker/worker.js` changed for the 10-photo limit, so Cloudflare Worker redeploy is required.
@@ -206,8 +206,10 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - Hero Audit / Affiliate Audit / SNS Audit間を管理画面から移動可能
 
 
-## v20.9.2 SNS Audit
+## v20.10.0 editorial + destination expansion
 
-- `/sns-audit/` に9月30投稿の完成原稿を収録。
-- Instagram / Threadsをタブ切替し、原稿＋ハッシュタグをワンタップコピー。
-- CTA、クリエイティブ指示、記事/プラン遷移、Hero、Affiliate、投稿実績を一画面で管理。
+- 431 → 446 spots (+15): stay, craft/design, culture/architecture, seasonal pool, animals, market, and new-city culture.
+- Added 8 curated plans, including four overnight flows.
+- Added three original Kibun Magazine stories: outdoor stays, tools/craft, and an after-five Takanawa walk.
+- Editorial framing is original to Kibun; external editorial references are used only as inspiration for topic discovery, never copied in wording or page structure.
+- Affiliate audit status now covers all 446 spots.

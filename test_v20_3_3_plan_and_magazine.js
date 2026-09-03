@@ -9,7 +9,7 @@ for(const id of ['family_umi_no_koen_sea_cafe','partner_yokohama_art_walk_food',
   const p=P.curatedPlanPreview(ctx.window.ODEKAKE_SEED,id);assert.ok(p,`deep link plan does not resolve ${id}`);assert.ok(p.spot_ids.length>=2);
 }
 const root=fs.readFileSync('index.html','utf8');
-assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082)/.test(root));assert.ok(root.includes('plans.js?v=2040'));assert.ok(/app\.js\?v=(?:2050|2061|2063|2070|2080|2081|2090|2091)/.test(root));
+assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082|20100)/.test(root));assert.ok(/plans\.js\?v=(?:2040|20100)/.test(root));assert.ok(/app\.js\?v=(?:2050|2061|2063|2070|2080|2081|2090|2091)/.test(root));
 const hub=fs.readFileSync('magazine/index.html','utf8');
 assert.ok(/magazine-media\.js\?v=(?:2033|2040)/.test(hub));
 const reps={

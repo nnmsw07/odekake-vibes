@@ -7,25 +7,27 @@
   <meta name="robots" content="noindex,nofollow">
   <title>SNS Audit｜Kibun Trip</title>
   <link rel="icon" href="../favicon.svg">
-  <link rel="stylesheet" href="audit.css?v=2092">
+  <link rel="stylesheet" href="audit.css?v=2091">
 </head>
 <body>
 <header class="top">
   <a href="../" class="brand">Kibun Trip</a>
   <nav class="audit-nav" aria-label="管理ツール">
+    <a href="../?heroAudit=1">Hero Audit</a>
     <a href="../affiliate-audit/">Affiliate Audit</a>
     <strong>SNS Audit</strong>
-    <a href="../?heroAudit=1">Hero Audit</a>
   </nav>
   <span class="private">PRIVATE TOOL</span>
 </header>
 <main class="shell">
   <section class="hero">
-    <p class="eyebrow">SNS AUDIT · v20.9.2</p>
-    <h1>考えるより、<br>選んで投稿する。</h1>
-    <p>9月30投稿分の完成原稿を最初から収録。Instagram / Threadsを切り替え、原稿・ハッシュタグをコピーして投稿できます。記事・プランの遷移先、使用Hero、Instagram導線、Affiliate準備状況、投稿実績も同じカードで確認します。</p>
+    <p class="eyebrow">SNS AUDIT</p>
+    <h1>投稿前も、<br>投稿後もひとつに。</h1>
+    <p>記事・プラン・スポットの遷移先、使用Hero、Instagram導線、Affiliate準備状況、投稿実績を投稿単位で管理します。編集内容はこの端末に自動保存され、JSONで書き出せます。</p>
   </section>
+
   <section class="summary" id="summary" aria-live="polite"></section>
+
   <section class="actions">
     <button id="addPost" type="button">投稿を追加</button>
     <button id="copyJson" type="button" class="secondary">設定JSONをコピー</button>
@@ -34,17 +36,19 @@
     <button id="resetLocal" type="button" class="danger">端末保存をリセット</button>
   </section>
   <p id="flash" class="flash" role="status" aria-live="polite"></p>
+
   <section class="toolbar" aria-label="絞り込み">
-    <label>検索<input id="textFilter" type="search" placeholder="投稿名・本文・記事・spot ID"></label>
+    <label>検索<input id="textFilter" type="search" placeholder="投稿名・spot ID・URL"></label>
     <label>状態<select id="statusFilter"><option value="all">すべて</option><option value="planned" selected>予定</option><option value="draft">下書き</option><option value="scheduled">予約済み</option><option value="published">投稿済み</option></select></label>
-    <label>主媒体<select id="channelFilter"><option value="all">すべて</option><option value="Instagram">Instagram</option><option value="Threads">Threads</option></select></label>
   </section>
+
   <section id="auditList" class="audit-list"></section>
 </main>
 <footer><a href="../">Kibun Tripへ戻る</a><span>このページは検索エンジン非公開です。</span></footer>
-<script src="../data.js?v=2082"></script>
-<script src="../affiliate-config.js?v=2090"></script>
-<script src="../affiliate-audit-status.js?v=2090"></script>
-<script src="../sns-audit-data.js?v=2092"></script>
-<script src="audit.js?v=2092"></script>
-</body></html>
+<script src="../data.js?v=20100"></script>
+<script src="../affiliate-config.js?v=20100"></script>
+<script src="../affiliate-audit-status.js?v=20100"></script>
+<script src="../sns-audit-data.js?v=2091"></script>
+<script src="audit.js?v=2091"></script>
+</body>
+</html>

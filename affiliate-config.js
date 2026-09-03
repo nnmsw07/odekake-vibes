@@ -1670,6 +1670,57 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "label": "じゃらんで沼津港深海水族館の体験プランを見る",
         "verified_at": "2026-09-03"
       }
+    ],
+    "spot_432": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad319000/",
+        "label": "じゃらんnetで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_433": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad313686/",
+        "label": "じゃらんnetで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_434": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad366806/",
+        "label": "じゃらんnetで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_435": [
+      {
+        "provider": "jalan",
+        "intent": "stay",
+        "scope": "spot",
+        "url": "https://www.jalan.net/yad340186/",
+        "label": "じゃらんnetで宿泊プランを見る",
+        "verified_at": "2026-09-03"
+      }
+    ],
+    "spot_444": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/item/ticket/ticket0000038585/",
+        "label": "アソビュー！でサユリワールド前売券を見る",
+        "verified_at": "2026-09-03",
+        "conversion_check_required": true
+      }
     ]
   },
   "providerPriority": {
@@ -1732,5 +1783,5 @@ window.KIBUN_AFFILIATE_CONFIG = {
     }
   },
   "last_sweep_at": "2026-09-03",
-  "sweep_note": "Affiliate Audit v2: 全431スポットを明示ステータス化。施設別の直接予約・チケットページを再検証し、148スポット・159リンクまで拡張。検索結果ページや施設一致が曖昧なページは登録せず、未確定候補はrecheck_neededとして残す。アソビューはLinkSwitch変換可否をURL単位で継続確認。"
+  "sweep_note": "v20.10.0: 全446スポットをAffiliate Audit対象に更新。新規15件のうち、ETOWA KASAMA / PICA Fujiyama / THE BAMBOO FOREST / INN THE PARK 沼津 / サユリワールドは施設別の直接予約・チケットページを確認して設定。新規スポットも未設定理由を明示ステータス化。"
 };

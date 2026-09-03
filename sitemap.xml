@@ -34,4 +34,8 @@
   <url><loc>https://kibuntrip.com/magazine/art-and-cafe/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://kibuntrip.com/magazine/hakone-stay-story/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://kibuntrip.com/magazine/make-something/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-<url><loc>https://kibuntrip.com/magazine/oyako-rest-indoor/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://kibuntrip.com/magazine/shibuya-with-kids/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://kibuntrip.com/magazine/shinjuku-family-day/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://kibuntrip.com/magazine/yokohama-afternoon-tea/</loc></url></urlset>
+<url><loc>https://kibuntrip.com/magazine/oyako-rest-indoor/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://kibuntrip.com/magazine/yokohama-afternoon-tea/</loc></url>  <url><loc>https://kibuntrip.com/magazine/japanese-culture-experience/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kibuntrip.com/magazine/outdoor-stay-with-comfort/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://kibuntrip.com/magazine/tools-with-a-story/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://kibuntrip.com/magazine/takanawa-after-five/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
+</urlset>

@@ -1,4 +1,4 @@
-window.KIBUN_AFFILIATE_AUDIT_STATUS = {
+{
   "version": "20.10.0",
   "checked_at": "2026-09-03",
   "spot_count": 446,
@@ -3450,4 +3450,4 @@ window.KIBUN_AFFILIATE_AUDIT_STATUS = {
       "reason": "有料プログラムは公式チケット販売あり。対応ASPは継続調査。"
     }
   }
-};
+}
