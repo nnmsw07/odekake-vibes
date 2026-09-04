@@ -1,5 +1,5 @@
 window.KIBUN_SNS_EDITORIAL_DATA = {
-  "version": "20.10.1",
+  "version": "20.11.1",
   "articles": [
     {
       "slug": "art-and-cafe",
@@ -168,6 +168,75 @@ window.KIBUN_SNS_EDITORIAL_DATA = {
         "spot_085"
       ],
       "url": "../magazine/yokohama-small-holiday/"
+    },
+    {
+      "slug": "terrace-after-sunset",
+      "title": "まだ帰りたくない日の、外ごはん。東京・横浜のテラス6選",
+      "lead": "夕方になっても、すぐ店内へ入りたくない日がある。ホテルのルーフトップ、水辺、運河沿い。夜風ごと食事にする6つの場所。",
+      "spot_ids": [
+        "spot_449",
+        "spot_447",
+        "spot_448",
+        "spot_257",
+        "spot_269",
+        "spot_219"
+      ],
+      "url": "../magazine/terrace-after-sunset/"
+    },
+    {
+      "slug": "night-starts-after-five",
+      "title": "日が落ちてから、出かける。17時から始める東京・横浜の夜6選",
+      "lead": "一日を使わなくても、17時からならまだ間に合う。水族館、展望台、夜景、光の展示。帰宅する前に景色を一度変える夜のおでかけ。",
+      "spot_ids": [
+        "spot_450",
+        "spot_451",
+        "spot_113",
+        "spot_110",
+        "spot_151",
+        "spot_443"
+      ],
+      "url": "../magazine/night-starts-after-five/"
+    },
+    {
+      "slug": "hotel-without-staying",
+      "title": "泊まらないホテルステイ。午後だけ非日常に逃げる6つの使い方",
+      "lead": "一泊するほどではない。でも、街のカフェだけでは休みきれない。客室、温泉、スパ、ラウンジ。ホテルの数時間だけ借りる休日。",
+      "spot_ids": [
+        "spot_452",
+        "spot_456",
+        "spot_453",
+        "spot_234",
+        "spot_307",
+        "spot_314"
+      ],
+      "url": "../magazine/hotel-without-staying/"
+    },
+    {
+      "slug": "parents-eat-well",
+      "title": "子どもは遊ぶ。大人はちゃんと食べる。親子の外食6選",
+      "lead": "子連れOKだけでは足りない。小上がり、ベビーチェア、景色、ちゃんと食べたい料理。親の満足まで含めて選ぶ横浜の外食。",
+      "spot_ids": [
+        "spot_454",
+        "spot_457",
+        "spot_258",
+        "spot_262",
+        "spot_455",
+        "spot_287"
+      ],
+      "url": "../magazine/parents-eat-well/"
+    },
+    {
+      "slug": "seasonal-harvest",
+      "title": "手ぶらで、季節を取りに行く。関東近郊の収穫体験5選",
+      "lead": "いちご、さつまいも、みかん、野菜。買って帰るだけではなく、土や葉に触れてから食べる。季節そのものを持ち帰る休日。",
+      "spot_ids": [
+        "spot_458",
+        "spot_038",
+        "spot_004",
+        "spot_233",
+        "spot_046"
+      ],
+      "url": "../magazine/seasonal-harvest/"
     }
   ],
   "plans": [
@@ -803,6 +872,97 @@ window.KIBUN_SNS_EDITORIAL_DATA = {
         "Mr.FARMER 三井アウトレットパーク木更津店"
       ],
       "url": "../?plan=friends_kisarazu_shop_food&source=sns"
+    },
+    {
+      "id": "friends_shinjuku_rooftop_evening",
+      "title": "緑の夕方から、屋上で夜風に変える。",
+      "lead": "新宿御苑を短く歩いたら、ヒルトン東京のルーフトップへ。昼から詰め込まず、夕方から一日を始める。",
+      "audience": [
+        "friends",
+        "partner"
+      ],
+      "spot_ids": [
+        "spot_300",
+        "spot_447"
+      ],
+      "spot_names": [
+        "新宿御苑",
+        "ヒルトン東京 ルーフトップ"
+      ],
+      "url": "../?plan=friends_shinjuku_rooftop_evening&source=sns"
+    },
+    {
+      "id": "partner_ikebukuro_aqua_night",
+      "title": "水の中を見たあと、空の上で夜景を見る。",
+      "lead": "サンシャイン水族館から、同じ街区のてんぼうパークへ。夕方から二つだけ、景色の高さを変えていく池袋の夜。",
+      "audience": [
+        "partner",
+        "friends",
+        "solo"
+      ],
+      "spot_ids": [
+        "spot_450",
+        "spot_451"
+      ],
+      "spot_names": [
+        "サンシャイン水族館",
+        "サンシャイン60展望台 てんぼうパーク"
+      ],
+      "url": "../?plan=partner_ikebukuro_aqua_night&source=sns"
+    },
+    {
+      "id": "family_minatomirai_play_247",
+      "title": "遊び切ったら、観覧車を見ながらちゃんと食べる。",
+      "lead": "MARK ISで子どもの遊び時間をつくったら、みなとみらい東急スクエアの24/7 restaurantへ。移動を増やさず、最後は親も座る。",
+      "audience": [
+        "family"
+      ],
+      "spot_ids": [
+        "spot_007",
+        "spot_454"
+      ],
+      "spot_names": [
+        "MARK IS みなとみらい",
+        "24/7 restaurant"
+      ],
+      "url": "../?plan=family_minatomirai_play_247&source=sns"
+    },
+    {
+      "id": "family_motomachi_pignic_walk",
+      "title": "こぶたと遊んだあと、元町を少しだけ歩く。",
+      "lead": "pignic cafeの個室でマイクロブタと過ごしたら、元町ショッピングストリートへ。体験を主役にして、街歩きは余裕がある分だけ。",
+      "audience": [
+        "family",
+        "partner"
+      ],
+      "spot_ids": [
+        "spot_455",
+        "spot_140"
+      ],
+      "spot_names": [
+        "pignic cafe",
+        "横浜元町ショッピングストリート"
+      ],
+      "url": "../?plan=family_motomachi_pignic_walk&source=sns"
+    },
+    {
+      "id": "family_miura_harvest_soleil",
+      "title": "畑で季節を持ち帰って、丘の上でもう少し遊ぶ。",
+      "lead": "津久井浜観光農園でその時期の収穫体験をしたら、ソレイユの丘へ。三浦半島の外の日を、移動しすぎず一日にまとめる。",
+      "audience": [
+        "family",
+        "friends",
+        "partner"
+      ],
+      "spot_ids": [
+        "spot_458",
+        "spot_046"
+      ],
+      "spot_names": [
+        "津久井浜観光農園",
+        "長井海の手公園 ソレイユの丘"
+      ],
+      "url": "../?plan=family_miura_harvest_soleil&source=sns"
     }
   ]
 };
