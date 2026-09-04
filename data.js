@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_10_1_446spots_hero_audit_refresh",
-    "version": "0.20.10.1",
+    "dataset_name": "kibun_kanto_izu_seed_v20_11_0_458spots_editorial_night_family_harvest",
+    "version": "0.20.11.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -69,7 +69,7 @@ window.ODEKAKE_SEED = {
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "v20.8.0: 387→431スポット。茨城・栃木・群馬を新規カバーし、山梨・静岡を増強。自然・動物・乗りもの・科学・工場・庭園・体験などへ分散し、同時に施設別アフィリエイト導線を全件再監査。",
+    "expansion_note": "v20.11.0: 446→458スポット。夜の外ごはん、夜間おでかけ、ホテル日帰り、親子外食、収穫体験を補強し、5本のKibun Magazine特集へ接続。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -138,7 +138,7 @@ window.ODEKAKE_SEED = {
       ],
       "experience_expansion": "観劇・ものづくりは「場所」より「何をするか」が先に立つコピーで見せる。"
     },
-    "monetization_note": "2026-09-02: ValueCommerce LinkSwitch運用。OZmall / 一休 / じゃらん / KLOOK / アクティビティジャパンを通常URL中心で管理。アソビューはLinkSwitch対象範囲をURL単位で確認する。",
+    "monetization_note": "2026-09-04: v20.11.0追加12件もAffiliate Audit対象化。確認できた施設別OZmall/アソビュー導線を設定し、未確認分はrecheck_neededとして残す。",
     "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。",
     "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login."
   },
@@ -66673,6 +66673,1840 @@ window.ODEKAKE_SEED = {
             "kind": "official_current",
             "date": "2026-09-03",
             "url": "https://montakanawa.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_447",
+      "slug": "hilton-tokyo-rooftop-beer-garden-2026",
+      "name": "ヒルトン東京 2026年ビアガーデン",
+      "aliases": [],
+      "category_primary": "beer_garden",
+      "categories": [
+        "restaurant",
+        "beer_garden",
+        "terrace",
+        "hotel",
+        "night",
+        "seasonal"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区西新宿6-6-2",
+      "official_url": "https://tokyo.hiltonjapan.co.jp/restaurants/beer-garden",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 40,
+        "parent_rest": 86,
+        "greenery": 10,
+        "water_contact": 10,
+        "animal_contact": 10,
+        "food_experience": 100,
+        "creative_sensory": 70,
+        "baby_fit": 10,
+        "toddler_fit": 10,
+        "stroller_fit": 10,
+        "rain_resilience": 5,
+        "heat_resilience": 42,
+        "walking_load": 8,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 80,
+        "nature": 10,
+        "extraordinary": 92,
+        "scenic": 88,
+        "stroll": 25,
+        "relax": 78,
+        "shopping": 10,
+        "food": 100,
+        "culture": 15,
+        "animals": 10,
+        "creative": 10,
+        "active": 10,
+        "waterside": 0
+      },
+      "editorial_reason": "「夕方から外で過ごす」特集の東京側の主役。ホテルレストラン予約の収益導線も強い。",
+      "public_copy": "新宿のホテル7階ルーフトップで、空が暗くなるまで食事とドリンクを楽しむ季節限定の夜。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026/5/15〜9/30、17:30〜22:00。滞在2時間制。",
+        "price_summary": "プラン・ドリンク内容により異なる。",
+        "reservation_summary": "オンライン予約推奨。雨天・強風時は中止。",
+        "age_note": "利用条件は予約時に公式案内を確認。",
+        "temporary_note": "2026年9月30日までの季節営業。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://tokyo.hiltonjapan.co.jp/restaurants/beer-garden"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "ヒルトン東京 2026年ビアガーデンの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 28,
+        "partner": 100,
+        "solo": 65,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ヒルトン東京 2026年ビアガーデン",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ビアガーデン",
+        "ホテル",
+        "ルーフトップ",
+        "デート",
+        "友だち",
+        "季節限定"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 65,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "OZmall"
+        ],
+        "product_match_required": true,
+        "note": "OZmallの施設別レストランページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 95,
+        "freshness": 90,
+        "social_presence": 95,
+        "visual_appeal": 100,
+        "media_attention": 91,
+        "popularity_momentum": 95,
+        "reason": "新宿のホテル7階ルーフトップで、空が暗くなるまで食事とドリンクを楽しむ季節限定の夜。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://tokyo.hiltonjapan.co.jp/restaurants/beer-garden"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-05-15",
+            "until": "2026-09-30"
+          }
+        ],
+        "note": "2026年ビアガーデン営業期間外"
+      }
+    },
+    {
+      "spot_id": "spot_448",
+      "slug": "oak-door-grand-hyatt-tokyo",
+      "name": "THE OAK DOOR／グランド ハイアット 東京",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "terrace",
+        "beer_garden",
+        "hotel",
+        "night",
+        "roppongi"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区六本木6-10-3 グランド ハイアット 東京6F",
+      "official_url": "https://www.tokyo.grand.hyatt.co.jp/restaurants/oak-door/",
+      "environment": "mixed",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 65,
+        "outdoor": 90,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 52,
+        "parent_rest": 92,
+        "greenery": 10,
+        "water_contact": 10,
+        "animal_contact": 10,
+        "food_experience": 100,
+        "creative_sensory": 65,
+        "baby_fit": 10,
+        "toddler_fit": 10,
+        "stroller_fit": 10,
+        "rain_resilience": 78,
+        "heat_resilience": 60,
+        "walking_load": 5,
+        "planning_friction": 48
+      },
+      "vibes_seed": {
+        "cool": 75,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 82,
+        "stroll": 35,
+        "relax": 82,
+        "shopping": 10,
+        "food": 100,
+        "culture": 20,
+        "animals": 10,
+        "creative": 10,
+        "active": 10,
+        "waterside": 10
+      },
+      "editorial_reason": "季節イベントだけでなく通年のレストランとして残せる、収益性の高いテラス枠。",
+      "public_copy": "六本木のホテルテラスで、炭火料理と夜風をゆっくり味わう。夏はビアガーデンプランも選べる大人の外ごはん。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "レストランは通年営業。2026年サマービアガーデンは7/1〜9/30、18:00〜22:00。",
+        "price_summary": "通常メニュー・季節プランで異なる。",
+        "reservation_summary": "オンライン予約可。季節プランは予約推奨。",
+        "age_note": "子ども同伴条件は予約プランで確認。",
+        "temporary_note": "2026年サマービアガーデンは9月30日まで。悪天候時は屋内席へ案内。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://www.tokyo.grand.hyatt.co.jp/restaurants/recommended/oak-door/beer-garden"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "THE OAK DOOR／グランド ハイアット 東京の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 58,
+        "partner": 100,
+        "solo": 78,
+        "friends": 98
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "THE OAK DOOR Grand Hyatt Tokyo",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ホテル",
+        "テラス",
+        "六本木",
+        "デート",
+        "友だち",
+        "夜ごはん"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 75,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "OZmall"
+        ],
+        "product_match_required": true,
+        "note": "OZmallの施設別レストランページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 90,
+        "social_presence": 92,
+        "visual_appeal": 97,
+        "media_attention": 88,
+        "popularity_momentum": 92,
+        "reason": "六本木のホテルテラスで、炭火料理と夜風をゆっくり味わう。夏はビアガーデンプランも選べる大人の外ごはん。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://www.tokyo.grand.hyatt.co.jp/restaurants/recommended/oak-door/beer-garden"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_449",
+      "slug": "hamabeer-intercontinental-yokohama",
+      "name": "海の見えるビアガーデン「はまビア！」",
+      "aliases": [],
+      "category_primary": "beer_garden",
+      "categories": [
+        "restaurant",
+        "beer_garden",
+        "terrace",
+        "hotel",
+        "waterside",
+        "night",
+        "seasonal"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい1-1-1",
+      "official_url": "https://www.icyokohama-grand.com/offer_restaurant/oceanterrace_hamabeer/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 48,
+        "parent_rest": 90,
+        "greenery": 10,
+        "water_contact": 10,
+        "animal_contact": 10,
+        "food_experience": 100,
+        "creative_sensory": 72,
+        "baby_fit": 40,
+        "toddler_fit": 50,
+        "stroller_fit": 70,
+        "rain_resilience": 5,
+        "heat_resilience": 45,
+        "walking_load": 5,
+        "planning_friction": 78
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 10,
+        "extraordinary": 92,
+        "scenic": 100,
+        "stroll": 35,
+        "relax": 85,
+        "shopping": 10,
+        "food": 100,
+        "culture": 10,
+        "animals": 10,
+        "creative": 10,
+        "active": 10,
+        "waterside": 100
+      },
+      "editorial_reason": "横浜らしい水辺×ホテル×外ごはんを一本で担う季節スポット。",
+      "public_copy": "横浜港を目の前に、海風とホテルバーベキューを楽しむ夜。みなとみらいの景色ごと夕食にする季節のテラス。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026/7/2〜9/28（祝日除く火・水休）／10/3〜10/31は土日祝のみ。17:30〜21:00、120分制。",
+        "price_summary": "2026年は大人10,000円、5〜19歳8,500円（料理・対象ドリンク込み）。",
+        "reservation_summary": "利用日前日18:00までの事前予約。雨天・荒天時は中止。",
+        "age_note": "5歳以上の料金設定あり。20歳未満はソフトドリンク。",
+        "temporary_note": "2026年10月31日までの季節営業。10月は土日祝日のみ。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://www.icyokohama-grand.com/offer_restaurant/oceanterrace_hamabeer/"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "海の見えるビアガーデン「はまビア！」の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 60,
+        "partner": 100,
+        "solo": 60,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ヨコハマ グランド インターコンチネンタル はまビア",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ビアガーデン",
+        "水辺",
+        "ホテル",
+        "みなとみらい",
+        "デート",
+        "季節限定"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "施設・季節プランのASP個別ページを継続調査。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 90,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 92,
+        "popularity_momentum": 96,
+        "reason": "横浜港を目の前に、海風とホテルバーベキューを楽しむ夜。みなとみらいの景色ごと夕食にする季節のテラス。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://www.icyokohama-grand.com/offer_restaurant/oceanterrace_hamabeer/"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-07-02",
+            "until": "2026-10-31"
+          }
+        ],
+        "note": "2026年は日程・休業曜日あり。予約ページで営業日を確認。"
+      }
+    },
+    {
+      "spot_id": "spot_450",
+      "slug": "sunshine-aquarium",
+      "name": "サンシャイン水族館",
+      "aliases": [],
+      "category_primary": "aquarium",
+      "categories": [
+        "aquarium",
+        "animals",
+        "indoor",
+        "night",
+        "ikebukuro"
+      ],
+      "prefecture": "東京都",
+      "city": "豊島区",
+      "address": "東京都豊島区東池袋3-1 サンシャインシティ ワールドインポートマートビル屋上",
+      "official_url": "https://sunshinecity.jp/aquarium/",
+      "environment": "mixed",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 82,
+        "outdoor": 42,
+        "physical_activity": 20,
+        "hands_on": 20,
+        "quietness": 48,
+        "parent_rest": 55,
+        "greenery": 20,
+        "water_contact": 20,
+        "animal_contact": 92,
+        "food_experience": 20,
+        "creative_sensory": 80,
+        "baby_fit": 82,
+        "toddler_fit": 92,
+        "stroller_fit": 82,
+        "rain_resilience": 95,
+        "heat_resilience": 90,
+        "walking_load": 45,
+        "planning_friction": 45
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 20,
+        "extraordinary": 90,
+        "scenic": 82,
+        "stroll": 20,
+        "relax": 72,
+        "shopping": 20,
+        "food": 20,
+        "culture": 74,
+        "animals": 100,
+        "creative": 55,
+        "active": 20,
+        "waterside": 82
+      },
+      "editorial_reason": "夜記事にも親子記事にも使える大型定番。チケットASPも確認できる。",
+      "public_copy": "都会の屋上でペンギンや海の生きものに会える池袋の水族館。夜間特別営業の日は、昼とは違う空気まで楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は日程で変動。最終入場は終了30分前。",
+        "price_summary": "大人2,600〜3,200円、小中学生1,300円、4歳以上800円（入場日により変動）。",
+        "reservation_summary": "土日祝・特定日は日時指定の事前予約推奨。",
+        "age_note": "4歳以上に幼児料金設定。",
+        "temporary_note": "2026/9/11〜11/3に夜間特別営業イベントを開催予定。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://sunshinecity.jp/aquarium/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "サンシャイン水族館の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 96,
+        "solo": 82,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 95,
+      "routing": {
+        "municipality": "豊島区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "サンシャイン水族館",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "水族館",
+        "池袋",
+        "夜",
+        "親子",
+        "デート",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 78,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": true,
+        "note": "アソビュー！施設別ページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 98,
+        "freshness": 90,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 94,
+        "popularity_momentum": 98,
+        "reason": "都会の屋上でペンギンや海の生きものに会える池袋の水族館。夜間特別営業の日は、昼とは違う空気まで楽しめる。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://sunshinecity.jp/aquarium/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_451",
+      "slug": "sunshine60-observatory-tenbou-park",
+      "name": "サンシャイン60展望台 てんぼうパーク",
+      "aliases": [],
+      "category_primary": "observation_deck",
+      "categories": [
+        "observation",
+        "scenic",
+        "indoor",
+        "night",
+        "park",
+        "ikebukuro"
+      ],
+      "prefecture": "東京都",
+      "city": "豊島区",
+      "address": "東京都豊島区東池袋3-1 サンシャインシティ サンシャイン60ビル60F",
+      "official_url": "https://sunshinecity.jp/observatory/",
+      "environment": "indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 98,
+        "outdoor": 0,
+        "physical_activity": 18,
+        "hands_on": 18,
+        "quietness": 66,
+        "parent_rest": 88,
+        "greenery": 58,
+        "water_contact": 18,
+        "animal_contact": 18,
+        "food_experience": 18,
+        "creative_sensory": 85,
+        "baby_fit": 90,
+        "toddler_fit": 92,
+        "stroller_fit": 92,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 22,
+        "planning_friction": 30
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 18,
+        "extraordinary": 96,
+        "scenic": 100,
+        "stroll": 65,
+        "relax": 90,
+        "shopping": 18,
+        "food": 18,
+        "culture": 45,
+        "animals": 18,
+        "creative": 18,
+        "active": 35,
+        "waterside": 18
+      },
+      "editorial_reason": "水族館と同じ街区で夜プランを組める、親子にも大人にも振れる展望スポット。",
+      "public_copy": "地上60階の景色と芝生のような空間を行き来する「空の公園」。夕方から夜景へ変わる時間に長居したくなる展望台。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026/9/1〜12/24は11:00〜21:00（最終入場20:30）。",
+        "price_summary": "料金は入場日・区分により異なる。",
+        "reservation_summary": "混雑日・イベント日は事前チケット確認を推奨。",
+        "age_note": "子どもも利用可。イベントごとの条件は要確認。",
+        "temporary_note": "営業時間は時期により変動。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://sunshinecity.jp/observatory/news/entry-24881.html"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "サンシャイン60展望台 てんぼうパークの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 96,
+        "partner": 100,
+        "solo": 90,
+        "friends": 95
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "豊島区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "サンシャイン60展望台 てんぼうパーク",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "展望台",
+        "夜景",
+        "池袋",
+        "親子",
+        "デート",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 88,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": true,
+        "note": "アソビュー！施設別ページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 90,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 92,
+        "popularity_momentum": 96,
+        "reason": "地上60階の景色と芝生のような空間を行き来する「空の公園」。夕方から夜景へ変わる時間に長居したくなる展望台。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://sunshinecity.jp/observatory/news/entry-24881.html"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_452",
+      "slug": "oiso-thermal-spa-swave",
+      "name": "THERMAL SPA S.WAVE／大磯プリンスホテル",
+      "aliases": [],
+      "category_primary": "spa",
+      "categories": [
+        "spa",
+        "onsen",
+        "hotel",
+        "dayuse",
+        "pool",
+        "sauna",
+        "scenic"
+      ],
+      "prefecture": "神奈川県",
+      "city": "中郡大磯町",
+      "address": "神奈川県中郡大磯町国府本郷546",
+      "official_url": "https://www.princehotels.co.jp/oiso/spa/",
+      "environment": "mixed",
+      "stay_minutes_seed": 240,
+      "experience_seed": {
+        "indoor": 75,
+        "outdoor": 72,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 85,
+        "parent_rest": 100,
+        "greenery": 50,
+        "water_contact": 100,
+        "animal_contact": 10,
+        "food_experience": 10,
+        "creative_sensory": 85,
+        "baby_fit": 0,
+        "toddler_fit": 10,
+        "stroller_fit": 45,
+        "rain_resilience": 85,
+        "heat_resilience": 95,
+        "walking_load": 10,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 75,
+        "extraordinary": 100,
+        "scenic": 100,
+        "stroll": 12,
+        "relax": 100,
+        "shopping": 12,
+        "food": 60,
+        "culture": 12,
+        "animals": 12,
+        "creative": 12,
+        "active": 40,
+        "waterside": 100
+      },
+      "editorial_reason": "「泊まらないホテル」記事の象徴。日帰り商品とアソビュー導線があり収益化もしやすい。",
+      "public_copy": "水平線とつながるような温水プール、温泉、サウナ、テラスへ。泊まらずにホテルリゾートの時間だけ借りる大磯の逃げ場所。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "温泉・スパは6:00〜24:00。日帰り利用は対象プラン・最終受付時間を確認。",
+        "price_summary": "平日完全予約制の日帰り温泉＆スパは一般5,000円など。利用プランで異なる。",
+        "reservation_summary": "日帰りスパは対象プランで利用。平日限定日帰りスパは前日までの完全予約制。",
+        "age_note": "4Fスパフロアは原則12歳以上。3F温泉は6〜11歳料金あり。おむつが取れていない方は入場不可。",
+        "temporary_note": "平日限定日帰りスパプランは2027/3/31まで（2026夏の除外期間は終了）。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://www.princehotels.co.jp/oiso/spa/information.html"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "THERMAL SPA S.WAVE／大磯プリンスホテルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 30,
+        "partner": 100,
+        "solo": 100,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "中郡大磯町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "大磯プリンスホテル THERMAL SPA S.WAVE",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "温泉",
+        "スパ",
+        "ホテル",
+        "大磯",
+        "デイユース",
+        "サウナ",
+        "12歳以上中心"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 68,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": true,
+        "note": "アソビュー！施設別日帰り温泉ページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 96,
+        "freshness": 90,
+        "social_presence": 96,
+        "visual_appeal": 100,
+        "media_attention": 92,
+        "popularity_momentum": 96,
+        "reason": "水平線とつながるような温水プール、温泉、サウナ、テラスへ。泊まらずにホテルリゾートの時間だけ借りる大磯の逃げ場所。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://www.princehotels.co.jp/oiso/spa/information.html"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_453",
+      "slug": "ana-intercontinental-tokyo-dayuse",
+      "name": "ANAインターコンチネンタルホテル東京 デイユース",
+      "aliases": [],
+      "category_primary": "hotel_dayuse",
+      "categories": [
+        "hotel",
+        "dayuse",
+        "relax",
+        "restaurant",
+        "akasaka",
+        "seasonal"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区赤坂1-12-33",
+      "official_url": "https://anaintercontinental-tokyo.jp/offer/day-use/",
+      "environment": "indoor",
+      "stay_minutes_seed": 360,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 100,
+        "parent_rest": 100,
+        "greenery": 10,
+        "water_contact": 10,
+        "animal_contact": 10,
+        "food_experience": 55,
+        "creative_sensory": 55,
+        "baby_fit": 72,
+        "toddler_fit": 70,
+        "stroller_fit": 88,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 2,
+        "planning_friction": 72
+      },
+      "vibes_seed": {
+        "cool": 60,
+        "nature": 10,
+        "extraordinary": 94,
+        "scenic": 65,
+        "stroll": 10,
+        "relax": 100,
+        "shopping": 10,
+        "food": 72,
+        "culture": 20,
+        "animals": 10,
+        "creative": 10,
+        "active": 10,
+        "waterside": 10
+      },
+      "editorial_reason": "客室そのものを日帰りの目的地にする企画として「泊まらないホテル」記事に厚みを出す。",
+      "public_copy": "チェックインは昼、帰るのは夜。宿泊しなくても客室で何もしない午後をつくれる、赤坂の期間限定デイユース。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026年9月30日まで。6時間15:00〜21:00／9時間12:00〜21:00。",
+        "price_summary": "2026年9月時点で6時間32,000円、9時間40,000円（1室）。",
+        "reservation_summary": "公式デイユースプランから要予約。",
+        "age_note": "宿泊約款・客室利用条件を確認。",
+        "temporary_note": "現行デイユースプランは2026年9月30日まで。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://anaintercontinental-tokyo.jp/offer/day-use/"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "ANAインターコンチネンタルホテル東京 デイユースの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 65,
+        "partner": 100,
+        "solo": 95,
+        "friends": 72
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ANAインターコンチネンタルホテル東京",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ホテル",
+        "デイユース",
+        "赤坂",
+        "ひとり",
+        "デート",
+        "期間限定"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 42,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "一休.com",
+          "じゃらんnet",
+          "Yahoo!トラベル"
+        ],
+        "product_match_required": true,
+        "note": "デイユース個別商品は公式で確認。ASP施設別・日帰り商品を再調査。"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 90,
+        "social_presence": 90,
+        "visual_appeal": 95,
+        "media_attention": 86,
+        "popularity_momentum": 90,
+        "reason": "チェックインは昼、帰るのは夜。宿泊しなくても客室で何もしない午後をつくれる、赤坂の期間限定デイユース。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://anaintercontinental-tokyo.jp/offer/day-use/"
+          }
+        ]
+      },
+      "availability_constraints": {
+        "available_ranges": [
+          {
+            "from": "2026-01-01",
+            "until": "2026-09-30"
+          }
+        ],
+        "note": "現行デイユースプランは2026年9月30日まで"
+      }
+    },
+    {
+      "spot_id": "spot_454",
+      "slug": "247-restaurant-minatomirai",
+      "name": "24/7 restaurant",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "cafe",
+        "family",
+        "kids",
+        "minatomirai",
+        "scenic"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい2-3-8 みなとみらい東急スクエア③ 3F",
+      "official_url": "https://www.dd-holdings.jp/shops/247/minatomirai/",
+      "environment": "indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 12,
+        "hands_on": 12,
+        "quietness": 65,
+        "parent_rest": 96,
+        "greenery": 12,
+        "water_contact": 12,
+        "animal_contact": 12,
+        "food_experience": 100,
+        "creative_sensory": 12,
+        "baby_fit": 94,
+        "toddler_fit": 96,
+        "stroller_fit": 95,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 5,
+        "planning_friction": 22
+      },
+      "vibes_seed": {
+        "cool": 35,
+        "nature": 12,
+        "extraordinary": 62,
+        "scenic": 92,
+        "stroll": 12,
+        "relax": 94,
+        "shopping": 65,
+        "food": 100,
+        "culture": 12,
+        "animals": 12,
+        "creative": 12,
+        "active": 12,
+        "waterside": 48
+      },
+      "editorial_reason": "親子外食記事に、大人の雰囲気と小上がり・キッズ設備が両立する代表例として追加。",
+      "public_copy": "観覧車を眺める大きな窓と、小上がり席のあるみなとみらいのダイニング。子連れの日も「大人が食べたい」を諦めにくい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜23:00（L.O.22:00）。",
+        "price_summary": "ランチ・ディナー・コースで異なる。",
+        "reservation_summary": "予約可。OZmallにも施設別予約ページあり。",
+        "age_note": "キッズメニュー、ベビーカー持込、ベビーチェア、離乳食持込の案内あり。",
+        "temporary_note": "施設営業状況により変更の可能性あり。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://www.minatomirai-square.com/floor/detail/?cd=000069"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "24/7 restaurantの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 90,
+        "solo": 72,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "24/7 restaurant みなとみらい",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "親子ごはん",
+        "小上がり",
+        "キッズメニュー",
+        "みなとみらい",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 92,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "OZmall"
+        ],
+        "product_match_required": true,
+        "note": "OZmallの施設別レストランページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 90,
+        "social_presence": 88,
+        "visual_appeal": 93,
+        "media_attention": 84,
+        "popularity_momentum": 88,
+        "reason": "観覧車を眺める大きな窓と、小上がり席のあるみなとみらいのダイニング。子連れの日も「大人が食べたい」を諦めにくい。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://www.minatomirai-square.com/floor/detail/?cd=000069"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_455",
+      "slug": "pignic-cafe-yokohama",
+      "name": "pignic cafe 横浜店",
+      "aliases": [],
+      "category_primary": "animal_cafe",
+      "categories": [
+        "animal_cafe",
+        "animals",
+        "cafe",
+        "family",
+        "motomachi",
+        "indoor"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区山下町109-5",
+      "official_url": "https://cafe.pignic.jp/shop/yokohama",
+      "environment": "mixed",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 90,
+        "outdoor": 25,
+        "physical_activity": 15,
+        "hands_on": 15,
+        "quietness": 70,
+        "parent_rest": 90,
+        "greenery": 15,
+        "water_contact": 15,
+        "animal_contact": 100,
+        "food_experience": 45,
+        "creative_sensory": 85,
+        "baby_fit": 80,
+        "toddler_fit": 92,
+        "stroller_fit": 55,
+        "rain_resilience": 90,
+        "heat_resilience": 90,
+        "walking_load": 5,
+        "planning_friction": 58
+      },
+      "vibes_seed": {
+        "cool": 30,
+        "nature": 15,
+        "extraordinary": 86,
+        "scenic": 55,
+        "stroll": 35,
+        "relax": 88,
+        "shopping": 15,
+        "food": 52,
+        "culture": 15,
+        "animals": 100,
+        "creative": 50,
+        "active": 15,
+        "waterside": 15
+      },
+      "editorial_reason": "親子の「遊ぶ」と「休む」を同じ場所に置ける変化球。元町散歩プランにもつなげやすい。",
+      "public_copy": "全席個室でマイクロブタとゆっくり過ごせる元町の一軒家カフェ。子どもが夢中な横で、大人も座ったまま休める。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜20:00。年末年始を除き年中無休。",
+        "price_summary": "6歳以上は30分2,000円〜、2〜5歳1,500円〜、1歳まで無料（2026/9確認時）。",
+        "reservation_summary": "完全予約制。全席個室。",
+        "age_note": "12歳以下は保護者同伴。1歳まで無料。",
+        "temporary_note": "料金・ふれあい内容は変更の可能性があるため予約時に確認。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://cafe.pignic.jp/shop/yokohama"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "pignic cafe 横浜店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 86,
+        "solo": 70,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 88,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "pignic cafe 横浜店",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "動物",
+        "マイクロブタ",
+        "個室",
+        "元町",
+        "親子",
+        "予約制"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 45,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー！",
+          "じゃらん遊び・体験"
+        ],
+        "product_match_required": true,
+        "note": "公式予約は確認済み。ASPの個別体験商品は再調査。"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 90,
+        "social_presence": 92,
+        "visual_appeal": 97,
+        "media_attention": 88,
+        "popularity_momentum": 92,
+        "reason": "全席個室でマイクロブタとゆっくり過ごせる元町の一軒家カフェ。子どもが夢中な横で、大人も座ったまま休める。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://cafe.pignic.jp/shop/yokohama"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_456",
+      "slug": "yokohama-minatomirai-manyo-club",
+      "name": "横浜みなとみらい 万葉倶楽部",
+      "aliases": [],
+      "category_primary": "onsen",
+      "categories": [
+        "onsen",
+        "spa",
+        "dayuse",
+        "night",
+        "waterside",
+        "relax",
+        "yokohama"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-7-1",
+      "official_url": "https://manyo.co.jp/mm21/",
+      "environment": "indoor",
+      "stay_minutes_seed": 300,
+      "experience_seed": {
+        "indoor": 95,
+        "outdoor": 35,
+        "physical_activity": 10,
+        "hands_on": 10,
+        "quietness": 82,
+        "parent_rest": 100,
+        "greenery": 10,
+        "water_contact": 75,
+        "animal_contact": 10,
+        "food_experience": 60,
+        "creative_sensory": 10,
+        "baby_fit": 35,
+        "toddler_fit": 45,
+        "stroller_fit": 70,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 6,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 85,
+        "nature": 10,
+        "extraordinary": 88,
+        "scenic": 95,
+        "stroll": 20,
+        "relax": 100,
+        "shopping": 10,
+        "food": 70,
+        "culture": 10,
+        "animals": 10,
+        "creative": 10,
+        "active": 10,
+        "waterside": 88
+      },
+      "editorial_reason": "泊まらないホテル／温浴記事の横浜側。24時間で夜のおでかけにも派生できる。",
+      "public_copy": "みなとみらいの真ん中で温泉、展望足湯、休憩まで。宿を取らなくても、街歩きの途中から「今日はもう休む」に切り替えられる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "24時間営業・年中無休（メンテナンス等の臨時休館あり）。",
+        "price_summary": "基本入館料は大人3,500円など。深夜滞在・個室等は別料金。",
+        "reservation_summary": "通常の日帰り入館は予約不要の案内あり。個室休憩など一部プランは事前予約。",
+        "age_note": "子ども料金・大浴場の利用条件あり。おむつが取れていない場合などは最新FAQを確認。",
+        "temporary_note": "24時間営業。深夜帯は清掃・追加料金等あり。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://manyo.co.jp/mm21/faq/"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "横浜みなとみらい 万葉倶楽部の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 60,
+        "partner": 98,
+        "solo": 100,
+        "friends": 95
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜みなとみらい 万葉倶楽部",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "温泉",
+        "みなとみらい",
+        "夜",
+        "日帰り",
+        "展望足湯",
+        "ひとり"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 92,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": true,
+        "note": "アソビュー！施設別ページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 90,
+        "social_presence": 94,
+        "visual_appeal": 99,
+        "media_attention": 90,
+        "popularity_momentum": 94,
+        "reason": "みなとみらいの真ん中で温泉、展望足湯、休憩まで。宿を取らなくても、街歩きの途中から「今日はもう休む」に切り替えられる。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://manyo.co.jp/mm21/faq/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_457",
+      "slug": "aloha-table-colette-mare-minatomirai",
+      "name": "アロハテーブル コレットマーレみなとみらい",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "cafe",
+        "terrace",
+        "family",
+        "kids",
+        "minatomirai"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区桜木町1-1-7 コレットマーレ1F",
+      "official_url": "https://minatomirai.alohatable.com/",
+      "environment": "mixed",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 78,
+        "outdoor": 65,
+        "physical_activity": 12,
+        "hands_on": 12,
+        "quietness": 55,
+        "parent_rest": 92,
+        "greenery": 12,
+        "water_contact": 12,
+        "animal_contact": 12,
+        "food_experience": 100,
+        "creative_sensory": 12,
+        "baby_fit": 82,
+        "toddler_fit": 90,
+        "stroller_fit": 90,
+        "rain_resilience": 80,
+        "heat_resilience": 85,
+        "walking_load": 3,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 40,
+        "nature": 12,
+        "extraordinary": 78,
+        "scenic": 85,
+        "stroll": 12,
+        "relax": 92,
+        "shopping": 60,
+        "food": 100,
+        "culture": 12,
+        "animals": 12,
+        "creative": 12,
+        "active": 12,
+        "waterside": 45
+      },
+      "editorial_reason": "親子ごはん特集の「大人も気分が上がる」側を補強。OZmall予約導線も確認済み。",
+      "public_copy": "桜木町駅前で、ハワイのローカルフードと開放的なテラスへ。親子の日でも旅っぽい空気を少し足せるレストラン。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜22:00。",
+        "price_summary": "ランチ・カフェ・ディナーで異なる。",
+        "reservation_summary": "WEB予約可。OZmallにも施設別予約ページあり。",
+        "age_note": "子連れ利用条件・キッズメニュー等は当日の案内を確認。",
+        "temporary_note": "無休（施設・天候等により臨時変更の可能性あり）。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://minatomirai.alohatable.com/"
+      },
+      "hero_image": {
+        "url": "images/ai/cafe-interior.jpg",
+        "type": "ai",
+        "alt": "アロハテーブル コレットマーレみなとみらいの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 92,
+        "solo": 72,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "アロハテーブル コレットマーレみなとみらい",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "親子ごはん",
+        "テラス",
+        "ハワイアン",
+        "桜木町",
+        "デート"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 95,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "OZmall"
+        ],
+        "product_match_required": true,
+        "note": "OZmallの施設別レストランページを2026-09-04に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 90,
+        "social_presence": 88,
+        "visual_appeal": 93,
+        "media_attention": 84,
+        "popularity_momentum": 88,
+        "reason": "桜木町駅前で、ハワイのローカルフードと開放的なテラスへ。親子の日でも旅っぽい空気を少し足せるレストラン。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://minatomirai.alohatable.com/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_458",
+      "slug": "tsukuihama-tourist-farm",
+      "name": "津久井浜観光農園",
+      "aliases": [],
+      "category_primary": "farm",
+      "categories": [
+        "farm",
+        "harvest",
+        "fruit",
+        "outdoor",
+        "family",
+        "yokosuka",
+        "seasonal"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横須賀市",
+      "address": "神奈川県横須賀市津久井5-15-20",
+      "official_url": "https://www.city.yokosuka.kanagawa.jp/2150/sisetu/fc100000932.html",
+      "environment": "outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 0,
+        "outdoor": 100,
+        "physical_activity": 70,
+        "hands_on": 100,
+        "quietness": 60,
+        "parent_rest": 35,
+        "greenery": 100,
+        "water_contact": 12,
+        "animal_contact": 12,
+        "food_experience": 100,
+        "creative_sensory": 90,
+        "baby_fit": 45,
+        "toddler_fit": 78,
+        "stroller_fit": 25,
+        "rain_resilience": 10,
+        "heat_resilience": 30,
+        "walking_load": 45,
+        "planning_friction": 55
+      },
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 100,
+        "extraordinary": 76,
+        "scenic": 72,
+        "stroll": 65,
+        "relax": 70,
+        "shopping": 15,
+        "food": 100,
+        "culture": 45,
+        "animals": 15,
+        "creative": 68,
+        "active": 72,
+        "waterside": 15
+      },
+      "editorial_reason": "秋記事の旬をつくりつつ、春も秋も更新できる年間型の体験スポット。",
+      "public_copy": "季節が変わるたび、いちご・さつまいも・みかんへ。三浦半島で「食べる前の時間」まで楽しむ収穫体験。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開催期間中の受付時間は品目ごとに案内。",
+        "price_summary": "品目・年度で異なるため開催案内を確認。",
+        "reservation_summary": "品目・団体・混雑状況により異なる。事前に公式案内を確認。",
+        "age_note": "子どもも参加しやすいが、畑の足元・収穫方法は当日の案内に従う。",
+        "temporary_note": "例年：いちご1月〜5月上旬、さつまいも9月中旬〜11月上旬、みかん10月中旬〜11月末。",
+        "checked_at": "2026-09-04",
+        "source_url": "https://www.city.yokosuka.kanagawa.jp/2150/sisetu/fc100000932.html"
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "津久井浜観光農園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 80,
+        "solo": 60,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 82,
+      "routing": {
+        "municipality": "横須賀市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "津久井浜観光農園",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "収穫体験",
+        "さつまいも",
+        "みかん",
+        "いちご",
+        "横須賀",
+        "親子"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 62,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "アソビュー！",
+          "じゃらん遊び・体験"
+        ],
+        "product_match_required": true,
+        "note": "公式の季節開催を確認。予約型ASP商品は再調査。"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 90,
+        "social_presence": 86,
+        "visual_appeal": 91,
+        "media_attention": 82,
+        "popularity_momentum": 86,
+        "reason": "季節が変わるたび、いちご・さつまいも・みかんへ。三浦半島で「食べる前の時間」まで楽しむ収穫体験。",
+        "checked_at": "2026-09-04",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-04",
+            "url": "https://www.city.yokosuka.kanagawa.jp/2150/sisetu/fc100000932.html"
           }
         ]
       }

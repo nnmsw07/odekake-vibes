@@ -220,3 +220,7 @@ Production measurement ID: `G-M99DNGD18F`. Main interaction events are tracked w
 - 182 photo selections and 14 manual Google Place pins applied to seed/data.
 - New spots 432–446 are included in the audited Hero selection.
 - `data.js?v=20101`; no Worker or image asset change.
+
+
+## v20.11.0
+5本の特集（外ごはん／夜／ホテル日帰り／親子ごはん／収穫）と12スポット、5プランを追加。458スポット。

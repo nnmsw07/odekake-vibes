@@ -7,7 +7,7 @@
   const $=id=>document.getElementById(id);
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clone=x=>JSON.parse(JSON.stringify(x));
-  function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x?.posts)return x}catch(_e){}return {posts:clone(seed.posts||[])};}
+  function mergeSeedPosts(x){const posts=Array.isArray(x?.posts)?x.posts:[];const have=new Set(posts.map(p=>p.id));const missing=(seed.posts||[]).filter(p=>!have.has(p.id)).map(clone);return {posts:[...missing,...posts]};} function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x?.posts)return mergeSeedPosts(x)}catch(_e){}return {posts:clone(seed.posts||[])};}
   let state=load();
   function persist(){localStorage.setItem(KEY,JSON.stringify(state));}
   function spotById(id){return spots.find(s=>s.spot_id===id)||null;}
@@ -37,7 +37,7 @@
   function renderSummary(){const all=state.posts,pub=all.filter(x=>x.status==='published').length,missingDest=all.filter(x=>!x.destination_url).length,missingHero=all.filter(x=>!x.hero_ref).length,missingIg=all.filter(x=>x.channel==='Instagram'&&!x.instagram_route).length;$('summary').innerHTML=`<span class="metric"><strong>${all.length}</strong> 投稿</span><span class="metric"><strong>${pub}</strong> 投稿済み</span><span class="metric"><strong>${missingDest}</strong> 遷移先未設定</span><span class="metric"><strong>${missingHero}</strong> Hero未設定</span><span class="metric"><strong>${missingIg}</strong> Instagram導線未設定</span>`;}
   function bind(){document.querySelectorAll('.post-card').forEach(card=>{const id=card.dataset.id;card.querySelectorAll('[data-field]').forEach(el=>el.addEventListener('change',()=>{update(id,el.dataset.field,el.value);render();}));card.querySelectorAll('[data-fill]').forEach(btn=>btn.addEventListener('click',()=>{update(id,btn.dataset.fill,btn.dataset.value);render();flash('補完しました')}));card.querySelector('[data-remove]')?.addEventListener('click',()=>{if(!confirm('この投稿を削除しますか？'))return;state.posts=state.posts.filter(x=>x.id!==id);persist();render();});});}
   function render(){renderSummary();const rows=visible();$('auditList').innerHTML=rows.length?rows.map(card).join(''):'<article class="post-card"><h2>該当する投稿はありません。</h2></article>';bind();}
-  function exportData(){return {version:'20.9.1',exported_at:new Date().toISOString(),posts:state.posts};}
+  function exportData(){return {version:'20.11.0',exported_at:new Date().toISOString(),posts:state.posts};}
   async function copyText(text,msg){try{await navigator.clipboard.writeText(text)}catch(_e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}flash(msg);}
   function flash(msg){$('flash').textContent=msg;clearTimeout(flash.t);flash.t=setTimeout(()=>$('flash').textContent='',2400);}
   $('addPost').addEventListener('click',()=>{state.posts.unshift(newPost());persist();$('statusFilter').value='all';render();flash('投稿を追加しました')});

@@ -1721,6 +1721,90 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "verified_at": "2026-09-03",
         "conversion_check_required": true
       }
+    ],
+    "spot_447": [
+      {
+        "provider": "ozmall",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://www.ozmall.co.jp/restaurant/5494/",
+        "label": "OZmallでプランを見る",
+        "verified_at": "2026-09-04"
+      }
+    ],
+    "spot_448": [
+      {
+        "provider": "ozmall",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://www.ozmall.co.jp/restaurant/191/",
+        "label": "OZmallでプランを見る",
+        "verified_at": "2026-09-04"
+      }
+    ],
+    "spot_450": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/152308/",
+        "label": "アソビュー！でチケットを見る",
+        "verified_at": "2026-09-04",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_451": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/151817/",
+        "label": "アソビュー！でチケットを見る",
+        "verified_at": "2026-09-04",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_452": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/153832/",
+        "label": "アソビュー！で日帰り温泉・スパを見る",
+        "verified_at": "2026-09-04",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_454": [
+      {
+        "provider": "ozmall",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://www.ozmall.co.jp/restaurant/1961/",
+        "label": "OZmallでレストランプランを見る",
+        "verified_at": "2026-09-04"
+      }
+    ],
+    "spot_456": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/153954/",
+        "label": "アソビュー！で日帰りプランを見る",
+        "verified_at": "2026-09-04",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_457": [
+      {
+        "provider": "ozmall",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://www.ozmall.co.jp/restaurant/4323/",
+        "label": "OZmallでレストランプランを見る",
+        "verified_at": "2026-09-04"
+      }
     ]
   },
   "providerPriority": {
@@ -1782,6 +1866,6 @@ window.KIBUN_AFFILIATE_CONFIG = {
       "scope": "program"
     }
   },
-  "last_sweep_at": "2026-09-03",
-  "sweep_note": "v20.10.0: 全446スポットをAffiliate Audit対象に更新。新規15件のうち、ETOWA KASAMA / PICA Fujiyama / THE BAMBOO FOREST / INN THE PARK 沼津 / サユリワールドは施設別の直接予約・チケットページを確認して設定。新規スポットも未設定理由を明示ステータス化。"
+  "last_sweep_at": "2026-09-04",
+  "sweep_note": "v20.11.0: 新規12スポットを再監査。OZmall 4件・アソビュー 4件の施設別直接導線を追加し、その他4件はrecheck_neededで継続調査。"
 };

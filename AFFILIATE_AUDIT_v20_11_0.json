@@ -1,4 +1,4 @@
-window.KIBUN_AFFILIATE_AUDIT_STATUS = {
+{
   "version": "20.11.0",
   "checked_at": "2026-09-04",
   "spot_count": 458,
@@ -3550,4 +3550,4 @@ window.KIBUN_AFFILIATE_AUDIT_STATUS = {
       "reason": "公式予約導線は確認済み。対応ASPの施設別商品を継続調査する。"
     }
   }
-};
+}

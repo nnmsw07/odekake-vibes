@@ -8,5 +8,5 @@ assert.strictEqual(cfg.sourceLinks.spot_315[0].provider,'ikyu_restaurant');
 assert.strictEqual(cfg.sourceLinks.spot_315[0].url,'https://restaurant.ikyu.com/115431');
 assert.strictEqual(cfg.sourceLinks.spot_316[0].provider,'ozmall');
 assert.strictEqual(cfg.sourceLinks.spot_316[0].url,'https://www.ozmall.co.jp/restaurant/7870/');
-assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082|20100|20101)/.test(read('index.html')));assert.ok(/affiliate-config\.js\?v=(?:205[12]|2061|2080|2081|2090|2091|20100|20101)/.test(read('affiliate-audit/index.html')));
+assert.ok(/data\.js\?v=(?:2051|2061|2070|2080|2081|2082|20100|20101|20110)/.test(read('index.html')));assert.ok(/affiliate-config\.js\?v=(?:205[12]|2061|2080|2081|2090|2091|20100|20101|20110)/.test(read('affiliate-audit/index.html')));
 console.log('v20.5.1 affiliate link resolution passed');
