@@ -19,6 +19,7 @@
   const articleMap=new Map((editorial.articles||[]).map(a=>[a.slug,a]));
   const cfg=window.KIBUN_CONFIG||{};
   const heroCache=new Map();
+  const heroUrlCounts=spots.reduce((m,s)=>{const u=s?.hero_image?.url||'';if(u)m.set(u,(m.get(u)||0)+1);return m;},new Map());
 
   function fallbackHeroUrl(s){
     const u=s?.hero_image?.url||'';
@@ -39,6 +40,17 @@
     if(s?.hero_image?.type==='ai')return true;
     if(s?.media_strategy?.current_provider==='official_permission')return true;
     return Boolean(s?.hero_image?.license);
+  }
+  function isSharedGenericHero(s){
+    const raw=s?.hero_image?.url||'';
+    if(!raw)return true;
+    const count=heroUrlCounts.get(raw)||0;
+    return count>=4 || /^images\/ai\//.test(raw) || /^assets\/(editorial|plans)\//.test(raw);
+  }
+  function socialSafeHeroUrl(s,opts={}){
+    if(!staticHeroSafeForSocial(s))return'';
+    if(!opts.allowShared && isSharedGenericHero(s))return'';
+    return fallbackHeroUrl(s);
   }
   async function fetchResolvedHeroData(spot){
     if(!spot)return null;
@@ -92,13 +104,13 @@
       try{
         const x=JSON.parse(localStorage.getItem(key)||'null');
         if(x?.posts){
-          const value={version:'20.11.3',posts:mergeSeedPosts(x.posts)};
+          const value={version:'20.11.4',posts:mergeSeedPosts(x.posts)};
           if(key!==KEY)localStorage.setItem(KEY,JSON.stringify(value));
           return value;
         }
       }catch(_e){}
     }
-    return {version:'20.11.3',posts:mergeSeedPosts([])};
+    return {version:'20.11.4',posts:mergeSeedPosts([])};
   }
   function normalizePost(p){
     return {
@@ -142,6 +154,26 @@
   }
   function mediaUrl(s){
     return fallbackHeroUrl(s);
+  }
+  function captureImageUrl(spot,imageMode,opts={}){
+    if(!spot)return'';
+    return imageMode==='audit'?mediaUrl(spot):socialSafeHeroUrl(spot,{allowShared:opts.allowShared===true});
+  }
+  function kindLabel(kind){
+    return ({stay:'泊まり・ホテル',food:'グルメ・カフェ',water:'水辺・アクティブ',play:'遊び・体験',culture:'ミュージアム',experience:'ものづくり',nature:'自然・公園',shopping:'ショッピング',relax:'温泉・リラックス',other:'おでかけスポット'})[kind]||'おでかけスポット';
+  }
+  function spotCardFacts(spot){
+    if(!spot)return[];
+    const facts=[];
+    const area=spot.city||spot.prefecture||'';
+    if(area)facts.push(area);
+    facts.push(kindLabel(broadKind(spot)));
+    const tags=(spot.ui_tags||[]).map(String).filter(Boolean).filter(t=>!/^[A-Z0-9_]+$/.test(t));
+    for(const tag of tags){
+      if(!facts.includes(tag))facts.push(tag);
+      if(facts.length>=4)break;
+    }
+    return facts.slice(0,4);
   }
   function ideaSpotScore(s,audience='family'){
     const e=s?.experience_seed||{};
@@ -333,10 +365,11 @@
     const audit=slide.spot?heroAuditLabel(slide.spot):'';
     return `<article class="slide-card"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>${esc(slide.label)}</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p>${media?`<div class="slide-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="lazy" data-hero-spot="${esc(slide.spot.spot_id)}"><small class="hero-credit" data-hero-credit hidden></small></div><div class="slide-media-meta"><span class="slide-media-label">${esc(audit)} · ${esc(slide.spot.name)}</span>${area?`<span class="slide-media-area">${esc(area)}</span>`:''}</div>`:''}</article>`;
   }
-  function coverSpotForSource(source){
+  function coverSpotForSource(source,imageMode='safe'){
     const ss=source.slides.filter(x=>x.kind==='spot'&&x.spot).map(x=>x.spot);
     if(!ss.length)return null;
-    return [...ss].sort((a,b)=>{
+    const pool=imageMode==='safe'?(ss.filter(s=>captureImageUrl(s,'safe',{allowShared:true}))||ss):ss;
+    return [...(pool.length?pool:ss)].sort((a,b)=>{
       const ai=(Number.isInteger(auditPhotoIndex(a))?18:0)+visualScore(a)+(staticHeroSafeForSocial(a)?4:0);
       const bi=(Number.isInteger(auditPhotoIndex(b))?18:0)+visualScore(b)+(staticHeroSafeForSocial(b)?4:0);
       return bi-ai;
@@ -349,9 +382,9 @@
   function captureSlideHtml(slide,idx,total,source,imageMode){
     const brand='Kibun Trip';
     if(slide.kind==='cover'){
-      const spot=coverSpotForSource(source),media=spot?mediaUrl(spot):'';
+      const spot=coverSpotForSource(source,imageMode),media=spot?captureImageUrl(spot,imageMode,{allowShared:true}):'';
       const preview=imageMode==='audit';
-      return `<section class="capture-item"><article class="ig-canvas ig-cover has-cover-image">${media?`<div class="ig-cover-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:''}<div class="ig-cover-shade"></div><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(coverTitleForSource(source,slide))}</h2><p>${esc(slide.body)}</p></div><div class="ig-footer"><strong>${brand}</strong><span>${spot?esc(spot.name):'次の休日の候補に'}</span></div></article></section>`;
+      return `<section class="capture-item"><article class="ig-canvas ig-cover ${media?'has-cover-image':''}">${media?`<div class="ig-cover-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:''}<div class="ig-cover-shade"></div><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(coverTitleForSource(source,slide))}</h2><p>${esc(slide.body)}</p>${!media&&imageMode==='safe'?'<div class="ig-safe-note">写真権利を気にせず使える、テキスト主役の表紙です。</div>':''}</div><div class="ig-footer"><strong>${brand}</strong><span>${spot?esc(spot.name):'次の休日の候補に'}</span></div></article></section>`;
     }
     if(slide.kind==='summary'){
       const lines=String(slide.body||'').split(/\n+/).filter(Boolean);
@@ -361,10 +394,12 @@
       const lines=String(slide.body||'').split(/\n+/).filter(Boolean);
       return `<section class="capture-item"><article class="ig-canvas ig-cta"><div class="ig-top"><span class="ig-chip">Kibunへ</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">今日の気分から探す</p><h2>${esc(slide.title)}</h2><div class="ig-bullets simple">${lines.map(line=>`<div class="ig-bullet">${esc(line)}</div>`).join('')}</div></div><div class="ig-brand-block"><strong>Kibun Trip</strong><span>東京・神奈川のおでかけヒント</span><small>kibuntrip.com</small></div></article></section>`;
     }
-    const media=slide.spot?mediaUrl(slide.spot):'';
+    const media=slide.spot?captureImageUrl(slide.spot,imageMode):'';
     const area=[slide.spot?.city,slide.spot?.prefecture].filter(Boolean)[0]||'';
     const preview=imageMode==='audit';
-    return `<section class="capture-item"><article class="ig-canvas ig-spot"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(slide.spot?.category_primary||'SPOT')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:''}<div class="ig-footer"><strong>${brand}</strong><span>${esc(source.title||'')}</span></div></article></section>`;
+    const facts=spotCardFacts(slide.spot);
+    const mediaBlock=media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:`<div class="ig-media ig-media-placeholder"><div class="ig-placeholder-mark">Kibun Pick</div><div class="ig-placeholder-copy"><strong>${esc(slide.spot?.name||slide.title)}</strong><span>写真なしでも保存しやすいテキストカード</span></div><div class="ig-facts">${facts.map(f=>`<span>${esc(f)}</span>`).join('')}</div></div>`;
+    return `<section class="capture-item"><article class="ig-canvas ig-spot ${media?'has-media':'no-media'}"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(slide.spot?.category_primary||'SPOT')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${mediaBlock}<div class="ig-footer"><strong>${brand}</strong><span>${esc(source.title||'')}</span></div></article></section>`;
   }
   function captureSourceById(id){
     const post=state.posts.find(x=>x.id===id);
@@ -390,7 +425,7 @@
     const captionBlock=source.caption?`<section class="capture-caption" id="captureCaption"><div class="capture-caption-head"><h2>Instagram Caption</h2><button class="secondary-btn" type="button" id="copyCaptureCaption">キャプションをコピー</button></div><pre>${esc(source.caption)}</pre></section>`:'';
     document.body.classList.add('capture-mode');
     document.body.classList.toggle('capture-preview-mode',imageMode==='audit');
-    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、AI・自前・許諾済みなど再利用しやすい保存Heroを表示します。1枚目も代表スポットのHero画像を使います。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
+    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、権利的に扱いやすい保存Heroだけを使います。共通の生成画像しかないスポットは、写真なしでも成立するカードに切り替えます。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
     document.getElementById('toggleCaptureHelp')?.addEventListener('click',()=>{
       document.body.classList.toggle('capture-clean');
       const btn=document.getElementById('toggleCaptureHelp');
