@@ -1,6 +1,6 @@
 (function(global){
   const KEY='kibun-sns-image-audit-v20116';
-  const VERSION='20.11.9';
+  const VERSION='20.11.10';
   const COMMONS_API='https://commons.wikimedia.org/w/api.php';
   const WIKIDATA_API='https://www.wikidata.org/w/api.php';
   const QUERY_HINTS={
@@ -164,7 +164,7 @@
     const category=entity?.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
     if(category){
       const rows=await commonsCategoryCandidates(category,12);
-      const safe=relevantSafeCandidate(spot,rows,50);
+      const safe=relevantSafeCandidate(spot,rows,90);
       if(safe)return {...safe,discovery_source:'wikidata_commons_category',wikidata_id:hit.id,commons_category:category};
     }
     return null;
@@ -177,7 +177,7 @@
       try{const wd=await wikidataLeadImage(spot);if(wd)return wd;}catch(_e){}
       const queries=[String(spot.name||'').trim(),...(QUERY_HINTS[spot.name]||[]),defaultQuery(spot)].filter(Boolean);
       for(const q of [...new Set(queries)]){
-        try{const rows=await searchCommons(spot,q);const safe=relevantSafeCandidate(spot,rows,62);if(safe)return {...safe,discovery_source:'commons_search'};}catch(_e){}
+        try{const rows=await searchCommons(spot,q);const safe=relevantSafeCandidate(spot,rows,90);if(safe)return {...safe,discovery_source:'commons_search'};}catch(_e){}
       }
       return null;
     })();
