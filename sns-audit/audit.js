@@ -430,13 +430,26 @@
     const t=String(source.title||slide.title||'').trim();
     return t.length<=32?t:String(slide.title||t).trim();
   }
+  function coverThemeImage(source){
+    const text=`${source?.title||''} ${source?.idea?.hook||''} ${source?.idea?.reason||''}`.toLowerCase();
+    if(/いちご|苺|strawberry/.test(text))return '../images/ai/strawberry-greenhouse.jpg';
+    if(/温泉|スパ|サウナ|onsen|spa/.test(text))return '../images/ai/onsen-garden.jpg';
+    if(/川|渓流|river/.test(text))return '../images/ai/kiyokawa-river.jpg';
+    if(/海|水辺|プール|水遊び|aquarium|beach|water/.test(text))return '../images/ai/cool-water.jpg';
+    if(/カフェ|グルメ|ランチ|アフタヌーン|cafe|food|restaurant/.test(text))return '../images/ai/cafe-interior.jpg';
+    if(/公園|自然|緑|庭園|森|nature|garden|park/.test(text))return '../images/ai/forest-path.jpg';
+    if(/雨|室内|ミュージアム|美術館|アート|科学|museum|indoor|art/.test(text))return '../images/ai/culture-interior.jpg';
+    if(/子ども|親子|キッズ|遊び|体験|family|kids|play/.test(text))return '../images/ai/kids-play-b.jpg';
+    return '../images/ai/culture-interior.jpg';
+  }
   function captureSlideHtml(slide,idx,total,source,imageMode){
     const brand='Kibun Trip';
     if(slide.kind==='cover'){
-      const spot=coverSpotForSource(source,imageMode),media=spot?captureImageUrl(spot,imageMode,{allowShared:true}):'';
-      const preview=imageMode==='audit',selected=captureImageIsSelected(spot,imageMode),credit=captureImageCredit(spot,imageMode);
-      const heroAttr=preview&&spot?` data-hero-spot="${esc(spot.spot_id)}"`:(imageMode==='safe'&&spot&&!selected?` data-auto-sns-spot="${esc(spot.spot_id)}"`:'');
-      return `<section class="capture-item"><article class="ig-canvas ig-cover ${media?'has-cover-image':''}">${media?`<div class="ig-cover-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager"${heroAttr}>${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}${selected?'<span class="sns-image-badge">SNS IMAGE</span>':''}${credit?`<small class="sns-image-credit">${esc(credit)}</small>`:(imageMode==='safe'?'<small class="sns-image-credit" data-auto-sns-credit hidden></small>':'<small class="hero-credit capture-credit" data-hero-credit hidden></small>')}</div>`:''}<div class="ig-cover-shade"></div><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(coverTitleForSource(source,slide))}</h2><p>${esc(slide.body)}</p>${!media&&imageMode==='safe'?'<div class="ig-safe-note">写真権利を気にせず使える、テキスト主役の表紙です。</div>':''}</div><div class="ig-footer"><strong>${brand}</strong><span>${spot?esc(spot.name):'次の休日の候補に'}</span></div></article></section>`;
+      const spot=coverSpotForSource(source,imageMode);
+      const media=imageMode==='safe'?coverThemeImage(source):(spot?captureImageUrl(spot,imageMode,{allowShared:true}):'');
+      const preview=imageMode==='audit',selected=imageMode==='audit'&&captureImageIsSelected(spot,imageMode),credit=imageMode==='audit'?captureImageCredit(spot,imageMode):'';
+      const heroAttr=preview&&spot?` data-hero-spot="${esc(spot.spot_id)}"`:'';
+      return `<section class="capture-item"><article class="ig-canvas ig-cover ${media?'has-cover-image':''}">${media?`<div class="ig-cover-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager"${heroAttr}>${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}${selected?'<span class="sns-image-badge">SNS IMAGE</span>':''}${credit?`<small class="sns-image-credit">${esc(credit)}</small>`:(preview?'<small class="hero-credit capture-credit" data-hero-credit hidden></small>':'')}</div>`:''}<div class="ig-cover-shade"></div><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(coverTitleForSource(source,slide))}</h2><p>${esc(slide.body)}</p></div><div class="ig-footer"><strong>${brand}</strong><span>${imageMode==='safe'?'次の休日の候補に':(spot?esc(spot.name):'次の休日の候補に')}</span></div></article></section>`;
     }
     if(slide.kind==='summary'){
       const lines=String(slide.body||'').split(/\n+/).filter(Boolean);
@@ -492,7 +505,7 @@
     const captionBlock=captureCaption?`<section class="capture-caption" id="captureCaption"><div class="capture-caption-head"><h2>Instagram Caption</h2><button class="secondary-btn" type="button" id="copyCaptureCaption">キャプションをコピー</button></div><pre>${esc(captureCaption)}</pre></section>`:'';
     document.body.classList.add('capture-mode');
     document.body.classList.toggle('capture-preview-mode',imageMode==='audit');
-    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、採用済み実写真を最優先し、未設定スポットもWikidata / Wikimedia Commonsから再利用可能な実写真を自動探索します。見つからない場合だけAI・写真なしカードに戻します。投稿前に写真が施設と一致しているか目視確認してください。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a><a href="./?workspace=images">実写真を探す →</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
+    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、1枚目をKibunの生成AIイメージ、2枚目以降をIMAGE / RIGHTSで採用済みの実写真にします。未承認の自動検索画像は投稿画面には出さず、画像未設定のスポットだけ写真なしカードにします。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a><a href="./?workspace=images">実写真を探す →</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
     document.getElementById('toggleCaptureHelp')?.addEventListener('click',()=>{
       document.body.classList.toggle('capture-clean');
       const btn=document.getElementById('toggleCaptureHelp');
@@ -500,7 +513,6 @@
     });
     document.getElementById('copyCaptureCaption')?.addEventListener('click',()=>copyText(captureCaption,'キャプションをコピーしました'));
     resolveHeroImages(document,{safeOnly:imageMode==='safe'});
-    if(imageMode==='safe')resolveAutoSnsImages(document);
     return true;
   }
   function openIdea(id){

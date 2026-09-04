@@ -1,6 +1,6 @@
 (function(global){
   const KEY='kibun-sns-image-audit-v20116';
-  const VERSION='20.11.8';
+  const VERSION='20.11.9';
   const COMMONS_API='https://commons.wikimedia.org/w/api.php';
   const WIKIDATA_API='https://www.wikidata.org/w/api.php';
   const QUERY_HINTS={
@@ -11,6 +11,7 @@
     'レゴランド・ディスカバリー・センター東京':['Legoland Discovery Center Tokyo'],
     'PLAY! PARK ERIC CARLE':['PLAY PARK ERIC CARLE','PLAY! PARK ERIC CARLE Tokyo']
   };
+  const seedState=global.KIBUN_SNS_IMAGE_AUDIT_SEED||{images:{}};
   const spots=(global.ODEKAKE_SEED?.spots||[]);
   const spotMap=new Map(spots.map(s=>[s.spot_id,s]));
   const $=id=>document.getElementById(id);
@@ -22,12 +23,15 @@
   };
   const clone=x=>JSON.parse(JSON.stringify(x));
 
+  function mergeSeedImages(localImages){
+    return {...clone(seedState.images||{}),...(localImages&&typeof localImages==='object'?localImages:{})};
+  }
   function load(){
     try{
       const x=JSON.parse(localStorage.getItem(KEY)||'null');
-      if(x&&x.images&&typeof x.images==='object')return {version:VERSION,images:x.images};
+      if(x&&x.images&&typeof x.images==='object')return {version:VERSION,images:mergeSeedImages(x.images)};
     }catch(_e){}
-    return {version:VERSION,images:{}};
+    return {version:VERSION,images:mergeSeedImages({})};
   }
   let state=load();
   const candidateCache=new Map();
@@ -317,10 +321,10 @@
 
   function exportData(){return {version:VERSION,exported_at:new Date().toISOString(),images:state.images};}
   function download(){
-    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.8.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.9.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
   }
   async function importFile(file){
-    const obj=JSON.parse(await file.text());if(!obj?.images||typeof obj.images!=='object')throw new Error('invalid');state={version:VERSION,images:obj.images};persist();render();flash('SNS画像設定JSONを読み込みました');
+    const obj=JSON.parse(await file.text());if(!obj?.images||typeof obj.images!=='object')throw new Error('invalid');state={version:VERSION,images:mergeSeedImages(obj.images)};persist();render();flash('SNS画像設定JSONを読み込みました');
   }
 
   function init(){
