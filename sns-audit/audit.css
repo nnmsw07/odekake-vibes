@@ -40,3 +40,23 @@ footer{border-top:1px solid var(--line);padding:22px max(16px,calc((100vw - var(
   .ig-placeholder-copy strong{font-size:24px}
   .ig-media-placeholder{padding:18px}
 }
+
+/* v20.11.5 — less text, more editorial rhythm on no-photo slides */
+.ig-editorial-visual{position:relative;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;align-content:stretch;padding:18px 20px;border:1px solid #e6ddd0;background:linear-gradient(145deg,#f1ece3 0%,#fffdf9 72%)}
+.ig-visual-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;position:relative;z-index:2}
+.ig-visual-kicker{font-size:8px;font-weight:900;letter-spacing:.13em;color:var(--green-deep)}
+.ig-visual-index{font-family:Georgia,"Yu Mincho",serif;font-size:58px;line-height:.85;letter-spacing:-.07em;color:rgba(64,81,61,.23)}
+.ig-visual-lines{display:grid;gap:12px;align-content:center;width:74%;margin:0 auto}
+.ig-visual-lines i{display:block;height:1px;background:rgba(64,81,61,.18);transform:rotate(-7deg)}
+.ig-visual-lines i:nth-child(2){width:82%;margin-left:18%;transform:rotate(5deg)}
+.ig-visual-lines i:nth-child(3){width:62%;transform:rotate(-3deg)}
+.ig-editorial-visual::before,.ig-editorial-visual::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.ig-editorial-visual::before{width:180px;height:180px;right:-68px;top:48px;background:rgba(232,95,67,.07)}
+.ig-editorial-visual::after{width:116px;height:116px;left:-42px;bottom:-32px;background:rgba(100,119,94,.08)}
+.ig-editorial-visual .ig-facts{position:relative;z-index:2;margin-top:0}
+.ig-editorial-visual .ig-facts span{background:rgba(255,255,255,.82)}
+.ig-spot.no-media .ig-copy{gap:7px}
+.ig-spot.no-media .ig-copy h2{font-size:clamp(28px,4vw,38px)}
+.ig-spot.no-media .ig-copy p{font-size:12.5px;line-height:1.75;max-width:92%}
+.ig-spot.no-media .ig-footer span{font-size:9px}
+@media(max-width:720px){.ig-visual-index{font-size:52px}.ig-editorial-visual{padding:16px 17px}.ig-spot.no-media .ig-copy h2{font-size:29px}}

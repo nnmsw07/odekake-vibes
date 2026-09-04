@@ -1,0 +1,15 @@
+const fs=require('fs');
+const assert=require('assert');
+const read=p=>fs.readFileSync(p,'utf8');
+const js=read('sns-audit/audit.js');
+const css=read('sns-audit/audit.css');
+const html=read('sns-audit/index.html');
+assert.ok(js.includes('function categoryDisplay'),'category display helper missing');
+assert.ok(js.includes('ig-editorial-visual'),'editorial visual fallback missing');
+assert.ok(js.includes('ig-visual-index'),'large visual index missing');
+assert.ok(!js.includes('写真なしでも保存しやすいテキストカード'),'duplicate placeholder copy still present');
+assert.ok(js.includes('保存してあとで見返す'),'short footer missing');
+assert.ok(css.includes('.ig-editorial-visual'),'editorial visual CSS missing');
+assert.ok(css.includes('.ig-visual-lines'),'visual line motif missing');
+assert.ok(html.includes('audit.js?v=20115'),'cache bust not updated');
+console.log('v20.11.5 SNS less-text cards: PASS');

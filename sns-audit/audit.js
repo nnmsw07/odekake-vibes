@@ -104,13 +104,13 @@
       try{
         const x=JSON.parse(localStorage.getItem(key)||'null');
         if(x?.posts){
-          const value={version:'20.11.4',posts:mergeSeedPosts(x.posts)};
+          const value={version:'20.11.5',posts:mergeSeedPosts(x.posts)};
           if(key!==KEY)localStorage.setItem(KEY,JSON.stringify(value));
           return value;
         }
       }catch(_e){}
     }
-    return {version:'20.11.4',posts:mergeSeedPosts([])};
+    return {version:'20.11.5',posts:mergeSeedPosts([])};
   }
   function normalizePost(p){
     return {
@@ -161,6 +161,16 @@
   }
   function kindLabel(kind){
     return ({stay:'泊まり・ホテル',food:'グルメ・カフェ',water:'水辺・アクティブ',play:'遊び・体験',culture:'ミュージアム',experience:'ものづくり',nature:'自然・公園',shopping:'ショッピング',relax:'温泉・リラックス',other:'おでかけスポット'})[kind]||'おでかけスポット';
+  }
+  function categoryDisplay(spot){
+    const raw=String(spot?.category_primary||'').toLowerCase();
+    const exact={
+      science_museum:'科学ミュージアム',digital_art_museum:'デジタルアート',art_museum:'アート',museum:'ミュージアム',
+      aquarium:'水族館',zoo:'動物園',indoor_play:'室内あそび',playground:'あそび場',theme_park:'テーマパーク',
+      cafe:'カフェ',restaurant:'レストラン',hotel_stay:'ホテル',spa:'温浴・スパ',garden:'庭園',park:'公園',workshop:'体験'
+    };
+    if(exact[raw])return exact[raw];
+    return kindLabel(broadKind(spot));
   }
   function spotCardFacts(spot){
     if(!spot)return[];
@@ -397,9 +407,10 @@
     const media=slide.spot?captureImageUrl(slide.spot,imageMode):'';
     const area=[slide.spot?.city,slide.spot?.prefecture].filter(Boolean)[0]||'';
     const preview=imageMode==='audit';
-    const facts=spotCardFacts(slide.spot);
-    const mediaBlock=media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:`<div class="ig-media ig-media-placeholder"><div class="ig-placeholder-mark">Kibun Pick</div><div class="ig-placeholder-copy"><strong>${esc(slide.spot?.name||slide.title)}</strong><span>写真なしでも保存しやすいテキストカード</span></div><div class="ig-facts">${facts.map(f=>`<span>${esc(f)}</span>`).join('')}</div></div>`;
-    return `<section class="capture-item"><article class="ig-canvas ig-spot ${media?'has-media':'no-media'}"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(slide.spot?.category_primary||'SPOT')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${mediaBlock}<div class="ig-footer"><strong>${brand}</strong><span>${esc(source.title||'')}</span></div></article></section>`;
+    const facts=spotCardFacts(slide.spot).filter(f=>f!==area&&f!==categoryDisplay(slide.spot)).slice(0,2);
+    const spotNo=String(Math.max(1,idx)).padStart(2,'0');
+    const mediaBlock=media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:`<div class="ig-media ig-editorial-visual"><div class="ig-visual-top"><span class="ig-visual-kicker">KIBUN PICK</span><span class="ig-visual-index">${spotNo}</span></div><div class="ig-visual-lines" aria-hidden="true"><i></i><i></i><i></i></div><div class="ig-facts">${facts.map(f=>`<span>${esc(f)}</span>`).join('')}</div></div>`;
+    return `<section class="capture-item"><article class="ig-canvas ig-spot ${media?'has-media':'no-media'}"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(categoryDisplay(slide.spot))}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${mediaBlock}<div class="ig-footer"><strong>${brand}</strong><span>保存してあとで見返す</span></div></article></section>`;
   }
   function captureSourceById(id){
     const post=state.posts.find(x=>x.id===id);
