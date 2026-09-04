@@ -7,7 +7,7 @@ const css=fs.readFileSync('sns-audit/audit.css','utf8');
 const mm=fs.readFileSync('magazine/magazine-media.js','utf8');
 
 assert(html.includes('../config.js?v=2110'),'sns audit should load config.js');
-assert(html.includes('../magazine/magazine-media.js?v=2112'),'sns audit should load hero override map');
+assert(html.includes('../magazine/magazine-media.js?v=2112')||html.includes('../media.js?v=20113'),'sns audit should load a hero resolver');
 assert(js.includes('function resolveHeroImages'),'hero resolver missing');
 assert(js.includes('function renderCaptureMode'),'capture mode renderer missing');
 assert(js.includes('href="./?capture=${encodeURIComponent(i.id)}"'),'idea capture link missing');

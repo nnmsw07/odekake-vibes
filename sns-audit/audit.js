@@ -18,59 +18,63 @@
   const spotMap=new Map(spots.map(s=>[s.spot_id,s]));
   const articleMap=new Map((editorial.articles||[]).map(a=>[a.slug,a]));
   const cfg=window.KIBUN_CONFIG||{};
-  const heroEndpoint=cfg.placePhotoApiUrl||'';
-  const heroOverrides=window.KIBUN_HERO_SPOTS||{};
   const heroCache=new Map();
 
-  function spotAddress(s){return [s?.prefecture,s?.city,s?.address].filter(Boolean).join(' ')}
-  function heroMetaForSpot(s){
-    const o=heroOverrides[s?.spot_id]||{};
-    return {
-      name:o.query||o.name||s?.name||'',
-      address:o.useAddress===false?'':(o.address||spotAddress(s)||''),
-      placeId:o.placeId||'',
-      photoIndex:Number.isInteger(o.photoIndex)?o.photoIndex:null
-    };
-  }
   function fallbackHeroUrl(s){
     const u=s?.hero_image?.url||'';
     if(!u)return '../assets/editorial/special.webp';
     if(/^https?:\/\//.test(u)||u.startsWith('data:')||u.startsWith('../'))return u;
     return '../'+u.replace(/^\.\//,'').replace(/^\//,'');
   }
-  async function fetchResolvedHeroUrl(spot){
-    if(!spot)return '';
-    const key=spot.spot_id||spot.name||Math.random().toString(36);
+  function auditPhotoIndex(s){
+    const v=s?.media_strategy?.google_places?.photo_index_override;
+    return Number.isInteger(v)?v:null;
+  }
+  function heroAuditLabel(s){
+    const idx=auditPhotoIndex(s);
+    return Number.isInteger(idx)?`監査Hero #${idx}`:'自動Hero';
+  }
+  function staticHeroSafeForSocial(s){
+    if(!s)return false;
+    if(s?.hero_image?.type==='ai')return true;
+    if(s?.media_strategy?.current_provider==='official_permission')return true;
+    return Boolean(s?.hero_image?.license);
+  }
+  async function fetchResolvedHeroData(spot){
+    if(!spot)return null;
+    const idx=auditPhotoIndex(spot);
+    const key=`${spot.spot_id||spot.name}:${idx??'auto'}`;
     if(heroCache.has(key))return heroCache.get(key);
     const task=(async()=>{
-      if(!heroEndpoint||cfg.placePhotoEnabled===false)return fallbackHeroUrl(spot);
-      const meta=heroMetaForSpot(spot);
-      if(!meta.name&&!meta.placeId)return fallbackHeroUrl(spot);
       try{
-        const u=new URL(heroEndpoint,location.href);
-        if(meta.name)u.searchParams.set('name',meta.name);
-        if(meta.address)u.searchParams.set('address',meta.address);
-        if(meta.placeId)u.searchParams.set('placeId',meta.placeId);
-        if(Number.isInteger(meta.photoIndex))u.searchParams.set('photoIndex',String(meta.photoIndex));
-        const r=await fetch(u.toString(),{cache:'force-cache'});
-        if(!r.ok)return fallbackHeroUrl(spot);
-        const d=await r.json();
-        return d?.photoUri&&d.matchConfidence!=='low'?d.photoUri:fallbackHeroUrl(spot);
-      }catch(_e){
-        return fallbackHeroUrl(spot);
-      }
+        const data=await window.KibunMedia?.resolvePlacePhoto?.(spot);
+        if(data?.photoUri)return data;
+      }catch(_e){}
+      return {photoUri:fallbackHeroUrl(spot),source:'fallback',matchConfidence:'fallback'};
     })();
     heroCache.set(key,task);
     return task;
   }
-  async function resolveHeroImages(root=document){
+  function heroCreditText(data){
+    if(!data||data.source!=='google_places')return'';
+    const names=(data.authors||[]).map(a=>a.displayName).filter(Boolean);
+    return names.length?`Google Places photo · ${names.join(' / ')}`:'Google Places photo';
+  }
+  async function resolveHeroImages(root=document,opts={}){
+    const safeOnly=opts.safeOnly===true;
     const imgs=[...root.querySelectorAll('img[data-hero-spot]')];
     await Promise.all(imgs.map(async img=>{
+      const spot=spotById(img.dataset.heroSpot);if(!spot)return;
+      if(safeOnly){
+        img.src=fallbackHeroUrl(spot);img.dataset.heroResolved='safe';img.dataset.heroSource=staticHeroSafeForSocial(spot)?'sns-safe':'fallback';return;
+      }
       if(img.dataset.heroResolved==='1')return;
-      const spot=spotById(img.dataset.heroSpot);
-      if(!spot)return;
-      const resolved=await fetchResolvedHeroUrl(spot);
-      if(resolved){img.src=resolved;img.dataset.heroResolved='1';}
+      const data=await fetchResolvedHeroData(spot);
+      if(data?.photoUri){
+        img.src=data.photoUri;img.dataset.heroResolved='1';img.dataset.heroSource=data.source||'google_places';
+        const creditTarget=img.closest('[data-hero-wrap]')?.querySelector('[data-hero-credit]');
+        if(creditTarget){const credit=heroCreditText(data);creditTarget.textContent=credit;creditTarget.hidden=!credit;}
+      }
     }));
   }
 
@@ -88,13 +92,13 @@
       try{
         const x=JSON.parse(localStorage.getItem(key)||'null');
         if(x?.posts){
-          const value={version:'20.11.2',posts:mergeSeedPosts(x.posts)};
+          const value={version:'20.11.3',posts:mergeSeedPosts(x.posts)};
           if(key!==KEY)localStorage.setItem(KEY,JSON.stringify(value));
           return value;
         }
       }catch(_e){}
     }
-    return {version:'20.11.2',posts:mergeSeedPosts([])};
+    return {version:'20.11.3',posts:mergeSeedPosts([])};
   }
   function normalizePost(p){
     return {
@@ -326,11 +330,29 @@
   function slideHtml(slide,idx){
     const media=slide.spot?mediaUrl(slide.spot):'';
     const area=slide.spot?`${slide.spot.city||slide.spot.prefecture||''}`:'';
-    return `<article class="slide-card"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>${esc(slide.label)}</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p>${media?`<div class="slide-media"><img src="${esc(media)}" alt="" loading="lazy" data-hero-spot="${esc(slide.spot.spot_id)}"></div><div class="slide-media-meta"><span class="slide-media-label">推奨画像 · ${esc(slide.spot.name)} Hero</span>${area?`<span class="slide-media-area">${esc(area)}</span>`:''}</div>`:''}</article>`;
+    const audit=slide.spot?heroAuditLabel(slide.spot):'';
+    return `<article class="slide-card"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>${esc(slide.label)}</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p>${media?`<div class="slide-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="lazy" data-hero-spot="${esc(slide.spot.spot_id)}"><small class="hero-credit" data-hero-credit hidden></small></div><div class="slide-media-meta"><span class="slide-media-label">${esc(audit)} · ${esc(slide.spot.name)}</span>${area?`<span class="slide-media-area">${esc(area)}</span>`:''}</div>`:''}</article>`;
   }
-  function captureSlideHtml(slide,idx,total,source){
+  function coverSpotForSource(source){
+    const ss=source.slides.filter(x=>x.kind==='spot'&&x.spot).map(x=>x.spot);
+    if(!ss.length)return null;
+    return [...ss].sort((a,b)=>{
+      const ai=(Number.isInteger(auditPhotoIndex(a))?18:0)+visualScore(a)+(staticHeroSafeForSocial(a)?4:0);
+      const bi=(Number.isInteger(auditPhotoIndex(b))?18:0)+visualScore(b)+(staticHeroSafeForSocial(b)?4:0);
+      return bi-ai;
+    })[0];
+  }
+  function coverTitleForSource(source,slide){
+    const t=String(source.title||slide.title||'').trim();
+    return t.length<=32?t:String(slide.title||t).trim();
+  }
+  function captureSlideHtml(slide,idx,total,source,imageMode){
     const brand='Kibun Trip';
-    if(slide.kind==='cover')return `<section class="capture-item"><article class="ig-canvas ig-cover"><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div><div class="ig-footer"><strong>${brand}</strong><span>次の休日の候補に</span></div></article></section>`;
+    if(slide.kind==='cover'){
+      const spot=coverSpotForSource(source),media=spot?mediaUrl(spot):'';
+      const preview=imageMode==='audit';
+      return `<section class="capture-item"><article class="ig-canvas ig-cover has-cover-image">${media?`<div class="ig-cover-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:''}<div class="ig-cover-shade"></div><div class="ig-top"><span class="ig-chip">保存版</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-cover-copy"><p class="ig-kicker">${esc(typeLabel(source.idea||{}))} · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(coverTitleForSource(source,slide))}</h2><p>${esc(slide.body)}</p></div><div class="ig-footer"><strong>${brand}</strong><span>${spot?esc(spot.name):'次の休日の候補に'}</span></div></article></section>`;
+    }
     if(slide.kind==='summary'){
       const lines=String(slide.body||'').split(/\n+/).filter(Boolean);
       return `<section class="capture-item"><article class="ig-canvas ig-summary"><div class="ig-top"><span class="ig-chip">使い分け</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><h2>${esc(slide.title)}</h2><p class="ig-sub">迷ったときの選び方を、ひと目で。</p><div class="ig-bullets">${lines.map(line=>`<div class="ig-bullet">${esc(line)}</div>`).join('')}</div></div><div class="ig-footer"><strong>${brand}</strong><span>保存してあとで見返す</span></div></article></section>`;
@@ -341,7 +363,8 @@
     }
     const media=slide.spot?mediaUrl(slide.spot):'';
     const area=[slide.spot?.city,slide.spot?.prefecture].filter(Boolean)[0]||'';
-    return `<section class="capture-item"><article class="ig-canvas ig-spot"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(slide.spot?.category_primary||'SPOT')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${media?`<div class="ig-media"><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}"></div>`:''}<div class="ig-footer"><strong>${brand}</strong><span>${esc(source.title||'')}</span></div></article></section>`;
+    const preview=imageMode==='audit';
+    return `<section class="capture-item"><article class="ig-canvas ig-spot"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(slide.spot?.category_primary||'SPOT')}</p><h2>${esc(slide.title)}</h2><p>${esc(slide.body)}</p></div>${media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager" data-hero-spot="${esc(slide.spot.spot_id)}">${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}<small class="hero-credit capture-credit" data-hero-credit hidden></small></div>`:''}<div class="ig-footer"><strong>${brand}</strong><span>${esc(source.title||'')}</span></div></article></section>`;
   }
   function captureSourceById(id){
     const post=state.posts.find(x=>x.id===id);
@@ -362,16 +385,19 @@
       document.body.classList.add('capture-mode');
       return true;
     }
+    const params=new URLSearchParams(location.search),imageMode=params.get('imageMode')==='audit'?'audit':'safe';
+    const modeUrl=mode=>`./?capture=${encodeURIComponent(id)}&imageMode=${mode}`;
     const captionBlock=source.caption?`<section class="capture-caption" id="captureCaption"><div class="capture-caption-head"><h2>Instagram Caption</h2><button class="secondary-btn" type="button" id="copyCaptureCaption">キャプションをコピー</button></div><pre>${esc(source.caption)}</pre></section>`:'';
     document.body.classList.add('capture-mode');
-    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>このページはスクショ用です。1枚ずつ下にスクロールしながら保存してください。画像は使える場合、Google PlacesのHero写真を優先表示します。</p><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span></div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source)).join('')}</section>${captionBlock}</main>`;
+    document.body.classList.toggle('capture-preview-mode',imageMode==='audit');
+    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、AI・自前・許諾済みなど再利用しやすい保存Heroを表示します。1枚目も代表スポットのHero画像を使います。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
     document.getElementById('toggleCaptureHelp')?.addEventListener('click',()=>{
       document.body.classList.toggle('capture-clean');
       const btn=document.getElementById('toggleCaptureHelp');
       if(btn)btn.textContent=document.body.classList.contains('capture-clean')?'説明を表示':'説明を隠す';
     });
     document.getElementById('copyCaptureCaption')?.addEventListener('click',()=>copyText(source.caption,'キャプションをコピーしました'));
-    resolveHeroImages(document);
+    resolveHeroImages(document,{safeOnly:imageMode==='safe'});
     return true;
   }
   function openIdea(id){
@@ -451,7 +477,7 @@
     });
   }
   function render(){renderSummary();const rows=visible();$('auditList').innerHTML=rows.length?rows.map(card).join(''):'<article class="post-card"><h2>該当する投稿はありません。</h2></article>';bind();}
-  function exportData(){return {version:'20.11.2',exported_at:new Date().toISOString(),posts:state.posts};}
+  function exportData(){return {version:'20.11.3',exported_at:new Date().toISOString(),posts:state.posts};}
   async function copyText(text,msg){try{await navigator.clipboard.writeText(text)}catch(_e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}flash(msg);}
   function flash(msg){const el=$('flash');if(!el)return;el.textContent=msg;clearTimeout(flash.t);flash.t=setTimeout(()=>el.textContent='',2400);}
   function switchWorkspace(name){
@@ -459,7 +485,7 @@
     document.querySelectorAll('[data-workspace]').forEach(b=>{const active=b.dataset.workspace===name;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));});
   }
 
-  const captureId=new URLSearchParams(location.search).get('capture');
+  const captureId=typeof URLSearchParams!=='undefined'?new URLSearchParams(location.search).get('capture'):null;
   if(captureId){renderCaptureMode(captureId);return;}
 
   document.querySelectorAll('[data-workspace]').forEach(b=>b.addEventListener('click',()=>switchWorkspace(b.dataset.workspace)));
@@ -468,9 +494,9 @@
   $('ideaDialog').addEventListener('click',e=>{if(e.target===$('ideaDialog'))$('ideaDialog').close();});
   $('addPost').addEventListener('click',()=>{state.posts.unshift(newPost());persist();$('statusFilter').value='all';render();flash('投稿を追加しました')});
   $('copyJson').addEventListener('click',()=>copyText(JSON.stringify(exportData(),null,2),'設定JSONをコピーしました'));
-  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.11.2.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
-  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.11.2',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
-  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.11.2',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
+  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.11.3.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
+  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.11.3',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
+  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.11.3',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
   $('textFilter').addEventListener('input',render);$('statusFilter').addEventListener('change',render);
   renderIdeaSummary();renderIdeas();render();
 })();
