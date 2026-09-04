@@ -1,6 +1,6 @@
 (function(){
-  const KEY='kibun-sns-audit-v20112-editors';
-  const LEGACY_KEYS=['kibun-sns-audit-v20111-editors','kibun-sns-audit-v20101','kibun-sns-audit-v2091'];
+  const KEY='kibun-sns-audit-v20114-editors';
+  const LEGACY_KEYS=['kibun-sns-audit-v20112-editors','kibun-sns-audit-v20111-editors','kibun-sns-audit-v20101','kibun-sns-audit-v2091'];
   const seed=window.KIBUN_SNS_AUDIT_SEED||{posts:[]};
   const spotSeed=window.ODEKAKE_SEED||{spots:[]};
   const spots=spotSeed.spots||[];
@@ -17,6 +17,19 @@
   const AREA_LABEL={yokohama:'横浜',tokyo:'東京',kanagawa:'神奈川','tokyo-kanagawa':'東京・神奈川',hakone:'箱根',other:'その他'};
   const spotMap=new Map(spots.map(s=>[s.spot_id,s]));
   const articleMap=new Map((editorial.articles||[]).map(a=>[a.slug,a]));
+  const ARTICLE_POSTERS={
+    'tokyo-rainy-family':{url:'../assets/sns/article-posters/tokyo-rainy-family.webp',title:'雨の日の東京。親子で楽しめる室内スポット3選'},
+    'oyako-rest-indoor':{url:'../assets/sns/article-posters/oyako-rest-indoor.webp',title:'親も休める遊び場へ。東京・横浜の室内スポット3選'},
+    'yokohama-family-cafe':{url:'../assets/sns/article-posters/yokohama-family-cafe.webp',title:'子どもとでも、ちゃんとくつろげる横浜カフェ3選'},
+    'yokohama-small-holiday':{url:'../assets/sns/article-posters/yokohama-small-holiday.webp',title:'2〜3時間だけ空いた日に。横浜の小さな休日3選'},
+    'art-and-cafe':{url:'../assets/sns/article-posters/art-and-cafe.webp',title:'アートのあとに、ひと休み。半日アイデア3選'},
+    'hakone-stay-story':{url:'../assets/sns/article-posters/hakone-stay-story.webp',title:'箱根、今日は帰らない。日帰りから1泊へつなぐ3選'},
+    'make-something':{url:'../assets/sns/article-posters/make-something.webp',title:'見るだけじゃない休日。ものづくり体験3選'},
+    'japanese-culture-experience':{url:'../assets/sns/article-posters/japanese-culture-experience.webp',title:'日本文化を、見るだけで終わらせない体験3選'},
+    'terrace-after-sunset':{url:'../assets/sns/article-posters/terrace-after-sunset.webp',title:'まだ帰りたくない日の、外ごはん3選'},
+    'night-starts-after-five':{url:'../assets/sns/article-posters/night-starts-after-five.webp',title:'日が落ちてから、出かける。17時から始める夜3選'}
+  };
+  const AI_DISCLOSURE='※投稿内の画像は生成AIによるイメージです。実際の施設・景観とは異なる場合があります。';
   const cfg=window.KIBUN_CONFIG||{};
   const heroCache=new Map();
   const autoSnsImageCache=new Map();
@@ -105,13 +118,13 @@
       try{
         const x=JSON.parse(localStorage.getItem(key)||'null');
         if(x?.posts){
-          const value={version:'20.11.12',posts:mergeSeedPosts(x.posts)};
+          const value={version:'20.11.14',posts:mergeSeedPosts(x.posts)};
           if(key!==KEY)localStorage.setItem(KEY,JSON.stringify(value));
           return value;
         }
       }catch(_e){}
     }
-    return {version:'20.11.12',posts:mergeSeedPosts([])};
+    return {version:'20.11.14',posts:mergeSeedPosts([])};
   }
   function normalizePost(p){
     return {
@@ -464,8 +477,29 @@
     if(i.destination?.type==='plan')return'この流れをそのまま使いたい人は、プロフィールのKibunでプランを見られます。';
     return'条件を変えて探したい人は、プロフィールのKibunからどうぞ。';
   }
+  function articlePosterForIdea(i){
+    if(i?.destination?.type!=='article')return null;
+    return ARTICLE_POSTERS[i.destination.slug]||null;
+  }
+  function kibunIntroSlide(){
+    return {kind:'kibun-intro',label:'ABOUT KIBUN',title:'今日は、どんな気分？',body:'Kibun Tripは、場所より先に「どう過ごしたい？」から行き先を探すおでかけサイト。'};
+  }
+  function articlePosterDraft(i,ss,poster){
+    const featured=ss.slice(0,3);
+    const slides=[
+      {kind:'article-poster',label:'EDITORIAL',title:poster.title,body:'3スポットを1枚で。',image:poster.url,slug:i.destination.slug},
+      kibunIntroSlide()
+    ];
+    const names=featured.map((x,idx)=>`${String(idx+1).padStart(2,'0')} ${x.name}`).join('\n');
+    const ig=`${poster.title}\n\n${i.reason}\n\n${names}\n\n${ctaText(i)}\n\n${AI_DISCLOSURE}\n\n${hashtagsFor(i).join(' ')}`;
+    const x=`${poster.title}\n\n${featured.map(x=>`・${truncate(x.name,20)}`).join('\n')}\n\n${ctaText(i)}\n${hashtagsFor(i).slice(0,3).join(' ')}`;
+    const timing=i.type==='seasonal'?'今週〜今月。週末前の木〜金曜が第一候補。':i.type==='save'?'木〜金曜。週末の行き先検討が始まる前に。':'平日夜〜木曜。次の休日を考え始めるタイミングに。';
+    return {slides,instagram:ig,x,timing,hashtags:hashtagsFor(i),usesGeneratedPoster:true};
+  }
   function draftForIdea(i){
     const ss=i.spotIds.map(spotById).filter(Boolean);
+    const poster=articlePosterForIdea(i);
+    if(poster)return articlePosterDraft(i,ss,poster);
     const slides=[{kind:'cover',label:'COVER',title:i.hook,body:'保存して、次の休日の候補に。'}];
     ss.forEach((s,idx)=>slides.push({kind:'spot',label:`SPOT ${String(idx+1).padStart(2,'0')}`,title:s.name,body:spotBlurb(s,i.audience),spot:s}));
     slides.push({kind:'summary',label:'HOW TO CHOOSE',title:'迷ったら、こんな使い分け。',body:useCaseLines(i,ss).join('\n')});
@@ -479,6 +513,12 @@
     return {slides,instagram:ig,x,timing,hashtags:hashtagsFor(i)};
   }
   function slideHtml(slide,idx){
+    if(slide.kind==='article-poster'){
+      return `<article class="slide-card slide-card-poster"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>AI EDITORIAL</span></div><h4>${esc(slide.title)}</h4><div class="slide-media editorial-poster-thumb"><img src="${esc(slide.image)}" alt="" loading="lazy"></div><small class="slide-ai-note">${esc(AI_DISCLOSURE)}</small></article>`;
+    }
+    if(slide.kind==='kibun-intro'){
+      return `<article class="slide-card slide-card-kibun"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>ABOUT KIBUN</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p><div class="mini-kibun-flow"><span>気分</span><i>×</i><span>同行者</span><i>×</i><span>時間</span><b>→ 3つに絞って提案</b></div></article>`;
+    }
     const media=slide.spot?mediaUrl(slide.spot):'';
     const area=slide.spot?`${slide.spot.city||slide.spot.prefecture||''}`:'';
     const audit=slide.spot?heroAuditLabel(slide.spot):'';
@@ -512,6 +552,12 @@
   }
   function captureSlideHtml(slide,idx,total,source,imageMode){
     const brand='Kibun Trip';
+    if(slide.kind==='article-poster'){
+      return `<section class="capture-item"><article class="ig-canvas ig-poster-slide"><img class="ig-poster-image" src="${esc(slide.image)}" alt="" loading="eager"><span class="ig-poster-count">${idx+1}/${total}</span><span class="ig-ai-badge">AIイメージ</span><small class="ig-ai-disclosure">※画像は生成AIによるイメージです。実際の施設・景観とは異なる場合があります。</small></article></section>`;
+    }
+    if(slide.kind==='kibun-intro'){
+      return `<section class="capture-item"><article class="ig-canvas ig-kibun-intro"><div class="ig-top"><span class="ig-chip">Kibun Trip</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-kibun-copy"><p class="ig-kibun-eyebrow">おでかけ先を、気分から。</p><h2>今日は、どんな気分？</h2><p>「どこへ行く？」の前に、同行者・気分・使える時間から、今の自分に合う候補を3つ。</p></div><div class="ig-kibun-flow"><div><small>01</small><strong>気分を選ぶ</strong><span>のんびり · 非日常 · 体験したい…</span></div><div><small>02</small><strong>同行者と時間</strong><span>子どもと · ふたりで · ひとりで</span></div><div><small>03</small><strong>3つに絞って提案</strong><span>比較しすぎず、今日の候補が決まる。</span></div></div><div class="ig-kibun-bottom"><span>プロフィールのリンクから</span><strong>kibuntrip.com →</strong></div></article></section>`;
+    }
     if(slide.kind==='cover'){
       const spot=coverSpotForSource(source,imageMode);
       const media=imageMode==='safe'?coverThemeImage(source):(spot?captureImageUrl(spot,imageMode,{allowShared:true}):'');
@@ -539,16 +585,21 @@
     const post=state.posts.find(x=>x.id===id);
     if(post){
       const idea=post.idea_id?ideas.find(x=>x.id===post.idea_id):null;
-      const carousel=Array.isArray(post.draft?.carousel)&&post.draft.carousel.length?post.draft.carousel:(idea?draftForIdea(idea).slides:[]);
-      return {kind:'post',id:post.id,title:post.title||idea?.title||'Instagram Draft',slides:carousel,caption:post.draft?.instagram||idea&&draftForIdea(idea).instagram||'',area:idea?.area||areaOfSpots((post.spot_ids||[]).map(spotById).filter(Boolean)),idea};
+      const refreshed=idea?draftForIdea(idea):null;
+      const forceEditorial=Boolean(idea&&articlePosterForIdea(idea));
+      const carousel=forceEditorial?refreshed.slides:(Array.isArray(post.draft?.carousel)&&post.draft.carousel.length?post.draft.carousel:(refreshed?.slides||[]));
+      const caption=forceEditorial?refreshed.instagram:(post.draft?.instagram||refreshed?.instagram||'');
+      return {kind:'post',id:post.id,title:forceEditorial?articlePosterForIdea(idea).title:(post.title||idea?.title||'Instagram Draft'),slides:carousel,caption,area:idea?.area||areaOfSpots((post.spot_ids||[]).map(spotById).filter(Boolean)),idea};
     }
     const idea=ideas.find(x=>x.id===id);
     if(!idea)return null;
     const d=draftForIdea(idea);
-    return {kind:'idea',id:idea.id,title:idea.title,slides:d.slides,caption:d.instagram,area:idea.area,idea};
+    return {kind:'idea',id:idea.id,title:articlePosterForIdea(idea)?.title||idea.title,slides:d.slides,caption:d.instagram,area:idea.area,idea};
   }
   function captionWithImageCredits(source,imageMode){
-    const base=String(source.caption||'').trim();
+    let base=String(source.caption||'').trim();
+    const hasGeneratedPoster=(source.slides||[]).some(x=>x.kind==='article-poster');
+    if(hasGeneratedPoster&&!base.includes('生成AIによるイメージ'))base=`${base}\n\n${AI_DISCLOSURE}`.trim();
     if(imageMode!=='safe'||!window.KibunSnsImages)return base;
     const credits=[];
     const seen=new Set();
@@ -568,11 +619,14 @@
     }
     const params=new URLSearchParams(location.search),imageMode=params.get('imageMode')==='audit'?'audit':'safe';
     const modeUrl=mode=>`./?capture=${encodeURIComponent(id)}&imageMode=${mode}`;
+    const editorialPoster=(source.slides||[]).some(x=>x.kind==='article-poster');
     const captureCaption=captionWithImageCredits(source,imageMode);
     const captionBlock=captureCaption?`<section class="capture-caption" id="captureCaption"><div class="capture-caption-head"><h2>Instagram Caption</h2><button class="secondary-btn" type="button" id="copyCaptureCaption">キャプションをコピー</button></div><pre>${esc(captureCaption)}</pre></section>`:'';
+    const helpText=editorialPoster?'記事投稿は2枚構成です。1枚目は3施設をまとめた生成AI編集ビジュアル、2枚目はKibun Tripの紹介ページ。1枚目には「AIイメージ」表記を入れ、キャプションにも生成AI画像である旨を自動追記します。':(imageMode==='safe'?'SNS投稿用は、1枚目をKibunの生成AIイメージにします。2枚目以降はIMAGE / RIGHTSで採用済みの実写真を最優先し、条件を満たさない場合はKibun編集ノートに切り替えます。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。SNSへの画像再利用権は別途確認してください。');
+    const modeSwitch=editorialPoster?'<div class="capture-mode-switch"><a class="active" href="./?capture='+encodeURIComponent(id)+'">SNS投稿用 · 2枚構成</a></div>':`<div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a><a href="./?workspace=images">実写真を探す →</a></div>`;
     document.body.classList.add('capture-mode');
-    document.body.classList.toggle('capture-preview-mode',imageMode==='audit');
-    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${imageMode==='safe'?'SNS投稿用は、1枚目をKibunの生成AIイメージにします。2枚目以降はIMAGE / RIGHTSで採用済みの実写真を最優先し、未設定のスポットだけWikimedia/Wikidataから施設一致度90以上かつ再利用可能な写真を自動補完します。条件を満たさない場合は、写真なしでも保存価値が出るKibun編集ノートに切り替えます。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。監査のphoto indexを反映しますが、SNSへの画像再利用権は別途確認してください。'}</p><div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a><a href="./?workspace=images">実写真を探す →</a></div><div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>'}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
+    document.body.classList.toggle('capture-preview-mode',!editorialPoster&&imageMode==='audit');
+    document.body.innerHTML=`<main class="capture-page"><header class="capture-header"><a class="capture-back" href="./">← SNS Audit</a><button class="secondary-btn" type="button" id="toggleCaptureHelp">説明を隠す</button></header><section class="capture-intro" id="captureHelp"><p class="eyebrow">SCREENSHOT MODE</p><h1>${esc(source.title)}</h1><p>${esc(helpText)}</p>${modeSwitch}<div class="capture-meta"><span>${source.slides.length} slides</span><span>${esc(source.kind==='post'?'投稿下書き':'企画プレビュー')}</span>${editorialPoster?'<span class="rights-safe">AI表記あり</span><span class="rights-safe">2枚目 Kibun紹介</span>':(imageMode==='audit'?'<span class="rights-warning">画像権利 要確認</span>':'<span class="rights-safe">SNS-safe優先</span>')}</div></section><section class="capture-stack">${source.slides.map((slide,idx)=>captureSlideHtml(slide,idx,source.slides.length,source,imageMode)).join('')}</section>${captionBlock}</main>`;
     document.getElementById('toggleCaptureHelp')?.addEventListener('click',()=>{
       document.body.classList.toggle('capture-clean');
       const btn=document.getElementById('toggleCaptureHelp');
@@ -587,7 +641,7 @@
     const i=ideas.find(x=>x.id===id);if(!i)return;
     const d=draftForIdea(i),ss=i.spotIds.map(spotById).filter(Boolean);
     $('ideaDetail').innerHTML=`<section class="detail-head"><div class="idea-kicker"><span class="idea-badge">${esc(typeLabel(i))}</span><span class="idea-badge source">${esc(sourceLabel(i))}${i.source==='generated'&&i.destination?.type==='article'?' · 記事導線あり':''}</span></div><h2 class="detail-title">${esc(i.title)}</h2><p class="detail-lead">${esc(i.reason)}</p><div class="detail-meta"><span>対象 · ${esc(audienceText(i))}</span><span>目的 · ${esc(i.objective)}</span><span>おすすめ · ${esc(d.timing)}</span><span>Priority · ${i.scores.priority}</span>${i.destination?.url?`<a href="${esc(i.destination.url)}" target="_blank" rel="noopener">遷移先を確認 →</a>`:''}</div><div class="detail-actions"><button class="primary-btn" type="button" data-dialog-add="${esc(i.id)}">この企画を運用に追加</button><button class="secondary-btn" type="button" data-copy-value="${esc(d.instagram)}">Instagram原稿をコピー</button><a class="secondary-btn" href="./?capture=${encodeURIComponent(i.id)}">スクショ用ページを開く</a><a class="secondary-btn" href="./?workspace=images&imageSpot=${encodeURIComponent(i.spotIds[0]||'')}">SNS実写真を探す</a></div></section>
-      <section class="draft-section"><div class="draft-section-head"><div><h3>Instagram Carousel</h3><p class="note">スポット数に応じて基本8枚前後。最後だけKibun導線。</p></div></div><div class="carousel-grid">${d.slides.map(slideHtml).join('')}</div></section>
+      <section class="draft-section"><div class="draft-section-head"><div><h3>Instagram Carousel</h3><p class="note">${d.usesGeneratedPoster?'記事投稿は2枚。1枚目＝3施設のAI編集ビジュアル、2枚目＝Kibun紹介。':'スポット数に応じて基本8枚前後。最後だけKibun導線。'}</p></div></div><div class="carousel-grid">${d.slides.map(slideHtml).join('')}</div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>Instagram Caption</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.instagram)}">コピー</button><pre>${esc(d.instagram)}</pre></div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>X Draft</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.x)}">コピー</button><pre>${esc(d.x)}</pre></div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>Hashtags</h3></div><div class="hashtags">${d.hashtags.map(x=>`<span>${esc(x)}</span>`).join('')}</div></section>
@@ -660,7 +714,7 @@
     });
   }
   function render(){renderSummary();const rows=visible();$('auditList').innerHTML=rows.length?rows.map(card).join(''):'<article class="post-card"><h2>該当する投稿はありません。</h2></article>';bind();}
-  function exportData(){return {version:'20.11.12',exported_at:new Date().toISOString(),posts:state.posts};}
+  function exportData(){return {version:'20.11.14',exported_at:new Date().toISOString(),posts:state.posts};}
   async function copyText(text,msg){try{await navigator.clipboard.writeText(text)}catch(_e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}flash(msg);}
   function flash(msg){const el=$('flash');if(!el)return;el.textContent=msg;clearTimeout(flash.t);flash.t=setTimeout(()=>el.textContent='',2400);}
   function switchWorkspace(name){
@@ -678,9 +732,9 @@
   $('ideaDialog').addEventListener('click',e=>{if(e.target===$('ideaDialog'))$('ideaDialog').close();});
   $('addPost').addEventListener('click',()=>{state.posts.unshift(newPost());persist();$('statusFilter').value='all';render();flash('投稿を追加しました')});
   $('copyJson').addEventListener('click',()=>copyText(JSON.stringify(exportData(),null,2),'設定JSONをコピーしました'));
-  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.11.12.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
-  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.11.12',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
-  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.11.12',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
+  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.11.14.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
+  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.11.14',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
+  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.11.14',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
   $('textFilter').addEventListener('input',render);$('statusFilter').addEventListener('change',render);
   renderIdeaSummary();renderIdeas();render();
   const requestedWorkspace=pageParams?.get('workspace');
