@@ -98,29 +98,22 @@ footer{border-top:1px solid var(--line);padding:22px max(16px,calc((100vw - var(
 @media(max-width:720px){.image-toolbar{grid-template-columns:1fr}.image-current{grid-template-columns:110px minmax(0,1fr)}.image-current img{width:110px;height:92px}.image-search-row{grid-template-columns:1fr 1fr}.image-search-row input{grid-column:1/-1}.image-candidates{grid-template-columns:repeat(2,minmax(0,1fr))}.sns-image-credit{font-size:5px;max-width:84%}}
 .used-spot-image-link{display:inline-block;margin-top:3px;font-size:7px;font-weight:850;color:var(--green-deep);text-decoration:none}
 
-/* v20.11.12 — varied editorial note cards for photo-less spots */
-.ig-editorial-note{position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:16px;padding:22px;border:1px solid #e3dacd;overflow:hidden;background:#fbf8f2}
-.ig-note-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;position:relative;z-index:2}
-.ig-note-head span{font-size:8px;font-weight:900;letter-spacing:.14em;color:var(--green-deep)}
-.ig-note-head strong{font-family:Georgia,"Yu Mincho",serif;font-size:50px;line-height:.82;font-weight:500;color:#d0d3ca}
-.ig-note-copy{position:relative;z-index:2;margin:0!important;font-family:Georgia,"Yu Mincho",serif;font-size:12px!important;line-height:1.65!important;color:#4f4942!important}
-.ig-note-chips{display:flex;gap:7px;flex-wrap:wrap;position:relative;z-index:2;align-self:end}.ig-note-chips span{border:1px solid #ddd4c6;border-radius:999px;background:rgba(255,255,255,.78);padding:7px 10px;font-size:8px;font-weight:800;color:#5d574f}
-/* 01: quote — big editorial line, airy magazine cover */
-.note-quote{background:linear-gradient(155deg,#edf1e9 0%,#fbf8f2 55%,#f7eee7 100%)}
-.note-quote::before{content:"“";position:absolute;right:16px;top:44px;font:110px/1 Georgia,serif;color:rgba(54,83,55,.07)}
-.ig-note-quote{position:relative;z-index:2;align-self:center;max-width:92%}.ig-note-quote small{font-size:7px;font-weight:900;letter-spacing:.16em;color:#8b8175}.ig-note-quote p{margin:9px 0 0!important;font-family:Georgia,"Yu Mincho",serif!important;font-size:22px!important;line-height:1.45!important;color:#34322e!important}
-/* 02: metrics — compact score sheet */
-.note-metrics{background:linear-gradient(180deg,#fffdf9 0%,#f1f2ec 100%)}
-.note-metrics::after{content:"";position:absolute;inset:58px 18px auto;height:1px;background:#e7ded2}
-.ig-note-metrics{display:grid;gap:7px;align-content:center;position:relative;z-index:2}.ig-note-metric{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e7ded2;padding:7px 2px}.ig-note-metric span{font-size:10px;font-weight:800;color:#5c554c}.ig-note-metric strong{font-family:Georgia,"Yu Mincho",serif;font-size:19px;font-weight:500;color:var(--green-deep)}
-/* 03: best-for — numbered editorial recommendations */
-.note-best{background:linear-gradient(145deg,#f8efe8 0%,#fffaf4 68%)}
-.note-best::after{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(190,103,78,.12);border-radius:50%;right:-48px;bottom:-42px}
-.ig-note-best-list{display:grid;gap:9px;align-content:center;position:relative;z-index:2}.ig-note-best-list>div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #eaded4}.ig-note-best-list b{font-family:Georgia,"Yu Mincho",serif;font-size:19px;font-weight:500;color:#c28773}.ig-note-best-list span{font-size:9.5px;line-height:1.45;font-weight:800;color:#514b44}
-/* 04: moment — one strong scene/mood */
-.note-moment{background:#eef1ea}.note-moment::before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,255,255,.5);left:-92px;bottom:-125px}.note-moment::after{content:"";position:absolute;width:72px;height:72px;border-radius:50%;background:rgba(232,95,67,.08);right:24px;top:88px}
-.ig-note-moment{position:relative;z-index:2;align-self:center;padding:15px 0}.ig-note-moment small{display:block;font-size:7px;font-weight:900;letter-spacing:.16em;color:#7a756d}.ig-note-moment p{margin:10px 0 12px!important;max-width:90%;font-family:Georgia,"Yu Mincho",serif!important;font-size:20px!important;line-height:1.45!important;color:#354235!important}.ig-note-moment span{display:inline-block;border-bottom:1px solid #aeb8aa;padding-bottom:3px;font-size:8px;font-weight:800;color:#5a6758}
-/* 05: facts — three compact tiles */
-.note-facts{background:linear-gradient(135deg,#fffdf9,#f3eee5)}.note-facts::after{content:"";position:absolute;right:-22px;top:88px;width:120px;height:70px;background:rgba(190,103,78,.055);transform:rotate(-8deg)}
-.ig-note-fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:center;position:relative;z-index:2}.ig-note-fact-grid>div{min-height:68px;border:1px solid #e3dacd;border-radius:13px;background:rgba(255,255,255,.66);padding:10px;display:flex;flex-direction:column;justify-content:space-between}.ig-note-fact-grid>div:last-child:nth-child(odd){grid-column:1/-1;min-height:56px}.ig-note-fact-grid small{font:500 11px/1 Georgia,"Yu Mincho",serif;color:#b9b8af}.ig-note-fact-grid strong{font-size:9px;line-height:1.4;color:#514b44}
-@media(max-width:720px){.ig-editorial-note{padding:19px;gap:13px}.ig-note-head strong{font-size:44px}.ig-note-quote p{font-size:19px!important}.ig-note-moment p{font-size:18px!important}.ig-note-copy{font-size:11px!important}.ig-note-best-list>div{padding:6px 0}.ig-note-fact-grid>div{min-height:58px}}
+/* v20.11.13 — quieter editorial cards for photo-less spots */
+.ig-editorial-note{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px;border:0;border-radius:24px;min-height:0}
+.ig-note-kicker{position:relative;z-index:2;font-size:8px;font-weight:900;letter-spacing:.14em;color:#53614f}
+.ig-note-main{position:relative;z-index:2;margin:0!important;font-family:Georgia,"Yu Mincho",serif!important;font-size:27px!important;line-height:1.42!important;letter-spacing:-.035em;color:#2f342e!important;max-width:92%}
+.ig-note-meta{position:relative;z-index:2;display:flex;gap:14px;align-items:center;flex-wrap:wrap}.ig-note-meta span{font-size:9px;font-weight:850;color:#5f665b}.ig-note-meta span+span::before{content:"/";margin-right:14px;color:#b2b8ae;font-weight:500}
+.note-statement{background:linear-gradient(145deg,#e8ede5 0%,#f7f5ef 72%)}
+.note-statement::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-74px;bottom:-82px;border:1px solid rgba(64,81,61,.11)}
+.note-statement::before{content:"";position:absolute;left:26px;top:62px;width:34px;height:2px;background:#9aa893}
+.note-statement .ig-note-main{padding-top:26px}
+.note-reasons{background:#f7f1e8}
+.note-reasons::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,133,92,.06) 0 1px,transparent 1px 100%);background-size:48px 100%;pointer-events:none}
+.ig-note-reason-list{position:relative;z-index:2;display:grid;gap:16px;margin:auto 0}.ig-note-reason-list>div{display:grid;grid-template-columns:22px 1fr;gap:11px;align-items:start}.ig-note-reason-list i{width:22px;height:1px;background:#b58e72;margin-top:9px}.ig-note-reason-list span{font-family:Georgia,"Yu Mincho",serif;font-size:15px;line-height:1.6;color:#3e3933}
+.ig-note-tail{position:relative;z-index:2;margin:0!important;padding-top:14px;border-top:1px solid rgba(130,105,84,.17);font-size:9px!important;line-height:1.6!important;color:#756b61!important}
+.note-moment{background:#43513f;color:#fff}
+.note-moment::before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-78px;top:-92px;background:rgba(255,255,255,.055)}
+.note-moment .ig-note-kicker{color:#dfe5da}.note-moment .ig-note-main{color:#fff!important;text-shadow:none}.note-moment .ig-note-main::before{content:"“";display:block;font:44px/1 Georgia,serif;color:#aeb9aa;margin-bottom:4px}
+.ig-note-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:12px;align-items:end;padding-top:16px;border-top:1px solid rgba(255,255,255,.18)}.ig-note-bottom span{font-size:9px;font-weight:900;color:#fff}.ig-note-bottom small{font-size:7.5px;line-height:1.45;color:#cfd7cc;text-align:right;max-width:60%}
+.ig-spot.no-media .ig-copy{gap:6px}.ig-spot.no-media .ig-copy h2{font-size:clamp(29px,4vw,38px)}.ig-spot.no-media .ig-copy>p:last-child{font-size:11.5px;line-height:1.68;max-width:96%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}.ig-spot.no-media .ig-footer{font-size:9px}
+@media(max-width:720px){.ig-editorial-note{padding:23px}.ig-note-main{font-size:24px!important}.ig-note-reason-list{gap:13px}.ig-note-reason-list span{font-size:13.5px}.ig-note-bottom small{font-size:7px}}

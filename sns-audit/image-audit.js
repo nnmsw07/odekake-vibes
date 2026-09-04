@@ -1,6 +1,6 @@
 (function(global){
   const KEY='kibun-sns-image-audit-v20116';
-  const VERSION='20.11.12';
+  const VERSION='20.11.13';
   const COMMONS_API='https://commons.wikimedia.org/w/api.php';
   const WIKIDATA_API='https://www.wikidata.org/w/api.php';
   const QUERY_HINTS={

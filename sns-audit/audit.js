@@ -192,7 +192,7 @@
           const c=wrap?.querySelector('[data-auto-sns-credit]');if(c&&credit){c.textContent=credit;c.hidden=false;}
           wrap?.classList.add('auto-open-image');
         }else{
-          el.classList.remove('ig-editorial-visual','ig-editorial-note','note-quote','note-metrics','note-best','note-moment','note-facts');el.classList.add('ig-auto-image','ig-media');
+          el.classList.remove('ig-editorial-visual','ig-editorial-note','note-statement','note-reasons','note-moment');el.classList.add('ig-auto-image','ig-media');
           el.innerHTML=`<img src="${esc(rec.image_url)}" alt="" loading="eager"><small class="sns-image-credit">${esc(credit)}</small>`;
           el.closest('.ig-spot')?.classList.remove('no-media');el.closest('.ig-spot')?.classList.add('has-media');
         }
@@ -255,36 +255,44 @@
     return'その日の気分に合わせて選びたい、Kibun編集部の候補。';
   }
   function noteVariantForSlide(idx){
-    return ['quote','metrics','best','moment','facts'][Math.max(0,idx-1)%5];
+    return ['statement','reasons','moment'][Math.max(0,idx-1)%3];
   }
   function noteHeadline(spot){
     const e=spot?.experience_seed||{},v=spot?.vibes_seed||{};
     const rain=num(e.rain_resilience),young=Math.max(num(e.toddler_fit),num(e.baby_fit));
-    if(rain>=90&&young>=82)return'雨の日候補として、覚えておきたい。';
+    if(rain>=90&&young>=82)return'雨の日でも、ちゃんと楽しい。';
     if(num(v.extraordinary)>=90)return'いつもの休日を、少し特別に。';
     if(Math.max(num(e.hands_on),num(e.creative_sensory))>=88)return'見るだけじゃない、体験する休日。';
-    if(num(e.parent_rest)>=75)return'今日は、ここくらいがちょうどいい。';
+    if(num(e.parent_rest)>=75)return'親も急がず、ゆっくり過ごせる。';
     return'“今度行こう” に入れておきたい。';
   }
   function bestForItems(spot){
     const given=(spot?.editorial?.best_for||[]).map(String).filter(Boolean).slice(0,3);
     if(given.length>=2)return given;
-    const metrics=editorialMetrics(spot).map(m=>`${m.label} ${m.mark}`);
-    return metrics.slice(0,3);
+    return editorialMetrics(spot).map(m=>m.label).slice(0,3);
+  }
+  function reasonLine(label){
+    return ({
+      '雨の日':'天気を気にせず予定を立てやすい',
+      '小さな子':'小さな子と一緒でも過ごしやすい',
+      '体験・発見':'見るだけで終わらない楽しさがある',
+      'ゆったり':'親も急がず、ひと息つきやすい',
+      '非日常':'いつもの休日から少し気分を変えられる',
+      '歩きやすさ':'移動の負担を抑えて楽しみやすい'
+    })[label]||label;
   }
   function noteCardHtml(spot,idx,imageMode){
-    const variant=noteVariantForSlide(idx),spotNo=String(Math.max(1,idx)).padStart(2,'0');
-    const metrics=editorialMetrics(spot),note=editorialNote(spot),facts=spotCardFacts(spot).slice(0,3),best=bestForItems(spot);
+    const variant=noteVariantForSlide(idx),metrics=editorialMetrics(spot),note=editorialNote(spot);
+    const facts=spotCardFacts(spot).slice(0,2),best=bestForItems(spot);
     const autoAttr=imageMode==='safe'?` data-auto-sns-spot="${esc(spot.spot_id)}"`:'';
-    const head=`<div class="ig-note-head"><span>${variant==='metrics'?'MOOD CHECK':variant==='best'?'BEST FOR':variant==='moment'?'KIBUN MOMENT':variant==='facts'?'QUICK NOTE':'KIBUN NOTE'}</span><strong>${spotNo}</strong></div>`;
-    if(variant==='quote')return `<div class="ig-media ig-editorial-note note-quote"${autoAttr}>${head}<div class="ig-note-quote"><small>EDITOR'S PICK</small><p>${esc(noteHeadline(spot))}</p></div><div class="ig-note-chips">${facts.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`;
-    if(variant==='metrics')return `<div class="ig-media ig-editorial-note note-metrics"${autoAttr}>${head}<div class="ig-note-metrics">${metrics.map(m=>`<div class="ig-note-metric"><span>${esc(m.label)}</span><strong>${esc(m.mark)}</strong></div>`).join('')}</div><p class="ig-note-copy">${esc(note)}</p></div>`;
-    if(variant==='best')return `<div class="ig-media ig-editorial-note note-best"${autoAttr}>${head}<div class="ig-note-best-list">${best.map((x,i)=>`<div><b>0${i+1}</b><span>${esc(x)}</span></div>`).join('')}</div><p class="ig-note-copy">${esc(note)}</p></div>`;
-    if(variant==='moment'){
-      const moment=spot?.editorial?.moment||noteHeadline(spot),collection=spot?.editorial?.collection||categoryDisplay(spot);
-      return `<div class="ig-media ig-editorial-note note-moment"${autoAttr}>${head}<div class="ig-note-moment"><small>こんな日に</small><p>${esc(moment)}</p><span>${esc(collection)}</span></div><p class="ig-note-copy">${esc(note)}</p></div>`;
+    if(variant==='statement'){
+      return `<div class="ig-media ig-editorial-note note-statement"${autoAttr}><div class="ig-note-kicker">Kibunのひとこと</div><p class="ig-note-main">${esc(noteHeadline(spot))}</p><div class="ig-note-meta">${facts.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`;
     }
-    return `<div class="ig-media ig-editorial-note note-facts"${autoAttr}>${head}<div class="ig-note-fact-grid">${facts.map((x,i)=>`<div><small>0${i+1}</small><strong>${esc(x)}</strong></div>`).join('')}</div><p class="ig-note-copy">${esc(note)}</p></div>`;
+    if(variant==='reasons'){
+      return `<div class="ig-media ig-editorial-note note-reasons"${autoAttr}><div class="ig-note-kicker">ここがいい</div><div class="ig-note-reason-list">${metrics.map(m=>`<div><i></i><span>${esc(reasonLine(m.label))}</span></div>`).join('')}</div><p class="ig-note-tail">${esc(note)}</p></div>`;
+    }
+    const moment=spot?.editorial?.moment||noteHeadline(spot),collection=spot?.editorial?.collection||categoryDisplay(spot);
+    return `<div class="ig-media ig-editorial-note note-moment"${autoAttr}><div class="ig-note-kicker">こんな日に</div><p class="ig-note-main">${esc(moment)}</p><div class="ig-note-bottom"><span>${esc(collection)}</span><small>${best.slice(0,2).map(esc).join(' · ')}</small></div></div>`;
   }
   function ideaSpotScore(s,audience='family'){
     const e=s?.experience_seed||{};
@@ -524,7 +532,7 @@
     const preview=imageMode==='audit',selected=captureImageIsSelected(slide.spot,imageMode),credit=captureImageCredit(slide.spot,imageMode);
     const heroAttr=preview?` data-hero-spot="${esc(slide.spot.spot_id)}"`:(imageMode==='safe'&&!selected?` data-auto-sns-spot="${esc(slide.spot.spot_id)}"`:'');
     const mediaBlock=media?`<div class="ig-media" data-hero-wrap><img src="${esc(media)}" alt="" loading="eager"${heroAttr}>${preview?'<span class="preview-watermark">HERO PREVIEW · 権利確認</span>':''}${selected?'<span class="sns-image-badge">SNS IMAGE</span>':''}${credit?`<small class="sns-image-credit">${esc(credit)}</small>`:(imageMode==='safe'?'<small class="sns-image-credit" data-auto-sns-credit hidden></small>':'<small class="hero-credit capture-credit" data-hero-credit hidden></small>')}</div>`:noteCardHtml(slide.spot,idx,imageMode);
-    const bodyText=media?slide.body:truncate(slide.body,48);
+    const bodyText=media?slide.body:truncate(slide.body,38);
     return `<section class="capture-item"><article class="ig-canvas ig-spot ${media?'has-media':'no-media'}"><div class="ig-top"><span class="ig-chip">${esc(slide.label)}</span><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-copy"><p class="ig-kicker">${area?esc(area)+' · ':''}${esc(categoryDisplay(slide.spot))}</p><h2>${esc(slide.title)}</h2><p>${esc(bodyText)}</p></div>${mediaBlock}<div class="ig-footer"><strong>${brand}</strong><span>保存してあとで見返す</span></div></article></section>`;
   }
   function captureSourceById(id){
