@@ -1,7 +1,15 @@
 (function(global){
   const KEY='kibun-sns-image-audit-v20116';
-  const VERSION='20.11.6';
+  const VERSION='20.11.7';
   const COMMONS_API='https://commons.wikimedia.org/w/api.php';
+  const WIKIDATA_API='https://www.wikidata.org/w/api.php';
+  const QUERY_HINTS={
+    '日本科学未来館':['Miraikan','National Museum of Emerging Science and Innovation'],
+    'チームラボボーダレス':['teamLab Borderless Azabudai Hills','Mori Building Digital Art Museum teamLab Borderless'],
+    'スモールワールズ':['Small Worlds Tokyo'],
+    'マクセル アクアパーク品川':['Aqua Park Shinagawa'],
+    'レゴランド・ディスカバリー・センター東京':['Legoland Discovery Center Tokyo']
+  };
   const spots=(global.ODEKAKE_SEED?.spots||[]);
   const spotMap=new Map(spots.map(s=>[s.spot_id,s]));
   const $=id=>document.getElementById(id);
@@ -64,6 +72,72 @@
       rights_label:rights.label,
       rights_tone:rights.tone
     };
+  }
+
+
+
+  function normName(value){
+    return String(value||'').toLowerCase().normalize('NFKC').replace(/[\s・･\-–—_()（）\[\]【】「」『』,.，。/\\]/g,'');
+  }
+  async function commonsFileCandidate(fileTitle){
+    if(!fileTitle)return null;
+    const title=/^File:/i.test(fileTitle)?fileTitle:`File:${fileTitle}`;
+    const u=new URL(COMMONS_API);
+    const params={origin:'*',action:'query',format:'json',formatversion:'2',titles:title,prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1200',iiextmetadatalanguage:'ja',iiextmetadatafilter:'LicenseShortName|UsageTerms|LicenseUrl|Artist|Credit|ImageDescription'};
+    Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));
+    const r=await fetch(u.toString(),{cache:'no-store'});if(!r.ok)return null;
+    const data=await r.json();
+    return candidateFromPage(data?.query?.pages?.[0]||null);
+  }
+  async function commonsCategoryCandidates(category,limit=12){
+    const cat=String(category||'').replace(/^Category:/i,'').trim();if(!cat)return[];
+    const u=new URL(COMMONS_API);
+    const params={origin:'*',action:'query',format:'json',formatversion:'2',generator:'categorymembers',gcmtitle:`Category:${cat}`,gcmtype:'file',gcmlimit:String(limit),prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1200',iiextmetadatalanguage:'ja',iiextmetadatafilter:'LicenseShortName|UsageTerms|LicenseUrl|Artist|Credit|ImageDescription'};
+    Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));
+    const r=await fetch(u.toString(),{cache:'no-store'});if(!r.ok)return[];
+    const data=await r.json();
+    return (data?.query?.pages||[]).map(candidateFromPage).filter(Boolean);
+  }
+
+  async function wikidataLeadImage(spot){
+    const q=String(spot?.name||'').trim();if(!q)return null;
+    const u=new URL(WIKIDATA_API);
+    const params={origin:'*',action:'wbsearchentities',format:'json',language:'ja',uselang:'ja',type:'item',limit:'5',search:q};
+    Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));
+    const r=await fetch(u.toString(),{cache:'no-store'});if(!r.ok)return null;
+    const data=await r.json(),rows=data?.search||[];if(!rows.length)return null;
+    const needle=normName(spot.name);
+    const hit=rows.find(x=>normName(x.label)===needle)||rows.find(x=>normName(x.label).includes(needle)||needle.includes(normName(x.label)))||rows[0];
+    if(!hit?.id)return null;
+    const eurl=new URL(WIKIDATA_API);eurl.searchParams.set('origin','*');eurl.searchParams.set('action','wbgetentities');eurl.searchParams.set('format','json');eurl.searchParams.set('ids',hit.id);eurl.searchParams.set('props','claims');
+    const er=await fetch(eurl.toString(),{cache:'no-store'});if(!er.ok)return null;
+    const entity=(await er.json())?.entities?.[hit.id];
+    const file=entity?.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+    if(file){
+      const candidate=await commonsFileCandidate(file);
+      if(candidate?.rights_status==='safe')return {...candidate,discovery_source:'wikidata_p18',wikidata_id:hit.id};
+    }
+    const category=entity?.claims?.P373?.[0]?.mainsnak?.datavalue?.value;
+    if(category){
+      const rows=await commonsCategoryCandidates(category,12);
+      const safe=rows.find(x=>x.rights_status==='safe');
+      if(safe)return {...safe,discovery_source:'wikidata_commons_category',wikidata_id:hit.id,commons_category:category};
+    }
+    return null;
+  }
+  async function autoFindSafe(spot){
+    if(!spot)return null;
+    const selected=getSafe(spot.spot_id);if(selected)return {...selected,discovery_source:'selected'};
+    const key=`auto:${spot.spot_id}`;if(candidateCache.has(key))return candidateCache.get(key);
+    const task=(async()=>{
+      try{const wd=await wikidataLeadImage(spot);if(wd)return wd;}catch(_e){}
+      const queries=[String(spot.name||'').trim(),...(QUERY_HINTS[spot.name]||[]),defaultQuery(spot)].filter(Boolean);
+      for(const q of [...new Set(queries)]){
+        try{const rows=await searchCommons(spot,q);const safe=rows.find(x=>x.rights_status==='safe');if(safe)return {...safe,discovery_source:'commons_search'};}catch(_e){}
+      }
+      return null;
+    })();
+    candidateCache.set(key,task);return task;
   }
 
   function defaultQuery(spot){
@@ -201,7 +275,7 @@
 
   function exportData(){return {version:VERSION,exported_at:new Date().toISOString(),images:state.images};}
   function download(){
-    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.6.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.7.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
   }
   async function importFile(file){
     const obj=JSON.parse(await file.text());if(!obj?.images||typeof obj.images!=='object')throw new Error('invalid');state={version:VERSION,images:obj.images};persist();render();flash('SNS画像設定JSONを読み込みました');
@@ -217,7 +291,7 @@
   }
 
   global.KibunSnsImages={
-    key:KEY,version:VERSION,get,getSafe,all,attribution,captionCredit,licenseStatus,searchCommons,render,init,exportData
+    key:KEY,version:VERSION,get,getSafe,all,attribution,captionCredit,licenseStatus,searchCommons,autoFindSafe,render,init,exportData
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })(window);
