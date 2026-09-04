@@ -1,6 +1,6 @@
 (function(global){
   const KEY='kibun-sns-image-audit-v20116';
-  const VERSION='20.11.10';
+  const VERSION='20.11.12';
   const COMMONS_API='https://commons.wikimedia.org/w/api.php';
   const WIKIDATA_API='https://www.wikidata.org/w/api.php';
   const QUERY_HINTS={
@@ -321,7 +321,7 @@
 
   function exportData(){return {version:VERSION,exported_at:new Date().toISOString(),images:state.images};}
   function download(){
-    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.9.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-image-audit-v20.11.12.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('SNS画像設定JSONを保存しました');
   }
   async function importFile(file){
     const obj=JSON.parse(await file.text());if(!obj?.images||typeof obj.images!=='object')throw new Error('invalid');state={version:VERSION,images:mergeSeedImages(obj.images)};persist();render();flash('SNS画像設定JSONを読み込みました');

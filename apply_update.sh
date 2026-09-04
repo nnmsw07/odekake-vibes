@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Applying Kibun v20.11.10 (pre-tested)..."
-
-git add \
-  sns-audit/index.html \
+git add sns-audit/index.html \
+  sns-audit/audit.css \
   sns-audit/audit.js \
   sns-audit/image-audit.js \
-  CHANGELOG_v20_11_10.md \
-  HANDOFF_v20_11_10.md \
-  APPLY_v20_11_10.md \
-  test_v20_11_10_auto_safe_images.js \
+  CHANGELOG_v20_11_12.md \
+  HANDOFF_v20_11_12.md \
+  APPLY_v20_11_12.md \
+  test_v20_11_12_note_variety.js \
   apply_update.sh
 
 if git diff --cached --quiet; then
@@ -18,5 +16,5 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-git commit -m "Restore strict auto photos in SNS capture"
+git commit -m "Vary SNS note card layouts"
 git push origin main
