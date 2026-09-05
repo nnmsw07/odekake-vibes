@@ -66744,7 +66744,7 @@
         "source_url": "https://tokyo.hiltonjapan.co.jp/restaurants/beer-garden"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/terrace-evening-generic.webp",
         "type": "ai",
         "alt": "ヒルトン東京 2026年ビアガーデンの雰囲気をイメージした画像",
         "label": "イメージ",
@@ -66780,7 +66780,7 @@
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
-          "query": "ヒルトン東京 2026年ビアガーデン",
+          "query": "ヒルトン東京",
           "photo_index_override": 1,
           "force": false,
           "use_address": true
@@ -66903,7 +66903,7 @@
         "source_url": "https://www.tokyo.grand.hyatt.co.jp/restaurants/recommended/oak-door/beer-garden"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/terrace-evening-generic.webp",
         "type": "ai",
         "alt": "THE OAK DOOR／グランド ハイアット 東京の雰囲気をイメージした画像",
         "label": "イメージ",
@@ -67056,7 +67056,7 @@
         "source_url": "https://www.icyokohama-grand.com/offer_restaurant/oceanterrace_hamabeer/"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/terrace-evening-generic.webp",
         "type": "ai",
         "alt": "海の見えるビアガーデン「はまビア！」の雰囲気をイメージした画像",
         "label": "イメージ",
@@ -67669,7 +67669,7 @@
         "source_url": "https://anaintercontinental-tokyo.jp/offer/day-use/"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/culture-interior.jpg",
         "type": "ai",
         "alt": "ANAインターコンチネンタルホテル東京 デイユースの雰囲気をイメージした画像",
         "label": "イメージ",
@@ -67830,7 +67830,7 @@
         "source_url": "https://www.minatomirai-square.com/floor/detail/?cd=000069"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/terrace-evening-generic.webp",
         "type": "ai",
         "alt": "24/7 restaurantの雰囲気をイメージした画像",
         "label": "イメージ",
@@ -68281,7 +68281,7 @@
         "source_url": "https://minatomirai.alohatable.com/"
       },
       "hero_image": {
-        "url": "images/ai/cafe-interior.jpg",
+        "url": "images/ai/terrace-evening-generic.webp",
         "type": "ai",
         "alt": "アロハテーブル コレットマーレみなとみらいの雰囲気をイメージした画像",
         "label": "イメージ",

@@ -30,7 +30,8 @@ function context(extra={}){const ageVal=$('ageSelect').value,max=$('travelLimitS
 function vibeLabel(k){return VIBE_UI[k]?.[1]||k}function vibeEmoji(k){return vibeIcon(k,'inline-vibe-icon')}function findSpot(id){return seed.spots.find(s=>s.spot_id===id)}function buzzScore(s){return Number(s?.buzz?.score||0)}
 function buzzBadge(s){return buzzScore(s)>=90?`<span class="buzz-badge">KIBUN PICK</span>`:''}
 function imageBadge(i){return !i||i.type==='photo'?'':`<span class="image-badge">${i.label||'イメージ'}</span>`}function imageCredit(i,compact=false){if(!i)return'';if(i.type==='photo'){if(i.credit_required===false||!i.credit)return'';const label=[i.credit,i.license].filter(Boolean).join(' · '),cls=compact?'image-credit compact':'image-credit detail-credit';return i.source_url?`<a class="${cls}" href="${i.source_url}" target="_blank" rel="noopener">Photo: ${label}</a>`:`<span class="${cls}">Photo: ${label}</span>`;}return compact?'':`<p class="image-note">※ ${i.credit||'生成イメージ'}。実在施設の正確な外観・内観を示すものではありません。</p>`;}
-function imageBlock(s,variant='card'){const i=s.hero_image;if(!i?.url)return `<div class="${variant}-image image-fallback"><span>${vibeEmoji(Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1])[0]?.[0])}</span></div>`;return `<div class="${variant}-image image-shell" data-media-spot="${s.spot_id}"><img src="${i.url}" alt="${i.alt||s.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('image-fallback');this.remove()">${imageBadge(i)}${variant==='card'?imageCredit(i,true):''}</div>`;}
+function handleStaticHeroError(img){const node=img?.parentElement;if(!node)return;node.dataset.staticHeroError='1';node.classList.add('image-fallback');img.style.visibility='hidden';node.querySelector('.image-badge')?.remove();node.querySelector('.image-credit')?.remove();}
+function imageBlock(s,variant='card'){const i=s.hero_image;if(!i?.url)return `<div class="${variant}-image image-fallback"><span>${vibeEmoji(Object.entries(s.vibes_seed||{}).sort((a,b)=>b[1]-a[1])[0]?.[0])}</span></div>`;return `<div class="${variant}-image image-shell" data-media-spot="${s.spot_id}"><img src="${i.url}" alt="${i.alt||s.name}" loading="lazy" referrerpolicy="no-referrer" onerror="handleStaticHeroError(this)">${imageBadge(i)}${variant==='card'?imageCredit(i,true):''}</div>`;}
 function googleAuthorHtml(authors=[],compact=false){
   if(compact){const a=authors[0];return a?.displayName?`<span class="gmp-author-name">${a.displayName}</span>`:'';}
   if(!authors.length)return'';
@@ -47,13 +48,13 @@ function preloadHeroImage(url,timeoutMs=8000){
 async function enhanceOnePlacePhoto(node,root=document){
   if(node.dataset.placeEnhanced)return;const s=findSpot(node.dataset.mediaSpot);if(!s||!window.KibunMedia?.shouldUsePlacePhoto(s))return;
   node.dataset.placeEnhanced='loading';const p=await window.KibunMedia.resolvePlacePhoto(s);if(!p?.photoUri){node.dataset.placeEnhanced='fallback';return;}
-  const img=node.querySelector('img');if(!img){node.dataset.placeEnhanced='fallback';return;}
+  let img=node.querySelector('img');if(!img){img=document.createElement('img');img.loading='lazy';img.referrerPolicy='no-referrer';img.alt=s.name;node.prepend(img);}
   const fallbackSrc=img.getAttribute('src')||img.src||'',fallbackAlt=img.alt||s.name,fallbackOnError=img.onerror;
   if(!(await preloadHeroImage(p.photoUri))){node.dataset.placeEnhanced='fallback';return;}
   let restoring=false;
   img.onerror=()=>{if(restoring)return;restoring=true;node.classList.remove('google-places-photo');node.querySelector('.gmp-attribution.compact')?.remove();if(root===dialog)root.querySelector('.dialog-hero .gmp-attribution.detail')?.remove();node.dataset.placeEnhanced='fallback';img.alt=fallbackAlt;img.onerror=fallbackOnError||null;if(fallbackSrc)img.src=fallbackSrc;else fallbackOnError?.call(img);};
-  img.src=p.photoUri;img.alt=`${s.name}の写真`;img.referrerPolicy='no-referrer';
-  node.classList.add('google-places-photo');node.querySelector('.image-badge')?.remove();node.querySelector('.image-credit')?.remove();node.querySelector('.gmp-attribution')?.remove();
+  img.style.visibility='';img.src=p.photoUri;img.alt=`${s.name}の写真`;img.referrerPolicy='no-referrer';
+  node.classList.remove('image-fallback');node.classList.add('google-places-photo');node.querySelector('.image-badge')?.remove();node.querySelector('.image-credit')?.remove();node.querySelector('.gmp-attribution')?.remove();
   node.insertAdjacentHTML('beforeend',googleAttributionHtml(p,true));
   if(root===dialog){const hero=root.querySelector('.dialog-hero');hero?.querySelector('.image-note,.detail-credit,.gmp-attribution.detail')?.remove();hero?.insertAdjacentHTML('beforeend',googleAttributionHtml(p,false));}
   node.dataset.placeEnhanced='1';

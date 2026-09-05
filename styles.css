@@ -154,3 +154,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .image-shell>.gmp-attribution.compact{font-size:10px!important;line-height:1.2!important;max-height:30px!important;min-height:0!important;max-width:calc(100% - 20px)!important;width:auto!important;padding:5px 8px!important;overflow:hidden!important;white-space:nowrap!important}
 .image-shell>.gmp-attribution.compact *{font-size:10px!important;line-height:1.2!important;max-height:20px!important;white-space:nowrap!important}
 .image-shell:not(.google-places-photo)>.gmp-attribution.compact{display:none!important}
+
+/* v20.11.18 hero rescue: a missing static fallback must never leave an oversized label behind. */
+.image-shell[data-static-hero-error="1"]>.image-badge,
+.image-shell.image-fallback>.image-badge{display:none!important}
+.image-shell[data-static-hero-error="1"]{background:linear-gradient(135deg,#dfe7d7,#eadfcf)}

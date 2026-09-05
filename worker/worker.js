@@ -93,11 +93,12 @@ export default {
       if(url.pathname.endsWith('/place-photo') && request.method==='GET'){
         const name=url.searchParams.get('name'),address=url.searchParams.get('address')||'',placeId=url.searchParams.get('placeId')||'';
         const rawIndex=url.searchParams.get('photoIndex'),photoIndex=rawIndex===null?null:Number(rawIndex);
+        const allowLowMatch=url.searchParams.get('allowLowMatch')==='1' && Number.isInteger(photoIndex);
         if(!name && !placeId) return json({error:'name or placeId required'},400,cors);
         const place=await getPlace(env,{name,address,placeId});
         if(!place) return json({photoUri:null,reason:'place_not_found'},200,cors);
         const confidence=placeId?'high':matchConfidence(name,place.displayName?.text);
-        if(confidence==='low') return json({photoUri:null,reason:'low_match',matchedPlaceName:place.displayName?.text||'',matchedAddress:place.formattedAddress||'',placeId:place.id||null,matchConfidence:confidence},200,cors);
+        if(confidence==='low' && !allowLowMatch) return json({photoUri:null,reason:'low_match',matchedPlaceName:place.displayName?.text||'',matchedAddress:place.formattedAddress||'',placeId:place.id||null,matchConfidence:confidence},200,cors);
         const photos=place.photos||[],picked=pickPhoto(photos,Number.isInteger(photoIndex)?photoIndex:null);
         if(!picked) return json({photoUri:null,reason:'no_photo',placeId:place.id||null,matchConfidence:confidence},200,cors);
         const selected=picked.photo;

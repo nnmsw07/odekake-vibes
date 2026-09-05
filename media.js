@@ -48,7 +48,7 @@
         if(po?.place_id||gp.place_id) u.searchParams.set('placeId',po?.place_id||gp.place_id);
         const seedIndex=Number.isInteger(gp.photo_index_override)?gp.photo_index_override:null;
         const chosen=localIndex??seedIndex;
-        if(Number.isInteger(chosen)) u.searchParams.set('photoIndex',String(chosen));
+        if(Number.isInteger(chosen)){u.searchParams.set('photoIndex',String(chosen));u.searchParams.set('allowLowMatch','1');}
         const r=await fetch(u.toString(),{cache:'no-store'});
         if(!r.ok) return null;
         const data=await r.json();
