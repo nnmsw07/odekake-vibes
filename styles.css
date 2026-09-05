@@ -148,3 +148,9 @@
 .instagram-search-actions{display:grid;gap:8px}.instagram-search-fallback{display:inline-flex;justify-content:flex-end;color:#755b66;font-size:9px;font-weight:800;text-decoration:underline;text-underline-offset:3px;padding:0 4px}.instagram-search-fallback:hover{color:var(--ink)}
 .hero-audit-dock .hero-audit-sns{border:0;border-radius:10px;background:#fff;color:var(--green-deep);border:1px solid var(--line);padding:8px 10px;font-size:9px;font-weight:850;white-space:nowrap;text-decoration:none}.hero-audit-mode .mobile-bottom-nav{display:none!important}
 @media(max-width:560px){.hero-audit-dock .hero-audit-sns{grid-column:1/-1;text-align:center}}
+
+/* v20.11.17: Places photo failure/Android text autosizing guard. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.image-shell>.gmp-attribution.compact{font-size:10px!important;line-height:1.2!important;max-height:30px!important;min-height:0!important;max-width:calc(100% - 20px)!important;width:auto!important;padding:5px 8px!important;overflow:hidden!important;white-space:nowrap!important}
+.image-shell>.gmp-attribution.compact *{font-size:10px!important;line-height:1.2!important;max-height:20px!important;white-space:nowrap!important}
+.image-shell:not(.google-places-photo)>.gmp-attribution.compact{display:none!important}

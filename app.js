@@ -38,13 +38,21 @@ function googleAuthorHtml(authors=[],compact=false){
 }
 function googleAttributionHtml(p,compact=false){
   const source=p.photoGoogleMapsUri||p.placeGoogleMapsUri||'#';
-  if(compact)return `<a class="gmp-attribution compact" href="${source}" target="_blank" rel="noopener" aria-label="Google Mapsで元の写真を見る">${googleAuthorHtml(p.authors||[],true)}<span class="gmp-brand" translate="no">Google Maps</span></a>`;
+  if(compact)return `<a class="gmp-attribution compact" style="position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:5px;max-width:calc(100% - 20px);max-height:30px;padding:5px 8px;border-radius:10px;background:rgba(255,255,255,.94);font:400 10px/1.2 Roboto,Arial,sans-serif;color:#1f1f1f;text-decoration:none;overflow:hidden;white-space:nowrap;z-index:6" href="${source}" target="_blank" rel="noopener" aria-label="Google Mapsで元の写真を見る">${googleAuthorHtml(p.authors||[],true)}<span class="gmp-brand" style="font:400 10px/1.2 Roboto,Arial,sans-serif;white-space:nowrap" translate="no">Google Maps</span></a>`;
   return `<div class="gmp-attribution detail">${googleAuthorHtml(p.authors||[],false)}<a class="gmp-source-link" href="${source}" target="_blank" rel="noopener"><span class="gmp-brand" translate="no">Google Maps</span> で元の写真を見る →</a></div>`;
+}
+function preloadHeroImage(url,timeoutMs=8000){
+  return new Promise(resolve=>{let settled=false;const finish=ok=>{if(settled)return;settled=true;clearTimeout(timer);resolve(ok);};const probe=new Image();const timer=setTimeout(()=>finish(false),timeoutMs);probe.referrerPolicy='no-referrer';probe.onload=()=>finish(true);probe.onerror=()=>finish(false);probe.src=url;});
 }
 async function enhanceOnePlacePhoto(node,root=document){
   if(node.dataset.placeEnhanced)return;const s=findSpot(node.dataset.mediaSpot);if(!s||!window.KibunMedia?.shouldUsePlacePhoto(s))return;
   node.dataset.placeEnhanced='loading';const p=await window.KibunMedia.resolvePlacePhoto(s);if(!p?.photoUri){node.dataset.placeEnhanced='fallback';return;}
-  const img=node.querySelector('img');if(img){img.src=p.photoUri;img.alt=`${s.name}の写真`;img.referrerPolicy='no-referrer';}
+  const img=node.querySelector('img');if(!img){node.dataset.placeEnhanced='fallback';return;}
+  const fallbackSrc=img.getAttribute('src')||img.src||'',fallbackAlt=img.alt||s.name,fallbackOnError=img.onerror;
+  if(!(await preloadHeroImage(p.photoUri))){node.dataset.placeEnhanced='fallback';return;}
+  let restoring=false;
+  img.onerror=()=>{if(restoring)return;restoring=true;node.classList.remove('google-places-photo');node.querySelector('.gmp-attribution.compact')?.remove();if(root===dialog)root.querySelector('.dialog-hero .gmp-attribution.detail')?.remove();node.dataset.placeEnhanced='fallback';img.alt=fallbackAlt;img.onerror=fallbackOnError||null;if(fallbackSrc)img.src=fallbackSrc;else fallbackOnError?.call(img);};
+  img.src=p.photoUri;img.alt=`${s.name}の写真`;img.referrerPolicy='no-referrer';
   node.classList.add('google-places-photo');node.querySelector('.image-badge')?.remove();node.querySelector('.image-credit')?.remove();node.querySelector('.gmp-attribution')?.remove();
   node.insertAdjacentHTML('beforeend',googleAttributionHtml(p,true));
   if(root===dialog){const hero=root.querySelector('.dialog-hero');hero?.querySelector('.image-note,.detail-credit,.gmp-attribution.detail')?.remove();hero?.insertAdjacentHTML('beforeend',googleAttributionHtml(p,false));}

@@ -39,7 +39,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-04",
+    "updated_at": "2026-09-05",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -50,7 +50,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-09-04: latest user Hero audit export applied across spots 212–446; 182 photo index choices recorded/applied and 14 manual Google Place matches pinned. Hero Audit supports up to 10 candidates."
+      "hero_selection": "2026-09-05: latest user Hero audit export applied across spots 212–458; 189 photo index choices recorded/applied and 16 manual Google Place matches pinned. Hero Audit supports up to 10 candidates."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -78,7 +78,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-04: Hero audit export applied. 182 photo_index_overrides and 14 place_overrides recorded; newly pinned Place IDs include spot_320/432/434/441, and new spots 432–446 now have audited photo choices.",
+    "hero_audit_note": "2026-09-05: Hero audit export applied. 189 photo_index_overrides and 16 place_overrides recorded; newest audited photo choices include spots 447/448/449/453/455/456/458, with Place IDs pinned for spot_448 and spot_449.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -66781,7 +66781,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ヒルトン東京 2026年ビアガーデン",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -66928,7 +66928,7 @@
         "municipality": "港区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJKf3d-3aLGGAR1zL6Rw3pDCQ"
       },
       "media_strategy": {
         "hero_priority": [
@@ -66937,12 +66937,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJKf3d-3aLGGAR1zL6Rw3pDCQ",
+          "status": "resolved_manual",
           "query": "THE OAK DOOR Grand Hyatt Tokyo",
-          "photo_index_override": null,
+          "photo_index_override": 5,
           "force": false,
-          "use_address": true
+          "use_address": false,
+          "matched_name": "ステーキハウス オーク ドア",
+          "matched_address": "〒106-0032 東京都港区六本木６丁目１０−３ グランド ハイアット 東京 6階"
         }
       },
       "ui_tags": [
@@ -67079,7 +67081,7 @@
         "municipality": "横浜市西区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJpf4-TltcGGARDViYb-z1wbc"
       },
       "media_strategy": {
         "hero_priority": [
@@ -67088,12 +67090,14 @@
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
-          "query": "ヨコハマ グランド インターコンチネンタル はまビア",
-          "photo_index_override": null,
+          "place_id": "ChIJpf4-TltcGGARDViYb-z1wbc",
+          "status": "resolved_manual",
+          "query": "ヨコハマ グランド インターコンチネンタル",
+          "photo_index_override": 8,
           "force": false,
-          "use_address": true
+          "use_address": true,
+          "matched_name": "ヨコハマ グランド インターコンチネンタル ホテル",
+          "matched_address": "〒220-8522 神奈川県横浜市西区みなとみらい１丁目１−１"
         }
       },
       "ui_tags": [
@@ -67702,7 +67706,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "ANAインターコンチネンタルホテル東京",
-          "photo_index_override": null,
+          "photo_index_override": 2,
           "force": false,
           "use_address": true
         }
@@ -68012,7 +68016,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "pignic cafe 横浜店",
-          "photo_index_override": null,
+          "photo_index_override": 8,
           "force": false,
           "use_address": true
         }
@@ -68164,7 +68168,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜みなとみらい 万葉倶楽部",
-          "photo_index_override": null,
+          "photo_index_override": 4,
           "force": false,
           "use_address": true
         }
@@ -68464,7 +68468,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "津久井浜観光農園",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
