@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ZIP="kibun-v20.11.20-beer-garden-hero.zip"
-unzip -oq "$ZIP" -d .
-git add seed.json data.js index.html images/ai/hilton-tokyo-beer-garden-2026.webp apply_update.sh
-git diff --cached --quiet || git commit -m "Fix beer garden hero images"
+
+git add sns-audit/audit.js sns-audit/audit.css sns-audit/index.html \
+  assets/sns/article-posters \
+  assets/sns/article-spot-images \
+  CHANGELOG_v20_11_22.md HANDOFF_v20_11_22.md APPLY_v20_11_22.md \
+  test_v20_11_22_sns_article_spot_guide.js apply_update.sh
+
+if git diff --cached --quiet; then
+  echo "No changes to commit."
+  exit 0
+fi
+
+git commit -m "Refresh SNS article carousels"
 git push origin HEAD:main
