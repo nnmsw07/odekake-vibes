@@ -155,3 +155,10 @@ footer{border-top:1px solid var(--line);padding:22px max(16px,calc((100vw - var(
 .ig-article-spot-card>img{width:100%;height:100%;object-fit:cover;display:block}.ig-article-spot-card>div{padding:9px 9px 10px;display:grid;align-content:start;gap:6px}.ig-article-spot-card span{font-size:6.5px;font-weight:800;color:#8a7352;letter-spacing:.05em}.ig-article-spot-card h3{font-family:Georgia,"Yu Mincho",serif;font-weight:600;font-size:13px;line-height:1.25;margin:0;color:#27231f}.ig-article-spot-card p{font-size:8px!important;line-height:1.55!important;color:#5f584f!important}
 .ig-article-spots-footer{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px;padding-top:8px;border-top:1px solid rgba(114,91,58,.18)}.ig-article-spots-footer>div:last-child{display:grid;gap:2px}.ig-article-spots-footer span{font-size:8px;color:#7f6641}.ig-article-spots-footer small{font-size:5.4px;line-height:1.35;color:#8b8279}
 @media(max-width:720px){.article-spots-mini{grid-template-columns:1fr}.article-spots-mini>div{grid-template-columns:92px 1fr;grid-template-rows:auto auto}.article-spots-mini img{grid-row:1/3}.ig-article-spots{padding:17px}.ig-article-spots-top h2{font-size:28px}.ig-article-spot-card h3{font-size:12px}.ig-article-spot-card p{font-size:7.5px!important}.ig-article-spots-grid{gap:6px}}
+
+
+/* v20.11.23 — show generated 4:5 poster exactly as authored */
+.capture-item-poster{align-items:flex-start}
+.ig-poster-link{display:block;width:min(100%,480px);line-height:0;text-decoration:none;background:transparent}
+.ig-poster-link:focus-visible{outline:3px solid rgba(64,81,61,.35);outline-offset:4px}
+.ig-poster-link .ig-poster-image{position:static;inset:auto;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;transform:none;transform-origin:initial;display:block;border:0;border-radius:0;box-shadow:none}
