@@ -1,0 +1,2754 @@
+{
+  "generated_at": "2026-09-05T07:39:27.038Z",
+  "source": "data.js",
+  "routes": [
+    {
+      "spot_id": "spot_001",
+      "slug": "yokohama-anpanman-museum",
+      "name": "横浜アンパンマンこどもミュージアム",
+      "url": "https://kibuntrip.com/spots/yokohama-anpanman-museum/"
+    },
+    {
+      "spot_id": "spot_002",
+      "slug": "yamaha-music-yokohama-minatomirai",
+      "name": "ヤマハミュージック 横浜みなとみらい",
+      "url": "https://kibuntrip.com/spots/yamaha-music-yokohama-minatomirai/"
+    },
+    {
+      "spot_id": "spot_003",
+      "slug": "yuttari-coco-kohoku",
+      "name": "港北天然温泉 ゆったりCOco",
+      "url": "https://kibuntrip.com/spots/yuttari-coco-kohoku/"
+    },
+    {
+      "spot_id": "spot_004",
+      "slug": "yokohama-strawberry-park",
+      "name": "横浜ストロベリーパーク",
+      "url": "https://kibuntrip.com/spots/yokohama-strawberry-park/"
+    },
+    {
+      "spot_id": "spot_005",
+      "slug": "nogeyama-kodomo-library-oyako",
+      "name": "のげやま子ども図書館おやこフロア",
+      "url": "https://kibuntrip.com/spots/nogeyama-kodomo-library-oyako/"
+    },
+    {
+      "spot_id": "spot_006",
+      "slug": "zoorasia",
+      "name": "よこはま動物園ズーラシア",
+      "url": "https://kibuntrip.com/spots/zoorasia/"
+    },
+    {
+      "spot_id": "spot_007",
+      "slug": "bornelund-kidokid-markis-minatomirai",
+      "name": "ボーネルンドあそびのせかい MARK IS みなとみらい店",
+      "url": "https://kibuntrip.com/spots/bornelund-kidokid-markis-minatomirai/"
+    },
+    {
+      "spot_id": "spot_008",
+      "slug": "hapipiland-lulala-kohoku",
+      "name": "ハピピランド ルララ港北店",
+      "url": "https://kibuntrip.com/spots/hapipiland-lulala-kohoku/"
+    },
+    {
+      "spot_id": "spot_009",
+      "slug": "nakagawa-onsen-bunanoyu",
+      "name": "中川温泉ぶなの湯",
+      "url": "https://kibuntrip.com/spots/nakagawa-onsen-bunanoyu/"
+    },
+    {
+      "spot_id": "spot_010",
+      "slug": "kiyokawa-riverland",
+      "name": "清川リバーランド",
+      "url": "https://kibuntrip.com/spots/kiyokawa-riverland/"
+    },
+    {
+      "spot_id": "spot_011",
+      "slug": "wonderia-yokohama",
+      "name": "ワンダリア横浜",
+      "url": "https://kibuntrip.com/spots/wonderia-yokohama/"
+    },
+    {
+      "spot_id": "spot_012",
+      "slug": "unko-museum-yokohama-bay",
+      "name": "うんこミュージアム YOKOHAMA BAY",
+      "url": "https://kibuntrip.com/spots/unko-museum-yokohama-bay/"
+    },
+    {
+      "spot_id": "spot_013",
+      "slug": "chikyu-no-niwa-kohoku",
+      "name": "ちきゅうのにわ 港北店",
+      "url": "https://kibuntrip.com/spots/chikyu-no-niwa-kohoku/"
+    },
+    {
+      "spot_id": "spot_014",
+      "slug": "yumesaki-gallery",
+      "name": "YUMESAKI GALLERY",
+      "url": "https://kibuntrip.com/spots/yumesaki-gallery/"
+    },
+    {
+      "spot_id": "spot_015",
+      "slug": "keikyu-museum",
+      "name": "京急ミュージアム",
+      "url": "https://kibuntrip.com/spots/keikyu-museum/"
+    },
+    {
+      "spot_id": "spot_016",
+      "slug": "mitsubishi-minatomirai-museum",
+      "name": "三菱みなとみらい技術館",
+      "url": "https://kibuntrip.com/spots/mitsubishi-minatomirai-museum/"
+    },
+    {
+      "spot_id": "spot_017",
+      "slug": "earth-plaza",
+      "name": "あーすぷらざ",
+      "url": "https://kibuntrip.com/spots/earth-plaza/"
+    },
+    {
+      "spot_id": "spot_018",
+      "slug": "romancecar-museum",
+      "name": "ロマンスカーミュージアム",
+      "url": "https://kibuntrip.com/spots/romancecar-museum/"
+    },
+    {
+      "spot_id": "spot_019",
+      "slug": "cupnoodles-museum-yokohama",
+      "name": "カップヌードルミュージアム 横浜",
+      "url": "https://kibuntrip.com/spots/cupnoodles-museum-yokohama/"
+    },
+    {
+      "spot_id": "spot_020",
+      "slug": "anitouch-minatomirai",
+      "name": "アニタッチ みなとみらい",
+      "url": "https://kibuntrip.com/spots/anitouch-minatomirai/"
+    },
+    {
+      "spot_id": "spot_021",
+      "slug": "hamagin-space-science-center",
+      "name": "はまぎん こども宇宙科学館",
+      "url": "https://kibuntrip.com/spots/hamagin-space-science-center/"
+    },
+    {
+      "spot_id": "spot_022",
+      "slug": "shonan-asobimare",
+      "name": "湘南あそびマーレ",
+      "url": "https://kibuntrip.com/spots/shonan-asobimare/"
+    },
+    {
+      "spot_id": "spot_023",
+      "slug": "hakone-yunessun",
+      "name": "箱根小涌園ユネッサン",
+      "url": "https://kibuntrip.com/spots/hakone-yunessun/"
+    },
+    {
+      "spot_id": "spot_024",
+      "slug": "hakone-pirate-royal2",
+      "name": "箱根海賊船 ロワイヤルII",
+      "url": "https://kibuntrip.com/spots/hakone-pirate-royal2/"
+    },
+    {
+      "spot_id": "spot_025",
+      "slug": "kodomo-shizen-koen",
+      "name": "こども自然公園",
+      "url": "https://kibuntrip.com/spots/kodomo-shizen-koen/"
+    },
+    {
+      "spot_id": "spot_026",
+      "slug": "national-museum-nature-science",
+      "name": "国立科学博物館",
+      "url": "https://kibuntrip.com/spots/national-museum-nature-science/"
+    },
+    {
+      "spot_id": "spot_027",
+      "slug": "teamlab-planets",
+      "name": "teamLab Planets TOKYO",
+      "url": "https://kibuntrip.com/spots/teamlab-planets/"
+    },
+    {
+      "spot_id": "spot_028",
+      "slug": "play-park-tachikawa",
+      "name": "PLAY! PARK",
+      "url": "https://kibuntrip.com/spots/play-park-tachikawa/"
+    },
+    {
+      "spot_id": "spot_029",
+      "slug": "small-worlds",
+      "name": "スモールワールズ",
+      "url": "https://kibuntrip.com/spots/small-worlds/"
+    },
+    {
+      "spot_id": "spot_030",
+      "slug": "takaratomy-planet-kameari",
+      "name": "タカラトミープラネット アリオ亀有",
+      "url": "https://kibuntrip.com/spots/takaratomy-planet-kameari/"
+    },
+    {
+      "spot_id": "spot_031",
+      "slug": "jal-sky-museum",
+      "name": "JAL SKY MUSEUM",
+      "url": "https://kibuntrip.com/spots/jal-sky-museum/"
+    },
+    {
+      "spot_id": "spot_032",
+      "slug": "asobono",
+      "name": "ASOBono!",
+      "url": "https://kibuntrip.com/spots/asobono/"
+    },
+    {
+      "spot_id": "spot_033",
+      "slug": "joypolis-sports-x",
+      "name": "JOYPOLIS SPORTS X",
+      "url": "https://kibuntrip.com/spots/joypolis-sports-x/"
+    },
+    {
+      "spot_id": "spot_034",
+      "slug": "yomiuriland-food-factory",
+      "name": "よみうりランド グッジョバ!! FOOD factory",
+      "url": "https://kibuntrip.com/spots/yomiuriland-food-factory/"
+    },
+    {
+      "spot_id": "spot_035",
+      "slug": "tokyo-toy-museum",
+      "name": "東京おもちゃ美術館",
+      "url": "https://kibuntrip.com/spots/tokyo-toy-museum/"
+    },
+    {
+      "spot_id": "spot_036",
+      "slug": "snoopy-playful-park",
+      "name": "SNOOPY Playful PARK",
+      "url": "https://kibuntrip.com/spots/snoopy-playful-park/"
+    },
+    {
+      "spot_id": "spot_037",
+      "slug": "ryugujo-mikazuki",
+      "name": "龍宮城スパホテル三日月",
+      "url": "https://kibuntrip.com/spots/ryugujo-mikazuki/"
+    },
+    {
+      "spot_id": "spot_038",
+      "slug": "seibu-agri-park-tokorozawa",
+      "name": "西武アグリパーク所沢",
+      "url": "https://kibuntrip.com/spots/seibu-agri-park-tokorozawa/"
+    },
+    {
+      "spot_id": "spot_039",
+      "slug": "kobito-hakubutsukan",
+      "name": "こびとはくぶつかん",
+      "url": "https://kibuntrip.com/spots/kobito-hakubutsukan/"
+    },
+    {
+      "spot_id": "spot_040",
+      "slug": "kidsland-us-max-kawagoe",
+      "name": "キッズランドUS MAX 川越南古谷店",
+      "url": "https://kibuntrip.com/spots/kidsland-us-max-kawagoe/"
+    },
+    {
+      "spot_id": "spot_041",
+      "slug": "bosai-no-oka-park",
+      "name": "ぼうさいの丘公園",
+      "url": "https://kibuntrip.com/spots/bosai-no-oka-park/"
+    },
+    {
+      "spot_id": "spot_042",
+      "slug": "arasaki-park",
+      "name": "荒崎公園",
+      "url": "https://kibuntrip.com/spots/arasaki-park/"
+    },
+    {
+      "spot_id": "spot_043",
+      "slug": "kanno-coffee-kawasaki-arima",
+      "name": "神乃珈琲 川崎有馬店",
+      "url": "https://kibuntrip.com/spots/kanno-coffee-kawasaki-arima/"
+    },
+    {
+      "spot_id": "spot_044",
+      "slug": "aikawa-park",
+      "name": "神奈川県立あいかわ公園",
+      "url": "https://kibuntrip.com/spots/aikawa-park/"
+    },
+    {
+      "spot_id": "spot_045",
+      "slug": "hadano-tokawa-park",
+      "name": "神奈川県立秦野戸川公園",
+      "url": "https://kibuntrip.com/spots/hadano-tokawa-park/"
+    },
+    {
+      "spot_id": "spot_046",
+      "slug": "soleil-no-oka",
+      "name": "長井海の手公園 ソレイユの丘",
+      "url": "https://kibuntrip.com/spots/soleil-no-oka/"
+    },
+    {
+      "spot_id": "spot_047",
+      "slug": "kannonzaki-park",
+      "name": "神奈川県立観音崎公園",
+      "url": "https://kibuntrip.com/spots/kannonzaki-park/"
+    },
+    {
+      "spot_id": "spot_048",
+      "slug": "tsujido-seaside-park",
+      "name": "神奈川県立辻堂海浜公園",
+      "url": "https://kibuntrip.com/spots/tsujido-seaside-park/"
+    },
+    {
+      "spot_id": "spot_049",
+      "slug": "kanagawa-museum-natural-history",
+      "name": "神奈川県立生命の星・地球博物館",
+      "url": "https://kibuntrip.com/spots/kanagawa-museum-natural-history/"
+    },
+    {
+      "spot_id": "spot_050",
+      "slug": "hakone-open-air-museum",
+      "name": "箱根 彫刻の森美術館",
+      "url": "https://kibuntrip.com/spots/hakone-open-air-museum/"
+    },
+    {
+      "spot_id": "spot_051",
+      "slug": "enosui",
+      "name": "新江ノ島水族館",
+      "url": "https://kibuntrip.com/spots/enosui/"
+    },
+    {
+      "spot_id": "spot_052",
+      "slug": "kawasui",
+      "name": "カワスイ 川崎水族館",
+      "url": "https://kibuntrip.com/spots/kawasui/"
+    },
+    {
+      "spot_id": "spot_053",
+      "slug": "yokosuka-museum-of-art",
+      "name": "横須賀美術館",
+      "url": "https://kibuntrip.com/spots/yokosuka-museum-of-art/"
+    },
+    {
+      "spot_id": "spot_054",
+      "slug": "kodomonokuni",
+      "name": "こどもの国",
+      "url": "https://kibuntrip.com/spots/kodomonokuni/"
+    },
+    {
+      "spot_id": "spot_055",
+      "slug": "shonandai-culture-center-kodomokan",
+      "name": "湘南台文化センターこども館",
+      "url": "https://kibuntrip.com/spots/shonandai-culture-center-kodomokan/"
+    },
+    {
+      "spot_id": "spot_056",
+      "slug": "spot_056-spot",
+      "name": "神奈川県立四季の森公園",
+      "url": "https://kibuntrip.com/spots/spot_056-spot/"
+    },
+    {
+      "spot_id": "spot_057",
+      "slug": "spot_057-spot",
+      "name": "神奈川県立相模原公園",
+      "url": "https://kibuntrip.com/spots/spot_057-spot/"
+    },
+    {
+      "spot_id": "spot_058",
+      "slug": "spot_058-spot",
+      "name": "くりはま花の国",
+      "url": "https://kibuntrip.com/spots/spot_058-spot/"
+    },
+    {
+      "spot_id": "spot_059",
+      "slug": "spot_059-spot",
+      "name": "平塚市総合公園",
+      "url": "https://kibuntrip.com/spots/spot_059-spot/"
+    },
+    {
+      "spot_id": "spot_060",
+      "slug": "spot_060-spot",
+      "name": "神奈川県立茅ケ崎里山公園",
+      "url": "https://kibuntrip.com/spots/spot_060-spot/"
+    },
+    {
+      "spot_id": "spot_061",
+      "slug": "spot_061-spot",
+      "name": "あつぎこどもの森公園",
+      "url": "https://kibuntrip.com/spots/spot_061-spot/"
+    },
+    {
+      "spot_id": "spot_062",
+      "slug": "spot_062-spot",
+      "name": "電車とバスの博物館",
+      "url": "https://kibuntrip.com/spots/spot_062-spot/"
+    },
+    {
+      "spot_id": "spot_063",
+      "slug": "spot_063-spot",
+      "name": "かわさき宙と緑の科学館",
+      "url": "https://kibuntrip.com/spots/spot_063-spot/"
+    },
+    {
+      "spot_id": "spot_064",
+      "slug": "spot_064-spot",
+      "name": "横浜イングリッシュガーデン",
+      "url": "https://kibuntrip.com/spots/spot_064-spot/"
+    },
+    {
+      "spot_id": "spot_065",
+      "slug": "spot_065-spot",
+      "name": "国立国会図書館 国際子ども図書館",
+      "url": "https://kibuntrip.com/spots/spot_065-spot/"
+    },
+    {
+      "spot_id": "spot_066",
+      "slug": "spot_066-spot",
+      "name": "東京国立博物館",
+      "url": "https://kibuntrip.com/spots/spot_066-spot/"
+    },
+    {
+      "spot_id": "spot_067",
+      "slug": "spot_067-spot",
+      "name": "消防博物館",
+      "url": "https://kibuntrip.com/spots/spot_067-spot/"
+    },
+    {
+      "spot_id": "spot_068",
+      "slug": "spot_068-spot",
+      "name": "東京都虹の下水道館",
+      "url": "https://kibuntrip.com/spots/spot_068-spot/"
+    },
+    {
+      "spot_id": "spot_069",
+      "slug": "spot_069-spot",
+      "name": "東京都水の科学館",
+      "url": "https://kibuntrip.com/spots/spot_069-spot/"
+    },
+    {
+      "spot_id": "spot_070",
+      "slug": "spot_070-spot",
+      "name": "地下鉄博物館",
+      "url": "https://kibuntrip.com/spots/spot_070-spot/"
+    },
+    {
+      "spot_id": "spot_071",
+      "slug": "spot_071-spot",
+      "name": "板橋区立 熱帯環境植物館",
+      "url": "https://kibuntrip.com/spots/spot_071-spot/"
+    },
+    {
+      "spot_id": "spot_072",
+      "slug": "spot_072-spot",
+      "name": "江戸東京たてもの園",
+      "url": "https://kibuntrip.com/spots/spot_072-spot/"
+    },
+    {
+      "spot_id": "spot_073",
+      "slug": "spot_073-spot",
+      "name": "ふなばしアンデルセン公園",
+      "url": "https://kibuntrip.com/spots/spot_073-spot/"
+    },
+    {
+      "spot_id": "spot_074",
+      "slug": "spot_074-spot",
+      "name": "千葉市動物公園",
+      "url": "https://kibuntrip.com/spots/spot_074-spot/"
+    },
+    {
+      "spot_id": "spot_075",
+      "slug": "spot_075-spot",
+      "name": "航空科学博物館",
+      "url": "https://kibuntrip.com/spots/spot_075-spot/"
+    },
+    {
+      "spot_id": "spot_076",
+      "slug": "spot_076-sunset-beach-park-inage",
+      "name": "稲毛海浜公園 / SUNSET BEACH PARK INAGE",
+      "url": "https://kibuntrip.com/spots/spot_076-sunset-beach-park-inage/"
+    },
+    {
+      "spot_id": "spot_077",
+      "slug": "spot_077-spot",
+      "name": "埼玉県こども動物自然公園",
+      "url": "https://kibuntrip.com/spots/spot_077-spot/"
+    },
+    {
+      "spot_id": "spot_078",
+      "slug": "spot_078-spot",
+      "name": "鉄道博物館",
+      "url": "https://kibuntrip.com/spots/spot_078-spot/"
+    },
+    {
+      "spot_id": "spot_079",
+      "slug": "spot_079-spot",
+      "name": "角川武蔵野ミュージアム",
+      "url": "https://kibuntrip.com/spots/spot_079-spot/"
+    },
+    {
+      "spot_id": "spot_080",
+      "slug": "spot_080-spot",
+      "name": "国営武蔵丘陵森林公園",
+      "url": "https://kibuntrip.com/spots/spot_080-spot/"
+    },
+    {
+      "spot_id": "spot_081",
+      "slug": "spot_081-spot",
+      "name": "三溪園",
+      "url": "https://kibuntrip.com/spots/spot_081-spot/"
+    },
+    {
+      "spot_id": "spot_082",
+      "slug": "spot_082-spot",
+      "name": "葉山しおさい公園",
+      "url": "https://kibuntrip.com/spots/spot_082-spot/"
+    },
+    {
+      "spot_id": "spot_083",
+      "slug": "spot_083-spot",
+      "name": "小田原こどもの森公園 わんぱくらんど",
+      "url": "https://kibuntrip.com/spots/spot_083-spot/"
+    },
+    {
+      "spot_id": "spot_084",
+      "slug": "yokohama-red-brick-warehouse",
+      "name": "横浜赤レンガ倉庫",
+      "url": "https://kibuntrip.com/spots/yokohama-red-brick-warehouse/"
+    },
+    {
+      "spot_id": "spot_085",
+      "slug": "marine-walk-yokohama",
+      "name": "MARINE & WALK YOKOHAMA",
+      "url": "https://kibuntrip.com/spots/marine-walk-yokohama/"
+    },
+    {
+      "spot_id": "spot_086",
+      "slug": "yokohama-hammerhead",
+      "name": "横浜ハンマーヘッド",
+      "url": "https://kibuntrip.com/spots/yokohama-hammerhead/"
+    },
+    {
+      "spot_id": "spot_087",
+      "slug": "yokohama-bay-quarter",
+      "name": "横浜ベイクォーター",
+      "url": "https://kibuntrip.com/spots/yokohama-bay-quarter/"
+    },
+    {
+      "spot_id": "spot_088",
+      "slug": "mitsui-outlet-yokohama-bayside",
+      "name": "三井アウトレットパーク 横浜ベイサイド",
+      "url": "https://kibuntrip.com/spots/mitsui-outlet-yokohama-bayside/"
+    },
+    {
+      "spot_id": "spot_089",
+      "slug": "shonan-t-site",
+      "name": "湘南 T-SITE",
+      "url": "https://kibuntrip.com/spots/shonan-t-site/"
+    },
+    {
+      "spot_id": "spot_090",
+      "slug": "futakotamagawa-rise",
+      "name": "二子玉川ライズ",
+      "url": "https://kibuntrip.com/spots/futakotamagawa-rise/"
+    },
+    {
+      "spot_id": "spot_091",
+      "slug": "daikanyama-t-site",
+      "name": "代官山 T-SITE",
+      "url": "https://kibuntrip.com/spots/daikanyama-t-site/"
+    },
+    {
+      "spot_id": "spot_092",
+      "slug": "azabudai-hills",
+      "name": "麻布台ヒルズ",
+      "url": "https://kibuntrip.com/spots/azabudai-hills/"
+    },
+    {
+      "spot_id": "spot_093",
+      "slug": "coredo-muromachi",
+      "name": "COREDO室町",
+      "url": "https://kibuntrip.com/spots/coredo-muromachi/"
+    },
+    {
+      "spot_id": "spot_094",
+      "slug": "metsa-village",
+      "name": "メッツァビレッジ",
+      "url": "https://kibuntrip.com/spots/metsa-village/"
+    },
+    {
+      "spot_id": "spot_095",
+      "slug": "kashiwanoha-t-site",
+      "name": "柏の葉 T-SITE",
+      "url": "https://kibuntrip.com/spots/kashiwanoha-t-site/"
+    },
+    {
+      "spot_id": "spot_096",
+      "slug": "yokosuka-port-market",
+      "name": "いちご よこすかポートマーケット",
+      "url": "https://kibuntrip.com/spots/yokosuka-port-market/"
+    },
+    {
+      "spot_id": "spot_097",
+      "slug": "sky-plaza-ibasho",
+      "name": "SKY PLAZA IBASHO",
+      "url": "https://kibuntrip.com/spots/sky-plaza-ibasho/"
+    },
+    {
+      "spot_id": "spot_098",
+      "slug": "think-coffee-kanda",
+      "name": "Think Coffee Japan 神田錦町",
+      "url": "https://kibuntrip.com/spots/think-coffee-kanda/"
+    },
+    {
+      "spot_id": "spot_099",
+      "slug": "grand-tree-musashikosugi",
+      "name": "グランツリー武蔵小杉",
+      "url": "https://kibuntrip.com/spots/grand-tree-musashikosugi/"
+    },
+    {
+      "spot_id": "spot_100",
+      "slug": "culaful-takeshiba",
+      "name": "CULAFUL（キュラフル）",
+      "url": "https://kibuntrip.com/spots/culaful-takeshiba/"
+    },
+    {
+      "spot_id": "spot_101",
+      "slug": "yokohama-museum-of-art",
+      "name": "横浜美術館",
+      "url": "https://kibuntrip.com/spots/yokohama-museum-of-art/"
+    },
+    {
+      "spot_id": "spot_102",
+      "slug": "yokohama-hakkeijima-seaparadise",
+      "name": "横浜・八景島シーパラダイス",
+      "url": "https://kibuntrip.com/spots/yokohama-hakkeijima-seaparadise/"
+    },
+    {
+      "spot_id": "spot_103",
+      "slug": "yamashita-park",
+      "name": "山下公園",
+      "url": "https://kibuntrip.com/spots/yamashita-park/"
+    },
+    {
+      "spot_id": "spot_104",
+      "slug": "yokohama-marine-tower",
+      "name": "横浜マリンタワー",
+      "url": "https://kibuntrip.com/spots/yokohama-marine-tower/"
+    },
+    {
+      "spot_id": "spot_105",
+      "slug": "enoshima-samuel-cocking-garden",
+      "name": "江の島サムエル・コッキング苑",
+      "url": "https://kibuntrip.com/spots/enoshima-samuel-cocking-garden/"
+    },
+    {
+      "spot_id": "spot_106",
+      "slug": "riviera-zushi-marina",
+      "name": "リビエラ逗子マリーナ",
+      "url": "https://kibuntrip.com/spots/riviera-zushi-marina/"
+    },
+    {
+      "spot_id": "spot_107",
+      "slug": "yokohama-world-porters",
+      "name": "横浜ワールドポーターズ",
+      "url": "https://kibuntrip.com/spots/yokohama-world-porters/"
+    },
+    {
+      "spot_id": "spot_108",
+      "slug": "shin-yokohama-raumen-museum",
+      "name": "新横浜ラーメン博物館",
+      "url": "https://kibuntrip.com/spots/shin-yokohama-raumen-museum/"
+    },
+    {
+      "spot_id": "spot_109",
+      "slug": "sumida-aquarium",
+      "name": "すみだ水族館",
+      "url": "https://kibuntrip.com/spots/sumida-aquarium/"
+    },
+    {
+      "spot_id": "spot_110",
+      "slug": "maxell-aquapark-shinagawa",
+      "name": "マクセル アクアパーク品川",
+      "url": "https://kibuntrip.com/spots/maxell-aquapark-shinagawa/"
+    },
+    {
+      "spot_id": "spot_111",
+      "slug": "kasai-aquarium",
+      "name": "葛西臨海水族園",
+      "url": "https://kibuntrip.com/spots/kasai-aquarium/"
+    },
+    {
+      "spot_id": "spot_112",
+      "slug": "tokyo-skytree-town",
+      "name": "東京スカイツリータウン",
+      "url": "https://kibuntrip.com/spots/tokyo-skytree-town/"
+    },
+    {
+      "spot_id": "spot_113",
+      "slug": "shibuya-sky",
+      "name": "SHIBUYA SKY",
+      "url": "https://kibuntrip.com/spots/shibuya-sky/"
+    },
+    {
+      "spot_id": "spot_114",
+      "slug": "green-springs-tachikawa",
+      "name": "GREEN SPRINGS",
+      "url": "https://kibuntrip.com/spots/green-springs-tachikawa/"
+    },
+    {
+      "spot_id": "spot_115",
+      "slug": "showa-kinen-park",
+      "name": "国営昭和記念公園",
+      "url": "https://kibuntrip.com/spots/showa-kinen-park/"
+    },
+    {
+      "spot_id": "spot_116",
+      "slug": "hana-biyori",
+      "name": "HANA・BIYORI",
+      "url": "https://kibuntrip.com/spots/hana-biyori/"
+    },
+    {
+      "spot_id": "spot_117",
+      "slug": "tokyo-metropolitan-teien-art-museum",
+      "name": "東京都庭園美術館",
+      "url": "https://kibuntrip.com/spots/tokyo-metropolitan-teien-art-museum/"
+    },
+    {
+      "spot_id": "spot_118",
+      "slug": "kiyosumi-gardens",
+      "name": "清澄庭園",
+      "url": "https://kibuntrip.com/spots/kiyosumi-gardens/"
+    },
+    {
+      "spot_id": "spot_119",
+      "slug": "mother-farm",
+      "name": "マザー牧場",
+      "url": "https://kibuntrip.com/spots/mother-farm/"
+    },
+    {
+      "spot_id": "spot_120",
+      "slug": "narita-yume-bokujo",
+      "name": "成田ゆめ牧場",
+      "url": "https://kibuntrip.com/spots/narita-yume-bokujo/"
+    },
+    {
+      "spot_id": "spot_121",
+      "slug": "kamogawa-seaworld",
+      "name": "鴨川シーワールド",
+      "url": "https://kibuntrip.com/spots/kamogawa-seaworld/"
+    },
+    {
+      "spot_id": "spot_122",
+      "slug": "moominvalley-park",
+      "name": "ムーミンバレーパーク",
+      "url": "https://kibuntrip.com/spots/moominvalley-park/"
+    },
+    {
+      "spot_id": "spot_123",
+      "slug": "tobu-zoo",
+      "name": "東武動物公園",
+      "url": "https://kibuntrip.com/spots/tobu-zoo/"
+    },
+    {
+      "spot_id": "spot_124",
+      "slug": "saitama-aquarium",
+      "name": "さいたま水族館",
+      "url": "https://kibuntrip.com/spots/saitama-aquarium/"
+    },
+    {
+      "spot_id": "spot_125",
+      "slug": "inokashira-park-zoo",
+      "name": "井の頭自然文化園",
+      "url": "https://kibuntrip.com/spots/inokashira-park-zoo/"
+    },
+    {
+      "spot_id": "spot_126",
+      "slug": "kiranah-garden-toyosu",
+      "name": "キラナガーデン豊洲",
+      "url": "https://kibuntrip.com/spots/kiranah-garden-toyosu/"
+    },
+    {
+      "spot_id": "spot_127",
+      "slug": "toyosu-senkyaku-banrai",
+      "name": "豊洲 千客万来",
+      "url": "https://kibuntrip.com/spots/toyosu-senkyaku-banrai/"
+    },
+    {
+      "spot_id": "spot_128",
+      "slug": "sunshine-city",
+      "name": "サンシャインシティ",
+      "url": "https://kibuntrip.com/spots/sunshine-city/"
+    },
+    {
+      "spot_id": "spot_129",
+      "slug": "yokohama-chinatown",
+      "name": "横浜中華街",
+      "url": "https://kibuntrip.com/spots/yokohama-chinatown/"
+    },
+    {
+      "spot_id": "spot_130",
+      "slug": "play-park-eric-carle",
+      "name": "PLAY! PARK ERIC CARLE",
+      "url": "https://kibuntrip.com/spots/play-park-eric-carle/"
+    },
+    {
+      "spot_id": "spot_131",
+      "slug": "ichihara-elephant-kingdom",
+      "name": "市原ぞうの国",
+      "url": "https://kibuntrip.com/spots/ichihara-elephant-kingdom/"
+    },
+    {
+      "spot_id": "spot_132",
+      "slug": "seibuen-amusement-park",
+      "name": "西武園ゆうえんち",
+      "url": "https://kibuntrip.com/spots/seibuen-amusement-park/"
+    },
+    {
+      "spot_id": "spot_133",
+      "slug": "sanrio-puroland",
+      "name": "サンリオピューロランド",
+      "url": "https://kibuntrip.com/spots/sanrio-puroland/"
+    },
+    {
+      "spot_id": "spot_134",
+      "slug": "toyosu-market",
+      "name": "豊洲市場",
+      "url": "https://kibuntrip.com/spots/toyosu-market/"
+    },
+    {
+      "spot_id": "spot_135",
+      "slug": "lalaport-toyosu",
+      "name": "アーバンドック ららぽーと豊洲",
+      "url": "https://kibuntrip.com/spots/lalaport-toyosu/"
+    },
+    {
+      "spot_id": "spot_136",
+      "slug": "teamlab-borderless",
+      "name": "チームラボボーダレス",
+      "url": "https://kibuntrip.com/spots/teamlab-borderless/"
+    },
+    {
+      "spot_id": "spot_137",
+      "slug": "tokyo-midtown",
+      "name": "東京ミッドタウン",
+      "url": "https://kibuntrip.com/spots/tokyo-midtown/"
+    },
+    {
+      "spot_id": "spot_138",
+      "slug": "kitte-marunouchi",
+      "name": "KITTE丸の内",
+      "url": "https://kibuntrip.com/spots/kitte-marunouchi/"
+    },
+    {
+      "spot_id": "spot_139",
+      "slug": "grandberry-park",
+      "name": "南町田グランベリーパーク",
+      "url": "https://kibuntrip.com/spots/grandberry-park/"
+    },
+    {
+      "spot_id": "spot_140",
+      "slug": "yokohama-motomachi",
+      "name": "横浜元町ショッピングストリート",
+      "url": "https://kibuntrip.com/spots/yokohama-motomachi/"
+    },
+    {
+      "spot_id": "spot_141",
+      "slug": "enoshima-island",
+      "name": "江の島",
+      "url": "https://kibuntrip.com/spots/enoshima-island/"
+    },
+    {
+      "spot_id": "spot_142",
+      "slug": "kamakura-komachi-street",
+      "name": "鎌倉小町通り",
+      "url": "https://kibuntrip.com/spots/kamakura-komachi-street/"
+    },
+    {
+      "spot_id": "spot_143",
+      "slug": "kawagoe-ichibangai",
+      "name": "川越一番街（蔵造りの町並み）",
+      "url": "https://kibuntrip.com/spots/kawagoe-ichibangai/"
+    },
+    {
+      "spot_id": "spot_144",
+      "slug": "ikspiari",
+      "name": "イクスピアリ",
+      "url": "https://kibuntrip.com/spots/ikspiari/"
+    },
+    {
+      "spot_id": "spot_145",
+      "slug": "miyashita-park",
+      "name": "MIYASHITA PARK",
+      "url": "https://kibuntrip.com/spots/miyashita-park/"
+    },
+    {
+      "spot_id": "spot_146",
+      "slug": "ariake-garden",
+      "name": "有明ガーデン",
+      "url": "https://kibuntrip.com/spots/ariake-garden/"
+    },
+    {
+      "spot_id": "spot_147",
+      "slug": "tokyo-dome-city",
+      "name": "東京ドームシティ",
+      "url": "https://kibuntrip.com/spots/tokyo-dome-city/"
+    },
+    {
+      "spot_id": "spot_148",
+      "slug": "tokyo-joypolis",
+      "name": "東京ジョイポリス",
+      "url": "https://kibuntrip.com/spots/tokyo-joypolis/"
+    },
+    {
+      "spot_id": "spot_149",
+      "slug": "odaiba-seaside-park",
+      "name": "お台場海浜公園",
+      "url": "https://kibuntrip.com/spots/odaiba-seaside-park/"
+    },
+    {
+      "spot_id": "spot_150",
+      "slug": "red-tokyo-tower",
+      "name": "RED° TOKYO TOWER",
+      "url": "https://kibuntrip.com/spots/red-tokyo-tower/"
+    },
+    {
+      "spot_id": "spot_151",
+      "slug": "art-aquarium-ginza",
+      "name": "アートアクアリウム美術館 GINZA",
+      "url": "https://kibuntrip.com/spots/art-aquarium-ginza/"
+    },
+    {
+      "spot_id": "spot_152",
+      "slug": "national-art-center-tokyo",
+      "name": "国立新美術館",
+      "url": "https://kibuntrip.com/spots/national-art-center-tokyo/"
+    },
+    {
+      "spot_id": "spot_153",
+      "slug": "2121-design-sight",
+      "name": "21_21 DESIGN SIGHT",
+      "url": "https://kibuntrip.com/spots/2121-design-sight/"
+    },
+    {
+      "spot_id": "spot_154",
+      "slug": "fujiko-f-fujio-museum",
+      "name": "川崎市 藤子・F・不二雄ミュージアム",
+      "url": "https://kibuntrip.com/spots/fujiko-f-fujio-museum/"
+    },
+    {
+      "spot_id": "spot_155",
+      "slug": "kiyoken-yokohama-factory-tour",
+      "name": "崎陽軒 横浜工場見学",
+      "url": "https://kibuntrip.com/spots/kiyoken-yokohama-factory-tour/"
+    },
+    {
+      "spot_id": "spot_156",
+      "slug": "ajinomoto-kawasaki-factory",
+      "name": "味の素KK 川崎工場",
+      "url": "https://kibuntrip.com/spots/ajinomoto-kawasaki-factory/"
+    },
+    {
+      "spot_id": "spot_157",
+      "slug": "glicopia-east",
+      "name": "グリコピア・イースト",
+      "url": "https://kibuntrip.com/spots/glicopia-east/"
+    },
+    {
+      "spot_id": "spot_158",
+      "slug": "gaikaku-ryuqkan",
+      "name": "首都圏外郭放水路 地底探検ミュージアム 龍Q館",
+      "url": "https://kibuntrip.com/spots/gaikaku-ryuqkan/"
+    },
+    {
+      "spot_id": "spot_159",
+      "slug": "fukaya-hanazono-premium-outlets",
+      "name": "ふかや花園プレミアム・アウトレット",
+      "url": "https://kibuntrip.com/spots/fukaya-hanazono-premium-outlets/"
+    },
+    {
+      "spot_id": "spot_160",
+      "slug": "mitsui-outlet-kisarazu",
+      "name": "三井アウトレットパーク 木更津",
+      "url": "https://kibuntrip.com/spots/mitsui-outlet-kisarazu/"
+    },
+    {
+      "spot_id": "spot_161",
+      "slug": "kurkku-fields",
+      "name": "KURKKU FIELDS",
+      "url": "https://kibuntrip.com/spots/kurkku-fields/"
+    },
+    {
+      "spot_id": "spot_162",
+      "slug": "tokyo-german-village",
+      "name": "東京ドイツ村",
+      "url": "https://kibuntrip.com/spots/tokyo-german-village/"
+    },
+    {
+      "spot_id": "spot_163",
+      "slug": "yokosuka-naval-port-cruise",
+      "name": "YOKOSUKA軍港めぐり",
+      "url": "https://kibuntrip.com/spots/yokosuka-naval-port-cruise/"
+    },
+    {
+      "spot_id": "spot_164",
+      "slug": "sarushima",
+      "name": "無人島・猿島",
+      "url": "https://kibuntrip.com/spots/sarushima/"
+    },
+    {
+      "spot_id": "spot_165",
+      "slug": "tokyo-wan-ferry",
+      "name": "東京湾フェリー",
+      "url": "https://kibuntrip.com/spots/tokyo-wan-ferry/"
+    },
+    {
+      "spot_id": "spot_166",
+      "slug": "hinohara-forest-toy-museum",
+      "name": "檜原 森のおもちゃ美術館",
+      "url": "https://kibuntrip.com/spots/hinohara-forest-toy-museum/"
+    },
+    {
+      "spot_id": "spot_167",
+      "slug": "ue-fantasia",
+      "name": "UE FANTASIA＋",
+      "url": "https://kibuntrip.com/spots/ue-fantasia/"
+    },
+    {
+      "spot_id": "spot_168",
+      "slug": "mahono-bungakukan",
+      "name": "魔法の文学館",
+      "url": "https://kibuntrip.com/spots/mahono-bungakukan/"
+    },
+    {
+      "spot_id": "spot_169",
+      "slug": "the-library-lounge",
+      "name": "The Library Lounge",
+      "url": "https://kibuntrip.com/spots/the-library-lounge/"
+    },
+    {
+      "spot_id": "spot_170",
+      "slug": "bar-panorama",
+      "name": "BAR PANORAMA",
+      "url": "https://kibuntrip.com/spots/bar-panorama/"
+    },
+    {
+      "spot_id": "spot_171",
+      "slug": "shibuya-fureai-botanical-center",
+      "name": "渋谷区ふれあい植物センター",
+      "url": "https://kibuntrip.com/spots/shibuya-fureai-botanical-center/"
+    },
+    {
+      "spot_id": "spot_172",
+      "slug": "warner-bros-studio-tour-tokyo",
+      "name": "ワーナー ブラザース スタジオツアー東京",
+      "url": "https://kibuntrip.com/spots/warner-bros-studio-tour-tokyo/"
+    },
+    {
+      "spot_id": "spot_173",
+      "slug": "yumenoshima-tropical-greenhouse",
+      "name": "夢の島熱帯植物館",
+      "url": "https://kibuntrip.com/spots/yumenoshima-tropical-greenhouse/"
+    },
+    {
+      "spot_id": "spot_174",
+      "slug": "reve-des-lumieres",
+      "name": "RÊVE DES LUMIÈRES",
+      "url": "https://kibuntrip.com/spots/reve-des-lumieres/"
+    },
+    {
+      "spot_id": "spot_175",
+      "slug": "mahalo-garden-terrace",
+      "name": "MAHALO garden terrace",
+      "url": "https://kibuntrip.com/spots/mahalo-garden-terrace/"
+    },
+    {
+      "spot_id": "spot_176",
+      "slug": "umikaze-park",
+      "name": "うみかぜ公園",
+      "url": "https://kibuntrip.com/spots/umikaze-park/"
+    },
+    {
+      "spot_id": "spot_177",
+      "slug": "coaska-bayside-stores",
+      "name": "コースカベイサイドストアーズ",
+      "url": "https://kibuntrip.com/spots/coaska-bayside-stores/"
+    },
+    {
+      "spot_id": "spot_178",
+      "slug": "takanawa-gateway-city",
+      "name": "高輪ゲートウェイシティ",
+      "url": "https://kibuntrip.com/spots/takanawa-gateway-city/"
+    },
+    {
+      "spot_id": "spot_179",
+      "slug": "tokyo-garden-terrace-kioicho",
+      "name": "東京ガーデンテラス紀尾井町",
+      "url": "https://kibuntrip.com/spots/tokyo-garden-terrace-kioicho/"
+    },
+    {
+      "spot_id": "spot_180",
+      "slug": "ikebukuro-west-gate-park",
+      "name": "池袋西口公園",
+      "url": "https://kibuntrip.com/spots/ikebukuro-west-gate-park/"
+    },
+    {
+      "spot_id": "spot_181",
+      "slug": "nakano-central-park",
+      "name": "中野セントラルパーク",
+      "url": "https://kibuntrip.com/spots/nakano-central-park/"
+    },
+    {
+      "spot_id": "spot_182",
+      "slug": "shiokaze-park",
+      "name": "潮風公園",
+      "url": "https://kibuntrip.com/spots/shiokaze-park/"
+    },
+    {
+      "spot_id": "spot_183",
+      "slug": "oiso-long-beach",
+      "name": "大磯ロングビーチ",
+      "url": "https://kibuntrip.com/spots/oiso-long-beach/"
+    },
+    {
+      "spot_id": "spot_184",
+      "slug": "tsujido-seaside-park-jumbo-pool",
+      "name": "辻堂海浜公園ジャンボプール",
+      "url": "https://kibuntrip.com/spots/tsujido-seaside-park-jumbo-pool/"
+    },
+    {
+      "spot_id": "spot_185",
+      "slug": "yomiuriland-pool-wai",
+      "name": "よみうりランド プールWAI",
+      "url": "https://kibuntrip.com/spots/yomiuriland-pool-wai/"
+    },
+    {
+      "spot_id": "spot_186",
+      "slug": "tokyo-summerland",
+      "name": "東京サマーランド",
+      "url": "https://kibuntrip.com/spots/tokyo-summerland/"
+    },
+    {
+      "spot_id": "spot_187",
+      "slug": "hasunuma-water-garden",
+      "name": "蓮沼ウォーターガーデン",
+      "url": "https://kibuntrip.com/spots/hasunuma-water-garden/"
+    },
+    {
+      "spot_id": "spot_188",
+      "slug": "ryugujo-spa-hotel-mikazuki-garden-pool",
+      "name": "龍宮城スパホテル三日月 ガーデンプール",
+      "url": "https://kibuntrip.com/spots/ryugujo-spa-hotel-mikazuki-garden-pool/"
+    },
+    {
+      "spot_id": "spot_189",
+      "slug": "inage-kaihin-koen-pool",
+      "name": "稲毛海浜公園プール",
+      "url": "https://kibuntrip.com/spots/inage-kaihin-koen-pool/"
+    },
+    {
+      "spot_id": "spot_190",
+      "slug": "nissan-water-park",
+      "name": "日産ウォーターパーク",
+      "url": "https://kibuntrip.com/spots/nissan-water-park/"
+    },
+    {
+      "spot_id": "spot_191",
+      "slug": "fure-yu",
+      "name": "ふれーゆ",
+      "url": "https://kibuntrip.com/spots/fure-yu/"
+    },
+    {
+      "spot_id": "spot_192",
+      "slug": "yunetti-ozenji",
+      "name": "ヨネッティー王禅寺",
+      "url": "https://kibuntrip.com/spots/yunetti-ozenji/"
+    },
+    {
+      "spot_id": "spot_193",
+      "slug": "koza-shisetsu-indoor-pool",
+      "name": "高座施設組合屋内温水プール",
+      "url": "https://kibuntrip.com/spots/koza-shisetsu-indoor-pool/"
+    },
+    {
+      "spot_id": "spot_194",
+      "slug": "sagamihara-shimin-kenko-bunka-center",
+      "name": "相模原市立 市民健康文化センター",
+      "url": "https://kibuntrip.com/spots/sagamihara-shimin-kenko-bunka-center/"
+    },
+    {
+      "spot_id": "spot_195",
+      "slug": "honmoku-shimin-pool",
+      "name": "横浜市本牧市民プール",
+      "url": "https://kibuntrip.com/spots/honmoku-shimin-pool/"
+    },
+    {
+      "spot_id": "spot_196",
+      "slug": "kita-no-oka-center",
+      "name": "さがみはら北の丘センター",
+      "url": "https://kibuntrip.com/spots/kita-no-oka-center/"
+    },
+    {
+      "spot_id": "spot_197",
+      "slug": "hayashi-water-park-samukawa",
+      "name": "HAYASHIウォーターパークさむかわ",
+      "url": "https://kibuntrip.com/spots/hayashi-water-park-samukawa/"
+    },
+    {
+      "spot_id": "spot_198",
+      "slug": "maholoba-minds-miura-water-park",
+      "name": "マホロバ・マインズ三浦 ウォーターパーク",
+      "url": "https://kibuntrip.com/spots/maholoba-minds-miura-water-park/"
+    },
+    {
+      "spot_id": "spot_199",
+      "slug": "hikichidai-onsui-pool",
+      "name": "ガイソーウォーターパーク引地台",
+      "url": "https://kibuntrip.com/spots/hikichidai-onsui-pool/"
+    },
+    {
+      "spot_id": "spot_200",
+      "slug": "hodogaya-park",
+      "name": "保土ケ谷公園",
+      "url": "https://kibuntrip.com/spots/hodogaya-park/"
+    },
+    {
+      "spot_id": "spot_201",
+      "slug": "lattest-green",
+      "name": "LATTEST GREEN",
+      "url": "https://kibuntrip.com/spots/lattest-green/"
+    },
+    {
+      "spot_id": "spot_202",
+      "slug": "ikumo-yashio",
+      "name": "IKUMOやしお",
+      "url": "https://kibuntrip.com/spots/ikumo-yashio/"
+    },
+    {
+      "spot_id": "spot_203",
+      "slug": "miyagase-kohan-enchi",
+      "name": "宮ヶ瀬湖畔園地",
+      "url": "https://kibuntrip.com/spots/miyagase-kohan-enchi/"
+    },
+    {
+      "spot_id": "spot_204",
+      "slug": "yumegaoka-soratos",
+      "name": "ゆめが丘ソラトス",
+      "url": "https://kibuntrip.com/spots/yumegaoka-soratos/"
+    },
+    {
+      "spot_id": "spot_205",
+      "slug": "itabashi-central-library",
+      "name": "板橋区立中央図書館",
+      "url": "https://kibuntrip.com/spots/itabashi-central-library/"
+    },
+    {
+      "spot_id": "spot_206",
+      "slug": "mulabo",
+      "name": "Mulabo!",
+      "url": "https://kibuntrip.com/spots/mulabo/"
+    },
+    {
+      "spot_id": "spot_207",
+      "slug": "the-bbq-park-aeon-hachioji-takiyama",
+      "name": "THE BBQ PARK イオン八王子滝山店",
+      "url": "https://kibuntrip.com/spots/the-bbq-park-aeon-hachioji-takiyama/"
+    },
+    {
+      "spot_id": "spot_208",
+      "slug": "dining-restaurant-kiteki",
+      "name": "DINING RESTAURANT KITEKI",
+      "url": "https://kibuntrip.com/spots/dining-restaurant-kiteki/"
+    },
+    {
+      "spot_id": "spot_209",
+      "slug": "zuishoji",
+      "name": "瑞聖寺",
+      "url": "https://kibuntrip.com/spots/zuishoji/"
+    },
+    {
+      "spot_id": "spot_210",
+      "slug": "classense-kids-park",
+      "name": "クラッセンスこどもの広場",
+      "url": "https://kibuntrip.com/spots/classense-kids-park/"
+    },
+    {
+      "spot_id": "spot_211",
+      "slug": "micca-library",
+      "name": "絵と言葉のライブラリー ミッカ",
+      "url": "https://kibuntrip.com/spots/micca-library/"
+    },
+    {
+      "spot_id": "spot_212",
+      "slug": "hakone-tenyu",
+      "name": "箱根小涌園 天悠",
+      "url": "https://kibuntrip.com/spots/hakone-tenyu/"
+    },
+    {
+      "spot_id": "spot_213",
+      "slug": "hakone-hanaori",
+      "name": "箱根・芦ノ湖 はなをり",
+      "url": "https://kibuntrip.com/spots/hakone-hanaori/"
+    },
+    {
+      "spot_id": "spot_214",
+      "slug": "fujiya-hotel",
+      "name": "富士屋ホテル",
+      "url": "https://kibuntrip.com/spots/fujiya-hotel/"
+    },
+    {
+      "spot_id": "spot_215",
+      "slug": "hotel-indigo-hakone-gora",
+      "name": "ホテルインディゴ箱根強羅",
+      "url": "https://kibuntrip.com/spots/hotel-indigo-hakone-gora/"
+    },
+    {
+      "spot_id": "spot_216",
+      "slug": "hyatt-regency-hakone",
+      "name": "ハイアット リージェンシー 箱根 リゾート＆スパ",
+      "url": "https://kibuntrip.com/spots/hyatt-regency-hakone/"
+    },
+    {
+      "spot_id": "spot_217",
+      "slug": "hakone-hotel-kowakien",
+      "name": "箱根ホテル小涌園",
+      "url": "https://kibuntrip.com/spots/hakone-hotel-kowakien/"
+    },
+    {
+      "spot_id": "spot_218",
+      "slug": "yokohama-bay-hotel-tokyu",
+      "name": "横浜ベイホテル東急",
+      "url": "https://kibuntrip.com/spots/yokohama-bay-hotel-tokyu/"
+    },
+    {
+      "spot_id": "spot_219",
+      "slug": "intercontinental-yokohama-pier8",
+      "name": "インターコンチネンタル横浜Pier 8",
+      "url": "https://kibuntrip.com/spots/intercontinental-yokohama-pier8/"
+    },
+    {
+      "spot_id": "spot_220",
+      "slug": "kahala-yokohama",
+      "name": "ザ・カハラ・ホテル＆リゾート 横浜",
+      "url": "https://kibuntrip.com/spots/kahala-yokohama/"
+    },
+    {
+      "spot_id": "spot_221",
+      "slug": "westin-yokohama",
+      "name": "ウェスティンホテル横浜",
+      "url": "https://kibuntrip.com/spots/westin-yokohama/"
+    },
+    {
+      "spot_id": "spot_222",
+      "slug": "hilton-yokohama",
+      "name": "ヒルトン横浜",
+      "url": "https://kibuntrip.com/spots/hilton-yokohama/"
+    },
+    {
+      "spot_id": "spot_223",
+      "slug": "kamakura-prince-hotel",
+      "name": "鎌倉プリンスホテル",
+      "url": "https://kibuntrip.com/spots/kamakura-prince-hotel/"
+    },
+    {
+      "spot_id": "spot_224",
+      "slug": "metropolitan-kamakura",
+      "name": "ホテルメトロポリタン 鎌倉",
+      "url": "https://kibuntrip.com/spots/metropolitan-kamakura/"
+    },
+    {
+      "spot_id": "spot_225",
+      "slug": "malibu-hotel",
+      "name": "MALIBU HOTEL",
+      "url": "https://kibuntrip.com/spots/malibu-hotel/"
+    },
+    {
+      "spot_id": "spot_226",
+      "slug": "hayama-umino-hotel",
+      "name": "葉山うみのホテル",
+      "url": "https://kibuntrip.com/spots/hayama-umino-hotel/"
+    },
+    {
+      "spot_id": "spot_227",
+      "slug": "hayama-otowanomori",
+      "name": "葉山ホテル音羽ノ森",
+      "url": "https://kibuntrip.com/spots/hayama-otowanomori/"
+    },
+    {
+      "spot_id": "spot_228",
+      "slug": "lavista-kannonzaki",
+      "name": "ラビスタ横須賀観音崎テラス",
+      "url": "https://kibuntrip.com/spots/lavista-kannonzaki/"
+    },
+    {
+      "spot_id": "spot_229",
+      "slug": "kamogawakan",
+      "name": "鴨川館",
+      "url": "https://kibuntrip.com/spots/kamogawakan/"
+    },
+    {
+      "spot_id": "spot_230",
+      "slug": "kamogawa-seaworld-hotel",
+      "name": "鴨川シーワールドホテル",
+      "url": "https://kibuntrip.com/spots/kamogawa-seaworld-hotel/"
+    },
+    {
+      "spot_id": "spot_231",
+      "slug": "sheraton-tokyo-bay",
+      "name": "シェラトン・グランデ・トーキョーベイ・ホテル",
+      "url": "https://kibuntrip.com/spots/sheraton-tokyo-bay/"
+    },
+    {
+      "spot_id": "spot_232",
+      "slug": "grand-nikko-tokyo-bay",
+      "name": "グランドニッコー東京ベイ 舞浜",
+      "url": "https://kibuntrip.com/spots/grand-nikko-tokyo-bay/"
+    },
+    {
+      "spot_id": "spot_233",
+      "slug": "the-farm-chiba",
+      "name": "THE FARM",
+      "url": "https://kibuntrip.com/spots/the-farm-chiba/"
+    },
+    {
+      "spot_id": "spot_234",
+      "slug": "hotel-chinzanso-tokyo",
+      "name": "ホテル椿山荘東京",
+      "url": "https://kibuntrip.com/spots/hotel-chinzanso-tokyo/"
+    },
+    {
+      "spot_id": "spot_235",
+      "slug": "hoshinoya-tokyo",
+      "name": "星のや東京",
+      "url": "https://kibuntrip.com/spots/hoshinoya-tokyo/"
+    },
+    {
+      "spot_id": "spot_236",
+      "slug": "tokyo-station-hotel",
+      "name": "東京ステーションホテル",
+      "url": "https://kibuntrip.com/spots/tokyo-station-hotel/"
+    },
+    {
+      "spot_id": "spot_237",
+      "slug": "mesm-tokyo",
+      "name": "メズム東京、オートグラフ コレクション",
+      "url": "https://kibuntrip.com/spots/mesm-tokyo/"
+    },
+    {
+      "spot_id": "spot_238",
+      "slug": "akazawa-onsen-hotel",
+      "name": "赤沢温泉ホテル",
+      "url": "https://kibuntrip.com/spots/akazawa-onsen-hotel/"
+    },
+    {
+      "spot_id": "spot_239",
+      "slug": "izu-hotel-resort-spa",
+      "name": "伊豆ホテル リゾート＆スパ",
+      "url": "https://kibuntrip.com/spots/izu-hotel-resort-spa/"
+    },
+    {
+      "spot_id": "spot_240",
+      "slug": "anda-no-mori",
+      "name": "アンダの森 伊豆いっぺき湖",
+      "url": "https://kibuntrip.com/spots/anda-no-mori/"
+    },
+    {
+      "spot_id": "spot_241",
+      "slug": "kai-anjin",
+      "name": "界 アンジン",
+      "url": "https://kibuntrip.com/spots/kai-anjin/"
+    },
+    {
+      "spot_id": "spot_242",
+      "slug": "kabukiza",
+      "name": "歌舞伎座",
+      "url": "https://kibuntrip.com/spots/kabukiza/"
+    },
+    {
+      "spot_id": "spot_243",
+      "slug": "shiki-theatre-haru",
+      "name": "JR東日本四季劇場［春］",
+      "url": "https://kibuntrip.com/spots/shiki-theatre-haru/"
+    },
+    {
+      "spot_id": "spot_244",
+      "slug": "shinbashi-enbujo",
+      "name": "新橋演舞場",
+      "url": "https://kibuntrip.com/spots/shinbashi-enbujo/"
+    },
+    {
+      "spot_id": "spot_245",
+      "slug": "kaat-kanagawa-arts-theatre",
+      "name": "KAAT 神奈川芸術劇場",
+      "url": "https://kibuntrip.com/spots/kaat-kanagawa-arts-theatre/"
+    },
+    {
+      "spot_id": "spot_246",
+      "slug": "artbar-yokohama",
+      "name": "Artbar Tokyo 横浜元町",
+      "url": "https://kibuntrip.com/spots/artbar-yokohama/"
+    },
+    {
+      "spot_id": "spot_247",
+      "slug": "artbar-daikanyama",
+      "name": "Artbar Tokyo 代官山",
+      "url": "https://kibuntrip.com/spots/artbar-daikanyama/"
+    },
+    {
+      "spot_id": "spot_248",
+      "slug": "crea-base-shinjuku",
+      "name": "CREA BASE 新宿御苑前店",
+      "url": "https://kibuntrip.com/spots/crea-base-shinjuku/"
+    },
+    {
+      "spot_id": "spot_249",
+      "slug": "uzumako-pottery",
+      "name": "うづまこ陶芸教室",
+      "url": "https://kibuntrip.com/spots/uzumako-pottery/"
+    },
+    {
+      "spot_id": "spot_250",
+      "slug": "darun-pottery",
+      "name": "ダルン陶芸教室",
+      "url": "https://kibuntrip.com/spots/darun-pottery/"
+    },
+    {
+      "spot_id": "spot_251",
+      "slug": "yokohama-pottery-center",
+      "name": "横浜市陶芸センター",
+      "url": "https://kibuntrip.com/spots/yokohama-pottery-center/"
+    },
+    {
+      "spot_id": "spot_252",
+      "slug": "tsugutsugu-asakusa",
+      "name": "金継ぎ教室つぐつぐ 浅草店",
+      "url": "https://kibuntrip.com/spots/tsugutsugu-asakusa/"
+    },
+    {
+      "spot_id": "spot_253",
+      "slug": "glass-lab-kiyosumi",
+      "name": "椎名切子 SHOP & FACTORY（GLASS-LAB）",
+      "url": "https://kibuntrip.com/spots/glass-lab-kiyosumi/"
+    },
+    {
+      "spot_id": "spot_254",
+      "slug": "ganso-food-sample-kappabashi",
+      "name": "元祖食品サンプル屋 合羽橋店",
+      "url": "https://kibuntrip.com/spots/ganso-food-sample-kappabashi/"
+    },
+    {
+      "spot_id": "spot_255",
+      "slug": "atelier-ann-asakusa",
+      "name": "Atelier ann 浅草",
+      "url": "https://kibuntrip.com/spots/atelier-ann-asakusa/"
+    },
+    {
+      "spot_id": "spot_256",
+      "slug": "ozu-washi",
+      "name": "小津和紙 手漉き和紙体験工房",
+      "url": "https://kibuntrip.com/spots/ozu-washi/"
+    },
+    {
+      "spot_id": "spot_257",
+      "slug": "the-wharf-house-yamashita-koen",
+      "name": "THE WHARF HOUSE YAMASHITA KOEN",
+      "url": "https://kibuntrip.com/spots/the-wharf-house-yamashita-koen/"
+    },
+    {
+      "spot_id": "spot_258",
+      "slug": "100spoons-azamino",
+      "name": "100本のスプーン あざみ野ガーデンズ",
+      "url": "https://kibuntrip.com/spots/100spoons-azamino/"
+    },
+    {
+      "spot_id": "spot_259",
+      "slug": "bills-yokohama-red-brick",
+      "name": "bills 横浜赤レンガ倉庫",
+      "url": "https://kibuntrip.com/spots/bills-yokohama-red-brick/"
+    },
+    {
+      "spot_id": "spot_260",
+      "slug": "pie-holic-yokohama",
+      "name": "Pie Holic",
+      "url": "https://kibuntrip.com/spots/pie-holic-yokohama/"
+    },
+    {
+      "spot_id": "spot_261",
+      "slug": "aloha-table-yokohama-bay-quarter",
+      "name": "アロハテーブル 横浜ベイクォーター",
+      "url": "https://kibuntrip.com/spots/aloha-table-yokohama-bay-quarter/"
+    },
+    {
+      "spot_id": "spot_262",
+      "slug": "100spoons-futakotamagawa",
+      "name": "100本のスプーン FUTAKOTAMAGAWA",
+      "url": "https://kibuntrip.com/spots/100spoons-futakotamagawa/"
+    },
+    {
+      "spot_id": "spot_263",
+      "slug": "100spoons-mot",
+      "name": "100本のスプーン 東京都現代美術館内",
+      "url": "https://kibuntrip.com/spots/100spoons-mot/"
+    },
+    {
+      "spot_id": "spot_264",
+      "slug": "100spoons-tachikawa",
+      "name": "100本のスプーン TACHIKAWA",
+      "url": "https://kibuntrip.com/spots/100spoons-tachikawa/"
+    },
+    {
+      "spot_id": "spot_265",
+      "slug": "100spoons-toyosu",
+      "name": "100本のスプーン TOYOSU",
+      "url": "https://kibuntrip.com/spots/100spoons-toyosu/"
+    },
+    {
+      "spot_id": "spot_266",
+      "slug": "bills-odaiba",
+      "name": "bills お台場",
+      "url": "https://kibuntrip.com/spots/bills-odaiba/"
+    },
+    {
+      "spot_id": "spot_267",
+      "slug": "eggs-n-things-odaiba",
+      "name": "Eggs ’n Things お台場店",
+      "url": "https://kibuntrip.com/spots/eggs-n-things-odaiba/"
+    },
+    {
+      "spot_id": "spot_268",
+      "slug": "ty-harbor",
+      "name": "T.Y.HARBOR",
+      "url": "https://kibuntrip.com/spots/ty-harbor/"
+    },
+    {
+      "spot_id": "spot_269",
+      "slug": "ride-tennoz",
+      "name": "RIDE",
+      "url": "https://kibuntrip.com/spots/ride-tennoz/"
+    },
+    {
+      "spot_id": "spot_270",
+      "slug": "canal-cafe-kagurazaka",
+      "name": "CANAL CAFE",
+      "url": "https://kibuntrip.com/spots/canal-cafe-kagurazaka/"
+    },
+    {
+      "spot_id": "spot_271",
+      "slug": "crisscross-aoyama",
+      "name": "crisscross",
+      "url": "https://kibuntrip.com/spots/crisscross-aoyama/"
+    },
+    {
+      "spot_id": "spot_272",
+      "slug": "mr-farmer-komazawa",
+      "name": "Mr.FARMER 駒沢オリンピック公園店",
+      "url": "https://kibuntrip.com/spots/mr-farmer-komazawa/"
+    },
+    {
+      "spot_id": "spot_273",
+      "slug": "ivy-place-daikanyama",
+      "name": "IVY PLACE",
+      "url": "https://kibuntrip.com/spots/ivy-place-daikanyama/"
+    },
+    {
+      "spot_id": "spot_274",
+      "slug": "trex-kawasaki-river-cafe",
+      "name": "TREX KAWASAKI RIVER CAFE",
+      "url": "https://kibuntrip.com/spots/trex-kawasaki-river-cafe/"
+    },
+    {
+      "spot_id": "spot_275",
+      "slug": "bills-shichirigahama",
+      "name": "bills 七里ヶ浜",
+      "url": "https://kibuntrip.com/spots/bills-shichirigahama/"
+    },
+    {
+      "spot_id": "spot_276",
+      "slug": "pacific-drive-in-shichirigahama",
+      "name": "Pacific DRIVE-IN 七里ヶ浜",
+      "url": "https://kibuntrip.com/spots/pacific-drive-in-shichirigahama/"
+    },
+    {
+      "spot_id": "spot_277",
+      "slug": "loncafe-enoshima",
+      "name": "LONCAFE 湘南江の島本店",
+      "url": "https://kibuntrip.com/spots/loncafe-enoshima/"
+    },
+    {
+      "spot_id": "spot_278",
+      "slug": "amalfi-della-sera",
+      "name": "Amalfi DELLA SERA",
+      "url": "https://kibuntrip.com/spots/amalfi-della-sera/"
+    },
+    {
+      "spot_id": "spot_279",
+      "slug": "bakery-table-hakone",
+      "name": "Bakery & Table 箱根",
+      "url": "https://kibuntrip.com/spots/bakery-table-hakone/"
+    },
+    {
+      "spot_id": "spot_280",
+      "slug": "naraya-cafe",
+      "name": "NARAYA CAFE",
+      "url": "https://kibuntrip.com/spots/naraya-cafe/"
+    },
+    {
+      "spot_id": "spot_281",
+      "slug": "gora-brewery-grill",
+      "name": "GORA BREWERY & GRILL",
+      "url": "https://kibuntrip.com/spots/gora-brewery-grill/"
+    },
+    {
+      "spot_id": "spot_282",
+      "slug": "coffee-camp-hakone",
+      "name": "COFFEE CAMP",
+      "url": "https://kibuntrip.com/spots/coffee-camp-hakone/"
+    },
+    {
+      "spot_id": "spot_283",
+      "slug": "the-surf-ocean-terrace",
+      "name": "THE SURF OCEAN TERRACE RESTAURANT",
+      "url": "https://kibuntrip.com/spots/the-surf-ocean-terrace/"
+    },
+    {
+      "spot_id": "spot_284",
+      "slug": "mr-farmer-kisarazu",
+      "name": "Mr.FARMER 三井アウトレットパーク木更津店",
+      "url": "https://kibuntrip.com/spots/mr-farmer-kisarazu/"
+    },
+    {
+      "spot_id": "spot_285",
+      "slug": "legoland-discovery-center-tokyo",
+      "name": "レゴランド・ディスカバリー・センター東京",
+      "url": "https://kibuntrip.com/spots/legoland-discovery-center-tokyo/"
+    },
+    {
+      "spot_id": "spot_286",
+      "slug": "miraikan",
+      "name": "日本科学未来館",
+      "url": "https://kibuntrip.com/spots/miraikan/"
+    },
+    {
+      "spot_id": "spot_287",
+      "slug": "chano-ma-yokohama",
+      "name": "chano-ma 横浜",
+      "url": "https://kibuntrip.com/spots/chano-ma-yokohama/"
+    },
+    {
+      "spot_id": "spot_288",
+      "slug": "chano-ma-futakotamagawa",
+      "name": "chano-ma 二子玉川",
+      "url": "https://kibuntrip.com/spots/chano-ma-futakotamagawa/"
+    },
+    {
+      "spot_id": "spot_289",
+      "slug": "chano-ma-ikebukuro",
+      "name": "chano-ma 池袋",
+      "url": "https://kibuntrip.com/spots/chano-ma-ikebukuro/"
+    },
+    {
+      "spot_id": "spot_290",
+      "slug": "yusoshi-chano-ma-ueno",
+      "name": "和カフェyusoshi chano-ma 上野",
+      "url": "https://kibuntrip.com/spots/yusoshi-chano-ma-ueno/"
+    },
+    {
+      "spot_id": "spot_291",
+      "slug": "yusoshi-chano-ma-tachikawa",
+      "name": "和カフェyusoshi chano-ma 立川",
+      "url": "https://kibuntrip.com/spots/yusoshi-chano-ma-tachikawa/"
+    },
+    {
+      "spot_id": "spot_292",
+      "slug": "belbel-park-shinjuku",
+      "name": "べるべるパーク新宿本店",
+      "url": "https://kibuntrip.com/spots/belbel-park-shinjuku/"
+    },
+    {
+      "spot_id": "spot_293",
+      "slug": "belbel-park-shibuya",
+      "name": "べるべるパーク渋谷店",
+      "url": "https://kibuntrip.com/spots/belbel-park-shibuya/"
+    },
+    {
+      "spot_id": "spot_294",
+      "slug": "belbel-park-ikebukuro",
+      "name": "べるべるパーク池袋本店",
+      "url": "https://kibuntrip.com/spots/belbel-park-ikebukuro/"
+    },
+    {
+      "spot_id": "spot_295",
+      "slug": "belbel-park-yokohama-kannai",
+      "name": "べるべるパーク横浜関内店",
+      "url": "https://kibuntrip.com/spots/belbel-park-yokohama-kannai/"
+    },
+    {
+      "spot_id": "spot_296",
+      "slug": "co-shibuya",
+      "name": "coしぶや（渋谷区子育てネウボラ）",
+      "url": "https://kibuntrip.com/spots/co-shibuya/"
+    },
+    {
+      "spot_id": "spot_297",
+      "slug": "latte-chano-mama-shinjuku",
+      "name": "latte chano-mama",
+      "url": "https://kibuntrip.com/spots/latte-chano-mama-shinjuku/"
+    },
+    {
+      "spot_id": "spot_298",
+      "slug": "keio-hughug",
+      "name": "京王あそびの森 HUGHUG〈ハグハグ〉",
+      "url": "https://kibuntrip.com/spots/keio-hughug/"
+    },
+    {
+      "spot_id": "spot_299",
+      "slug": "galaxcity",
+      "name": "ギャラクシティ",
+      "url": "https://kibuntrip.com/spots/galaxcity/"
+    },
+    {
+      "spot_id": "spot_300",
+      "slug": "shinjuku-gyoen",
+      "name": "新宿御苑",
+      "url": "https://kibuntrip.com/spots/shinjuku-gyoen/"
+    },
+    {
+      "spot_id": "spot_301",
+      "slug": "yokohama-umi-no-koen",
+      "name": "海の公園",
+      "url": "https://kibuntrip.com/spots/yokohama-umi-no-koen/"
+    },
+    {
+      "spot_id": "spot_302",
+      "slug": "starbucks-yokohama-umi-no-koen",
+      "name": "スターバックス コーヒー 横浜海の公園店",
+      "url": "https://kibuntrip.com/spots/starbucks-yokohama-umi-no-koen/"
+    },
+    {
+      "spot_id": "spot_303",
+      "slug": "the-sunset-of-mars-yokohama",
+      "name": "THE SUNSET OF MARS -火星旅行- 横浜",
+      "url": "https://kibuntrip.com/spots/the-sunset-of-mars-yokohama/"
+    },
+    {
+      "spot_id": "spot_304",
+      "slug": "moma-kanagawa-hayama",
+      "name": "神奈川県立近代美術館 葉山",
+      "url": "https://kibuntrip.com/spots/moma-kanagawa-hayama/"
+    },
+    {
+      "spot_id": "spot_305",
+      "slug": "orange-bleue-hayama",
+      "name": "レストラン オランジュ・ブルー",
+      "url": "https://kibuntrip.com/spots/orange-bleue-hayama/"
+    },
+    {
+      "spot_id": "spot_306",
+      "slug": "daiyuzan-saijoji",
+      "name": "大雄山最乗寺",
+      "url": "https://kibuntrip.com/spots/daiyuzan-saijoji/"
+    },
+    {
+      "spot_id": "spot_307",
+      "slug": "westin-yokohama-lobby-lounge",
+      "name": "ロビーラウンジ／ウェスティンホテル横浜",
+      "url": "https://kibuntrip.com/spots/westin-yokohama-lobby-lounge/"
+    },
+    {
+      "spot_id": "spot_308",
+      "slug": "somerhouse-yokohama-bay-tokyu",
+      "name": "ソマーハウス／横浜ベイホテル東急",
+      "url": "https://kibuntrip.com/spots/somerhouse-yokohama-bay-tokyu/"
+    },
+    {
+      "spot_id": "spot_309",
+      "slug": "marine-blue-intercontinental-yokohama",
+      "name": "ラウンジ＆バー「マリンブルー」",
+      "url": "https://kibuntrip.com/spots/marine-blue-intercontinental-yokohama/"
+    },
+    {
+      "spot_id": "spot_310",
+      "slug": "union-bar-lounge-hyatt-yokohama",
+      "name": "The Union Bar & Lounge",
+      "url": "https://kibuntrip.com/spots/union-bar-lounge-hyatt-yokohama/"
+    },
+    {
+      "spot_id": "spot_311",
+      "slug": "kahala-lounge-yokohama",
+      "name": "THE KAHALA Lounge",
+      "url": "https://kibuntrip.com/spots/kahala-lounge-yokohama/"
+    },
+    {
+      "spot_id": "spot_312",
+      "slug": "la-terrasse-hotel-new-grand",
+      "name": "ロビーラウンジ ラ・テラス",
+      "url": "https://kibuntrip.com/spots/la-terrasse-hotel-new-grand/"
+    },
+    {
+      "spot_id": "spot_313",
+      "slug": "karyu-dim-sum-afternoon-tea",
+      "name": "中国料理「カリュウ」飲茶アフタヌーンティー",
+      "url": "https://kibuntrip.com/spots/karyu-dim-sum-afternoon-tea/"
+    },
+    {
+      "spot_id": "spot_314",
+      "slug": "garden-lounge-new-otani",
+      "name": "ガーデンラウンジ／ホテルニューオータニ（東京）",
+      "url": "https://kibuntrip.com/spots/garden-lounge-new-otani/"
+    },
+    {
+      "spot_id": "spot_315",
+      "slug": "palace-lounge-palace-hotel-tokyo",
+      "name": "ザ パレス ラウンジ／パレスホテル東京",
+      "url": "https://kibuntrip.com/spots/palace-lounge-palace-hotel-tokyo/"
+    },
+    {
+      "spot_id": "spot_316",
+      "slug": "tokyo-station-hotel-lobby-lounge",
+      "name": "ロビーラウンジ／東京ステーションホテル",
+      "url": "https://kibuntrip.com/spots/tokyo-station-hotel-lobby-lounge/"
+    },
+    {
+      "spot_id": "spot_317",
+      "slug": "lounge-dining-g-tokyo-marriott",
+      "name": "Lounge & Dining G／東京マリオットホテル",
+      "url": "https://kibuntrip.com/spots/lounge-dining-g-tokyo-marriott/"
+    },
+    {
+      "spot_id": "spot_318",
+      "slug": "an-tokyo-japanese-culture",
+      "name": "日本文化体験 庵an東京",
+      "url": "https://kibuntrip.com/spots/an-tokyo-japanese-culture/"
+    },
+    {
+      "spot_id": "spot_319",
+      "slug": "asakusa-sumo-club",
+      "name": "浅草相撲部屋",
+      "url": "https://kibuntrip.com/spots/asakusa-sumo-club/"
+    },
+    {
+      "spot_id": "spot_320",
+      "slug": "yae-kimono-asakusa",
+      "name": "YAE Kimono Rental Asakusa Tokyo",
+      "url": "https://kibuntrip.com/spots/yae-kimono-asakusa/"
+    },
+    {
+      "spot_id": "spot_321",
+      "slug": "mt-fuji-wooden-toy-museum",
+      "name": "富士山木のおもちゃ美術館",
+      "url": "https://kibuntrip.com/spots/mt-fuji-wooden-toy-museum/"
+    },
+    {
+      "spot_id": "spot_322",
+      "slug": "nicopa-nico-ground-kinshicho",
+      "name": "NICOPA & nico ground 丸井錦糸町店",
+      "url": "https://kibuntrip.com/spots/nicopa-nico-ground-kinshicho/"
+    },
+    {
+      "spot_id": "spot_323",
+      "slug": "hotel-new-akao-kids-park",
+      "name": "ホテルニューアカオ キッズパーク",
+      "url": "https://kibuntrip.com/spots/hotel-new-akao-kids-park/"
+    },
+    {
+      "spot_id": "spot_324",
+      "slug": "capcomix-minatomirai",
+      "name": "CAPCOMIX みなとみらい店",
+      "url": "https://kibuntrip.com/spots/capcomix-minatomirai/"
+    },
+    {
+      "spot_id": "spot_325",
+      "slug": "kiyosato-terrace",
+      "name": "清里テラス",
+      "url": "https://kibuntrip.com/spots/kiyosato-terrace/"
+    },
+    {
+      "spot_id": "spot_326",
+      "slug": "jogashima",
+      "name": "城ヶ島",
+      "url": "https://kibuntrip.com/spots/jogashima/"
+    },
+    {
+      "spot_id": "spot_327",
+      "slug": "nagatoro-iwadatami",
+      "name": "長瀞岩畳",
+      "url": "https://kibuntrip.com/spots/nagatoro-iwadatami/"
+    },
+    {
+      "spot_id": "spot_328",
+      "slug": "oyamadera-isehara",
+      "name": "大山寺",
+      "url": "https://kibuntrip.com/spots/oyamadera-isehara/"
+    },
+    {
+      "spot_id": "spot_329",
+      "slug": "asahi-sky-room",
+      "name": "アサヒスカイルーム",
+      "url": "https://kibuntrip.com/spots/asahi-sky-room/"
+    },
+    {
+      "spot_id": "spot_330",
+      "slug": "omotesando-bamboo",
+      "name": "表参道バンブー",
+      "url": "https://kibuntrip.com/spots/omotesando-bamboo/"
+    },
+    {
+      "spot_id": "spot_331",
+      "slug": "cafe-bell-ueno",
+      "name": "Cafe Bell",
+      "url": "https://kibuntrip.com/spots/cafe-bell-ueno/"
+    },
+    {
+      "spot_id": "spot_332",
+      "slug": "orient-cafe",
+      "name": "オリエント・カフェ",
+      "url": "https://kibuntrip.com/spots/orient-cafe/"
+    },
+    {
+      "spot_id": "spot_333",
+      "slug": "bundan",
+      "name": "BUNDAN COFFEE & BEER",
+      "url": "https://kibuntrip.com/spots/bundan/"
+    },
+    {
+      "spot_id": "spot_334",
+      "slug": "canade-lounge",
+      "name": "CANADE LOUNGE",
+      "url": "https://kibuntrip.com/spots/canade-lounge/"
+    },
+    {
+      "spot_id": "spot_335",
+      "slug": "akasaka-palace",
+      "name": "迎賓館赤坂離宮",
+      "url": "https://kibuntrip.com/spots/akasaka-palace/"
+    },
+    {
+      "spot_id": "spot_336",
+      "slug": "cafe-teien",
+      "name": "café TEIEN",
+      "url": "https://kibuntrip.com/spots/cafe-teien/"
+    },
+    {
+      "spot_id": "spot_337",
+      "slug": "cafe-1894",
+      "name": "Café 1894",
+      "url": "https://kibuntrip.com/spots/cafe-1894/"
+    },
+    {
+      "spot_id": "spot_338",
+      "slug": "dotcom-coffee-asakusabashi",
+      "name": "dotcom coffee Asakusabashi",
+      "url": "https://kibuntrip.com/spots/dotcom-coffee-asakusabashi/"
+    },
+    {
+      "spot_id": "spot_339",
+      "slug": "arc-kuramae",
+      "name": "ARC",
+      "url": "https://kibuntrip.com/spots/arc-kuramae/"
+    },
+    {
+      "spot_id": "spot_340",
+      "slug": "unison-tailor",
+      "name": "UNISON TAILOR",
+      "url": "https://kibuntrip.com/spots/unison-tailor/"
+    },
+    {
+      "spot_id": "spot_341",
+      "slug": "container-kissa",
+      "name": "CONTAINER",
+      "url": "https://kibuntrip.com/spots/container-kissa/"
+    },
+    {
+      "spot_id": "spot_342",
+      "slug": "rain-on-the-roof",
+      "name": "Rain On The Roof",
+      "url": "https://kibuntrip.com/spots/rain-on-the-roof/"
+    },
+    {
+      "spot_id": "spot_343",
+      "slug": "common-roppongi",
+      "name": "Common cafe&music bar lounge",
+      "url": "https://kibuntrip.com/spots/common-roppongi/"
+    },
+    {
+      "spot_id": "spot_344",
+      "slug": "urn-chai-tea-lumine-shinjuku",
+      "name": "uRn.chAi&TeA ルミネ新宿店",
+      "url": "https://kibuntrip.com/spots/urn-chai-tea-lumine-shinjuku/"
+    },
+    {
+      "spot_id": "spot_345",
+      "slug": "omo5-tokyo-gotanda-cafe",
+      "name": "OMOカフェ＆バル（OMO5東京五反田）",
+      "url": "https://kibuntrip.com/spots/omo5-tokyo-gotanda-cafe/"
+    },
+    {
+      "spot_id": "spot_346",
+      "slug": "eat-good-place",
+      "name": "EAT GOOD PLACE",
+      "url": "https://kibuntrip.com/spots/eat-good-place/"
+    },
+    {
+      "spot_id": "spot_347",
+      "slug": "ogawa-coffee-laboratory-takanawa",
+      "name": "OGAWA COFFEE LABORATORY 高輪",
+      "url": "https://kibuntrip.com/spots/ogawa-coffee-laboratory-takanawa/"
+    },
+    {
+      "spot_id": "spot_348",
+      "slug": "loops-takanawa",
+      "name": "LOOPS",
+      "url": "https://kibuntrip.com/spots/loops-takanawa/"
+    },
+    {
+      "spot_id": "spot_349",
+      "slug": "salon-de-the-rond",
+      "name": "サロン・ド・テ ロンド",
+      "url": "https://kibuntrip.com/spots/salon-de-the-rond/"
+    },
+    {
+      "spot_id": "spot_350",
+      "slug": "goodcoffee-shimbashi",
+      "name": "goodcoffee 新橋",
+      "url": "https://kibuntrip.com/spots/goodcoffee-shimbashi/"
+    },
+    {
+      "spot_id": "spot_351",
+      "slug": "sfumato-asakusa",
+      "name": "Sfumato",
+      "url": "https://kibuntrip.com/spots/sfumato-asakusa/"
+    },
+    {
+      "spot_id": "spot_352",
+      "slug": "denenchofu-seseragikan",
+      "name": "田園調布せせらぎ館",
+      "url": "https://kibuntrip.com/spots/denenchofu-seseragikan/"
+    },
+    {
+      "spot_id": "spot_353",
+      "slug": "vat-bakery",
+      "name": "VAT BAKERY",
+      "url": "https://kibuntrip.com/spots/vat-bakery/"
+    },
+    {
+      "spot_id": "spot_354",
+      "slug": "parc-cafe-toe-library",
+      "name": "PARC CAFE at TOE LIBRARY",
+      "url": "https://kibuntrip.com/spots/parc-cafe-toe-library/"
+    },
+    {
+      "spot_id": "spot_355",
+      "slug": "brews-tennoz",
+      "name": "BREWS",
+      "url": "https://kibuntrip.com/spots/brews-tennoz/"
+    },
+    {
+      "spot_id": "spot_356",
+      "slug": "felice-domani-nakameguro",
+      "name": "felice domani nakameguro",
+      "url": "https://kibuntrip.com/spots/felice-domani-nakameguro/"
+    },
+    {
+      "spot_id": "spot_357",
+      "slug": "kanno-coffee-factory-labo",
+      "name": "Factory & Labo 神乃珈琲",
+      "url": "https://kibuntrip.com/spots/kanno-coffee-factory-labo/"
+    },
+    {
+      "spot_id": "spot_358",
+      "slug": "orange-cat-waseda",
+      "name": "橙子猫 Orange Cat",
+      "url": "https://kibuntrip.com/spots/orange-cat-waseda/"
+    },
+    {
+      "spot_id": "spot_359",
+      "slug": "share-lounge-marunouchi",
+      "name": "SHARE LOUNGE MARUNOUCHI",
+      "url": "https://kibuntrip.com/spots/share-lounge-marunouchi/"
+    },
+    {
+      "spot_id": "spot_360",
+      "slug": "ampere-honnomori",
+      "name": "ampere 本の森ちゅうおう",
+      "url": "https://kibuntrip.com/spots/ampere-honnomori/"
+    },
+    {
+      "spot_id": "spot_361",
+      "slug": "welovedonut-kagurazaka",
+      "name": "WeLoveDonut 神楽坂店",
+      "url": "https://kibuntrip.com/spots/welovedonut-kagurazaka/"
+    },
+    {
+      "spot_id": "spot_362",
+      "slug": "sisiri-ebisu",
+      "name": "SISIRI 恵比寿店",
+      "url": "https://kibuntrip.com/spots/sisiri-ebisu/"
+    },
+    {
+      "spot_id": "spot_363",
+      "slug": "monkey-cafe-daikanyama",
+      "name": "Monkey Cafe",
+      "url": "https://kibuntrip.com/spots/monkey-cafe-daikanyama/"
+    },
+    {
+      "spot_id": "spot_364",
+      "slug": "glitch-coffee-tokyo",
+      "name": "GLITCH COFFEE TOKYO 日本橋本町",
+      "url": "https://kibuntrip.com/spots/glitch-coffee-tokyo/"
+    },
+    {
+      "spot_id": "spot_365",
+      "slug": "yoka-meguro",
+      "name": "yoka／余暇",
+      "url": "https://kibuntrip.com/spots/yoka-meguro/"
+    },
+    {
+      "spot_id": "spot_366",
+      "slug": "en-kinshicho",
+      "name": "EN",
+      "url": "https://kibuntrip.com/spots/en-kinshicho/"
+    },
+    {
+      "spot_id": "spot_367",
+      "slug": "bacha-coffee-marunouchi",
+      "name": "Bacha Coffee 新丸ビル",
+      "url": "https://kibuntrip.com/spots/bacha-coffee-marunouchi/"
+    },
+    {
+      "spot_id": "spot_368",
+      "slug": "small-glass-book-museum",
+      "name": "ちいさな硝子の本の博物館",
+      "url": "https://kibuntrip.com/spots/small-glass-book-museum/"
+    },
+    {
+      "spot_id": "spot_369",
+      "slug": "miso-mebore-roppongi",
+      "name": "みそめぼれ",
+      "url": "https://kibuntrip.com/spots/miso-mebore-roppongi/"
+    },
+    {
+      "spot_id": "spot_370",
+      "slug": "aigis-omotesando",
+      "name": "AIGIS 東京・表参道店",
+      "url": "https://kibuntrip.com/spots/aigis-omotesando/"
+    },
+    {
+      "spot_id": "spot_371",
+      "slug": "kissayubinya-urawa",
+      "name": "喫茶ゆうびん屋",
+      "url": "https://kibuntrip.com/spots/kissayubinya-urawa/"
+    },
+    {
+      "spot_id": "spot_372",
+      "slug": "hinine-note-yoyogikoen",
+      "name": "HININE NOTE 代々木公園店",
+      "url": "https://kibuntrip.com/spots/hinine-note-yoyogikoen/"
+    },
+    {
+      "spot_id": "spot_373",
+      "slug": "vanillabeans-roastery-hammerhead",
+      "name": "VANILLABEANS THE ROASTERY HAMMERHEAD",
+      "url": "https://kibuntrip.com/spots/vanillabeans-roastery-hammerhead/"
+    },
+    {
+      "spot_id": "spot_374",
+      "slug": "mominoki-house-shibuya",
+      "name": "もみの気ハウス 渋谷道玄坂店",
+      "url": "https://kibuntrip.com/spots/mominoki-house-shibuya/"
+    },
+    {
+      "spot_id": "spot_375",
+      "slug": "choya-umetaiken-kamakura",
+      "name": "梅体験専門店「蝶矢」鎌倉店",
+      "url": "https://kibuntrip.com/spots/choya-umetaiken-kamakura/"
+    },
+    {
+      "spot_id": "spot_376",
+      "slug": "ap-lab-tokyo",
+      "name": "AP LAB Tokyo",
+      "url": "https://kibuntrip.com/spots/ap-lab-tokyo/"
+    },
+    {
+      "spot_id": "spot_377",
+      "slug": "remake-outlet-laketown",
+      "name": "Re:MAKE OUTLET レイクタウンアウトレット",
+      "url": "https://kibuntrip.com/spots/remake-outlet-laketown/"
+    },
+    {
+      "spot_id": "spot_378",
+      "slug": "crayon-shinchan-okashina",
+      "name": "クレヨンしんちゃん オカシナもぐもぐワールド",
+      "url": "https://kibuntrip.com/spots/crayon-shinchan-okashina/"
+    },
+    {
+      "spot_id": "spot_379",
+      "slug": "marugame-handmade-class-tachikawa",
+      "name": "丸亀製麺 手づくり体験教室 東京立川",
+      "url": "https://kibuntrip.com/spots/marugame-handmade-class-tachikawa/"
+    },
+    {
+      "spot_id": "spot_380",
+      "slug": "sylvanian-big-house-solamachi",
+      "name": "シルバニアファミリー 森の大きなお家 東京ソラマチ店",
+      "url": "https://kibuntrip.com/spots/sylvanian-big-house-solamachi/"
+    },
+    {
+      "spot_id": "spot_381",
+      "slug": "daikeien",
+      "name": "大慶園",
+      "url": "https://kibuntrip.com/spots/daikeien/"
+    },
+    {
+      "spot_id": "spot_382",
+      "slug": "nanetokyo",
+      "name": "nanetokyo",
+      "url": "https://kibuntrip.com/spots/nanetokyo/"
+    },
+    {
+      "spot_id": "spot_383",
+      "slug": "pippi-shinokubo",
+      "name": "Pippi",
+      "url": "https://kibuntrip.com/spots/pippi-shinokubo/"
+    },
+    {
+      "spot_id": "spot_384",
+      "slug": "jeju-beach-shinokubo",
+      "name": "まもなく済州ビーチ",
+      "url": "https://kibuntrip.com/spots/jeju-beach-shinokubo/"
+    },
+    {
+      "spot_id": "spot_385",
+      "slug": "hanimaru-cafe",
+      "name": "Animal Cafe 爬にまるカフェ",
+      "url": "https://kibuntrip.com/spots/hanimaru-cafe/"
+    },
+    {
+      "spot_id": "spot_386",
+      "slug": "my-clay-story",
+      "name": "my clay story",
+      "url": "https://kibuntrip.com/spots/my-clay-story/"
+    },
+    {
+      "spot_id": "spot_387",
+      "slug": "plus-add-shinokubo",
+      "name": "＋add",
+      "url": "https://kibuntrip.com/spots/plus-add-shinokubo/"
+    },
+    {
+      "spot_id": "spot_388",
+      "slug": "hitachi-seaside-park",
+      "name": "国営ひたち海浜公園",
+      "url": "https://kibuntrip.com/spots/hitachi-seaside-park/"
+    },
+    {
+      "spot_id": "spot_389",
+      "slug": "aquaworld-oarai",
+      "name": "アクアワールド茨城県大洗水族館",
+      "url": "https://kibuntrip.com/spots/aquaworld-oarai/"
+    },
+    {
+      "spot_id": "spot_390",
+      "slug": "ibaraido",
+      "name": "こもれび森のイバライド",
+      "url": "https://kibuntrip.com/spots/ibaraido/"
+    },
+    {
+      "spot_id": "spot_391",
+      "slug": "tsukuba-expo-center",
+      "name": "つくばエキスポセンター",
+      "url": "https://kibuntrip.com/spots/tsukuba-expo-center/"
+    },
+    {
+      "spot_id": "spot_392",
+      "slug": "geological-museum-tsukuba",
+      "name": "地質標本館",
+      "url": "https://kibuntrip.com/spots/geological-museum-tsukuba/"
+    },
+    {
+      "spot_id": "spot_393",
+      "slug": "ibaraki-nature-museum",
+      "name": "ミュージアムパーク茨城県自然博物館",
+      "url": "https://kibuntrip.com/spots/ibaraki-nature-museum/"
+    },
+    {
+      "spot_id": "spot_394",
+      "slug": "ibaraki-flower-park",
+      "name": "いばらきフラワーパーク",
+      "url": "https://kibuntrip.com/spots/ibaraki-flower-park/"
+    },
+    {
+      "spot_id": "spot_395",
+      "slug": "tsukubasan-ropeway",
+      "name": "筑波山ロープウェイ",
+      "url": "https://kibuntrip.com/spots/tsukubasan-ropeway/"
+    },
+    {
+      "spot_id": "spot_396",
+      "slug": "nasu-animal-kingdom",
+      "name": "那須どうぶつ王国",
+      "url": "https://kibuntrip.com/spots/nasu-animal-kingdom/"
+    },
+    {
+      "spot_id": "spot_397",
+      "slug": "nasu-highland-park",
+      "name": "那須ハイランドパーク",
+      "url": "https://kibuntrip.com/spots/nasu-highland-park/"
+    },
+    {
+      "spot_id": "spot_398",
+      "slug": "mobility-resort-motegi",
+      "name": "モビリティリゾートもてぎ",
+      "url": "https://kibuntrip.com/spots/mobility-resort-motegi/"
+    },
+    {
+      "spot_id": "spot_399",
+      "slug": "oya-history-museum",
+      "name": "大谷資料館",
+      "url": "https://kibuntrip.com/spots/oya-history-museum/"
+    },
+    {
+      "spot_id": "spot_400",
+      "slug": "tobu-world-square",
+      "name": "東武ワールドスクウェア",
+      "url": "https://kibuntrip.com/spots/tobu-world-square/"
+    },
+    {
+      "spot_id": "spot_401",
+      "slug": "edo-wonderland",
+      "name": "江戸ワンダーランド 日光江戸村",
+      "url": "https://kibuntrip.com/spots/edo-wonderland/"
+    },
+    {
+      "spot_id": "spot_402",
+      "slug": "ashikaga-flower-park",
+      "name": "あしかがフラワーパーク",
+      "url": "https://kibuntrip.com/spots/ashikaga-flower-park/"
+    },
+    {
+      "spot_id": "spot_403",
+      "slug": "nasu-minamigaoka-farm",
+      "name": "那須高原 南ヶ丘牧場",
+      "url": "https://kibuntrip.com/spots/nasu-minamigaoka-farm/"
+    },
+    {
+      "spot_id": "spot_404",
+      "slug": "gunma-safari-park",
+      "name": "群馬サファリパーク",
+      "url": "https://kibuntrip.com/spots/gunma-safari-park/"
+    },
+    {
+      "spot_id": "spot_405",
+      "slug": "ikaho-green-bokujo",
+      "name": "伊香保グリーン牧場",
+      "url": "https://kibuntrip.com/spots/ikaho-green-bokujo/"
+    },
+    {
+      "spot_id": "spot_406",
+      "slug": "usui-pass-railway-heritage-park",
+      "name": "碓氷峠鉄道文化むら",
+      "url": "https://kibuntrip.com/spots/usui-pass-railway-heritage-park/"
+    },
+    {
+      "spot_id": "spot_407",
+      "slug": "lockheart-castle",
+      "name": "ロックハート城",
+      "url": "https://kibuntrip.com/spots/lockheart-castle/"
+    },
+    {
+      "spot_id": "spot_408",
+      "slug": "konnyaku-park",
+      "name": "こんにゃくパーク",
+      "url": "https://kibuntrip.com/spots/konnyaku-park/"
+    },
+    {
+      "spot_id": "spot_409",
+      "slug": "gunma-kodomo-no-kuni",
+      "name": "ぐんまこどもの国",
+      "url": "https://kibuntrip.com/spots/gunma-kodomo-no-kuni/"
+    },
+    {
+      "spot_id": "spot_410",
+      "slug": "mentai-park-gunma",
+      "name": "めんたいパーク群馬",
+      "url": "https://kibuntrip.com/spots/mentai-park-gunma/"
+    },
+    {
+      "spot_id": "spot_411",
+      "slug": "world-famous-dog-farm",
+      "name": "世界の名犬牧場",
+      "url": "https://kibuntrip.com/spots/world-famous-dog-farm/"
+    },
+    {
+      "spot_id": "spot_412",
+      "slug": "fuji-q-highland",
+      "name": "富士急ハイランド",
+      "url": "https://kibuntrip.com/spots/fuji-q-highland/"
+    },
+    {
+      "spot_id": "spot_413",
+      "slug": "fuji-subaru-land",
+      "name": "富士すばるランド",
+      "url": "https://kibuntrip.com/spots/fuji-subaru-land/"
+    },
+    {
+      "spot_id": "spot_414",
+      "slug": "yamanashi-maglev-exhibition-center",
+      "name": "山梨県立リニア見学センター",
+      "url": "https://kibuntrip.com/spots/yamanashi-maglev-exhibition-center/"
+    },
+    {
+      "spot_id": "spot_415",
+      "slug": "yamanashi-science-center",
+      "name": "山梨県立科学館",
+      "url": "https://kibuntrip.com/spots/yamanashi-science-center/"
+    },
+    {
+      "spot_id": "spot_416",
+      "slug": "kawaguchiko-music-forest-museum",
+      "name": "河口湖 音楽と森の美術館",
+      "url": "https://kibuntrip.com/spots/kawaguchiko-music-forest-museum/"
+    },
+    {
+      "spot_id": "spot_417",
+      "slug": "oshino-shinobi-no-sato",
+      "name": "忍野 しのびの里",
+      "url": "https://kibuntrip.com/spots/oshino-shinobi-no-sato/"
+    },
+    {
+      "spot_id": "spot_418",
+      "slug": "kikyo-shingen-mochi-factory-theme-park",
+      "name": "桔梗信玄餅工場テーマパーク",
+      "url": "https://kibuntrip.com/spots/kikyo-shingen-mochi-factory-theme-park/"
+    },
+    {
+      "spot_id": "spot_419",
+      "slug": "mt-fuji-panoramic-ropeway",
+      "name": "富士山パノラマロープウェイ",
+      "url": "https://kibuntrip.com/spots/mt-fuji-panoramic-ropeway/"
+    },
+    {
+      "spot_id": "spot_420",
+      "slug": "izu-shaboten-zoo",
+      "name": "伊豆シャボテン動物公園",
+      "url": "https://kibuntrip.com/spots/izu-shaboten-zoo/"
+    },
+    {
+      "spot_id": "spot_421",
+      "slug": "izu-granpal-park",
+      "name": "伊豆ぐらんぱる公園",
+      "url": "https://kibuntrip.com/spots/izu-granpal-park/"
+    },
+    {
+      "spot_id": "spot_422",
+      "slug": "fuji-safari-park",
+      "name": "富士サファリパーク",
+      "url": "https://kibuntrip.com/spots/fuji-safari-park/"
+    },
+    {
+      "spot_id": "spot_423",
+      "slug": "mishima-skywalk",
+      "name": "三島スカイウォーク",
+      "url": "https://kibuntrip.com/spots/mishima-skywalk/"
+    },
+    {
+      "spot_id": "spot_424",
+      "slug": "acao-forest",
+      "name": "ACAO FOREST",
+      "url": "https://kibuntrip.com/spots/acao-forest/"
+    },
+    {
+      "spot_id": "spot_425",
+      "slug": "izu-panorama-park",
+      "name": "伊豆パノラマパーク",
+      "url": "https://kibuntrip.com/spots/izu-panorama-park/"
+    },
+    {
+      "spot_id": "spot_426",
+      "slug": "numazu-deep-sea-aquarium",
+      "name": "沼津港深海水族館",
+      "url": "https://kibuntrip.com/spots/numazu-deep-sea-aquarium/"
+    },
+    {
+      "spot_id": "spot_427",
+      "slug": "izoo",
+      "name": "体感型動物園iZoo",
+      "url": "https://kibuntrip.com/spots/izoo/"
+    },
+    {
+      "spot_id": "spot_428",
+      "slug": "kakegawa-kachoen",
+      "name": "掛川花鳥園",
+      "url": "https://kibuntrip.com/spots/kakegawa-kachoen/"
+    },
+    {
+      "spot_id": "spot_429",
+      "slug": "makaino-farm",
+      "name": "まかいの牧場",
+      "url": "https://kibuntrip.com/spots/makaino-farm/"
+    },
+    {
+      "spot_id": "spot_430",
+      "slug": "atami-trick-art-museum",
+      "name": "熱海トリックアート迷宮館",
+      "url": "https://kibuntrip.com/spots/atami-trick-art-museum/"
+    },
+    {
+      "spot_id": "spot_431",
+      "slug": "oigawa-railway",
+      "name": "大井川鐵道",
+      "url": "https://kibuntrip.com/spots/oigawa-railway/"
+    },
+    {
+      "spot_id": "spot_432",
+      "slug": "etowa-kasama",
+      "name": "ETOWA KASAMA",
+      "url": "https://kibuntrip.com/spots/etowa-kasama/"
+    },
+    {
+      "spot_id": "spot_433",
+      "slug": "pica-fujiyama",
+      "name": "PICA Fujiyama",
+      "url": "https://kibuntrip.com/spots/pica-fujiyama/"
+    },
+    {
+      "spot_id": "spot_434",
+      "slug": "the-bamboo-forest",
+      "name": "THE BAMBOO FOREST",
+      "url": "https://kibuntrip.com/spots/the-bamboo-forest/"
+    },
+    {
+      "spot_id": "spot_435",
+      "slug": "inn-the-park-numazu",
+      "name": "泊まれる公園 INN THE PARK 沼津",
+      "url": "https://kibuntrip.com/spots/inn-the-park-numazu/"
+    },
+    {
+      "spot_id": "spot_436",
+      "slug": "japan-folk-crafts-museum",
+      "name": "日本民藝館",
+      "url": "https://kibuntrip.com/spots/japan-folk-crafts-museum/"
+    },
+    {
+      "spot_id": "spot_437",
+      "slug": "d-department-tokyo",
+      "name": "D&DEPARTMENT TOKYO",
+      "url": "https://kibuntrip.com/spots/d-department-tokyo/"
+    },
+    {
+      "spot_id": "spot_438",
+      "slug": "kama-asa-kappabashi",
+      "name": "釜浅商店 合羽橋店",
+      "url": "https://kibuntrip.com/spots/kama-asa-kappabashi/"
+    },
+    {
+      "spot_id": "spot_439",
+      "slug": "mashiko-museum-ceramic-art",
+      "name": "益子陶芸美術館",
+      "url": "https://kibuntrip.com/spots/mashiko-museum-ceramic-art/"
+    },
+    {
+      "spot_id": "spot_440",
+      "slug": "enoura-observatory",
+      "name": "小田原文化財団 江之浦測候所",
+      "url": "https://kibuntrip.com/spots/enoura-observatory/"
+    },
+    {
+      "spot_id": "spot_441",
+      "slug": "snoopy-museum-tokyo",
+      "name": "スヌーピーミュージアム",
+      "url": "https://kibuntrip.com/spots/snoopy-museum-tokyo/"
+    },
+    {
+      "spot_id": "spot_442",
+      "slug": "new-otani-garden-pool",
+      "name": "GARDEN POOL／ホテルニューオータニ（東京）",
+      "url": "https://kibuntrip.com/spots/new-otani-garden-pool/"
+    },
+    {
+      "spot_id": "spot_443",
+      "slug": "cancam-night-pool-tokyo-prince",
+      "name": "CanCam NIGHT POOL／東京プリンスホテル",
+      "url": "https://kibuntrip.com/spots/cancam-night-pool-tokyo-prince/"
+    },
+    {
+      "spot_id": "spot_444",
+      "slug": "sayuri-world",
+      "name": "サユリワールド",
+      "url": "https://kibuntrip.com/spots/sayuri-world/"
+    },
+    {
+      "spot_id": "spot_445",
+      "slug": "michinoeki-kasama",
+      "name": "道の駅かさま",
+      "url": "https://kibuntrip.com/spots/michinoeki-kasama/"
+    },
+    {
+      "spot_id": "spot_446",
+      "slug": "mon-takanawa",
+      "name": "MoN Takanawa: The Museum of Narratives",
+      "url": "https://kibuntrip.com/spots/mon-takanawa/"
+    },
+    {
+      "spot_id": "spot_447",
+      "slug": "hilton-tokyo-rooftop-beer-garden-2026",
+      "name": "ヒルトン東京 2026年ビアガーデン",
+      "url": "https://kibuntrip.com/spots/hilton-tokyo-rooftop-beer-garden-2026/"
+    },
+    {
+      "spot_id": "spot_448",
+      "slug": "oak-door-grand-hyatt-tokyo",
+      "name": "THE OAK DOOR／グランド ハイアット 東京",
+      "url": "https://kibuntrip.com/spots/oak-door-grand-hyatt-tokyo/"
+    },
+    {
+      "spot_id": "spot_449",
+      "slug": "hamabeer-intercontinental-yokohama",
+      "name": "海の見えるビアガーデン「はまビア！」",
+      "url": "https://kibuntrip.com/spots/hamabeer-intercontinental-yokohama/"
+    },
+    {
+      "spot_id": "spot_450",
+      "slug": "sunshine-aquarium",
+      "name": "サンシャイン水族館",
+      "url": "https://kibuntrip.com/spots/sunshine-aquarium/"
+    },
+    {
+      "spot_id": "spot_451",
+      "slug": "sunshine60-observatory-tenbou-park",
+      "name": "サンシャイン60展望台 てんぼうパーク",
+      "url": "https://kibuntrip.com/spots/sunshine60-observatory-tenbou-park/"
+    },
+    {
+      "spot_id": "spot_452",
+      "slug": "oiso-thermal-spa-swave",
+      "name": "THERMAL SPA S.WAVE／大磯プリンスホテル",
+      "url": "https://kibuntrip.com/spots/oiso-thermal-spa-swave/"
+    },
+    {
+      "spot_id": "spot_453",
+      "slug": "ana-intercontinental-tokyo-dayuse",
+      "name": "ANAインターコンチネンタルホテル東京 デイユース",
+      "url": "https://kibuntrip.com/spots/ana-intercontinental-tokyo-dayuse/"
+    },
+    {
+      "spot_id": "spot_454",
+      "slug": "247-restaurant-minatomirai",
+      "name": "24/7 restaurant",
+      "url": "https://kibuntrip.com/spots/247-restaurant-minatomirai/"
+    },
+    {
+      "spot_id": "spot_455",
+      "slug": "pignic-cafe-yokohama",
+      "name": "pignic cafe 横浜店",
+      "url": "https://kibuntrip.com/spots/pignic-cafe-yokohama/"
+    },
+    {
+      "spot_id": "spot_456",
+      "slug": "yokohama-minatomirai-manyo-club",
+      "name": "横浜みなとみらい 万葉倶楽部",
+      "url": "https://kibuntrip.com/spots/yokohama-minatomirai-manyo-club/"
+    },
+    {
+      "spot_id": "spot_457",
+      "slug": "aloha-table-colette-mare-minatomirai",
+      "name": "アロハテーブル コレットマーレみなとみらい",
+      "url": "https://kibuntrip.com/spots/aloha-table-colette-mare-minatomirai/"
+    },
+    {
+      "spot_id": "spot_458",
+      "slug": "tsukuihama-tourist-farm",
+      "name": "津久井浜観光農園",
+      "url": "https://kibuntrip.com/spots/tsukuihama-tourist-farm/"
+    }
+  ]
+}
