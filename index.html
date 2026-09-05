@@ -28,7 +28,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=2110&amp;h=211118" />
+  <link rel="stylesheet" href="styles.css?v=211124&amp;h=211124" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -62,18 +62,19 @@
       <h1>今日は、<br><em>どんな気分？</em></h1>
       <p class="hero-copy">行きたい場所を検索する前に、過ごしたい一日を選ぶ。<br>誰と行くか、今いる場所も少しだけ教えてください。</p>
 
-      <div class="audience-block">
+      <div class="audience-block setup-panel">
         <div class="mini-heading"><span>01</span><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
         <div id="audiencePicker" class="audience-picker" role="group" aria-label="同行者を選ぶ"></div>
       </div>
 
-      <div class="vibe-block">
+      <div class="vibe-block setup-panel">
         <div class="mini-heading"><span>02</span><strong>今日を組み立てる</strong><small>最大3つ</small></div>
         <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら選びます。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
         <div class="selection-row">
           <span id="selectedHint">気分や、やりたいことを1つ選んでください</span>
           <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
         </div>
+        <div id="selectedVibeTags" class="selected-vibe-tags" aria-live="polite"></div>
       </div>
 
       <details class="conditions" open>
@@ -188,5 +189,5 @@
   <script type="text/javascript" language="javascript">
     var vc_pid = "892690966";
   </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-  <script src="app.js?v=2091&amp;h=211118"></script>
+  <script src="app.js?v=211124&amp;h=211124"></script>
 </body></html>
