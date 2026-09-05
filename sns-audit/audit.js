@@ -30,6 +30,21 @@
     'night-starts-after-five':{url:'../assets/sns/article-posters/night-starts-after-five.webp',title:'日が落ちてから、出かける。17時から始める夜3選'}
   };
   const AI_DISCLOSURE='※投稿内の画像は生成AIによるイメージです。実際の施設・景観とは異なる場合があります。';
+  // Official Instagram accounts are intentionally conservative: only accounts that have
+  // been verified via an official site / official SNS policy / official press material are
+  // included here. Unknown or ambiguous accounts are omitted rather than guessed.
+  const OFFICIAL_INSTAGRAM_BY_NAME=Object.freeze({
+    '日本科学未来館':'miraikan',
+    'チームラボボーダレス':'teamlab',
+    'スモールワールズ':'smallworlds_official',
+    '国立科学博物館':'kahaku_nmns',
+    '横浜美術館':'yokohama_museum_of_art',
+    '新江ノ島水族館':'enosui_com',
+    '箱根小涌園ユネッサン':'yunessun_hakone',
+    'chano-ma 横浜':'chanoma_yokohama',
+    'bills 横浜赤レンガ倉庫':'billsjapan',
+    'THE WHARF HOUSE YAMASHITA KOEN':'the_wharf_house_yamashita_koen'
+  });
   const cfg=window.KIBUN_CONFIG||{};
   const heroCache=new Map();
   const autoSnsImageCache=new Map();
@@ -439,6 +454,35 @@
     document.querySelectorAll('[data-open-idea]').forEach(b=>b.addEventListener('click',()=>openIdea(b.dataset.openIdea)));
     document.querySelectorAll('[data-add-idea]').forEach(b=>b.addEventListener('click',()=>addIdeaToOperations(b.dataset.addIdea)));
   }
+  function normalizeInstagramHandle(value){
+    const raw=String(value||'').trim();if(!raw)return'';
+    const direct=raw.replace(/^@/,'');
+    if(/^[A-Za-z0-9._]{1,30}$/.test(direct))return direct;
+    try{
+      const u=new URL(raw,location.href);
+      if(!/(^|\.)instagram\.com$/i.test(u.hostname))return'';
+      const part=(u.pathname.split('/').filter(Boolean)[0]||'').replace(/^@/,'');
+      const reserved=new Set(['p','reel','reels','stories','explore','accounts','direct','about','developer','legal']);
+      if(!part||reserved.has(part.toLowerCase())||!/^[A-Za-z0-9._]{1,30}$/.test(part))return'';
+      return part;
+    }catch(_e){return'';}
+  }
+  function officialInstagramHandle(spot){
+    if(!spot)return'';
+    const social=spot.social||spot.social_media||{};
+    const values=[
+      social.instagram_handle,social.official_instagram_handle,
+      social.instagram_url,social.instagram,
+      spot.instagram_handle,spot.official_instagram_handle,spot.instagram_url
+    ];
+    for(const value of values){const h=normalizeInstagramHandle(value);if(h)return h;}
+    return OFFICIAL_INSTAGRAM_BY_NAME[spot.name]||'';
+  }
+  function captionSpotLine(spot,idx){
+    const handle=officialInstagramHandle(spot);
+    return `${String(idx+1).padStart(2,'0')} ${spot.name}${handle?` @${handle}`:''}`;
+  }
+  function officialInstagramCount(ss){return ss.filter(s=>officialInstagramHandle(s)).length;}
   function spotBlurb(s,audience){
     const base=firstSentence(s?.public_copy)||firstSentence(s?.editorial?.lead)||`${s?.name||'この場所'}で過ごす時間。`;
     const e=s?.experience_seed||{};
@@ -490,7 +534,7 @@
       {kind:'article-poster',label:'EDITORIAL',title:poster.title,body:'3スポットを1枚で。',image:poster.url,slug:i.destination.slug},
       kibunIntroSlide()
     ];
-    const names=featured.map((x,idx)=>`${String(idx+1).padStart(2,'0')} ${x.name}`).join('\n');
+    const names=featured.map((x,idx)=>captionSpotLine(x,idx)).join('\n');
     const ig=`${poster.title}\n\n${i.reason}\n\n${names}\n\n${ctaText(i)}\n\n${AI_DISCLOSURE}\n\n${hashtagsFor(i).join(' ')}`;
     const x=`${poster.title}\n\n${featured.map(x=>`・${truncate(x.name,20)}`).join('\n')}\n\n${ctaText(i)}\n${hashtagsFor(i).slice(0,3).join(' ')}`;
     const timing=i.type==='seasonal'?'今週〜今月。週末前の木〜金曜が第一候補。':i.type==='save'?'木〜金曜。週末の行き先検討が始まる前に。':'平日夜〜木曜。次の休日を考え始めるタイミングに。';
@@ -504,7 +548,7 @@
     ss.forEach((s,idx)=>slides.push({kind:'spot',label:`SPOT ${String(idx+1).padStart(2,'0')}`,title:s.name,body:spotBlurb(s,i.audience),spot:s}));
     slides.push({kind:'summary',label:'HOW TO CHOOSE',title:'迷ったら、こんな使い分け。',body:useCaseLines(i,ss).join('\n')});
     slides.push({kind:'cta',label:'KIBUN',title:'まだ決まらない？',body:`${ctaText(i)}\n${i.destination?.label||''}`});
-    const names=ss.map((s,idx)=>`${String(idx+1).padStart(2,'0')} ${s.name}`).join('\n');
+    const names=ss.map((s,idx)=>captionSpotLine(s,idx)).join('\n');
     const intro=i.reason.replace(/。.*$/,'。');
     const ig=`${i.hook}\n\n${intro}\n\n${names}\n\n${useCaseLines(i,ss).join('\n')}\n\nあとで見返せるように保存しておくと便利です。\n${ctaText(i)}\n\n${hashtagsFor(i).join(' ')}`;
     const compactNames=ss.slice(0,5).map(s=>`・${truncate(s.name,20)}`).join('\n');
@@ -622,7 +666,7 @@
     const editorialPoster=(source.slides||[]).some(x=>x.kind==='article-poster');
     const captureCaption=captionWithImageCredits(source,imageMode);
     const captionBlock=captureCaption?`<section class="capture-caption" id="captureCaption"><div class="capture-caption-head"><h2>Instagram Caption</h2><button class="secondary-btn" type="button" id="copyCaptureCaption">キャプションをコピー</button></div><pre>${esc(captureCaption)}</pre></section>`:'';
-    const helpText=editorialPoster?'記事投稿は2枚構成です。1枚目は3施設をまとめた生成AI編集ビジュアル、2枚目はKibun TripのサイトUI紹介。1枚目には「AIイメージ」表記を入れ、キャプションにも生成AI画像である旨を自動追記します。':(imageMode==='safe'?'SNS投稿用は、1枚目をKibunの生成AIイメージにします。2枚目以降はIMAGE / RIGHTSで採用済みの実写真を最優先し、条件を満たさない場合はKibun編集ノートに切り替えます。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。SNSへの画像再利用権は別途確認してください。');
+    const helpText=editorialPoster?'記事投稿は2枚構成です。1枚目は3施設をまとめた生成AI編集ビジュアル、2枚目はKibun TripのサイトUI紹介。1枚目には「AIイメージ」表記を入れ、キャプションにも生成AI画像である旨を自動追記します。公式Instagramを確認済みの施設は、施設名の横に @メンションも自動で入れます。':(imageMode==='safe'?'SNS投稿用は、1枚目をKibunの生成AIイメージにします。2枚目以降はIMAGE / RIGHTSで採用済みの実写真を最優先し、条件を満たさない場合はKibun編集ノートに切り替えます。':'Hero監査で選んだGoogle Places写真を確認するプレビューです。SNSへの画像再利用権は別途確認してください。');
     const modeSwitch=editorialPoster?'<div class="capture-mode-switch"><a class="active" href="./?capture='+encodeURIComponent(id)+'">SNS投稿用 · 2枚構成</a></div>':`<div class="capture-mode-switch"><a class="${imageMode==='safe'?'active':''}" href="${modeUrl('safe')}">SNS投稿用</a><a class="${imageMode==='audit'?'active':''}" href="${modeUrl('audit')}">監査Hero確認</a><a href="./?workspace=images">実写真を探す →</a></div>`;
     document.body.classList.add('capture-mode');
     document.body.classList.toggle('capture-preview-mode',!editorialPoster&&imageMode==='audit');
@@ -640,7 +684,7 @@
   function openIdea(id){
     const i=ideas.find(x=>x.id===id);if(!i)return;
     const d=draftForIdea(i),ss=i.spotIds.map(spotById).filter(Boolean);
-    $('ideaDetail').innerHTML=`<section class="detail-head"><div class="idea-kicker"><span class="idea-badge">${esc(typeLabel(i))}</span><span class="idea-badge source">${esc(sourceLabel(i))}${i.source==='generated'&&i.destination?.type==='article'?' · 記事導線あり':''}</span></div><h2 class="detail-title">${esc(i.title)}</h2><p class="detail-lead">${esc(i.reason)}</p><div class="detail-meta"><span>対象 · ${esc(audienceText(i))}</span><span>目的 · ${esc(i.objective)}</span><span>おすすめ · ${esc(d.timing)}</span><span>Priority · ${i.scores.priority}</span>${i.destination?.url?`<a href="${esc(i.destination.url)}" target="_blank" rel="noopener">遷移先を確認 →</a>`:''}</div><div class="detail-actions"><button class="primary-btn" type="button" data-dialog-add="${esc(i.id)}">この企画を運用に追加</button><button class="secondary-btn" type="button" data-copy-value="${esc(d.instagram)}">Instagram原稿をコピー</button><a class="secondary-btn" href="./?capture=${encodeURIComponent(i.id)}">スクショ用ページを開く</a><a class="secondary-btn" href="./?workspace=images&imageSpot=${encodeURIComponent(i.spotIds[0]||'')}">SNS実写真を探す</a></div></section>
+    $('ideaDetail').innerHTML=`<section class="detail-head"><div class="idea-kicker"><span class="idea-badge">${esc(typeLabel(i))}</span><span class="idea-badge source">${esc(sourceLabel(i))}${i.source==='generated'&&i.destination?.type==='article'?' · 記事導線あり':''}</span></div><h2 class="detail-title">${esc(i.title)}</h2><p class="detail-lead">${esc(i.reason)}</p><div class="detail-meta"><span>対象 · ${esc(audienceText(i))}</span><span>目的 · ${esc(i.objective)}</span><span>おすすめ · ${esc(d.timing)}</span><span>Priority · ${i.scores.priority}</span>${officialInstagramCount(i.spotIds.map(spotById).filter(Boolean))?`<span>公式Instagram · ${officialInstagramCount(i.spotIds.map(spotById).filter(Boolean))}/${i.spotIds.length}件メンション</span>`:''}${i.destination?.url?`<a href="${esc(i.destination.url)}" target="_blank" rel="noopener">遷移先を確認 →</a>`:''}</div><div class="detail-actions"><button class="primary-btn" type="button" data-dialog-add="${esc(i.id)}">この企画を運用に追加</button><button class="secondary-btn" type="button" data-copy-value="${esc(d.instagram)}">Instagram原稿をコピー</button><a class="secondary-btn" href="./?capture=${encodeURIComponent(i.id)}">スクショ用ページを開く</a><a class="secondary-btn" href="./?workspace=images&imageSpot=${encodeURIComponent(i.spotIds[0]||'')}">SNS実写真を探す</a></div></section>
       <section class="draft-section"><div class="draft-section-head"><div><h3>Instagram Carousel</h3><p class="note">${d.usesGeneratedPoster?'記事投稿は2枚。1枚目＝3施設のAI編集ビジュアル、2枚目＝サイトUI紹介。':'スポット数に応じて基本8枚前後。最後だけKibun導線。'}</p></div></div><div class="carousel-grid">${d.slides.map(slideHtml).join('')}</div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>Instagram Caption</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.instagram)}">コピー</button><pre>${esc(d.instagram)}</pre></div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>X Draft</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.x)}">コピー</button><pre>${esc(d.x)}</pre></div></section>

@@ -1,0 +1,16 @@
+const fs=require('fs');
+const assert=require('assert');
+const js=fs.readFileSync('sns-audit/audit.js','utf8');
+const html=fs.readFileSync('sns-audit/index.html','utf8');
+assert(js.includes("'日本科学未来館':'miraikan'"));
+assert(js.includes("'国立科学博物館':'kahaku_nmns'"));
+assert(js.includes("'新江ノ島水族館':'enosui_com'"));
+assert(js.includes("'chano-ma 横浜':'chanoma_yokohama'"));
+assert(js.includes('function officialInstagramHandle(spot)'));
+assert(js.includes('function captionSpotLine(spot,idx)'));
+assert(js.includes("featured.map((x,idx)=>captionSpotLine(x,idx))"));
+assert(js.includes("ss.map((s,idx)=>captionSpotLine(s,idx))"));
+assert(js.includes('公式Instagramを確認済みの施設は'));
+assert(html.includes('audit.js?v=201116'));
+assert(html.includes('audit.css?v=201116'));
+console.log('v20.11.16 Instagram mentions: PASS');
