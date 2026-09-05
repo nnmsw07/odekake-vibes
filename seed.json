@@ -78,7 +78,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-05: Hero audit export applied. 189 photo_index_overrides and 16 place_overrides recorded; newest audited photo choices include spots 447/448/449/453/455/456/458, with Place IDs pinned for spot_448 and spot_449.",
+    "hero_audit_note": "2026-09-05: Seasonal beer-garden heroes no longer use parent-hotel Google Places photos; spot_447 and spot_449 use event-appropriate editorial/AI heroes.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -66744,9 +66744,9 @@
         "source_url": "https://tokyo.hiltonjapan.co.jp/restaurants/beer-garden"
       },
       "hero_image": {
-        "url": "images/ai/terrace-evening-generic.webp",
+        "url": "images/ai/hilton-tokyo-beer-garden-2026.webp",
         "type": "ai",
-        "alt": "ヒルトン東京 2026年ビアガーデンの雰囲気をイメージした画像",
+        "alt": "夕暮れの屋上ビアガーデンをイメージした画像",
         "label": "イメージ",
         "credit": "AI生成イメージ",
         "source_url": null,
@@ -66773,17 +66773,17 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "google_places",
           "ai"
         ],
         "current_provider": "ai",
         "google_places": {
           "place_id": null,
-          "status": "not_resolved",
+          "status": "disabled",
           "query": "ヒルトン東京",
           "photo_index_override": 1,
           "force": false,
-          "use_address": true
+          "use_address": true,
+          "disable_reason": "seasonal_event_parent_hotel_photos_are_not_event_specific"
         }
       },
       "ui_tags": [
@@ -67056,9 +67056,9 @@
         "source_url": "https://www.icyokohama-grand.com/offer_restaurant/oceanterrace_hamabeer/"
       },
       "hero_image": {
-        "url": "images/ai/terrace-evening-generic.webp",
+        "url": "assets/editorial/terrace-after-sunset.webp",
         "type": "ai",
-        "alt": "海の見えるビアガーデン「はまビア！」の雰囲気をイメージした画像",
+        "alt": "夕暮れの水辺テラスで楽しむビアガーデンをイメージした画像",
         "label": "イメージ",
         "credit": "AI生成イメージ",
         "source_url": null,
@@ -67085,19 +67085,19 @@
       },
       "media_strategy": {
         "hero_priority": [
-          "google_places",
           "ai"
         ],
         "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJpf4-TltcGGARDViYb-z1wbc",
-          "status": "resolved_manual",
+          "status": "disabled",
           "query": "ヨコハマ グランド インターコンチネンタル",
           "photo_index_override": 8,
           "force": false,
           "use_address": true,
           "matched_name": "ヨコハマ グランド インターコンチネンタル ホテル",
-          "matched_address": "〒220-8522 神奈川県横浜市西区みなとみらい１丁目１−１"
+          "matched_address": "〒220-8522 神奈川県横浜市西区みなとみらい１丁目１−１",
+          "disable_reason": "seasonal_event_parent_hotel_photos_are_not_event_specific"
         }
       },
       "ui_tags": [
