@@ -12,20 +12,19 @@
     const m=HERO_SPOTS[img.dataset.heroSpot];
     if(img.dataset.heroClean==='1') img.dataset.heroState='loading';
     if(!m){ revealFallback(img); return; }
-    const fallbackTimer=setTimeout(()=>revealFallback(img),2200);
     try{
       const u=new URL(endpoint);
       u.searchParams.set('name',m.query||m.name);
       u.searchParams.set('address',m.useAddress===false?'':(m.address||''));
       if(m.placeId)u.searchParams.set('placeId',m.placeId);
       if(Number.isInteger(m.photoIndex))u.searchParams.set('photoIndex',String(m.photoIndex));
-      const r=await fetch(u.toString(),{cache:'no-store'}); if(!r.ok){clearTimeout(fallbackTimer);revealFallback(img);return;}
-      const d=await r.json(); if(!d||!d.photoUri||d.matchConfidence==='low'){clearTimeout(fallbackTimer);revealFallback(img);return;}
+      const r=await fetch(u.toString(),{cache:'no-store'}); if(!r.ok){revealFallback(img);return;}
+      const d=await r.json(); if(!d||!d.photoUri||d.matchConfidence==='low'){revealFallback(img);return;}
       const pre=new Image();
-      pre.onload=()=>{clearTimeout(fallbackTimer);img.src=d.photoUri;img.dataset.heroResolved='1';img.dataset.heroState='ready';};
-      pre.onerror=()=>{clearTimeout(fallbackTimer);revealFallback(img);};
+      pre.onload=()=>{img.src=d.photoUri;img.dataset.heroResolved='1';img.dataset.heroState='ready';};
+      pre.onerror=()=>{revealFallback(img);};
       pre.src=d.photoUri;
-    }catch(_e){clearTimeout(fallbackTimer);revealFallback(img);}
+    }catch(_e){revealFallback(img);}
   };
   imgs.forEach(load);
 })();

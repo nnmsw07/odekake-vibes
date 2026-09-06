@@ -1,0 +1,28 @@
+{
+  "photo_index_overrides": {
+    "spot_219": 1,
+    "spot_459": 0,
+    "spot_460": 0,
+    "spot_461": 6,
+    "spot_463": 6,
+    "spot_465": 1,
+    "spot_467": 3,
+    "spot_469": 7
+  },
+  "place_overrides": {
+    "spot_459": {
+      "query": "スターバックス リザーブ ロースタリー 東京",
+      "place_id": "ChIJq_fYt4iLGGARrOojmQ4IMyE",
+      "matched_name": "STARBUCKS RESERVE(R) ROASTERY TOKYO",
+      "matched_address": "〒153-0042 東京都目黒区青葉台２丁目１９−２３",
+      "use_address": false
+    },
+    "spot_460": {
+      "query": "Cafe La Bohème 白金",
+      "place_id": "ChIJBQMIIgWLGGARUDNpuFwJYEQ",
+      "matched_name": "カフェ ラ・ボエム 白金",
+      "matched_address": "１F・２F, ４丁目-１９-17 白金台 港区 東京都 108-0071",
+      "use_address": false
+    }
+  }
+}

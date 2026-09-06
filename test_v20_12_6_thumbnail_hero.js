@@ -1,0 +1,18 @@
+const fs=require('fs'),assert=require('assert');
+const seed=JSON.parse(fs.readFileSync('seed.json','utf8'));
+const by=Object.fromEntries(seed.spots.map(s=>[s.spot_id,s]));
+const expected={spot_219:1,spot_459:0,spot_460:0,spot_461:6,spot_463:6,spot_465:1,spot_467:3,spot_469:7};
+for(const [id,idx] of Object.entries(expected)) assert.strictEqual(by[id].media_strategy.google_places.photo_index_override,idx,id+' photo override');
+assert.strictEqual(by.spot_459.media_strategy.google_places.place_id,'ChIJq_fYt4iLGGARrOojmQ4IMyE');
+assert.strictEqual(by.spot_460.media_strategy.google_places.place_id,'ChIJBQMIIgWLGGARUDNpuFwJYEQ');
+const index=fs.readFileSync('index.html','utf8');
+assert(index.includes('assets/editorial/terrace-after-sunset.webp'));
+assert(index.includes('preview-hero-clean.js?v=201260'));
+assert(index.includes('473スポットから探せます。'));
+assert((index.match(/data-hero-clean="1"/g)||[]).length>=10);
+const mag=fs.readFileSync('magazine/index.html','utf8');
+assert((mag.match(/data-hero-clean="1"/g)||[]).length>=28);
+const mm=fs.readFileSync('magazine/magazine-media.js','utf8');
+assert(!mm.includes('fallbackTimer'));
+assert(fs.existsSync('preview-hero-clean.js'));
+console.log('v20.12.6 thumbnail + latest Hero Audit: PASS');

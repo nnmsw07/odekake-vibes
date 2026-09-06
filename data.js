@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_12_4_473spots_pet_audience",
-    "version": "0.20.12.4",
+    "dataset_name": "kibun_kanto_izu_seed_v20_12_6_473spots_pet_audience",
+    "version": "0.20.12.6",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -51,7 +51,7 @@ window.ODEKAKE_SEED = {
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-09-05: latest user Hero audit export applied across spots 212–458; 189 photo index choices recorded/applied and 16 manual Google Place matches pinned. Hero Audit supports up to 10 candidates."
+      "hero_selection": "2026-09-06: latest user Hero Audit delta applied for spot_219 and spots 459/460/461/463/465/467/469; manual Google Place matches pinned for spots 459 and 460."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -79,7 +79,7 @@ window.ODEKAKE_SEED = {
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-05: Seasonal beer-garden heroes no longer use parent-hotel Google Places photos; spot_447 and spot_449 use event-appropriate editorial/AI heroes.",
+    "hero_audit_note": "2026-09-06: latest Hero Audit delta applied for LARBOARD and newly added spots. Homepage and Magazine thumbnails now avoid showing stale generic artwork before Places hero resolution.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -32344,7 +32344,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "Restaurant & Bar LARBOARD InterContinental Yokohama Pier 8",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -69083,7 +69083,7 @@ window.ODEKAKE_SEED = {
         "municipality": "目黒区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJq_fYt4iLGGARrOojmQ4IMyE"
       },
       "media_strategy": {
         "hero_priority": [
@@ -69092,12 +69092,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJq_fYt4iLGGARrOojmQ4IMyE",
+          "status": "resolved_manual",
           "query": "スターバックス リザーブ ロースタリー 東京",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
-          "use_address": true
+          "use_address": false,
+          "matched_name": "STARBUCKS RESERVE(R) ROASTERY TOKYO",
+          "matched_address": "〒153-0042 東京都目黒区青葉台２丁目１９−２３"
         }
       },
       "ui_tags": [
@@ -69232,7 +69234,7 @@ window.ODEKAKE_SEED = {
         "municipality": "港区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
         "geocode_accuracy": "town_or_municipality_approximation",
-        "google_place_id": null
+        "google_place_id": "ChIJBQMIIgWLGGARUDNpuFwJYEQ"
       },
       "media_strategy": {
         "hero_priority": [
@@ -69241,12 +69243,14 @@ window.ODEKAKE_SEED = {
         ],
         "current_provider": "ai",
         "google_places": {
-          "place_id": null,
-          "status": "not_resolved",
+          "place_id": "ChIJBQMIIgWLGGARUDNpuFwJYEQ",
+          "status": "resolved_manual",
           "query": "Cafe La Bohème 白金",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
-          "use_address": true
+          "use_address": false,
+          "matched_name": "カフェ ラ・ボエム 白金",
+          "matched_address": "１F・２F, ４丁目-１９-17 白金台 港区 東京都 108-0071"
         }
       },
       "ui_tags": [
@@ -69395,7 +69399,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "小笠原伯爵邸",
-          "photo_index_override": null,
+          "photo_index_override": 6,
           "force": false,
           "use_address": true
         }
@@ -69697,7 +69701,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "BLUE FRONT SHIBAURA TOWER S",
-          "photo_index_override": null,
+          "photo_index_override": 6,
           "force": false,
           "use_address": true
         }
@@ -69996,7 +70000,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "GARDEN HOUSE KAMAKURA",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -70301,7 +70305,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "CICADA 南青山",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -70602,7 +70606,7 @@ window.ODEKAKE_SEED = {
           "place_id": null,
           "status": "not_resolved",
           "query": "KOFFEE MAMEYA Kakeru",
-          "photo_index_override": null,
+          "photo_index_override": 7,
           "force": false,
           "use_address": true
         }
