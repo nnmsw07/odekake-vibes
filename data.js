@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_11_0_458spots_editorial_night_family_harvest",
-    "version": "0.20.11.0",
+    "dataset_name": "kibun_kanto_izu_seed_v20_12_3_469spots_seo_affiliate_similar",
+    "version": "0.20.12.3",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -39,7 +39,7 @@ window.ODEKAKE_SEED = {
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-05",
+    "updated_at": "2026-09-06",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -69,7 +69,7 @@ window.ODEKAKE_SEED = {
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "v20.11.0: 446→458スポット。夜の外ごはん、夜間おでかけ、ホテル日帰り、親子外食、収穫体験を補強し、5本のKibun Magazine特集へ接続。",
+    "expansion_note": "v20.12.3: 463→469スポット。Pier 8をホテル全体からRestaurant & Bar LARBOARDへ修正。QUAYS / GARDEN HOUSE KAMAKURA / リストランテAO / CICADA / ジョエル・ロブション / KOFFEE MAMEYA Kakeruを追加。新規・修正スポットのSEOページと確認済みアフィリエイト導線を整備。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -31740,105 +31740,98 @@ window.ODEKAKE_SEED = {
     },
     {
       "spot_id": "spot_219",
-      "slug": "intercontinental-yokohama-pier8",
-      "name": "インターコンチネンタル横浜Pier 8",
-      "aliases": [],
-      "category_primary": "hotel_stay",
+      "slug": "larboard-intercontinental-yokohama-pier8",
+      "name": "Restaurant & Bar LARBOARD｜インターコンチネンタル横浜Pier 8",
+      "aliases": [
+        "LARBOARD",
+        "Larboard",
+        "ラーボード",
+        "インターコンチネンタル横浜Pier 8 レストラン"
+      ],
+      "category_primary": "restaurant",
       "categories": [
-        "stay",
-        "hotel",
-        "overnight",
-        "scenic",
-        "resort",
-        "yokohama",
-        "harbor",
-        "luxury"
+        "restaurant",
+        "hotel_restaurant",
+        "terrace",
+        "waterside",
+        "cafe",
+        "night",
+        "yokohama"
       ],
       "prefecture": "神奈川県",
       "city": "横浜市中区",
       "address": "神奈川県横浜市中区新港2-14-1",
-      "official_url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail",
-      "environment": "mixed",
-      "stay_minutes_seed": 1080,
-      "overnight": true,
-      "stay_profile": {
-        "overnight": true,
-        "day_use": false,
-        "stay_tags": [
-          "yokohama",
-          "harbor",
-          "luxury",
-          "hotel"
-        ]
-      },
+      "official_url": "https://icyokohama-pier8.com/en/larboard/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 120,
       "experience_seed": {
-        "indoor": 88,
-        "outdoor": 28,
-        "physical_activity": 15,
-        "hands_on": 18,
-        "quietness": 92,
-        "parent_rest": 96,
-        "greenery": 42,
+        "indoor": 78,
+        "outdoor": 54,
+        "physical_activity": 5,
+        "hands_on": 5,
+        "quietness": 82,
+        "parent_rest": 94,
+        "greenery": 12,
         "water_contact": 5,
         "animal_contact": 0,
-        "food_experience": 78,
-        "creative_sensory": 58,
-        "baby_fit": 66,
-        "toddler_fit": 64,
-        "stroller_fit": 78,
-        "rain_resilience": 96,
-        "heat_resilience": 96,
-        "walking_load": 18,
-        "planning_friction": 38
+        "food_experience": 100,
+        "creative_sensory": 72,
+        "baby_fit": 48,
+        "toddler_fit": 46,
+        "stroller_fit": 72,
+        "rain_resilience": 75,
+        "heat_resilience": 72,
+        "walking_load": 8,
+        "planning_friction": 56
       },
       "vibes_seed": {
         "cool": 86,
-        "nature": 58,
-        "extraordinary": 98,
+        "nature": 12,
+        "extraordinary": 94,
         "scenic": 100,
-        "stroll": 40,
-        "relax": 98,
-        "shopping": 20,
-        "food": 82,
-        "culture": 48,
+        "stroll": 62,
+        "relax": 94,
+        "shopping": 10,
+        "food": 100,
+        "culture": 26,
         "animals": 0,
-        "creative": 50,
-        "active": 12,
-        "waterside": 84
+        "creative": 20,
+        "active": 4,
+        "waterside": 100
       },
-      "editorial_reason": "宿泊自体が目的になる体験価値があり、Kibunの「泊まりもあり」候補として追加。",
-      "public_copy": "横浜港の海上にいるような景色を楽しめるホテル。ルーフトップも含め、ふたりの非日常に向く。",
+      "editorial_reason": "ホテル全体ではなく、港の景色と食事を目的に行けるレストラン単体として推薦する。",
+      "public_copy": "横浜港を眺めながら、ランチから夕暮れのディナーまで過ごせるPier 8のレストラン。テラスもあり、子連れの日でも大人がちゃんと食事と景色を楽しみたい時に。",
       "dynamic_snapshot": {
-        "opening_hours_text": "チェックイン15:00／チェックアウト12:00。",
-        "price_summary": "宿泊料金は日程・人数・客室・プランで変動。予約時に最新料金を確認。",
-        "reservation_summary": "事前予約推奨。空室・キャンセル条件は予約先で確認。",
-        "age_note": "子どもの宿泊条件・添い寝・食事・ベッド条件はプランごとに確認。",
-        "temporary_note": null,
-        "checked_at": "2026-08-30",
-        "source_url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail"
+        "opening_hours_text": "ランチ 12:00〜14:30 L.O.／ティー 12:00〜17:30／ディナー 17:30〜21:00 L.O.／テラス 12:00〜21:00 L.O.",
+        "price_summary": "コース・アラカルト・時間帯により異なる。",
+        "reservation_summary": "予約推奨。OZmallの施設別予約ページあり。",
+        "age_note": "ホテルレストランのため、子連れ条件や席希望は予約時に確認推奨。",
+        "temporary_note": "テラスは天候により利用条件が変わる場合あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://icyokohama-pier8.com/en/larboard/"
       },
       "buzz": {
         "score": 94,
-        "freshness": 78,
-        "social_presence": 94,
+        "freshness": 82,
+        "social_presence": 88,
         "visual_appeal": 100,
-        "media_attention": 86,
-        "popularity_momentum": 94,
-        "reason": "横浜港の海上にいるような景色を楽しめるホテル。ルーフトップも含め、ふたりの非日常に向く。",
-        "checked_at": "2026-08-30",
-        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "media_attention": 84,
+        "popularity_momentum": 90,
+        "reason": "横浜港を望むホテルレストランで、テラス・食事・夕景を一度に楽しめる。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-30",
-            "url": "https://www.ihg.com/intercontinental/hotels/jp/ja/yokohama/tyoyh/hoteldetail"
+            "date": "2026-09-06",
+            "url": "https://icyokohama-pier8.com/en/larboard/"
           }
         ]
       },
       "hero_image": {
-        "url": "images/ai/onsen-garden.jpg",
+        "url": "assets/editorial/parents-eat-well.webp",
         "type": "ai",
-        "alt": "インターコンチネンタル横浜Pier 8の雰囲気をイメージした画像",
+        "alt": "横浜港を眺める水辺レストランをイメージした画像",
         "label": "イメージ",
         "credit": "AI生成イメージ",
         "source_url": null,
@@ -31847,16 +31840,16 @@ window.ODEKAKE_SEED = {
       },
       "research_status": {
         "static_basic": "verified_or_high_confidence",
-        "dynamic_detail": "verified_or_conservative",
+        "dynamic_detail": "verified_current",
         "needs_previsit_refresh": true
       },
       "audience_fit": {
-        "family": 72,
+        "family": 78,
         "partner": 100,
-        "solo": 92,
-        "friends": 78
+        "solo": 76,
+        "friends": 92
       },
-      "adult_enjoyment_seed": 98,
+      "adult_enjoyment_seed": 100,
       "routing": {
         "municipality": "横浜市中区",
         "geocode_provider": "geolonia_japanese_addresses_v2",
@@ -31872,42 +31865,45 @@ window.ODEKAKE_SEED = {
         "google_places": {
           "place_id": null,
           "status": "not_resolved",
-          "query": "インターコンチネンタル横浜Pier 8",
-          "photo_index_override": 1,
-          "force": false
+          "query": "Restaurant & Bar LARBOARD InterContinental Yokohama Pier 8",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
         }
       },
       "ui_tags": [
-        "泊まり",
-        "非日常",
-        "大人も楽しい",
-        "景色",
-        "記念日",
-        "泊まりもあり"
+        "横浜",
+        "水辺",
+        "ホテルレストラン",
+        "テラス",
+        "親も楽しい",
+        "デート"
       ],
       "monetization": {
         "affiliate_fit": "A",
         "status": "verified_source_link",
         "channel_candidates": [
-          "じゃらんnet",
-          "一休.com",
-          "JTB",
-          "Yahoo!トラベル"
+          "OZmall"
         ],
-        "product_match_required": true,
-        "note": "一休.comの施設別宿泊予約ページを2026-09-03に確認。公式サイトと併存し、PR表記のうえ宿泊導線として表示する。"
+        "product_match_required": false,
+        "note": "OZmallのLarboard施設別予約ページを2026-09-06に確認。"
       },
       "editorial": {
-        "title": "横浜の夜まで、予定に入れる。",
-        "lead": "港のすぐそばで、景色が昼から夜へ変わるのを待つ。遠くへ行かなくても、いつもの横浜を「旅先」に変えてくれる一泊。",
-        "moment": "近場で旅気分に切り替えたい日",
-        "collection": "街の夜まで",
+        "title": "海を眺めて、ちゃんとおいしい。",
+        "lead": "港の景色がゆっくり変わる時間に、テラスや窓辺で食事をする。子どもと一緒の日も、大人の楽しみを後回しにしない。",
+        "moment": "親もちゃんと食事と景色を楽しみたい日",
+        "collection": "親も楽しい日に",
         "best_for": [
-          "横浜ステイ",
-          "記念日デート",
-          "近場の非日常"
+          "水辺ランチ",
+          "子連れ外食",
+          "夕暮れディナー"
         ],
         "priority": 3
+      },
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 62,
+        "reservation_expected": true
       }
     },
     {
@@ -68511,6 +68507,1663 @@ window.ODEKAKE_SEED = {
             "kind": "official_current",
             "date": "2026-09-04",
             "url": "https://www.city.yokosuka.kanagawa.jp/2150/sisetu/fc100000932.html"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_459",
+      "slug": "starbucks-reserve-roastery-tokyo",
+      "name": "スターバックス リザーブ® ロースタリー 東京",
+      "aliases": [
+        "スターバックス リザーブ ロースタリー 東京",
+        "Starbucks Reserve Roastery Tokyo"
+      ],
+      "category_primary": "cafe",
+      "categories": [
+        "cafe",
+        "sweets",
+        "architecture",
+        "riverwalk",
+        "indoor"
+      ],
+      "prefecture": "東京都",
+      "city": "目黒区",
+      "address": "東京都目黒区青葉台2-19-23",
+      "official_url": "https://www.starbucks.co.jp/reserve/roastery/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 80,
+        "outdoor": 25,
+        "physical_activity": 10,
+        "hands_on": 20,
+        "quietness": 40,
+        "parent_rest": 82,
+        "greenery": 22,
+        "water_contact": 15,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 84,
+        "baby_fit": 35,
+        "toddler_fit": 40,
+        "stroller_fit": 70,
+        "rain_resilience": 88,
+        "heat_resilience": 85,
+        "walking_load": 18,
+        "planning_friction": 40
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 12,
+        "extraordinary": 95,
+        "scenic": 66,
+        "stroll": 70,
+        "relax": 78,
+        "shopping": 22,
+        "food": 100,
+        "culture": 58,
+        "animals": 0,
+        "creative": 72,
+        "active": 8,
+        "waterside": 28
+      },
+      "editorial_reason": "世界でも限られたロースタリーで、建築とコーヒーの特別感を担う都内の定番。",
+      "public_copy": "中目黒の目黒川沿いにある大型ロースタリー。コーヒーを飲むだけでなく、建築や焙煎のライブ感まで含めて楽しめる一軒です。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は公式サイトで要確認。",
+        "price_summary": "ドリンク・フードは注文内容による。",
+        "reservation_summary": "予約不要。混雑時は入店待ちや座席待ちが発生する場合あり。",
+        "age_note": "ベビーカー入店は可能だが混雑時は移動しづらいことあり。",
+        "temporary_note": "季節限定メニューやフロア営業状況は来店前に要確認。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.starbucks.co.jp/reserve/roastery/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/cafe.webp",
+        "type": "ai",
+        "alt": "目黒川沿いのロースタリーカフェをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "mixed_confidence",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 55,
+        "partner": 100,
+        "solo": 92,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "目黒区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "スターバックス リザーブ ロースタリー 東京",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "中目黒",
+        "カフェ",
+        "建築",
+        "コーヒー",
+        "特別感"
+      ],
+      "planning_profile": {
+        "style": "browse_only",
+        "same_day_fit": 82,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "none",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "現状は送客先なし。"
+      },
+      "buzz": {
+        "score": 94,
+        "freshness": 70,
+        "social_presence": 98,
+        "visual_appeal": 100,
+        "media_attention": 90,
+        "popularity_momentum": 90,
+        "reason": "建築と焙煎のライブ感を楽しめる体験型スタバ。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.starbucks.co.jp/reserve/roastery/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_460",
+      "slug": "la-boheme-shirogane",
+      "name": "Cafe La Bohème 白金",
+      "aliases": [
+        "ラ・ボエム 白金",
+        "Cafe La Boheme Shirogane"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "cafe",
+        "date",
+        "architecture",
+        "night"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区白金台4-19-17 1・2F",
+      "official_url": "https://www.boheme.jp/shirogane/",
+      "environment": "indoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 10,
+        "physical_activity": 6,
+        "hands_on": 10,
+        "quietness": 62,
+        "parent_rest": 84,
+        "greenery": 10,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 78,
+        "baby_fit": 18,
+        "toddler_fit": 20,
+        "stroller_fit": 35,
+        "rain_resilience": 95,
+        "heat_resilience": 92,
+        "walking_load": 10,
+        "planning_friction": 46
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 6,
+        "extraordinary": 90,
+        "scenic": 44,
+        "stroll": 40,
+        "relax": 70,
+        "shopping": 12,
+        "food": 100,
+        "culture": 52,
+        "animals": 0,
+        "creative": 40,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "『まるで中世の古城』系の発見枠として、白金の雰囲気ランチ/ディナーに相性が良い。",
+      "public_copy": "吹き抜けとシャンデリアが印象的な白金の人気レストラン。クラシックで非日常感のある空間で、ランチにも夜ごはんにも使いやすい一軒です。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業時間は公式サイトで要確認。",
+        "price_summary": "メニュー・利用時間帯によって異なる。",
+        "reservation_summary": "時間帯によっては予約推奨。",
+        "age_note": "子連れ利用可否やベビーカー導線は来店前確認推奨。",
+        "temporary_note": "混雑時は待ち時間が発生する場合あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.boheme.jp/shirogane/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "クラシックな大型ダイニングをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "mixed_confidence",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 35,
+        "partner": 100,
+        "solo": 55,
+        "friends": 88
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Cafe La Bohème 白金",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "白金",
+        "レストラン",
+        "非日常",
+        "クラシック",
+        "夜ごはん"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 68,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別送客先は別途照合。"
+      },
+      "buzz": {
+        "score": 90,
+        "freshness": 58,
+        "social_presence": 86,
+        "visual_appeal": 96,
+        "media_attention": 78,
+        "popularity_momentum": 82,
+        "reason": "古城のような内装が映える白金の定番ダイニング。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.boheme.jp/shirogane/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_461",
+      "slug": "ogasawara-tei",
+      "name": "小笠原伯爵邸",
+      "aliases": [
+        "Ogasawara-tei"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "architecture",
+        "garden",
+        "culture",
+        "date"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区河田町10-10",
+      "official_url": "https://www.ogasawaratei.com/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 88,
+        "outdoor": 24,
+        "physical_activity": 8,
+        "hands_on": 10,
+        "quietness": 86,
+        "parent_rest": 80,
+        "greenery": 38,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 88,
+        "baby_fit": 12,
+        "toddler_fit": 10,
+        "stroller_fit": 20,
+        "rain_resilience": 90,
+        "heat_resilience": 88,
+        "walking_load": 8,
+        "planning_friction": 62
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 26,
+        "extraordinary": 98,
+        "scenic": 70,
+        "stroll": 44,
+        "relax": 84,
+        "shopping": 6,
+        "food": 100,
+        "culture": 88,
+        "animals": 0,
+        "creative": 40,
+        "active": 2,
+        "waterside": 0
+      },
+      "editorial_reason": "建築・庭・食事を一度に満たす特別感スポットとして追加。",
+      "public_copy": "スパニッシュ様式の邸宅を生かしたレストラン。門をくぐった瞬間から空気が変わり、食事だけでなく建築や庭まで含めて印象に残る一軒です。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ランチ 11:30〜15:00（13:00最終入店）／ディナー 18:00〜22:00（19:30最終入店）。",
+        "price_summary": "コース内容・時間帯により異なる。",
+        "reservation_summary": "予約推奨。一休.comレストランの施設別予約ページあり。",
+        "age_note": "13歳以下は通常ダイニング・ガーデン利用不可。個室は事前相談で対応可。",
+        "temporary_note": "貸切・イベント等で営業内容が変わる場合あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.ogasawaratei.com/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "洋館レストランと庭をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "mixed_confidence",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 18,
+        "partner": 100,
+        "solo": 48,
+        "friends": 70
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "小笠原伯爵邸",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "洋館",
+        "白金/新宿寄り",
+        "レストラン",
+        "建築",
+        "ご褒美"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 52,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "一休.comレストラン"
+        ],
+        "product_match_required": false,
+        "note": "一休.comレストランの施設別ページを2026-09-06に確認。"
+      },
+      "buzz": {
+        "score": 92,
+        "freshness": 52,
+        "social_presence": 84,
+        "visual_appeal": 98,
+        "media_attention": 82,
+        "popularity_momentum": 80,
+        "reason": "建築美が強い邸宅レストラン。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.ogasawaratei.com/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_462",
+      "slug": "raku-spa-bay-yokohama",
+      "name": "RAKU SPA BAY 横浜",
+      "aliases": [
+        "ラクスパベイ横浜",
+        "RAKU SPA BAY"
+      ],
+      "category_primary": "spa",
+      "categories": [
+        "spa",
+        "onsen",
+        "restaurant",
+        "indoor",
+        "night"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市神奈川区",
+      "address": "神奈川県横浜市神奈川区山内町15-2",
+      "official_url": "https://rakuspa.com/yokohama/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 96,
+        "outdoor": 8,
+        "physical_activity": 8,
+        "hands_on": 6,
+        "quietness": 76,
+        "parent_rest": 100,
+        "greenery": 4,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 82,
+        "creative_sensory": 38,
+        "baby_fit": 8,
+        "toddler_fit": 6,
+        "stroller_fit": 12,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 6,
+        "planning_friction": 34
+      },
+      "vibes_seed": {
+        "cool": 72,
+        "nature": 2,
+        "extraordinary": 66,
+        "scenic": 28,
+        "stroll": 8,
+        "relax": 100,
+        "shopping": 6,
+        "food": 72,
+        "culture": 10,
+        "animals": 0,
+        "creative": 8,
+        "active": 2,
+        "waterside": 18
+      },
+      "editorial_reason": "横浜で『親が休む』軸を担える、夜まで使いやすい温浴系スポット。",
+      "public_copy": "横浜ベイエリア近くで、食事・休憩・お風呂をまとめて楽しめる温浴施設。長居しやすく、天気や暑さを気にせずリセットしたい日に便利です。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "日〜木・祝 10:00〜23:00（最終受付22:00）／金・土・祝前日 10:00〜翌8:00（最終受付7:00）。",
+        "price_summary": "前売り例：平日1,540円〜、土日祝2,030円〜。プランにより異なるため予約時に確認。",
+        "reservation_summary": "通常利用に加えて、アソビュー！で前売りチケットあり。",
+        "age_note": "子ども料金・利用条件は公式サイトで確認。",
+        "temporary_note": "年2回程度のシステムメンテナンス休あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://rakuspa.com/yokohama/"
+      },
+      "hero_image": {
+        "url": "images/ai/onsen-garden.jpg",
+        "type": "ai",
+        "alt": "海辺の温浴ラウンジをイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 24,
+        "partner": 84,
+        "solo": 94,
+        "friends": 90
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "横浜市神奈川区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "RAKU SPA BAY 横浜",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "スパ",
+        "雨の日",
+        "夜",
+        "長居"
+      ],
+      "planning_profile": {
+        "style": "browse_only",
+        "same_day_fit": 96,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "アソビュー！"
+        ],
+        "product_match_required": false,
+        "note": "アソビュー！の施設別前売りチケットページを2026-09-06に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 68,
+        "social_presence": 76,
+        "visual_appeal": 72,
+        "media_attention": 66,
+        "popularity_momentum": 78,
+        "reason": "食事もできる長居向き温浴施設。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.rakuspa.com/bay-yokohama/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_463",
+      "slug": "blue-front-shibaura-tower-s",
+      "name": "BLUE FRONT SHIBAURA TOWER S",
+      "aliases": [
+        "BLUE FRONT SHIBAURA",
+        "ブルーフロント芝浦"
+      ],
+      "category_primary": "complex",
+      "categories": [
+        "complex",
+        "cafe",
+        "restaurant",
+        "waterside",
+        "stroll"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区芝浦1丁目1-1",
+      "official_url": "https://www.bluefrontshibaura.com/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 75,
+      "experience_seed": {
+        "indoor": 64,
+        "outdoor": 34,
+        "physical_activity": 18,
+        "hands_on": 4,
+        "quietness": 62,
+        "parent_rest": 72,
+        "greenery": 18,
+        "water_contact": 6,
+        "animal_contact": 0,
+        "food_experience": 64,
+        "creative_sensory": 30,
+        "baby_fit": 44,
+        "toddler_fit": 48,
+        "stroller_fit": 80,
+        "rain_resilience": 60,
+        "heat_resilience": 55,
+        "walking_load": 14,
+        "planning_friction": 42
+      },
+      "vibes_seed": {
+        "cool": 86,
+        "nature": 10,
+        "extraordinary": 78,
+        "scenic": 82,
+        "stroll": 88,
+        "relax": 74,
+        "shopping": 28,
+        "food": 58,
+        "culture": 22,
+        "animals": 0,
+        "creative": 14,
+        "active": 12,
+        "waterside": 88
+      },
+      "editorial_reason": "ベイエリアの新しめ都市散歩枠として、電車見学や休憩の立ち寄り先に使いやすい。",
+      "public_copy": "芝浦の水辺と都市景観を感じながら、カフェやレストランでひと息つける複合スポット。電車や街の動きを眺めながら小休憩したい日に合います。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "施設・店舗ごとに異なるため公式サイトで要確認。",
+        "price_summary": "入場無料。飲食・利用料金は店舗による。",
+        "reservation_summary": "通常は予約不要。飲食店は個別確認推奨。",
+        "age_note": "ベビーカーでも立ち寄りやすい導線が比較的作りやすい。",
+        "temporary_note": "開業・出店状況により営業エリアが変動する場合あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.bluefrontshibaura.com/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/scenic.webp",
+        "type": "ai",
+        "alt": "芝浦の水辺複合施設をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "mixed_confidence",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 70,
+        "partner": 82,
+        "solo": 72,
+        "friends": 76
+      },
+      "adult_enjoyment_seed": 82,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "BLUE FRONT SHIBAURA TOWER S",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "芝浦",
+        "水辺",
+        "カフェ",
+        "新スポット",
+        "散歩"
+      ],
+      "planning_profile": {
+        "style": "browse_only",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "現状は公式送客中心。"
+      },
+      "buzz": {
+        "score": 87,
+        "freshness": 92,
+        "social_presence": 74,
+        "visual_appeal": 88,
+        "media_attention": 80,
+        "popularity_momentum": 86,
+        "reason": "芝浦の新しめ複合スポットとして立ち寄り需要がある。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.bluefrontshibaura.com/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_464",
+      "slug": "quays-pacific-grill",
+      "name": "QUAYS pacific grill",
+      "aliases": [
+        "キーズ パシフィック グリル"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "terrace",
+        "waterside",
+        "brewery",
+        "cafe",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区新港2-14-1 横浜ハンマーヘッド1・2F",
+      "official_url": "https://www.huge.co.jp/service/restaurant/new_american/quays_pacific_grill/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 70,
+        "outdoor": 55,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 55,
+        "parent_rest": 92,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 66,
+        "toddler_fit": 71,
+        "stroller_fit": 82,
+        "rain_resilience": 68,
+        "heat_resilience": 68,
+        "walking_load": 10,
+        "planning_friction": 32
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 82,
+        "scenic": 94,
+        "stroll": 82,
+        "relax": 86,
+        "shopping": 8,
+        "food": 100,
+        "culture": 35,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 100
+      },
+      "editorial_reason": "横浜の水辺で、モーニングから夜まで使える大人も子どもも入りやすいレストラン。",
+      "public_copy": "横浜ハンマーヘッドの海側で、シーフードと自家醸造のクラフトを楽しめる大型レストラン。テラスもあり、親子の散歩と大人の食事を一つにしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "全日8:00〜22:00。モーニングL.O. 10:15。",
+        "price_summary": "注文内容による。",
+        "reservation_summary": "予約可。",
+        "age_note": "小学生以下の子ども連れは1F席に案内。テラス利用も可。",
+        "temporary_note": "営業時間変更がある場合は公式サイトで確認。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.huge.co.jp/service/restaurant/new_american/quays_pacific_grill/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "QUAYS pacific grillの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 96,
+        "solo": 76,
+        "friends": 100
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "QUAYS pacific grill 横浜ハンマーヘッド",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "ハンマーヘッド",
+        "水辺",
+        "テラス",
+        "親も楽しい",
+        "モーニング"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 88,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "direct_only",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "公式予約可。対応ASPの施設別ページは未確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "横浜の水辺で、モーニングから夜まで使える大人も子どもも入りやすいレストラン。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.huge.co.jp/service/restaurant/new_american/quays_pacific_grill/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_465",
+      "slug": "garden-house-kamakura",
+      "name": "GARDEN HOUSE KAMAKURA",
+      "aliases": [
+        "ガーデンハウス鎌倉"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "cafe",
+        "terrace",
+        "garden",
+        "family",
+        "kamakura"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市御成町15-46",
+      "official_url": "https://ghghgh.jp/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 55,
+        "outdoor": 72,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 94,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 78,
+        "toddler_fit": 83,
+        "stroller_fit": 84,
+        "rain_resilience": 55,
+        "heat_resilience": 55,
+        "walking_load": 10,
+        "planning_friction": 28
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 78,
+        "scenic": 80,
+        "stroll": 92,
+        "relax": 94,
+        "shopping": 8,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 10
+      },
+      "editorial_reason": "鎌倉駅近くで緑・ごはん・親子の入りやすさをまとめて満たすテラスレストラン。",
+      "public_copy": "鎌倉駅西口から近く、緑のテラスで旬の食材を使った食事を楽しめる一軒。子ども椅子やキッズメニューもあり、親もちゃんと食べたい日の鎌倉に使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "9:00〜21:00。モーニング9:00〜11:00、ランチ11:00〜15:00、ディナー17:00〜21:00。",
+        "price_summary": "一休.comレストランの掲載プラン・アラカルトにより異なる。",
+        "reservation_summary": "予約可。一休.comレストランの施設別ページあり。",
+        "age_note": "子ども同伴可。子どもメニュー・子ども椅子あり。",
+        "temporary_note": "不定休。イベント等で営業内容が変わる場合あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://ghghgh.jp/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/green-breathing-room.webp",
+        "type": "ai",
+        "alt": "GARDEN HOUSE KAMAKURAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 94,
+        "solo": 82,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 96,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "GARDEN HOUSE KAMAKURA",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "鎌倉",
+        "テラス",
+        "緑",
+        "親子ごはん",
+        "子ども椅子",
+        "駅近"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "一休.comレストラン"
+        ],
+        "product_match_required": false,
+        "note": "一休.comレストランの施設別ページを2026-09-06に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "鎌倉駅近くで緑・ごはん・親子の入りやすさをまとめて満たすテラスレストラン。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://ghghgh.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_466",
+      "slug": "ristorante-ao-zushi-marina",
+      "name": "リストランテAO 逗子マリーナ",
+      "aliases": [
+        "Ristorante AO Zushi Marina",
+        "リストランテAO"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "waterside",
+        "scenic",
+        "family",
+        "terrace",
+        "date"
+      ],
+      "prefecture": "神奈川県",
+      "city": "逗子市",
+      "address": "神奈川県逗子市小坪5-23-16",
+      "official_url": "https://www.riviera.co.jp/area/zushi/restaurant/ao/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 135,
+      "experience_seed": {
+        "indoor": 78,
+        "outdoor": 44,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 86,
+        "parent_rest": 96,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 62,
+        "toddler_fit": 67,
+        "stroller_fit": 72,
+        "rain_resilience": 76,
+        "heat_resilience": 76,
+        "walking_load": 10,
+        "planning_friction": 58
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 98,
+        "scenic": 100,
+        "stroll": 58,
+        "relax": 96,
+        "shopping": 8,
+        "food": 100,
+        "culture": 22,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 100
+      },
+      "editorial_reason": "全席オーシャンビューで、親も景色と食事を主目的にできる湘南のご褒美レストラン。",
+      "public_copy": "相模湾と富士山を望む逗子マリーナのイタリアン。ソファ席や子どもメニューもあり、子連れでも「景色のいい店に行きたい」を叶えやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ランチ11:30〜15:00／ディナー17:00〜21:00（季節により20:00まで）／水曜限定カフェあり。",
+        "price_summary": "コース・アラカルトにより異なる。サービス料10%。",
+        "reservation_summary": "ディナーは予約制。OZmallの施設別予約ページあり。",
+        "age_note": "子ども同伴可。未就学児は事前相談推奨。子どもメニューあり。",
+        "temporary_note": "火曜定休（祝日は営業）。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.riviera.co.jp/area/zushi/restaurant/ao/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "リストランテAO 逗子マリーナの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 100,
+        "solo": 64,
+        "friends": 92
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "逗子市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "リストランテAO 逗子マリーナ",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "逗子",
+        "オーシャンビュー",
+        "記念日",
+        "親も楽しい",
+        "子どもメニュー",
+        "湘南"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 48,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "OZmall"
+        ],
+        "product_match_required": false,
+        "note": "OZmallの施設別予約ページを2026-09-06に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "全席オーシャンビューで、親も景色と食事を主目的にできる湘南のご褒美レストラン。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.riviera.co.jp/area/zushi/restaurant/ao/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_467",
+      "slug": "cicada-aoyama",
+      "name": "CICADA",
+      "aliases": [
+        "シカダ 南青山",
+        "CICADA 南青山"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "terrace",
+        "garden",
+        "date",
+        "night"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区南青山5-7-28",
+      "official_url": "https://www.tysons.jp/cicada/",
+      "environment": "indoor_outdoor",
+      "stay_minutes_seed": 120,
+      "experience_seed": {
+        "indoor": 78,
+        "outdoor": 50,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 74,
+        "parent_rest": 88,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 18,
+        "toddler_fit": 23,
+        "stroller_fit": 44,
+        "rain_resilience": 72,
+        "heat_resilience": 72,
+        "walking_load": 10,
+        "planning_friction": 60
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 96,
+        "scenic": 78,
+        "stroll": 65,
+        "relax": 92,
+        "shopping": 8,
+        "food": 100,
+        "culture": 46,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 15
+      },
+      "editorial_reason": "表参道の路地奥に広がるリゾート感のある空間で、大人の非日常ランチ・ディナーを担う。",
+      "public_copy": "表参道駅近くなのに、緑とテラス、プールのあるリゾートのようなレストラン。地中海料理と空間をゆっくり楽しみたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "ランチ11:30〜16:00／カフェ15:00〜17:30／ディナー17:30〜22:30。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "予約可。",
+        "age_note": "6歳未満の子ども連れは個室利用を依頼。ハイチェア・子ども食器あり。",
+        "temporary_note": "個室はルームチャージあり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tysons.jp/cicada/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/green-breathing-room.webp",
+        "type": "ai",
+        "alt": "CICADAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 30,
+        "partner": 100,
+        "solo": 68,
+        "friends": 96
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "CICADA 南青山",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "表参道",
+        "テラス",
+        "リゾート",
+        "大人時間",
+        "緑",
+        "ディナー"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 58,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "direct_only",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "公式WEB予約あり。対応ASPの施設別ページは未確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "表参道の路地奥に広がるリゾート感のある空間で、大人の非日常ランチ・ディナーを担う。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.tysons.jp/cicada/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_468",
+      "slug": "joel-robuchon-ebisu",
+      "name": "シャトーレストラン ジョエル・ロブション",
+      "aliases": [
+        "ガストロノミー ジョエル・ロブション",
+        "Joël Robuchon Ebisu"
+      ],
+      "category_primary": "restaurant",
+      "categories": [
+        "restaurant",
+        "architecture",
+        "luxury",
+        "date",
+        "culture"
+      ],
+      "prefecture": "東京都",
+      "city": "目黒区",
+      "address": "東京都目黒区三田1-13-1 恵比寿ガーデンプレイス",
+      "official_url": "https://www.robuchon.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 4,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 96,
+        "parent_rest": 96,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 55,
+        "baby_fit": 5,
+        "toddler_fit": 10,
+        "stroller_fit": 18,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 10,
+        "planning_friction": 82
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 100,
+        "scenic": 76,
+        "stroll": 38,
+        "relax": 90,
+        "shopping": 8,
+        "food": 100,
+        "culture": 80,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "「お城のような場所で食事をする」非日常を、白金ラ・ボエムより上質な記念日軸で補完する。",
+      "public_copy": "恵比寿ガーデンプレイスに建つシャトーレストラン。建物に入るところから特別感があり、食事そのものを一日の目的にしたい記念日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "店舗・プランにより異なるため公式サイトで確認。",
+        "price_summary": "ガストロノミーは高価格帯。予約プランにより異なる。",
+        "reservation_summary": "予約推奨。一休.comレストランの施設別ページあり。",
+        "age_note": "大人向けのガストロノミー。子どもの同伴条件は予約時に要確認。",
+        "temporary_note": "営業時間変更は公式案内で確認。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.robuchon.jp/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "シャトーレストラン ジョエル・ロブションの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 10,
+        "partner": 100,
+        "solo": 52,
+        "friends": 62
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "目黒区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ガストロノミー ジョエル・ロブション 恵比寿",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "恵比寿",
+        "シャトー",
+        "記念日",
+        "フレンチ",
+        "建築",
+        "非日常"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 20,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "A",
+        "status": "verified_source_link",
+        "channel_candidates": [
+          "一休.comレストラン"
+        ],
+        "product_match_required": false,
+        "note": "一休.comレストランのガストロノミー施設別ページを2026-09-06に確認。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "「お城のような場所で食事をする」非日常を、白金ラ・ボエムより上質な記念日軸で補完する。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.robuchon.jp/"
+          }
+        ]
+      }
+    },
+    {
+      "spot_id": "spot_469",
+      "slug": "koffee-mameya-kakeru",
+      "name": "KOFFEE MAMEYA Kakeru",
+      "aliases": [
+        "コーヒー マメヤ カケル"
+      ],
+      "category_primary": "cafe",
+      "categories": [
+        "cafe",
+        "coffee",
+        "experience",
+        "architecture",
+        "solo"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区平野2-16-14",
+      "official_url": "https://koffee-mameya.com/kakeru/",
+      "environment": "indoor",
+      "stay_minutes_seed": 105,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 88,
+        "parent_rest": 62,
+        "greenery": 25,
+        "water_contact": 3,
+        "animal_contact": 0,
+        "food_experience": 70,
+        "creative_sensory": 55,
+        "baby_fit": 12,
+        "toddler_fit": 17,
+        "stroller_fit": 30,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 10,
+        "planning_friction": 82
+      },
+      "vibes_seed": {
+        "cool": 82,
+        "nature": 20,
+        "extraordinary": 100,
+        "scenic": 44,
+        "stroll": 40,
+        "relax": 86,
+        "shopping": 8,
+        "food": 90,
+        "culture": 72,
+        "animals": 0,
+        "creative": 25,
+        "active": 4,
+        "waterside": 0
+      },
+      "editorial_reason": "コーヒーを「飲む」より体験として味わう、予約して行く目的地カフェを補強。",
+      "public_copy": "清澄白河で、コーヒーをコースのように味わう特別な一軒。カウンターで一杯ずつ向き合う時間そのものを目的にしたい日に。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "11:00〜18:00、金曜定休（予約ページ記載。変更時は公式で確認）。",
+        "price_summary": "体験・コース内容により異なる。",
+        "reservation_summary": "予約優先。予約は1か月先まで、利用時間は約1時間45分。",
+        "age_note": "全席カウンター。小さな子ども連れには向きにくい。",
+        "temporary_note": "当日予約は店舗問い合わせ。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://koffee-mameya.com/kakeru/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/cafe.webp",
+        "type": "ai",
+        "alt": "KOFFEE MAMEYA Kakeruの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 18,
+        "partner": 92,
+        "solo": 100,
+        "friends": 74
+      },
+      "adult_enjoyment_seed": 100,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "KOFFEE MAMEYA Kakeru",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "清澄白河",
+        "コーヒー",
+        "予約",
+        "体験",
+        "ひとり時間",
+        "大人向け"
+      ],
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 26,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "direct_only",
+        "channel_candidates": [],
+        "product_match_required": false,
+        "note": "公式/TableCheck予約中心。対応ASPなし。"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 72,
+        "social_presence": 82,
+        "visual_appeal": 94,
+        "media_attention": 76,
+        "popularity_momentum": 82,
+        "reason": "コーヒーを「飲む」より体験として味わう、予約して行く目的地カフェを補強。",
+        "checked_at": "2026-09-06",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://koffee-mameya.com/kakeru/"
           }
         ]
       }

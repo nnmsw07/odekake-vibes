@@ -1,13 +1,13 @@
 window.KIBUN_AFFILIATE_AUDIT_STATUS = {
-  "version": "20.11.0",
-  "checked_at": "2026-09-04",
-  "spot_count": 458,
+  "version": "20.12.3",
+  "checked_at": "2026-09-06",
+  "spot_count": 469,
   "distribution": {
-    "configured": 161,
+    "configured": 166,
     "recheck_needed": 133,
-    "not_target": 143,
+    "not_target": 145,
     "researched_no_partner": 7,
-    "direct_only": 14
+    "direct_only": 18
   },
   "spots": {
     "spot_001": {
@@ -1677,10 +1677,10 @@ window.KIBUN_AFFILIATE_AUDIT_STATUS = {
       "status": "configured",
       "affiliate_fit": "A",
       "providers": [
-        "ikyu"
+        "ozmall"
       ],
-      "checked_at": "2026-09-03",
-      "reason": "施設別の直接予約・チケット/宿泊ページを設定済み。"
+      "checked_at": "2026-09-06",
+      "reason": "LARBOARDのOZmall施設別予約ページを設定済み。"
     },
     "spot_220": {
       "status": "configured",
@@ -3548,6 +3548,93 @@ window.KIBUN_AFFILIATE_AUDIT_STATUS = {
       "providers": [],
       "checked_at": "2026-09-04",
       "reason": "公式予約導線は確認済み。対応ASPの施設別商品を継続調査する。"
+    },
+    "spot_459": {
+      "status": "not_target",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "スターバックス公式利用中心。現時点では予約型アフィリエイト対象外。"
+    },
+    "spot_460": {
+      "status": "direct_only",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "公式予約導線あり。対応ASPの施設別ページは未確認。"
+    },
+    "spot_461": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu_restaurant"
+      ],
+      "checked_at": "2026-09-06",
+      "reason": "一休.comレストランの施設別ページを設定済み。"
+    },
+    "spot_462": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "asoview"
+      ],
+      "checked_at": "2026-09-06",
+      "reason": "アソビュー！の施設別前売りチケットページを設定済み。"
+    },
+    "spot_463": {
+      "status": "not_target",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "複合施設の回遊利用が中心で、現時点では施設単位の予約導線を置かない。"
+    },
+    "spot_464": {
+      "status": "direct_only",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "公式予約可。対応ASPの施設別ページは未確認。"
+    },
+    "spot_465": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu_restaurant"
+      ],
+      "checked_at": "2026-09-06",
+      "reason": "一休.comレストランの施設別ページを設定済み。"
+    },
+    "spot_466": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ozmall"
+      ],
+      "checked_at": "2026-09-06",
+      "reason": "OZmallの施設別ページを設定済み。"
+    },
+    "spot_467": {
+      "status": "direct_only",
+      "affiliate_fit": "B",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "公式WEB予約あり。対応ASPの施設別ページは未確認。"
+    },
+    "spot_468": {
+      "status": "configured",
+      "affiliate_fit": "A",
+      "providers": [
+        "ikyu_restaurant"
+      ],
+      "checked_at": "2026-09-06",
+      "reason": "一休.comレストランの施設別ページを設定済み。"
+    },
+    "spot_469": {
+      "status": "direct_only",
+      "affiliate_fit": "C",
+      "providers": [],
+      "checked_at": "2026-09-06",
+      "reason": "公式/TableCheck予約中心。対応ASPなし。"
     }
   }
 };

@@ -25,17 +25,11 @@
   <url><loc>https://kibuntrip.com/guide/yokohama-nature/</loc></url>
   <url><loc>https://kibuntrip.com/guide/yokohama-water/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/baby-first-outing/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/yokohama-rainy-day/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/ride-and-transport/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/science-for-everyone/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/waterfront-reset/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/green-breathing-room/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/small-museums-big-day/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/solo-reset/</loc></url>
-  <url><loc>https://kibuntrip.com/magazine/factory-tour/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/animals-close/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/art-and-cafe/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/baby-first-outing/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/factory-tour/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/green-breathing-room/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/hakone-stay-story/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/hotel-without-staying/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/japanese-culture-experience/</loc></url>
@@ -44,15 +38,21 @@
   <url><loc>https://kibuntrip.com/magazine/outdoor-stay-with-comfort/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/oyako-rest-indoor/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/parents-eat-well/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/ride-and-transport/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/science-for-everyone/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/seasonal-harvest/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/shibuya-with-kids/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/shinjuku-family-day/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/small-museums-big-day/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/solo-reset/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/takanawa-after-five/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/terrace-after-sunset/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/tokyo-rainy-family/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/tools-with-a-story/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/waterfront-reset/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/yokohama-afternoon-tea/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/yokohama-family-cafe/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/yokohama-rainy-day/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/yokohama-small-holiday/</loc></url>
   <url><loc>https://kibuntrip.com/plans/</loc></url>
   <url><loc>https://kibuntrip.com/spots/</loc></url>
@@ -102,6 +102,7 @@
   <url><loc>https://kibuntrip.com/spots/bills-odaiba/</loc></url>
   <url><loc>https://kibuntrip.com/spots/bills-shichirigahama/</loc></url>
   <url><loc>https://kibuntrip.com/spots/bills-yokohama-red-brick/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/blue-front-shibaura-tower-s/</loc></url>
   <url><loc>https://kibuntrip.com/spots/bornelund-kidokid-markis-minatomirai/</loc></url>
   <url><loc>https://kibuntrip.com/spots/bosai-no-oka-park/</loc></url>
   <url><loc>https://kibuntrip.com/spots/brews-tennoz/</loc></url>
@@ -118,6 +119,7 @@
   <url><loc>https://kibuntrip.com/spots/chano-ma-yokohama/</loc></url>
   <url><loc>https://kibuntrip.com/spots/chikyu-no-niwa-kohoku/</loc></url>
   <url><loc>https://kibuntrip.com/spots/choya-umetaiken-kamakura/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/cicada-aoyama/</loc></url>
   <url><loc>https://kibuntrip.com/spots/classense-kids-park/</loc></url>
   <url><loc>https://kibuntrip.com/spots/co-shibuya/</loc></url>
   <url><loc>https://kibuntrip.com/spots/coaska-bayside-stores/</loc></url>
@@ -160,6 +162,7 @@
   <url><loc>https://kibuntrip.com/spots/gaikaku-ryuqkan/</loc></url>
   <url><loc>https://kibuntrip.com/spots/galaxcity/</loc></url>
   <url><loc>https://kibuntrip.com/spots/ganso-food-sample-kappabashi/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/garden-house-kamakura/</loc></url>
   <url><loc>https://kibuntrip.com/spots/garden-lounge-new-otani/</loc></url>
   <url><loc>https://kibuntrip.com/spots/geological-museum-tsukuba/</loc></url>
   <url><loc>https://kibuntrip.com/spots/glass-lab-kiyosumi/</loc></url>
@@ -213,7 +216,6 @@
   <url><loc>https://kibuntrip.com/spots/inage-kaihin-koen-pool/</loc></url>
   <url><loc>https://kibuntrip.com/spots/inn-the-park-numazu/</loc></url>
   <url><loc>https://kibuntrip.com/spots/inokashira-park-zoo/</loc></url>
-  <url><loc>https://kibuntrip.com/spots/intercontinental-yokohama-pier8/</loc></url>
   <url><loc>https://kibuntrip.com/spots/itabashi-central-library/</loc></url>
   <url><loc>https://kibuntrip.com/spots/ivy-place-daikanyama/</loc></url>
   <url><loc>https://kibuntrip.com/spots/izoo/</loc></url>
@@ -224,6 +226,7 @@
   <url><loc>https://kibuntrip.com/spots/jal-sky-museum/</loc></url>
   <url><loc>https://kibuntrip.com/spots/japan-folk-crafts-museum/</loc></url>
   <url><loc>https://kibuntrip.com/spots/jeju-beach-shinokubo/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/joel-robuchon-ebisu/</loc></url>
   <url><loc>https://kibuntrip.com/spots/jogashima/</loc></url>
   <url><loc>https://kibuntrip.com/spots/joypolis-sports-x/</loc></url>
   <url><loc>https://kibuntrip.com/spots/kaat-kanagawa-arts-theatre/</loc></url>
@@ -263,11 +266,14 @@
   <url><loc>https://kibuntrip.com/spots/kobito-hakubutsukan/</loc></url>
   <url><loc>https://kibuntrip.com/spots/kodomo-shizen-koen/</loc></url>
   <url><loc>https://kibuntrip.com/spots/kodomonokuni/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/koffee-mameya-kakeru/</loc></url>
   <url><loc>https://kibuntrip.com/spots/konnyaku-park/</loc></url>
   <url><loc>https://kibuntrip.com/spots/koza-shisetsu-indoor-pool/</loc></url>
   <url><loc>https://kibuntrip.com/spots/kurkku-fields/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/la-boheme-shirogane/</loc></url>
   <url><loc>https://kibuntrip.com/spots/la-terrasse-hotel-new-grand/</loc></url>
   <url><loc>https://kibuntrip.com/spots/lalaport-toyosu/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/larboard-intercontinental-yokohama-pier8/</loc></url>
   <url><loc>https://kibuntrip.com/spots/latte-chano-mama-shinjuku/</loc></url>
   <url><loc>https://kibuntrip.com/spots/lattest-green/</loc></url>
   <url><loc>https://kibuntrip.com/spots/lavista-kannonzaki/</loc></url>
@@ -331,6 +337,7 @@
   <url><loc>https://kibuntrip.com/spots/numazu-deep-sea-aquarium/</loc></url>
   <url><loc>https://kibuntrip.com/spots/oak-door-grand-hyatt-tokyo/</loc></url>
   <url><loc>https://kibuntrip.com/spots/odaiba-seaside-park/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/ogasawara-tei/</loc></url>
   <url><loc>https://kibuntrip.com/spots/ogawa-coffee-laboratory-takanawa/</loc></url>
   <url><loc>https://kibuntrip.com/spots/oigawa-railway/</loc></url>
   <url><loc>https://kibuntrip.com/spots/oiso-long-beach/</loc></url>
@@ -354,11 +361,14 @@
   <url><loc>https://kibuntrip.com/spots/play-park-eric-carle/</loc></url>
   <url><loc>https://kibuntrip.com/spots/play-park-tachikawa/</loc></url>
   <url><loc>https://kibuntrip.com/spots/plus-add-shinokubo/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/quays-pacific-grill/</loc></url>
   <url><loc>https://kibuntrip.com/spots/rain-on-the-roof/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/raku-spa-bay-yokohama/</loc></url>
   <url><loc>https://kibuntrip.com/spots/red-tokyo-tower/</loc></url>
   <url><loc>https://kibuntrip.com/spots/remake-outlet-laketown/</loc></url>
   <url><loc>https://kibuntrip.com/spots/reve-des-lumieres/</loc></url>
   <url><loc>https://kibuntrip.com/spots/ride-tennoz/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/ristorante-ao-zushi-marina/</loc></url>
   <url><loc>https://kibuntrip.com/spots/riviera-zushi-marina/</loc></url>
   <url><loc>https://kibuntrip.com/spots/romancecar-museum/</loc></url>
   <url><loc>https://kibuntrip.com/spots/ryugujo-mikazuki/</loc></url>
@@ -421,6 +431,7 @@
   <url><loc>https://kibuntrip.com/spots/spot_081-spot/</loc></url>
   <url><loc>https://kibuntrip.com/spots/spot_082-spot/</loc></url>
   <url><loc>https://kibuntrip.com/spots/spot_083-spot/</loc></url>
+  <url><loc>https://kibuntrip.com/spots/starbucks-reserve-roastery-tokyo/</loc></url>
   <url><loc>https://kibuntrip.com/spots/starbucks-yokohama-umi-no-koen/</loc></url>
   <url><loc>https://kibuntrip.com/spots/sumida-aquarium/</loc></url>
   <url><loc>https://kibuntrip.com/spots/sunshine-aquarium/</loc></url>

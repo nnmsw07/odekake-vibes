@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T07:48:32.684Z",
+  "generated_at": "2026-09-06T05:19:07.658Z",
   "source": "data.js",
   "routes": [
     {
@@ -1530,9 +1530,9 @@
     },
     {
       "spot_id": "spot_219",
-      "slug": "intercontinental-yokohama-pier8",
-      "name": "インターコンチネンタル横浜Pier 8",
-      "url": "https://kibuntrip.com/spots/intercontinental-yokohama-pier8/",
+      "slug": "larboard-intercontinental-yokohama-pier8",
+      "name": "Restaurant & Bar LARBOARD｜インターコンチネンタル横浜Pier 8",
+      "url": "https://kibuntrip.com/spots/larboard-intercontinental-yokohama-pier8/",
       "fallback_file": "seo-spot-spot_219.html"
     },
     {
@@ -3207,6 +3207,83 @@
       "name": "津久井浜観光農園",
       "url": "https://kibuntrip.com/spots/tsukuihama-tourist-farm/",
       "fallback_file": "seo-spot-spot_458.html"
+    },
+    {
+      "spot_id": "spot_459",
+      "slug": "starbucks-reserve-roastery-tokyo",
+      "name": "スターバックス リザーブ® ロースタリー 東京",
+      "url": "https://kibuntrip.com/spots/starbucks-reserve-roastery-tokyo/",
+      "fallback_file": "seo-spot-spot_459.html"
+    },
+    {
+      "spot_id": "spot_460",
+      "slug": "la-boheme-shirogane",
+      "name": "Cafe La Bohème 白金",
+      "url": "https://kibuntrip.com/spots/la-boheme-shirogane/",
+      "fallback_file": "seo-spot-spot_460.html"
+    },
+    {
+      "spot_id": "spot_461",
+      "slug": "ogasawara-tei",
+      "name": "小笠原伯爵邸",
+      "url": "https://kibuntrip.com/spots/ogasawara-tei/",
+      "fallback_file": "seo-spot-spot_461.html"
+    },
+    {
+      "spot_id": "spot_462",
+      "slug": "raku-spa-bay-yokohama",
+      "name": "RAKU SPA BAY 横浜",
+      "url": "https://kibuntrip.com/spots/raku-spa-bay-yokohama/",
+      "fallback_file": "seo-spot-spot_462.html"
+    },
+    {
+      "spot_id": "spot_463",
+      "slug": "blue-front-shibaura-tower-s",
+      "name": "BLUE FRONT SHIBAURA TOWER S",
+      "url": "https://kibuntrip.com/spots/blue-front-shibaura-tower-s/",
+      "fallback_file": "seo-spot-spot_463.html"
+    },
+    {
+      "spot_id": "spot_464",
+      "slug": "quays-pacific-grill",
+      "name": "QUAYS pacific grill",
+      "url": "https://kibuntrip.com/spots/quays-pacific-grill/",
+      "fallback_file": "seo-spot-spot_464.html"
+    },
+    {
+      "spot_id": "spot_465",
+      "slug": "garden-house-kamakura",
+      "name": "GARDEN HOUSE KAMAKURA",
+      "url": "https://kibuntrip.com/spots/garden-house-kamakura/",
+      "fallback_file": "seo-spot-spot_465.html"
+    },
+    {
+      "spot_id": "spot_466",
+      "slug": "ristorante-ao-zushi-marina",
+      "name": "リストランテAO 逗子マリーナ",
+      "url": "https://kibuntrip.com/spots/ristorante-ao-zushi-marina/",
+      "fallback_file": "seo-spot-spot_466.html"
+    },
+    {
+      "spot_id": "spot_467",
+      "slug": "cicada-aoyama",
+      "name": "CICADA",
+      "url": "https://kibuntrip.com/spots/cicada-aoyama/",
+      "fallback_file": "seo-spot-spot_467.html"
+    },
+    {
+      "spot_id": "spot_468",
+      "slug": "joel-robuchon-ebisu",
+      "name": "シャトーレストラン ジョエル・ロブション",
+      "url": "https://kibuntrip.com/spots/joel-robuchon-ebisu/",
+      "fallback_file": "seo-spot-spot_468.html"
+    },
+    {
+      "spot_id": "spot_469",
+      "slug": "koffee-mameya-kakeru",
+      "name": "KOFFEE MAMEYA Kakeru",
+      "url": "https://kibuntrip.com/spots/koffee-mameya-kakeru/",
+      "fallback_file": "seo-spot-spot_469.html"
     }
   ]
 }

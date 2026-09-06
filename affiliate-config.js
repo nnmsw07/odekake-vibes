@@ -752,12 +752,12 @@ window.KIBUN_AFFILIATE_CONFIG = {
     ],
     "spot_219": [
       {
-        "provider": "ikyu",
-        "intent": "stay",
+        "provider": "ozmall",
+        "intent": "restaurant",
         "scope": "spot",
-        "url": "https://www.ikyu.com/00002696/",
-        "label": "一休.comで宿泊プランを見る",
-        "verified_at": "2026-09-03"
+        "url": "https://www.ozmall.co.jp/restaurant/9669/",
+        "label": "OZmallでLARBOARDのプランを見る",
+        "verified_at": "2026-09-06"
       }
     ],
     "spot_220": [
@@ -1805,6 +1805,57 @@ window.KIBUN_AFFILIATE_CONFIG = {
         "label": "OZmallでレストランプランを見る",
         "verified_at": "2026-09-04"
       }
+    ],
+    "spot_461": [
+      {
+        "provider": "ikyu_restaurant",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://restaurant.ikyu.com/103006/",
+        "label": "一休.comレストランで小笠原伯爵邸を予約",
+        "verified_at": "2026-09-06"
+      }
+    ],
+    "spot_462": [
+      {
+        "provider": "asoview",
+        "intent": "experience",
+        "scope": "spot",
+        "url": "https://www.asoview.com/base/163206/",
+        "label": "アソビュー！でRAKU SPA BAY横浜の前売りチケットを見る",
+        "verified_at": "2026-09-06",
+        "conversion_check_required": true
+      }
+    ],
+    "spot_465": [
+      {
+        "provider": "ikyu_restaurant",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://restaurant.ikyu.com/124520/",
+        "label": "一休.comレストランでGARDEN HOUSE KAMAKURAを予約",
+        "verified_at": "2026-09-06"
+      }
+    ],
+    "spot_466": [
+      {
+        "provider": "ozmall",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://www.ozmall.co.jp/restaurant/4199/",
+        "label": "OZmallでリストランテAOのプランを見る",
+        "verified_at": "2026-09-06"
+      }
+    ],
+    "spot_468": [
+      {
+        "provider": "ikyu_restaurant",
+        "intent": "restaurant",
+        "scope": "spot",
+        "url": "https://restaurant.ikyu.com/100154/",
+        "label": "一休.comレストランでジョエル・ロブションを予約",
+        "verified_at": "2026-09-06"
+      }
     ]
   },
   "providerPriority": {
@@ -1866,6 +1917,6 @@ window.KIBUN_AFFILIATE_CONFIG = {
       "scope": "program"
     }
   },
-  "last_sweep_at": "2026-09-04",
-  "sweep_note": "v20.11.0: 新規12スポットを再監査。OZmall 4件・アソビュー 4件の施設別直接導線を追加し、その他4件はrecheck_neededで継続調査。"
+  "last_sweep_at": "2026-09-06",
+  "sweep_note": "v20.12.3: Pier 8をLARBOARD単体へ修正。新規・修正スポットのうちLARBOARD、小笠原伯爵邸、RAKU SPA BAY横浜、GARDEN HOUSE KAMAKURA、リストランテAO、ジョエル・ロブションに施設別直接導線を設定。"
 };
