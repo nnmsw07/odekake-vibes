@@ -28,7 +28,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=211124&amp;h=211124" />
+  <link rel="stylesheet" href="styles.css?v=201125" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -51,7 +51,7 @@
 </head>
 <body>
   <header class="topbar">
-    <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun <span class="brand-menu-mark">⌄</span></button>
+    <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun Trip <span class="brand-menu-mark">⌄</span></button>
     <span class="topbar-tag">MOOD → DAY</span>
     <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
   </header>
@@ -62,14 +62,18 @@
       <h1>今日は、<br><em>どんな気分？</em></h1>
       <p class="hero-copy">行きたい場所を検索する前に、過ごしたい一日を選ぶ。<br>誰と行くか、今いる場所も少しだけ教えてください。</p>
 
+      <div class="mood-progress" aria-label="今日の気分から探す 3ステップ">
+        <div class="mood-progress-steps" aria-hidden="true"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
+        <p>今日はどんな一日にしたいか選びましょう</p>
+      </div>
+
       <div class="audience-block setup-panel">
-        <div class="mini-heading"><span>01</span><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
+        <div class="mini-heading audience-heading"><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
         <div id="audiencePicker" class="audience-picker" role="group" aria-label="同行者を選ぶ"></div>
       </div>
 
       <div class="vibe-block setup-panel">
-        <div class="mini-heading"><span>02</span><strong>今日を組み立てる</strong><small>最大3つ</small></div>
-        <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら選びます。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
+        <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら、一日の組み立てまで提案します。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
         <div class="selection-row">
           <span id="selectedHint">気分や、やりたいことを1つ選んでください</span>
           <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
@@ -77,8 +81,8 @@
         <div id="selectedVibeTags" class="selected-vibe-tags" aria-live="polite"></div>
       </div>
 
-      <details class="conditions" open>
-        <summary><strong>03　条件を少しだけ</strong><span>現在地・時間・天気で調整</span></summary>
+      <details class="conditions">
+        <summary><strong>STEP 3　条件を少しだけ</strong><span>現在地・時間・天気で調整（任意）</span></summary>
         <div class="condition-grid">
           <div class="field-card travel-card" id="originCard">
             <span class="field-label"><span class="field-mark">FROM</span>どこから出かける？</span>
@@ -189,5 +193,5 @@
   <script type="text/javascript" language="javascript">
     var vc_pid = "892690966";
   </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-  <script src="app.js?v=211124&amp;h=211124"></script>
+  <script src="app.js?v=201125"></script>
 </body></html>
