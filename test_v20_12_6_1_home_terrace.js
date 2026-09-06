@@ -1,0 +1,10 @@
+const fs=require('fs'),assert=require('assert');
+const html=fs.readFileSync('index.html','utf8');
+const start=html.indexOf('href="magazine/terrace-after-sunset/"');
+assert(start>=0,'terrace card missing');
+const end=html.indexOf('</a>',start);
+const chunk=html.slice(start,end);
+assert(chunk.includes('assets/editorial/terrace-after-sunset.webp'),'dedicated terrace hero missing');
+assert(!chunk.includes('data-media-spot='),'terrace card must not wait for Google Places');
+assert(!chunk.includes('data-hero-clean='),'terrace card must be visible immediately');
+console.log('v20.12.6.1 homepage terrace hero: PASS');
