@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T05:19:07.658Z",
+  "generated_at": "2026-09-06T05:58:12.111Z",
   "source": "data.js",
   "routes": [
     {
@@ -3284,6 +3284,34 @@
       "name": "KOFFEE MAMEYA Kakeru",
       "url": "https://kibuntrip.com/spots/koffee-mameya-kakeru/",
       "fallback_file": "seo-spot-spot_469.html"
+    },
+    {
+      "spot_id": "spot_470",
+      "slug": "sagamiko-mori-mori",
+      "name": "さがみ湖MORI MORI",
+      "url": "https://kibuntrip.com/spots/sagamiko-mori-mori/",
+      "fallback_file": "seo-spot-spot_470.html"
+    },
+    {
+      "spot_id": "spot_471",
+      "slug": "hakone-gora-park",
+      "name": "箱根強羅公園",
+      "url": "https://kibuntrip.com/spots/hakone-gora-park/",
+      "fallback_file": "seo-spot-spot_471.html"
+    },
+    {
+      "spot_id": "spot_472",
+      "slug": "yoyogi-park",
+      "name": "代々木公園",
+      "url": "https://kibuntrip.com/spots/yoyogi-park/",
+      "fallback_file": "seo-spot-spot_472.html"
+    },
+    {
+      "spot_id": "spot_473",
+      "slug": "komazawa-olympic-park",
+      "name": "駒沢オリンピック公園",
+      "url": "https://kibuntrip.com/spots/komazawa-olympic-park/",
+      "fallback_file": "seo-spot-spot_473.html"
     }
   ]
 }

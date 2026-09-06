@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_12_3_469spots_seo_affiliate_similar",
-    "version": "0.20.12.3",
+    "dataset_name": "kibun_kanto_izu_seed_v20_12_4_473spots_pet_audience",
+    "version": "0.20.12.4",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -18,7 +18,7 @@ window.ODEKAKE_SEED = {
       "layer_4_dynamic_snapshot": "営業時間・料金・予約・臨時情報。checked_atとsource_urlを必須にする",
       "layer_public_copy": "ユーザー画面に表示する施設紹介文。運営・推薦ロジック・データ整備の内部事情を書かない",
       "layer_internal_editorial_reason": "editorial_reasonは運営用の選定・編集メモ。UIには表示しない",
-      "layer_audience_fit": "同行者 family / partner / solo / friends への編集適合度。0〜100。",
+      "layer_audience_fit": "同行者 family / partner / solo / friends / dog への編集適合度。0〜100。dogは犬連れ条件を公式確認済みのスポットのみ推薦対象。",
       "layer_routing": "現在地フィルター用。GitHub Pages単体ではGeolonia町丁目代表点＋距離モデルで概算。Google Routes APIプロキシ設定時は実ルート所要時間に差し替え可能。",
       "layer_media_strategy": "HeroはGoogle Places実写を第一候補とし、取得不可時のみAIイメージへfallback。旧CC/Wikimedia画像は画面fallbackに使わない。",
       "layer_vibe_groups": "UI上は mood 3軸（cool / extraordinary / relax）と activity 10軸に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
@@ -31,7 +31,8 @@ window.ODEKAKE_SEED = {
       "layer_curated_booking": "予約導線は個別施設・個別体験ページを優先。stay: OZmall→一休→じゃらん、food: OZmall→一休.comレストラン、experience: アソビュー→じゃらん遊び・体験→アクティビティジャパン→KLOOKを基本に、公開画面では最適な1件だけ表示。",
       "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。",
       "layer_navigation": "モバイル下部ナビは記事 / プラン / スポット / 今日の気分の4導線。スポットは既存browse dialogへ直結。",
-      "layer_inbound_support": "訪日向け情報は booking_languages（予約導線の表示言語）と onsite_languages / onsite_note（現地対応）を分けて保持。予約サイトが英語表示できるだけで「現地英語対応」とは表示しない。"
+      "layer_inbound_support": "訪日向け情報は booking_languages（予約導線の表示言語）と onsite_languages / onsite_note（現地対応）を分けて保持。予約サイトが英語表示できるだけで「現地英語対応」とは表示しない。",
+      "layer_pet_profile": "犬連れ可否・利用条件・公式確認日をpet_profileに保持。dog同行者推薦ではpet_profile.status=trueを必須にする。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -69,7 +70,7 @@ window.ODEKAKE_SEED = {
       "public_copy": "全ユーザー向け。施設でどんな体験ができるかを中立かつ魅力的に説明する。",
       "editorial_reason": "運営内部用。Kibun/Buzz/推薦ロジック/データ設計などのメモを含んでもよいがUIには出さない。"
     },
-    "expansion_note": "v20.12.3: 463→469スポット。Pier 8をホテル全体からRestaurant & Bar LARBOARDへ修正。QUAYS / GARDEN HOUSE KAMAKURA / リストランテAO / CICADA / ジョエル・ロブション / KOFFEE MAMEYA Kakeruを追加。新規・修正スポットのSEOページと確認済みアフィリエイト導線を整備。",
+    "expansion_note": "v20.12.4: 469→473スポット。「わんこと」を同行者軸へ追加。既存17スポット＋新規4スポットの犬連れ条件を公式情報ベースで整備。記事・プランに誰と行くフィルターを追加。",
     "social_embed_policy": {
       "list_page": "一覧ではInstagramを読み込まずHero画像のみ表示",
       "detail_page": "詳細ページに確認できた公式Instagramを最大1件表示。reel_urlがあればEmbed、なければ公式プロフィールへのリンクカード。",
@@ -12115,7 +12116,8 @@ window.ODEKAKE_SEED = {
         "family": 78,
         "partner": 96,
         "solo": 78,
-        "friends": 91
+        "friends": 91,
+        "dog": 97
       },
       "adult_enjoyment_seed": 92,
       "routing": {
@@ -12142,7 +12144,9 @@ window.ODEKAKE_SEED = {
         "デート",
         "買い物",
         "ごはん",
-        "水辺・水遊び"
+        "水辺・水遊び",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12150,6 +12154,30 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "indoor_full_enclosure"
+        ],
+        "areas": [
+          "outdoor",
+          "selected_indoor",
+          "selected_restaurants"
+        ],
+        "dog_run": false,
+        "size_note": "公式ページ上で一律の犬サイズ制限は確認できず。店舗別条件を優先。",
+        "note": "館内は全身が隠れるバッグ・カート等が必要。飲食店は店舗別ルール。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.yokohama-akarenga.jp/faq/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12255,7 +12283,8 @@ window.ODEKAKE_SEED = {
         "family": 70,
         "partner": 100,
         "solo": 82,
-        "friends": 94
+        "friends": 94,
+        "dog": 97
       },
       "adult_enjoyment_seed": 96,
       "routing": {
@@ -12283,7 +12312,9 @@ window.ODEKAKE_SEED = {
         "買い物",
         "水辺・水遊び",
         "ごはん",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12291,6 +12322,31 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "shop_specific"
+        ],
+        "areas": [
+          "outdoor",
+          "selected_shops",
+          "selected_restaurants",
+          "terrace"
+        ],
+        "dog_run": false,
+        "size_note": "店舗別条件。",
+        "note": "館内ペット同伴可。店舗ごとに条件が異なる。ペット用水飲み場あり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://marineandwalk.jp/pet-info/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12396,7 +12452,8 @@ window.ODEKAKE_SEED = {
         "family": 76,
         "partner": 96,
         "solo": 80,
-        "friends": 93
+        "friends": 93,
+        "dog": 91
       },
       "adult_enjoyment_seed": 94,
       "routing": {
@@ -12423,7 +12480,9 @@ window.ODEKAKE_SEED = {
         "デート",
         "ごはん",
         "水辺・水遊び",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12431,6 +12490,29 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "indoor_face_hidden_cart_or_carrier",
+          "terrace_leash"
+        ],
+        "areas": [
+          "selected_terraces",
+          "2f_terrace_deck"
+        ],
+        "dog_run": false,
+        "size_note": "カート・キャリーに収まることが館内利用の実質条件。テラスデッキはリード可。",
+        "note": "館内は顔が出ないカート/キャリーバッグ。2Fテラスデッキはリードで通行可。複数飲食店のテラス席が同伴可。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.hammerhead.co.jp/facility/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12536,7 +12618,8 @@ window.ODEKAKE_SEED = {
         "family": 88,
         "partner": 92,
         "solo": 76,
-        "friends": 91
+        "friends": 91,
+        "dog": 97
       },
       "adult_enjoyment_seed": 88,
       "routing": {
@@ -12563,7 +12646,9 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "デート",
         "買い物",
-        "ごはん"
+        "ごはん",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12571,6 +12656,34 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat"
+        ],
+        "access": [
+          "leash",
+          "carrier_in_designated_areas",
+          "shop_specific"
+        ],
+        "areas": [
+          "common_area",
+          "selected_shops",
+          "selected_restaurants",
+          "bay_garden"
+        ],
+        "dog_run": false,
+        "size_note": "PET-SPAは小型〜大型犬・猫の一時預かり対応。",
+        "note": "館内はエリア別ルール。PET-SPA、一時預かり、ペットカートレンタルあり。",
+        "temporary_note": "2026-09-06時点、屋上ベイガーデン内ペットエリアは蜂等の目撃により一時使用中止の公式告知あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.yokohama-bayquarter.com/pet/rule",
+        "status_source_url": "https://www.yokohama-bayquarter.com/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12676,7 +12789,8 @@ window.ODEKAKE_SEED = {
         "family": 84,
         "partner": 94,
         "solo": 80,
-        "friends": 95
+        "friends": 95,
+        "dog": 97
       },
       "adult_enjoyment_seed": 91,
       "routing": {
@@ -12703,7 +12817,9 @@ window.ODEKAKE_SEED = {
         "デート",
         "買い物",
         "水辺・水遊び",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12711,6 +12827,30 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "carrier_or_cart_or_hold_in_selected_shops",
+          "terrace"
+        ],
+        "areas": [
+          "selected_shops",
+          "terrace",
+          "pet_route"
+        ],
+        "dog_run": false,
+        "size_note": "店舗別条件。カート等を使えるサイズが館内利用しやすい。",
+        "note": "ペット同伴可能ショップ多数。レストラン店内不可、テラス席利用。専用ペットルートあり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://mitsui-shopping-park.com/mop/yokohama/info/pet.html?plid=link03"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12816,7 +12956,8 @@ window.ODEKAKE_SEED = {
         "family": 90,
         "partner": 92,
         "solo": 96,
-        "friends": 78
+        "friends": 78,
+        "dog": 97
       },
       "adult_enjoyment_seed": 95,
       "routing": {
@@ -12844,7 +12985,9 @@ window.ODEKAKE_SEED = {
         "デート",
         "のんびり",
         "買い物",
-        "ひとり"
+        "ひとり",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12852,6 +12995,31 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "indoor_full_enclosure_selected_shops",
+          "terrace"
+        ],
+        "areas": [
+          "outdoor",
+          "selected_shops",
+          "selected_terraces"
+        ],
+        "dog_run": false,
+        "size_note": "屋内同伴は頭までケージに入ることが条件。",
+        "note": "館外はリードで散歩可。愛犬同伴可能店舗あり。無料ドッグカートとリードフックあり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://store.tsite.jp/shonan/news/t-site/31307-2054440119.html"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -12957,7 +13125,8 @@ window.ODEKAKE_SEED = {
         "family": 94,
         "partner": 96,
         "solo": 82,
-        "friends": 95
+        "friends": 95,
+        "dog": 82
       },
       "adult_enjoyment_seed": 93,
       "routing": {
@@ -12989,7 +13158,9 @@ window.ODEKAKE_SEED = {
         "デート",
         "買い物",
         "ごはん",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -12997,6 +13168,29 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat"
+        ],
+        "access": [
+          "indoor_full_enclosure",
+          "shop_specific"
+        ],
+        "areas": [
+          "selected_non_food_shops"
+        ],
+        "dog_run": false,
+        "size_note": "ペットカート・キャリーケースに全身が入る必要あり。",
+        "note": "飲食店舗・食料品売場は同伴不可。その他店舗は各店ルール。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.rise.sc/facility/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -13102,7 +13296,8 @@ window.ODEKAKE_SEED = {
         "family": 62,
         "partner": 100,
         "solo": 100,
-        "friends": 76
+        "friends": 76,
+        "dog": 91
       },
       "adult_enjoyment_seed": 100,
       "routing": {
@@ -13130,7 +13325,9 @@ window.ODEKAKE_SEED = {
         "のんびり",
         "買い物",
         "学び・文化",
-        "ひとり"
+        "ひとり",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -13138,6 +13335,30 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat"
+        ],
+        "access": [
+          "indoor_full_enclosure_selected_shops"
+        ],
+        "areas": [
+          "daikanyama_tsutaya_books",
+          "green_dog_and_cat",
+          "outdoor"
+        ],
+        "dog_run": true,
+        "size_note": "蔦屋書店内は頭から身体までケージに入る必要あり。",
+        "note": "蔦屋書店はケージ同伴可、ケージ貸出あり。GREEN DOG & CATにドッグガーデン併設。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://store.tsite.jp/daikanyama/faq/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -13533,7 +13754,8 @@ window.ODEKAKE_SEED = {
         "family": 88,
         "partner": 100,
         "solo": 96,
-        "friends": 90
+        "friends": 90,
+        "dog": 97
       },
       "adult_enjoyment_seed": 98,
       "routing": {
@@ -13563,7 +13785,9 @@ window.ODEKAKE_SEED = {
         "自然",
         "水辺・水遊び",
         "のんびり",
-        "非日常"
+        "非日常",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -13571,6 +13795,34 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat",
+          "other_pet"
+        ],
+        "access": [
+          "outdoor_leash",
+          "indoor_full_enclosure"
+        ],
+        "areas": [
+          "outdoor",
+          "selected_shops",
+          "selected_restaurants",
+          "dog_run",
+          "boat"
+        ],
+        "dog_run": true,
+        "size_note": "湖上アイランドボートは小型・中型・大型犬すべて可。ドッグランは25kg未満。",
+        "note": "森と湖の散歩、食事、買い物に加え、犬と乗れるボートとドッグランあり。",
+        "temporary_note": "2026-08-08〜09-27はナイトドッグラン開催の公式案内あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://metsa-hanno.com/feature/10686/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -16582,7 +16834,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 96,
         "solo": 100,
-        "friends": 96
+        "friends": 96,
+        "dog": 97
       },
       "adult_enjoyment_seed": 96,
       "routing": {
@@ -16614,7 +16867,9 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "自然",
         "体を動かす",
-        "のんびり"
+        "のんびり",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -16622,6 +16877,31 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "other_pet"
+        ],
+        "access": [
+          "outdoor_leash",
+          "entry_pledge"
+        ],
+        "areas": [
+          "park",
+          "dog_run",
+          "outdoor_terrace"
+        ],
+        "dog_run": true,
+        "size_note": "大型・中型犬専用、全犬種、小型犬専用などエリア分けあり。",
+        "note": "入園時ペット同伴誓約書。ドッグランはワクチン・狂犬病証明等が必要。屋内や日本庭園など進入不可エリアあり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.showakinen-koen.jp/park-information/pets/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -17304,7 +17584,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 82,
         "solo": 72,
-        "friends": 96
+        "friends": 96,
+        "dog": 97
       },
       "adult_enjoyment_seed": 88,
       "routing": {
@@ -17336,7 +17617,9 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "非日常",
         "体を動かす",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -17347,6 +17630,31 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "vaccination_proof"
+        ],
+        "areas": [
+          "farm",
+          "dog_run",
+          "indoor_food_hall",
+          "terrace"
+        ],
+        "dog_run": true,
+        "size_note": "中小型犬優先エリア等あり。大型犬利用条件は現地区分を確認。",
+        "note": "犬は有料で入場可。狂犬病・3種以上ワクチン証明が必要。屋内で犬と入れるFood Hallあり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.yumebokujo.com/?page_id=25124"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -17601,7 +17909,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 100,
         "solo": 92,
-        "friends": 96
+        "friends": 96,
+        "dog": 97
       },
       "adult_enjoyment_seed": 98,
       "routing": {
@@ -17634,7 +17943,9 @@ window.ODEKAKE_SEED = {
         "非日常",
         "自然",
         "水辺・水遊び",
-        "学び・文化"
+        "学び・文化",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -17646,6 +17957,32 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat",
+          "other_pet"
+        ],
+        "access": [
+          "outdoor_leash",
+          "indoor_full_enclosure_some_facilities"
+        ],
+        "areas": [
+          "outdoor",
+          "selected_facilities",
+          "terrace"
+        ],
+        "dog_run": false,
+        "size_note": "屋内はキャリーバッグに入らない場合利用不可となる施設あり。",
+        "note": "屋外はリード同伴可。一部施設・レストラン店内・ショーエリアは不可。リードフックあり。",
+        "temporary_note": "2026-03-14以降、エンマの劇場ショーエリアはペット入場不可だが専用立ち見エリア案内あり。",
+        "checked_at": "2026-09-06",
+        "source_url": "https://metsa-hanno.com/moominvalleypark/precautions/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -19512,7 +19849,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 94,
         "solo": 88,
-        "friends": 98
+        "friends": 98,
+        "dog": 97
       },
       "adult_enjoyment_seed": 94,
       "routing": {
@@ -19541,7 +19879,9 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "雨の日",
         "暑い日",
-        "買い物"
+        "買い物",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -19549,6 +19889,31 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "designated_pet_area",
+          "terrace",
+          "carrier_or_cart_some_areas"
+        ],
+        "areas": [
+          "welcome_pet_area",
+          "selected_terraces",
+          "dog_run"
+        ],
+        "dog_run": true,
+        "size_note": "一時預かりは小型犬のみ。ドッグランは利用条件・証明書確認あり。",
+        "note": "天然芝ドッグラン、水飲み場、一時預かり。犬同伴可テラス・一部店内対応レストランあり。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://mitsui-shopping-park.com/lalaport/toyosu/service/pet_use.html"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -19815,7 +20180,8 @@ window.ODEKAKE_SEED = {
         "family": 90,
         "partner": 100,
         "solo": 100,
-        "friends": 96
+        "friends": 96,
+        "dog": 97
       },
       "adult_enjoyment_seed": 100,
       "routing": {
@@ -19845,7 +20211,9 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "学び・文化",
         "のんびり",
-        "買い物"
+        "買い物",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -19853,6 +20221,32 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat",
+          "other_pet"
+        ],
+        "access": [
+          "garden_leash",
+          "shop_specific"
+        ],
+        "areas": [
+          "midtown_garden_walkway",
+          "selected_shops",
+          "selected_food"
+        ],
+        "dog_run": false,
+        "size_note": "店舗・利用方法ごとに条件あり。",
+        "note": "ミッドタウン・ガーデン通路はリード散歩可（芝生不可）。店舗別にカート/リード/抱きかかえ可否表あり。GREEN DOG & CAT併設。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tokyo-midtown.com/jp/service/pet/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -20099,7 +20493,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 96,
         "solo": 90,
-        "friends": 98
+        "friends": 98,
+        "dog": 97
       },
       "adult_enjoyment_seed": 96,
       "routing": {
@@ -20128,7 +20523,9 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "買い物",
         "ごはん",
-        "のんびり"
+        "のんびり",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -20136,6 +20533,32 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "cat",
+          "other_pet"
+        ],
+        "access": [
+          "leash_in_designated_areas",
+          "full_enclosure_in_designated_shops"
+        ],
+        "areas": [
+          "selected_shops",
+          "outdoor",
+          "tsuruma_park"
+        ],
+        "dog_run": false,
+        "size_note": "店舗別。犬の一時預かりあり。",
+        "note": "ペットトイレ3か所、うんちBOX、足洗いシャワー。一部ショップ同伴可。鶴間公園で散歩可。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://gbp.minamimachida-grandberrypark.com/pet/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -23107,7 +23530,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 98,
         "solo": 90,
-        "friends": 100
+        "friends": 100,
+        "dog": 97
       },
       "adult_enjoyment_seed": 96,
       "routing": {
@@ -23136,7 +23560,9 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "買い物",
         "ごはん",
-        "友だち"
+        "友だち",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "C",
@@ -23144,6 +23570,32 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "selected_shops",
+          "cart_or_carrier_some_shops",
+          "terrace"
+        ],
+        "areas": [
+          "dog_run",
+          "selected_shops",
+          "terrace",
+          "pet_services"
+        ],
+        "dog_run": true,
+        "size_note": "店舗別。一時預かりは小型犬の案内あり。",
+        "note": "ドッグラン、水飲み場、うんちBOX、ペットカート貸出、犬同伴ショップ・テラス、一時預かりが揃う。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://mitsui-shopping-park.com/mop/kisarazu/special/2404_dog-facility/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -23249,7 +23701,8 @@ window.ODEKAKE_SEED = {
         "family": 100,
         "partner": 100,
         "solo": 100,
-        "friends": 98
+        "friends": 98,
+        "dog": 91
       },
       "adult_enjoyment_seed": 100,
       "routing": {
@@ -23278,7 +23731,9 @@ window.ODEKAKE_SEED = {
         "自然",
         "ごはん",
         "のんびり",
-        "学び・文化"
+        "学び・文化",
+        "わんこと",
+        "犬連れ"
       ],
       "monetization": {
         "affiliate_fit": "B",
@@ -23288,6 +23743,29 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "entry_agreement",
+          "vaccination_required"
+        ],
+        "areas": [
+          "designated_outdoor"
+        ],
+        "dog_run": false,
+        "size_note": "犬のみ。サイズ一律制限の記載は確認できず。",
+        "note": "犬のみ入場可、500円/頭。利用確認書への署名・狂犬病予防接種が必要。店内は同伴不可。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://kurkkufields.jp/topic/info-pet-member/"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     },
     {
@@ -70166,6 +70644,696 @@ window.ODEKAKE_SEED = {
             "url": "https://koffee-mameya.com/kakeru/"
           }
         ]
+      }
+    },
+    {
+      "spot_id": "spot_470",
+      "slug": "sagamiko-mori-mori",
+      "name": "さがみ湖MORI MORI",
+      "aliases": [],
+      "category_primary": "outdoor_theme_park",
+      "categories": [
+        "nature",
+        "active",
+        "extraordinary",
+        "family",
+        "dog_friendly",
+        "theme_park"
+      ],
+      "prefecture": "神奈川県",
+      "city": "相模原市緑区",
+      "address": "神奈川県相模原市緑区若柳1634",
+      "official_url": "https://www.sagamiko-resort.jp/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 360,
+      "experience_seed": {
+        "indoor": 20,
+        "outdoor": 100,
+        "physical_activity": 100,
+        "hands_on": 20,
+        "quietness": 70,
+        "parent_rest": 65,
+        "greenery": 95,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 55,
+        "creative_sensory": 25,
+        "baby_fit": 78,
+        "toddler_fit": 92,
+        "stroller_fit": 62,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 42
+      },
+      "parent_enjoyment_seed": 92,
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 92,
+        "extraordinary": 95,
+        "scenic": 88,
+        "stroll": 95,
+        "relax": 58,
+        "shopping": 10,
+        "food": 48,
+        "culture": 35,
+        "animals": 15,
+        "creative": 15,
+        "active": 100,
+        "waterside": 30
+      },
+      "editorial_reason": "犬と一緒に「入れる」だけでなく、犬と乗れるアトラクションやドッグランまである目的地型の代表候補。",
+      "public_copy": "森の中のアトラクションやドッグランを組み合わせて、一日しっかり遊べる郊外型パーク。犬と一緒に楽しめるアトラクションもあり、目的地にする休日向き。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日・営業時間は日付や施設により異なるため、公式の当日情報を確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "通常利用・個別施設の条件は公式サイトを確認。",
+        "age_note": "乳幼児同行時は園内移動・暑さ・個別施設の利用条件を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.sagamiko-resort.jp/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "犬と一緒に「入れる」だけでなく、犬と乗れるアトラクションやドッグランまである目的地型の代表候補。",
+        "checked_at": "2026-09-06",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.sagamiko-resort.jp/"
+          },
+          {
+            "kind": "official_pet",
+            "date": "2026-09-06",
+            "url": "https://www.sagamiko-resort.jp/dogs/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "さがみ湖MORI MORIの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 98,
+        "partner": 90,
+        "solo": 78,
+        "friends": 95,
+        "dog": 100
+      },
+      "adult_enjoyment_seed": 92,
+      "routing": {
+        "municipality": "相模原市緑区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "さがみ湖MORI MORI",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "わんこと",
+        "犬連れ",
+        "自然",
+        "体を動かす",
+        "のんびり",
+        "非日常"
+      ],
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "outdoor_leash",
+          "entry_agreement",
+          "vaccination_required",
+          "manners_wear_for_some_attractions"
+        ],
+        "areas": [
+          "park",
+          "dog_run",
+          "9_dog_friendly_attractions",
+          "terrace",
+          "camp"
+        ],
+        "dog_run": true,
+        "size_note": "ドッグランは全犬種対応エリアあり。アトラクションごとに体重制限等。",
+        "note": "2026-07-17に犬向けサイト刷新。犬と乗れる9アトラクション、複数ドッグラン、犬同伴宿泊。犬入園料1,000円、2頭目以降500円。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.sagamiko-resort.jp/dogs/"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
+      }
+    },
+    {
+      "spot_id": "spot_471",
+      "slug": "hakone-gora-park",
+      "name": "箱根強羅公園",
+      "aliases": [],
+      "category_primary": "garden",
+      "categories": [
+        "nature",
+        "culture",
+        "scenic",
+        "stroll",
+        "relax",
+        "dog_friendly"
+      ],
+      "prefecture": "神奈川県",
+      "city": "箱根町",
+      "address": "神奈川県足柄下郡箱根町強羅1300",
+      "official_url": "https://www.hakonenavi.jp/gorapark/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 25,
+        "outdoor": 100,
+        "physical_activity": 45,
+        "hands_on": 45,
+        "quietness": 88,
+        "parent_rest": 75,
+        "greenery": 100,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 55,
+        "creative_sensory": 25,
+        "baby_fit": 70,
+        "toddler_fit": 75,
+        "stroller_fit": 45,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 20
+      },
+      "parent_enjoyment_seed": 98,
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 100,
+        "extraordinary": 82,
+        "scenic": 92,
+        "stroll": 88,
+        "relax": 95,
+        "shopping": 10,
+        "food": 55,
+        "culture": 80,
+        "animals": 15,
+        "creative": 15,
+        "active": 38,
+        "waterside": 30
+      },
+      "editorial_reason": "箱根で犬と景色を楽しみたい日に使いやすい。リード散策可だが屋内施設等は不可なので条件表示が重要。",
+      "public_copy": "箱根の山の斜面に広がる庭園を、噴水や季節の花を眺めながら散策。クラフト体験やカフェもあり、観光地の中で少しペースを落とせる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日・営業時間は日付や施設により異なるため、公式の当日情報を確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "通常利用・個別施設の条件は公式サイトを確認。",
+        "age_note": "乳幼児同行時は園内移動・暑さ・個別施設の利用条件を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.hakonenavi.jp/gorapark/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "箱根で犬と景色を楽しみたい日に使いやすい。リード散策可だが屋内施設等は不可なので条件表示が重要。",
+        "checked_at": "2026-09-06",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.hakonenavi.jp/gorapark/"
+          },
+          {
+            "kind": "official_pet",
+            "date": "2026-09-06",
+            "url": "https://www.hakonenavi.jp/gorapark/faq/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "箱根強羅公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 82,
+        "partner": 98,
+        "solo": 95,
+        "friends": 85,
+        "dog": 97
+      },
+      "adult_enjoyment_seed": 98,
+      "routing": {
+        "municipality": "箱根町",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "箱根強羅公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "わんこと",
+        "犬連れ",
+        "自然",
+        "体を動かす",
+        "のんびり",
+        "非日常"
+      ],
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog",
+          "other_pet"
+        ],
+        "access": [
+          "outdoor_leash"
+        ],
+        "areas": [
+          "garden_outdoor"
+        ],
+        "dog_run": false,
+        "size_note": "公式FAQに犬サイズ制限の記載なし。",
+        "note": "リード着用で入園可。屋内施設と白雲洞茶苑敷地は不可。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.hakonenavi.jp/gorapark/faq/"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
+      }
+    },
+    {
+      "spot_id": "spot_472",
+      "slug": "yoyogi-park",
+      "name": "代々木公園",
+      "aliases": [],
+      "category_primary": "urban_park",
+      "categories": [
+        "nature",
+        "active",
+        "stroll",
+        "relax",
+        "dog_friendly"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区代々木神園町2-1",
+      "official_url": "https://www.tokyo-park.or.jp/park/yoyogi/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 72,
+        "hands_on": 20,
+        "quietness": 70,
+        "parent_rest": 72,
+        "greenery": 100,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 35,
+        "creative_sensory": 25,
+        "baby_fit": 78,
+        "toddler_fit": 88,
+        "stroller_fit": 92,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 12
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 100,
+        "extraordinary": 45,
+        "scenic": 78,
+        "stroll": 100,
+        "relax": 92,
+        "shopping": 10,
+        "food": 35,
+        "culture": 25,
+        "animals": 15,
+        "creative": 15,
+        "active": 80,
+        "waterside": 30
+      },
+      "editorial_reason": "犬との都心散歩の基準点。2026年度ドッグランは共通利用登録制で、園内はドッグラン以外リード必須。",
+      "public_copy": "都心にいながら大きな空と緑の中を歩ける定番公園。目的を決めすぎず散歩したい日にも、ドッグランを目的にする日にも使いやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日・営業時間は日付や施設により異なるため、公式の当日情報を確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "通常利用・個別施設の条件は公式サイトを確認。",
+        "age_note": "乳幼児同行時は園内移動・暑さ・個別施設の利用条件を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tokyo-park.or.jp/park/yoyogi/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "犬との都心散歩の基準点。2026年度ドッグランは共通利用登録制で、園内はドッグラン以外リード必須。",
+        "checked_at": "2026-09-06",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.tokyo-park.or.jp/park/yoyogi/"
+          },
+          {
+            "kind": "official_pet",
+            "date": "2026-09-06",
+            "url": "https://www.tokyo-park.or.jp/park/yoyogi/facility/index.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "代々木公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 88,
+        "partner": 92,
+        "solo": 98,
+        "friends": 92,
+        "dog": 100
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "代々木公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "わんこと",
+        "犬連れ",
+        "自然",
+        "体を動かす",
+        "のんびり",
+        "非日常"
+      ],
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "park_leash",
+          "dog_run_registration"
+        ],
+        "areas": [
+          "park",
+          "dog_run"
+        ],
+        "dog_run": true,
+        "size_note": "ドッグランは超小型、小・中型、中・大型の3エリア。",
+        "note": "2026年度ドッグランは事前WEB登録制。都立12公園共通登録。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tokyo-park.or.jp/park/yoyogi/facility/index.html"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
+      }
+    },
+    {
+      "spot_id": "spot_473",
+      "slug": "komazawa-olympic-park",
+      "name": "駒沢オリンピック公園",
+      "aliases": [],
+      "category_primary": "urban_park",
+      "categories": [
+        "nature",
+        "active",
+        "stroll",
+        "food",
+        "dog_friendly"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区駒沢公園1-1",
+      "official_url": "https://www.tokyo-park.or.jp/park/komazawa-olympic/",
+      "environment": "outdoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 15,
+        "outdoor": 100,
+        "physical_activity": 92,
+        "hands_on": 20,
+        "quietness": 58,
+        "parent_rest": 62,
+        "greenery": 80,
+        "water_contact": 10,
+        "animal_contact": 0,
+        "food_experience": 45,
+        "creative_sensory": 25,
+        "baby_fit": 78,
+        "toddler_fit": 88,
+        "stroller_fit": 88,
+        "rain_resilience": 10,
+        "heat_resilience": 20,
+        "walking_load": 75,
+        "planning_friction": 18
+      },
+      "parent_enjoyment_seed": 94,
+      "vibes_seed": {
+        "cool": 20,
+        "nature": 85,
+        "extraordinary": 42,
+        "scenic": 65,
+        "stroll": 98,
+        "relax": 75,
+        "shopping": 10,
+        "food": 58,
+        "culture": 35,
+        "animals": 15,
+        "creative": 15,
+        "active": 100,
+        "waterside": 30
+      },
+      "editorial_reason": "犬連れ街歩きとドッグランを組み合わせやすい東京の代表候補。2026年度はWEB登録制。",
+      "public_copy": "ランニングや散歩の人が行き交う大きな運動公園。犬と歩いて、必要ならドッグランへ。周辺のカフェまで含めて街ごと過ごしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "営業日・営業時間は日付や施設により異なるため、公式の当日情報を確認。",
+        "price_summary": "利用内容により異なる。最新料金は公式サイトを確認。",
+        "reservation_summary": "通常利用・個別施設の条件は公式サイトを確認。",
+        "age_note": "乳幼児同行時は園内移動・暑さ・個別施設の利用条件を事前確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tokyo-park.or.jp/park/komazawa-olympic/"
+      },
+      "buzz": {
+        "score": 88,
+        "freshness": 78,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 72,
+        "popularity_momentum": 84,
+        "reason": "犬連れ街歩きとドッグランを組み合わせやすい東京の代表候補。2026年度はWEB登録制。",
+        "checked_at": "2026-09-06",
+        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-06",
+            "url": "https://www.tokyo-park.or.jp/park/komazawa-olympic/"
+          },
+          {
+            "kind": "official_pet",
+            "date": "2026-09-06",
+            "url": "https://www.tokyo-park.or.jp/park/komazawa-olympic/facility/index.html"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/forest-path.jpg",
+        "type": "ai",
+        "alt": "駒沢オリンピック公園の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_or_conservative",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 90,
+        "partner": 92,
+        "solo": 95,
+        "friends": 96,
+        "dog": 100
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "駒沢オリンピック公園",
+          "photo_index_override": null,
+          "force": false
+        }
+      },
+      "ui_tags": [
+        "わんこと",
+        "犬連れ",
+        "自然",
+        "体を動かす",
+        "のんびり",
+        "非日常"
+      ],
+      "pet_profile": {
+        "status": true,
+        "types": [
+          "dog"
+        ],
+        "access": [
+          "park_leash",
+          "dog_run_registration"
+        ],
+        "areas": [
+          "park",
+          "dog_run"
+        ],
+        "dog_run": true,
+        "size_note": "ドッグランは公園ルールに従う。",
+        "note": "2026年度ドッグランはWEB登録制。登録証発行に通常1週間〜10日程度との公式案内。",
+        "temporary_note": null,
+        "checked_at": "2026-09-06",
+        "source_url": "https://www.tokyo-park.or.jp/park/komazawa-olympic/facility/index.html"
+      },
+      "monetization": {
+        "affiliate_fit": "C",
+        "status": "candidate_only",
+        "channel_candidates": [],
+        "product_match_required": true,
+        "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "audience_copy": {
+        "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
       }
     }
   ]

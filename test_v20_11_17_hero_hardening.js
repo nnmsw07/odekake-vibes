@@ -42,5 +42,5 @@ const mm=fs.readFileSync('magazine/magazine-media.js','utf8');
 assert(mm.includes('"photoIndex":8'));
 assert(mm.includes('"photoIndex":0'));
 const index=fs.readFileSync('index.html','utf8');
-for(const name of ['styles.css?v=2110&amp;h=211117','data.js?v=20110&amp;h=211117','app.js?v=2091&amp;h=211117']) assert(index.includes(name),`${name} cache bust missing`);
+for(const name of ['styles.css?v=2110&amp;h=211118','data.js?v=20110&amp;h=211118','app.js?v=2091&amp;h=211118']) assert(index.includes(name),`${name} cache bust missing`);
 console.log('v20.11.17 hero hardening tests passed');
