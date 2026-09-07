@@ -1,6 +1,101 @@
 window.KIBUN_SNS_AUDIT_SEED = {
-  "version": "20.11.0",
+  "version": "20.12.7",
   "posts": [
+    {
+      "id": "post_brand_intro_v20127",
+      "date": "",
+      "channel": "Instagram + Threads",
+      "title": "固定投稿｜行き先を決める前に、今日の気分を決めよう。",
+      "status": "draft",
+      "destination_type": "",
+      "destination_url": "https://kibuntrip.com/",
+      "spot_id": "",
+      "spot_ids": [],
+      "hero_ref": "",
+      "instagram_route": "none",
+      "instagram_url": "",
+      "affiliate_status": "",
+      "draft": {
+        "instagram": "行き先を決める前に、今日の気分を決めよう。\n\nKibun Tripは、気分から選べるおでかけ提案サービスです。\n\n#KibunTrip #東京おでかけ #神奈川おでかけ",
+        "threads": "予定を決めてから気分を合わせるより、その日の気分で行き先を決めたい。\n\nKibun Tripは、そんな人のためのおでかけ提案サービスです。\n気分・誰と行くか・使える時間から、今日ちょうどいい3つを探せます。",
+        "carousel": [
+          {
+            "kind": "kibun-brand-cover",
+            "label": "BRAND",
+            "title": "行き先を決める前に、今日の気分を決めよう。",
+            "body": "予定を詰めるより、その日の気分で。"
+          },
+          {
+            "kind": "kibun-intro",
+            "label": "SITE UI",
+            "title": "選ぶのは、今日の過ごし方。",
+            "body": "誰と過ごす？ → 気分や、やりたいこと → 必要なら条件を少しだけ。"
+          }
+        ]
+      },
+      "result": {
+        "impressions": "",
+        "reach": "",
+        "saves": "",
+        "clicks": "",
+        "profile_visits": "",
+        "notes": ""
+      }
+    },
+    {
+      "id": "post_threads_why_v20127",
+      "date": "",
+      "channel": "Threads",
+      "title": "Threads｜なぜKibunを作ったか",
+      "status": "draft",
+      "destination_type": "",
+      "destination_url": "https://kibuntrip.com/",
+      "spot_id": "",
+      "spot_ids": [],
+      "hero_ref": "",
+      "instagram_route": "none",
+      "instagram_url": "",
+      "affiliate_status": "",
+      "draft": {
+        "instagram": "",
+        "threads": "予定を立てるのが苦手、というより。\n休みの日くらい、その日の気分で決めたい。\n\n晴れてる。ちょっと外に出たい。\nでも遠出するほどでもない。\n\nそんな『今の気分』から行き先を探せるものが欲しくて、Kibun Tripを作っています。"
+      },
+      "result": {
+        "impressions": "",
+        "reach": "",
+        "saves": "",
+        "clicks": "",
+        "profile_visits": "",
+        "notes": ""
+      }
+    },
+    {
+      "id": "post_threads_howto_v20127",
+      "date": "",
+      "channel": "Threads",
+      "title": "Threads｜Kibunの使い方",
+      "status": "draft",
+      "destination_type": "",
+      "destination_url": "https://kibuntrip.com/",
+      "spot_id": "",
+      "spot_ids": [],
+      "hero_ref": "",
+      "instagram_route": "none",
+      "instagram_url": "",
+      "affiliate_status": "",
+      "draft": {
+        "instagram": "",
+        "threads": "今日どこ行く？で迷ったら、\n① 誰と行く？\n② どんな気分？\n③ どれくらい時間ある？\nを選ぶだけ。\n\nKibun Tripが、今日ちょうどいい3つを出します。\n予定を立て込む前の、ゆるいおでかけ探しに。"
+      },
+      "result": {
+        "impressions": "",
+        "reach": "",
+        "saves": "",
+        "clicks": "",
+        "profile_visits": "",
+        "notes": ""
+      }
+    },
     {
       "id": "post_2026_09_30",
       "date": "2026-09-30",

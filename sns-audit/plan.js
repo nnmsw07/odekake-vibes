@@ -1,11 +1,11 @@
 window.KIBUN_SNS_AUDIT_PLAN = {
-  "version": "20.9.1",
+  "version": "20.12.7",
   "month": "2026-09",
   "posts": [
     {
       "id": "sep26_01",
       "date": "2026-09-01",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "子どもとでも、ちゃんとくつろげる横浜のカフェ",
       "target": "yokohama-family-cafe",
@@ -15,7 +15,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_02",
       "date": "2026-09-02",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "横浜で火星旅行。THE SUNSET OF MARS",
       "target": "spot_303",
@@ -25,7 +25,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_03",
       "date": "2026-09-03",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "海で遊んで、歴史ある洋館でコーヒーを。",
       "target": "family_umi_no_koen_sea_cafe",
@@ -35,7 +35,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_04",
       "date": "2026-09-04",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "2〜3時間だけ空いた日の、横浜の小さな休日",
       "target": "yokohama-small-holiday",
@@ -45,7 +45,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_05",
       "date": "2026-09-05",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "海の公園で、予定を詰めない午後",
       "target": "spot_301",
@@ -55,7 +55,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_06",
       "date": "2026-09-06",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "新宿で、緑→子どもの遊び→カフェ",
       "target": "family_shinjuku_green_play_cafe",
@@ -65,7 +65,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_07",
       "date": "2026-09-07",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "雨の日の東京。親子で楽しめる室内スポット",
       "target": "tokyo-rainy-family",
@@ -75,7 +75,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_08",
       "date": "2026-09-08",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "日本科学未来館を、親子の「なぜ？」の日に",
       "target": "spot_286",
@@ -85,7 +85,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_09",
       "date": "2026-09-09",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "未来館→レゴ→甘いもの。お台場の一日",
       "target": "family_odaiba_science_lego_food",
@@ -95,7 +95,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_10",
       "date": "2026-09-10",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "アートのあと、どこでひと休みする？",
       "target": "art-and-cafe",
@@ -105,7 +105,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_11",
       "date": "2026-09-11",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "国立新美術館。展示だけじゃない大人時間",
       "target": "spot_152",
@@ -115,7 +115,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_12",
       "date": "2026-09-12",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "大きな展示のあと、小さなデザインへ。",
       "target": "partner_roppongi_art_design",
@@ -125,7 +125,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_13",
       "date": "2026-09-13",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "今日は、何か作って帰ろう。",
       "target": "make-something",
@@ -135,7 +135,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_14",
       "date": "2026-09-14",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "清澄白河で江戸切子に触れる",
       "target": "spot_253",
@@ -145,7 +145,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_15",
       "date": "2026-09-15",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "庭園の静けさから、手仕事の町へ。",
       "target": "partner_kiyosumi_garden_craft_food",
@@ -155,7 +155,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_16",
       "date": "2026-09-16",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "日本文化を、見るだけで終わらせない。",
       "target": "japanese-culture-experience",
@@ -165,7 +165,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_17",
       "date": "2026-09-17",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "日本文化体験 庵an東京",
       "target": "spot_318",
@@ -175,7 +175,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_18",
       "date": "2026-09-18",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "teamLabのあと、豊洲の食へ。",
       "target": "partner_toyosu_art_food",
@@ -185,7 +185,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_19",
       "date": "2026-09-19",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "箱根は、泊まる時間まで休日にする。",
       "target": "hakone-stay-story",
@@ -195,7 +195,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_20",
       "date": "2026-09-20",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "芦ノ湖を眺めて泊まる、はなをり",
       "target": "spot_213",
@@ -205,7 +205,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_21",
       "date": "2026-09-21",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "葉山の美術館から、海を見ながらランチへ。",
       "target": "family_hayama_art_garden_cafe",
@@ -215,7 +215,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_22",
       "date": "2026-09-22",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "横浜で、午後をアフタヌーンティーにする。",
       "target": "yokohama-afternoon-tea",
@@ -225,7 +225,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_23",
       "date": "2026-09-23",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "パレスホテル東京で、何もしない午後",
       "target": "spot_315",
@@ -235,7 +235,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_24",
       "date": "2026-09-24",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "水族館のあと、江の島の上まで。",
       "target": "family_enoshima_aqua_garden_cafe",
@@ -245,7 +245,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_25",
       "date": "2026-09-25",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "article",
       "title": "親子で休める、雨の日の居場所",
       "target": "oyako-rest-indoor",
@@ -255,7 +255,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_26",
       "date": "2026-09-26",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "べるべるパーク新宿本店",
       "target": "spot_292",
@@ -265,7 +265,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_27",
       "date": "2026-09-27",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "植物を眺めて、coしぶやでひと息。",
       "target": "family_shibuya_green_cafe",
@@ -275,7 +275,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_28",
       "date": "2026-09-28",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "富士山パノラマロープウェイ",
       "target": "spot_419",
@@ -285,7 +285,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_29",
       "date": "2026-09-29",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "plan",
       "title": "アートも遊びも、最後のひと休みも。",
       "target": "family_yokohama_art_play_food",
@@ -295,7 +295,7 @@ window.KIBUN_SNS_AUDIT_PLAN = {
     {
       "id": "sep26_30",
       "date": "2026-09-30",
-      "channel": "Instagram + X",
+      "channel": "Instagram + Threads",
       "content_type": "spot",
       "title": "新江ノ島水族館を、一日プランの入口に",
       "target": "spot_051",

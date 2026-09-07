@@ -146,19 +146,21 @@
       try{
         const x=JSON.parse(localStorage.getItem(key)||'null');
         if(x?.posts){
-          const value={version:'20.11.14',posts:mergeSeedPosts(x.posts)};
+          const value={version:'20.12.7',posts:mergeSeedPosts(x.posts)};
           if(key!==KEY)localStorage.setItem(KEY,JSON.stringify(value));
           return value;
         }
       }catch(_e){}
     }
-    return {version:'20.11.14',posts:mergeSeedPosts([])};
+    return {version:'20.12.7',posts:mergeSeedPosts([])};
   }
   function normalizePost(p){
+    const rawDraft=p.draft||{};
+    const draft={instagram:'',threads:'',x:'',...rawDraft};
     return {
       ...p,
       result:{impressions:'',reach:'',saves:'',clicks:'',profile_visits:'',notes:'',...(p.result||{})},
-      draft:{instagram:'',x:'',...(p.draft||{})},
+      draft,
       spot_ids:Array.isArray(p.spot_ids)?p.spot_ids:(p.spot_id?[p.spot_id]:[])
     };
   }
@@ -426,6 +428,18 @@
     return [...generated,...articleIdeas,...planIdeas].sort((a,b)=>b.scores.priority-a.scores.priority||a.title.localeCompare(b.title,'ja'));
   }
   const ideas=buildIdeas();
+  let threadsMigrated=false;
+  for(const post of state.posts){
+    if(!post.idea_id||post.draft?.threads_version==='20.12.7')continue;
+    const idea=ideas.find(x=>x.id===post.idea_id);
+    if(!idea)continue;
+    const refreshed=draftForIdea(idea);
+    post.draft=post.draft||{};
+    post.draft.threads=refreshed.threads||'';
+    post.draft.threads_version='20.12.7';
+    threadsMigrated=true;
+  }
+  if(threadsMigrated)persist();
   window.KIBUN_SNS_IDEAS=ideas;
   window.KIBUN_SNS_DRAFT_FOR_IDEA=draftForIdea;
   function typeLabel(i){return TYPE_LABEL[i.type]||i.type;}
@@ -570,9 +584,9 @@
     ];
     const blocks=featured.map((s,idx)=>`${captionSpotLine(s,idx)}\n${spotCaptionBlurb(s,i)}`).join('\n\n');
     const ig=`${articleCaptionLead(i,poster)}\n\n${blocks}\n\n気になる場所は保存して、次のおでかけ候補に。\n${ctaText(i)}\n\n${AI_DISCLOSURE}\n\n${hashtagsFor(i).join(' ')}`;
-    const x=`${poster.title}\n\n${featured.map(x=>`・${truncate(x.name,20)}`).join('\n')}\n\n${ctaText(i)}\n${hashtagsFor(i).slice(0,3).join(' ')}`;
+    const threads=`${articleCaptionLead(i,poster)}\n\n${featured.map(x=>`・${truncate(x.name,24)}`).join('\n')}\n\n予定を詰めるより、その日の気分で決めたい日に。\nKibun Tripは、気分から今日の行き先を探せます。`;
     const timing=i.type==='seasonal'?'今週〜今月。週末前の木〜金曜が第一候補。':i.type==='save'?'木〜金曜。週末の行き先検討が始まる前に。':'平日夜〜木曜。次の休日を考え始めるタイミングに。';
-    return {slides,instagram:ig,x,timing,hashtags:hashtagsFor(i),usesGeneratedPoster:true};
+    return {slides,instagram:ig,threads,x:threads,timing,hashtags:hashtagsFor(i),usesGeneratedPoster:true};
   }
   function draftForIdea(i){
     const ss=i.spotIds.map(spotById).filter(Boolean);
@@ -586,9 +600,9 @@
     const intro=i.reason.replace(/。.*$/,'。');
     const ig=`${i.hook}\n\n${intro}\n\n${names}\n\n${useCaseLines(i,ss).join('\n')}\n\nあとで見返せるように保存しておくと便利です。\n${ctaText(i)}\n\n${hashtagsFor(i).join(' ')}`;
     const compactNames=ss.slice(0,5).map(s=>`・${truncate(s.name,20)}`).join('\n');
-    const x=`${truncate(i.hook,64)}\n\n${compactNames}${ss.length>5?`\nほか${ss.length-5}スポット`:''}\n\n${ctaText(i)}\n${hashtagsFor(i).slice(0,3).join(' ')}`;
+    const threads=`${truncate(i.hook,72)}\n\n${compactNames}${ss.length>5?`\nほか${ss.length-5}スポット`:''}\n\n予定をきっちり決めるより、その日の気分で行き先を決めたい日に。\nKibun Tripで、今の気分から探せます。`;
     const timing=i.type==='seasonal'?'今週〜今月。週末前の木〜金曜が第一候補。':i.type==='save'?'木〜金曜。週末の行き先検討が始まる前に。':'平日夜〜木曜。次の休日を考え始めるタイミングに。';
-    return {slides,instagram:ig,x,timing,hashtags:hashtagsFor(i)};
+    return {slides,instagram:ig,threads,x:threads,timing,hashtags:hashtagsFor(i)};
   }
   function slideHtml(slide,idx){
     if(slide.kind==='article-poster'){
@@ -596,6 +610,9 @@
     }
     if(slide.kind==='article-spots'){
       return `<article class="slide-card slide-card-article-spots"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>3 SPOTS</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p><div class="article-spots-mini">${slide.spots.map((s,j)=>`<div><img src="${esc(articleSpotImage(slide.slug,j))}" alt="" loading="lazy"><strong>${esc(s.name)}</strong><small>${esc(spotGridBlurb(s,slide.idea))}</small></div>`).join('')}</div></article>`;
+    }
+    if(slide.kind==='kibun-brand-cover'){
+      return `<article class="slide-card slide-card-kibun"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>BRAND</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p><div class="mini-site-ui"><div class="mini-site-brand"><span class="mini-brand-dots"><i></i><i></i><i></i></span><b>Kibun Trip</b></div><strong>今日は、どんな気分？</strong><div class="mini-site-chips"><span>子どもと</span><span>のんびり</span><span>半日くらい</span></div></div></article>`;
     }
     if(slide.kind==='kibun-intro'){
       return `<article class="slide-card slide-card-kibun"><div class="slide-no"><span>SLIDE ${idx+1}</span><span>SITE UI</span></div><h4>${esc(slide.title)}</h4><p>${esc(slide.body)}</p><div class="mini-site-ui"><div class="mini-site-brand"><span class="mini-brand-dots"><i></i><i></i><i></i></span><b>Kibun Trip</b></div><strong>今日は、どんな気分？</strong><div class="mini-site-chips"><span>子どもと</span><span>のんびり</span><span>半日くらい</span></div><button type="button" tabindex="-1">今日の過ごし方を見る →</button><small>→ あなた向けの3つを提案</small></div></article>`;
@@ -639,8 +656,11 @@
     if(slide.kind==='article-spots'){
       return `<section class="capture-item"><article class="ig-canvas ig-article-spots"><div class="ig-article-spots-top"><div><p>SPOT GUIDE · ${esc(AREA_LABEL[source.area]||'おでかけ')}</p><h2>${esc(slide.title)}</h2></div><span class="ig-count">${idx+1}/${total}</span></div><p class="ig-article-spots-lead">${esc(slide.body)}</p><div class="ig-article-spots-grid">${slide.spots.map((s,j)=>`<article class="ig-article-spot-card"><img src="${esc(articleSpotImage(slide.slug,j))}" alt="" loading="eager"><div><span>${String(j+1).padStart(2,'0')} · ${esc(s.city||s.prefecture||'')}</span><h3>${esc(s.name)}</h3><p>${esc(spotGridBlurb(s,slide.idea))}</p></div></article>`).join('')}</div><div class="ig-article-spots-footer"><div class="ig-real-brand"><img src="../favicon.svg" alt=""><strong>Kibun Trip</strong></div><div><span>保存して、次のおでかけ候補に。</span><small>${esc(AI_DISCLOSURE)}</small></div></div></article></section>`;
     }
+    if(slide.kind==='kibun-brand-cover'){
+      return `<section class="capture-item"><article class="ig-canvas ig-brand-cover"><div class="ig-ui-brandbar"><div class="ig-real-brand"><img src="../favicon.svg" alt=""><strong>Kibun Trip</strong></div><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-brand-cover-copy"><p>MOOD FIRST. PLACE SECOND.</p><h2>行き先を決める前に、<br><em>今日の気分</em>を決めよう。</h2><span>予定を詰めるより、その日の気分で。</span></div><div class="ig-brand-mood-stack"><div><small>WITH</small><strong>子どもと</strong></div><div class="active"><small>MOOD</small><strong>のんびり</strong></div><div><small>TIME</small><strong>半日くらい</strong></div></div><div class="ig-brand-cover-foot"><span>気分から選べる、おでかけ提案。</span><strong>kibuntrip.com →</strong></div></article></section>`;
+    }
     if(slide.kind==='kibun-intro'){
-      return `<section class="capture-item"><article class="ig-canvas ig-kibun-ui"><div class="ig-ui-brandbar"><div class="ig-real-brand"><img src="../favicon.svg" alt=""><strong>Kibun Trip</strong></div><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-ui-copy"><p>MOOD FIRST. PLACE SECOND.</p><h2>サイトでは、<br>こんなふうに探せます。</h2></div><div class="ig-ui-window"><div class="ig-ui-window-head"><div class="ig-ui-window-brand"><span class="ig-brand-dots"><i></i><i></i><i></i></span><b>Kibun Trip</b></div><small>MOOD → DAY</small></div><div class="ig-ui-window-body"><p class="ig-ui-eyebrow">今日は、<em>どんな気分？</em></p><div class="ig-ui-section"><div class="ig-ui-label"><span>01</span><strong>誰と過ごす？</strong></div><div class="ig-ui-chip-row"><span class="selected">子どもと</span><span>ふたりで</span><span>ひとりで</span></div></div><div class="ig-ui-section"><div class="ig-ui-label"><span>02</span><strong>今日を組み立てる</strong><small>最大3つ</small></div><div class="ig-ui-vibes"><span class="selected">のんびり</span><span>非日常</span><span>体験したい</span></div></div><div class="ig-ui-condition-row"><span>TIME <b>半日くらい</b></span><span>WEATHER <b>雨</b></span></div><div class="ig-ui-button">今日の過ごし方を見る <b>→</b></div><div class="ig-ui-results"><small>TODAY'S PLANS</small><strong>今日のあなたなら、こんな3つ。</strong><div><span>01<br><b>ゆっくり</b></span><span>02<br><b>非日常</b></span><span>03<br><b>体験</b></span></div></div></div></div><div class="ig-ui-bottom"><span>プロフィールのリンクから</span><strong>kibuntrip.com →</strong></div></article></section>`;
+      return `<section class="capture-item"><article class="ig-canvas ig-kibun-ui"><div class="ig-ui-brandbar"><div class="ig-real-brand"><img src="../favicon.svg" alt=""><strong>Kibun Trip</strong></div><span class="ig-count">${idx+1}/${total}</span></div><div class="ig-ui-copy"><p>HOW IT WORKS</p><h2>選ぶのは、<br>今日の過ごし方。</h2></div><div class="ig-ui-window"><div class="ig-ui-window-head"><div class="ig-ui-window-brand"><span class="ig-brand-dots"><i></i><i></i><i></i></span><b>Kibun Trip</b></div><small>MOOD → DAY</small></div><div class="ig-ui-window-body"><p class="ig-ui-eyebrow">今日は、<em>どんな気分？</em></p><div class="ig-ui-section"><div class="ig-ui-label"><span>01</span><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div><div class="ig-ui-chip-row"><span class="selected">子どもと</span><span>ふたりで</span><span>ひとりで</span></div></div><div class="ig-ui-section"><div class="ig-ui-label"><span>02</span><strong>気分や、やりたいこと</strong><small>最大3つ</small></div><div class="ig-ui-mood-cards"><span class="selected"><b>のんびり</b><small>ゆったり過ごす</small></span><span><b>非日常</b><small>いつもと違う日に</small></span><span><b>体験したい</b><small>手を動かす</small></span></div></div><div class="ig-ui-step3"><span>STEP 3　条件を少しだけ</span><small>現在地・時間・天気で調整（任意）⌄</small></div><div class="ig-ui-button">今日の過ごし方を見る <b>→</b></div></div></div><div class="ig-ui-bottom"><span>気分に合う候補を3つ</span><strong>kibuntrip.com →</strong></div></article></section>`;
     }
     if(slide.kind==='cover'){
       const spot=coverSpotForSource(source,imageMode);
@@ -727,7 +747,7 @@
     $('ideaDetail').innerHTML=`<section class="detail-head"><div class="idea-kicker"><span class="idea-badge">${esc(typeLabel(i))}</span><span class="idea-badge source">${esc(sourceLabel(i))}${i.source==='generated'&&i.destination?.type==='article'?' · 記事導線あり':''}</span></div><h2 class="detail-title">${esc(i.title)}</h2><p class="detail-lead">${esc(i.reason)}</p><div class="detail-meta"><span>対象 · ${esc(audienceText(i))}</span><span>目的 · ${esc(i.objective)}</span><span>おすすめ · ${esc(d.timing)}</span><span>Priority · ${i.scores.priority}</span>${officialInstagramCount(i.spotIds.map(spotById).filter(Boolean))?`<span>公式Instagram · ${officialInstagramCount(i.spotIds.map(spotById).filter(Boolean))}/${i.spotIds.length}件メンション</span>`:''}${i.destination?.url?`<a href="${esc(i.destination.url)}" target="_blank" rel="noopener">遷移先を確認 →</a>`:''}</div><div class="detail-actions"><button class="primary-btn" type="button" data-dialog-add="${esc(i.id)}">この企画を運用に追加</button><button class="secondary-btn" type="button" data-copy-value="${esc(d.instagram)}">Instagram原稿をコピー</button><a class="secondary-btn" href="./?capture=${encodeURIComponent(i.id)}">スクショ用ページを開く</a><a class="secondary-btn" href="./?workspace=images&imageSpot=${encodeURIComponent(i.spotIds[0]||'')}">SNS実写真を探す</a></div></section>
       <section class="draft-section"><div class="draft-section-head"><div><h3>Instagram Carousel</h3><p class="note">${d.usesGeneratedPoster?'記事投稿は2枚。1枚目＝AIイメージ＋タイトル、2枚目＝3スポット紹介。':'スポット数に応じて基本8枚前後。最後だけKibun導線。'}</p></div></div><div class="carousel-grid">${d.slides.map(slideHtml).join('')}</div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>Instagram Caption</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.instagram)}">コピー</button><pre>${esc(d.instagram)}</pre></div></section>
-      <section class="draft-section"><div class="draft-section-head"><h3>X Draft</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.x)}">コピー</button><pre>${esc(d.x)}</pre></div></section>
+      <section class="draft-section"><div class="draft-section-head"><h3>Threads Draft</h3></div><div class="copy-box"><button class="copy-btn" type="button" data-copy-value="${esc(d.threads)}">コピー</button><pre>${esc(d.threads)}</pre></div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>Hashtags</h3></div><div class="hashtags">${d.hashtags.map(x=>`<span>${esc(x)}</span>`).join('')}</div></section>
       <section class="draft-section"><div class="draft-section-head"><h3>使用スポット / 推奨画像</h3></div><div class="used-spots">${ss.map(s=>{const snsRec=snsImageRecord(s);return `<div class="used-spot">${snsRec?.image_url?`<img src="${esc(snsRec.image_url)}" alt="" loading="lazy">`:mediaUrl(s)?`<img src="${esc(mediaUrl(s))}" alt="" loading="lazy" data-hero-spot="${esc(s.spot_id)}">`:''}<span><strong>${esc(s.name)}</strong><small>${esc(s.spot_id)} · ${esc(s.city||s.prefecture||'')}</small><a class="used-spot-image-link" href="./?workspace=images&imageSpot=${encodeURIComponent(s.spot_id)}">${snsRec?'SNS画像設定済み':'SNS実写真を探す'} →</a></span></div>`}).join('')}</div></section>`;
     $('ideaDetail').querySelectorAll('[data-copy-value]').forEach(b=>b.addEventListener('click',()=>copyText(b.dataset.copyValue,'原稿をコピーしました')));
@@ -742,7 +762,7 @@
     return normalizePost({
       id:'post_'+Date.now(),date:'',channel:'Instagram',title:i.title,status:'draft',idea_id:i.id,content_source:i.source,
       destination_type:destinationType,destination_url:i.destination?.url||'',spot_id:i.spotIds[0]||'',spot_ids:i.spotIds,
-      hero_ref:first?.hero_image?.url||'',instagram_route:'search',instagram_url:'',affiliate_status:'',draft:{instagram:d.instagram,x:d.x,carousel:d.slides},result:{}
+      hero_ref:first?.hero_image?.url||'',instagram_route:'search',instagram_url:'',affiliate_status:'',draft:{instagram:d.instagram,threads:d.threads,threads_version:'20.12.7',x:d.threads,carousel:d.slides},result:{}
     });
   }
   function addIdeaToOperations(id){
@@ -758,15 +778,15 @@
   function update(id,path,value){const p=state.posts.find(x=>x.id===id);if(!p)return;const parts=path.split('.');let o=p;while(parts.length>1){const k=parts.shift();o[k]??={};o=o[k];}o[parts[0]]=value;if(path==='spot_id'&&!p.spot_ids?.length)p.spot_ids=value?[value]:[];persist();renderSummary();}
   function statusLabel(x){return {planned:'予定',draft:'下書き',scheduled:'予約済み',published:'投稿済み'}[x]||x||'未設定';}
   function draftBox(post){
-    if(!post.draft?.instagram&&!post.draft?.x)return'';
+    if(!post.draft?.instagram&&!post.draft?.threads)return'';
     const captureLink=Array.isArray(post.draft?.carousel)&&post.draft.carousel.length?`<a class="secondary-btn" href="./?capture=${encodeURIComponent(post.id)}">スクショ用ページを開く</a>`:'';
-    return `<details class="draft-box"><summary>投稿原稿（企画から生成）</summary><div class="draft-copy">${post.draft.instagram?`<label>Instagram<textarea data-field="draft.instagram" rows="8">${esc(post.draft.instagram)}</textarea><span class="draft-copy-actions"><button class="secondary-btn" type="button" data-copy-draft="instagram">Instagramをコピー</button>${captureLink}</span></label>`:''}${post.draft.x?`<label>X<textarea data-field="draft.x" rows="6">${esc(post.draft.x)}</textarea><span class="draft-copy-actions"><button class="secondary-btn" type="button" data-copy-draft="x">Xをコピー</button></span></label>`:''}</div></details>`;
+    return `<details class="draft-box"><summary>投稿原稿</summary><div class="draft-copy">${post.draft.instagram?`<label>Instagram<textarea data-field="draft.instagram" rows="8">${esc(post.draft.instagram)}</textarea><span class="draft-copy-actions"><button class="secondary-btn" type="button" data-copy-draft="instagram">Instagramをコピー</button>${captureLink}</span></label>`:''}${post.draft.threads?`<label>Threads<textarea data-field="draft.threads" rows="7">${esc(post.draft.threads)}</textarea><span class="draft-copy-actions"><button class="secondary-btn" type="button" data-copy-draft="threads">Threadsをコピー</button></span></label>`:''}</div></details>`;
   }
   function card(post){
     const spot=spotById(post.spot_id),suggestHero=heroSuggestion(spot),suggestIg=instagramSuggestion(spot),suggestDest=destinationSuggestion(post,spot);
     return `<article class="post-card" data-id="${esc(post.id)}"><div class="post-head"><div><span class="post-id">${esc(post.id)}</span>${post.idea_id?`<span class="post-origin">Kibun Editors</span>`:''}<h2>${esc(post.title||'投稿')}</h2><span class="status-chip">${esc(statusLabel(post.status))}</span></div><button class="remove-post" type="button" data-remove>削除</button></div><div class="grid">
       <label class="field"><span>投稿日</span><input data-field="date" type="date" value="${esc(post.date)}"></label>
-      <label class="field"><span>Channel</span><select data-field="channel"><option${post.channel==='Instagram'?' selected':''}>Instagram</option><option${post.channel==='X'?' selected':''}>X</option><option${post.channel==='Note'?' selected':''}>Note</option><option${post.channel==='Other'?' selected':''}>Other</option></select></label>
+      <label class="field"><span>Channel</span><select data-field="channel"><option${post.channel==='Instagram'?' selected':''}>Instagram</option><option${post.channel==='Threads'?' selected':''}>Threads</option><option${post.channel==='Instagram + Threads'?' selected':''}>Instagram + Threads</option><option${post.channel==='X'?' selected':''}>X</option><option${post.channel==='Other'?' selected':''}>Other</option></select></label>
       <label class="field full"><span>投稿名 / テーマ</span><input data-field="title" value="${esc(post.title)}"></label>
       <label class="field"><span>状態</span><select data-field="status"><option value="planned"${post.status==='planned'?' selected':''}>予定</option><option value="draft"${post.status==='draft'?' selected':''}>下書き</option><option value="scheduled"${post.status==='scheduled'?' selected':''}>予約済み</option><option value="published"${post.status==='published'?' selected':''}>投稿済み</option></select></label>
       <label class="field"><span>遷移先</span><select data-field="destination_type"><option value=""${!post.destination_type?' selected':''}>未設定 / 検索</option><option value="article"${post.destination_type==='article'?' selected':''}>記事</option><option value="plan"${post.destination_type==='plan'?' selected':''}>プラン</option><option value="spot"${post.destination_type==='spot'?' selected':''}>スポット</option></select></label>
@@ -798,7 +818,7 @@
     });
   }
   function render(){renderSummary();const rows=visible();$('auditList').innerHTML=rows.length?rows.map(card).join(''):'<article class="post-card"><h2>該当する投稿はありません。</h2></article>';bind();}
-  function exportData(){return {version:'20.11.14',exported_at:new Date().toISOString(),posts:state.posts};}
+  function exportData(){return {version:'20.12.7',exported_at:new Date().toISOString(),posts:state.posts};}
   async function copyText(text,msg){try{await navigator.clipboard.writeText(text)}catch(_e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}flash(msg);}
   function flash(msg){const el=$('flash');if(!el)return;el.textContent=msg;clearTimeout(flash.t);flash.t=setTimeout(()=>el.textContent='',2400);}
   function switchWorkspace(name){
@@ -816,9 +836,9 @@
   $('ideaDialog').addEventListener('click',e=>{if(e.target===$('ideaDialog'))$('ideaDialog').close();});
   $('addPost').addEventListener('click',()=>{state.posts.unshift(newPost());persist();$('statusFilter').value='all';render();flash('投稿を追加しました')});
   $('copyJson').addEventListener('click',()=>copyText(JSON.stringify(exportData(),null,2),'設定JSONをコピーしました'));
-  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.11.14.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
-  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.11.14',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
-  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.11.14',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
+  $('downloadJson').addEventListener('click',()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(exportData(),null,2)],{type:'application/json'}));a.download='kibun-sns-audit-v20.12.7.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);flash('JSONを保存しました')});
+  $('importJson').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(!Array.isArray(obj.posts))throw new Error();state={version:'20.12.7',posts:obj.posts.map(normalizePost)};persist();render();flash('JSONを読み込みました')}catch(_e){flash('JSONを読み込めませんでした')}e.target.value='';});
+  $('resetLocal').addEventListener('click',()=>{if(!confirm('SNS Auditの端末保存を初期化しますか？'))return;localStorage.removeItem(KEY);LEGACY_KEYS.forEach(k=>localStorage.removeItem(k));state={version:'20.12.7',posts:mergeSeedPosts([])};persist();render();flash('初期状態に戻しました')});
   $('textFilter').addEventListener('input',render);$('statusFilter').addEventListener('change',render);
   renderIdeaSummary();renderIdeas();render();
   const requestedWorkspace=pageParams?.get('workspace');
