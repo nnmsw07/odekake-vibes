@@ -1,0 +1,73 @@
+name: Kibun SEO Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'spots/**'
+      - 'magazine/**'
+      - 'plans/**'
+      - 'guide/**'
+      - 'data.js'
+      - 'scripts/generate_seo_pages.mjs'
+      - 'scripts/seo_*.mjs'
+      - '.github/workflows/kibun-seo-audit.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'spots/**'
+      - 'magazine/**'
+      - 'plans/**'
+      - 'guide/**'
+      - 'data.js'
+      - 'scripts/generate_seo_pages.mjs'
+      - 'scripts/seo_*.mjs'
+  workflow_dispatch:
+  schedule:
+    # Monday 07:20 JST — public-site audit before the weekly Kibun review.
+    - cron: '20 22 * * 0'
+
+permissions:
+  contents: read
+
+jobs:
+  local-seo:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit generated/public SEO structure
+        run: node scripts/seo_audit.mjs --report seo-audit/ci-local
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kibun-seo-local-audit
+          path: |
+            seo-audit/ci-local.json
+            seo-audit/ci-local.md
+
+  live-seo:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit deployed kibuntrip.com URLs
+        run: node scripts/seo_audit.mjs --live --base-url https://kibuntrip.com --report seo-audit/ci-live
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kibun-seo-live-audit
+          path: |
+            seo-audit/ci-live.json
+            seo-audit/ci-live.md

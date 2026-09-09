@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { normalizePublicSpotLinks } from './seo_internal_links.mjs';
 
 const ROOT = process.cwd();
 const SITE_ORIGIN = 'https://kibuntrip.com';
@@ -130,6 +131,10 @@ function discoverStaticContentUrls() {
         const full = path.join(current, ent.name);
         if (ent.isDirectory()) stack.push(full);
         else if (ent.isFile() && ent.name === 'index.html') {
+          const html = fs.readFileSync(full, 'utf8');
+          const robots = [...html.matchAll(/<meta\b[^>]*name=["']robots["'][^>]*>/gi)]
+            .map(m => m[0].match(/content=["']([^"']*)["']/i)?.[1] || '').join(',').toLowerCase();
+          if (robots.includes('noindex')) continue;
           const rel = path.relative(ROOT, path.dirname(full)).split(path.sep).join('/'); urls.push(`${SITE_ORIGIN}/${rel}/`);
         }
       }
@@ -176,6 +181,9 @@ fs.writeFileSync(path.join(spotsRoot, 'index.html'), spotsIndex);
 fs.writeFileSync(path.join(ROOT, 'spots-index.html'), spotsIndex);
 fs.writeFileSync(path.join(spotsRoot, 'routes.json'), JSON.stringify({ generated_at: new Date().toISOString(), source, routes: routeRows }, null, 2));
 
+const internalLinkResult = normalizePublicSpotLinks({ root: ROOT, routes: routeRows });
+if (internalLinkResult.unmatched.length) fail(`ガイド内スポットリンク未解決: ${internalLinkResult.unmatched.map(x => `${x.guide}:${x.name}`).join(', ')}`);
+
 const redirectLines = [
   GENERATED_REDIRECTS_BEGIN,
   '/spots /spots-index.html 200',
@@ -211,4 +219,4 @@ for (const row of routeRows) {
 }
 const target257 = routeRows.find(r => r.spot_id === 'spot_257');
 if (target257) console.log(`spot_257: ${target257.url} -> /${target257.fallback_file}`);
-console.log(`SEO hotfix generated: ${routeRows.length} spots / ${sitemapUrls.length} sitemap URLs / source ${source}`);
+console.log(`SEO generated: ${routeRows.length} spots / ${sitemapUrls.length} sitemap URLs / ${internalLinkResult.guideResolved} guide spot links / source ${source}`);
