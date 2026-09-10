@@ -1,0 +1,6 @@
+CHANGELOG_v20_12_9.md
+app.js
+images/ai/quiet-adult-time.webp
+index.html
+styles.css
+test_v20_12_9_quiet_adult.js

@@ -237,3 +237,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 }
 
 .pet-support-note{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.8}.pet-support-alert{margin:10px 0 0;padding:10px 12px;border-radius:14px;background:#fff1d9;color:#6d4b25;font-size:10px}.pet-support .freshness a{color:inherit;font-weight:800}.audience-chip[data-audience=dog].selected{background:#40513d;border-color:#40513d}
+
+/* v20.12.9: quiet adult card hero hotfix.
+   Keep this at the end so the legacy .c4 gradient cannot override the generated hero. */
+.collection-card.quiet-adult{
+  background-image:url('/images/ai/quiet-adult-time.webp') !important;
+  background-position:center 54% !important;
+  background-size:cover !important;
+}
