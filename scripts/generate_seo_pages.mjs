@@ -103,6 +103,10 @@ function makeSpotPage(template, spot, slug) {
   html = upsertTag(html, /<title>[\s\S]*?<\/title>/i, `<title>${htmlEscape(title)}</title>`);
   html = upsertTag(html, /<meta\s+name=["']description["'][^>]*>/i, `<meta name="description" content="${htmlEscape(description)}" />`);
   html = upsertTag(html, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonical}" />`);
+  html = html.replace(/<link\s+rel=["']alternate["'][^>]*hreflang=["'](?:ja|en|x-default)["'][^>]*>\s*/gi, '');
+  const langLinks = [`<link rel="alternate" hreflang="ja" href="${canonical}" />`, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`];
+  if (spot.i18n?.en) langLinks.splice(1,0,`<link rel="alternate" hreflang="en" href="${SITE_ORIGIN}/en/spots/${encodeURIComponent(slug)}/" />`);
+  html = html.replace(/<\/head>/i, `  ${langLinks.join('\n  ')}\n</head>`);
   html = upsertTag(html, /<meta\s+property=["']og:type["'][^>]*>/i, '<meta property="og:type" content="article" />');
   html = upsertTag(html, /<meta\s+property=["']og:title["'][^>]*>/i, `<meta property="og:title" content="${htmlEscape(title)}" />`);
   html = upsertTag(html, /<meta\s+property=["']og:description["'][^>]*>/i, `<meta property="og:description" content="${htmlEscape(description)}" />`);
@@ -121,7 +125,7 @@ function makeSpotPage(template, spot, slug) {
   return { html, canonical };
 }
 function discoverStaticContentUrls() {
-  const dirs = ['magazine', 'plans', 'guide']; const urls = [];
+  const dirs = ['magazine', 'plans', 'guide', 'en']; const urls = [];
   for (const dir of dirs) {
     const base = path.join(ROOT, dir); if (!fs.existsSync(base)) continue;
     const stack = [base];
@@ -176,7 +180,7 @@ const listItems = routeRows.map(row => {
   const place = [spot?.prefecture, spot?.city].filter(Boolean).join(' · ');
   return `<li><a href="/spots/${encodeURIComponent(row.slug)}/">${htmlEscape(row.name)}</a>${place ? `<small>${htmlEscape(place)}</small>` : ''}</li>`;
 }).join('\n');
-const spotsIndex = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>スポット一覧｜Kibun Trip</title><meta name="description" content="Kibun Tripに掲載しているおでかけスポット一覧。"><link rel="canonical" href="${SITE_ORIGIN}/spots/"><meta name="robots" content="index,follow"><style>body{font-family:system-ui,-apple-system,sans-serif;background:#f6f1e9;color:#222;margin:0}.wrap{max-width:900px;margin:auto;padding:40px 20px 80px}a{color:inherit;text-underline-offset:3px}ul{list-style:none;padding:0;display:grid;gap:10px}li{background:#fff;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}small{opacity:.62}</style></head><body><main class="wrap"><p><a href="/">← Kibun</a></p><h1>スポット一覧</h1><p>${routeRows.length}スポット</p><ul>${listItems}</ul></main></body></html>`;
+const spotsIndex = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>スポット一覧｜Kibun Trip</title><meta name="description" content="Kibun Tripに掲載しているおでかけスポット一覧。"><link rel="canonical" href="${SITE_ORIGIN}/spots/"><link rel="alternate" hreflang="ja" href="${SITE_ORIGIN}/spots/"><link rel="alternate" hreflang="en" href="${SITE_ORIGIN}/en/spots/"><link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}/spots/"><meta name="robots" content="index,follow"><style>body{font-family:system-ui,-apple-system,sans-serif;background:#f6f1e9;color:#222;margin:0}.wrap{max-width:900px;margin:auto;padding:40px 20px 80px}a{color:inherit;text-underline-offset:3px}ul{list-style:none;padding:0;display:grid;gap:10px}li{background:#fff;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}small{opacity:.62}</style></head><body><main class="wrap"><p><a href="/">← Kibun</a></p><h1>スポット一覧</h1><p>${routeRows.length}スポット</p><ul>${listItems}</ul></main></body></html>`;
 fs.writeFileSync(path.join(spotsRoot, 'index.html'), spotsIndex);
 fs.writeFileSync(path.join(ROOT, 'spots-index.html'), spotsIndex);
 fs.writeFileSync(path.join(spotsRoot, 'routes.json'), JSON.stringify({ generated_at: new Date().toISOString(), source, routes: routeRows }, null, 2));

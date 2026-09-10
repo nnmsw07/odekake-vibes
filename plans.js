@@ -148,6 +148,7 @@
   function curatedPlanPreview(seed,id){
     const bp=CURATED_PLANS.find(p=>p.id===id);if(!bp)return null;const map=spotMap(seed),spots=bp.spots.map(x=>map.get(x)).filter(Boolean);if(spots.length!==bp.spots.length)return null;
     const minutes=Math.round((Number(bp.min||180)+Number(bp.max||240))/2),audience=bp.aud?.[0]||'family',overnight=bp.overnight===true;
+    if(typeof hardFilterReason==='function'&&spots.some(s=>hardFilterReason(s,{audience,currentDate:new Date(),allowOvernight:overnight,includeBrowseOnly:false})))return null;
     return{plan_id:`curated_${bp.id}`,slot:'editorial',slot_label:'KIBUN EDIT',score:94,travel_minutes:null,why:[],primary_spot_id:spots[0].spot_id,requested_minutes:minutes,type:overnight?'overnight':(spots.length===1?'single':'combo'),duration_label:overnight?'1泊プラン':requestedDurationLabel(minutes),estimated_minutes:overnight?null:coverageMinutes(spots),title:bp.title,lead:bp.lead,spot_ids:spots.map(s=>s.spot_id),steps:curatedSteps(bp,spots),curated:true,curated_id:bp.id,audience,availability_note:bp.availability_note||null};
   }
   function curatedPlanForPrimary(seed,primary,r,ctx,displayMinutes,used,allPrimaryIds){

@@ -1,0 +1,17 @@
+{
+  "mode": "local",
+  "checked_at": "2026-09-10T14:13:38.178Z",
+  "sitemap_urls": 586,
+  "target_static_pages": 585,
+  "guide_spot_links": 358,
+  "legacy_spot_links": 0,
+  "search_console_baseline": {
+    "as_of": "2026-09-07",
+    "discovered_not_indexed": 31,
+    "crawled_not_indexed": 5,
+    "note": "Search Console経過確認用。次回確認時に最新件数と対象URLを比較する。"
+  },
+  "errors": [],
+  "warnings": [],
+  "ok": true
+}

@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kibuntrip.com/</loc></url>
+  <url><loc>https://kibuntrip.com/en/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/baby-friendly-cafes/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/floor-seating-cafes/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/japanese-culture/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/quiet-yokohama/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/rainy-day-tokyo/</loc></url>
+  <url><loc>https://kibuntrip.com/en/magazine/tokyo-with-toddler/</loc></url>
+  <url><loc>https://kibuntrip.com/en/plans/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/100spoons-azamino/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/100spoons-tachikawa/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/100spoons-toyosu/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/247-restaurant-minatomirai/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/an-tokyo-japanese-culture/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/arasaki-park/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/asakusa-sumo-club/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/belbel-park-shinjuku/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/belbel-park-yokohama-kannai/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/bornelund-kidokid-markis-minatomirai/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/chano-ma-yokohama/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/culaful-takeshiba/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/eggs-n-things-odaiba/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/enoura-observatory/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/glass-lab-kiyosumi/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/kabukiza/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/keikyu-museum/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/latte-chano-mama-shinjuku/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/legoland-discovery-center-tokyo/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/marine-walk-yokohama/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/miraikan/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/mother-farm/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/odaiba-seaside-park/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/play-park-eric-carle/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/play-park-tachikawa/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/romancecar-museum/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/shibuya-fureai-botanical-center/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/shibuya-sky/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/sky-plaza-ibasho/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/spot_063-spot/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/spot_069-spot/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/spot_083-spot/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/sumida-aquarium/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/teamlab-planets/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/tokyo-metropolitan-teien-art-museum/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/uzumako-pottery/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yae-kimono-asakusa/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yamashita-park/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yokohama-motomachi/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yokohama-museum-of-art/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yokohama-world-porters/</loc></url>
+  <url><loc>https://kibuntrip.com/en/spots/yokosuka-museum-of-art/</loc></url>
   <url><loc>https://kibuntrip.com/guide/</loc></url>
   <url><loc>https://kibuntrip.com/guide/chiba-kids/</loc></url>
   <url><loc>https://kibuntrip.com/guide/hakone-stay/</loc></url>
@@ -28,12 +80,14 @@
   <url><loc>https://kibuntrip.com/magazine/animals-close/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/art-and-cafe/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/baby-first-outing/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/baby-kids-space-cafes/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/dog-more-than-dogrun/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/dog-nature-reset/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/dog-shopping-day/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/dog-terrace-food/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/dog-yokohama-waterside/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/factory-tour/</loc></url>
+  <url><loc>https://kibuntrip.com/magazine/floor-seating-with-baby/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/green-breathing-room/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/hakone-stay-story/</loc></url>
   <url><loc>https://kibuntrip.com/magazine/hotel-without-staying/</loc></url>

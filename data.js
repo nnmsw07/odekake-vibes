@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_12_6_473spots_pet_audience",
-    "version": "0.20.12.6",
+    "dataset_name": "kibun_kanto_izu_seed_v20_13_0_family_i18n",
+    "version": "0.20.13.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -32,7 +32,10 @@ window.ODEKAKE_SEED = {
       "layer_magazine": "検索結果とは別に、テーマ別の読みものを静的HTMLで公開。旬に依存しないevergreen記事を基本にし、記事→Spot/Plan→気分検索へ回遊させる。",
       "layer_navigation": "モバイル下部ナビは記事 / プラン / スポット / 今日の気分の4導線。スポットは既存browse dialogへ直結。",
       "layer_inbound_support": "訪日向け情報は booking_languages（予約導線の表示言語）と onsite_languages / onsite_note（現地対応）を分けて保持。予約サイトが英語表示できるだけで「現地英語対応」とは表示しない。",
-      "layer_pet_profile": "犬連れ可否・利用条件・公式確認日をpet_profileに保持。dog同行者推薦ではpet_profile.status=trueを必須にする。"
+      "layer_pet_profile": "犬連れ可否・利用条件・公式確認日をpet_profileに保持。dog同行者推薦ではpet_profile.status=trueを必須にする。",
+      "layer_family_profile": "赤ちゃん・子連れ外食/滞在の設備属性。floor_seating / shoes_off / crawl_ok / baby_space / kids_space / nursing_room / diaper_changing / baby_meal / baby_chair / childcare 等は true / false / null で保持し、未確認をfalse扱いしない。",
+      "layer_i18n": "多言語表示用。i18n.en に name / public_copy / city / visitor labels を保持。日本語の事実データを正とし、英語ページは /en/ 配下に静的生成。",
+      "layer_availability_constraints": "長期休館・季節営業など推薦可否に関わる期間制約。unavailable_ranges を推薦・プラン生成で参照する。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -40,7 +43,7 @@ window.ODEKAKE_SEED = {
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-06",
+    "updated_at": "2026-09-10",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -1000,6 +1003,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "BørneLund Play World MARK IS Minatomirai",
+          "public_copy": "A spacious indoor play area in Minatomirai where young children can move, climb and explore, with plenty nearby for adults too.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -2055,6 +2076,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Keikyu Museum",
+          "public_copy": "A compact railway museum near Yokohama Station with real train displays and hands-on experiences for transport-loving kids.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -2488,6 +2527,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Romancecar Museum",
+          "public_copy": "A railway museum in Ebina where families can get close to Odakyu Romancecar trains and enjoy interactive exhibits.",
+          "city": "Ebina",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -3822,6 +3879,24 @@ window.ODEKAKE_SEED = {
           "写真より体験を楽しみたい日"
         ],
         "priority": 7
+      },
+      "i18n": {
+        "en": {
+          "name": "teamLab Planets TOKYO",
+          "public_copy": "An immersive digital-art experience in Toyosu where you move through light, water and large-scale installations.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -3964,6 +4039,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。リンク変換は公開前後に再確認する。"
+      },
+      "i18n": {
+        "en": {
+          "name": "PLAY! PARK",
+          "public_copy": "A creative indoor play space in Tachikawa designed around large-scale art, movement and open-ended play.",
+          "city": "Tachikawa",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -5986,6 +6079,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Arasaki Park",
+          "public_copy": "A rugged seaside park on the Miura Peninsula for dramatic coastal scenery, tide pools and a breezy walk.",
+          "city": "Yokosuka",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -7631,6 +7742,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokosuka Museum of Art",
+          "public_copy": "A seaside art museum in Kannonzaki where architecture, exhibitions and views of Tokyo Bay make an easy slow afternoon.",
+          "city": "Yokosuka",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -9054,6 +9183,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Kawasaki Municipal Science Museum",
+          "public_copy": "A family-friendly science museum in Ikuta Ryokuchi with nature displays and a planetarium.",
+          "city": "Kawasaki · Tama Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -9914,6 +10061,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Tokyo Water Science Museum",
+          "public_copy": "A free indoor museum in Ariake where children can learn how city water works through playful exhibits.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -12011,6 +12176,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Odawara Wanpaku Land",
+          "public_copy": "A large outdoor children’s park in Odawara with lots of room to run, climb and spend a full energetic day.",
+          "city": "Odawara",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -12347,6 +12530,24 @@ window.ODEKAKE_SEED = {
       },
       "audience_copy": {
         "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
+      },
+      "i18n": {
+        "en": {
+          "name": "MARINE & WALK YOKOHAMA",
+          "public_copy": "A waterfront shopping and dining complex in Yokohama that is best enjoyed slowly, with the harbor always close by.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -14251,6 +14452,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "SKY PLAZA IBASHO",
+          "public_copy": "A relaxed high-rise lounge in Shinjuku where you can sit, read or take in the city without building a packed schedule.",
+          "city": "Shinjuku",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -14671,7 +14890,10 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "雨の日",
         "暑い日",
-        "体を動かす"
+        "体を動かす",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース"
       ],
       "monetization": {
         "affiliate_fit": "B",
@@ -14681,6 +14903,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "自然をテーマにした屋内キッズパークとカフェ。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://culaful.com/"
+      },
+      "i18n": {
+        "en": {
+          "name": "CULAFUL",
+          "public_copy": "An indoor kids’ play space and café in Takeshiba, useful when children want to move and parents also need a place to sit.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -14825,6 +15080,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokohama Museum of Art",
+          "public_copy": "A major art museum in Minatomirai that works well as the adult-interest anchor of a family or couple’s day in Yokohama.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -15117,6 +15390,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yamashita Park",
+          "public_copy": "A classic Yokohama waterfront park for an easy harbor walk, open views and a low-pressure break between other stops.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -15699,6 +15990,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokohama World Porters",
+          "public_copy": "A large shopping and entertainment complex near the harbor, easy to combine with food, movies and nearby Minatomirai attractions.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -15988,6 +16297,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Sumida Aquarium",
+          "public_copy": "A calm urban aquarium inside Tokyo Skytree Town, known for open viewing spaces, penguins and an easy rainy-day visit.",
+          "city": "Sumida",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -16585,6 +16912,24 @@ window.ODEKAKE_SEED = {
           "友だちとの特別な一日"
         ],
         "priority": 8
+      },
+      "i18n": {
+        "en": {
+          "name": "SHIBUYA SKY",
+          "public_copy": "An open-air observation experience above Shibuya with wide city views and a strong sense of occasion, especially toward sunset.",
+          "city": "Shibuya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -17190,6 +17535,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Tokyo Metropolitan Teien Art Museum",
+          "public_copy": "An Art Deco residence and garden in Shirokanedai for architecture, exhibitions and a quieter side of central Tokyo.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -17479,6 +17842,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Mother Farm",
+          "public_copy": "A large farm park in Chiba where families can meet animals, enjoy seasonal scenery and spend a full day outdoors.",
+          "city": "Futtsu",
+          "prefecture": "Chiba",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -19141,7 +19522,10 @@ window.ODEKAKE_SEED = {
         "雨の日",
         "暑い日",
         "非日常",
-        "学び・文化"
+        "学び・文化",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース"
       ],
       "monetization": {
         "affiliate_fit": "A",
@@ -19164,6 +19548,39 @@ window.ODEKAKE_SEED = {
           "親子でアートに触れたい日"
         ],
         "priority": 5
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "0歳から使いやすい屋内キッズパーク。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://playec.jp/"
+      },
+      "i18n": {
+        "en": {
+          "name": "PLAY! PARK ERIC CARLE",
+          "public_copy": "An indoor play space inspired by Eric Carle’s picture-book world, with art and movement activities for babies and young children.",
+          "city": "Setagaya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -20700,6 +21117,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokohama Motomachi Shopping Street",
+          "public_copy": "A refined shopping street near Yamashita Park, good for a relaxed walk, cafés and a more local side of Yokohama.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -21992,6 +22427,24 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Odaiba Seaside Park",
+          "public_copy": "An easy waterfront stop in Odaiba with beach views and open space, useful between indoor attractions.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -25230,6 +25683,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Shibuya Botanical Center",
+          "public_copy": "A small urban botanical center in Shibuya where greenery, a café and a lighter pace make a useful reset from the city.",
+          "city": "Shibuya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -36112,6 +36583,24 @@ window.ODEKAKE_SEED = {
       "inbound_profile": {
         "inbound_fit": "B",
         "japanese_culture": true
+      },
+      "i18n": {
+        "en": {
+          "name": "Kabukiza Theatre",
+          "public_copy": "Tokyo’s landmark kabuki theatre in Ginza, a strong choice for visitors who want to experience traditional Japanese performing arts.",
+          "city": "Chuo",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -37304,6 +37793,24 @@ window.ODEKAKE_SEED = {
         ],
         "onsite_note": "じゃらん掲載で「英語で出来る陶芸体験もあります」と案内。対象プラン・日時は予約時に確認。",
         "verified_at": "2026-09-02"
+      },
+      "i18n": {
+        "en": {
+          "name": "Uzumako Ceramic Art School",
+          "public_copy": "A pottery studio in Tokyo offering hands-on ceramic experiences; some English-supported experiences are already noted in Kibun’s verified data.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -38006,6 +38513,24 @@ window.ODEKAKE_SEED = {
       "inbound_profile": {
         "inbound_fit": "B",
         "japanese_culture": true
+      },
+      "i18n": {
+        "en": {
+          "name": "GLASS-LAB",
+          "public_copy": "A small workshop and shop in Kiyosumi-Shirakawa focused on Edo Kiriko cut glass and contemporary craftsmanship.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -38809,7 +39334,12 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "ごはん",
         "水辺",
-        "大人も楽しい"
+        "大人も楽しい",
+        "ベビースペース",
+        "キッズスペース",
+        "授乳室",
+        "おむつ替え",
+        "離乳食"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -38832,6 +39362,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": false,
+        "crawl_ok": null,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": true,
+        "diaper_changing": true,
+        "baby_meal": true,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "絵本スペース、離乳食、授乳室など親子向け設備が充実。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://100spoons.com/azamino/"
+      },
+      "i18n": {
+        "en": {
+          "name": "100 Spoons Azamino Gardens",
+          "public_copy": "A family-focused restaurant where adults can enjoy a proper meal while baby facilities, books and child-friendly food make the visit easier.",
+          "city": "Yokohama · Aoba Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -39428,7 +39991,9 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "ごはん",
         "水辺",
-        "大人も楽しい"
+        "大人も楽しい",
+        "ベビースペース",
+        "授乳室"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -39451,6 +40016,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": false,
+        "crawl_ok": null,
+        "baby_space": true,
+        "kids_space": null,
+        "nursing_room": true,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "ベビーカーや授乳室を使いやすい親子向けレストラン。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://100spoons.com/futakotamagawa/"
       }
     },
     {
@@ -39738,7 +40318,13 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "ごはん",
         "水辺",
-        "大人も楽しい"
+        "大人も楽しい",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "授乳室",
+        "おむつ替え",
+        "離乳食"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -39761,6 +40347,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": null,
+        "nursing_room": true,
+        "diaper_changing": true,
+        "baby_meal": true,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "赤ちゃんがゴロンとしやすい小上がりと親子向け設備。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://100spoons.com/tachikawa/"
+      },
+      "i18n": {
+        "en": {
+          "name": "100 Spoons TACHIKAWA",
+          "public_copy": "A family restaurant in GREEN SPRINGS with baby-friendly floor seating and useful facilities after a day around Tachikawa.",
+          "city": "Tachikawa",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -39893,7 +40512,12 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "ごはん",
         "水辺",
-        "大人も楽しい"
+        "大人も楽しい",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "離乳食"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -39916,6 +40540,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "小上がり、キッズスペース、離乳食を組み合わせやすい。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://100spoons.com/toyosu/"
+      },
+      "i18n": {
+        "en": {
+          "name": "100 Spoons TOYOSU",
+          "public_copy": "A family-friendly restaurant in Toyosu with floor seating, a kids’ space and baby-meal support for an easier lunch or dinner.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -40225,6 +40882,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Eggs 'n Things Odaiba",
+          "public_copy": "A casual Hawaiian-style restaurant in Odaiba that works well as an easy meal stop after family attractions or a waterfront walk.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -43006,6 +43681,24 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "i18n": {
+        "en": {
+          "name": "LEGOLAND Discovery Center Tokyo",
+          "public_copy": "An indoor LEGO attraction in Odaiba with building, rides and play areas designed mainly for families with children.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -43070,8 +43763,8 @@ window.ODEKAKE_SEED = {
         "price_summary": "メニュー・チケット・利用内容により異なります。最新情報は公式サイトを確認。",
         "reservation_summary": "予約可否・混雑時の案内は公式サイトを確認。",
         "age_note": "子どもの利用条件・設備は当日の運用を含め公式情報を確認。",
-        "temporary_note": null,
-        "checked_at": "2026-08-30",
+        "temporary_note": "2026年10月1日〜2027年4月22日は長期休館予定です。休館前後も最新情報を公式サイトで確認してください。",
+        "checked_at": "2026-09-10",
         "source_url": "https://www.miraikan.jst.go.jp/"
       },
       "buzz": {
@@ -43161,6 +43854,34 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページを確認し、提携条件に合う場合のみ予約導線を表示。"
+      },
+      "availability_constraints": {
+        "unavailable_ranges": [
+          {
+            "from": "2026-10-01",
+            "until": "2027-04-22",
+            "note": "2026年10月1日〜2027年4月22日は長期休館予定です。"
+          }
+        ],
+        "note": "長期休館期間中は通常のおすすめ・プラン候補から除外します。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Miraikan – National Museum of Emerging Science and Innovation",
+          "public_copy": "A hands-on science museum in Odaiba exploring space, life and technology. It is scheduled to close from Oct 1, 2026 to Apr 22, 2027.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -43293,7 +44014,10 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "大人も楽しい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -43316,6 +44040,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "小上がりのマット席。席指定・利用条件は予約時または当日に確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/yokohama"
+      },
+      "i18n": {
+        "en": {
+          "name": "chano-ma Yokohama",
+          "public_copy": "A relaxed café in Yokohama Red Brick Warehouse with shoe-off raised mattress seating that works especially well with babies.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -43448,7 +44205,10 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "大人も楽しい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -43471,6 +44231,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "マット席あり。席指定・利用条件は予約時または当日に確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/futakotamagawa"
       }
     },
     {
@@ -43603,7 +44378,10 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "大人も楽しい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -43626,6 +44404,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "マット席あり。席指定・利用条件は予約時または当日に確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/ikebukuro"
       }
     },
     {
@@ -43758,7 +44551,10 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "大人も楽しい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -43781,6 +44577,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "小上がり系のマット席を使いやすい和カフェ。席の最新運用は確認を。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/ueno"
       }
     },
     {
@@ -43913,7 +44724,10 @@ window.ODEKAKE_SEED = {
         "ごはん",
         "のんびり",
         "大人も楽しい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -43936,6 +44750,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "座敷・ソファ席あり。席指定・利用条件は予約時または当日に確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanoma/tachikawa"
       }
     },
     {
@@ -44068,7 +44897,11 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "雨の日",
         "暑い日",
-        "ごはん"
+        "ごはん",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "離乳食"
       ],
       "recommendation_group": "belbel-park",
       "plan_profile": {
@@ -44091,6 +44924,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "0歳〜未就学児中心の室内遊び場。食事・休憩スペースも使いやすい。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shinjuku/"
+      },
+      "i18n": {
+        "en": {
+          "name": "Belbel Park Shinjuku",
+          "public_copy": "An indoor play venue for babies and preschoolers where play, food and a parent break can happen in the same place.",
+          "city": "Shinjuku",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -44221,7 +45087,11 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "雨の日",
-        "暑い日"
+        "暑い日",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "離乳食"
       ],
       "recommendation_group": "belbel-park",
       "plan_profile": {
@@ -44244,6 +45114,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "0歳〜未就学児中心の室内遊び場。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/shibuya/"
       }
     },
     {
@@ -44374,7 +45259,11 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "雨の日",
-        "暑い日"
+        "暑い日",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "離乳食"
       ],
       "recommendation_group": "belbel-park",
       "plan_profile": {
@@ -44397,6 +45286,21 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "0歳〜未就学児中心の室内遊び場。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/shop/ikebukuro/"
       }
     },
     {
@@ -44529,7 +45433,12 @@ window.ODEKAKE_SEED = {
         "赤ちゃん向け",
         "雨の日",
         "暑い日",
-        "ごはん"
+        "ごはん",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "おむつ替え",
+        "離乳食"
       ],
       "recommendation_group": "belbel-park",
       "plan_profile": {
@@ -44552,6 +45461,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。既存の公式・他予約導線と併存させる。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": true,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "キッズスペースと食事スペースを行き来しやすい全天候型施設。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.pasela.co.jp/mamakai/beruberu-park/"
+      },
+      "i18n": {
+        "en": {
+          "name": "Belbel Park Yokohama Kannai",
+          "public_copy": "An all-weather kids’ play space in Kannai that makes it easy to combine active play and a meal without moving far.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -44682,7 +45624,10 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "ごはん",
-        "近場穴場"
+        "近場穴場",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース"
       ],
       "recommendation_group": "co-shibuya",
       "plan_profile": {
@@ -44702,6 +45647,21 @@ window.ODEKAKE_SEED = {
         "channel_candidates": [],
         "product_match_required": false,
         "note": "公共・地域支援施設。広告導線を主目的にしない。"
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": null,
+        "note": "カフェと子育て支援機能を併設。ひろば等は対象・登録条件を確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://shibuya-city-neuvola.tokyo/facility/coshibuya/"
       }
     },
     {
@@ -44832,7 +45792,10 @@ window.ODEKAKE_SEED = {
         "子どもと",
         "赤ちゃん向け",
         "ごはん",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース"
       ],
       "recommendation_group": "chano-ma",
       "plan_profile": {
@@ -44855,6 +45818,39 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "個別商品・店舗ページと提携条件を確認した場合のみ予約導線を表示。"
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "ベッド席・ソファ席がある親子向けカフェ。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/chanomama/shinjuku"
+      },
+      "i18n": {
+        "en": {
+          "name": "latte chano-mama",
+          "public_copy": "A baby-friendly café inside Isetan Shinjuku with bed-style floor seating and sofas for a slower family meal.",
+          "city": "Shinjuku",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -48189,6 +49185,24 @@ window.ODEKAKE_SEED = {
         "style": "bookable",
         "same_day_fit": 45,
         "reservation_expected": true
+      },
+      "i18n": {
+        "en": {
+          "name": "AN TOKYO Japanese Culture Experience",
+          "public_copy": "A Tokyo venue for hands-on Japanese cultural activities, with booking-language support already documented in Kibun’s source data.",
+          "city": "Chiyoda",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -48358,6 +49372,24 @@ window.ODEKAKE_SEED = {
         "style": "reservation_required",
         "same_day_fit": 25,
         "reservation_expected": true
+      },
+      "i18n": {
+        "en": {
+          "name": "Asakusa Sumo Experience",
+          "public_copy": "A sumo-focused experience in Asakusa; Kibun’s existing source data records Japanese and English live commentary for a listed plan.",
+          "city": "Taito",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -48531,6 +49563,24 @@ window.ODEKAKE_SEED = {
         "style": "bookable",
         "same_day_fit": 55,
         "reservation_expected": true
+      },
+      "i18n": {
+        "en": {
+          "name": "YAE Kimono Rental Asakusa Tokyo",
+          "public_copy": "A kimono-rental shop in Asakusa with multilingual support documented in Kibun’s existing source data.",
+          "city": "Taito",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -66226,6 +67276,24 @@ window.ODEKAKE_SEED = {
       "age_constraints": {
         "min_months": 156,
         "note": "施設の安全上、中学生未満（乳幼児含む）は来館不可。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Enoura Observatory",
+          "public_copy": "An art-and-architecture destination overlooking Sagami Bay, best for visitors who want a slower, more contemplative day outside central Tokyo.",
+          "city": "Odawara",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -68351,7 +69419,11 @@ window.ODEKAKE_SEED = {
         "小上がり",
         "キッズメニュー",
         "みなとみらい",
-        "雨の日"
+        "雨の日",
+        "小上がり・座敷",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "離乳食"
       ],
       "planning_profile": {
         "style": "bookable",
@@ -68384,6 +69456,39 @@ window.ODEKAKE_SEED = {
             "url": "https://www.minatomirai-square.com/floor/detail/?cd=000069"
           }
         ]
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "小上がり席、ベビーチェア、離乳食持込の案内あり。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.minatomirai-square.com/floor/detail/?cd=000069"
+      },
+      "i18n": {
+        "en": {
+          "name": "24/7 restaurant",
+          "public_copy": "A Minatomirai restaurant with raised floor seating, baby chairs and child-friendly meal support, plus large windows facing the city.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
