@@ -13,10 +13,10 @@ def copy(slug):
 def loc(slug):
     s=spots[slug]; d=en(s); return ' · '.join(x for x in [d.get('city'), d.get('prefecture')] if x) or s.get('city','')
 def head(title,desc,canonical,ja):
-    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{canonical}"><link rel="alternate" hreflang="ja" href="{ja}"><link rel="alternate" hreflang="x-default" href="{ja}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="/styles.css?v=201400"><link rel="stylesheet" href="/en/styles.css?v=201400">'''
+    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{canonical}"><link rel="alternate" hreflang="ja" href="{ja}"><link rel="alternate" hreflang="x-default" href="{ja}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="stylesheet" href="/styles.css?v=201500"><link rel="stylesheet" href="/en/styles.css?v=201500">'''
 def header(ja):
     return f'''<header class="topbar"><a class="brand" href="/en/"><span class="brand-dot"></span>Kibun Trip</a><span class="topbar-tag">MOOD → DAY</span><div class="topbar-actions"><a class="lang-switch" href="{ja}" hreflang="ja">JA</a></div></header>'''
-footer='''<footer class="footer shell"><div>© Kibun Trip</div><div class="footer-links"><a href="/en/">Mood</a><a href="/en/spots/">Spots</a><a href="/en/magazine/">Features</a><a href="/en/plans/">Plans</a></div></footer>'''
+footer='''<footer class="footer shell"><div>© Kibun Trip</div><div class="footer-links"><a href="/en/">Mood</a><a href="/en/spots/">Spots</a><a href="/en/performances/">What’s on</a><a href="/en/magazine/">Features</a><a href="/en/plans/">Plans</a></div></footer>'''
 
 def article(path,title,kicker,lead,slugs,ja,tip):
     cards=''.join(f'''<article class="en-feature-place"><div><small>{e(loc(slug))}</small><h2>{e(name(slug))}</h2><p>{e(copy(slug))}</p></div><a href="/en/spots/{e(slug)}/">View spot →</a></article>''' for slug in slugs)
@@ -42,6 +42,15 @@ baby=[
  'aloha-food-factory-shin-yokohama','kamakura-kaigan-table','100spoons-azamino','belbel-park-yokohama-kannai','100spoons-toyosu','100spoons-tachikawa','tatami-cafe-kumasanchi','culaful-takeshiba','play-park-eric-carle','belbel-park-shinjuku'
 ]
 article('baby-friendly-cafes','Eat while they play: 10 baby- and kids-space spots','FAMILY TABLE · PLAY SPACE','Places where food, rest and a baby or kids’ space are close enough to make the outing easier for everyone.',baby,'https://kibuntrip.com/magazine/baby-kids-space-cafes/','“Kids space” can mean anything from a small play corner to a dedicated play area. Kibun keeps these as separate family attributes so you can browse what actually matters.')
+
+# Four broader English guides close the gap between the Japanese and English editorial layers.
+article('tokyo-with-toddler','Tokyo with a toddler: 6 low-pressure places','WITH A TODDLER · TOKYO','Indoor play, aquariums and easy meal stops that work when a young child sets the pace.',['culaful-takeshiba','play-park-eric-carle','belbel-park-shinjuku','100spoons-toyosu','sumida-aquarium','tokyo-water-science-museum' if 'tokyo-water-science-museum' in spots else slug_by_name('東京都水の科学館','spot_069-spot')],'https://kibuntrip.com/magazine/baby-first-outing/','Opening hours, age rules and play-space access can change. Check the official venue on the day, and leave more buffer than you would for an adults-only plan.')
+
+article('rainy-day-tokyo','A rainy day in Tokyo: 6 indoor ideas','RAINY DAY · TOKYO','Six places where bad weather does not turn the day into a compromise.',['teamlab-planets','sumida-aquarium','play-park-eric-carle','culaful-takeshiba','tokyo-metropolitan-teien-art-museum','new-national-theatre-tokyo'],'https://kibuntrip.com/magazine/tokyo-rainy-family/','For timed-entry museums, performances and popular indoor attractions, reserve ahead when possible. Kibun keeps weather-friendly places separate from fully indoor places.')
+
+article('japanese-culture','Japanese culture you can actually experience','CULTURE · TOKYO','Craft, kimono, sumo and performing arts — ways to meet Japanese culture through an experience rather than a checklist.',['an-tokyo-japanese-culture','uzumako-pottery','asakusa-sumo-club','yae-kimono-asakusa','kabukiza','national-noh-theatre'],'https://kibuntrip.com/magazine/japanese-culture-experience/','Some cultural experiences require reservations or have limited English support. Check the official booking page before travelling.')
+
+article('quiet-yokohama','A quiet afternoon in Yokohama: 6 softer stops','SLOW DAY · YOKOHAMA','Art, harbor air, a long lunch and live performance venues for a day that does not need to be packed.',['yokohama-museum-of-art','yamashita-park','marine-walk-yokohama','247-restaurant-minatomirai','yokohama-minato-mirai-hall','kanagawa-prefectural-music-hall'],'https://kibuntrip.com/magazine/waterfront-reset/','Performance venues are most useful when you check what is actually on. Use Kibun’s What’s on page for the current lineup, then build the rest of the afternoon around it.')
 
 features=[
  ('floor-seating-cafes','Floor & tatami seating with a baby','Raised mats, tatami and shoe-off seating for easier meals with babies.','/assets/editorial/parents-eat-well.webp','warm'),

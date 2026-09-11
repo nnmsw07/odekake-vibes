@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T03:34:24.048Z",
+  "generated_at": "2026-09-11T10:38:00.299Z",
   "source": "data.js",
   "routes": [
     {
@@ -3347,6 +3347,83 @@
       "name": "畳cafe&BAR くまさん家",
       "url": "https://kibuntrip.com/spots/tatami-cafe-kumasanchi/",
       "fallback_file": "seo-spot-spot_478.html"
+    },
+    {
+      "spot_id": "spot_479",
+      "slug": "new-national-theatre-tokyo",
+      "name": "新国立劇場",
+      "url": "https://kibuntrip.com/spots/new-national-theatre-tokyo/",
+      "fallback_file": "seo-spot-spot_479.html"
+    },
+    {
+      "spot_id": "spot_480",
+      "slug": "tokyo-metropolitan-theatre",
+      "name": "東京芸術劇場",
+      "url": "https://kibuntrip.com/spots/tokyo-metropolitan-theatre/",
+      "fallback_file": "seo-spot-spot_480.html"
+    },
+    {
+      "spot_id": "spot_481",
+      "slug": "tokyu-theatre-orb",
+      "name": "東急シアターオーブ",
+      "url": "https://kibuntrip.com/spots/tokyu-theatre-orb/",
+      "fallback_file": "seo-spot-spot_481.html"
+    },
+    {
+      "spot_id": "spot_482",
+      "slug": "nissay-theatre",
+      "name": "日生劇場",
+      "url": "https://kibuntrip.com/spots/nissay-theatre/",
+      "fallback_file": "seo-spot-spot_482.html"
+    },
+    {
+      "spot_id": "spot_483",
+      "slug": "tokyo-takarazuka-theatre",
+      "name": "東京宝塚劇場",
+      "url": "https://kibuntrip.com/spots/tokyo-takarazuka-theatre/",
+      "fallback_file": "seo-spot-spot_483.html"
+    },
+    {
+      "spot_id": "spot_484",
+      "slug": "national-noh-theatre",
+      "name": "国立能楽堂",
+      "url": "https://kibuntrip.com/spots/national-noh-theatre/",
+      "fallback_file": "seo-spot-spot_484.html"
+    },
+    {
+      "spot_id": "spot_485",
+      "slug": "yokohama-minato-mirai-hall",
+      "name": "横浜みなとみらいホール",
+      "url": "https://kibuntrip.com/spots/yokohama-minato-mirai-hall/",
+      "fallback_file": "seo-spot-spot_485.html"
+    },
+    {
+      "spot_id": "spot_486",
+      "slug": "kanagawa-prefectural-music-hall",
+      "name": "神奈川県立音楽堂",
+      "url": "https://kibuntrip.com/spots/kanagawa-prefectural-music-hall/",
+      "fallback_file": "seo-spot-spot_486.html"
+    },
+    {
+      "spot_id": "spot_487",
+      "slug": "yokohama-noh-theatre",
+      "name": "横浜能楽堂",
+      "url": "https://kibuntrip.com/spots/yokohama-noh-theatre/",
+      "fallback_file": "seo-spot-spot_487.html"
+    },
+    {
+      "spot_id": "spot_488",
+      "slug": "billboard-live-yokohama",
+      "name": "Billboard Live YOKOHAMA",
+      "url": "https://kibuntrip.com/spots/billboard-live-yokohama/",
+      "fallback_file": "seo-spot-spot_488.html"
+    },
+    {
+      "spot_id": "spot_489",
+      "slug": "ariake-shiki-theatre",
+      "name": "有明四季劇場",
+      "url": "https://kibuntrip.com/spots/ariake-shiki-theatre/",
+      "fallback_file": "seo-spot-spot_489.html"
     }
   ]
 }

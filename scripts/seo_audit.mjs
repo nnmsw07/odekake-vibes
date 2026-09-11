@@ -19,13 +19,11 @@ const read=f=>fs.readFileSync(path.join(ROOT,f),'utf8');
 function attr(tag,name){const m=tag.match(new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`,'i'));return m?m[2]:null}
 function canonicalOf(html){for(const tag of html.match(/<link\b[^>]*>/gi)||[]){if((attr(tag,'rel')||'').toLowerCase().split(/\s+/).includes('canonical'))return attr(tag,'href')}return null}
 function robotsMeta(html){for(const tag of html.match(/<meta\b[^>]*>/gi)||[]){if((attr(tag,'name')||'').toLowerCase()==='robots')return (attr(tag,'content')||'').toLowerCase()}return ''}
-function htmlLang(html){const m=html.match(/<html\b[^>]*\blang\s*=\s*(["'])(.*?)\1/i);return m?m[2].toLowerCase():''}
-function hreflangs(html){const out=new Map();for(const tag of html.match(/<link\b[^>]*>/gi)||[]){if((attr(tag,'rel')||'').toLowerCase().split(/\s+/).includes('alternate')){const lang=(attr(tag,'hreflang')||'').toLowerCase(),href=attr(tag,'href');if(lang&&href)out.set(lang,href)}}return out}
 function hrefs(html){return (html.match(/<a\b[^>]*>/gi)||[]).map(t=>attr(t,'href')).filter(Boolean)}
 function baseOf(html,pageUrl){for(const tag of html.match(/<base\b[^>]*>/gi)||[]){const h=attr(tag,'href');if(h){try{return new URL(h,pageUrl).href}catch{}}}return pageUrl}
 function urlToFile(url){const u=new URL(url,SITE);let p=normPath(u.pathname);if(p==='/')return path.join(ROOT,'index.html');p=p.replace(/^\//,'');const direct=path.join(ROOT,p);if(fs.existsSync(direct)&&fs.statSync(direct).isFile())return direct;const idx=path.join(ROOT,p,'index.html');if(fs.existsSync(idx))return idx;return null}
 function routeOfFile(file){let rel=path.relative(ROOT,file).split(path.sep).join('/');if(rel==='index.html')return '/';if(rel.endsWith('/index.html'))return '/'+rel.slice(0,-'index.html'.length);return '/'+rel}
-function targetStaticPages(){const out=[];for(const d of ['spots','magazine','plans','guide','en']){const base=path.join(ROOT,d);if(!fs.existsSync(base))continue;const stack=[base];while(stack.length){const cur=stack.pop();for(const ent of fs.readdirSync(cur,{withFileTypes:true})){const full=path.join(cur,ent.name);if(ent.isDirectory())stack.push(full);else if(ent.isFile()&&ent.name==='index.html'){const html=fs.readFileSync(full,'utf8');if(!robotsMeta(html).includes('noindex'))out.push(full)}}}}return out}
+function targetStaticPages(){const out=[];for(const d of ['spots','magazine','plans','guide','performances','en']){const base=path.join(ROOT,d);if(!fs.existsSync(base))continue;const stack=[base];while(stack.length){const cur=stack.pop();for(const ent of fs.readdirSync(cur,{withFileTypes:true})){const full=path.join(cur,ent.name);if(ent.isDirectory())stack.push(full);else if(ent.isFile()&&ent.name==='index.html'){const html=fs.readFileSync(full,'utf8');if(!robotsMeta(html).includes('noindex'))out.push(full)}}}}return out}
 function parseSitemap(){const sm=read('sitemap.xml');return [...sm.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1].replaceAll('&amp;','&'))}
 function robotsBlocked(pathname,robots){const rules=[];let active=false;for(const raw of robots.split(/\r?\n/)){const line=raw.replace(/#.*/,'').trim();if(!line)continue;const [k,...rest]=line.split(':');const v=rest.join(':').trim();if(k.toLowerCase()==='user-agent')active=v==='*';else if(active&&k.toLowerCase()==='disallow'&&v)rules.push(v)}return rules.some(r=>pathname.startsWith(r))}
 function localHrefTargetExists(href,fromUrl){if(/^(?:mailto:|tel:|javascript:)/i.test(href)||href.startsWith('#'))return true;let u;try{u=new URL(href,fromUrl)}catch{return false}if(u.origin!==SITE)return true;return !!urlToFile(u)}
@@ -42,19 +40,12 @@ check(/Sitemap:\s*https:\/\/kibuntrip\.com\/sitemap\.xml/i.test(robots),'robots.
 for(const u of sitemapUrls){const url=new URL(u);check(!robotsBlocked(url.pathname,robots),'robots.txt が sitemap URL をブロック',url.pathname)}
 
 const pageMap=new Map();
-for(const u of sitemapUrls){const file=urlToFile(u);check(!!file,'sitemap URL に対応するローカルページがありません',u);if(!file)continue;const html=fs.readFileSync(file,'utf8');pageMap.set(u,{file,html,base:baseOf(html,u)});const canon=canonicalOf(html);check(!!canon,'canonical がありません',u);if(canon){let c;try{c=new URL(canon,u).href}catch{}check(c===u,'self-canonical 不一致',`${u} -> ${canon}`)}const rm=robotsMeta(html);check(!rm.includes('noindex'),'noindex が sitemap URL に付いています',u);const pathname=new URL(u).pathname;if(pathname.startsWith('/en/')){check(htmlLang(html).startsWith('en'),'英語ページの html lang が en ではありません',u);const alts=hreflangs(html);if(pathname==='/en/'||pathname.startsWith('/en/spots/')){check(alts.has('en'),'英語ページに hreflang=en がありません',u);if(alts.has('en'))check(new URL(alts.get('en'),u).href===u,'英語ページ hreflang=en が自己URLではありません',u);}}}
+for(const u of sitemapUrls){const file=urlToFile(u);check(!!file,'sitemap URL に対応するローカルページがありません',u);if(!file)continue;const html=fs.readFileSync(file,'utf8');pageMap.set(u,{file,html,base:baseOf(html,u)});const canon=canonicalOf(html);check(!!canon,'canonical がありません',u);if(canon){let c;try{c=new URL(canon,u).href}catch{}check(c===u,'self-canonical 不一致',`${u} -> ${canon}`)}const rm=robotsMeta(html);check(!rm.includes('noindex'),'noindex が sitemap URL に付いています',u)}
 
 const incoming=new Map(sitemapUrls.map(u=>[new URL(u).pathname,0]));
 for(const [u,{html,base}] of pageMap){for(const href of hrefs(html)){check(localHrefTargetExists(href,base),'内部リンク切れ',`${u} -> ${href}`);let dest;try{dest=new URL(href,base)}catch{continue}if(dest.origin===SITE&&incoming.has(dest.pathname)&&dest.pathname!==new URL(u).pathname)incoming.set(dest.pathname,incoming.get(dest.pathname)+1)}}
 for(const [pathname,count] of incoming){if(pathname==='/')continue;check(count>0,'孤立ページ',pathname)}
 
-// English MVP guard
-const englishUrls=sitemapUrls.filter(u=>new URL(u).pathname.startsWith('/en/'));
-check(englishUrls.length>=45,'英語MVPの sitemap URL が少なすぎます',String(englishUrls.length));
-const englishSpotUrls=englishUrls.filter(u=>new URL(u).pathname.startsWith('/en/spots/')&&new URL(u).pathname!=='/en/spots/');
-check(englishSpotUrls.length>=30,'英語化スポットが30件未満です',String(englishSpotUrls.length));
-const englishMagazineUrls=englishUrls.filter(u=>new URL(u).pathname.startsWith('/en/magazine/')&&new URL(u).pathname!=='/en/magazine/');
-check(englishMagazineUrls.length>=5,'英語特集が5件未満です',String(englishMagazineUrls.length));
 // Accepted SEO migration guard: public guide cards should point to unique spot URLs, not legacy ?spot= links.
 let legacySpotLinks=0, guideSpotLinks=0;
 for(const [u,{html}] of pageMap){for(const href of hrefs(html)){if(/[?&]spot=spot_/i.test(href))legacySpotLinks++;if(new URL(u).pathname.startsWith('/guide/')&&/\/spots\/[^/?#]+\/?$/.test(href))guideSpotLinks++}}

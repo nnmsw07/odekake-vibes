@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_14_0_family_en_parity",
-    "version": "0.20.14.0",
+    "dataset_name": "kibun_kanto_izu_seed_v20_15_0_performances",
+    "version": "0.20.15.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -35,7 +35,8 @@
       "layer_pet_profile": "犬連れ可否・利用条件・公式確認日をpet_profileに保持。dog同行者推薦ではpet_profile.status=trueを必須にする。",
       "layer_family_profile": "赤ちゃん・子連れ外食/滞在の設備属性。floor_seating / shoes_off / crawl_ok / baby_space / kids_space / nursing_room / diaper_changing / baby_meal / baby_chair / childcare 等は true / false / null で保持し、未確認をfalse扱いしない。",
       "layer_i18n": "多言語表示用。i18n.en に name / public_copy / city / visitor labels を保持。日本語の事実データを正とし、英語ページは /en/ 配下に静的生成。",
-      "layer_availability_constraints": "長期休館・季節営業など推薦可否に関わる期間制約。unavailable_ranges を推薦・プラン生成で参照する。"
+      "layer_availability_constraints": "長期休館・季節営業など推薦可否に関わる期間制約。unavailable_ranges を推薦・プラン生成で参照する。",
+      "layer_performances": "劇場・ホールに紐づく期間限定公演。performances.jsonを正とし、終了日を過ぎた公演はUIから自動非表示。販売状況・開演時刻は公式を優先。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -43,7 +44,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-10",
+    "updated_at": "2026-09-11",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -144,7 +145,8 @@
     },
     "monetization_note": "2026-09-04: v20.11.0追加12件もAffiliate Audit対象化。確認できた施設別OZmall/アソビュー導線を設定し、未確認分はrecheck_neededとして残す。",
     "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。",
-    "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login."
+    "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login.",
+    "performance_note": "v20.15.0: 劇場・ホール11件を追加し、既存4劇場と合わせて「venue + performance」体験を導入。バレエ、オペラ、演劇、ミュージカル、歌舞伎、能狂言、クラシック、ダンス、ライブ、家族向けを横断。"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -36601,6 +36603,16 @@
             "japanese_required": null
           }
         }
+      },
+      "performance_profile": {
+        "genres": [
+          "kabuki",
+          "traditional"
+        ],
+        "schedule_source_url": "https://www.kabuki-bito.jp/theaters/kabukiza/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "月ごとの歌舞伎座公演を公式情報から更新。"
       }
     },
     {
@@ -36767,6 +36779,49 @@
         "same_day_fit": 15,
         "reservation_expected": true,
         "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "musical",
+          "family"
+        ],
+        "schedule_source_url": "https://www.shiki.jp/theatres/4023/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "劇団四季公式の東京公演スケジュールを更新。"
+      },
+      "i18n": {
+        "en": {
+          "name": "JR-East Shiki Theatre HARU",
+          "public_copy": "A dedicated Shiki Theatre Company venue in Takeshiba for large-scale musicals, with documented family viewing support at the theatre.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Takeshiba",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": false,
+        "crawl_ok": false,
+        "baby_space": false,
+        "kids_space": false,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": false,
+        "baby_chair": false,
+        "childcare": true,
+        "note": "劇団四季公式で親子観劇室、子ども用シートクッション、ベビーカー・大きな荷物の預かり、提携託児サービスを案内。対象年齢・利用条件は公演ごとに確認。",
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.shiki.jp/theatres/4023/"
       }
     },
     {
@@ -36930,6 +36985,35 @@
         "same_day_fit": 18,
         "reservation_expected": true,
         "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "theater",
+          "musical",
+          "kabuki"
+        ],
+        "schedule_source_url": "https://www.shochiku.co.jp/play/theater/enbujyo/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "新橋演舞場の公演スケジュールを公式情報から更新。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Shinbashi Enbujo Theatre",
+          "public_copy": "A historic theatre near Ginza presenting plays, musicals and Japanese stage productions throughout the year.",
+          "city": "Chuo",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Higashi-ginza",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -37097,6 +37181,35 @@
         "same_day_fit": 20,
         "reservation_expected": true,
         "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "theater",
+          "dance",
+          "musical"
+        ],
+        "schedule_source_url": "https://www.kaat.jp/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "KAAT主催・主要公演を公式ラインナップから更新。"
+      },
+      "i18n": {
+        "en": {
+          "name": "KAAT Kanagawa Arts Theatre",
+          "public_copy": "A performing-arts centre in Yokohama’s Yamashita area with theatre, dance and multidisciplinary productions.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Nihon-odori",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     },
     {
@@ -73367,6 +73480,2155 @@
             "reservation": "recommended",
             "cashless": null,
             "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_479",
+      "slug": "new-national-theatre-tokyo",
+      "name": "新国立劇場",
+      "aliases": [
+        "New National Theatre Tokyo",
+        "NNTT"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区本町1-1-1",
+      "official_url": "https://www.nntt.jac.go.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "初台にあるオペラ・バレエ＆ダンス・演劇の国立劇場。作品を先に選んで、舞台を一日の主役にできる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.nntt.jac.go.jp/performance/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "初台にあるオペラ・バレエ＆ダンス・演劇の国立劇場。作品を先に選んで、舞台を一日の主役にできる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.nntt.jac.go.jp/performance/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "新国立劇場で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "新国立劇場",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "初台",
+        "バレエ",
+        "オペラ",
+        "演劇",
+        "ダンス",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "今日は、幕が上がる場所へ。",
+        "lead": "オペラもバレエも演劇も。その日に出会いたい作品から、初台へ出かける理由を選んで。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "バレエ",
+          "オペラ",
+          "演劇",
+          "ダンス"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "opera",
+          "ballet",
+          "dance",
+          "theater"
+        ],
+        "schedule_source_url": "https://www.nntt.jac.go.jp/performance/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "New National Theatre Tokyo",
+          "public_copy": "Japan’s national venue for opera, ballet, dance and theatre in Hatsudai. Choose the performance first and build the rest of the day around it.",
+          "city": "Shibuya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Hatsudai",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_480",
+      "slug": "tokyo-metropolitan-theatre",
+      "name": "東京芸術劇場",
+      "aliases": [
+        "Tokyo Metropolitan Theatre",
+        "Geigeki"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "豊島区",
+      "address": "東京都豊島区西池袋1-8-1",
+      "official_url": "https://www.geigeki.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "池袋の舞台芸術拠点。演劇・ダンスからクラシック、パイプオルガンまで、その日の気分でジャンルをまたげる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.geigeki.jp/performance/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "池袋の舞台芸術拠点。演劇・ダンスからクラシック、パイプオルガンまで、その日の気分でジャンルをまたげる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.geigeki.jp/performance/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東京芸術劇場で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "豊島区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京芸術劇場",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "池袋",
+        "演劇",
+        "ダンス",
+        "クラシック",
+        "オルガン",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "池袋で、知らない舞台に寄り道する。",
+        "lead": "演劇を観る日も、オルガンを聴く日も。駅前で文化を主役にする午後へ。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "演劇",
+          "ダンス",
+          "クラシック"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "theater",
+          "dance",
+          "classical"
+        ],
+        "schedule_source_url": "https://www.geigeki.jp/performance/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Tokyo Metropolitan Theatre",
+          "public_copy": "A major performing-arts venue in Ikebukuro spanning theatre, dance, classical music and its landmark pipe organ.",
+          "city": "Toshima",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Ikebukuro",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_481",
+      "slug": "tokyu-theatre-orb",
+      "name": "東急シアターオーブ",
+      "aliases": [
+        "TOKYU THEATRE Orb"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区渋谷2-21-1 渋谷ヒカリエ11階",
+      "official_url": "https://theatre-orb.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 4,
+        "extraordinary": 96,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "渋谷ヒカリエにあるミュージカル・舞台の劇場。大作ミュージカルを目的に、街の夜までつなげやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://theatre-orb.com/lineup/calendar/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "渋谷ヒカリエにあるミュージカル・舞台の劇場。大作ミュージカルを目的に、街の夜までつなげやすい。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://theatre-orb.com/lineup/calendar/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東急シアターオーブで舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東急シアターオーブ",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "渋谷",
+        "ミュージカル",
+        "舞台",
+        "夜",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "渋谷の夜を、ミュージカルから始める。",
+        "lead": "開演前の街歩きも、終演後の余韻も。渋谷で舞台を一日の中心に。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "ミュージカル",
+          "デート",
+          "夜のおでかけ"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "musical",
+          "theater"
+        ],
+        "schedule_source_url": "https://theatre-orb.com/lineup/calendar/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "TOKYU THEATRE Orb",
+          "public_copy": "A major musical theatre above Shibuya Hikarie, especially strong for large-scale Japanese and international productions.",
+          "city": "Shibuya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Shibuya",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_482",
+      "slug": "nissay-theatre",
+      "name": "日生劇場",
+      "aliases": [
+        "Nissay Theatre"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区有楽町1-1-1 日本生命日比谷ビル",
+      "official_url": "https://www.nissaytheatre.or.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "日比谷にある劇場。ミュージカル、オペラ、ファミリー向け舞台まで幅広く、公演から休日を選びやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.nissaytheatre.or.jp/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "日比谷にある劇場。ミュージカル、オペラ、ファミリー向け舞台まで幅広く、公演から休日を選びやすい。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.nissaytheatre.or.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "日生劇場で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 62,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "日生劇場",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "日比谷",
+        "ミュージカル",
+        "オペラ",
+        "ファミリー",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "日比谷で、本格舞台を一本。",
+        "lead": "ミュージカルからオペラまで。観たい作品を決めたら、日比谷の街ごと一日に組み込んで。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "ミュージカル",
+          "オペラ",
+          "家族で舞台"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "musical",
+          "opera",
+          "theater",
+          "family"
+        ],
+        "schedule_source_url": "https://www.nissaytheatre.or.jp/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Nissay Theatre",
+          "public_copy": "A Hibiya theatre presenting musicals, opera and family performing arts, with an English information section on its official site.",
+          "city": "Chiyoda",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Hibiya",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_483",
+      "slug": "tokyo-takarazuka-theatre",
+      "name": "東京宝塚劇場",
+      "aliases": [
+        "Tokyo Takarazuka Theater"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "千代田区",
+      "address": "東京都千代田区有楽町1-1-3",
+      "official_url": "https://kageki.hankyu.co.jp/theater/tokyo/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 4,
+        "extraordinary": 100,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "日比谷にある宝塚歌劇の東京拠点。華やかなレビューと芝居を、作品単位で選んで楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://kageki.hankyu.co.jp/schedule/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "日比谷にある宝塚歌劇の東京拠点。華やかなレビューと芝居を、作品単位で選んで楽しめる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://kageki.hankyu.co.jp/schedule/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "東京宝塚劇場で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "千代田区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "東京宝塚劇場",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "日比谷",
+        "宝塚",
+        "レビュー",
+        "ミュージカル",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "華やかな舞台に、午後を預ける。",
+        "lead": "きらびやかなレビューも物語も。日比谷で非日常に切り替わる数時間を。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "宝塚",
+          "レビュー",
+          "ミュージカル"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "musical",
+          "theater"
+        ],
+        "schedule_source_url": "https://kageki.hankyu.co.jp/schedule/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Tokyo Takarazuka Theatre",
+          "public_copy": "The Tokyo home of the Takarazuka Revue in Hibiya, known for lavish musicals and revue productions.",
+          "city": "Chiyoda",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Hibiya",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_484",
+      "slug": "national-noh-theatre",
+      "name": "国立能楽堂",
+      "aliases": [
+        "National Noh Theatre"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "address": "東京都渋谷区千駄ヶ谷4-18-1",
+      "official_url": "https://www.ntj.jac.go.jp/nou/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 92,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 72,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "能・狂言を専門に上演する国立劇場。字幕付き公演や外国人向け鑑賞教室もあり、日本の舞台芸術に触れる入口になる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.ntj.jac.go.jp/nou/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "能・狂言を専門に上演する国立劇場。字幕付き公演や外国人向け鑑賞教室もあり、日本の舞台芸術に触れる入口になる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.ntj.jac.go.jp/nou/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "国立能楽堂で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "渋谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "国立能楽堂",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "千駄ヶ谷",
+        "能",
+        "狂言",
+        "日本文化",
+        "字幕",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "静けさの中で、日本の舞台に会う。",
+        "lead": "能と狂言の時間へ。言葉が気になる日は字幕付き公演や鑑賞教室から選んで。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "能・狂言",
+          "日本文化",
+          "訪日ゲスト"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "noh_kyogen",
+          "traditional"
+        ],
+        "schedule_source_url": "https://www.ntj.jac.go.jp/nou/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "National Noh Theatre",
+          "public_copy": "A national theatre dedicated to noh and kyogen in Sendagaya, including selected performances with Japanese and English subtitles.",
+          "city": "Shibuya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Sendagaya",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_485",
+      "slug": "yokohama-minato-mirai-hall",
+      "name": "横浜みなとみらいホール",
+      "aliases": [
+        "Yokohama Minato Mirai Hall"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区みなとみらい2-3-6",
+      "official_url": "https://yokohama-minatomiraihall.jp/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 78,
+        "stroll": 48,
+        "relax": 78,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 72
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "みなとみらいのクラシック音楽ホール。オルガン、室内楽、ピアノから親子向けコンサートまで、街歩きと音楽をつなげられる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://yokohama-minatomiraihall.jp/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "みなとみらいのクラシック音楽ホール。オルガン、室内楽、ピアノから親子向けコンサートまで、街歩きと音楽をつなげられる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://yokohama-minatomiraihall.jp/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜みなとみらいホールで舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 72,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜みなとみらいホール",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "みなとみらい",
+        "クラシック",
+        "オルガン",
+        "親子",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "海辺の街で、音を聴く午後。",
+        "lead": "みなとみらいを歩いたあと、ホールの響きへ。短いオルガン公演から家族向けまで選べる。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "クラシック",
+          "オルガン",
+          "親子コンサート"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "classical",
+          "family"
+        ],
+        "schedule_source_url": "https://yokohama-minatomiraihall.jp/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokohama Minato Mirai Hall",
+          "public_copy": "A classical concert hall in Minato Mirai with organ, chamber music, piano and selected family-friendly programs.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Minatomirai",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_486",
+      "slug": "kanagawa-prefectural-music-hall",
+      "name": "神奈川県立音楽堂",
+      "aliases": [
+        "Kanagawa Prefectural Music Hall"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区紅葉ケ丘9-2",
+      "official_url": "https://www.kanagawa-ongakudo.com/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 88,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 82,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "紅葉ケ丘の「木のホール」でクラシックを聴く場所。室内楽・古楽・ピアノから子ども向け公演までラインナップが広い。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.kanagawa-ongakudo.com/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "紅葉ケ丘の「木のホール」でクラシックを聴く場所。室内楽・古楽・ピアノから子ども向け公演までラインナップが広い。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.kanagawa-ongakudo.com/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "神奈川県立音楽堂で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 68,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "神奈川県立音楽堂",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "紅葉ケ丘",
+        "クラシック",
+        "木のホール",
+        "親子",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "木のホールで、音だけに浸る。",
+        "lead": "街の賑わいから少し離れて、響きのいいホールへ。クラシックを目的にした静かな休日を。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "クラシック",
+          "古楽",
+          "親子コンサート"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "classical",
+          "family"
+        ],
+        "schedule_source_url": "https://www.kanagawa-ongakudo.com/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Kanagawa Prefectural Music Hall",
+          "public_copy": "A historic wooden concert hall in Yokohama known for classical music, chamber music and selected programs for children.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Sakuragicho",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_487",
+      "slug": "yokohama-noh-theatre",
+      "name": "横浜能楽堂",
+      "aliases": [
+        "Yokohama Noh Theatre"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区紅葉ケ丘27-2",
+      "official_url": "https://yokohama-nohgakudou.org/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 91,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 75,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "紅葉ケ丘で能・狂言を楽しめる専門劇場。改修を終えて2026年に再開し、解説付きの狂言公演など初めてでも選びやすい公演がある。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://yokohama-nohgakudou.org/schedule/"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "紅葉ケ丘で能・狂言を楽しめる専門劇場。改修を終えて2026年に再開し、解説付きの狂言公演など初めてでも選びやすい公演がある。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://yokohama-nohgakudou.org/schedule/"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "横浜能楽堂で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 40,
+        "partner": 90,
+        "solo": 93,
+        "friends": 84,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "横浜能楽堂",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "能",
+        "狂言",
+        "日本文化",
+        "伝統芸能",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "横浜で、能と狂言に会いに行く。",
+        "lead": "難しそう、の一歩手前から。解説付き公演を選んで、日本の舞台芸術に入ってみる。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "能・狂言",
+          "日本文化",
+          "初めての伝統芸能"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "noh_kyogen",
+          "traditional"
+        ],
+        "schedule_source_url": "https://yokohama-nohgakudou.org/schedule/",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Yokohama Noh Theatre",
+          "public_copy": "A specialist noh and kyogen theatre in Yokohama’s Momijigaoka area, reopened after renovation in 2026.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Sakuragicho",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_488",
+      "slug": "billboard-live-yokohama",
+      "name": "Billboard Live YOKOHAMA",
+      "aliases": [
+        "Billboard Live Yokohama"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市中区",
+      "address": "神奈川県横浜市中区北仲通5-57-2 KITANAKA BRICK&WHITE 1F",
+      "official_url": "https://www.billboard-live.com/yokohama",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 4,
+        "extraordinary": 94,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 78,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "横浜・北仲のライブレストラン。ジャズ、ポップス、ソウルなどの公演を食事やドリンクと一緒に楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.billboard-live.com/yokohama/schedules"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "横浜・北仲のライブレストラン。ジャズ、ポップス、ソウルなどの公演を食事やドリンクと一緒に楽しめる。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.billboard-live.com/yokohama/schedules"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "Billboard Live YOKOHAMAで舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 12,
+        "partner": 96,
+        "solo": 92,
+        "friends": 94,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "横浜市中区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Billboard Live YOKOHAMA",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "北仲",
+        "ライブ",
+        "音楽",
+        "夜",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "夜は、ライブの予定から決める。",
+        "lead": "北仲で食事と音楽を一緒に。出演者から選んで、大人の夜をそのまま一つの予定に。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "ライブ",
+          "音楽",
+          "大人の夜"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "live",
+          "jazz"
+        ],
+        "schedule_source_url": "https://www.billboard-live.com/yokohama/schedules",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Billboard Live YOKOHAMA",
+          "public_copy": "A live-music club in Yokohama’s Kitanaka area where concerts are paired with food and drinks.",
+          "city": "Yokohama · Naka Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Bashamichi",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_489",
+      "slug": "ariake-shiki-theatre",
+      "name": "有明四季劇場",
+      "aliases": [
+        "Ariake Shiki Theatre"
+      ],
+      "category_primary": "performing_arts",
+      "categories": [
+        "culture",
+        "theater",
+        "performing_arts"
+      ],
+      "prefecture": "東京都",
+      "city": "江東区",
+      "address": "東京都江東区有明2-1-29",
+      "official_url": "https://www.shiki.jp/theatres/4026/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 99,
+        "outdoor": 1,
+        "physical_activity": 5,
+        "hands_on": 6,
+        "quietness": 50,
+        "parent_rest": 76,
+        "greenery": 3,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 10,
+        "creative_sensory": 95,
+        "baby_fit": 12,
+        "toddler_fit": 22,
+        "stroller_fit": 65,
+        "rain_resilience": 99,
+        "heat_resilience": 99,
+        "walking_load": 20,
+        "planning_friction": 86
+      },
+      "vibes_seed": {
+        "cool": 90,
+        "nature": 4,
+        "extraordinary": 98,
+        "scenic": 45,
+        "stroll": 48,
+        "relax": 55,
+        "shopping": 12,
+        "food": 25,
+        "culture": 100,
+        "animals": 0,
+        "creative": 92,
+        "active": 8,
+        "waterside": 5
+      },
+      "editorial_reason": "公演ラインナップを「場所」ではなく、その日に観られる体験としてKibunから発見できるようにする劇場・ホール拡張。",
+      "public_copy": "有明にある劇団四季の専用劇場。ロングラン作品を目的に、家族やパートナーとの一日を組みやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "開館・開演時刻は公演ごとに変動。公式公演情報を確認。",
+        "price_summary": "公演・席種により変動。公式チケット情報を確認。",
+        "reservation_summary": "日時指定チケットの事前購入推奨。空席・当日券は公演ごとに確認。",
+        "age_note": "未就学児の入場条件や推奨年齢は演目ごとに異なるため、各公演の案内を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-11",
+        "source_url": "https://www.shiki.jp/stage_schedule/?aj=0&ggc=4026&rid=0057"
+      },
+      "buzz": {
+        "score": 86,
+        "freshness": 94,
+        "social_presence": 72,
+        "visual_appeal": 88,
+        "media_attention": 82,
+        "popularity_momentum": 82,
+        "reason": "有明にある劇団四季の専用劇場。ロングラン作品を目的に、家族やパートナーとの一日を組みやすい。",
+        "checked_at": "2026-09-11",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-11",
+            "url": "https://www.shiki.jp/stage_schedule/?aj=0&ggc=4026&rid=0057"
+          }
+        ]
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "有明四季劇場で舞台を楽しむ時間をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 78,
+        "partner": 92,
+        "solo": 82,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 99,
+      "routing": {
+        "municipality": "江東区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "有明四季劇場",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "有明",
+        "劇団四季",
+        "ミュージカル",
+        "家族",
+        "観劇",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式チケット"
+        ],
+        "product_match_required": true,
+        "note": "公演ごとの公式チケット導線を優先。"
+      },
+      "editorial": {
+        "title": "物語の世界へ、家族で出かける。",
+        "lead": "舞台そのものを目的地に。ロングラン作品なら、行ける日から予定を組み立てやすい。",
+        "moment": "舞台や音楽を一日の主役にしたい日",
+        "collection": "観る休日",
+        "best_for": [
+          "ミュージカル",
+          "家族観劇",
+          "デート"
+        ],
+        "priority": 40,
+        "experience_feature": true
+      },
+      "recommendation_mode": "browse_only",
+      "planning_profile": {
+        "style": "plan_ahead",
+        "same_day_fit": 18,
+        "reservation_expected": true,
+        "schedule_required": true
+      },
+      "performance_profile": {
+        "genres": [
+          "musical",
+          "family"
+        ],
+        "schedule_source_url": "https://www.shiki.jp/stage_schedule/?aj=0&ggc=4026&rid=0057",
+        "checked_at": "2026-09-11",
+        "sync_mode": "manual_verified",
+        "note": "Kibunの公演一覧は公式情報を定期確認して更新。販売状況・開演時刻・休演日は公式を優先。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Ariake Shiki Theatre",
+          "public_copy": "A dedicated Shiki Theatre Company venue in Ariake, home to long-running large-scale musicals.",
+          "city": "Koto",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": "Ariake Garden",
             "tattoo_policy": null,
             "halal": null,
             "vegan": null,

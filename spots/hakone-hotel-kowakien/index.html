@@ -12,6 +12,9 @@
   <meta name="application-name" content="Kibun Trip" />
   <meta name="apple-mobile-web-app-title" content="Kibun Trip" />
   <link rel="canonical" href="https://kibuntrip.com/spots/hakone-hotel-kowakien/" />
+  <link rel="alternate" hreflang="ja" href="https://kibuntrip.com/" />
+  <link rel="alternate" hreflang="en" href="https://kibuntrip.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://kibuntrip.com/" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Kibun Trip" />
@@ -53,9 +56,7 @@
 .magazine-preview-media img[data-hero-clean="1"]{opacity:0;transition:opacity .18s ease}
 .magazine-preview-media img[data-hero-clean="1"][data-hero-state="ready"],
 .magazine-preview-media img[data-hero-clean="1"][data-hero-state="fallback"]{opacity:1}
-</style>  <link rel="alternate" hreflang="ja" href="https://kibuntrip.com/spots/hakone-hotel-kowakien/" />
-  <link rel="alternate" hreflang="x-default" href="https://kibuntrip.com/spots/hakone-hotel-kowakien/" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+</style>  <meta name="robots" content="index,follow,max-image-preview:large" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Place","name":"箱根ホテル小涌園","url":"https://kibuntrip.com/spots/hakone-hotel-kowakien/","description":"神奈川県足柄下郡箱根町の箱根ホテル小涌園。ユネッサンと一緒に楽しみやすく、赤ちゃん連れにも配慮された箱根のファミリーリゾート。 Kibun Tripで、今日の気分に合う過ごし方を見つけられます。","address":{"@type":"PostalAddress","streetAddress":"神奈川県足柄下郡箱根町二ノ平1297","addressRegion":"神奈川県","addressLocality":"足柄下郡箱根町","addressCountry":"JP"},"image":["https://kibuntrip.com/images/ai/culture-interior.jpg"],"sameAs":["https://www.hakone-hotelkowakien.jp/"]}</script>
   <script id="kibun-seo-boot">(function(){var clean=location.pathname;var target='?spot=spot_217&source=seo';if(!location.search.includes('spot=')){history.replaceState(history.state,'',clean+target);}addEventListener('load',function(){setTimeout(function(){history.replaceState(history.state,'',clean)},900)},{once:true});})();</script>
 </head>
@@ -125,7 +126,7 @@
       </details>
 
       <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の過ごし方を見る <span>→</span></button>
-      <p class="microcopy">関東＋伊豆478スポット。子どもと、パートナーと、ひとりでも。</p>
+      <p class="microcopy">関東＋伊豆489スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
@@ -140,6 +141,13 @@
     </section>
 
 
+
+
+    <section class="performance-preview shell" id="performancePreview">
+      <div class="section-heading compact"><div><p class="eyebrow">WHAT’S ON</p><h2>幕が上がる日を選ぶ。</h2></div><p class="editorial-section-lead">場所からではなく、公演から休日を決める。東京・横浜の舞台と音楽を横断して。</p></div>
+      <div id="performancePreviewGrid" class="performance-preview-grid"></div>
+      <div class="performance-preview-more"><a href="performances/">近日の公演・ライブをすべて見る →</a></div>
+    </section>
 
     <section class="magazine-preview shell" id="magazinePreview">
       <div class="section-heading compact"><div><p class="eyebrow">KIBUN MAGAZINE</p><h2>休日のヒントを読む。</h2></div><p class="editorial-section-lead">検索する前に、こんな一日もいいかも。場所のまとめではなく、過ごし方から読める小さな特集です。</p></div>
@@ -177,7 +185,7 @@
     <div class="browse-inner">
       <p class="eyebrow">BROWSE KIBUN</p>
       <h2>場所から、<br>ふらっと探す。</h2>
-      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、478スポットから探せます。</p>
+      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、489スポットから探せます。</p>
       <section class="browse-filter-section" aria-labelledby="browseRegionLabel">
         <div class="browse-filter-head"><strong id="browseRegionLabel">① どの地域？</strong><small>候補から1つ選ぶ</small></div>
         <div id="browseRegionFilters" class="browse-filters"></div>
@@ -199,14 +207,14 @@
     <button type="button" id="bottomBrowseBtn" data-bottom-nav="spots"><img src="assets/nav/spot.svg" alt=""><strong>スポット</strong></button>
     <a href="#mood" class="active" data-bottom-nav="mood"><img src="assets/nav/mood.svg" alt=""><strong>今日の気分</strong></a>
   </nav>
-  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="spots/">スポット一覧</a><a href="guide/">地域・テーマ別ガイド</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
+  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="spots/">スポット一覧</a><a href="guide/">地域・テーマ別ガイド</a><a href="performances/">公演・ライブ</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=2090"></script><script src="data.js?v=201400"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=20110"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=201240"></script>
+  <script src="config.js?v=2090"></script><script src="data.js?v=201500"></script><script src="performances.js?v=201500"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=20110"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=201240"></script>
   <script src="affiliate.js?v=2061"></script>
   <script type="text/javascript" language="javascript">
     var vc_pid = "892690966";
   </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-  <script src="preview-hero-clean.js?v=201260"></script><script src="app.js?v=201400"></script>
+  <script src="preview-hero-clean.js?v=201260"></script><script src="app.js?v=201500"></script>
 
 <section class="seo-spot-snapshot" aria-label="箱根ホテル小涌園の概要"><div class="seo-spot-snapshot-inner"><p class="seo-spot-eyebrow">KIBUN SPOT</p><h1>箱根ホテル小涌園</h1><p class="seo-spot-place">神奈川県 足柄下郡箱根町 神奈川県足柄下郡箱根町二ノ平1297</p><p>ユネッサンと一緒に楽しみやすく、赤ちゃん連れにも配慮された箱根のファミリーリゾート。</p><p class="seo-spot-tags"><span>泊まり</span><span>非日常</span><span>大人も楽しい</span><span>子どもと</span><span>赤ちゃん向け</span><span>泊まりもあり</span><span>stay</span><span>hotel</span></p></div></section>
 <style>.seo-spot-snapshot{max-width:1180px;margin:32px auto 100px;padding:0 20px}.seo-spot-snapshot-inner{max-width:760px;padding:28px;border:1px solid rgba(31,31,31,.12);border-radius:24px;background:#fff}.seo-spot-eyebrow{font-size:11px;letter-spacing:.18em}.seo-spot-snapshot h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0}.seo-spot-place{opacity:.68}.seo-spot-tags{display:flex;gap:8px;flex-wrap:wrap}.seo-spot-tags span{padding:6px 10px;border:1px solid rgba(31,31,31,.12);border-radius:999px;font-size:12px}</style>
