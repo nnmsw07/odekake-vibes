@@ -29,7 +29,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=2110&amp;h=211118" />
+  <link rel="stylesheet" href="styles.css?v=201400" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -49,15 +49,21 @@
     "inLanguage": "ja-JP"
   }
   </script>
+<style id="magazine-preview-hero-clean">
+.magazine-preview-media img[data-hero-clean="1"]{opacity:0;transition:opacity .18s ease}
+.magazine-preview-media img[data-hero-clean="1"][data-hero-state="ready"],
+.magazine-preview-media img[data-hero-clean="1"][data-hero-state="fallback"]{opacity:1}
+</style>  <link rel="alternate" hreflang="ja" href="https://kibuntrip.com/spots/mahono-bungakukan/" />
+  <link rel="alternate" hreflang="x-default" href="https://kibuntrip.com/spots/mahono-bungakukan/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Place","name":"魔法の文学館","url":"https://kibuntrip.com/spots/mahono-bungakukan/","description":"東京都江戸川区の魔法の文学館。角野栄子さんの作品世界にふれられる児童文学館。映像や空間演出、本に囲まれたライブラリーで物語の世界に入り込める。 Kibun Tripで、今日の気分に合う過ごし方を見つけられます。","address":{"@type":"PostalAddress","streetAddress":"東京都江戸川区南葛西7-3-1 なぎさ公園内","addressRegion":"東京都","addressLocality":"江戸川区","addressCountry":"JP"},"image":["https://kibuntrip.com/images/ai/culture-interior.jpg"],"sameAs":["https://kikismuseum.jp/"]}</script>
   <script id="kibun-seo-boot">(function(){var clean=location.pathname;var target='?spot=spot_168&source=seo';if(!location.search.includes('spot=')){history.replaceState(history.state,'',clean+target);}addEventListener('load',function(){setTimeout(function(){history.replaceState(history.state,'',clean)},900)},{once:true});})();</script>
 </head>
 <body>
   <header class="topbar">
-    <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun <span class="brand-menu-mark">⌄</span></button>
+    <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun Trip <span class="brand-menu-mark">⌄</span></button>
     <span class="topbar-tag">MOOD → DAY</span>
-    <button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button>
+    <div class="topbar-actions"><a class="lang-switch" href="/en/" lang="en" hreflang="en">EN</a><button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button></div>
   </header>
 
   <main id="top">
@@ -66,22 +72,27 @@
       <h1>今日は、<br><em>どんな気分？</em></h1>
       <p class="hero-copy">行きたい場所を検索する前に、過ごしたい一日を選ぶ。<br>誰と行くか、今いる場所も少しだけ教えてください。</p>
 
-      <div class="audience-block">
-        <div class="mini-heading"><span>01</span><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
+      <div class="mood-progress" aria-label="今日の気分から探す 3ステップ">
+        <div class="mood-progress-steps" aria-hidden="true"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
+        <p>今日はどんな一日にしたいか選びましょう</p>
+      </div>
+
+      <div class="audience-block setup-panel">
+        <div class="mini-heading audience-heading"><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
         <div id="audiencePicker" class="audience-picker" role="group" aria-label="同行者を選ぶ"></div>
       </div>
 
-      <div class="vibe-block">
-        <div class="mini-heading"><span>02</span><strong>今日を組み立てる</strong><small>最大3つ</small></div>
-        <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら選びます。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
+      <div class="vibe-block setup-panel">
+        <p id="audienceLead" class="audience-lead">年齢や移動の負担も見ながら、一日の組み立てまで提案します。</p><div id="vibeGrid" class="vibe-groups" aria-label="気分・やりたいことを選ぶ"></div>
         <div class="selection-row">
           <span id="selectedHint">気分や、やりたいことを1つ選んでください</span>
           <button id="clearVibes" class="text-btn" type="button" hidden>クリア</button>
         </div>
+        <div id="selectedVibeTags" class="selected-vibe-tags" aria-live="polite"></div>
       </div>
 
-      <details class="conditions" open>
-        <summary><strong>03　条件を少しだけ</strong><span>現在地・時間・天気で調整</span></summary>
+      <details class="conditions">
+        <summary><strong>STEP 3　条件を少しだけ</strong><span>現在地・時間・天気で調整（任意）</span></summary>
         <div class="condition-grid">
           <div class="field-card travel-card" id="originCard">
             <span class="field-label"><span class="field-mark">FROM</span>どこから出かける？</span>
@@ -114,7 +125,7 @@
       </details>
 
       <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の過ごし方を見る <span>→</span></button>
-      <p class="microcopy">関東＋伊豆458スポット。子どもと、パートナーと、ひとりでも。</p>
+      <p class="microcopy">関東＋伊豆478スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
     <section id="resultsSection" class="results-section shell" hidden>
@@ -133,14 +144,17 @@
     <section class="magazine-preview shell" id="magazinePreview">
       <div class="section-heading compact"><div><p class="eyebrow">KIBUN MAGAZINE</p><h2>休日のヒントを読む。</h2></div><p class="editorial-section-lead">検索する前に、こんな一日もいいかも。場所のまとめではなく、過ごし方から読める小さな特集です。</p></div>
       <div class="magazine-preview-grid">
-        <a class="magazine-preview-card warm" href="magazine/terrace-after-sunset/"><div class="magazine-preview-media image-shell" data-media-spot="spot_449"><img src="assets/editorial/special.webp" alt="まだ帰りたくない日の、外ごはん。東京・横浜のテラス6選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>DINNER OUTSIDE · TOKYO / YOKOHAMA</small><strong>まだ帰りたくない日の、外ごはん。東京・横浜のテラス6選</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card warm" href="magazine/night-starts-after-five/"><div class="magazine-preview-media image-shell" data-media-spot="spot_450"><img src="assets/editorial/special.webp" alt="日が落ちてから、出かける。17時から始める東京・横浜の夜6選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>AFTER FIVE · TOKYO / YOKOHAMA</small><strong>日が落ちてから、出かける。17時から始める東京・横浜の夜6選</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card warm" href="magazine/hotel-without-staying/"><div class="magazine-preview-media image-shell" data-media-spot="spot_452"><img src="assets/editorial/special.webp" alt="泊まらないホテルステイ。午後だけ非日常に逃げる6つの使い方" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>HOTEL FOR AN AFTERNOON</small><strong>泊まらないホテルステイ。午後だけ非日常に逃げる6つの使い方</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card warm" href="magazine/parents-eat-well/"><div class="magazine-preview-media image-shell" data-media-spot="spot_454"><img src="assets/editorial/special.webp" alt="子どもは遊ぶ。大人はちゃんと食べる。親子の外食6選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>FAMILY TABLE · YOKOHAMA</small><strong>子どもは遊ぶ。大人はちゃんと食べる。親子の外食6選</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card warm" href="magazine/seasonal-harvest/"><div class="magazine-preview-media image-shell" data-media-spot="spot_458"><img src="assets/editorial/special.webp" alt="手ぶらで、季節を取りに行く。関東近郊の収穫体験5選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>HARVEST · KANTO</small><strong>手ぶらで、季節を取りに行く。関東近郊の収穫体験5選</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card green" href="magazine/outdoor-stay-with-comfort/"><div class="magazine-preview-media image-shell" data-media-spot="spot_432"><img src="assets/editorial/scenic.webp" alt="外で眠る。でも、頑張りすぎない。" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>STAY OUTSIDE · KANTO</small><strong>外で眠る。でも、頑張りすぎない。</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card blue" href="magazine/tools-with-a-story/"><div class="magazine-preview-media image-shell" data-media-spot="spot_436"><img src="assets/editorial/culture.webp" alt="買う前に、つくり方を見に行く。" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>TOOLS · CRAFT</small><strong>買う前に、つくり方を見に行く。</strong><span>読む →</span></div></a>
-        <a class="magazine-preview-card sand" href="magazine/takanawa-after-five/"><div class="magazine-preview-media image-shell" data-media-spot="spot_446"><img src="assets/editorial/special.webp" alt="新しい街は、夕方から歩く。" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>CITY AFTER FIVE · TAKANAWA</small><strong>新しい街は、夕方から歩く。</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/terrace-after-sunset/"><div class="magazine-preview-media image-shell"><img src="assets/editorial/terrace-after-sunset.webp" alt="まだ帰りたくない日の、外ごはん。東京・横浜のテラス6選" loading="eager" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>DINNER OUTSIDE · TOKYO / YOKOHAMA</small><strong>まだ帰りたくない日の、外ごはん。東京・横浜のテラス6選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card green" href="magazine/baby-first-outing/"><div class="magazine-preview-media image-shell" data-media-spot="spot_109"><img data-hero-clean="1" src="assets/editorial/baby-first-outing.webp" alt="1歳と、今日はどこまで行ける？ 歩きはじめの親子にうれしい8スポット" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>WITH A ONE-YEAR-OLD · KANTO</small><strong>1歳と、今日はどこまで行ける？ 歩きはじめの親子にうれしい8スポット</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card blue" href="magazine/yokohama-rainy-day/"><div class="magazine-preview-media image-shell" data-media-spot="spot_101"><img data-hero-clean="1" src="assets/editorial/culture.webp" alt="雨の横浜、むしろ出かけたい。室内で過ごす7つの場所" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>RAINY DAY · YOKOHAMA</small><strong>雨の横浜、むしろ出かけたい。室内で過ごす7つの場所</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card sand" href="magazine/waterfront-reset/"><div class="magazine-preview-media image-shell" data-media-spot="spot_103"><img data-hero-clean="1" src="assets/editorial/scenic.webp" alt="海を見たい日は、それだけでいい。横浜・湘南・横須賀の水辺7選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>BY THE WATER · KANAGAWA</small><strong>海を見たい日は、それだけでいい。横浜・湘南・横須賀の水辺7選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/science-for-everyone/"><div class="magazine-preview-media image-shell" data-media-spot="spot_286"><img data-hero-clean="1" src="assets/editorial/culture.webp" alt="「なんで？」を一緒に楽しむ。大人も面白い科学館7選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>SCIENCE · TOKYO / KANAGAWA</small><strong>「なんで？」を一緒に楽しむ。大人も面白い科学館7選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card green" href="magazine/ride-and-transport/"><div class="magazine-preview-media image-shell" data-media-spot="spot_018"><img data-hero-clean="1" src="assets/editorial/culture.webp" alt="乗りものを見に行く休日。電車・飛行機・船の8スポット" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>TRAINS · PLANES · SHIPS</small><strong>乗りものを見に行く休日。電車・飛行機・船の8スポット</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/night-starts-after-five/"><div class="magazine-preview-media image-shell" data-media-spot="spot_450"><img data-hero-clean="1" src="assets/editorial/night-starts-after-five.webp" alt="日が落ちてから、出かける。17時から始める東京・横浜の夜6選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>AFTER FIVE · TOKYO / YOKOHAMA</small><strong>日が落ちてから、出かける。17時から始める東京・横浜の夜6選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/hotel-without-staying/"><div class="magazine-preview-media image-shell" data-media-spot="spot_452"><img data-hero-clean="1" src="assets/editorial/hotel-without-staying.webp" alt="泊まらないホテルステイ。午後だけ非日常に逃げる6つの使い方" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>HOTEL FOR AN AFTERNOON</small><strong>泊まらないホテルステイ。午後だけ非日常に逃げる6つの使い方</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/parents-eat-well/"><div class="magazine-preview-media image-shell" data-media-spot="spot_454"><img data-hero-clean="1" src="assets/editorial/parents-eat-well.webp" alt="子どもは遊ぶ。大人はちゃんと食べる。親子の外食6選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>FAMILY TABLE · YOKOHAMA</small><strong>子どもは遊ぶ。大人はちゃんと食べる。親子の外食6選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card warm" href="magazine/seasonal-harvest/"><div class="magazine-preview-media image-shell" data-media-spot="spot_458"><img data-hero-clean="1" src="assets/editorial/special.webp" alt="手ぶらで、季節を取りに行く。関東近郊の収穫体験5選" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>HARVEST · KANTO</small><strong>手ぶらで、季節を取りに行く。関東近郊の収穫体験5選</strong><span>読む →</span></div></a>
+        <a class="magazine-preview-card green" href="magazine/outdoor-stay-with-comfort/"><div class="magazine-preview-media image-shell" data-media-spot="spot_432"><img data-hero-clean="1" src="assets/editorial/scenic.webp" alt="外で眠る。でも、頑張りすぎない。" loading="lazy" referrerpolicy="no-referrer"></div><div class="magazine-preview-copy"><small>STAY OUTSIDE · KANTO</small><strong>外で眠る。でも、頑張りすぎない。</strong><span>読む →</span></div></a>
       </div>
       <div class="magazine-preview-more"><a href="magazine/">記事をすべて見る →</a></div>
     </section>
@@ -163,7 +177,7 @@
     <div class="browse-inner">
       <p class="eyebrow">BROWSE KIBUN</p>
       <h2>場所から、<br>ふらっと探す。</h2>
-      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、458スポットから探せます。</p>
+      <p class="browse-lead">地域とカテゴリは選ぶだけ。2つを掛け合わせて、478スポットから探せます。</p>
       <section class="browse-filter-section" aria-labelledby="browseRegionLabel">
         <div class="browse-filter-head"><strong id="browseRegionLabel">① どの地域？</strong><small>候補から1つ選ぶ</small></div>
         <div id="browseRegionFilters" class="browse-filters"></div>
@@ -185,14 +199,14 @@
     <button type="button" id="bottomBrowseBtn" data-bottom-nav="spots"><img src="assets/nav/spot.svg" alt=""><strong>スポット</strong></button>
     <a href="#mood" class="active" data-bottom-nav="mood"><img src="assets/nav/mood.svg" alt=""><strong>今日の気分</strong></a>
   </nav>
-  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="guide/">地域・テーマ別ガイド</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
+  <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="spots/">スポット一覧</a><a href="guide/">地域・テーマ別ガイド</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=2090"></script><script src="data.js?v=20110&amp;h=211120"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=20110"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=20110"></script>
+  <script src="config.js?v=2090"></script><script src="data.js?v=201400"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=20110"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=201240"></script>
   <script src="affiliate.js?v=2061"></script>
   <script type="text/javascript" language="javascript">
     var vc_pid = "892690966";
   </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-  <script src="app.js?v=2091&amp;h=211118"></script>
+  <script src="preview-hero-clean.js?v=201260"></script><script src="app.js?v=201400"></script>
 
 <section class="seo-spot-snapshot" aria-label="魔法の文学館の概要"><div class="seo-spot-snapshot-inner"><p class="seo-spot-eyebrow">KIBUN SPOT</p><h1>魔法の文学館</h1><p class="seo-spot-place">東京都 江戸川区 東京都江戸川区南葛西7-3-1 なぎさ公園内</p><p>角野栄子さんの作品世界にふれられる児童文学館。映像や空間演出、本に囲まれたライブラリーで物語の世界に入り込める。</p><p class="seo-spot-tags"><span>雨の日</span><span>暑い日</span><span>学び・文化</span><span>のんびり</span><span>culture</span><span>creative</span><span>indoor</span><span>family</span></p></div></section>
 <style>.seo-spot-snapshot{max-width:1180px;margin:32px auto 100px;padding:0 20px}.seo-spot-snapshot-inner{max-width:760px;padding:28px;border:1px solid rgba(31,31,31,.12);border-radius:24px;background:#fff}.seo-spot-eyebrow{font-size:11px;letter-spacing:.18em}.seo-spot-snapshot h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0}.seo-spot-place{opacity:.68}.seo-spot-tags{display:flex;gap:8px;flex-wrap:wrap}.seo-spot-tags span{padding:6px 10px;border:1px solid rgba(31,31,31,.12);border-radius:999px;font-size:12px}</style>

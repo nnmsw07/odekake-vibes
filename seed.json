@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_13_0_family_i18n",
-    "version": "0.20.13.0",
+    "dataset_name": "kibun_kanto_izu_seed_v20_14_0_family_en_parity",
+    "version": "0.20.14.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -39339,7 +39339,8 @@
         "キッズスペース",
         "授乳室",
         "おむつ替え",
-        "離乳食"
+        "離乳食",
+        "親子ごはん"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -40324,7 +40325,8 @@
         "ベビースペース",
         "授乳室",
         "おむつ替え",
-        "離乳食"
+        "離乳食",
+        "親子ごはん"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -40517,7 +40519,8 @@
         "ねんね・ハイハイOK",
         "ベビースペース",
         "キッズスペース",
-        "離乳食"
+        "離乳食",
+        "親子ごはん"
       ],
       "recommendation_group": "100spoons",
       "plan_profile": {
@@ -72443,6 +72446,933 @@
       },
       "audience_copy": {
         "dog": "わんこと一緒に、飼い主も気分よく過ごせる休日に。利用できるエリアやリード・カート条件を確認して出かけよう。"
+      }
+    },
+    {
+      "spot_id": "spot_474",
+      "slug": "umi-zoi-kikori-shokudo",
+      "name": "海沿いのキコリ食堂",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "神奈川県",
+      "city": "鎌倉市",
+      "address": "神奈川県鎌倉市材木座6-4-7 山ノ上ビル",
+      "official_url": "https://www.dd-holdings.jp/shops/kikorishokudo/kamakura",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 20,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 97,
+        "greenery": 18,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 25,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 10,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 18,
+        "extraordinary": 72,
+        "scenic": 95,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 5,
+        "waterside": 35
+      },
+      "editorial_reason": "赤ちゃん・子どもとの外食で、席や遊び場まで含めて選べる候補を増やすため追加。",
+      "public_copy": "材木座海岸を目の前に、広い畳の小上がりで靴を脱いで休める海辺の食堂。赤ちゃん連れでも、景色とごはんを同じ日に諦めにくい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新の営業時間は公式情報を確認。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "混雑しやすい時間帯は事前確認・予約がおすすめ。",
+        "age_note": "乳幼児連れの席・設備は来店前に最新情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/kikorishokudo/kamakura"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "海沿いのキコリ食堂の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 84,
+        "solo": 65,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "鎌倉市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "海沿いのキコリ食堂",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "小上がり・座敷",
+        "靴を脱ぐ",
+        "親子ごはん",
+        "鎌倉",
+        "海辺",
+        "大人も楽しい"
+      ],
+      "recommendation_group": "kikori-shokudo",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 82,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別の提携商品を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 92,
+        "social_presence": 75,
+        "visual_appeal": 86,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "材木座海岸を目の前に、広い畳の小上がりで靴を脱いで休める海辺の食堂。赤ちゃん連れでも、景色とごはんを同じ日に諦めにくい。",
+        "checked_at": "2026-09-10",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-10",
+            "url": "https://www.dd-holdings.jp/shops/kikorishokudo/kamakura"
+          }
+        ]
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": false,
+        "kids_space": null,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "公式サイトで広い畳の小上がり席を案内。席指定や乳幼児設備は予約時に確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.dd-holdings.jp/shops/kikorishokudo/kamakura"
+      },
+      "i18n": {
+        "en": {
+          "name": "Umi-zoi no Kikori Shokudo",
+          "public_copy": "A seaside restaurant by Zaimokuza Beach with a spacious tatami-style raised seating area where families can take off their shoes and slow down.",
+          "city": "Kamakura",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_475",
+      "slug": "kamakura-kaigan-table",
+      "name": "鎌倉海岸テーブル",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市西区",
+      "address": "神奈川県横浜市西区高島2-18-1 そごう横浜店10F",
+      "official_url": "https://www.sogo-seibu.jp/yokohama/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 20,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 97,
+        "greenery": 18,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 25,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 10,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 18,
+        "extraordinary": 55,
+        "scenic": 45,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 5,
+        "waterside": 35
+      },
+      "editorial_reason": "赤ちゃん・子どもとの外食で、席や遊び場まで含めて選べる候補を増やすため追加。",
+      "public_copy": "横浜駅直結の百貨店内で、子どもが遊べるスペースと食事を一緒にしやすいベビーウェルカムなダイニング。キッズスペース付き個室の利用条件は事前確認を。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新の営業時間は公式情報を確認。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "混雑しやすい時間帯は事前確認・予約がおすすめ。",
+        "age_note": "乳幼児連れの席・設備は来店前に最新情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-10",
+        "source_url": "https://retty.me/area/PRE14/ARE38/SUB58702/100001765796/60538861/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "鎌倉海岸テーブルの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "reported_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 84,
+        "solo": 65,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "横浜市西区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "鎌倉海岸テーブル",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ベビースペース",
+        "キッズスペース",
+        "離乳食",
+        "横浜駅",
+        "親子ごはん"
+      ],
+      "recommendation_group": "kamakura-kaigan-table",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 82,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別の提携商品を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 92,
+        "social_presence": 75,
+        "visual_appeal": 86,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "横浜駅直結の百貨店内で、子どもが遊べるスペースと食事を一緒にしやすいベビーウェルカムなダイニング。キッズスペース付き個室の利用条件は事前確認を。",
+        "checked_at": "2026-09-10",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "recent_user_report",
+            "date": "2026-09-10",
+            "url": "https://retty.me/area/PRE14/ARE38/SUB58702/100001765796/60538861/"
+          }
+        ]
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": false,
+        "crawl_ok": null,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "2026年の利用報告でボーネルンド監修キッズスペース、キッズスペース付き個室、離乳食メニューを確認。最新運用は店舗へ確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://retty.me/area/PRE14/ARE38/SUB58702/100001765796/60538861/"
+      },
+      "i18n": {
+        "en": {
+          "name": "Kamakura Kaigan Table",
+          "public_copy": "A baby-welcoming dining spot inside Sogo Yokohama, reported to have a supervised-style kids area, family rooms and baby-food options.",
+          "city": "Yokohama · Nishi Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_476",
+      "slug": "aloha-food-factory-shin-yokohama",
+      "name": "Aloha Food Factory（アロハフードファクトリー）",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市港北区",
+      "address": "神奈川県横浜市港北区新横浜2-100-45 キュービックプラザ新横浜9F",
+      "official_url": "https://www.cubicplaza.com/shopguide/shop_09_09-005/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 20,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 97,
+        "greenery": 18,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 25,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 10,
+        "planning_friction": 15
+      },
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 18,
+        "extraordinary": 70,
+        "scenic": 40,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 5,
+        "waterside": 35
+      },
+      "editorial_reason": "赤ちゃん・子どもとの外食で、席や遊び場まで含めて選べる候補を増やすため追加。",
+      "public_copy": "新横浜駅直結。ファミリー向けソファ席のそばに、小さい子が遊べるキッズスペースがあるハワイアン。食事と「ちょっと遊ぶ」を移動なしでつなげやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新の営業時間は公式情報を確認。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "混雑しやすい時間帯は事前確認・予約がおすすめ。",
+        "age_note": "乳幼児連れの席・設備は来店前に最新情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.cubicplaza.com/shopguide/shop_09_09-005/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "Aloha Food Factory（アロハフードファクトリー）の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 84,
+        "solo": 65,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "横浜市港北区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Aloha Food Factory（アロハフードファクトリー）",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "ベビースペース",
+        "キッズスペース",
+        "ソファ席",
+        "新横浜",
+        "駅直結",
+        "英語メニュー"
+      ],
+      "recommendation_group": "aloha-food-factory",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 82,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別の提携商品を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 92,
+        "social_presence": 75,
+        "visual_appeal": 86,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "新横浜駅直結。ファミリー向けソファ席のそばに、小さい子が遊べるキッズスペースがあるハワイアン。食事と「ちょっと遊ぶ」を移動なしでつなげやすい。",
+        "checked_at": "2026-09-10",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-10",
+            "url": "https://www.cubicplaza.com/shopguide/shop_09_09-005/"
+          }
+        ]
+      },
+      "family_profile": {
+        "floor_seating": false,
+        "shoes_off": false,
+        "crawl_ok": null,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": true,
+        "diaper_changing": null,
+        "baby_meal": null,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "キュービックプラザ公式がキッズスペースとファミリー向けソファ席を案内。施設内に授乳室あり。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.cubicplaza.com/shopguide/shop_09_09-005/"
+      },
+      "i18n": {
+        "en": {
+          "name": "Aloha Food Factory Shin-Yokohama",
+          "public_copy": "A Hawaiian restaurant directly connected to Shin-Yokohama Station, with family sofa seating, a kids play space and an English menu.",
+          "city": "Yokohama · Kohoku Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": true,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_477",
+      "slug": "kichiri-mollis-shinjuku",
+      "name": "KICHIRI MOLLIS 新宿三丁目",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "新宿区",
+      "address": "東京都新宿区新宿3-26-13 新宿中村屋ビル6F",
+      "official_url": "https://www.kichiri.co.jp/mollis_lunch/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 20,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 97,
+        "greenery": 18,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 25,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 10,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 18,
+        "extraordinary": 58,
+        "scenic": 30,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 5,
+        "waterside": 35
+      },
+      "editorial_reason": "赤ちゃん・子どもとの外食で、席や遊び場まで含めて選べる候補を増やすため追加。",
+      "public_copy": "新宿三丁目で靴を脱いで、カーペット敷きの店内へ。授乳室・おむつ台・ベビーベッドもあり、赤ちゃん連れでも大人の外食感を残しやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新の営業時間は公式情報を確認。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "混雑しやすい時間帯は事前確認・予約がおすすめ。",
+        "age_note": "乳幼児連れの席・設備は来店前に最新情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.kichiri.co.jp/mollis_lunch/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "KICHIRI MOLLIS 新宿三丁目の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 84,
+        "solo": 65,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "新宿区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "KICHIRI MOLLIS 新宿三丁目",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "小上がり・座敷",
+        "靴を脱ぐ",
+        "カーペット",
+        "授乳室",
+        "おむつ替え",
+        "ベビーベッド",
+        "新宿"
+      ],
+      "recommendation_group": "kichiri-mollis",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 82,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別の提携商品を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 92,
+        "social_presence": 75,
+        "visual_appeal": 86,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "新宿三丁目で靴を脱いで、カーペット敷きの店内へ。授乳室・おむつ台・ベビーベッドもあり、赤ちゃん連れでも大人の外食感を残しやすい。",
+        "checked_at": "2026-09-10",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-10",
+            "url": "https://www.kichiri.co.jp/mollis_lunch/"
+          }
+        ]
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": false,
+        "nursing_room": true,
+        "diaper_changing": true,
+        "baby_meal": true,
+        "baby_chair": true,
+        "childcare": false,
+        "note": "公式のFamily Lunch案内で靴を脱ぐスタイル、カーペット床、授乳室、おむつ台、ベビーベッド、子ども椅子を確認。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://www.kichiri.co.jp/mollis_lunch/"
+      },
+      "i18n": {
+        "en": {
+          "name": "KICHIRI MOLLIS Shinjuku",
+          "public_copy": "A shoe-off restaurant in Shinjuku with carpeted seating areas plus a nursing room, diaper-changing room and baby beds.",
+          "city": "Shinjuku",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_478",
+      "slug": "tatami-cafe-kumasanchi",
+      "name": "畳cafe&BAR くまさん家",
+      "aliases": [],
+      "category_primary": "restaurant",
+      "categories": [
+        "food",
+        "restaurant",
+        "cafe",
+        "family",
+        "kids"
+      ],
+      "prefecture": "東京都",
+      "city": "世田谷区",
+      "address": "東京都世田谷区北沢2-34-8 KMビル3F",
+      "official_url": "https://kumasanchi.owst.jp/",
+      "environment": "mostly_indoor",
+      "stay_minutes_seed": 100,
+      "experience_seed": {
+        "indoor": 92,
+        "outdoor": 20,
+        "physical_activity": 8,
+        "hands_on": 8,
+        "quietness": 70,
+        "parent_rest": 97,
+        "greenery": 18,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 100,
+        "creative_sensory": 25,
+        "baby_fit": 95,
+        "toddler_fit": 95,
+        "stroller_fit": 85,
+        "rain_resilience": 96,
+        "heat_resilience": 96,
+        "walking_load": 10,
+        "planning_friction": 25
+      },
+      "vibes_seed": {
+        "cool": 55,
+        "nature": 18,
+        "extraordinary": 55,
+        "scenic": 20,
+        "stroll": 35,
+        "relax": 96,
+        "shopping": 20,
+        "food": 100,
+        "culture": 30,
+        "animals": 0,
+        "creative": 15,
+        "active": 5,
+        "waterside": 35
+      },
+      "editorial_reason": "赤ちゃん・子どもとの外食で、席や遊び場まで含めて選べる候補を増やすため追加。",
+      "public_copy": "下北沢で、畳の上に赤ちゃんを下ろして過ごせる親子カフェ。授乳・おむつ替え、おもちゃや遊具まで近く、外食の途中で子どもが動きたくなる日にも。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "最新の営業時間は公式情報を確認。",
+        "price_summary": "メニュー・時間帯により異なる。",
+        "reservation_summary": "混雑しやすい時間帯は事前確認・予約がおすすめ。",
+        "age_note": "乳幼児連れの席・設備は来店前に最新情報を確認。",
+        "temporary_note": null,
+        "checked_at": "2026-09-10",
+        "source_url": "https://kumasanchi.owst.jp/"
+      },
+      "hero_image": {
+        "url": "assets/editorial/parents-eat-well.webp",
+        "type": "ai",
+        "alt": "畳cafe&BAR くまさん家の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 84,
+        "solo": 65,
+        "friends": 90,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 90,
+      "routing": {
+        "municipality": "世田谷区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "畳cafe&BAR くまさん家",
+          "photo_index_override": null,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "小上がり・座敷",
+        "畳",
+        "ねんね・ハイハイOK",
+        "ベビースペース",
+        "キッズスペース",
+        "授乳室",
+        "おむつ替え",
+        "下北沢"
+      ],
+      "recommendation_group": "kumasanchi",
+      "planning_profile": {
+        "style": "bookable",
+        "same_day_fit": 82,
+        "reservation_expected": true
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "OZmall",
+          "一休.comレストラン"
+        ],
+        "product_match_required": true,
+        "note": "個別の提携商品を確認できた場合のみ予約導線を表示。"
+      },
+      "buzz": {
+        "score": 82,
+        "freshness": 92,
+        "social_presence": 75,
+        "visual_appeal": 86,
+        "media_attention": 72,
+        "popularity_momentum": 80,
+        "reason": "下北沢で、畳の上に赤ちゃんを下ろして過ごせる親子カフェ。授乳・おむつ替え、おもちゃや遊具まで近く、外食の途中で子どもが動きたくなる日にも。",
+        "checked_at": "2026-09-10",
+        "metric_note": "編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-10",
+            "url": "https://kumasanchi.owst.jp/"
+          }
+        ]
+      },
+      "family_profile": {
+        "floor_seating": true,
+        "shoes_off": true,
+        "crawl_ok": true,
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": true,
+        "diaper_changing": true,
+        "baby_meal": true,
+        "baby_chair": null,
+        "childcare": false,
+        "note": "公式サイトで畳メイン、授乳室・おむつ室、おもちゃ・遊具のある子どもスペースを案内。",
+        "checked_at": "2026-09-10",
+        "source_url": "https://kumasanchi.owst.jp/"
+      },
+      "i18n": {
+        "en": {
+          "name": "Tatami Cafe & Bar Kumasanchi",
+          "public_copy": "A parent-and-child café in Shimokitazawa with tatami flooring, a play area, toys, nursing facilities and diaper-changing space.",
+          "city": "Setagaya",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "recommended",
+            "cashless": null,
+            "nearest_station": null,
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
       }
     }
   ]

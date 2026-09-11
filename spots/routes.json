@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T05:58:12.111Z",
+  "generated_at": "2026-09-11T03:34:24.048Z",
   "source": "data.js",
   "routes": [
     {
@@ -3312,6 +3312,41 @@
       "name": "駒沢オリンピック公園",
       "url": "https://kibuntrip.com/spots/komazawa-olympic-park/",
       "fallback_file": "seo-spot-spot_473.html"
+    },
+    {
+      "spot_id": "spot_474",
+      "slug": "umi-zoi-kikori-shokudo",
+      "name": "海沿いのキコリ食堂",
+      "url": "https://kibuntrip.com/spots/umi-zoi-kikori-shokudo/",
+      "fallback_file": "seo-spot-spot_474.html"
+    },
+    {
+      "spot_id": "spot_475",
+      "slug": "kamakura-kaigan-table",
+      "name": "鎌倉海岸テーブル",
+      "url": "https://kibuntrip.com/spots/kamakura-kaigan-table/",
+      "fallback_file": "seo-spot-spot_475.html"
+    },
+    {
+      "spot_id": "spot_476",
+      "slug": "aloha-food-factory-shin-yokohama",
+      "name": "Aloha Food Factory（アロハフードファクトリー）",
+      "url": "https://kibuntrip.com/spots/aloha-food-factory-shin-yokohama/",
+      "fallback_file": "seo-spot-spot_476.html"
+    },
+    {
+      "spot_id": "spot_477",
+      "slug": "kichiri-mollis-shinjuku",
+      "name": "KICHIRI MOLLIS 新宿三丁目",
+      "url": "https://kibuntrip.com/spots/kichiri-mollis-shinjuku/",
+      "fallback_file": "seo-spot-spot_477.html"
+    },
+    {
+      "spot_id": "spot_478",
+      "slug": "tatami-cafe-kumasanchi",
+      "name": "畳cafe&BAR くまさん家",
+      "url": "https://kibuntrip.com/spots/tatami-cafe-kumasanchi/",
+      "fallback_file": "seo-spot-spot_478.html"
     }
   ]
 }
