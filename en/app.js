@@ -149,18 +149,31 @@ function vibeCard(key,mode){
   return `<button type="button" class="vibe-card activity-list-card ${selected?'selected':''}" data-vibe="${key}"><span class="vibe-icon"><img src="/assets/vibes/${key}.svg" alt=""></span><span class="vibe-text"><span class="vibe-name">${v.name}</span><span class="vibe-desc">${v.desc}</span></span><span class="activity-arrow">›</span>${selected?`<b class="vibe-order">${order}</b>`:''}</button>`;
 }
 function renderVibes(){
-  $('vibeGrid').innerHTML=`<section class="vibe-group vibe-group-mood"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 1</b><span>How should the day feel?</span></div><div class="vibe-group-copy"><strong>Pick a mood.</strong><p>You can combine it with an activity below.</p></div></div><div class="vibe-grid">${MOOD_KEYS.map(k=>vibeCard(k,'mood')).join('')}</div></section><section class="vibe-group vibe-group-activity"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 2</b><span>Anything you want to do?</span></div><div class="vibe-group-copy"><strong>Add an activity.</strong><p>Up to three choices total.</p></div></div><div class="vibe-grid">${ACTIVITY_KEYS.map(k=>vibeCard(k,'activity')).join('')}</div></section>`;
+  const hasMood=selectedVibes.some(k=>MOOD_KEYS.includes(k)),hasActivity=selectedVibes.some(k=>ACTIVITY_KEYS.includes(k));
+  $('vibeGrid').innerHTML=`<section class="vibe-group vibe-group-mood"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 1</b><span>Choose one overall mood</span></div><div class="vibe-group-copy"><strong>How should the day feel?</strong><p>Pick one and the next step will open.</p></div></div><div class="vibe-grid">${MOOD_KEYS.map(k=>vibeCard(k,'mood')).join('')}</div></section><section class="vibe-group vibe-group-activity ${!hasMood&&!hasActivity?'mobile-step-locked':''}"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 2</b><span>Add something you want to do</span></div><div class="vibe-group-copy"><strong>What sounds good today?</strong><p>Optional — add one or two activities.</p></div></div><div class="vibe-grid">${ACTIVITY_KEYS.map(k=>vibeCard(k,'activity')).join('')}</div></section>`;
   $('vibeGrid').querySelectorAll('[data-vibe]').forEach(btn=>btn.addEventListener('click',()=>toggleVibe(btn.dataset.vibe)));
-  $('selectedHint').textContent=selectedVibes.length?`${selectedVibes.length}/3 selected. Order matters a little.`:'Choose at least one mood or activity.';
+  $('selectedHint').textContent=selectedVibes.length?`${selectedVibes.length}/3 selected${selectedVibes.length===3?' · enough to go':' · add one more if useful'}`:'Choose one overall mood first.';
   $('clearVibes').hidden=!selectedVibes.length;
   $('selectedVibeTags').innerHTML=selectedVibes.map((k,i)=>`<span class="selected-vibe-tag"><b class="selected-vibe-tag-order">${i+1}</b>${escapeHtml(VIBES[k]?.name||k)}</span>`).join('');
   $('recommendBtn').disabled=!selectedVibes.length;
+  updateWizardProgress();
+}
+function updateWizardProgress(){
+  const hasMood=selectedVibes.some(k=>MOOD_KEYS.includes(k)),hasActivity=selectedVibes.some(k=>ACTIVITY_KEYS.includes(k));
+  const hero=document.querySelector('.hero'),steps=document.querySelectorAll('.mood-progress-steps span');
+  hero?.classList.toggle('wizard-has-selection',selectedVibes.length>0);hero?.classList.toggle('wizard-has-mood',hasMood);hero?.classList.toggle('wizard-has-activity',hasActivity);
+  steps.forEach(s=>s.classList.remove('active','done'));
+  if(!hasMood)steps[0]?.classList.add('active');else{steps[0]?.classList.add('done');if(!hasActivity)steps[1]?.classList.add('active');else{steps[1]?.classList.add('done');steps[2]?.classList.add('active');}}
+  const dock=$('mobileRecommendDock'),mobileBtn=$('mobileRecommendBtn');if(dock)dock.hidden=!selectedVibes.length;if(mobileBtn)mobileBtn.disabled=!selectedVibes.length;document.body.classList.toggle('mobile-dock-active',selectedVibes.length>0);
 }
 function toggleVibe(key){
+  const isMood=MOOD_KEYS.includes(key),hadMood=selectedVibes.some(k=>MOOD_KEYS.includes(k));
   if(selectedVibes.includes(key)) selectedVibes=selectedVibes.filter(x=>x!==key);
+  else if(isMood) selectedVibes=[key,...selectedVibes.filter(x=>!MOOD_KEYS.includes(x))].slice(0,3);
   else if(selectedVibes.length<3) selectedVibes.push(key);
-  else {selectedVibes=[...selectedVibes.slice(0,2),key];}
+  else selectedVibes=[...selectedVibes.slice(0,2),key];
   renderVibes();
+  if(isMood&&!hadMood&&selectedVibes.includes(key)&&window.matchMedia('(max-width:760px)').matches){setTimeout(()=>document.querySelector('.vibe-group-activity')?.scrollIntoView({behavior:'smooth',block:'start'}),120);}
 }
 
 async function resolveTravel(){
@@ -184,6 +197,7 @@ async function renderRecommendations(){
     $('coverageWarning').hidden=!result.coverage_warning;$('coverageWarning').textContent=result.coverage_warning?'Kibun does not have enough strong matches for that combination yet. Try changing one choice.':'';
     $('resultsGrid').innerHTML=result.recommendations.map((rec,i)=>resultCard(rec,i)).join('')||`<div class="empty-result"><div class="empty-icon">◌</div><p>No strong match yet. Try a broader mood or remove a travel-time limit.</p></div>`;
     $('resultsSection').hidden=false;
+    const mobileDock=$('mobileRecommendDock');if(mobileDock)mobileDock.hidden=true;document.body.classList.remove('mobile-dock-active');
     $('resultsGrid').querySelectorAll('[data-open-spot]').forEach(x=>x.addEventListener('click',()=>openSpot(x.dataset.openSpot)));
     $('resultsGrid').querySelectorAll('[data-fav]').forEach(x=>x.addEventListener('click',()=>{setFavorite(x.dataset.fav);renderRecommendations();}));
     $('resultsSection').scrollIntoView({behavior:'smooth',block:'start'});
@@ -257,8 +271,8 @@ async function searchOrigin(){
 function clearOrigin(){origin=null;travelMinutesBySpot={};lastTravelProvider=null;$('locationStatus').textContent='No start point set';$('clearOriginBtn').hidden=true;$('locationCandidates').hidden=true;}
 
 $('clearVibes').addEventListener('click',()=>{selectedVibes=[];renderVibes();});
-$('recommendBtn').addEventListener('click',renderRecommendations);
-$('editBtn').addEventListener('click',()=>document.querySelector('.hero').scrollIntoView({behavior:'smooth'}));
+$('recommendBtn').addEventListener('click',renderRecommendations);$('mobileRecommendBtn')?.addEventListener('click',renderRecommendations);
+$('editBtn').addEventListener('click',()=>{updateWizardProgress();document.querySelector('.hero').scrollIntoView({behavior:'smooth'});});
 $('browseBtn').addEventListener('click',()=>openBrowse());
 $('bottomBrowseBtn').addEventListener('click',()=>openBrowse());
 $('browseClose').addEventListener('click',()=>$('browseDialog').close());
