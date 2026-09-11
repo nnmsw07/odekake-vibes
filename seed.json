@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "dataset_name": "kibun_kanto_izu_seed_v20_15_0_performances",
-    "version": "0.20.15.0",
+    "dataset_name": "kibun_kanto_izu_seed_v20_16_0_whats_on",
+    "version": "0.20.16.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -36,7 +36,8 @@
       "layer_family_profile": "赤ちゃん・子連れ外食/滞在の設備属性。floor_seating / shoes_off / crawl_ok / baby_space / kids_space / nursing_room / diaper_changing / baby_meal / baby_chair / childcare 等は true / false / null で保持し、未確認をfalse扱いしない。",
       "layer_i18n": "多言語表示用。i18n.en に name / public_copy / city / visitor labels を保持。日本語の事実データを正とし、英語ページは /en/ 配下に静的生成。",
       "layer_availability_constraints": "長期休館・季節営業など推薦可否に関わる期間制約。unavailable_ranges を推薦・プラン生成で参照する。",
-      "layer_performances": "劇場・ホールに紐づく期間限定公演。performances.jsonを正とし、終了日を過ぎた公演はUIから自動非表示。販売状況・開演時刻は公式を優先。"
+      "layer_performances": "劇場・ホールに紐づく期間限定公演。performances.jsonを正とし、終了日を過ぎた公演はUIから自動非表示。販売状況・開演時刻は公式を優先。",
+      "layer_events": "企画展・季節イベント・親子イベント・ワークショップ・フェス・体験・ショーなど期間限定の「今できること」。events.jsonを正とし、日付条件とavailabilityを使ってToday/Upcoming表示を制御する。"
     },
     "recommended_refresh_policy": {
       "static_spot": "施設名変更・移転時",
@@ -146,7 +147,8 @@
     "monetization_note": "2026-09-04: v20.11.0追加12件もAffiliate Audit対象化。確認できた施設別OZmall/アソビュー導線を設定し、未確認分はrecheck_neededとして残す。",
     "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。",
     "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login.",
-    "performance_note": "v20.15.0: 劇場・ホール11件を追加し、既存4劇場と合わせて「venue + performance」体験を導入。バレエ、オペラ、演劇、ミュージカル、歌舞伎、能狂言、クラシック、ダンス、ライブ、家族向けを横断。"
+    "performance_note": "v20.15.0: 劇場・ホール11件を追加し、既存4劇場と合わせて「venue + performance」体験を導入。バレエ、オペラ、演劇、ミュージカル、歌舞伎、能狂言、クラシック、ダンス、ライブ、家族向けを横断。",
+    "event_note": "v20.16.0: 公演65件に加え、展覧会・季節イベント・親子イベント・ワークショップ・フェス・体験・ショー24件をWHAT’S ONへ統合。選択日開催型はavailability/specific_datesでToday誤表示を防止。"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
