@@ -8,7 +8,7 @@ const typeOrder=['all','performance','exhibition','seasonal','family','workshop'
 const areas=[['all','すべて'],['tokyo','東京'],['kanagawa','神奈川']];
 const whens=[['all','今後すべて'],['today','今日'],['7','7日以内'],['30','30日以内'],['90','90日以内']];
 const audiences=[['all','すべて'],['family','子どもと'],['adult','大人時間'],['international','海外ゲストにも']];
-let type=new URLSearchParams(location.search).get('type')||'all',area='all',when='all',audience='all';
+const params=new URLSearchParams(location.search);let type=params.get('type')||'all',area='all',when='all',audience='all';const venueId=params.get('venue')||'';
 const localToday=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
 const today=localToday();
 function parse(s){return new Date(`${s}T00:00:00`)}
@@ -27,6 +27,7 @@ function isToday(x){
 function withinDays(x,n){const end=new Date();end.setHours(0,0,0,0);end.setDate(end.getDate()+n);return parse(x.start_date)<=end&&parse(x.end_date||x.start_date)>=parse(today)}
 function matches(x){
  const s=byId[x.venue_spot_id]||{};
+ if(venueId&&x.venue_spot_id!==venueId)return false;
  if(type!=='all'&&x.event_type!==type)return false;
  if(area==='tokyo'&&s.prefecture!=='東京都')return false;
  if(area==='kanagawa'&&s.prefecture!=='神奈川県')return false;
@@ -49,6 +50,16 @@ function renderFilters(){
  chips($('whatsOnTypeFilters'),typeOrder.map(k=>[k,TYPE_LABEL[k]]),type,'type');chips($('whatsOnAreaFilters'),areas,area,'area');chips($('whatsOnWhenFilters'),whens,when,'when');chips($('whatsOnAudienceFilters'),audiences,audience,'audience');
  document.querySelectorAll('[data-type]').forEach(b=>b.onclick=()=>{type=b.dataset.type;renderFilters();render()});document.querySelectorAll('[data-area]').forEach(b=>b.onclick=()=>{area=b.dataset.area;renderFilters();render()});document.querySelectorAll('[data-when]').forEach(b=>b.onclick=()=>{when=b.dataset.when;renderFilters();render()});document.querySelectorAll('[data-audience]').forEach(b=>b.onclick=()=>{audience=b.dataset.audience;renderFilters();render()});
 }
+function setupVenueMode(){
+ if(!venueId||!byId[venueId])return;
+ const s=byId[venueId];document.body.classList.add('venue-mode');
+ const hero=document.querySelector('.performance-hub-hero');
+ if(hero){const eye=hero.querySelector('.eyebrow'),h1=hero.querySelector('h1'),copy=hero.querySelector('.hero-copy');if(eye)eye.textContent='VENUE WHAT’S ON · '+(s.prefecture||'');if(h1)h1.innerHTML=`<em>${esc(s.name)}</em>の<br>催しをまとめて見る。`;if(copy)copy.textContent='この施設で開催中・近日開催の展覧会、公演、イベントをまとめています。まずはここだけ見て、そのあと他の施設へ広げられます。';}
+ const areaRoot=$('whatsOnAreaFilters');areaRoot?.closest('.performance-control-row')?.classList.add('venue-hidden-in-filter');
+ const search=$('whatsOnSearch');if(search)search.placeholder=`${s.name}の催しを検索`;
+ const listHead=document.querySelector('.performance-list-section .section-heading h2');if(listHead)listHead.textContent=`${s.name}の開催中・これから。`;
+ const cta=$('venueWhatsOnCta');if(cta){cta.hidden=false;cta.innerHTML=`<p>${esc(s.name)}以外の展覧会・舞台・季節イベントも探せます。</p><a href="/whats-on/">ほかの施設のWHAT’S ONを見る →</a>`;}
+}
 function render(){const items=norm().filter(matches);$('whatsOnCount').textContent=`${items.length}件`;$('whatsOnGrid').innerHTML=items.map(card).join('');$('whatsOnEmpty').hidden=items.length>0}
-$('whatsOnSearch').addEventListener('input',render);renderFilters();render();
+$('whatsOnSearch').addEventListener('input',render);setupVenueMode();renderFilters();render();
 })();

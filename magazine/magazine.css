@@ -189,3 +189,17 @@ img[data-hero-clean="1"][data-hero-state="fallback"]{opacity:1}
   .article-spot-copy a{margin-top:12px;font-size:9.5px}
   .article-num{left:12px;top:12px;min-width:34px;height:34px;font-size:11px}
 }
+
+/* v20.19.2 — every feature spot uses its own hero image */
+.spot-feature{overflow:hidden;padding:0!important}
+.spot-feature-media{width:100%;height:230px;overflow:hidden;background:#e9e5dc}
+.spot-feature-media img{width:100%;height:100%;display:block;object-fit:cover}
+.spot-feature>small,.spot-feature>h3,.spot-feature>p,.spot-feature>a{margin-left:20px;margin-right:20px}
+.spot-feature>small{display:block;margin-top:18px}
+.spot-feature>a{margin-bottom:20px}
+@media(max-width:760px){
+  .spot-feature-media{height:180px}
+  .spot-feature>small,.spot-feature>h3,.spot-feature>p,.spot-feature>a{margin-left:17px;margin-right:17px}
+  .spot-feature>small{margin-top:15px}
+  .spot-feature>a{margin-bottom:18px}
+}

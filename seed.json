@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_izu_seed_v20_16_0_whats_on",
-    "version": "0.20.19.0",
+    "version": "0.20.19.2",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -150,7 +150,10 @@
     "performance_note": "v20.15.0: 劇場・ホール11件を追加し、既存4劇場と合わせて「venue + performance」体験を導入。バレエ、オペラ、演劇、ミュージカル、歌舞伎、能狂言、クラシック、ダンス、ライブ、家族向けを横断。",
     "event_note": "v20.16.0: 公演65件に加え、展覧会・季節イベント・親子イベント・ワークショップ・フェス・体験・ショー24件をWHAT’S ONへ統合。選択日開催型はavailability/specific_datesでToday誤表示を防止。",
     "ui_refresh_note": "v20.19.0: approved mood-first mobile composition restored and refined. STEP 1 uses one large scenic mood card plus two supporting cards; first mood is season-aware 「心地よく過ごしたい」. Header favorite control removed, language control simplified, line icons refreshed, dog audience uses paw icon.",
-    "editorial_expansion_note": "v20.19.0: 6 new Japanese/English features and 8 performance-day curated plans added, connecting mood discovery with WHAT’S ON / performance venues."
+    "editorial_expansion_note": "v20.19.0: 6 new Japanese/English features and 8 performance-day curated plans added, connecting mood discovery with WHAT’S ON / performance venues.",
+    "ui_hotfix_note": "v20.19.2: supporting mood cards compacted to match the approved mock; top CSS/app cache keys bumped to avoid stale mobile layout.",
+    "magazine_hero_note": "v20.19.2: magazine hub, article heroes and spot cards use representative spot hero media; Google Places hero resolver expanded to all referenced magazine spots.",
+    "venue_whats_on_note": "v20.19.2: spot detail “see all” links open venue-specific WHAT’S ON first, with a secondary route to browse other venues. Japanese and English both supported."
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
