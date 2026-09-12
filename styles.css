@@ -664,3 +664,55 @@ html,body{max-width:100%;overflow-x:clip}
   .activity-list-card .vibe-name{font-size:8.6px!important}
   .activity-list-card .vibe-desc{font-size:6.7px!important}
 }
+
+/* v20.19.1 hotfix — keep STEP 1 supporting mood cards compact like the approved mock */
+@media(max-width:760px){
+  .vibe-group-mood .mood-card-secondary{
+    grid-template-rows:72px 50px!important;
+    min-height:122px!important;
+    height:122px!important;
+  }
+  .vibe-group-mood .mood-card-secondary .mood-photo{
+    height:72px!important;
+  }
+  .vibe-group-mood .mood-card-secondary .vibe-icon{
+    top:57px!important;
+    left:10px!important;
+    width:30px!important;
+    height:30px!important;
+    padding:6px!important;
+  }
+  .vibe-group-mood .mood-card-secondary .vibe-text{
+    min-height:50px!important;
+    height:50px!important;
+    padding:13px 31px 7px 10px!important;
+    justify-content:center!important;
+  }
+  .vibe-group-mood .mood-card-secondary .vibe-name{
+    font-size:9.2px!important;
+    line-height:1.2!important;
+    letter-spacing:-.035em!important;
+    white-space:nowrap!important;
+    word-break:keep-all!important;
+  }
+  .vibe-group-mood .mood-card-secondary .vibe-desc{
+    margin-top:2px!important;
+    font-size:7.2px!important;
+    line-height:1.25!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .vibe-group-mood .mood-card-secondary::after{
+    right:8px!important;
+    bottom:12px!important;
+    width:22px!important;
+    height:22px!important;
+    font-size:15px!important;
+  }
+}
+
+@media(max-width:350px){
+  .vibe-group-mood .mood-card-secondary .vibe-name{font-size:8.5px!important}
+  .vibe-group-mood .mood-card-secondary .vibe-text{padding-right:26px!important;padding-left:8px!important}
+}

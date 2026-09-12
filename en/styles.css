@@ -18,3 +18,19 @@
 /* v20.19.0 — English shares the approved mood-first mobile composition. */
 @media(max-width:760px){.en-site .vibe-group-mood .vibe-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.en-site .vibe-group-activity .vibe-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.en-site .mood-card-primary .vibe-name{font-size:15px!important}.en-site .mood-card-primary .vibe-desc{font-size:8.5px!important}.en-site .mood-card-secondary .vibe-name{font-size:10.5px!important}.en-site .mood-card-secondary .vibe-desc{font-size:7.5px!important}.en-site .vibe-group-head strong{font-size:clamp(23px,6.6vw,28px)!important}}
 @media(max-width:350px){.en-site .vibe-group-activity .vibe-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+/* v20.19.1 — keep English supporting mood cards compact too */
+@media(max-width:760px){
+  .en-site .vibe-group-mood .mood-card-secondary .vibe-name{
+    font-size:8.8px!important;
+    line-height:1.2!important;
+    letter-spacing:-.025em!important;
+    white-space:nowrap!important;
+  }
+  .en-site .vibe-group-mood .mood-card-secondary .vibe-desc{
+    font-size:6.9px!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+}

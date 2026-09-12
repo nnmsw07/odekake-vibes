@@ -3,8 +3,11 @@
   window.KIBUN_HERO_SPOTS = HERO_SPOTS;
   const cfg=window.KIBUN_CONFIG||{};
   const endpoint=cfg.placePhotoApiUrl;
-  if(!endpoint)return;
   const imgs=[...document.querySelectorAll('img[data-hero-spot]')];
+  if(!endpoint){
+    imgs.forEach(img=>{ if(img.dataset.heroClean==='1') img.dataset.heroState='fallback'; });
+    return;
+  }
   const revealFallback=(img)=>{
     if(img.dataset.heroClean==='1' && img.dataset.heroState!=='ready') img.dataset.heroState='fallback';
   };

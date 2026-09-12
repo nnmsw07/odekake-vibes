@@ -23,8 +23,8 @@ const count=(s,re)=>(s.match(re)||[]).length;
 const requiredArticles=['comfortable-day','stage-day','whats-on-weekend','books-and-architecture','indoor-adult-day','yokohama-after-curtain'];
 const requiredPlans=['stage_hatsudai_ballet','stage_shibuya_orb_sky','stage_yokohama_kaat_harbor','stage_yokohama_classical_art','stage_ikebukuro_theatre_park','stage_ginza_kabuki_art','stage_ariake_musical_smallworlds','stage_billboard_hammerhead'];
 const checks=[
-  ['JA v20.19 cache',ja.includes('styles.css?v=201900')&&ja.includes('app.js?v=201900')],
-  ['EN v20.19 cache',en.includes('/styles.css?v=201900')&&en.includes('/en/styles.css?v=201900')&&en.includes('/en/app.js?v=201900')],
+  ['JA v20.19 cache',ja.includes('styles.css?v=201901')&&ja.includes('app.js?v=201900')],
+  ['EN v20.19 cache',en.includes('/styles.css?v=201901')&&en.includes('/en/styles.css?v=201901')&&en.includes('/en/app.js?v=201900')],
   ['header favorite removed JA',!ja.includes('id="favoritesBtn"')&&!ja.includes('favorites-count')],
   ['header favorite removed EN',!en.includes('id="favoritesBtn"')&&!en.includes('favorites-count')],
   ['language only header action JA',ja.includes('class="lang-switch refined-lang"')&&ja.includes('>EN<')],
