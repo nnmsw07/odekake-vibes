@@ -23,12 +23,16 @@ window.KIBUN_CONFIG = {
   cfg.placePhotosApiUrl = cfg.placePhotosApiUrl || (base ? `${base}/place-photos` : "");
 })(window.KIBUN_CONFIG);
 
-// v20.19.4 mobile mood-card hotfix.
-// This intentionally loads after the legacy inline v20.19.3 rules so the approved
-// two-card mobile layout wins without changing recommendation logic or content.
+// v20.19.5 mobile mood-card refinement.
+// Keep the approved two-card layout, but tighten the image/text transition so
+// the secondary cards feel compact and editorial rather than vertically sparse.
 (function installMoodCardMobileHotfix(){
   if (typeof document === "undefined") return;
-  const STYLE_ID = "mood-card-mobile-v201904";
+  const STYLE_ID = "mood-card-mobile-v201905";
+  ["mood-card-mobile-v201903","mood-card-mobile-v201904"].forEach(id=>{
+    const old=document.getElementById(id);
+    if(old) old.remove();
+  });
   if (document.getElementById(STYLE_ID)) return;
   const style = document.createElement("style");
   style.id = STYLE_ID;
@@ -53,9 +57,9 @@ window.KIBUN_CONFIG = {
     box-sizing:border-box!important;
     width:100%!important;
     min-width:0!important;
-    height:176px!important;
-    min-height:176px!important;
-    max-height:176px!important;
+    height:156px!important;
+    min-height:156px!important;
+    max-height:156px!important;
     padding:0!important;
     overflow:hidden!important;
     border-radius:20px!important;
@@ -64,11 +68,11 @@ window.KIBUN_CONFIG = {
     position:relative!important;
     inset:auto!important;
     display:block!important;
-    flex:0 0 96px!important;
+    flex:0 0 92px!important;
     width:100%!important;
-    height:96px!important;
-    min-height:96px!important;
-    max-height:96px!important;
+    height:92px!important;
+    min-height:92px!important;
+    max-height:92px!important;
     overflow:hidden!important;
     border-radius:20px 20px 0 0!important;
   }
@@ -81,17 +85,17 @@ window.KIBUN_CONFIG = {
   }
   .vibe-group-mood .mood-card-secondary .vibe-icon{
     position:absolute!important;
-    left:12px!important;
-    top:78px!important;
-    width:38px!important;
-    height:38px!important;
-    min-width:38px!important;
-    min-height:38px!important;
-    padding:8px!important;
+    left:10px!important;
+    top:75px!important;
+    width:34px!important;
+    height:34px!important;
+    min-width:34px!important;
+    min-height:34px!important;
+    padding:7px!important;
     margin:0!important;
     border-radius:50%!important;
     background:#fffdf9!important;
-    box-shadow:0 4px 14px rgba(55,45,35,.12)!important;
+    box-shadow:0 3px 12px rgba(55,45,35,.11)!important;
     z-index:3!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-icon img{
@@ -104,22 +108,22 @@ window.KIBUN_CONFIG = {
     flex-direction:column!important;
     align-items:flex-start!important;
     justify-content:center!important;
-    gap:4px!important;
+    gap:2px!important;
     box-sizing:border-box!important;
     width:100%!important;
-    height:80px!important;
-    min-height:80px!important;
-    max-height:80px!important;
-    padding:20px 12px 9px!important;
-    overflow:visible!important;
+    height:64px!important;
+    min-height:64px!important;
+    max-height:64px!important;
+    padding:16px 10px 5px!important;
+    overflow:hidden!important;
     text-align:left!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-name{
     display:-webkit-box!important;
     width:100%!important;
     min-width:0!important;
-    font-size:13px!important;
-    line-height:1.28!important;
+    font-size:12.5px!important;
+    line-height:1.2!important;
     white-space:normal!important;
     overflow:hidden!important;
     text-overflow:clip!important;
@@ -131,11 +135,12 @@ window.KIBUN_CONFIG = {
     width:100%!important;
     min-width:0!important;
     margin:0!important;
-    font-size:9.5px!important;
-    line-height:1.3!important;
+    font-size:9px!important;
+    line-height:1.2!important;
     white-space:nowrap!important;
     overflow:hidden!important;
     text-overflow:ellipsis!important;
+    opacity:.68!important;
   }
 }
 `;
