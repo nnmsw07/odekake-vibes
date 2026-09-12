@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e9">
+  <meta name="color-scheme" content="light">
+  <title>Mini Plan Preview | Kibun Trip</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=201903">
+  <link rel="stylesheet" href="mini-plan-preview.css?v=1">
+</head>
+<body class="mini-plan-preview-page">
+  <header class="mp-topbar">
+    <a class="mp-brand" href="./" aria-label="Kibun Trip トップへ">
+      <span class="mp-brand-dot" aria-hidden="true"></span>
+      <span>Kibun Trip</span>
+    </a>
+    <span class="mp-preview-badge">PREVIEW</span>
+  </header>
+
+  <main>
+    <section class="mp-hero">
+      <p class="mp-eyebrow">MINI PLAN · V1</p>
+      <h1>気になる場所を、<br><em>今日のプランへ。</em></h1>
+      <p class="mp-lead">行きたい場所を2〜4つ選ぶだけ。まずは、半日の過ごし方を軽くまとめる体験を試します。</p>
+      <div class="mp-flow" aria-label="Mini Planの流れ">
+        <span><b>1</b>選ぶ</span><i></i><span><b>2</b>まとめる</span><i></i><span><b>3</b>出かける</span>
+      </div>
+    </section>
+
+    <section class="mp-discovery" aria-labelledby="mpDiscoveryTitle">
+      <div class="mp-section-head">
+        <div>
+          <p class="mp-eyebrow">PICK YOUR PLACES</p>
+          <h2 id="mpDiscoveryTitle">どこを入れる？</h2>
+        </div>
+        <button id="mpClearPlanTop" class="mp-text-button" type="button" hidden>選択をクリア</button>
+      </div>
+
+      <label class="mp-search">
+        <span aria-hidden="true">⌕</span>
+        <input id="mpSearch" type="search" inputmode="search" autocomplete="off" placeholder="スポット名・エリアで検索">
+      </label>
+
+      <div id="mpAreaFilters" class="mp-filter-row" role="group" aria-label="エリアで絞り込む">
+        <button type="button" class="active" data-area="yokohama">横浜</button>
+        <button type="button" data-area="tokyo">東京</button>
+        <button type="button" data-area="shonan">湘南・鎌倉</button>
+        <button type="button" data-area="all">すべて</button>
+      </div>
+
+      <p id="mpResultCount" class="mp-result-count" aria-live="polite"></p>
+      <div id="mpSpotGrid" class="mp-spot-grid"></div>
+      <button id="mpShowMore" class="mp-show-more" type="button" hidden>もっと見る</button>
+    </section>
+
+    <section class="mp-note">
+      <p class="mp-eyebrow">ABOUT THIS PREVIEW</p>
+      <h2>まずは「選ぶ → まとめる」だけ。</h2>
+      <p>地図・移動時間・自動でいい順番に並べる機能は次の段階。今回は、プラン作成の入口がKibunらしく自然かを確認するためのUIプレビューです。</p>
+    </section>
+  </main>
+
+  <div id="mpToast" class="mp-toast" role="status" aria-live="polite" hidden></div>
+
+  <aside id="mpDock" class="mp-dock" hidden aria-label="選択中のMini Plan">
+    <div class="mp-dock-copy">
+      <span id="mpDockDots" class="mp-dock-dots" aria-hidden="true"></span>
+      <div>
+        <strong id="mpDockCount">1スポット選択中</strong>
+        <small id="mpDockHint">あと1つでプランにできます</small>
+      </div>
+    </div>
+    <button id="mpBuildPlan" class="mp-build-button" type="button" disabled>
+      <span>プランを見る</span>
+      <b>→</b>
+    </button>
+  </aside>
+
+  <dialog id="mpPlanDialog" class="mp-plan-dialog" aria-labelledby="mpPlanTitle">
+    <div class="mp-plan-sheet">
+      <div class="mp-sheet-handle" aria-hidden="true"></div>
+      <div class="mp-plan-head">
+        <div>
+          <p class="mp-eyebrow">YOUR MINI PLAN</p>
+          <h2 id="mpPlanTitle">今日の半日プラン</h2>
+          <p id="mpPlanSummary"></p>
+        </div>
+        <button id="mpPlanClose" class="mp-close-button" type="button" aria-label="閉じる">×</button>
+      </div>
+      <div id="mpPlanStops" class="mp-plan-stops"></div>
+      <div class="mp-plan-footer">
+        <button id="mpAddAnother" class="mp-secondary-button" type="button">＋ もう1ヶ所追加</button>
+        <button id="mpClearPlan" class="mp-danger-text" type="button">プランを空にする</button>
+      </div>
+      <p class="mp-coming-note">次の段階で、地図・移動時間・おすすめ順への並び替えを追加予定です。</p>
+    </div>
+  </dialog>
+
+  <script src="data.js?v=201900"></script>
+  <script src="mini-plan-preview.js?v=1"></script>
+</body>
+</html>
