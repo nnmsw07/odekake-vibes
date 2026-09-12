@@ -2,7 +2,6 @@ const fs = require('fs');
 const required = [
   'assets/editorial/cafe.webp',
   'assets/editorial/culture.webp',
-  'assets/editorial/scenic.webp',
   'assets/editorial/special.webp',
   'assets/editorial/relax.webp',
   'assets/plans/family-cafe.webp',

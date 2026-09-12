@@ -6,7 +6,7 @@ const co=seed.spots.find(s=>s.spot_id==='spot_296');assert.ok(/登録不要/.tes
 const P=require('./plans.js');for(const id of ['family_shinjuku_green_play_cafe','family_ikebukuro_city_play_cafe','family_shibuya_green_cafe','family_shinjuku_belbel_cafe']){const p=P.curatedPlanPreview(seed,id);assert.ok(p&&p.curated,id);}
 const idx=fs.readFileSync('index.html','utf8');assert.ok(idx.includes('data-bottom-nav="spots"'));assert.ok(idx.includes('assets/nav/spot.svg'));assert.ok(/\d+スポット/.test(idx));
 assert.ok(fs.readFileSync('app.js','utf8').includes("params.get('browse')==='1'"));
-for(const p of ['assets/nav/article.svg','assets/nav/spot.svg','assets/nav/plan.svg','assets/nav/mood.svg','assets/editorial/cafe.webp','assets/editorial/scenic.webp'])assert.ok(fs.existsSync(p),p);
+for(const p of ['assets/nav/article.svg','assets/nav/spot.svg','assets/nav/plan.svg','assets/nav/mood.svg','assets/editorial/cafe.webp'])assert.ok(fs.existsSync(p),p);
 {const h=fs.readFileSync('magazine/oyako-rest-indoor/index.html','utf8');assert.ok(h.includes('article-hero-media'));assert.ok(h.includes('?browse=1'));}
 for(const [slug,id] of [['shibuya-with-kids','family_shibuya_green_cafe'],['shinjuku-family-day','family_shinjuku_green_play_cafe']]){const p=`magazine/${slug}/index.html`;assert.ok(fs.existsSync(p),p);const h=fs.readFileSync(p,'utf8');assert.ok(h.includes('MOVED TO KIBUN PLANS'));assert.ok(h.includes(id));assert.ok(h.includes('noindex,follow'));}
 const hub=fs.readFileSync('magazine/index.html','utf8');assert.ok((hub.match(/class="article-card"/g)||[]).length>=9);assert.ok(hub.includes('article-card-media'));

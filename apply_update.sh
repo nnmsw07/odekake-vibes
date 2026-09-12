@@ -1,38 +1,70 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-MANIFEST="UPDATE_MANIFEST_v20_13_0.txt"
-if [[ ! -f "$MANIFEST" ]]; then
-  echo "Missing $MANIFEST. Run this from the Kibun repository root after unzipping the update." >&2
+if [[ ! -f index.html || ! -f app.js ]]; then
+  echo "ERROR: Kibun repository root で実行してください。" >&2
   exit 1
 fi
 
-echo "[1/4] Syntax checks"
+HERE="$(cd "$(dirname "$0")" && pwd)"
+VERSION="v20.19.3"
+
+copy_one(){
+  local f="$1"
+  mkdir -p "$(dirname "$f")"
+  cp -f "$HERE/$f" "$f"
+}
+
+FILES=(
+  index.html
+  en/index.html
+  magazine/index.html
+  en/magazine/index.html
+  magazine/stage-day/index.html
+  magazine/whats-on-weekend/index.html
+  magazine/indoor-adult-day/index.html
+  magazine/yokohama-after-curtain/index.html
+  en/magazine/stage-day/index.html
+  en/magazine/whats-on-weekend/index.html
+  en/magazine/indoor-adult-day/index.html
+  en/magazine/yokohama-after-curtain/index.html
+  assets/editorial/v201903/stage-day.webp
+  assets/editorial/v201903/whats-on-weekend.webp
+  assets/editorial/v201903/indoor-adult-day.webp
+  assets/editorial/v201903/yokohama-after-curtain.webp
+)
+if [[ "$HERE" != "$(pwd)" ]]; then
+  for f in "${FILES[@]}"; do copy_one "$f"; done
+fi
+
+# Obsolete generic black-background sunset thumbnail: never use it again.
+rm -f assets/editorial/scenic.webp
+
 node --check app.js
-node --check plans.js
-node --check recommender.js
-node --check scripts/generate_en_pages.mjs
-node --check scripts/generate_seo_pages.mjs
-node --check scripts/seo_audit.mjs
+[[ ! -f en/app.js ]] || node --check en/app.js
+python - <<'PY'
+from pathlib import Path
+for rel in ['index.html','en/index.html']:
+    s=Path(rel).read_text()
+    assert 'mood-card-mobile-v201903' in s, rel
+    assert 'styles.css?v=201903' in s, rel
+for slug in ['stage-day','whats-on-weekend','indoor-adult-day','yokohama-after-curtain']:
+    ja=Path('magazine')/slug/'index.html'
+    assert 'assets/editorial/v201903/' in ja.read_text(), ja
+    en=Path('en/magazine')/slug/'index.html'
+    if en.exists(): assert 'assets/editorial/v201903/' in en.read_text(), en
+for p in Path('.').rglob('*.html'):
+    assert 'assets/editorial/scenic.webp' not in p.read_text(errors='ignore'), p
+print('v20.19.3 checks: PASS')
+PY
 
-echo "[2/4] v20.13.0 regression test"
-node test_v20_13_0_family_en_seo.js
-
-echo "[3/4] SEO audit"
-node scripts/seo_audit.mjs --report seo-audit/v20.13.0-local
-
-echo "[4/4] Commit and push"
-while IFS= read -r file; do
-  [[ -n "$file" ]] && git add -- "$file"
-done < "$MANIFEST"
-git add -- "$MANIFEST" apply_update.sh
-
-if git diff --cached --quiet; then
-  echo "No changes to commit."
+if git diff --quiet -- . ':!apply_update.sh' && git diff --cached --quiet; then
+  echo "$VERSION is already applied."
   exit 0
 fi
 
-git commit -m "Kibun v20.13.0: family filters and English MVP"
+git add -A
+git commit -m "Kibun v20.19.3: fix mood cards and editorial thumbnails"
 git push origin main
 
-echo "Done. Cloudflare Pages will deploy from GitHub automatically."
+echo "$VERSION applied and pushed."
