@@ -23,36 +23,45 @@ window.KIBUN_CONFIG = {
   cfg.placePhotosApiUrl = cfg.placePhotosApiUrl || (base ? `${base}/place-photos` : "");
 })(window.KIBUN_CONFIG);
 
-// v20.19.6 UI hotfix.
-// 1) Restore the original Kibun Trip three-dot mark: green / coral / yellow.
-// 2) Let the two supporting STEP 1 cards use the compact approved proportions.
-(function installKibunUiHotfix(){
+// v20.19.7 UI hotfix.
+// - Restore the approved overlapping three-circle Kibun mark.
+// - Make all STEP 1 mood cards one full-bleed image system: one large + two compact cards.
+// - Pin dedicated editorial hero images so generic/fallback thumbnails cannot override them.
+(function installKibunUiAndEditorialHotfix(){
   if (typeof document === "undefined") return;
-  const STYLE_ID = "kibun-ui-v201906";
-  ["mood-card-mobile-v201903","mood-card-mobile-v201904","mood-card-mobile-v201905"].forEach(id=>{
+
+  const OLD_STYLE_IDS = [
+    "mood-card-mobile-v201903",
+    "mood-card-mobile-v201904",
+    "mood-card-mobile-v201905",
+    "kibun-ui-v201906"
+  ];
+  OLD_STYLE_IDS.forEach(id=>{
     const old=document.getElementById(id);
     if(old) old.remove();
   });
-  if (document.getElementById(STYLE_ID)) return;
-  const style = document.createElement("style");
-  style.id = STYLE_ID;
-  style.textContent = `
-/* Original Kibun Trip mark: three separate dots, not the later dark-green center / capsule mark. */
+
+  const STYLE_ID = "kibun-ui-v201907";
+  if (!document.getElementById(STYLE_ID)) {
+    const style = document.createElement("style");
+    style.id = STYLE_ID;
+    style.textContent = `
+/* Approved Kibun Trip mark: green / coral / yellow with a slight overlap. */
 .brand-dot{
-  width:9px!important;
-  height:9px!important;
-  margin-right:12px!important;
+  width:13px!important;
+  height:13px!important;
+  margin-right:19px!important;
   border-radius:50%!important;
-  background:#e86b50!important;
-  box-shadow:-11px 0 0 #789178,11px 0 0 #d7b34b!important;
+  background:#789178!important;
+  box-shadow:8px 0 0 #e07d5f,16px 0 0 #d8b95d!important;
 }
 .mag-top .brand::before{
-  width:8px!important;
-  height:8px!important;
-  margin-right:14px!important;
+  width:12px!important;
+  height:12px!important;
+  margin-right:18px!important;
   border-radius:50%!important;
-  background:#e86b50!important;
-  box-shadow:-10px 0 0 #789178,10px 0 0 #d7b34b!important;
+  background:#789178!important;
+  box-shadow:7px 0 0 #e07d5f,14px 0 0 #d8b95d!important;
 }
 
 @media (max-width:760px){
@@ -60,40 +69,41 @@ window.KIBUN_CONFIG = {
     display:grid!important;
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
     gap:10px!important;
-    align-items:start!important;
+    align-items:stretch!important;
     width:100%!important;
     min-width:0!important;
   }
-  .vibe-group-mood .mood-card-primary{
-    grid-column:1/-1!important;
-  }
+  .vibe-group-mood .mood-card-primary{grid-column:1/-1!important}
+
+  /* The two supporting cards are the compact version of the hero card — no white body. */
   .vibe-group-mood .mood-card-secondary{
     grid-column:auto!important;
-    display:grid!important;
-    grid-template-columns:1fr!important;
-    grid-template-rows:78px 48px!important;
     position:relative!important;
+    display:block!important;
     box-sizing:border-box!important;
     width:100%!important;
     min-width:0!important;
-    height:126px!important;
-    min-height:126px!important;
-    max-height:126px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:1.38/1!important;
     padding:0!important;
     overflow:hidden!important;
-    border-radius:16px!important;
+    border:0!important;
+    border-radius:18px!important;
+    background:#263028!important;
+    box-shadow:0 10px 24px rgba(49,54,48,.09)!important;
   }
   .vibe-group-mood .mood-card-secondary .mood-photo{
-    position:relative!important;
-    inset:auto!important;
-    grid-row:1!important;
+    position:absolute!important;
+    inset:0!important;
     display:block!important;
     width:100%!important;
-    height:78px!important;
-    min-height:78px!important;
-    max-height:78px!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
     overflow:hidden!important;
-    border-radius:16px 16px 0 0!important;
+    border-radius:inherit!important;
   }
   .vibe-group-mood .mood-card-secondary .mood-photo img{
     width:100%!important;
@@ -102,75 +112,146 @@ window.KIBUN_CONFIG = {
     object-position:center!important;
     display:block!important;
   }
+  .vibe-group-mood .mood-card-secondary .mood-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(18,24,19,.02) 24%,rgba(18,24,19,.12) 48%,rgba(18,24,19,.80) 100%);
+    pointer-events:none;
+    z-index:1;
+  }
   .vibe-group-mood .mood-card-secondary .vibe-icon{
     position:absolute!important;
     left:10px!important;
-    top:62px!important;
-    width:30px!important;
-    height:30px!important;
-    min-width:30px!important;
-    min-height:30px!important;
+    top:10px!important;
+    width:31px!important;
+    height:31px!important;
+    min-width:31px!important;
+    min-height:31px!important;
     padding:6px!important;
     margin:0!important;
     border-radius:50%!important;
-    background:#fffdf9!important;
-    border:1px solid #ded8cf!important;
-    box-shadow:0 3px 10px rgba(55,45,35,.10)!important;
-    z-index:3!important;
+    background:rgba(255,253,249,.94)!important;
+    border:1px solid rgba(255,255,255,.60)!important;
+    box-shadow:0 4px 12px rgba(31,36,31,.12)!important;
+    z-index:4!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-icon img{
     width:100%!important;
     height:100%!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-text{
-    grid-row:2!important;
+    position:absolute!important;
+    left:12px!important;
+    right:38px!important;
+    bottom:11px!important;
+    top:auto!important;
+    z-index:3!important;
     display:flex!important;
     flex-direction:column!important;
     align-items:flex-start!important;
-    justify-content:center!important;
-    gap:1px!important;
-    box-sizing:border-box!important;
-    width:100%!important;
-    height:48px!important;
-    min-height:48px!important;
-    max-height:48px!important;
-    padding:12px 28px 6px 10px!important;
-    overflow:hidden!important;
+    justify-content:flex-end!important;
+    gap:2px!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:0!important;
+    overflow:visible!important;
     text-align:left!important;
-    background:#fffdf9!important;
+    background:transparent!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-name{
     display:block!important;
     width:100%!important;
-    min-width:0!important;
     margin:0!important;
-    font-size:9.4px!important;
-    line-height:1.16!important;
+    font-family:Georgia,"Yu Mincho",serif!important;
+    font-size:12.5px!important;
+    font-weight:600!important;
+    line-height:1.22!important;
     letter-spacing:-.035em!important;
-    white-space:nowrap!important;
-    overflow:hidden!important;
-    text-overflow:ellipsis!important;
+    color:#fff!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    text-shadow:0 1px 10px rgba(0,0,0,.26)!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-desc{
     display:block!important;
     width:100%!important;
-    min-width:0!important;
-    margin:1px 0 0!important;
-    font-size:7px!important;
-    line-height:1.2!important;
+    margin:0!important;
+    font-size:7.5px!important;
+    line-height:1.25!important;
+    color:rgba(255,255,255,.82)!important;
     white-space:nowrap!important;
     overflow:hidden!important;
     text-overflow:ellipsis!important;
-    opacity:.68!important;
+    opacity:1!important;
   }
   .vibe-group-mood .mood-card-secondary::after{
-    right:7px!important;
-    bottom:11px!important;
-    width:21px!important;
-    height:21px!important;
-    font-size:14px!important;
+    content:"→"!important;
+    display:grid!important;
+    place-items:center!important;
+    position:absolute!important;
+    right:9px!important;
+    bottom:9px!important;
+    top:auto!important;
+    width:27px!important;
+    height:27px!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:rgba(255,253,249,.95)!important;
+    color:#35463a!important;
+    font-size:13px!important;
+    z-index:4!important;
+    box-shadow:0 4px 12px rgba(31,36,31,.12)!important;
+  }
+  .vibe-group-mood .mood-card-secondary.selected::after{
+    background:#40513d!important;
+    color:#fff!important;
   }
 }
+@media (max-width:350px){
+  .vibe-group-mood .mood-card-secondary .vibe-name{font-size:11.5px!important}
+  .vibe-group-mood .mood-card-secondary .vibe-desc{font-size:7px!important}
+}
 `;
-  document.head.appendChild(style);
+    document.head.appendChild(style);
+  }
+
+  const EDITORIAL_HEROES = {
+    "indoor-adult-day": "/assets/editorial/v201903/indoor-adult-day.webp",
+    "yokohama-after-curtain": "/assets/editorial/v201903/yokohama-after-curtain.webp",
+    "whats-on-weekend": "/assets/editorial/v201903/whats-on-weekend.webp"
+  };
+
+  function pinImage(img, src){
+    if(!img) return;
+    img.removeAttribute("data-hero-clean");
+    img.removeAttribute("data-hero-spot");
+    img.removeAttribute("referrerpolicy");
+    img.src=src;
+    img.dataset.editorialHero="v201907";
+    img.style.opacity="1";
+  }
+
+  function applyEditorialHeroes(){
+    const path=location.pathname.replace(/\/+$/,"");
+    for(const [slug,src] of Object.entries(EDITORIAL_HEROES)){
+      if(path.endsWith(`/magazine/${slug}`)){
+        pinImage(document.querySelector(".article-hero-media img"),src);
+      }
+      document.querySelectorAll("a.article-card").forEach(card=>{
+        const href=(card.getAttribute("href")||"").replace(/\/+$/,"");
+        if(href.endsWith(slug) || href.endsWith(`/magazine/${slug}`)) pinImage(card.querySelector("img"),src);
+      });
+    }
+    // The old black sunset illustration should never be used as a visible thumbnail again.
+    document.querySelectorAll('img[src*="books-and-architecture-v201125.jpg"]').forEach(img=>{
+      pinImage(img,EDITORIAL_HEROES["whats-on-weekend"]);
+    });
+  }
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",applyEditorialHeroes,{once:true});
+  else applyEditorialHeroes();
 })();
