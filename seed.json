@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_izu_seed_v20_16_0_whats_on",
-    "version": "0.20.16.0",
+    "version": "0.20.19.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -21,7 +21,7 @@
       "layer_audience_fit": "同行者 family / partner / solo / friends / dog への編集適合度。0〜100。dogは犬連れ条件を公式確認済みのスポットのみ推薦対象。",
       "layer_routing": "現在地フィルター用。GitHub Pages単体ではGeolonia町丁目代表点＋距離モデルで概算。Google Routes APIプロキシ設定時は実ルート所要時間に差し替え可能。",
       "layer_media_strategy": "HeroはGoogle Places実写を第一候補とし、取得不可時のみAIイメージへfallback。旧CC/Wikimedia画像は画面fallbackに使わない。",
-      "layer_vibe_groups": "UI上は mood 3軸（cool / extraordinary / relax）と activity 10軸に整理。推薦スコアは同一のvibes_seed 13軸を使用。",
+      "layer_vibe_groups": "UI上は mood 3軸（comfortable / extraordinary / relax）と activity 10軸に整理。comfortableは季節・天気に応じて既存の推薦軸（cool / relax / culture / nature）へ変換し、推薦スコアはvibes_seed 13軸を維持。",
       "layer_audience_presentation": "同行者ごとに推薦枠名・紹介文・詳細の見せ方を変更。family以外では乳幼児指標を表示しない。",
       "layer_ui_tags": "UI用の短い閲覧タグ。推薦スコアには直接使用せず、コレクション・チップ表示用。",
       "layer_monetization": "affiliate_fitは編集上の収益化適性。provider/productの実在を保証せず、提携・商品照合完了までUI非表示。",
@@ -45,7 +45,7 @@
       "vibes_seed": "行動ログ・満足度・タグ回答から随時再推定",
       "dynamic_snapshot": "表示前24時間以内を理想。MVPでは週1回＋ユーザーが『今から』検索した時に再確認"
     },
-    "updated_at": "2026-09-11",
+    "updated_at": "2026-09-12",
     "image_policy": {
       "photo": "権利確認済みの実写。必要な場合はクレジットを表示",
       "ai": "AI生成した雰囲気イメージ。実在施設の正確な外観・内観を示すものではない",
@@ -56,7 +56,7 @@
       "hero_rule": "実在スポットのHeroはGoogle Placesを第一候補。取得不可時はAIへfallbackし、CC/Wikimedia静止画はfallbackに使用しない。Hero監査で選んだphoto index / Place IDを固定可能。",
       "hero_audit": "2026-08-17: 実写9件をKibun Hero観点で再監査。外観中心の弱い実写2件をAIへ戻し、4件はより体験が伝わる実写へ差し替え。",
       "static_fallback": "125スポットの通常fallbackはAI/生成イメージ。Google Places実写はruntime取得。",
-      "hero_selection": "2026-09-06: latest user Hero Audit delta applied for spot_219 and spots 459/460/461/463/465/467/469; manual Google Place matches pinned for spots 459 and 460."
+      "hero_selection": "2026-09-12: latest user Hero Audit export applied. 211 photo index overrides and 18 manual Place overrides are pinned in HERO_OVERRIDES_v20_19_0.json and propagated to runtime seed/data."
     },
     "buzz_layer": {
       "status": "experimental",
@@ -84,7 +84,7 @@
       "fallback": "Embed失敗時またはreel_url未登録時は公式Instagramへのリンクアウト",
       "official_account_count": "23/83 spots"
     },
-    "hero_audit_note": "2026-09-06: latest Hero Audit delta applied for LARBOARD and newly added spots. Homepage and Magazine thumbnails now avoid showing stale generic artwork before Places hero resolution.",
+    "hero_audit_note": "2026-09-12: latest user Hero Audit export applied across legacy and newly added spots (211 photo index overrides / 18 manual Place matches). Runtime seed/data and the audit export are synchronized.",
     "ui_tag_definitions": {
       "family": "子どもと",
       "partner": "デート",
@@ -148,7 +148,9 @@
     "social_catchup_note": "追加63件。既存重複は再追加せず監査ログに記録。動的情報は2026-09-03時点の公式/公開情報をベースに保守的に記載。",
     "instagram_link_note": "v20.8.1: legacy /explore/search/keyword links replaced with /popular/<keyword>/ plus a Google site:instagram.com fallback in the detail UI because Instagram keyword deep links can redirect to home/login.",
     "performance_note": "v20.15.0: 劇場・ホール11件を追加し、既存4劇場と合わせて「venue + performance」体験を導入。バレエ、オペラ、演劇、ミュージカル、歌舞伎、能狂言、クラシック、ダンス、ライブ、家族向けを横断。",
-    "event_note": "v20.16.0: 公演65件に加え、展覧会・季節イベント・親子イベント・ワークショップ・フェス・体験・ショー24件をWHAT’S ONへ統合。選択日開催型はavailability/specific_datesでToday誤表示を防止。"
+    "event_note": "v20.16.0: 公演65件に加え、展覧会・季節イベント・親子イベント・ワークショップ・フェス・体験・ショー24件をWHAT’S ONへ統合。選択日開催型はavailability/specific_datesでToday誤表示を防止。",
+    "ui_refresh_note": "v20.19.0: approved mood-first mobile composition restored and refined. STEP 1 uses one large scenic mood card plus two supporting cards; first mood is season-aware 「心地よく過ごしたい」. Header favorite control removed, language control simplified, line icons refreshed, dog audience uses paw icon.",
+    "editorial_expansion_note": "v20.19.0: 6 new Japanese/English features and 8 performance-day curated plans added, connecting mood discovery with WHAT’S ON / performance venues."
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -68750,7 +68752,7 @@
         "current_provider": "ai",
         "google_places": {
           "place_id": "ChIJpf4-TltcGGARDViYb-z1wbc",
-          "status": "disabled",
+          "status": "resolved_manual",
           "query": "ヨコハマ グランド インターコンチネンタル",
           "photo_index_override": 8,
           "force": false,
@@ -72002,7 +72004,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "さがみ湖MORI MORI",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false
         }
       },
@@ -72179,7 +72181,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "箱根強羅公園",
-          "photo_index_override": null,
+          "photo_index_override": 8,
           "force": false
         }
       },
@@ -72520,7 +72522,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "駒沢オリンピック公園",
-          "photo_index_override": null,
+          "photo_index_override": 7,
           "force": false
         }
       },
@@ -73036,7 +73038,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "Aloha Food Factory（アロハフードファクトリー）",
-          "photo_index_override": null,
+          "photo_index_override": 8,
           "force": false,
           "use_address": true
         }
@@ -73221,7 +73223,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "KICHIRI MOLLIS 新宿三丁目",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -73613,7 +73615,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "新国立劇場",
-          "photo_index_override": null,
+          "photo_index_override": 6,
           "force": false,
           "use_address": true
         }
@@ -73812,7 +73814,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京芸術劇場",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -74008,7 +74010,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東急シアターオーブ",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -74202,7 +74204,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "日生劇場",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -74398,7 +74400,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "東京宝塚劇場",
-          "photo_index_override": null,
+          "photo_index_override": 3,
           "force": false,
           "use_address": true
         }
@@ -74787,7 +74789,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜みなとみらいホール",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }
@@ -75177,7 +75179,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "横浜能楽堂",
-          "photo_index_override": null,
+          "photo_index_override": 1,
           "force": false,
           "use_address": true
         }
@@ -75372,7 +75374,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "Billboard Live YOKOHAMA",
-          "photo_index_override": null,
+          "photo_index_override": 7,
           "force": false,
           "use_address": true
         }
@@ -75567,7 +75569,7 @@
           "place_id": null,
           "status": "not_resolved",
           "query": "有明四季劇場",
-          "photo_index_override": null,
+          "photo_index_override": 0,
           "force": false,
           "use_address": true
         }

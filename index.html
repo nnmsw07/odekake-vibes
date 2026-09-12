@@ -31,7 +31,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css?v=201800" />
+  <link rel="stylesheet" href="styles.css?v=201900" />
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M99DNGD18F"></script>
   <script>
@@ -60,22 +60,22 @@
   <header class="topbar">
     <button class="brand brand-button" id="browseBtn" type="button" aria-label="地域・カテゴリから探す"><span class="brand-dot"></span>Kibun Trip <span class="brand-menu-mark">⌄</span></button>
     <span class="topbar-tag">MOOD → DAY</span>
-    <div class="topbar-actions"><a class="lang-switch" href="/en/" lang="en" hreflang="en">EN</a><button class="ghost-btn" id="favoritesBtn" type="button">♡ <span id="favoriteCount">0</span></button></div>
+    <div class="topbar-actions"><a class="lang-switch refined-lang" href="/en/" lang="en" hreflang="en">EN</a></div>
   </header>
 
   <main id="top">
     <section class="hero shell" id="mood">
-      <p class="eyebrow">MOOD FIRST. PLACE SECOND.</p>
-      <h1>今日は、<br><em>どんな気分？</em></h1>
-      <p class="hero-copy">今日どこ行く？を、気分から決める。<br>誰と過ごすか選んで、気になる気分をタップ。</p>
+      <p class="eyebrow">MOOD → DAY</p>
+      <h1>気分で選ぶ、<br><em>今日の過ごし方。</em></h1>
+      <p class="hero-copy">予定がなくても大丈夫。<br>今の気分から、ちょうどいい一日を見つけよう。</p>
 
       <div class="mood-progress" aria-label="今日の気分から探す 3ステップ">
         <div class="mood-progress-steps" aria-hidden="true"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
-        <p>気分 → やりたいこと → 条件</p>
+        <p class="mood-progress-labels"><span class="active">気分</span><span>やりたいこと</span><span>条件</span></p>
       </div>
 
       <div class="audience-block setup-panel">
-        <div class="mini-heading audience-heading"><strong>誰と過ごす？</strong><small>おすすめの見方が変わります</small></div>
+        <div class="mini-heading audience-heading"><strong>誰と過ごす？</strong><small>まずは同行者をひとつ</small></div>
         <div id="audiencePicker" class="audience-picker" role="group" aria-label="同行者を選ぶ"></div>
       </div>
 
@@ -121,7 +121,7 @@
         </div>
       </details>
 
-      <button id="recommendBtn" class="primary-btn" type="button" disabled>今日の過ごし方を見る <span>→</span></button>
+      <button id="recommendBtn" class="primary-btn refined-primary" type="button" disabled>この気分で出かける <span>→</span></button>
       <p class="microcopy">関東＋伊豆489スポット。子どもと、パートナーと、ひとりでも。</p>
     </section>
 
@@ -197,9 +197,7 @@
     </div>
   </dialog>
 
-  <div class="mobile-recommend-dock" id="mobileRecommendDock" hidden>
-    <button id="mobileRecommendBtn" class="mobile-recommend-btn" type="button" disabled>この気分で行き先を見る <span>→</span></button>
-  </div>
+
 
   <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Kibun Trip メニュー">
     <a href="magazine/" data-bottom-nav="articles"><img src="assets/nav/article.svg" alt=""><strong>記事</strong></a>
@@ -209,10 +207,10 @@
   </nav>
   <footer class="footer shell"><span class="brand"><span class="brand-dot"></span>Kibun Trip</span><div><p>場所を探す前に、今日はどんな一日にしたいか。</p><small>概算位置データ: <a href="https://github.com/geolonia/japanese-addresses-v2" target="_blank" rel="noopener">Geolonia Japanese Addresses v2</a> · CC BY 4.0</small></div><nav class="footer-links"><a href="spots/">スポット一覧</a><a href="guide/">地域・テーマ別ガイド</a><a href="whats-on/">今日・近日の体験</a><a href="performances/">公演・ライブ</a><a href="privacy.html">プライバシー</a><a href="terms.html">利用規約</a></nav></footer>
 
-  <script src="config.js?v=2090"></script><script src="data.js?v=201500"></script><script src="performances.js?v=201500"></script><script src="events.js?v=201600"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=20110"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=201240"></script>
+  <script src="config.js?v=2090"></script><script src="data.js?v=201900"></script><script src="performances.js?v=201500"></script><script src="events.js?v=201600"></script><script src="recommender.js?v=1984"></script><script src="plans.js?v=201900"></script><script src="featured.js?v=1985"></script><script src="travel.js?v=26"></script><script src="media.js?v=27&amp;h=211118"></script><script src="affiliate-config.js?v=201240"></script>
   <script src="affiliate.js?v=2061"></script>
   <script type="text/javascript" language="javascript">
     var vc_pid = "892690966";
   </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-  <script src="preview-hero-clean.js?v=201260"></script><script src="app.js?v=201800"></script>
+  <script src="preview-hero-clean.js?v=201260"></script><script src="app.js?v=201900"></script>
 </body></html>

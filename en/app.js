@@ -8,13 +8,14 @@ const $=id=>document.getElementById(id);
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
 const AUDIENCES=[
-  ['family','Family','◌','Takes age and practical family needs into account.'],
-  ['partner','Partner','◇','Balances atmosphere, food and scenery.'],
-  ['solo','Solo','○','Leans toward easy, unhurried places.'],
-  ['friends','Friends','◎','Looks for shared experiences and food.'],
-  ['dog','With a dog','△','Only uses spots with documented dog access.']
+  ['family','Family','Takes age and practical family needs into account.'],
+  ['partner','Partner','Balances atmosphere, food and scenery.'],
+  ['solo','Solo','Leans toward easy, unhurried places.'],
+  ['friends','Friends','Looks for shared experiences and food.'],
+  ['dog','With a dog','Only uses spots with documented dog access.']
 ];
 const VIBES={
+  comfortable:{name:'Feel comfortable',desc:'A day that fits the season',photo:'comfortable.webp'},
   extraordinary:{name:'Something different',desc:'Make today feel less ordinary',photo:'extraordinary.webp'},
   relax:{name:'Take it slow',desc:'No rushing, no packed schedule',photo:'relax.webp'},
   scenic:{name:'See a good view',desc:'Sea, skyline or greenery',photo:'scenic.webp'},
@@ -29,8 +30,8 @@ const VIBES={
   active:{name:'Move around',desc:'Play, climb, run or get active'},
   waterside:{name:'Be by the water',desc:'Sea, rivers, lakes and waterfronts'}
 };
-const MOOD_KEYS=['extraordinary','relax','scenic','nature','cool','food'];
-const ACTIVITY_KEYS=['stroll','shopping','culture','animals','creative','active','waterside'];
+const MOOD_KEYS=['comfortable','extraordinary','relax'];
+const ACTIVITY_KEYS=['nature','scenic','stroll','shopping','food','culture','animals','creative','active','waterside'];
 const BROWSE_REGIONS=[['all','All areas'],['yokohama','Yokohama'],['tokyo','Tokyo'],['kanagawa','Kanagawa (other)'],['chiba','Chiba'],['saitama','Saitama'],['izu','Izu / Shizuoka']];
 const BROWSE_CATEGORIES=[['all','All'],['floorseat','Floor / tatami seating'],['kidsspace','Baby / kids space'],['family','Family-friendly'],['indoor','Indoor'],['food','Food & cafés'],['culture','Culture'],['nature','Nature'],['waterside','Waterfront'],['dog','Dog-friendly']];
 
@@ -132,25 +133,26 @@ function englishWhy(s,rec){
 function setFavorite(id){
   favorites.has(id)?favorites.delete(id):favorites.add(id);
   localStorage.setItem('kibun_favorites_en',JSON.stringify([...favorites]));
-  $('favoriteCount').textContent=favorites.size;
+  if($('favoriteCount'))$('favoriteCount').textContent=favorites.size;
 }
 
+function audienceIcon(key){const body={family:'<circle cx="9" cy="8" r="3"/><path d="M4.5 19c.3-4 2-6 4.5-6s4.2 2 4.5 6"/><circle cx="17" cy="10" r="2.2"/><path d="M14.4 18c.3-2.7 1.2-4.2 2.8-4.2 1.5 0 2.4 1.4 2.8 4.2"/>',partner:'<circle cx="8.5" cy="8" r="2.7"/><circle cx="15.5" cy="8" r="2.7"/><path d="M3.8 19c.4-4 1.9-6 4.7-6s4.3 2 4.7 6M10.8 19c.4-4 1.9-6 4.7-6s4.3 2 4.7 6"/>',solo:'<circle cx="12" cy="8" r="3.2"/><path d="M6.5 20c.4-4.8 2.2-7 5.5-7s5.1 2.2 5.5 7"/>',friends:'<circle cx="6" cy="8.5" r="2.2"/><circle cx="12" cy="7" r="2.5"/><circle cx="18" cy="8.5" r="2.2"/><path d="M2.5 19c.3-3.3 1.5-5 3.5-5 1.1 0 2 .5 2.6 1.3M8 19c.3-4 1.7-6 4-6s3.7 2 4 6M15.4 15.3c.6-.8 1.5-1.3 2.6-1.3 2 0 3.2 1.7 3.5 5"/>',dog:'<circle cx="7" cy="7.2" r="2.1"/><circle cx="12" cy="5.6" r="2.1"/><circle cx="17" cy="7.2" r="2.1"/><circle cx="5.4" cy="11.8" r="1.8"/><circle cx="18.6" cy="11.8" r="1.8"/><path d="M7.2 17.1c0-3 2.1-5.2 4.8-5.2s4.8 2.2 4.8 5.2c0 1.8-1.4 3-3 3-.8 0-1.4-.3-1.8-.8-.4.5-1 .8-1.8.8-1.6 0-3-1.2-3-3z"/>'}[key]||'';return `<span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${body}</svg></span>`;}
 function renderAudience(){
-  $('audiencePicker').innerHTML=AUDIENCES.map(([key,label,icon])=>`<button type="button" class="audience-chip ${selectedAudience===key?'selected':''}" data-audience="${key}"><span>${icon}</span>${label}</button>`).join('');
+  $('audiencePicker').innerHTML=AUDIENCES.map(([key,label])=>`<button type="button" class="audience-chip ${selectedAudience===key?'selected':''}" data-audience="${key}">${audienceIcon(key)}<span class="audience-label">${label}</span></button>`).join('');
   $('audiencePicker').querySelectorAll('[data-audience]').forEach(btn=>btn.addEventListener('click',()=>{selectedAudience=btn.dataset.audience;renderAudience();updateAudienceUi();}));
 }
 function updateAudienceUi(){
   const item=AUDIENCES.find(x=>x[0]===selectedAudience);$('audienceLead').textContent=item?.[3]||'';
   $('ageField').hidden=selectedAudience!=='family';
 }
-function vibeCard(key,mode){
+function vibeCard(key,mode,index=0){
   const v=VIBES[key],order=selectedVibes.indexOf(key)+1,selected=order>0;
-  if(mode==='mood') return `<button type="button" class="vibe-card mood-photo-card ${selected?'selected':''}" data-vibe="${key}"><span class="mood-photo"><img src="/assets/vibes/${v.photo}" alt="" loading="lazy"></span><span class="vibe-icon"><img src="/assets/vibes/${key}.svg" alt=""></span>${selected?`<b class="vibe-order">${order}</b>`:''}<span class="vibe-text"><span class="vibe-name">${v.name}</span><span class="vibe-desc">${v.desc}</span></span></button>`;
+  if(mode==='mood') return `<button type="button" class="vibe-card mood-photo-card ${index===0?'mood-card-primary':'mood-card-secondary'} ${selected?'selected':''}" data-vibe="${key}"><span class="mood-photo"><img src="/assets/mood-v201900/${key}.webp" alt="" loading="lazy"></span><span class="vibe-icon"><img src="/assets/vibes/${key}.svg" alt=""></span>${selected?`<b class="vibe-order">${order}</b>`:''}<span class="vibe-text"><span class="vibe-name">${v.name}</span><span class="vibe-desc">${v.desc}</span></span></button>`;
   return `<button type="button" class="vibe-card activity-list-card ${selected?'selected':''}" data-vibe="${key}"><span class="vibe-icon"><img src="/assets/vibes/${key}.svg" alt=""></span><span class="vibe-text"><span class="vibe-name">${v.name}</span><span class="vibe-desc">${v.desc}</span></span><span class="activity-arrow">›</span>${selected?`<b class="vibe-order">${order}</b>`:''}</button>`;
 }
 function renderVibes(){
   const hasMood=selectedVibes.some(k=>MOOD_KEYS.includes(k)),hasActivity=selectedVibes.some(k=>ACTIVITY_KEYS.includes(k));
-  $('vibeGrid').innerHTML=`<section class="vibe-group vibe-group-mood"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 1</b><span>Choose one overall mood</span></div><div class="vibe-group-copy"><strong>How should the day feel?</strong><p>Pick one and the next step will open.</p></div></div><div class="vibe-grid">${MOOD_KEYS.map(k=>vibeCard(k,'mood')).join('')}</div></section><section class="vibe-group vibe-group-activity ${!hasMood&&!hasActivity?'mobile-step-locked':''}"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 2</b><span>Add something you want to do</span></div><div class="vibe-group-copy"><strong>What sounds good today?</strong><p>Optional — add one or two activities.</p></div></div><div class="vibe-grid">${ACTIVITY_KEYS.map(k=>vibeCard(k,'activity')).join('')}</div></section>`;
+  $('vibeGrid').innerHTML=`<section class="vibe-group vibe-group-mood"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 1</b><span>Start with the feel of the day</span></div><div class="vibe-group-copy"><strong>How should the day feel?</strong><p>Pick one by instinct. You can change it later.</p></div></div><div class="vibe-grid">${MOOD_KEYS.map((k,i)=>vibeCard(k,'mood',i)).join('')}</div></section><section class="vibe-group vibe-group-activity"><div class="vibe-group-head"><div class="vibe-step-label"><b>STEP 2</b><span>Add something you want to do</span></div><div class="vibe-group-copy"><strong>What sounds good today?</strong><p>Optional — add one or two activities.</p></div></div><div class="vibe-grid">${ACTIVITY_KEYS.map(k=>vibeCard(k,'activity')).join('')}</div></section>`;
   $('vibeGrid').querySelectorAll('[data-vibe]').forEach(btn=>btn.addEventListener('click',()=>toggleVibe(btn.dataset.vibe)));
   $('selectedHint').textContent=selectedVibes.length?`${selectedVibes.length}/3 selected${selectedVibes.length===3?' · enough to go':' · add one more if useful'}`:'Choose one overall mood first.';
   $('clearVibes').hidden=!selectedVibes.length;
@@ -164,7 +166,7 @@ function updateWizardProgress(){
   hero?.classList.toggle('wizard-has-selection',selectedVibes.length>0);hero?.classList.toggle('wizard-has-mood',hasMood);hero?.classList.toggle('wizard-has-activity',hasActivity);
   steps.forEach(s=>s.classList.remove('active','done'));
   if(!hasMood)steps[0]?.classList.add('active');else{steps[0]?.classList.add('done');if(!hasActivity)steps[1]?.classList.add('active');else{steps[1]?.classList.add('done');steps[2]?.classList.add('active');}}
-  const dock=$('mobileRecommendDock'),mobileBtn=$('mobileRecommendBtn');if(dock)dock.hidden=!selectedVibes.length;if(mobileBtn)mobileBtn.disabled=!selectedVibes.length;document.body.classList.toggle('mobile-dock-active',selectedVibes.length>0);
+  const dock=$('mobileRecommendDock'),mobileBtn=$('mobileRecommendBtn');if(dock)dock.hidden=true;if(mobileBtn)mobileBtn.disabled=!selectedVibes.length;document.body.classList.remove('mobile-dock-active');
 }
 function toggleVibe(key){
   const isMood=MOOD_KEYS.includes(key),hadMood=selectedVibes.some(k=>MOOD_KEYS.includes(k));
@@ -173,7 +175,6 @@ function toggleVibe(key){
   else if(selectedVibes.length<3) selectedVibes.push(key);
   else selectedVibes=[...selectedVibes.slice(0,2),key];
   renderVibes();
-  if(isMood&&!hadMood&&selectedVibes.includes(key)&&window.matchMedia('(max-width:760px)').matches){setTimeout(()=>document.querySelector('.vibe-group-activity')?.scrollIntoView({behavior:'smooth',block:'start'}),120);}
 }
 
 async function resolveTravel(){
@@ -192,7 +193,8 @@ async function renderRecommendations(){
   const btn=$('recommendBtn');btn.disabled=true;btn.classList.add('loading');btn.textContent='Finding your day…';
   try{
     const t=await resolveTravel();
-    const ctx={audience:selectedAudience,selectedVibes,childAgeMonths:selectedAudience==='family'?$('ageSelect').value:null,weather:$('weatherSelect').value,availableMinutes:Number($('timeSelect').value),allowOvernight:false,maxTravelMinutes:Number($('travelLimitSelect').value||0)||null,travelMinutesBySpot:t.map,requireKnownTravel:t.required,currentDate:new Date().toISOString()};
+    const month=new Date().getMonth()+1,weather=$('weatherSelect').value,comfort=weather==='hot'?'cool':weather==='cold'?'relax':weather==='rain'?'culture':(month>=6&&month<=9?'cool':(month===12||month<=2?'relax':'nature'));const effectiveVibes=[...new Set(selectedVibes.map(v=>v==='comfortable'?comfort:v))].slice(0,3);
+    const ctx={audience:selectedAudience,selectedVibes:effectiveVibes,childAgeMonths:selectedAudience==='family'?$('ageSelect').value:null,weather:$('weatherSelect').value,availableMinutes:Number($('timeSelect').value),allowOvernight:false,maxTravelMinutes:Number($('travelLimitSelect').value||0)||null,travelMinutesBySpot:t.map,requireKnownTravel:t.required,currentDate:new Date().toISOString()};
     const result=recommender.recommend(seed,ctx);
     $('coverageWarning').hidden=!result.coverage_warning;$('coverageWarning').textContent=result.coverage_warning?'Kibun does not have enough strong matches for that combination yet. Try changing one choice.':'';
     $('resultsGrid').innerHTML=result.recommendations.map((rec,i)=>resultCard(rec,i)).join('')||`<div class="empty-result"><div class="empty-icon">◌</div><p>No strong match yet. Try a broader mood or remove a travel-time limit.</p></div>`;
@@ -280,13 +282,13 @@ $('browseDialog').addEventListener('click',e=>{if(e.target===$('browseDialog'))$
 $('browseSearch').addEventListener('input',renderBrowseGrid);
 $('dialogClose').addEventListener('click',()=>$('spotDialog').close());
 $('spotDialog').addEventListener('click',e=>{if(e.target===$('spotDialog'))$('spotDialog').close();});
-$('favoritesBtn').addEventListener('click',()=>{if(!favorites.size){alert('No favorites yet. Tap ♡ on a recommendation.');return;}const names=[...favorites].map(id=>enName(spots.find(s=>s.spot_id===id))).filter(Boolean);alert(`Favorites (${names.length})\n\n${names.join('\n')}`);});
+$('favoritesBtn')?.addEventListener('click',()=>{if(!favorites.size){alert('No favorites yet. Tap ♡ on a recommendation.');return;}const names=[...favorites].map(id=>enName(spots.find(s=>s.spot_id===id))).filter(Boolean);alert(`Favorites (${names.length})\n\n${names.join('\n')}`);});
 $('locationBtn').addEventListener('click',useCurrentLocation);
 $('clearOriginBtn').addEventListener('click',clearOrigin);
 $('locationSearchBtn').addEventListener('click',searchOrigin);
 $('locationQuery').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchOrigin();}});
 document.querySelectorAll('[data-quick-category]').forEach(x=>x.addEventListener('click',()=>openBrowse(x.dataset.quickCategory)));
 
-$('favoriteCount').textContent=favorites.size;
+if($('favoriteCount'))$('favoriteCount').textContent=favorites.size;
 renderAudience();updateAudienceUi();renderVibes();renderBrowseFilters();renderPerformancePreview();const initialParams=new URLSearchParams(location.search);const initialSpot=initialParams.get('spot');if(initialSpot&&spots.some(s=>s.spot_id===initialSpot))setTimeout(()=>openSpot(initialSpot),80);
 })();

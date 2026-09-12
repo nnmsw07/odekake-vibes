@@ -10,29 +10,29 @@
   <link rel="alternate" hreflang="en" href="https://kibuntrip.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://kibuntrip.com/">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="stylesheet" href="/styles.css?v=201800">
-  <link rel="stylesheet" href="/en/styles.css?v=201800">
+  <link rel="stylesheet" href="/styles.css?v=201900">
+  <link rel="stylesheet" href="/en/styles.css?v=201900">
 </head>
 <body class="en-site">
   <header class="topbar">
     <button class="brand brand-button" id="browseBtn" type="button" aria-label="Browse by area or category"><span class="brand-dot"></span>Kibun Trip <span class="brand-menu-mark">⌄</span></button>
     <span class="topbar-tag">MOOD → DAY</span>
-    <div class="topbar-actions"><a class="lang-switch" href="/" lang="ja" hreflang="ja">JA</a><button class="ghost-btn" id="favoritesBtn" type="button" aria-label="Favorites">♡ <span id="favoriteCount">0</span></button></div>
+    <div class="topbar-actions"><a class="lang-switch refined-lang" href="/" lang="ja" hreflang="ja">JA</a></div>
   </header>
 
   <main id="top">
     <section class="hero shell" id="mood">
-      <p class="eyebrow">MOOD FIRST. PLACE SECOND.</p>
-      <h1>What are you<br><em>in the mood for?</em></h1>
-      <p class="hero-copy">Start with the kind of day you want, not a famous-place checklist.<br>Tell us who you are with and a few practical details.</p>
+      <p class="eyebrow">MOOD → DAY</p>
+      <h1>Choose today<br><em>by how you feel.</em></h1>
+      <p class="hero-copy">No plan is fine. Start with the mood,<br>then find a day that feels right.</p>
 
       <div class="mood-progress" aria-label="Three steps to find today's outing">
         <div class="mood-progress-steps" aria-hidden="true"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
-        <p>Choose the feel of the day first.</p>
+        <p class="mood-progress-labels"><span class="active">Mood</span><span>Things to do</span><span>Filters</span></p>
       </div>
 
       <div class="audience-block setup-panel">
-        <div class="mini-heading audience-heading"><strong>Who are you going with?</strong><small>Recommendations adjust to your company.</small></div>
+        <div class="mini-heading audience-heading"><strong>Who with?</strong><small>Pick one companion</small></div>
         <div id="audiencePicker" class="audience-picker" role="group" aria-label="Choose who you are going with"></div>
       </div>
 
@@ -74,7 +74,7 @@
         </div>
       </details>
 
-      <button id="recommendBtn" class="primary-btn" type="button" disabled>Show my day-out ideas <span>→</span></button>
+      <button id="recommendBtn" class="primary-btn refined-primary" type="button" disabled>Find a day for this mood <span>→</span></button>
       <p class="microcopy">489 spots across Tokyo, Kanagawa and nearby areas — for families, couples, solo days, friends and dogs.</p>
     </section>
 
@@ -127,9 +127,7 @@
     </div>
   </dialog>
 
-  <div class="mobile-recommend-dock" id="mobileRecommendDock" hidden>
-    <button id="mobileRecommendBtn" class="mobile-recommend-btn" type="button" disabled>See ideas for this mood <span>→</span></button>
-  </div>
+
 
   <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Kibun Trip menu">
     <a href="/en/magazine/"><img src="/assets/nav/article.svg" alt=""><strong>Features</strong></a>
@@ -141,11 +139,11 @@
   <footer class="footer shell"><div>© Kibun Trip</div><div class="footer-links"><a href="/en/spots/">Spots</a><a href="/en/magazine/">Features</a><a href="/en/plans/">Plans</a><a href="/en/whats-on/">What’s on</a><a href="/en/performances/">Performances</a><a href="/">日本語</a></div></footer>
 
   <script src="/config.js?v=2090"></script>
-  <script src="/data.js?v=201500"></script>
+  <script src="/data.js?v=201900"></script>
   <script src="/performances.js?v=201500"></script>
   <script src="/events.js?v=201600"></script>
   <script src="/recommender.js?v=1984"></script>
   <script src="/travel.js?v=26"></script>
-  <script src="/en/app.js?v=201800"></script>
+  <script src="/en/app.js?v=201900"></script>
 </body>
 </html>
