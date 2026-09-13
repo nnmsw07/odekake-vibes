@@ -14,6 +14,7 @@ on:
       - 'data.js'
       - 'scripts/generate_seo_pages.mjs'
       - 'scripts/seo_*.mjs'
+      - 'scripts/deployment_origin_audit.mjs'
       - '.github/workflows/kibun-seo-audit.yml'
   pull_request:
     paths:
@@ -27,6 +28,7 @@ on:
       - 'data.js'
       - 'scripts/generate_seo_pages.mjs'
       - 'scripts/seo_*.mjs'
+      - 'scripts/deployment_origin_audit.mjs'
   workflow_dispatch:
   schedule:
     # Monday 07:20 JST — public-site audit before the weekly Kibun review.
@@ -64,6 +66,8 @@ jobs:
           node-version: '22'
       - name: Audit deployed kibuntrip.com URLs
         run: node scripts/seo_audit.mjs --live --base-url https://kibuntrip.com --report seo-audit/ci-live
+      - name: Audit canonical and legacy deployment origins
+        run: node scripts/deployment_origin_audit.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
