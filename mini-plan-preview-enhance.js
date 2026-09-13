@@ -32,6 +32,54 @@
     el._enhanceTimer = setTimeout(() => { el.hidden = true; }, 2100);
   }
 
+  function ensureEnhanceStyles() {
+    if (document.getElementById('mpEnhanceV6Styles')) return;
+    const style = document.createElement('style');
+    style.id = 'mpEnhanceV6Styles';
+    style.textContent = `
+      .mp-swap-stop{
+        width:auto!important;height:auto!important;margin-top:7px;padding:5px 8px!important;
+        display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(83,107,87,.16)!important;
+        border-radius:999px!important;background:#f1f4ef!important;color:var(--mp-green-dark)!important;
+        font:inherit!important;font-size:8px!important;font-weight:800!important;line-height:1.2!important;
+      }
+      .mp-swap-stop .mp-swap-icon{font-size:12px;line-height:1}
+      .mp-travel-status-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 2px 0}
+      .mp-travel-status-row .mp-travel-status{margin:0;min-width:0}
+      .mp-travel-retry{flex:0 0 auto;border:1px solid var(--mp-line);border-radius:999px;background:#fff;color:var(--mp-green-dark);padding:6px 9px;font:inherit;font-size:8px;font-weight:800}
+      .mp-travel-status.is-error{color:#9a6255}
+      .mp-travel-status.is-ok{color:var(--mp-green-dark);font-weight:700}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function ensureTravelRetryUi() {
+    const status = $('mpTravelStatus');
+    if (!status || status.parentElement?.classList.contains('mp-travel-status-row')) return;
+    const row = document.createElement('div');
+    row.className = 'mp-travel-status-row';
+    status.parentNode.insertBefore(row, status);
+    row.appendChild(status);
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.id = 'mpTravelRetry';
+    retry.className = 'mp-travel-retry';
+    retry.textContent = '再取得';
+    retry.hidden = true;
+    row.appendChild(retry);
+    retry.addEventListener('click', refreshTravelTimes);
+  }
+
+  function setTravelStatus(message, state = 'neutral', retry = false) {
+    const status = $('mpTravelStatus');
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('is-error', state === 'error');
+    status.classList.toggle('is-ok', state === 'ok');
+    const button = $('mpTravelRetry');
+    if (button) button.hidden = !retry;
+  }
+
   function roleFor(spot) {
     const keys = [spot?.category_primary, ...(spot?.categories || [])].join(' ').toLowerCase();
     if (/restaurant|cafe|food|dining|afternoon/.test(keys)) return ['食事・休憩', 'eat'];
@@ -84,16 +132,17 @@
 
   function addSwapButtons() {
     document.querySelectorAll('#mpPlanStops .mp-plan-stop').forEach((stop) => {
+      const copy = stop.querySelector('.mp-stop-copy');
       const actions = stop.querySelector('.mp-stop-actions');
       const move = actions?.querySelector('[data-move-stop]');
-      if (!actions || !move || actions.querySelector('[data-swap-stop]')) return;
+      if (!copy || !move || stop.querySelector('[data-swap-stop]')) return;
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'mp-swap-stop';
       button.dataset.swapStop = move.dataset.moveStop;
       button.setAttribute('aria-label', '似た候補に入れ替える');
-      button.textContent = '↺';
-      actions.prepend(button);
+      button.innerHTML = '<span class="mp-swap-icon" aria-hidden="true">↺</span><span>似た候補に入れ替え</span>';
+      copy.appendChild(button);
     });
   }
 
@@ -167,6 +216,17 @@
 
   function coordKey(spot) { return String(spot.spot_id || `${spot.name}|${spot.address}`); }
 
+  async function apiReady() {
+    try {
+      const response = await fetch(`${API_BASE}/health`, { headers:{accept:'application/json'}, cache:'no-store' });
+      if (!response.ok) return false;
+      const payload = await response.json();
+      return payload?.ok === true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   async function resolveCoord(spot) {
     const lat = Number(spot.lat ?? spot.latitude), lng = Number(spot.lng ?? spot.longitude);
     if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat, lng };
@@ -174,7 +234,7 @@
     if (cached && Number.isFinite(Number(cached.lat)) && Number.isFinite(Number(cached.lng))) return { lat:Number(cached.lat), lng:Number(cached.lng) };
     const q = [spot.name, spot.address || `${spot.prefecture || ''} ${spot.city || ''}`].filter(Boolean).join(' ');
     const response = await fetch(`${API_BASE}/location-search?q=${encodeURIComponent(q)}`, { headers:{accept:'application/json'} });
-    if (!response.ok) throw new Error('location-search');
+    if (!response.ok) throw new Error(`location-search:${response.status}`);
     const candidate = (await response.json()).candidates?.[0];
     if (!candidate) throw new Error('location-not-found');
     const coord = { lat:Number(candidate.lat), lng:Number(candidate.lng) };
@@ -189,7 +249,7 @@
       method:'POST', headers:{'content-type':'application/json',accept:'application/json'},
       body:JSON.stringify({origin,destinations:[{spot_id:String(to.spot_id),lat:dest.lat,lng:dest.lng}],mode:travelMode})
     });
-    if (!response.ok) throw new Error('travel-times');
+    if (!response.ok) throw new Error(`travel-times:${response.status}`);
     const minutes = Number((await response.json()).times?.[String(to.spot_id)]);
     return Number.isFinite(minutes) && minutes > 0 ? minutes : null;
   }
@@ -204,25 +264,55 @@
     const chosen = ids.map((id) => byId.get(id)).filter(Boolean);
     const rows = [...document.querySelectorAll('#mpPlanStops .mp-move-row')];
     if (!rows.length || chosen.length < 2) return;
-    $('mpTravelStatus').textContent = `${travelMode === 'transit' ? '公共交通' : '車'}の実移動時間を取得中…`;
+
+    ensureTravelRetryUi();
+    setTravelStatus(`${travelMode === 'transit' ? '公共交通' : '車'}の実移動時間を取得中…`);
     rows.forEach((row) => { const span=row.querySelector('.mp-move-copy span'); if(span) span.textContent='実際の所要時間を確認中…'; });
-    const tasks = chosen.slice(0,-1).map(async (from,index) => {
-      try { return await segmentMinutes(from, chosen[index+1]); } catch (_) { return null; }
-    });
-    const values = await Promise.all(tasks);
+
+    const ready = await apiReady();
     if (token !== routeToken) return;
-    values.forEach((minutes,index) => {
-      const span=rows[index]?.querySelector('.mp-move-copy span');
-      if(span) span.textContent=minutes ? `${travelMode === 'transit' ? '公共交通' : '車'} 約${minutes}分` : 'Google Mapsで確認';
+    if (!ready) {
+      rows.forEach((row) => { const span=row.querySelector('.mp-move-copy span'); if(span) span.textContent='Google Mapsで確認'; });
+      setTravelStatus(
+        location.hostname.endsWith('.app.github.dev')
+          ? '移動時間APIに接続できません。Previewサーバーを再起動してください'
+          : 'Kibun APIに接続できません。しばらくして再取得してください',
+        'error', true
+      );
+      return;
+    }
+
+    const tasks = chosen.slice(0,-1).map(async (from,index) => {
+      try {
+        const minutes = await segmentMinutes(from, chosen[index+1]);
+        return { minutes, error:null };
+      } catch (error) {
+        return { minutes:null, error:String(error?.message || error) };
+      }
     });
+    const results = await Promise.all(tasks);
+    if (token !== routeToken) return;
+
+    results.forEach((result,index) => {
+      const span=rows[index]?.querySelector('.mp-move-copy span');
+      if(span) span.textContent=result.minutes ? `${travelMode === 'transit' ? '公共交通' : '車'} 約${result.minutes}分` : 'Google Mapsで確認';
+    });
+
+    const values = results.map((result) => result.minutes);
     const valid=values.filter(Number.isFinite);
     if(valid.length===values.length && valid.length){
-      $('mpTravelStatus').textContent=`移動の目安 合計約${valid.reduce((a,b)=>a+b,0)}分（${travelMode === 'transit' ? '公共交通' : '車'}）`;
-    } else if(location.hostname.endsWith('.app.github.dev')) {
-      $('mpTravelStatus').textContent='実移動時間を表示するにはV5用Previewサーバーで開いてください';
-    } else {
-      $('mpTravelStatus').textContent='取得できない区間はGoogle Mapsで確認してください';
+      setTravelStatus(`移動の目安 合計約${valid.reduce((a,b)=>a+b,0)}分（${travelMode === 'transit' ? '公共交通' : '車'}）`, 'ok', false);
+      return;
     }
+
+    const errors = results.map((result) => result.error).filter(Boolean);
+    const routeError = errors.some((error) => error.startsWith('travel-times:'));
+    setTravelStatus(
+      routeError
+        ? 'Google Routesから取得できない区間があります。再取得または地図で確認してください'
+        : '位置情報を取得できないスポットがあります。再取得または地図で確認してください',
+      'error', true
+    );
   }
 
   function enhancePlan() {
@@ -256,5 +346,7 @@
 
   const observer = new MutationObserver(() => setTimeout(enhancePlan, 0));
   if($('mpPlanStops')) observer.observe($('mpPlanStops'), {childList:true});
+  ensureEnhanceStyles();
+  ensureTravelRetryUi();
   renderMode();
 })();
