@@ -3,6 +3,7 @@
 
   const STORAGE_KEY = 'kibun-mini-plan-v1';
   const MAX_SPOTS = 4;
+  const HALF_DAY_MAX_MINUTES = 330;
   const seed = window.ODEKAKE_SEED || {};
   const spots = Array.isArray(seed.spots) ? seed.spots : [];
   const byId = new Map(spots.map((spot) => [String(spot.spot_id), spot]));
@@ -52,7 +53,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
     } catch (_) {
-      // The preview still works in-memory when storage is unavailable.
+      // Preview remains usable in-memory when localStorage is unavailable.
     }
   }
 
@@ -88,12 +89,32 @@
     return ['PLACE', '立ち寄る'];
   }
 
+  function stayMinutes(spot) {
+    const value = Number(spot.stay_minutes_seed || spot.recommended_duration || 120);
+    return Number.isFinite(value) && value > 0 ? value : 120;
+  }
+
   function durationFor(spot) {
-    const minutes = Number(spot.stay_minutes_seed || 120);
-    if (!Number.isFinite(minutes) || minutes <= 0) return '滞在時間は現地で調整';
+    const minutes = stayMinutes(spot);
     if (minutes < 60) return `滞在 約${minutes}分`;
     const hours = Math.round((minutes / 60) * 10) / 10;
     return `滞在 約${hours}時間`;
+  }
+
+  function planMeta(chosen) {
+    const minutes = chosen.reduce((sum, spot) => sum + stayMinutes(spot), 0);
+    const isDay = chosen.length >= 4 || minutes > HALF_DAY_MAX_MINUTES;
+    const hours = Math.round((minutes / 60) * 10) / 10;
+    return {
+      minutes,
+      hours,
+      isDay,
+      title: isDay ? '今日の1日プラン' : '今日の半日プラン',
+      label: isDay ? '1日向き' : '半日向き',
+      note: isDay
+        ? '4スポットまたは滞在時間が長めです。ゆったり回るなら1日プランがおすすめ。'
+        : '2〜3スポットで、無理なく回りやすいボリュームです。'
+    };
   }
 
   function heroSource(spot) {
@@ -215,22 +236,65 @@
     const length = selectedIds.length;
     dock.hidden = length === 0;
     if (!length) return;
+
     $('mpDockCount').textContent = `${length}スポット選択中`;
-    $('mpDockHint').textContent = length === 1
-      ? 'あと1つでプランにできます'
-      : length === MAX_SPOTS
-        ? '4スポットでちょうど満杯です'
-        : `あと${MAX_SPOTS - length}つまで追加できます`;
+    if (length === 1) {
+      $('mpDockHint').textContent = 'あと1つでプランにできます';
+    } else {
+      const meta = planMeta(selectedSpots());
+      $('mpDockHint').textContent = meta.isDay
+        ? 'この組み合わせは1日プラン向き'
+        : '半日プランにちょうどいい';
+    }
+
     $('mpDockDots').innerHTML = selectedIds.map(() => '<i></i>').join('');
     buildButton.disabled = length < 2;
     buildButton.querySelector('span').textContent = length < 2 ? 'もう1つ選ぶ' : 'プランを見る';
   }
 
+  function mapPointFor(spot) {
+    const lat = Number(spot.lat ?? spot.latitude);
+    const lng = Number(spot.lng ?? spot.longitude);
+    if (Number.isFinite(lat) && Number.isFinite(lng)) return `${lat},${lng}`;
+
+    const name = String(spot.name || '').trim();
+    const address = String(spot.address || '').trim();
+    const city = String(spot.city || '').trim();
+    const prefecture = String(spot.prefecture || '').trim();
+    return [name, address || [prefecture, city].filter(Boolean).join(' ')].filter(Boolean).join(' ');
+  }
+
+  function googleMapsRouteUrl(chosen) {
+    if (chosen.length < 2) return '';
+    const params = new URLSearchParams();
+    params.set('api', '1');
+    params.set('destination', mapPointFor(chosen[chosen.length - 1]));
+    const waypoints = chosen.slice(0, -1).map(mapPointFor).filter(Boolean);
+    if (waypoints.length) params.set('waypoints', waypoints.join('|'));
+    return `https://www.google.com/maps/dir/?${params.toString()}`;
+  }
+
+  function openGoogleMaps() {
+    const chosen = selectedSpots();
+    const url = googleMapsRouteUrl(chosen);
+    if (!url) {
+      showToast('2スポット以上選んでください');
+      return;
+    }
+    const opened = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!opened) window.location.href = url;
+  }
+
   function renderPlan() {
     const chosen = selectedSpots();
-    const minutes = chosen.reduce((sum, spot) => sum + Number(spot.stay_minutes_seed || 120), 0);
-    const hours = Math.round((minutes / 60) * 10) / 10;
-    $('mpPlanSummary').textContent = `${chosen.length}スポット · 滞在の目安 合計${hours}時間（移動時間を除く）`;
+    const meta = planMeta(chosen);
+    $('mpPlanTitle').textContent = meta.title;
+    $('mpPlanSummary').textContent = `${chosen.length}スポット · 滞在の目安 合計${meta.hours}時間（移動時間を除く）`;
+
+    const notice = $('mpPlanNotice');
+    notice.classList.toggle('is-day', meta.isDay);
+    notice.innerHTML = `<strong>${meta.label}</strong><span>${escapeHtml(meta.note)}</span>`;
+
     $('mpPlanStops').innerHTML = chosen.map((spot, index) => {
       const [, roleJapanese] = roleFor(spot);
       const id = escapeHtml(spot.spot_id);
@@ -247,11 +311,13 @@
               aria-label="${name}を前へ" ${index === 0 ? 'disabled' : ''}>↑</button>
             <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="1"
               aria-label="${name}を後ろへ" ${index === chosen.length - 1 ? 'disabled' : ''}>↓</button>
-            <button type="button" class="mp-remove-stop" data-remove-stop="${id}">外す</button>
+            <button type="button" class="mp-remove-stop" data-remove-stop="${id}" aria-label="${name}を外す">外す</button>
           </div>
         </article>`;
     }).join('');
+
     $('mpAddAnother').hidden = chosen.length >= MAX_SPOTS;
+    $('mpGoogleMaps').disabled = chosen.length < 2;
   }
 
   function openPlan() {
@@ -298,6 +364,7 @@
 
   buildButton.addEventListener('click', openPlan);
   $('mpPlanClose').addEventListener('click', () => planDialog.close());
+  $('mpGoogleMaps').addEventListener('click', openGoogleMaps);
   $('mpAddAnother').addEventListener('click', () => {
     planDialog.close();
     setTimeout(() => search.focus(), 80);
