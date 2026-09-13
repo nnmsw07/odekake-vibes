@@ -2,6 +2,7 @@
 
 const CANONICAL = 'https://kibuntrip.com/';
 const LEGACY_GITHUB_PAGES = 'https://nnmsw07.github.io/odekake-vibes/';
+const WARN_ONLY = process.argv.includes('--warn-only');
 
 async function request(url, redirect = 'manual') {
   return fetch(url, {
@@ -46,6 +47,8 @@ try {
   if (legacy.status === 301 || legacy.status === 308) {
     if (!location || !location.startsWith(CANONICAL)) {
       errors.push(`legacy GitHub Pages redirects to unexpected origin: ${legacy.status} ${location || '(missing Location)'}`);
+    } else {
+      console.log(`LEGACY ${legacy.status} ${LEGACY_GITHUB_PAGES} -> ${location}`);
     }
   } else if (legacy.status === 302 || legacy.status === 303 || legacy.status === 307) {
     warnings.push(`legacy GitHub Pages uses temporary redirect ${legacy.status}; prefer 301/308 to ${CANONICAL}`);
@@ -61,7 +64,7 @@ try {
 }
 
 for (const warning of warnings) console.warn(`WARN ${warning}`);
-for (const error of errors) console.error(`ERROR ${error}`);
-console.log(`Deployment origin audit ${errors.length ? 'FAIL' : 'PASS'}: ${errors.length} errors / ${warnings.length} warnings`);
+for (const error of errors) console.error(`${WARN_ONLY ? 'WARN' : 'ERROR'} ${error}`);
+console.log(`Deployment origin audit ${errors.length ? (WARN_ONLY ? 'WARN' : 'FAIL') : 'PASS'}: ${errors.length} errors / ${warnings.length} warnings`);
 
-if (errors.length) process.exit(1);
+if (errors.length && !WARN_ONLY) process.exit(1);
