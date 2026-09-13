@@ -19,7 +19,7 @@
 
   let area = 'yokohama';
   let visibleLimit = 16;
-  let selectedIds = loadSelection().filter((id) => byId.has(id)).slice(0, MAX_SPOTS);
+  let selectedIds = sanitizeSelection(loadSelection());
   let toastTimer = null;
 
   function escapeHtml(value) {
@@ -37,8 +37,23 @@
     }
   }
 
+  function sanitizeSelection(ids) {
+    const unique = [];
+    for (const id of ids) {
+      const normalized = String(id);
+      if (!byId.has(normalized) || unique.includes(normalized)) continue;
+      unique.push(normalized);
+      if (unique.length >= MAX_SPOTS) break;
+    }
+    return unique;
+  }
+
   function saveSelection() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
+    } catch (_) {
+      // The preview still works in-memory when storage is unavailable.
+    }
   }
 
   function areaMatch(spot) {
@@ -109,10 +124,16 @@
   function cardHtml(spot) {
     const id = String(spot.spot_id);
     const isSelected = selectedIds.includes(id);
+    const isFull = selectedIds.length >= MAX_SPOTS;
     const [roleEnglish, roleJapanese] = roleFor(spot);
     const hero = heroSource(spot);
     const image = hero ? `<img src="${escapeHtml(hero)}" alt="" loading="lazy" onerror="this.remove()">` : '';
     const copy = String(spot.public_copy || spot.editorial?.lead || '').trim();
+    const buttonLabel = isSelected
+      ? '✓ プランに追加済み'
+      : isFull
+        ? '4件選択済み'
+        : '＋ プランに追加';
 
     return `
       <article class="mp-spot-card ${isSelected ? 'is-selected' : ''}" data-spot-card="${escapeHtml(id)}">
@@ -126,8 +147,9 @@
           <strong>${escapeHtml(spot.name || '名称未設定')}</strong>
           ${copy ? `<p>${escapeHtml(copy)}</p>` : ''}
         </div>
-        <button class="mp-add-button" type="button" data-add-spot="${escapeHtml(id)}" aria-pressed="${isSelected}">
-          ${isSelected ? '✓ プランに追加済み' : '＋ プランに追加'}
+        <button class="mp-add-button" type="button" data-add-spot="${escapeHtml(id)}"
+          aria-pressed="${isSelected}" ${!isSelected && isFull ? 'disabled' : ''}>
+          ${buttonLabel}
         </button>
       </article>`;
   }
@@ -156,6 +178,7 @@
       selectedIds = selectedIds.filter((item) => item !== normalized);
       showToast('プランから外しました');
     } else {
+      if (!byId.has(normalized)) return;
       if (selectedIds.length >= MAX_SPOTS) {
         showToast('Mini Planは4スポットまでです');
         return;
@@ -166,6 +189,18 @@
     saveSelection();
     renderGrid();
     if (planDialog?.open) renderPlan();
+  }
+
+  function moveSpot(id, direction) {
+    const normalized = String(id);
+    const from = selectedIds.indexOf(normalized);
+    const to = from + direction;
+    if (from < 0 || to < 0 || to >= selectedIds.length) return;
+    [selectedIds[from], selectedIds[to]] = [selectedIds[to], selectedIds[from]];
+    saveSelection();
+    renderGrid();
+    renderPlan();
+    showToast('順番を入れ替えました');
   }
 
   function clearPlan() {
@@ -198,16 +233,25 @@
     $('mpPlanSummary').textContent = `${chosen.length}スポット · 滞在の目安 合計${hours}時間（移動時間を除く）`;
     $('mpPlanStops').innerHTML = chosen.map((spot, index) => {
       const [, roleJapanese] = roleFor(spot);
+      const id = escapeHtml(spot.spot_id);
+      const name = escapeHtml(spot.name || '名称未設定');
       return `
         <article class="mp-plan-stop">
           <span class="mp-stop-num">${String(index + 1).padStart(2, '0')}</span>
           <div class="mp-stop-copy">
             <small>${escapeHtml(roleJapanese)} · ${escapeHtml(durationFor(spot))}</small>
-            <strong>${escapeHtml(spot.name)}</strong>
+            <strong>${name}</strong>
           </div>
-          <button type="button" class="mp-remove-stop" data-remove-stop="${escapeHtml(spot.spot_id)}">外す</button>
+          <div class="mp-stop-actions" aria-label="${name}の順番を変更">
+            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="-1"
+              aria-label="${name}を前へ" ${index === 0 ? 'disabled' : ''}>↑</button>
+            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="1"
+              aria-label="${name}を後ろへ" ${index === chosen.length - 1 ? 'disabled' : ''}>↓</button>
+            <button type="button" class="mp-remove-stop" data-remove-stop="${id}">外す</button>
+          </div>
         </article>`;
     }).join('');
+    $('mpAddAnother').hidden = chosen.length >= MAX_SPOTS;
   }
 
   function openPlan() {
@@ -262,9 +306,14 @@
   $('mpClearPlanTop').addEventListener('click', clearPlan);
 
   $('mpPlanStops').addEventListener('click', (event) => {
-    const button = event.target.closest('[data-remove-stop]');
-    if (!button) return;
-    toggleSpot(button.dataset.removeStop);
+    const moveButton = event.target.closest('[data-move-stop]');
+    if (moveButton) {
+      moveSpot(moveButton.dataset.moveStop, Number(moveButton.dataset.direction));
+      return;
+    }
+    const removeButton = event.target.closest('[data-remove-stop]');
+    if (!removeButton) return;
+    toggleSpot(removeButton.dataset.removeStop);
     if (selectedIds.length < 2 && planDialog.open) planDialog.close();
   });
 
@@ -272,6 +321,7 @@
     if (event.target === planDialog) planDialog.close();
   });
 
+  saveSelection();
   renderFilters();
   renderGrid();
 
