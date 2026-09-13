@@ -16,13 +16,22 @@
     .mp-plan-notice{margin-top:12px;display:flex;align-items:flex-start;gap:9px;padding:10px 12px;border-radius:14px;background:#f2f4ef;color:var(--mp-muted);font-size:10px;line-height:1.55}
     .mp-plan-notice strong{flex:0 0 auto;padding:4px 8px;border-radius:999px;background:#e4ebe1;color:var(--mp-green-dark);font-size:9px}
     .mp-plan-notice.is-day{background:#f6f0e5}.mp-plan-notice.is-day strong{background:#eadfca;color:#755f40}
+    .mp-plan-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px;padding:11px 12px;border:1px solid var(--mp-line);border-radius:15px;background:#faf8f3}
+    .mp-plan-tools div{min-width:0}.mp-plan-tools strong,.mp-plan-tools small{display:block}.mp-plan-tools strong{font-size:11px}.mp-plan-tools small{margin-top:3px;color:var(--mp-muted);font-size:9px;line-height:1.4}
+    .mp-recommend-button{flex:0 0 auto;border:0;border-radius:999px;background:#e8eee5;color:var(--mp-green-dark);padding:9px 11px;font:inherit;font-size:10px;font-weight:800}
     .mp-order-button{width:32px;height:32px;border:0;border-radius:50%;background:transparent;font-size:16px}
     .mp-remove-stop{width:32px;height:32px;padding:0;border:1px solid var(--mp-line);border-radius:50%;background:#fbf9f4;text-decoration:none;font-size:0}
     .mp-remove-stop::before{content:'×';font-size:18px;line-height:1;color:#9a817a}
+    .mp-plan-stop:not(:last-child)::after{display:none}
+    .mp-move-row{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:47px;position:relative}
+    .mp-move-line{justify-self:center;width:1px;height:38px;background:repeating-linear-gradient(to bottom,rgba(83,107,87,.36) 0 4px,transparent 4px 8px)}
+    .mp-move-copy small,.mp-move-copy span{display:block}.mp-move-copy small{color:var(--mp-green-dark);font-size:8px;font-weight:800;letter-spacing:.06em}.mp-move-copy span{margin-top:2px;color:var(--mp-muted);font-size:9px}
+    .mp-segment-map{border:0;background:transparent;color:var(--mp-green-dark);font:inherit;font-size:10px;font-weight:800;padding:7px 2px}
     .mp-go-block{margin-top:20px;padding-top:18px;border-top:1px solid var(--mp-line)}
     .mp-google-route-button{width:100%;min-height:64px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;border:0;border-radius:18px;background:var(--mp-ink);color:#fff;font:inherit;text-align:left;box-shadow:0 12px 28px rgba(41,49,43,.18)}
     .mp-google-route-button strong,.mp-google-route-button small{display:block}.mp-google-route-button strong{font-size:14px}.mp-google-route-button small{margin-top:4px;color:rgba(255,255,255,.66);font-size:9px;line-height:1.35}
     .mp-google-route-button b{flex:0 0 auto;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);font-size:17px}
+    .mp-full-route-button{width:100%;margin-top:9px;min-height:44px;border:1px solid var(--mp-line);border-radius:14px;background:#faf8f3;color:var(--mp-ink);font:inherit;font-size:11px;font-weight:800}
     .mp-google-route-help{margin:8px 2px 0;color:var(--mp-muted);font-size:9px;line-height:1.5}
   </style>
 </head>
@@ -37,11 +46,11 @@
 
   <main>
     <section class="mp-hero">
-      <p class="mp-eyebrow">MINI PLAN · V2</p>
+      <p class="mp-eyebrow">MINI PLAN · V3</p>
       <h1>気になる場所を、<br><em>今日のプランへ。</em></h1>
-      <p class="mp-lead">行きたい場所を2〜4つ選ぶだけ。半日か1日かをKibunが見分けて、選んだ順番でGoogle Mapsへつなぎます。</p>
+      <p class="mp-lead">行きたい場所を2〜4つ選ぶだけ。Kibunがちょうどいい流れに整えて、次の1ヶ所から迷わず出発できます。</p>
       <div class="mp-flow" aria-label="Mini Planの流れ">
-        <span><b>1</b>選ぶ</span><i></i><span><b>2</b>まとめる</span><i></i><span><b>3</b>出かける</span>
+        <span><b>1</b>選ぶ</span><i></i><span><b>2</b>整える</span><i></i><span><b>3</b>出かける</span>
       </div>
     </section>
 
@@ -73,8 +82,8 @@
 
     <section class="mp-note">
       <p class="mp-eyebrow">ABOUT THIS PREVIEW</p>
-      <h2>選ぶ → まとめる → Google Mapsへ。</h2>
-      <p>選んだ2〜4スポットは保存され、順番を調整できます。半日・1日を自動判定し、現在地から選んだ順番でGoogle Mapsのルートを開けます。</p>
+      <h2>プランはKibunで見る。ナビはMapsに任せる。</h2>
+      <p>まず次の1ヶ所へナビを開始。必要なら全ルートもGoogle Mapsで確認できます。各スポット間の地図もすぐ開けます。</p>
     </section>
   </main>
 
@@ -106,14 +115,26 @@
         </div>
         <button id="mpPlanClose" class="mp-close-button" type="button" aria-label="閉じる">×</button>
       </div>
+
+      <div class="mp-plan-tools">
+        <div>
+          <strong>順番、Kibunに任せる？</strong>
+          <small>時間帯と過ごし方から、自然な流れに整えます（β）</small>
+        </div>
+        <button id="mpRecommendOrder" class="mp-recommend-button" type="button">おすすめ順 ✦</button>
+      </div>
+
       <div id="mpPlanStops" class="mp-plan-stops"></div>
+
       <div class="mp-go-block">
-        <button id="mpGoogleMaps" class="mp-google-route-button" type="button">
-          <span><strong>このプランで行く</strong><small>現在地から、選んだ順番でGoogle Mapsを開く</small></span>
+        <button id="mpStartNavigation" class="mp-google-route-button" type="button">
+          <span><strong>ナビを開始</strong><small>まずは最初の1ヶ所へ。現在地からGoogle Mapsで案内</small></span>
           <b>↗</b>
         </button>
-        <p class="mp-google-route-help">移動手段と所要時間はGoogle Mapsで確認できます。Kibun内での移動時間表示・おすすめ順への自動並び替えは次の段階で追加予定です。</p>
+        <button id="mpFullRoute" class="mp-full-route-button" type="button">全ルートをGoogle Mapsで見る ↗</button>
+        <p class="mp-google-route-help">プラン全体はKibunで確認し、移動するときだけGoogle Mapsを使う設計です。区間ごとの「地図」から次のスポットだけを開くこともできます。</p>
       </div>
+
       <div class="mp-plan-footer">
         <button id="mpAddAnother" class="mp-secondary-button" type="button">＋ もう1ヶ所追加</button>
         <button id="mpClearPlan" class="mp-danger-text" type="button">プランを空にする</button>
@@ -122,6 +143,6 @@
   </dialog>
 
   <script src="data.js?v=201900"></script>
-  <script src="mini-plan-preview.js?v=3"></script>
+  <script src="mini-plan-preview.js?v=4"></script>
 </body>
 </html>
