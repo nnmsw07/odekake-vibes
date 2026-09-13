@@ -235,3 +235,41 @@ window.KIBUN_CONFIG = {
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});
   else apply();
 })();
+
+// v20.19.10: keep the family "親も楽しい日に" collection card on its approved image.
+(function installFamilyParentDayHero(){
+  if (typeof document === "undefined") return;
+  const STYLE_ID="kibun-family-parent-day-v201910";
+  if(!document.getElementById(STYLE_ID)){
+    const style=document.createElement("style");
+    style.id=STYLE_ID;
+    style.textContent=`
+.collection-card.family-parent-day{
+  background-image:url('/assets/editorial/parents-eat-well.webp')!important;
+  background-size:cover!important;
+  background-position:center 52%!important;
+}
+`;
+    document.head.appendChild(style);
+  }
+  function apply(){
+    document.querySelectorAll('.collection-card.c4').forEach(card=>{
+      const title=card.querySelector('strong')?.textContent?.trim()||'';
+      card.classList.toggle('family-parent-day',title==='親も楽しい日に');
+    });
+  }
+  function watch(){
+    const grid=document.getElementById('collectionGrid');
+    if(!grid)return false;
+    apply();
+    new MutationObserver(apply).observe(grid,{childList:true,subtree:true});
+    return true;
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',()=>{
+      if(!watch()) apply();
+    },{once:true});
+  }else if(!watch()){
+    apply();
+  }
+})();
