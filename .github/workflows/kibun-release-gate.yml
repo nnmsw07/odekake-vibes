@@ -1,0 +1,32 @@
+name: Kibun Release Gate
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard approved UI states
+        run: node scripts/ui_regression_guard.mjs
+      - name: Audit SEO structure and internal links
+        run: node scripts/seo_audit.mjs --report seo-audit/release-gate
+      - name: Audit RC1 release readiness
+        run: node scripts/release_readiness_audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kibun-release-gate
+          path: |
+            seo-audit/release-gate.json
+            seo-audit/release-gate.md
