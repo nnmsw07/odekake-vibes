@@ -2,8 +2,15 @@
   'use strict';
 
   const STORAGE_KEY = 'kibun-mini-plan-v1';
+  const TIME_KEY = 'kibun-mini-plan-time-v1';
   const MAX_SPOTS = 4;
-  const HALF_DAY_MAX_MINUTES = 330;
+  const TIME_OPTIONS = {
+    quick: { label: '今から2〜3時間', title: '2〜3時間プラン', budget: 180 },
+    afternoon: { label: '午後から', title: '午後プラン', budget: 300 },
+    half: { label: '半日', title: '半日プラン', budget: 330 },
+    day: { label: '1日', title: '1日プラン', budget: 600 }
+  };
+
   const seed = window.ODEKAKE_SEED || {};
   const spots = Array.isArray(seed.spots) ? seed.spots : [];
   const byId = new Map(spots.map((spot) => [String(spot.spot_id), spot]));
@@ -17,10 +24,12 @@
   const buildButton = $('mpBuildPlan');
   const planDialog = $('mpPlanDialog');
   const filters = $('mpAreaFilters');
+  const timeOptions = $('mpTimeOptions');
 
   let area = 'yokohama';
   let visibleLimit = 16;
   let selectedIds = sanitizeSelection(loadSelection());
+  let selectedTime = loadTime();
   let toastTimer = null;
 
   function escapeHtml(value) {
@@ -38,6 +47,15 @@
     }
   }
 
+  function loadTime() {
+    try {
+      const saved = localStorage.getItem(TIME_KEY);
+      return TIME_OPTIONS[saved] ? saved : 'half';
+    } catch (_) {
+      return 'half';
+    }
+  }
+
   function sanitizeSelection(ids) {
     const unique = [];
     for (const id of ids) {
@@ -50,11 +68,11 @@
   }
 
   function saveSelection() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds));
-    } catch (_) {
-      // Preview remains usable in-memory when localStorage is unavailable.
-    }
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedIds)); } catch (_) {}
+  }
+
+  function saveTime() {
+    try { localStorage.setItem(TIME_KEY, selectedTime); } catch (_) {}
   }
 
   function areaMatch(spot) {
@@ -101,19 +119,29 @@
     return `滞在 約${hours}時間`;
   }
 
+  function selectedSpots() {
+    return selectedIds.map((id) => byId.get(id)).filter(Boolean);
+  }
+
   function planMeta(chosen) {
+    const option = TIME_OPTIONS[selectedTime] || TIME_OPTIONS.half;
     const minutes = chosen.reduce((sum, spot) => sum + stayMinutes(spot), 0);
-    const isDay = chosen.length >= 4 || minutes > HALF_DAY_MAX_MINUTES;
     const hours = Math.round((minutes / 60) * 10) / 10;
+    const over = minutes > option.budget;
+    const remaining = option.budget - minutes;
     return {
       minutes,
       hours,
-      isDay,
-      title: isDay ? '今日の1日プラン' : '今日の半日プラン',
-      label: isDay ? '1日向き' : '半日向き',
-      note: isDay
-        ? '少しボリューム多め。ゆったり回るなら1日使うのがおすすめです。'
-        : '2〜3スポットで、無理なく回りやすいボリュームです。'
+      over,
+      remaining,
+      option,
+      title: `今日の${option.title}`,
+      label: over ? '少し多め' : 'ちょうどよさそう',
+      note: over
+        ? `${option.label}には約${Math.max(1, Math.ceil((minutes - option.budget) / 30) * 30)}分オーバー。時間に合わせて絞ることもできます。`
+        : remaining >= 90
+          ? `${option.label}なら、あと1ヶ所くらい寄れそうです。`
+          : `${option.label}に収まりやすいボリュームです。`
     };
   }
 
@@ -122,10 +150,6 @@
     if (typeof hero === 'string') return hero;
     if (!hero || typeof hero !== 'object') return '';
     return hero.src || hero.url || hero.path || hero.local_path || '';
-  }
-
-  function selectedSpots() {
-    return selectedIds.map((id) => byId.get(id)).filter(Boolean);
   }
 
   function filteredSpots() {
@@ -150,28 +174,17 @@
     const hero = heroSource(spot);
     const image = hero ? `<img src="${escapeHtml(hero)}" alt="" loading="lazy" onerror="this.remove()">` : '';
     const copy = String(spot.public_copy || spot.editorial?.lead || '').trim();
-    const buttonLabel = isSelected
-      ? '✓ プランに追加済み'
-      : isFull
-        ? '4件選択済み'
-        : '＋ プランに追加';
+    const buttonLabel = isSelected ? '✓ プランに追加済み' : isFull ? '4件選択済み' : '＋ プランに追加';
 
     return `
       <article class="mp-spot-card ${isSelected ? 'is-selected' : ''}" data-spot-card="${escapeHtml(id)}">
-        <div class="mp-spot-visual">
-          ${image}
-          <span class="mp-role">${escapeHtml(roleEnglish)}</span>
-          <span class="mp-added-mark" aria-hidden="true">✓</span>
-        </div>
+        <div class="mp-spot-visual">${image}<span class="mp-role">${escapeHtml(roleEnglish)}</span><span class="mp-added-mark" aria-hidden="true">✓</span></div>
         <div class="mp-spot-copy">
           <small>${escapeHtml(spot.prefecture || '')}${spot.city ? ` · ${escapeHtml(spot.city)}` : ''} · ${escapeHtml(roleJapanese)}</small>
           <strong>${escapeHtml(spot.name || '名称未設定')}</strong>
           ${copy ? `<p>${escapeHtml(copy)}</p>` : ''}
         </div>
-        <button class="mp-add-button" type="button" data-add-spot="${escapeHtml(id)}"
-          aria-pressed="${isSelected}" ${!isSelected && isFull ? 'disabled' : ''}>
-          ${buttonLabel}
-        </button>
+        <button class="mp-add-button" type="button" data-add-spot="${escapeHtml(id)}" aria-pressed="${isSelected}" ${!isSelected && isFull ? 'disabled' : ''}>${buttonLabel}</button>
       </article>`;
   }
 
@@ -179,8 +192,7 @@
     const items = filteredSpots();
     const shown = items.slice(0, visibleLimit);
     count.textContent = `${items.length}スポット · ${selectedIds.length}/${MAX_SPOTS}件選択中`;
-    grid.innerHTML = shown.length ? shown.map(cardHtml).join('') :
-      '<div class="mp-empty">条件に合うスポットがありません。エリアや検索ワードを変えてみてください。</div>';
+    grid.innerHTML = shown.length ? shown.map(cardHtml).join('') : '<div class="mp-empty">条件に合うスポットがありません。エリアや検索ワードを変えてみてください。</div>';
     showMore.hidden = items.length <= visibleLimit;
     showMore.textContent = `もっと見る（残り${Math.max(0, items.length - visibleLimit)}件）`;
     updateDock();
@@ -188,9 +200,11 @@
   }
 
   function renderFilters() {
-    filters.querySelectorAll('[data-area]').forEach((button) => {
-      button.classList.toggle('active', button.dataset.area === area);
-    });
+    filters.querySelectorAll('[data-area]').forEach((button) => button.classList.toggle('active', button.dataset.area === area));
+  }
+
+  function renderTimeOptions() {
+    timeOptions.querySelectorAll('[data-time]').forEach((button) => button.classList.toggle('active', button.dataset.time === selectedTime));
   }
 
   function toggleSpot(id) {
@@ -200,10 +214,7 @@
       showToast('プランから外しました');
     } else {
       if (!byId.has(normalized)) return;
-      if (selectedIds.length >= MAX_SPOTS) {
-        showToast('Mini Planは4スポットまでです');
-        return;
-      }
+      if (selectedIds.length >= MAX_SPOTS) { showToast('Mini Planは4スポットまでです'); return; }
       selectedIds.push(normalized);
       showToast(selectedIds.length === 1 ? '追加しました。あと1ヶ所選んでみてください' : 'Mini Planに追加しました');
     }
@@ -232,21 +243,42 @@
     showToast('Mini Planを空にしました');
   }
 
+  function fitPlanToTime() {
+    const option = TIME_OPTIONS[selectedTime] || TIME_OPTIONS.half;
+    if (selectedIds.length <= 2) { showToast('2スポットは残しておくのがおすすめです'); return; }
+
+    let working = selectedIds.slice();
+    const removed = [];
+    const total = () => working.reduce((sum, id) => sum + stayMinutes(byId.get(id)), 0);
+
+    while (working.length > 2 && total() > option.budget) {
+      let removeIndex = 0;
+      let longest = -1;
+      working.forEach((id, index) => {
+        const minutes = stayMinutes(byId.get(id));
+        if (minutes > longest) { longest = minutes; removeIndex = index; }
+      });
+      removed.push(working.splice(removeIndex, 1)[0]);
+    }
+
+    selectedIds = working;
+    saveSelection();
+    renderGrid();
+    renderPlan();
+    showToast(removed.length ? `${removed.length}スポット減らして時間に合わせました` : 'このままで時間に収まりそうです');
+  }
+
   function updateDock() {
     const length = selectedIds.length;
     dock.hidden = length === 0;
     if (!length) return;
-
     $('mpDockCount').textContent = `${length}スポット選択中`;
     if (length === 1) {
       $('mpDockHint').textContent = 'あと1つでプランにできます';
     } else {
       const meta = planMeta(selectedSpots());
-      $('mpDockHint').textContent = meta.isDay
-        ? 'この組み合わせは1日プラン向き'
-        : '半日プランにちょうどいい';
+      $('mpDockHint').textContent = meta.over ? `${meta.option.label}には少し多め` : `${meta.option.label}にちょうどよさそう`;
     }
-
     $('mpDockDots').innerHTML = selectedIds.map(() => '<i></i>').join('');
     buildButton.disabled = length < 2;
     buildButton.querySelector('span').textContent = length < 2 ? 'もう1つ選ぶ' : 'プランを見る';
@@ -256,7 +288,6 @@
     const lat = Number(spot.lat ?? spot.latitude);
     const lng = Number(spot.lng ?? spot.longitude);
     if (Number.isFinite(lat) && Number.isFinite(lng)) return `${lat},${lng}`;
-
     const name = String(spot.name || '').trim();
     const address = String(spot.address || '').trim();
     const city = String(spot.city || '').trim();
@@ -281,17 +312,11 @@
 
   function fullRouteUrl(chosen) {
     if (chosen.length < 2) return '';
-    return googleMapsUrl({
-      destination: mapPointFor(chosen[chosen.length - 1]),
-      waypoints: chosen.slice(0, -1).map(mapPointFor).filter(Boolean)
-    });
+    return googleMapsUrl({ destination: mapPointFor(chosen[chosen.length - 1]), waypoints: chosen.slice(0, -1).map(mapPointFor).filter(Boolean) });
   }
 
   function segmentUrl(fromSpot, toSpot) {
-    return googleMapsUrl({
-      origin: mapPointFor(fromSpot),
-      destination: mapPointFor(toSpot)
-    });
+    return googleMapsUrl({ origin: mapPointFor(fromSpot), destination: mapPointFor(toSpot) });
   }
 
   function openExternal(url) {
@@ -313,26 +338,15 @@
     const timeRank = bestTimeRank(spot);
     if (timeRank !== null) return timeRank;
     const [, , role] = roleFor(spot);
-    return ({
-      outdoor: 0,
-      culture: 1,
-      play: 1,
-      place: 2,
-      eat: 3,
-      shop: 4,
-      relax: 5
-    })[role] ?? 2;
+    return ({ outdoor: 0, culture: 1, play: 1, place: 2, eat: 3, shop: 4, relax: 5 })[role] ?? 2;
   }
 
   function applyRecommendedOrder() {
     if (selectedIds.length < 2) return;
     const originalOrder = new Map(selectedIds.map((id, index) => [id, index]));
     selectedIds = selectedIds.slice().sort((aId, bId) => {
-      const a = byId.get(aId);
-      const b = byId.get(bId);
-      const rankDiff = recommendedRank(a) - recommendedRank(b);
-      if (rankDiff) return rankDiff;
-      return originalOrder.get(aId) - originalOrder.get(bId);
+      const rankDiff = recommendedRank(byId.get(aId)) - recommendedRank(byId.get(bId));
+      return rankDiff || originalOrder.get(aId) - originalOrder.get(bId);
     });
     saveSelection();
     renderGrid();
@@ -345,10 +359,7 @@
     return `
       <div class="mp-move-row" aria-label="${escapeHtml(fromSpot.name || '')}から${escapeHtml(toSpot.name || '')}への移動">
         <span class="mp-move-line" aria-hidden="true"></span>
-        <div class="mp-move-copy">
-          <small>移動 ${String(index + 1).padStart(2, '0')} → ${String(index + 2).padStart(2, '0')}</small>
-          <span>所要時間はGoogle Mapsで確認</span>
-        </div>
+        <div class="mp-move-copy"><small>移動 ${String(index + 1).padStart(2, '0')} → ${String(index + 2).padStart(2, '0')}</small><span>所要時間はGoogle Mapsで確認</span></div>
         <button type="button" class="mp-segment-map" data-segment-url="${escapeHtml(url)}">地図 ↗</button>
       </div>`;
   }
@@ -360,8 +371,8 @@
     $('mpPlanSummary').textContent = `${chosen.length}スポット · 滞在の目安 合計${meta.hours}時間（移動時間を除く）`;
 
     const notice = $('mpPlanNotice');
-    notice.classList.toggle('is-day', meta.isDay);
-    notice.innerHTML = `<strong>${meta.label}</strong><span>${escapeHtml(meta.note)}</span>`;
+    notice.classList.toggle('is-over', meta.over);
+    notice.innerHTML = `<strong>${escapeHtml(meta.label)}</strong><span>${escapeHtml(meta.note)}</span>${meta.over && chosen.length > 2 ? '<button type="button" class="mp-fit-time" data-fit-time>時間に合わせて絞る</button>' : ''}`;
 
     const chunks = [];
     chosen.forEach((spot, index) => {
@@ -371,32 +382,23 @@
       chunks.push(`
         <article class="mp-plan-stop">
           <span class="mp-stop-num">${String(index + 1).padStart(2, '0')}</span>
-          <div class="mp-stop-copy">
-            <small>${escapeHtml(roleJapanese)} · ${escapeHtml(durationFor(spot))}</small>
-            <strong>${name}</strong>
-          </div>
+          <div class="mp-stop-copy"><small>${escapeHtml(roleJapanese)} · ${escapeHtml(durationFor(spot))}</small><strong>${name}</strong></div>
           <div class="mp-stop-actions" aria-label="${name}の順番を変更">
-            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="-1"
-              aria-label="${name}を前へ" ${index === 0 ? 'disabled' : ''}>↑</button>
-            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="1"
-              aria-label="${name}を後ろへ" ${index === chosen.length - 1 ? 'disabled' : ''}>↓</button>
+            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="-1" aria-label="${name}を前へ" ${index === 0 ? 'disabled' : ''}>↑</button>
+            <button type="button" class="mp-order-button" data-move-stop="${id}" data-direction="1" aria-label="${name}を後ろへ" ${index === chosen.length - 1 ? 'disabled' : ''}>↓</button>
             <button type="button" class="mp-remove-stop" data-remove-stop="${id}" aria-label="${name}を外す">外す</button>
           </div>
         </article>`);
       if (index < chosen.length - 1) chunks.push(movementHtml(spot, chosen[index + 1], index));
     });
     $('mpPlanStops').innerHTML = chunks.join('');
-
     $('mpAddAnother').hidden = chosen.length >= MAX_SPOTS;
     $('mpStartNavigation').disabled = chosen.length < 1;
     $('mpFullRoute').disabled = chosen.length < 2;
   }
 
   function openPlan() {
-    if (selectedIds.length < 2) {
-      showToast('あと1ヶ所選ぶとプランにできます');
-      return;
-    }
+    if (selectedIds.length < 2) { showToast('あと1ヶ所選ぶとプランにできます'); return; }
     renderPlan();
     planDialog.showModal();
   }
@@ -411,8 +413,7 @@
 
   grid.addEventListener('click', (event) => {
     const button = event.target.closest('[data-add-spot]');
-    if (!button) return;
-    toggleSpot(button.dataset.addSpot);
+    if (button) toggleSpot(button.dataset.addSpot);
   });
 
   filters.addEventListener('click', (event) => {
@@ -424,53 +425,46 @@
     renderGrid();
   });
 
-  search.addEventListener('input', () => {
-    visibleLimit = 16;
+  timeOptions.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-time]');
+    if (!button || !TIME_OPTIONS[button.dataset.time]) return;
+    selectedTime = button.dataset.time;
+    saveTime();
+    renderTimeOptions();
     renderGrid();
+    if (planDialog.open) renderPlan();
+    showToast(`${TIME_OPTIONS[selectedTime].label}で整えます`);
   });
 
-  showMore.addEventListener('click', () => {
-    visibleLimit += 16;
-    renderGrid();
-  });
-
+  search.addEventListener('input', () => { visibleLimit = 16; renderGrid(); });
+  showMore.addEventListener('click', () => { visibleLimit += 16; renderGrid(); });
   buildButton.addEventListener('click', openPlan);
   $('mpPlanClose').addEventListener('click', () => planDialog.close());
-  $('mpAddAnother').addEventListener('click', () => {
-    planDialog.close();
-    setTimeout(() => search.focus(), 80);
-  });
+  $('mpAddAnother').addEventListener('click', () => { planDialog.close(); setTimeout(() => search.focus(), 80); });
   $('mpClearPlan').addEventListener('click', clearPlan);
   $('mpClearPlanTop').addEventListener('click', clearPlan);
   $('mpRecommendOrder').addEventListener('click', applyRecommendedOrder);
-  $('mpStartNavigation').addEventListener('click', () => openExternal(firstStopUrl(selectedSpots())));
   $('mpFullRoute').addEventListener('click', () => openExternal(fullRouteUrl(selectedSpots())));
+  $('mpStartNavigation').addEventListener('click', () => openExternal(firstStopUrl(selectedSpots())));
+  $('mpPlanNotice').addEventListener('click', (event) => { if (event.target.closest('[data-fit-time]')) fitPlanToTime(); });
 
   $('mpPlanStops').addEventListener('click', (event) => {
     const segmentButton = event.target.closest('[data-segment-url]');
-    if (segmentButton) {
-      openExternal(segmentButton.dataset.segmentUrl);
-      return;
-    }
-
+    if (segmentButton) { openExternal(segmentButton.dataset.segmentUrl); return; }
     const moveButton = event.target.closest('[data-move-stop]');
-    if (moveButton) {
-      moveSpot(moveButton.dataset.moveStop, Number(moveButton.dataset.direction));
-      return;
-    }
-
+    if (moveButton) { moveSpot(moveButton.dataset.moveStop, Number(moveButton.dataset.direction)); return; }
     const removeButton = event.target.closest('[data-remove-stop]');
     if (!removeButton) return;
     toggleSpot(removeButton.dataset.removeStop);
     if (selectedIds.length < 2 && planDialog.open) planDialog.close();
   });
 
-  planDialog.addEventListener('click', (event) => {
-    if (event.target === planDialog) planDialog.close();
-  });
+  planDialog.addEventListener('click', (event) => { if (event.target === planDialog) planDialog.close(); });
 
   saveSelection();
+  saveTime();
   renderFilters();
+  renderTimeOptions();
   renderGrid();
 
   if (!spots.length) {
