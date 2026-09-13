@@ -1,0 +1,37 @@
+name: Kibun UI Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'config.js'
+      - 'app.js'
+      - 'styles.css'
+      - 'assets/mood-v201900/**'
+      - 'assets/editorial/parents-eat-well.webp'
+      - 'scripts/ui_regression_guard.mjs'
+      - '.github/workflows/kibun-ui-regression.yml'
+  pull_request:
+    paths:
+      - 'config.js'
+      - 'app.js'
+      - 'styles.css'
+      - 'assets/mood-v201900/**'
+      - 'assets/editorial/parents-eat-well.webp'
+      - 'scripts/ui_regression_guard.mjs'
+      - '.github/workflows/kibun-ui-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ui-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check approved Kibun UI states
+        run: node scripts/ui_regression_guard.mjs
