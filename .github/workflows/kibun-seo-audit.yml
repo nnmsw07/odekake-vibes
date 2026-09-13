@@ -48,6 +48,8 @@ jobs:
           node-version: '22'
       - name: Audit generated/public SEO structure
         run: node scripts/seo_audit.mjs --report seo-audit/ci-local
+      - name: Diagnose canonical and legacy deployment origins
+        run: node scripts/deployment_origin_audit.mjs --warn-only
       - uses: actions/upload-artifact@v4
         if: always()
         with:
