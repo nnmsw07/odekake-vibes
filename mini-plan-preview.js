@@ -80,13 +80,13 @@
 
   function roleFor(spot) {
     const keys = [spot.category_primary, ...(spot.categories || [])].join(' ').toLowerCase();
-    if (/restaurant|cafe|food|dining|afternoon/.test(keys)) return ['EAT / CAFE', '食事・休憩'];
-    if (/park|garden|nature|outdoor|beach|water/.test(keys)) return ['OUTDOOR', '外で過ごす'];
-    if (/museum|art|culture|library|theater|stage/.test(keys)) return ['CULTURE', '観る・知る'];
-    if (/shopping|mall|market/.test(keys)) return ['SHOP', '買い物・寄り道'];
-    if (/spa|bath|onsen|relax|hotel/.test(keys)) return ['RELAX', '休む・整える'];
-    if (/kids|play|amusement|zoo|aquarium|experience/.test(keys)) return ['PLAY / TRY', '遊ぶ・体験'];
-    return ['PLACE', '立ち寄る'];
+    if (/restaurant|cafe|food|dining|afternoon/.test(keys)) return ['EAT / CAFE', '食事・休憩', 'eat'];
+    if (/park|garden|nature|outdoor|beach|water/.test(keys)) return ['OUTDOOR', '外で過ごす', 'outdoor'];
+    if (/museum|art|culture|library|theater|stage/.test(keys)) return ['CULTURE', '観る・知る', 'culture'];
+    if (/shopping|mall|market/.test(keys)) return ['SHOP', '買い物・寄り道', 'shop'];
+    if (/spa|bath|onsen|relax|hotel/.test(keys)) return ['RELAX', '休む・整える', 'relax'];
+    if (/kids|play|amusement|zoo|aquarium|experience/.test(keys)) return ['PLAY / TRY', '遊ぶ・体験', 'play'];
+    return ['PLACE', '立ち寄る', 'place'];
   }
 
   function stayMinutes(spot) {
@@ -112,7 +112,7 @@
       title: isDay ? '今日の1日プラン' : '今日の半日プラン',
       label: isDay ? '1日向き' : '半日向き',
       note: isDay
-        ? '4スポットまたは滞在時間が長めです。ゆったり回るなら1日プランがおすすめ。'
+        ? '少しボリューム多め。ゆったり回るなら1日使うのがおすすめです。'
         : '2〜3スポットで、無理なく回りやすいボリュームです。'
     };
   }
@@ -264,25 +264,93 @@
     return [name, address || [prefecture, city].filter(Boolean).join(' ')].filter(Boolean).join(' ');
   }
 
-  function googleMapsRouteUrl(chosen) {
-    if (chosen.length < 2) return '';
+  function googleMapsUrl({ origin, destination, waypoints = [] }) {
+    if (!destination) return '';
     const params = new URLSearchParams();
     params.set('api', '1');
-    params.set('destination', mapPointFor(chosen[chosen.length - 1]));
-    const waypoints = chosen.slice(0, -1).map(mapPointFor).filter(Boolean);
+    if (origin) params.set('origin', origin);
+    params.set('destination', destination);
     if (waypoints.length) params.set('waypoints', waypoints.join('|'));
     return `https://www.google.com/maps/dir/?${params.toString()}`;
   }
 
-  function openGoogleMaps() {
-    const chosen = selectedSpots();
-    const url = googleMapsRouteUrl(chosen);
-    if (!url) {
-      showToast('2スポット以上選んでください');
-      return;
-    }
+  function firstStopUrl(chosen) {
+    if (!chosen.length) return '';
+    return googleMapsUrl({ destination: mapPointFor(chosen[0]) });
+  }
+
+  function fullRouteUrl(chosen) {
+    if (chosen.length < 2) return '';
+    return googleMapsUrl({
+      destination: mapPointFor(chosen[chosen.length - 1]),
+      waypoints: chosen.slice(0, -1).map(mapPointFor).filter(Boolean)
+    });
+  }
+
+  function segmentUrl(fromSpot, toSpot) {
+    return googleMapsUrl({
+      origin: mapPointFor(fromSpot),
+      destination: mapPointFor(toSpot)
+    });
+  }
+
+  function openExternal(url) {
+    if (!url) return;
     const opened = window.open(url, '_blank', 'noopener,noreferrer');
     if (!opened) window.location.href = url;
+  }
+
+  function bestTimeRank(spot) {
+    const raw = String(spot.best_time || spot.recommended_time || spot.time_of_day || '').toLowerCase();
+    if (/morning|午前|朝/.test(raw)) return 0;
+    if (/lunch|noon|昼/.test(raw)) return 2;
+    if (/afternoon|午後/.test(raw)) return 3;
+    if (/evening|night|夕|夜/.test(raw)) return 5;
+    return null;
+  }
+
+  function recommendedRank(spot) {
+    const timeRank = bestTimeRank(spot);
+    if (timeRank !== null) return timeRank;
+    const [, , role] = roleFor(spot);
+    return ({
+      outdoor: 0,
+      culture: 1,
+      play: 1,
+      place: 2,
+      eat: 3,
+      shop: 4,
+      relax: 5
+    })[role] ?? 2;
+  }
+
+  function applyRecommendedOrder() {
+    if (selectedIds.length < 2) return;
+    const originalOrder = new Map(selectedIds.map((id, index) => [id, index]));
+    selectedIds = selectedIds.slice().sort((aId, bId) => {
+      const a = byId.get(aId);
+      const b = byId.get(bId);
+      const rankDiff = recommendedRank(a) - recommendedRank(b);
+      if (rankDiff) return rankDiff;
+      return originalOrder.get(aId) - originalOrder.get(bId);
+    });
+    saveSelection();
+    renderGrid();
+    renderPlan();
+    showToast('Kibunおすすめ順に整えました');
+  }
+
+  function movementHtml(fromSpot, toSpot, index) {
+    const url = segmentUrl(fromSpot, toSpot);
+    return `
+      <div class="mp-move-row" aria-label="${escapeHtml(fromSpot.name || '')}から${escapeHtml(toSpot.name || '')}への移動">
+        <span class="mp-move-line" aria-hidden="true"></span>
+        <div class="mp-move-copy">
+          <small>移動 ${String(index + 1).padStart(2, '0')} → ${String(index + 2).padStart(2, '0')}</small>
+          <span>所要時間はGoogle Mapsで確認</span>
+        </div>
+        <button type="button" class="mp-segment-map" data-segment-url="${escapeHtml(url)}">地図 ↗</button>
+      </div>`;
   }
 
   function renderPlan() {
@@ -295,11 +363,12 @@
     notice.classList.toggle('is-day', meta.isDay);
     notice.innerHTML = `<strong>${meta.label}</strong><span>${escapeHtml(meta.note)}</span>`;
 
-    $('mpPlanStops').innerHTML = chosen.map((spot, index) => {
+    const chunks = [];
+    chosen.forEach((spot, index) => {
       const [, roleJapanese] = roleFor(spot);
       const id = escapeHtml(spot.spot_id);
       const name = escapeHtml(spot.name || '名称未設定');
-      return `
+      chunks.push(`
         <article class="mp-plan-stop">
           <span class="mp-stop-num">${String(index + 1).padStart(2, '0')}</span>
           <div class="mp-stop-copy">
@@ -313,11 +382,14 @@
               aria-label="${name}を後ろへ" ${index === chosen.length - 1 ? 'disabled' : ''}>↓</button>
             <button type="button" class="mp-remove-stop" data-remove-stop="${id}" aria-label="${name}を外す">外す</button>
           </div>
-        </article>`;
-    }).join('');
+        </article>`);
+      if (index < chosen.length - 1) chunks.push(movementHtml(spot, chosen[index + 1], index));
+    });
+    $('mpPlanStops').innerHTML = chunks.join('');
 
     $('mpAddAnother').hidden = chosen.length >= MAX_SPOTS;
-    $('mpGoogleMaps').disabled = chosen.length < 2;
+    $('mpStartNavigation').disabled = chosen.length < 1;
+    $('mpFullRoute').disabled = chosen.length < 2;
   }
 
   function openPlan() {
@@ -364,20 +436,29 @@
 
   buildButton.addEventListener('click', openPlan);
   $('mpPlanClose').addEventListener('click', () => planDialog.close());
-  $('mpGoogleMaps').addEventListener('click', openGoogleMaps);
   $('mpAddAnother').addEventListener('click', () => {
     planDialog.close();
     setTimeout(() => search.focus(), 80);
   });
   $('mpClearPlan').addEventListener('click', clearPlan);
   $('mpClearPlanTop').addEventListener('click', clearPlan);
+  $('mpRecommendOrder').addEventListener('click', applyRecommendedOrder);
+  $('mpStartNavigation').addEventListener('click', () => openExternal(firstStopUrl(selectedSpots())));
+  $('mpFullRoute').addEventListener('click', () => openExternal(fullRouteUrl(selectedSpots())));
 
   $('mpPlanStops').addEventListener('click', (event) => {
+    const segmentButton = event.target.closest('[data-segment-url]');
+    if (segmentButton) {
+      openExternal(segmentButton.dataset.segmentUrl);
+      return;
+    }
+
     const moveButton = event.target.closest('[data-move-stop]');
     if (moveButton) {
       moveSpot(moveButton.dataset.moveStop, Number(moveButton.dataset.direction));
       return;
     }
+
     const removeButton = event.target.closest('[data-remove-stop]');
     if (!removeButton) return;
     toggleSpot(removeButton.dataset.removeStop);
