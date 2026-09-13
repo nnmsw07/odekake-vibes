@@ -23,11 +23,11 @@ window.KIBUN_CONFIG = {
   cfg.placePhotosApiUrl = cfg.placePhotosApiUrl || (base ? `${base}/place-photos` : "");
 })(window.KIBUN_CONFIG);
 
-// v20.19.8 regression fix: restore the compact approved supporting mood cards.
+// v20.19.9 regression fix: restore the approved full-bleed supporting mood cards.
 (function installKibunUiHotfix(){
   if (typeof document === "undefined") return;
-  const STYLE_ID = "kibun-ui-v201908";
-  ["mood-card-mobile-v201903","mood-card-mobile-v201904","mood-card-mobile-v201905","kibun-ui-v201906","kibun-ui-v201907"].forEach(id=>{
+  const STYLE_ID = "kibun-ui-v201909";
+  ["mood-card-mobile-v201903","mood-card-mobile-v201904","mood-card-mobile-v201905","kibun-ui-v201906","kibun-ui-v201907","kibun-ui-v201908"].forEach(id=>{
     const old=document.getElementById(id);
     if(old) old.remove();
   });
@@ -56,38 +56,39 @@ window.KIBUN_CONFIG = {
     display:grid!important;
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
     gap:10px!important;
-    align-items:start!important;
+    align-items:stretch!important;
     width:100%!important;
     min-width:0!important;
   }
   .vibe-group-mood .mood-card-primary{grid-column:1/-1!important}
   .vibe-group-mood .mood-card-secondary{
     grid-column:auto!important;
-    display:grid!important;
-    grid-template-columns:1fr!important;
-    grid-template-rows:78px 48px!important;
     position:relative!important;
+    display:block!important;
     box-sizing:border-box!important;
     width:100%!important;
     min-width:0!important;
-    height:126px!important;
-    min-height:126px!important;
-    max-height:126px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:1.38/1!important;
     padding:0!important;
     overflow:hidden!important;
-    border-radius:16px!important;
+    border:0!important;
+    border-radius:18px!important;
+    background:#263028!important;
+    box-shadow:0 10px 24px rgba(49,54,48,.09)!important;
   }
   .vibe-group-mood .mood-card-secondary .mood-photo{
-    position:relative!important;
-    inset:auto!important;
-    grid-row:1!important;
+    position:absolute!important;
+    inset:0!important;
     display:block!important;
     width:100%!important;
-    height:78px!important;
-    min-height:78px!important;
-    max-height:78px!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
     overflow:hidden!important;
-    border-radius:16px 16px 0 0!important;
+    border-radius:inherit!important;
   }
   .vibe-group-mood .mood-card-secondary .mood-photo img{
     width:100%!important;
@@ -96,74 +97,108 @@ window.KIBUN_CONFIG = {
     object-position:center!important;
     display:block!important;
   }
+  .vibe-group-mood .mood-card-secondary .mood-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(18,24,19,.02) 24%,rgba(18,24,19,.12) 48%,rgba(18,24,19,.80) 100%);
+    pointer-events:none;
+    z-index:1;
+  }
   .vibe-group-mood .mood-card-secondary .vibe-icon{
     position:absolute!important;
     left:10px!important;
-    top:62px!important;
-    width:30px!important;
-    height:30px!important;
-    min-width:30px!important;
-    min-height:30px!important;
+    top:10px!important;
+    width:31px!important;
+    height:31px!important;
+    min-width:31px!important;
+    min-height:31px!important;
     padding:6px!important;
     margin:0!important;
     border-radius:50%!important;
-    background:#fffdf9!important;
-    border:1px solid #ded8cf!important;
-    box-shadow:0 3px 10px rgba(55,45,35,.10)!important;
-    z-index:3!important;
+    background:rgba(255,253,249,.94)!important;
+    border:1px solid rgba(255,255,255,.60)!important;
+    box-shadow:0 4px 12px rgba(31,36,31,.12)!important;
+    z-index:4!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-icon img{
     width:100%!important;
     height:100%!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-text{
-    grid-row:2!important;
+    position:absolute!important;
+    left:12px!important;
+    right:38px!important;
+    bottom:11px!important;
+    top:auto!important;
+    z-index:3!important;
     display:flex!important;
     flex-direction:column!important;
     align-items:flex-start!important;
-    justify-content:center!important;
-    gap:1px!important;
-    box-sizing:border-box!important;
-    width:100%!important;
-    height:48px!important;
-    min-height:48px!important;
-    max-height:48px!important;
-    padding:12px 28px 6px 10px!important;
-    overflow:hidden!important;
+    justify-content:flex-end!important;
+    gap:2px!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:0!important;
+    overflow:visible!important;
     text-align:left!important;
-    background:#fffdf9!important;
+    background:transparent!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-name{
     display:block!important;
     width:100%!important;
-    min-width:0!important;
     margin:0!important;
-    font-size:9.4px!important;
-    line-height:1.16!important;
+    font-family:Georgia,"Yu Mincho",serif!important;
+    font-size:12.5px!important;
+    font-weight:600!important;
+    line-height:1.22!important;
     letter-spacing:-.035em!important;
-    white-space:nowrap!important;
-    overflow:hidden!important;
-    text-overflow:ellipsis!important;
+    color:#fff!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    text-shadow:0 1px 10px rgba(0,0,0,.26)!important;
   }
   .vibe-group-mood .mood-card-secondary .vibe-desc{
     display:block!important;
     width:100%!important;
-    min-width:0!important;
-    margin:1px 0 0!important;
-    font-size:7px!important;
-    line-height:1.2!important;
+    margin:0!important;
+    font-size:7.5px!important;
+    line-height:1.25!important;
+    color:rgba(255,255,255,.82)!important;
     white-space:nowrap!important;
     overflow:hidden!important;
     text-overflow:ellipsis!important;
-    opacity:.68!important;
+    opacity:1!important;
   }
   .vibe-group-mood .mood-card-secondary::after{
-    right:7px!important;
-    bottom:11px!important;
-    width:21px!important;
-    height:21px!important;
-    font-size:14px!important;
+    content:"→"!important;
+    display:grid!important;
+    place-items:center!important;
+    position:absolute!important;
+    right:9px!important;
+    bottom:9px!important;
+    top:auto!important;
+    width:27px!important;
+    height:27px!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:rgba(255,253,249,.95)!important;
+    color:#35463a!important;
+    font-size:13px!important;
+    z-index:4!important;
+    box-shadow:0 4px 12px rgba(31,36,31,.12)!important;
   }
+  .vibe-group-mood .mood-card-secondary.selected::after{
+    background:#40513d!important;
+    color:#fff!important;
+  }
+}
+@media (max-width:350px){
+  .vibe-group-mood .mood-card-secondary .vibe-name{font-size:11.5px!important}
+  .vibe-group-mood .mood-card-secondary .vibe-desc{font-size:7px!important}
 }
 `;
   document.head.appendChild(style);
