@@ -5,6 +5,8 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const config = read('config.js');
 const app = read('app.js');
+const heroGuard = read('hero-audit-guard.js');
+const plans = read('plans/index.html');
 
 const checks = [
   ['STEP 1 full-bleed mood cards stay enabled', config.includes('kibun-ui-v201909') && config.includes('aspect-ratio:1.38/1!important')],
@@ -13,6 +15,10 @@ const checks = [
   ['Family parent-day collection keeps approved hero path', config.includes("/assets/editorial/parents-eat-well.webp")],
   ['Family parent-day label still exists in collection data', app.includes('親も楽しい日に')],
   ['Approved parent-day hero asset exists', fs.existsSync(path.join(root, 'assets/editorial/parents-eat-well.webp'))],
+  ['Plan hub links keep their navigation source', plans.includes('source=plan_library') && plans.includes('source=plan_mood_visual')],
+  ['Plan close returns hub-origin deep links to /plans/', heroGuard.includes("PLAN_HUB_SOURCES=new Set(['plan_library','plan_mood_visual'])") && heroGuard.includes("location.assign('/plans/')")],
+  ['Plan close preserves browser history when opened from plans hub', heroGuard.includes('cameFromPlansHub()&&history.length>1') && heroGuard.includes('history.back()')],
+  ['Escape/cancel from hub-origin plan also returns to plans', heroGuard.includes("planDialog.addEventListener('cancel'") && heroGuard.includes('returnToPlans();')],
 ];
 
 const failed = checks.filter(([, ok]) => !ok);
