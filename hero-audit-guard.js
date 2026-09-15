@@ -139,3 +139,51 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true});
   else start();
 })(typeof window!=='undefined'?window:globalThis);
+
+// v20.19.12: keep plan-hub navigation context when closing a deep-linked plan modal.
+(function installPlanCloseNavigation(global){
+  'use strict';
+  if(typeof document==='undefined'||typeof location==='undefined') return;
+  const PLAN_HUB_SOURCES=new Set(['plan_library','plan_mood_visual']);
+
+  function params(){return new URLSearchParams(location.search);}
+  function shouldReturnToPlans(){
+    const p=params();
+    return Boolean(p.get('plan'))&&PLAN_HUB_SOURCES.has(p.get('source'));
+  }
+  function cameFromPlansHub(){
+    if(!document.referrer) return false;
+    try{
+      const ref=new URL(document.referrer,location.href);
+      return ref.origin===location.origin&&ref.pathname.replace(/\/+$/,'')==='/plans';
+    }catch(_){return false;}
+  }
+  function returnToPlans(){
+    if(cameFromPlansHub()&&history.length>1) history.back();
+    else location.assign('/plans/');
+  }
+  function interceptPlanClose(e){
+    if(!shouldReturnToPlans()) return;
+    const planDialog=document.getElementById('planDialog');
+    const closeButton=e.target?.closest?.('#planDialogClose');
+    const backdrop=e.target===planDialog;
+    if(!closeButton&&!backdrop) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    returnToPlans();
+  }
+  function bindCancel(){
+    const planDialog=document.getElementById('planDialog');
+    if(!planDialog||planDialog.dataset.planCloseNavigationBound==='1') return;
+    planDialog.dataset.planCloseNavigationBound='1';
+    planDialog.addEventListener('cancel',e=>{
+      if(!shouldReturnToPlans()) return;
+      e.preventDefault();
+      returnToPlans();
+    },true);
+  }
+
+  document.addEventListener('click',interceptPlanClose,true);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bindCancel,{once:true});
+  else bindCancel();
+})(typeof window!=='undefined'?window:globalThis);
