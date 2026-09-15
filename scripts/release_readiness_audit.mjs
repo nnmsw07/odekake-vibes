@@ -12,7 +12,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
 const requiredFiles = [
   'index.html', '404.html', 'privacy.html', 'terms.html',
-  'sitemap.xml', 'robots.txt', 'app.js', 'config.js',
+  'sitemap.xml', 'robots.txt', 'app.js', 'config.js', '_headers',
   'scripts/ui_regression_guard.mjs', 'scripts/seo_audit.mjs'
 ];
 for (const file of requiredFiles) check(exists(file), `required file missing: ${file}`);
@@ -24,6 +24,7 @@ if (errors.length === 0) {
   const privacy = read('privacy.html');
   const terms = read('terms.html');
   const notFound = read('404.html');
+  const headers = read('_headers');
 
   check(index.includes('https://kibuntrip.com/'), 'home canonical origin is missing');
   check(/<link[^>]+rel=["']canonical["'][^>]+href=["']https:\/\/kibuntrip\.com\//i.test(index), 'home self-canonical is missing');
@@ -50,6 +51,9 @@ if (errors.length === 0) {
   check(terms.includes('hello@kibuntrip.com'), 'public contact email is missing from terms');
   check(notFound.trim().length > 200, '404 page looks unexpectedly small');
 
+  check(/^\/en\/\*\s*$/m.test(headers), 'English beta header rule is missing');
+  check(/X-Robots-Tag:\s*noindex,\s*follow/i.test(headers), 'English beta must stay noindex until curated pages are ready');
+
   const sources = [index, app, config];
   const assetRefs = new Set();
   const assetPattern = /(?:^|[\s'"(=:`])\/?(assets\/[A-Za-z0-9_./-]+\.(?:png|webp|jpg|jpeg|svg|gif|avif))/g;
@@ -62,6 +66,7 @@ if (errors.length === 0) {
   const sitemap = read('sitemap.xml');
   check(sitemap.includes('https://kibuntrip.com/'), 'sitemap canonical origin is missing');
   check(!sitemap.includes('github.io'), 'legacy github.io origin remains in sitemap');
+  warn(!sitemap.includes('https://kibuntrip.com/en/'), 'English beta URLs are still present in sitemap; remove them when the sitemap is next regenerated');
 }
 
 console.log(`RC1 release readiness: ${errors.length ? 'FAIL' : 'PASS'} / ${errors.length} errors / ${warnings.length} warnings`);
