@@ -92,6 +92,8 @@ function upsertTag(html, regex, replacement, before = '</head>') {
 }
 function makeSpotPage(template, spot, slug) {
   const canonical = `${SITE_ORIGIN}/spots/${encodeURIComponent(slug)}/`;
+  const enCanonical = `${SITE_ORIGIN}/en/spots/${encodeURIComponent(slug)}/`;
+  const hasIndexableEnglish = Boolean(spot.i18n?.en?.name && spot.i18n?.en?.public_copy);
   const title = `${spot.name}｜Kibun Trip`;
   const description = pickDescription(spot);
   const image = absoluteUrl(spot.hero_image?.url || spot.image?.url || spot.image_url || spot.media_strategy?.licensed_photo?.url);
@@ -103,12 +105,23 @@ function makeSpotPage(template, spot, slug) {
   html = upsertTag(html, /<title>[\s\S]*?<\/title>/i, `<title>${htmlEscape(title)}</title>`);
   html = upsertTag(html, /<meta\s+name=["']description["'][^>]*>/i, `<meta name="description" content="${htmlEscape(description)}" />`);
   html = upsertTag(html, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonical}" />`);
+  const altJa=/<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["']ja["'])[^>]*>/i;
+  const altEn=/<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["']en["'])[^>]*>/i;
+  const altDefault=/<link\b(?=[^>]*\brel=["']alternate["'])(?=[^>]*\bhreflang=["']x-default["'])[^>]*>/i;
+  html = upsertTag(html, altJa, `<link rel="alternate" hreflang="ja" href="${canonical}" />`);
+  if(hasIndexableEnglish) html = upsertTag(html, altEn, `<link rel="alternate" hreflang="en" href="${enCanonical}" />`);
+  else html = html.replace(altEn, '');
+  html = upsertTag(html, altDefault, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`);
   html = upsertTag(html, /<meta\s+property=["']og:type["'][^>]*>/i, '<meta property="og:type" content="article" />');
   html = upsertTag(html, /<meta\s+property=["']og:title["'][^>]*>/i, `<meta property="og:title" content="${htmlEscape(title)}" />`);
   html = upsertTag(html, /<meta\s+property=["']og:description["'][^>]*>/i, `<meta property="og:description" content="${htmlEscape(description)}" />`);
   html = upsertTag(html, /<meta\s+property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${canonical}" />`);
   html = upsertTag(html, /<meta\s+property=["']og:image["'][^>]*>/i, `<meta property="og:image" content="${htmlEscape(image)}" />`);
+  html = upsertTag(html, /<meta\s+name=["']twitter:title["'][^>]*>/i, `<meta name="twitter:title" content="${htmlEscape(title)}" />`);
+  html = upsertTag(html, /<meta\s+name=["']twitter:description["'][^>]*>/i, `<meta name="twitter:description" content="${htmlEscape(description)}" />`);
+  html = upsertTag(html, /<meta\s+name=["']twitter:image["'][^>]*>/i, `<meta name="twitter:image" content="${htmlEscape(image)}" />`);
   html = upsertTag(html, /<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="index,follow,max-image-preview:large" />');
+  html = html.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, `<h1>${htmlEscape(spot.name)}</h1>`);
   const jsonLd = {
     '@context': 'https://schema.org', '@type': 'Place', name: spot.name, url: canonical, description,
     ...(spot.address ? { address: { '@type': 'PostalAddress', streetAddress: spot.address, addressRegion: spot.prefecture || undefined, addressLocality: spot.city || undefined, addressCountry: 'JP' } } : {}),
@@ -116,7 +129,7 @@ function makeSpotPage(template, spot, slug) {
   };
   const boot = `<script id="kibun-seo-boot">(function(){var clean=location.pathname;var target='?spot=${encodeURIComponent(spot.spot_id)}&source=seo';if(!location.search.includes('spot=')){history.replaceState(history.state,'',clean+target);}addEventListener('load',function(){setTimeout(function(){history.replaceState(history.state,'',clean)},900)},{once:true});})();</script>`;
   html = html.replace(/<\/head>/i, `  <script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>\n  ${boot}\n</head>`);
-  const snapshot = `\n<section class="seo-spot-snapshot" aria-label="${htmlEscape(spot.name)}の概要"><div class="seo-spot-snapshot-inner"><p class="seo-spot-eyebrow">KIBUN SPOT</p><h1>${htmlEscape(spot.name)}</h1>${placeText ? `<p class="seo-spot-place">${htmlEscape(placeText)}</p>` : ''}<p>${htmlEscape(bodyText)}</p>${tags.length ? `<p class="seo-spot-tags">${tags.map(t => `<span>${htmlEscape(t)}</span>`).join('')}</p>` : ''}</div></section>\n<style>.seo-spot-snapshot{max-width:1180px;margin:32px auto 100px;padding:0 20px}.seo-spot-snapshot-inner{max-width:760px;padding:28px;border:1px solid rgba(31,31,31,.12);border-radius:24px;background:#fff}.seo-spot-eyebrow{font-size:11px;letter-spacing:.18em}.seo-spot-snapshot h1{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0}.seo-spot-place{opacity:.68}.seo-spot-tags{display:flex;gap:8px;flex-wrap:wrap}.seo-spot-tags span{padding:6px 10px;border:1px solid rgba(31,31,31,.12);border-radius:999px;font-size:12px}</style>`;
+  const snapshot = `\n<section class="seo-spot-snapshot" aria-label="${htmlEscape(spot.name)}の概要"><div class="seo-spot-snapshot-inner"><p class="seo-spot-eyebrow">KIBUN SPOT</p><h2>${htmlEscape(spot.name)}</h2>${placeText ? `<p class="seo-spot-place">${htmlEscape(placeText)}</p>` : ''}<p>${htmlEscape(bodyText)}</p>${tags.length ? `<p class="seo-spot-tags">${tags.map(t => `<span>${htmlEscape(t)}</span>`).join('')}</p>` : ''}</div></section>\n<style>.seo-spot-snapshot{max-width:1180px;margin:32px auto 100px;padding:0 20px}.seo-spot-snapshot-inner{max-width:760px;padding:28px;border:1px solid rgba(31,31,31,.12);border-radius:24px;background:#fff}.seo-spot-eyebrow{font-size:11px;letter-spacing:.18em}.seo-spot-snapshot h2{font-size:clamp(28px,6vw,48px);line-height:1.15;margin:.25em 0}.seo-spot-place{opacity:.68}.seo-spot-tags{display:flex;gap:8px;flex-wrap:wrap}.seo-spot-tags span{padding:6px 10px;border:1px solid rgba(31,31,31,.12);border-radius:999px;font-size:12px}</style>`;
   html = html.replace(/<\/body>/i, `${snapshot}\n</body>`);
   return { html, canonical };
 }
