@@ -1,2 +1,2 @@
-/en/*
-  X-Robots-Tag: noindex, follow
+# English indexing is controlled by each page's <meta name="robots">.
+# Do not add a global /en/* noindex rule: curated English pages are intended to be indexable.
