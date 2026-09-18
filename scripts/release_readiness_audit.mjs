@@ -25,6 +25,7 @@ if (errors.length === 0) {
   const terms = read('terms.html');
   const notFound = read('404.html');
   const headers = read('_headers');
+  const enGenerator = read('scripts/generate_en_pages.mjs');
 
   check(index.includes('https://kibuntrip.com/'), 'home canonical origin is missing');
   check(/<link[^>]+rel=["']canonical["'][^>]+href=["']https:\/\/kibuntrip\.com\//i.test(index), 'home self-canonical is missing');
@@ -51,8 +52,9 @@ if (errors.length === 0) {
   check(terms.includes('hello@kibuntrip.com'), 'public contact email is missing from terms');
   check(notFound.trim().length > 200, '404 page looks unexpectedly small');
 
-  check(/^\/en\/\*\s*$/m.test(headers), 'English beta header rule is missing');
-  check(/X-Robots-Tag:\s*noindex,\s*follow/i.test(headers), 'English beta must stay noindex until curated pages are ready');
+  check(!/^\/en\/\*\s*$/m.test(headers) || !/X-Robots-Tag:\s*noindex/i.test(headers), 'global /en/* noindex header must not block curated English pages');
+  check(enGenerator.includes("const robots=full?'index,follow,max-image-preview:large':'noindex,follow'"), 'English generator must keep edited pages indexable and fallback pages noindex');
+  check(enGenerator.includes('application/ld+json'), 'English spot generator must emit structured data');
 
   const sources = [index, app, config];
   const assetRefs = new Set();
@@ -66,7 +68,7 @@ if (errors.length === 0) {
   const sitemap = read('sitemap.xml');
   check(sitemap.includes('https://kibuntrip.com/'), 'sitemap canonical origin is missing');
   check(!sitemap.includes('github.io'), 'legacy github.io origin remains in sitemap');
-  warn(!sitemap.includes('https://kibuntrip.com/en/'), 'English beta URLs are still present in sitemap; remove them when the sitemap is next regenerated');
+  warn(sitemap.includes('https://kibuntrip.com/en/'), 'No curated English URLs are present in sitemap; regenerate English pages and sitemap if this is unexpected');
 }
 
 console.log(`RC1 release readiness: ${errors.length ? 'FAIL' : 'PASS'} / ${errors.length} errors / ${warnings.length} warnings`);
