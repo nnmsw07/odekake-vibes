@@ -814,3 +814,38 @@ html,body{max-width:100%;overflow-x:clip}
     padding-bottom:calc(126px + env(safe-area-inset-bottom))!important;
   }
 }
+
+
+/* v20.19.5 — STEP 2 label/circle collision guard */
+@media(max-width:760px){
+  /* Reserve the third grid column exclusively for the selection control. */
+  .vibe-group-activity .activity-list-card .vibe-text{
+    min-width:0!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+  }
+  .vibe-group-activity .activity-list-card .vibe-name{
+    display:-webkit-box!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    word-break:normal!important;
+    overflow-wrap:anywhere!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  .vibe-group-activity .activity-list-card::after{
+    grid-column:3!important;
+    grid-row:1!important;
+    flex:0 0 18px!important;
+    justify-self:end!important;
+  }
+}
+@media(max-width:350px){
+  .vibe-group-activity .activity-list-card .vibe-name{
+    font-size:8.4px!important;
+  }
+}
