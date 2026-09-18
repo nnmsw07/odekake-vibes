@@ -22,6 +22,8 @@ const checks = [
   ['Approved parent-day hero asset exists', fs.existsSync(path.join(root, 'assets/editorial/parents-eat-well.webp'))],
   ['Plan hub links keep their navigation source', plans.includes('source=plan_library') && plans.includes('source=plan_mood_visual')],
   ['Plan and magazine trust footers stay readable on mobile', plansCss.includes('v20.19.7 — trust footer layout') && magazineCss.includes('v20.19.7 — trust footer layout') && plansCss.includes('grid-template-columns:1fr;') && magazineCss.includes('grid-template-columns:1fr;') && plansCss.includes('font-size:13px') && magazineCss.includes('font-size:13px')],
+  ['Plans and Magazine use the canonical three-circle Kibun mark', plansCss.includes('v20.19.8 — canonical Kibun three-circle brand mark') && magazineCss.includes('v20.19.8 — canonical Kibun three-circle brand mark') && plansCss.includes('box-shadow:-12px 0 0 #7d9874,12px 0 0 #d7b24b') && magazineCss.includes('border-radius:50%')],
+  ['Hero Audit spot dialog stays vertically scrollable', styles.includes('v20.19.8 — scrollable Hero Audit spot dialog') && styles.includes('overflow-y:auto!important') && styles.includes('touch-action:pan-y') && styles.includes('max-height:calc(100dvh - 228px)')],
   ['Plan close returns hub-origin deep links to /plans/', heroGuard.includes("PLAN_HUB_SOURCES=new Set(['plan_library','plan_mood_visual'])") && heroGuard.includes("location.assign('/plans/')")],
   ['Plan close preserves browser history when opened from plans hub', heroGuard.includes('cameFromPlansHub()&&history.length>1') && heroGuard.includes('history.back()')],
   ['Escape/cancel from hub-origin plan also returns to plans', heroGuard.includes("planDialog.addEventListener('cancel'") && heroGuard.includes('returnToPlans();')],

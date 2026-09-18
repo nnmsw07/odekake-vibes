@@ -346,3 +346,37 @@ img[data-hero-clean="1"][data-hero-state="fallback"]{opacity:1}
     line-height:1.7;
   }
 }
+
+
+/* v20.19.8 — canonical Kibun three-circle brand mark */
+.mag-top .brand{
+  display:inline-flex;
+  align-items:center;
+}
+.mag-top .brand::before{
+  content:"";
+  display:inline-block;
+  flex:0 0 14px;
+  width:14px;
+  height:14px;
+  margin:0 12px;
+  border-radius:50%;
+  background:#e85f43;
+  box-shadow:-12px 0 0 #7d9874,12px 0 0 #d7b24b;
+}
+.footer.site-trust-footer .footer-brand::before{display:none!important}
+.footer.site-trust-footer .footer-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+}
+.footer.site-trust-footer .footer-brand .brand-dot{
+  display:inline-block;
+  flex:0 0 14px;
+  width:14px;
+  height:14px;
+  margin-right:12px;
+  border-radius:50%;
+  background:#e85f43;
+  box-shadow:-12px 0 0 #7d9874,12px 0 0 #d7b24b;
+}

@@ -891,3 +891,40 @@ html,body{max-width:100%;overflow-x:clip}
   .footer.site-trust-footer .footer-bottom{display:grid;gap:8px}
   .footer.site-trust-footer .footer-bottom small{font-size:9px;line-height:1.7}
 }
+
+
+/* v20.19.8 — scrollable Hero Audit spot dialog */
+.spot-dialog{
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+@supports (height:100dvh){
+  .spot-dialog{max-height:92dvh}
+}
+.hero-audit-mode .spot-dialog[open]{
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+@media(max-width:560px){
+  .hero-audit-mode .spot-dialog[open]{
+    position:fixed;
+    top:8px;
+    bottom:auto;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    width:min(740px,calc(100% - 18px));
+    max-height:calc(100dvh - 228px);
+    min-height:180px;
+    margin:0!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    touch-action:pan-y;
+  }
+}
