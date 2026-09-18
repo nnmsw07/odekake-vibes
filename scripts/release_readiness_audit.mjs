@@ -11,7 +11,7 @@ const exists = file => fs.existsSync(path.join(root, file));
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
 const requiredFiles = [
-  'index.html', '404.html', 'privacy.html', 'terms.html',
+  'index.html', '404.html', 'privacy.html', 'terms.html', 'about.html', 'advertising.html', 'contact.html',
   'sitemap.xml', 'robots.txt', 'app.js', 'config.js', '_headers',
   'scripts/ui_regression_guard.mjs', 'scripts/seo_audit.mjs'
 ];
@@ -24,6 +24,9 @@ if (errors.length === 0) {
   const privacy = read('privacy.html');
   const terms = read('terms.html');
   const notFound = read('404.html');
+  const about = read('about.html');
+  const advertising = read('advertising.html');
+  const contact = read('contact.html');
   const headers = read('_headers');
   const enGenerator = read('scripts/generate_en_pages.mjs');
 
@@ -32,6 +35,9 @@ if (errors.length === 0) {
   check(index.includes('og:image'), 'home OGP image metadata is missing');
   check(index.includes('application/ld+json'), 'home structured data is missing');
   check(index.includes('G-M99DNGD18F'), 'GA4 measurement ID is missing from home');
+  check(index.includes('site-trust-footer'), 'public trust footer is missing from home');
+  for (const href of ['/about.html','/advertising.html','/contact.html','/privacy.html','/terms.html']) check(index.includes(href), `trust footer link missing: ${href}`);
+  for (const social of ['instagram.com/kibuntrip','threads.net/@kibuntrip','x.com/kibuntrip']) check(index.includes(social), `official social link missing: ${social}`);
 
   const requiredEvents = [
     'recommendation_generate',
@@ -50,6 +56,9 @@ if (errors.length === 0) {
   check(privacy.includes('位置情報'), 'privacy policy does not disclose location handling');
   check(terms.includes('アフィリエイト'), 'terms do not disclose affiliate links');
   check(terms.includes('hello@kibuntrip.com'), 'public contact email is missing from terms');
+  check(about.includes('編集方針'), 'about page does not explain editorial policy');
+  check(advertising.includes('アフィリエイト'), 'advertising page does not disclose affiliate links');
+  check(contact.includes('hello@kibuntrip.com'), 'contact page is missing public email');
   check(notFound.trim().length > 200, '404 page looks unexpectedly small');
 
   check(!/^\/en\/\*\s*$/m.test(headers) || !/X-Robots-Tag:\s*noindex/i.test(headers), 'global /en/* noindex header must not block curated English pages');
@@ -68,6 +77,7 @@ if (errors.length === 0) {
   const sitemap = read('sitemap.xml');
   check(sitemap.includes('https://kibuntrip.com/'), 'sitemap canonical origin is missing');
   check(!sitemap.includes('github.io'), 'legacy github.io origin remains in sitemap');
+  for (const page of ['about.html','advertising.html','contact.html','privacy.html','terms.html']) check(sitemap.includes(`https://kibuntrip.com/${page}`), `sitemap is missing trust page: ${page}`);
   warn(sitemap.includes('https://kibuntrip.com/en/'), 'No curated English URLs are present in sitemap; regenerate English pages and sitemap if this is unexpected');
 }
 

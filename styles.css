@@ -849,3 +849,31 @@ html,body{max-width:100%;overflow-x:clip}
     font-size:8.4px!important;
   }
 }
+
+
+/* v20.19.6 — public trust footer and policy pages */
+.footer.site-trust-footer{width:min(calc(100% - 34px),var(--max));margin:0 auto;padding:46px 0 calc(82px + env(safe-area-inset-bottom));display:grid;grid-template-columns:minmax(220px,.9fr) minmax(0,2.1fr);gap:34px 48px;align-items:start;color:var(--muted);font-size:11px}
+.footer.site-trust-footer .footer-brand-block{display:grid;gap:10px;align-content:start}
+.footer.site-trust-footer .footer-brand{justify-self:start;color:var(--ink);text-decoration:none}
+.footer.site-trust-footer .footer-brand-block p{margin:2px 0 0;line-height:1.8;font-size:11px}
+.footer.site-trust-footer .footer-email{justify-self:start;color:var(--ink);font-size:10px;font-weight:800;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.footer-trust-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.footer-trust-grid>div{display:grid;align-content:start;gap:8px}
+.footer-trust-grid strong{font-size:9px;letter-spacing:.11em;color:var(--ink);text-transform:uppercase;margin-bottom:3px}
+.footer-trust-grid a{color:var(--muted);text-decoration:none;font-size:10px;line-height:1.45}
+.footer-trust-grid a:hover,.footer-email:hover{color:var(--green-deep)}
+.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:18px;align-items:flex-end;padding-top:18px;border-top:1px solid var(--line)}
+.footer-bottom small{font-size:8px;line-height:1.6}
+.footer-bottom a{color:inherit}
+.legal-social-links{display:flex;flex-wrap:wrap;gap:8px!important}
+.legal-social-links a{display:inline-flex;padding:8px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:var(--paper);font-size:10px}
+.contact-email a{display:inline-flex;font-size:16px;font-weight:850;text-decoration:none;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+@media(max-width:900px){
+  .footer.site-trust-footer{grid-template-columns:1fr;gap:28px}
+  .footer-trust-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .footer.site-trust-footer{width:min(calc(100% - 24px),var(--max));padding:36px 0 calc(104px + env(safe-area-inset-bottom));gap:24px}
+  .footer-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
+  .footer-bottom{display:grid;gap:7px}
+}

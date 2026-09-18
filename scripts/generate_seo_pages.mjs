@@ -9,6 +9,7 @@ const SITE_ORIGIN = 'https://kibuntrip.com';
 const indexPath = path.join(ROOT, 'index.html');
 const GENERATED_REDIRECTS_BEGIN = '# BEGIN KIBUN SEO GENERATED ROUTES';
 const GENERATED_REDIRECTS_END = '# END KIBUN SEO GENERATED ROUTES';
+const PUBLIC_ROOT_PAGES = ['about.html','advertising.html','contact.html','privacy.html','terms.html'];
 
 function fail(message) {
   console.error(`SEO generation failed: ${message}`);
@@ -189,7 +190,7 @@ const listItems = routeRows.map(row => {
   const place = [spot?.prefecture, spot?.city].filter(Boolean).join(' · ');
   return `<li><a href="/spots/${encodeURIComponent(row.slug)}/">${htmlEscape(row.name)}</a>${place ? `<small>${htmlEscape(place)}</small>` : ''}</li>`;
 }).join('\n');
-const spotsIndex = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>スポット一覧｜Kibun Trip</title><meta name="description" content="Kibun Tripに掲載しているおでかけスポット一覧。"><link rel="canonical" href="${SITE_ORIGIN}/spots/"><meta name="robots" content="index,follow"><style>body{font-family:system-ui,-apple-system,sans-serif;background:#f6f1e9;color:#222;margin:0}.wrap{max-width:900px;margin:auto;padding:40px 20px 80px}a{color:inherit;text-underline-offset:3px}ul{list-style:none;padding:0;display:grid;gap:10px}li{background:#fff;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}small{opacity:.62}</style></head><body><main class="wrap"><p><a href="/">← Kibun</a></p><h1>スポット一覧</h1><p>${routeRows.length}スポット</p><ul>${listItems}</ul></main></body></html>`;
+const spotsIndex = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>スポット一覧｜Kibun Trip</title><meta name="description" content="Kibun Tripに掲載しているおでかけスポット一覧。"><link rel="canonical" href="${SITE_ORIGIN}/spots/"><meta name="robots" content="index,follow"><style>body{font-family:system-ui,-apple-system,sans-serif;background:#f6f1e9;color:#222;margin:0}.wrap{max-width:900px;margin:auto;padding:40px 20px 80px}a{color:inherit;text-underline-offset:3px}ul{list-style:none;padding:0;display:grid;gap:10px}li{background:#fff;border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}small{opacity:.62}.trust-footer-inline{max-width:900px;margin:auto;padding:28px 20px 60px;border-top:1px solid rgba(0,0,0,.12);display:flex;gap:14px;flex-wrap:wrap;font-size:13px}.trust-footer-inline a{color:inherit}.trust-footer-inline span{opacity:.62}</style></head><body><main class="wrap"><p><a href="/">← Kibun</a></p><h1>スポット一覧</h1><p>${routeRows.length}スポット</p><ul>${listItems}</ul></main><footer class="trust-footer-inline"><a href="/about.html">Kibunについて</a><a href="/privacy.html">プライバシー</a><a href="/terms.html">利用規約・免責</a><a href="/advertising.html">広告・アフィリエイト</a><a href="/contact.html">お問い合わせ</a><a href="https://www.instagram.com/kibuntrip/" target="_blank" rel="noopener">Instagram</a><a href="https://www.threads.net/@kibuntrip" target="_blank" rel="noopener">Threads</a><a href="https://x.com/kibuntrip" target="_blank" rel="noopener">X</a><span>© 2026 Kibun Trip</span></footer></body></html>`;
 fs.writeFileSync(path.join(spotsRoot, 'index.html'), spotsIndex);
 fs.writeFileSync(path.join(ROOT, 'spots-index.html'), spotsIndex);
 const generatedAt = `${seed?.metadata?.updated_at || seed?.metadata?.created_at || '1970-01-01'}T00:00:00.000Z`;
@@ -212,7 +213,7 @@ const redirectsPath = path.join(ROOT, '_redirects');
 const existingRedirects = fs.existsSync(redirectsPath) ? fs.readFileSync(redirectsPath, 'utf8') : '';
 fs.writeFileSync(redirectsPath, replaceGeneratedBlock(existingRedirects, GENERATED_REDIRECTS_BEGIN, GENERATED_REDIRECTS_END, redirectLines.join('\n')));
 
-const sitemapUrls = [...new Set([`${SITE_ORIGIN}/`, `${SITE_ORIGIN}/spots/`, ...routeRows.map(r => r.url), ...discoverStaticContentUrls()])].sort();
+const sitemapUrls = [...new Set([`${SITE_ORIGIN}/`, `${SITE_ORIGIN}/spots/`, ...PUBLIC_ROOT_PAGES.filter(name => fs.existsSync(path.join(ROOT, name))).map(name => `${SITE_ORIGIN}/${name}`), ...routeRows.map(r => r.url), ...discoverStaticContentUrls()])].sort();
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url => `  <url><loc>${xmlEscape(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
 const robotsPath = path.join(ROOT, 'robots.txt');

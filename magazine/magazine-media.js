@@ -31,3 +31,12 @@
   };
   imgs.forEach(load);
 })();
+
+
+;/* v20.19.6 trust footer for magazine hub/articles */
+(function kibunMagazineTrustFooter(){
+  const footer=document.querySelector('.footer');
+  if(!footer||footer.querySelector('.footer-trust-grid'))return;
+  footer.classList.add('site-trust-footer','shell');
+  footer.innerHTML=`<div class="footer-brand-block"><a class="brand footer-brand" href="/"><span class="brand-dot"></span>Kibun Trip</a><p>場所を探す前に、今日はどんな一日にしたいか。<br>気分から見つける、おでかけ提案。</p><a class="footer-email" href="mailto:hello@kibuntrip.com">hello@kibuntrip.com</a></div><div class="footer-trust-grid"><div><strong>探す</strong><a href="/spots/">スポット一覧</a><a href="/guide/">地域・テーマ別ガイド</a><a href="/whats-on/">今日・近日の体験</a><a href="/magazine/">記事</a><a href="/plans/">プラン</a></div><div><strong>Kibun</strong><a href="/about.html">Kibunについて</a><a href="/advertising.html">広告・アフィリエイトについて</a></div><div><strong>ポリシー</strong><a href="/privacy.html">プライバシーポリシー</a><a href="/terms.html">利用規約・免責</a><a href="/contact.html">お問い合わせ</a></div><div><strong>公式SNS</strong><a href="https://www.instagram.com/kibuntrip/" target="_blank" rel="me noopener noreferrer">Instagram ↗</a><a href="https://www.threads.net/@kibuntrip" target="_blank" rel="me noopener noreferrer">Threads ↗</a><a href="https://x.com/kibuntrip" target="_blank" rel="me noopener noreferrer">X ↗</a></div></div><div class="footer-bottom"><small>© 2026 Kibun Trip</small></div>`;
+})();
