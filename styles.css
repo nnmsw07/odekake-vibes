@@ -877,3 +877,17 @@ html,body{max-width:100%;overflow-x:clip}
   .footer-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
   .footer-bottom{display:grid;gap:7px}
 }
+
+
+/* v20.19.7 — mobile trust footer readability */
+@media(max-width:520px){
+  .footer.site-trust-footer{width:min(calc(100% - 32px),var(--max));gap:26px}
+  .footer.site-trust-footer .footer-brand-block p{font-size:12px;line-height:1.85}
+  .footer.site-trust-footer .footer-email{font-size:12px;padding:3px 0}
+  .footer.site-trust-footer .footer-trust-grid{grid-template-columns:1fr;gap:0}
+  .footer.site-trust-footer .footer-trust-grid>div{display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:18px 0;border-top:1px solid var(--line)}
+  .footer.site-trust-footer .footer-trust-grid strong{display:block;margin:0 0 10px;font-size:10px}
+  .footer.site-trust-footer .footer-trust-grid a{display:block;width:100%;padding:6px 0;font-size:13px;line-height:1.55;overflow-wrap:normal;word-break:keep-all}
+  .footer.site-trust-footer .footer-bottom{display:grid;gap:8px}
+  .footer.site-trust-footer .footer-bottom small{font-size:9px;line-height:1.7}
+}
