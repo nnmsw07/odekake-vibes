@@ -195,6 +195,22 @@ window.KIBUN_CONFIG = {
     background:#40513d!important;
     color:#fff!important;
   }
+
+  /* Selected mood cards keep the photo visible; selection is shown by outline/badge, not a white text panel. */
+  .vibe-group-mood .mood-photo-card.selected .vibe-text{
+    background:transparent!important;
+    background-color:transparent!important;
+    color:#fff!important;
+  }
+  .vibe-group-mood .mood-photo-card.selected .vibe-name{
+    color:#fff!important;
+    text-shadow:0 1px 10px rgba(0,0,0,.34)!important;
+  }
+  .vibe-group-mood .mood-photo-card.selected .vibe-desc{
+    color:rgba(255,255,255,.88)!important;
+    text-shadow:0 1px 8px rgba(0,0,0,.28)!important;
+    opacity:1!important;
+  }
 }
 @media (max-width:350px){
   .vibe-group-mood .mood-card-secondary .vibe-name{font-size:11.5px!important}
