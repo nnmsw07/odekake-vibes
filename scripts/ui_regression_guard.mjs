@@ -8,6 +8,8 @@ const app = read('app.js');
 const styles = read('styles.css');
 const heroGuard = read('hero-audit-guard.js');
 const plans = read('plans/index.html');
+const plansCss = read('plans/plans.css');
+const magazineCss = read('magazine/magazine.css');
 
 const checks = [
   ['STEP 1 full-bleed mood cards stay enabled', config.includes('kibun-ui-v201909') && config.includes('aspect-ratio:1.38/1!important')],
@@ -19,6 +21,7 @@ const checks = [
   ['Family parent-day label still exists in collection data', app.includes('親も楽しい日に')],
   ['Approved parent-day hero asset exists', fs.existsSync(path.join(root, 'assets/editorial/parents-eat-well.webp'))],
   ['Plan hub links keep their navigation source', plans.includes('source=plan_library') && plans.includes('source=plan_mood_visual')],
+  ['Plan and magazine trust footers stay readable on mobile', plansCss.includes('v20.19.7 — trust footer layout') && magazineCss.includes('v20.19.7 — trust footer layout') && plansCss.includes('grid-template-columns:1fr;') && magazineCss.includes('grid-template-columns:1fr;') && plansCss.includes('font-size:13px') && magazineCss.includes('font-size:13px')],
   ['Plan close returns hub-origin deep links to /plans/', heroGuard.includes("PLAN_HUB_SOURCES=new Set(['plan_library','plan_mood_visual'])") && heroGuard.includes("location.assign('/plans/')")],
   ['Plan close preserves browser history when opened from plans hub', heroGuard.includes('cameFromPlansHub()&&history.length>1') && heroGuard.includes('history.back()')],
   ['Escape/cancel from hub-origin plan also returns to plans', heroGuard.includes("planDialog.addEventListener('cancel'") && heroGuard.includes('returnToPlans();')],
