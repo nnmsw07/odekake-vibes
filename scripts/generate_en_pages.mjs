@@ -58,6 +58,39 @@ function visitorRows(s){
   return rows;
 }
 const img=s=>{const u=s.hero_image?.url||'';if(!u)return'';return /^https?:\/\//i.test(u)||u.startsWith('/')?u:'/'+u.replace(/^\.\//,'')};
+const SITE_ORIGIN='https://kibuntrip.com';
+const absoluteImage=u=>{if(!u)return SITE_ORIGIN+'/assets/og-kibuntrip.png';try{return new URL(u,SITE_ORIGIN+'/').href}catch{return SITE_ORIGIN+'/assets/og-kibuntrip.png'}};
+function experienceSection(s){
+  const e=s.experience_seed||{},v=s.vibes_seed||{},a=s.audience_fit||{},notes=[];
+  if(Number(e.indoor||0)>=80) notes.push(['Weather-friendly','Kibun marks this as a strong indoor option, useful when rain or heat changes the day.']);
+  if(Number(v.nature||0)>=80) notes.push(['Nature','Nature is a major part of the experience, so it works well when you want more green and less city noise.']);
+  if(Number(v.waterside||0)>=80) notes.push(['By the water','The waterside setting is one of the reasons Kibun surfaces this place for a slower outing.']);
+  if(Number(v.culture||0)>=80) notes.push(['Culture','Kibun tags this as a culture-forward stop for days built around art, design, history or performance.']);
+  if(Number(v.food||0)>=80) notes.push(['Food','Food is a meaningful part of the visit rather than only a practical stop.']);
+  if(Number(a.family||0)>=80) notes.push(['With children','Kibun rates this spot highly for family outings; use the family-support notes below for practical details.']);
+  const unique=[]; const seen=new Set();
+  for(const n of notes){if(!seen.has(n[0])){seen.add(n[0]);unique.push(n)}}
+  if(!unique.length)return'';
+  return `<section class="fact-box"><h2>Why it works for a Kibun day</h2><div class="visitor-table">${unique.slice(0,4).map(([a,b])=>`<div class="visitor-row"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join('')}</div></section>`;
+}
+function relatedSection(s){
+  const related=spots.filter(x=>x.spot_id!==s.spot_id&&translated(x)&&(x.prefecture===s.prefecture||(s.category_primary&&x.category_primary===s.category_primary))).slice(0,3);
+  if(!related.length)return'';
+  return `<section class="fact-box"><h2>Keep exploring</h2><div class="visitor-table">${related.map(x=>`<div class="visitor-row"><b><a href="/en/spots/${esc(x.slug||`${x.spot_id}-spot`)}/">${esc(enName(x))}</a></b><span>${esc(location(x))}</span></div>`).join('')}</div></section>`;
+}
+function placeSchema(s,url,src){
+  const address={ '@type':'PostalAddress', addressCountry:'JP' };
+  if(s.address) address.streetAddress=s.address;
+  if(city(s)) address.addressLocality=city(s);
+  if(pref(s)) address.addressRegion=pref(s);
+  return {
+    '@context':'https://schema.org','@type':'Place',
+    name:enName(s),alternateName:s.name||undefined,url,description:copy(s),
+    ...(s.address||city(s)||pref(s)?{address}:{}),
+    image:[absoluteImage(src)],
+    ...(s.official_url?{sameAs:[s.official_url]}:{})
+  };
+}
 const todayIso=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
 const perfGenre={ballet:'Ballet',opera:'Opera',musical:'Musical',theater:'Theatre',kabuki:'Kabuki',noh_kyogen:'Noh & Kyogen',classical:'Classical',dance:'Dance',live:'Live music',family:'Family'};
 const perfDate=(a,b)=>{const x=new Date(`${a}T00:00:00`),y=new Date(`${b||a}T00:00:00`),o={month:'short',day:'numeric'};return a===(b||a)?x.toLocaleDateString('en-US',o):`${x.toLocaleDateString('en-US',o)} – ${y.toLocaleDateString('en-US',o)}`};
@@ -71,7 +104,7 @@ const scheduledClosure=s=>{
   const r=ranges[0];
   return `<div class="closure-alert"><strong>Scheduled closure / unavailability</strong><br>${esc(r.from||'')} – ${esc(r.until||'')}${r.note?` · ${esc(r.note)}`:''}</div>`;
 };
-const commonHead=({title,description,canonical,ja,robots='index,follow,max-image-preview:large',enAlt=true})=>`<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${esc(canonical)}">${enAlt?`<link rel="alternate" hreflang="en" href="${esc(canonical)}">`:''}<link rel="alternate" hreflang="ja" href="${esc(ja)}"><link rel="alternate" hreflang="x-default" href="${esc(ja)}"><meta name="robots" content="${robots}"><link rel="stylesheet" href="/styles.css?v=201901"><link rel="stylesheet" href="/en/styles.css?v=201901">`;
+const commonHead=({title,description,canonical,ja,robots='index,follow,max-image-preview:large',enAlt=true,image='/assets/og-kibuntrip.png'})=>`<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${esc(canonical)}">${enAlt?`<link rel="alternate" hreflang="en" href="${esc(canonical)}">`:''}<link rel="alternate" hreflang="ja" href="${esc(ja)}"><link rel="alternate" hreflang="x-default" href="${esc(ja)}"><meta name="robots" content="${robots}"><meta property="og:type" content="website"><meta property="og:site_name" content="Kibun Trip"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(canonical)}"><meta property="og:image" content="${esc(absoluteImage(image))}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${esc(absoluteImage(image))}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=201901"><link rel="stylesheet" href="/en/styles.css?v=201901">`;
 const header=ja=>`<header class="topbar"><a class="brand" href="/en/"><span class="brand-dot"></span>Kibun Trip</a><span class="topbar-tag">MOOD → DAY</span><div class="topbar-actions"><a class="lang-switch refined-lang" href="${esc(ja)}" hreflang="ja">JA</a></div></header>`;
 const footer=`<footer class="footer shell"><div>© Kibun Trip</div><div class="footer-links"><a href="/en/">Mood</a><a href="/en/spots/">Spots</a><a href="/en/magazine/">Features</a><a href="/en/plans/">Plans</a><a href="/en/whats-on/">What’s on</a><a href="/en/performances/">Performances</a></div></footer>`;
 
@@ -88,10 +121,11 @@ for(const s of spots){
   const full=translated(s),slug=s.slug||`${s.spot_id}-spot`,url=`https://kibuntrip.com/en/spots/${slug}/`,jp=`https://kibuntrip.com/spots/${slug}/`;
   const chips=familyChips(s),rows=visitorRows(s),src=img(s);
   const robots=full?'index,follow,max-image-preview:large':'noindex,follow';
+  const schema=JSON.stringify(placeSchema(s,url,src)).replace(/</g,'\\u003c');
   const bodyImage=src?`<div class="en-spot-page-hero"><img src="${esc(src)}" alt="${esc(enName(s))}" loading="eager" referrerpolicy="no-referrer"></div>`:'';
   const family=chips.length?`<section class="family-support"><p class="eyebrow">FAMILY SUPPORT</p><h2>Useful with a baby or child</h2><div class="detail-family-grid">${chips.map(x=>`<span>${esc(x)}</span>`).join('')}</div>${s.family_profile?.note?`<p class="freshness">${esc(s.family_profile.note)}</p>`:''}</section>`:'';
   const visitor=rows.length?`<section class="fact-box"><h2>International visitor notes</h2><div class="visitor-table">${rows.map(([a,b])=>`<div class="visitor-row"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join('')}</div></section>`:'';
-  const html=`<!doctype html><html lang="en"><head>${commonHead({title:`${enName(s)} | Kibun Trip`,description:copy(s),canonical:url,ja:jp,robots,enAlt:full})}</head><body class="en-site en-spot-page">${header(`/spots/${slug}/`)}<main><article class="shell en-spot-article">${bodyImage}<div class="en-spot-copy"><p class="eyebrow">${esc(location(s))}</p><h1>${esc(enName(s))}</h1><p class="en-spot-lead">${esc(copy(s))}</p>${!full?'<p class="fallback-copy-note">This page uses a short English fallback generated from Kibun’s structured data. It is intentionally noindex until the English copy is hand-edited.</p>':''}${scheduledClosure(s)}${family}${performanceSection(s)}${eventSection(s)}${visitor}<section class="fact-box"><h2>Access</h2><p>${esc(s.address||'See the official website.')}</p><a class="official-link" href="${esc(s.official_url||'#')}" target="_blank" rel="noopener">Official website →</a></section><p class="en-back"><a href="/en/spots/">← All ${spots.length} spots</a></p></div></article></main>${footer}</body></html>`;
+  const html=`<!doctype html><html lang="en"><head>${commonHead({title:`${enName(s)} | Kibun Trip`,description:copy(s),canonical:url,ja:jp,robots,enAlt:full,image:src})}<script type="application/ld+json">${schema}</script></head><body class="en-site en-spot-page">${header(`/spots/${slug}/`)}<main><article class="shell en-spot-article">${bodyImage}<div class="en-spot-copy"><p class="eyebrow">${esc(location(s))}</p><h1>${esc(enName(s))}</h1><p class="en-spot-lead">${esc(copy(s))}</p>${!full?'<p class="fallback-copy-note">This page uses a short English fallback generated from Kibun’s structured data. It is intentionally noindex until the English copy is hand-edited.</p>':''}${scheduledClosure(s)}${experienceSection(s)}${family}${performanceSection(s)}${eventSection(s)}${visitor}<section class="fact-box"><h2>Access</h2><p>${esc(s.address||'See the official website.')}</p><a class="official-link" href="${esc(s.official_url||'#')}" target="_blank" rel="noopener">Official website →</a></section>${relatedSection(s)}<p class="en-back"><a href="/en/spots/">← All ${spots.length} spots</a></p></div></article></main>${footer}</body></html>`;
   write(path.join(root,'en/spots',slug,'index.html'),html);
 }
 console.log(`English spot pages generated: ${spots.length} total (${spots.filter(translated).length} edited, ${spots.filter(s=>!translated(s)).length} noindex fallbacks)`);
