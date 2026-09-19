@@ -140,6 +140,26 @@
   else start();
 })(typeof window!=='undefined'?window:globalThis);
 
+
+// v20.19.13: hide the fixed Hero Audit dock while a spot detail dialog is open.
+(function installHeroAuditSpotOpenState(){
+  if(typeof document==='undefined') return;
+  const sync=()=>{
+    const dialog=document.getElementById('spotDialog');
+    document.body?.classList.toggle('hero-audit-spot-open',Boolean(dialog?.open));
+  };
+  const bind=()=>{
+    const dialog=document.getElementById('spotDialog');
+    if(!dialog) return;
+    sync();
+    new MutationObserver(sync).observe(dialog,{attributes:true,attributeFilter:['open']});
+    dialog.addEventListener('close',sync);
+    dialog.addEventListener('cancel',()=>setTimeout(sync,0));
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true});
+  else bind();
+})();
+
 // v20.19.12: keep plan-hub navigation context when closing a deep-linked plan modal.
 (function installPlanCloseNavigation(global){
   'use strict';
