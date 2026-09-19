@@ -893,7 +893,7 @@ html,body{max-width:100%;overflow-x:clip}
 }
 
 
-/* v20.19.8 — scrollable Hero Audit spot dialog */
+/* v20.19.13 — Hero Audit mobile detail uses the viewport, not a reserved dock gap */
 .spot-dialog{
   overflow-y:auto;
   overflow-x:hidden;
@@ -911,20 +911,21 @@ html,body{max-width:100%;overflow-x:clip}
   -webkit-overflow-scrolling:touch;
   touch-action:pan-y;
 }
+.hero-audit-mode.hero-audit-spot-open .hero-audit-dock{
+  display:none!important;
+}
 @media(max-width:560px){
   .hero-audit-mode .spot-dialog[open]{
     position:fixed;
-    top:8px;
-    bottom:auto;
-    left:50%;
-    right:auto;
+    inset:8px auto auto 50%;
     transform:translateX(-50%);
-    width:min(740px,calc(100% - 18px));
-    max-height:calc(100dvh - 228px);
-    min-height:180px;
+    width:min(740px,calc(100% - 16px));
+    max-height:calc(100dvh - 16px);
     margin:0!important;
     overflow-y:auto!important;
+    overflow-x:hidden!important;
     overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
     touch-action:pan-y;
   }
 }
