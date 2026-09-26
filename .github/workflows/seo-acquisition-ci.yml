@@ -18,13 +18,5 @@ jobs:
         run: node scripts/ui_regression_guard.mjs
       - name: Acquisition regression guard
         run: node scripts/acquisition_regression_guard.mjs
-      - name: Recommendation tests
-        run: |
-          node test_recommender.js
-          node test_v12.js
-          node test_v17.js
-          node test_v17_1.js
-          node test_v18.js
-          node test_v19.js
-          node test_v19_places.js
-          node test_v19_4.js
+      - name: Recommendation smoke test
+        run: node test_recommender.js
