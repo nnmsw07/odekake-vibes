@@ -27,6 +27,7 @@ const checks = [
   ['Plan close returns hub-origin deep links to /plans/', heroGuard.includes("PLAN_HUB_SOURCES=new Set(['plan_library','plan_mood_visual'])") && heroGuard.includes("location.assign('/plans/')")],
   ['Plan close preserves browser history when opened from plans hub', heroGuard.includes('cameFromPlansHub()&&history.length>1') && heroGuard.includes('history.back()')],
   ['Escape/cancel from hub-origin plan also returns to plans', heroGuard.includes("planDialog.addEventListener('cancel'") && heroGuard.includes('returnToPlans();')],
+  ['Guide-origin spot close returns to the originating guide', app.includes('function guideReturnUrlForSpot()') && app.includes("location.pathname.startsWith('/spots/')") && app.includes("ref.pathname.startsWith('/guide/')") && app.includes("addEventListener('click',closeSpotDialog)") && app.includes("dialog.addEventListener('cancel'") && app.includes("history.back()")],
 ];
 
 const failed = checks.filter(([, ok]) => !ok);

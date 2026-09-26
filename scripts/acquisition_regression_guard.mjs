@@ -39,7 +39,7 @@ const checks=[
   ['Share URL contains only candidate IDs and campaign tags',shareFn.includes("u.searchParams.set('shared'")&&shareFn.includes("utm_source")&&!/currentOrigin|latitude|longitude|\blat\b|\blng\b/.test(shareFn)],
   ['Share UI explains location privacy',app.includes('現在地や入力した場所は共有URLに含まれません')],
   ['Share loop styles exist',styles.includes('v20.20 — acquisition share loop')&&styles.includes('.candidate-share-box')&&styles.includes('.shared-candidate-card')],
-  ['Home cache keys include acquisition update',index.includes('styles.css?v=202000')&&index.includes('app.js?v=202001')],
+  ['Home cache keys include acquisition update',index.includes('styles.css?v=202000')&&index.includes('app.js?v=202002')],
   ['Guide hub links all new intent guides',guideSlugs.every(slug=>guideHub.includes(`href="${slug}/"`))],
   ['Sitemap lists all new intent guides',guideSlugs.every(slug=>sitemap.includes(`https://kibuntrip.com/guide/${slug}/`))],
   ['All new guide files exist',guideSlugs.every(slug=>exists(`guide/${slug}/index.html`))],
