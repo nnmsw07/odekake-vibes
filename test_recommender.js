@@ -18,6 +18,11 @@ assert.ok(r.recommendations.some(x => x.scores.vibe >= 70));
 r = R.recommend(seed,{selectedVibes:['culture','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.ok(r.recommendations[0].scores.vibe >= 70); // expanded culture/relax dataset
 
+// Common family use case must never collapse to zero results.
+r = R.recommend(seed,{selectedVibes:['food','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
+assert.equal(r.recommendations.length,3);
+assert.ok(r.recommendations.some(x => (x.scores?.vibe ?? 0) >= 60));
+
 // Hard age constraint: JAL SKY MUSEUM must be excluded for a 1-year-old.
 r = R.recommend(seed,{selectedVibes:['culture','extraordinary'],childAgeMonths:15,weather:'any',availableMinutes:240});
 assert.ok(!r.recommendations.some(x => x.spot_id === 'spot_031'));
