@@ -52,12 +52,39 @@ for(const [u,{html}] of pageMap){for(const href of hrefs(html)){if(/[?&]spot=spo
 warn(legacySpotLinks===0,'旧 ?spot= 内部リンクが残っています',String(legacySpotLinks));
 check(guideSpotLinks>0,'ガイドから個別スポットへの通常リンクがありません');
 
+// English fallback pages are intentionally noindex. Keep them usable for people without
+// exposing hundreds of low-priority URLs as crawlable <a href> links from the English hub.
+function englishSpotCrawlGuard(){
+  const hubFile=path.join(ROOT,'en','spots','index.html'), spotsDir=path.join(ROOT,'en','spots');
+  if(!fs.existsSync(hubFile)||!fs.existsSync(spotsDir))return {indexable_links:0,noindex_pages:0,fallback_buttons:0};
+  const noindexPaths=new Set();
+  for(const ent of fs.readdirSync(spotsDir,{withFileTypes:true})){
+    if(!ent.isDirectory())continue;
+    const file=path.join(spotsDir,ent.name,'index.html');if(!fs.existsSync(file))continue;
+    if(robotsMeta(fs.readFileSync(file,'utf8')).includes('noindex'))noindexPaths.add(`/en/spots/${ent.name}/`);
+  }
+  const html=fs.readFileSync(hubFile,'utf8'), linkedNoindex=[], indexableLinks=[];
+  for(const href of hrefs(html)){
+    let u;try{u=new URL(href,`${SITE}/en/spots/`)}catch{continue}
+    if(u.origin!==SITE||!/^\/en\/spots\/[^/]+\/$/.test(u.pathname))continue;
+    if(noindexPaths.has(u.pathname))linkedNoindex.push(u.pathname);else indexableLinks.push(u.pathname);
+  }
+  const fallbackButtons=[];
+  for(const tag of html.match(/<button\b[^>]*>/gi)||[]){const target=attr(tag,'data-en-fallback');if(target)fallbackButtons.push(target)}
+  check(linkedNoindex.length===0,'English hub が noindex fallback を通常リンクしています',linkedNoindex.slice(0,5).join(', '));
+  check(fallbackButtons.length===noindexPaths.size,'English fallback button 数が noindex page 数と一致しません',`buttons ${fallbackButtons.length} / noindex ${noindexPaths.size}`);
+  const unexpected=fallbackButtons.filter(target=>{try{return !noindexPaths.has(new URL(target,SITE).pathname)}catch{return true}});
+  check(unexpected.length===0,'English fallback button が indexable/不正URLを指しています',unexpected.slice(0,5).join(', '));
+  return {indexable_links:indexableLinks.length,noindex_pages:noindexPaths.size,fallback_buttons:fallbackButtons.length};
+}
+const englishSpotCrawl=englishSpotCrawlGuard();
+
 async function localHttpStatuses(){const server=http.createServer((req,res)=>{let pathname;try{pathname=normPath(new URL(req.url,'http://local').pathname)}catch{res.statusCode=400;return res.end('bad')}let file=urlToFile(`${SITE}${pathname}`);if(!file){res.statusCode=404;return res.end('not found')}res.statusCode=200;res.setHeader('content-type','text/html; charset=utf-8');res.end(fs.readFileSync(file))});await new Promise(r=>server.listen(0,'127.0.0.1',r));const port=server.address().port;try{for(const u of sitemapUrls){const pathname=new URL(u).pathname;const r=await fetch(`http://127.0.0.1:${port}${pathname}`,{redirect:'manual'});check(r.status===200,'ローカル200応答チェック失敗',`${pathname} -> ${r.status}`)}}finally{await new Promise(r=>server.close(r))}}
 async function liveChecks(){const origin=(baseUrl||SITE).replace(/\/$/,'');for(let i=0;i<sitemapUrls.length;i+=8){await Promise.all(sitemapUrls.slice(i,i+8).map(async u=>{const pathname=new URL(u).pathname;const target=origin+pathname;try{const r=await fetch(target,{redirect:'follow',signal:AbortSignal.timeout(12000)});check(r.status===200,'公開URL 200応答チェック失敗',`${target} -> ${r.status}`);if((r.headers.get('content-type')||'').includes('text/html')){const html=await r.text();const canon=canonicalOf(html);check(!!canon,'公開ページ canonical なし',target);if(canon)check(new URL(canon,target).href===`${SITE}${pathname}`,'公開ページ self-canonical 不一致',`${target} -> ${canon}`);check(!robotsMeta(html).includes('noindex'),'公開ページ noindex',target)}}catch(e){errors.push(`公開URL取得失敗: ${target} (${e.message})`)}}))}}
 
 if(live) await liveChecks(); else await localHttpStatuses();
 const baselinePath=path.join(ROOT,'seo-audit','search-console-baseline.json');let baseline=null;if(fs.existsSync(baselinePath)){try{baseline=JSON.parse(fs.readFileSync(baselinePath,'utf8'))}catch{}}
-const summary={mode:live?'live':'local',checked_at:new Date().toISOString(),sitemap_urls:sitemapUrls.length,target_static_pages:targetPages.length,guide_spot_links:guideSpotLinks,legacy_spot_links:legacySpotLinks,search_console_baseline:baseline,errors,warnings,ok:errors.length===0};
-console.log(`SEO audit ${summary.ok?'PASS':'FAIL'}: ${sitemapUrls.length} sitemap URLs / ${errors.length} errors / ${warnings.length} warnings`);for(const x of errors)console.error('ERROR',x);for(const x of warnings)console.warn('WARN ',x);if(baseline)console.log(`Search Console baseline (${baseline.as_of}): 検出-未登録 ${baseline.discovered_not_indexed}, クロール済み-未登録 ${baseline.crawled_not_indexed}`);
-if(reportPrefix){const jp=path.join(ROOT,`${reportPrefix}.json`), mp=path.join(ROOT,`${reportPrefix}.md`);fs.mkdirSync(path.dirname(jp),{recursive:true});fs.writeFileSync(jp,JSON.stringify(summary,null,2));fs.writeFileSync(mp,`# Kibun SEO Audit\n\n- mode: ${summary.mode}\n- checked: ${summary.checked_at}\n- sitemap URLs: ${summary.sitemap_urls}\n- target static pages: ${summary.target_static_pages}\n- guide → spot links: ${summary.guide_spot_links}\n- legacy ?spot= links: ${summary.legacy_spot_links}\n- result: **${summary.ok?'PASS':'FAIL'}**\n${baseline?`- Search Console baseline (${baseline.as_of}): 検出-未登録 ${baseline.discovered_not_indexed} / クロール済み-未登録 ${baseline.crawled_not_indexed}\n`:''}\n## Errors\n${errors.length?errors.map(x=>`- ${x}`).join('\n'):'- none'}\n\n## Warnings\n${warnings.length?warnings.map(x=>`- ${x}`).join('\n'):'- none'}\n`.replace('w warnings','warnings'));}
+const summary={mode:live?'live':'local',checked_at:new Date().toISOString(),sitemap_urls:sitemapUrls.length,target_static_pages:targetPages.length,guide_spot_links:guideSpotLinks,legacy_spot_links:legacySpotLinks,english_spot_crawl:englishSpotCrawl,search_console_baseline:baseline,errors,warnings,ok:errors.length===0};
+console.log(`SEO audit ${summary.ok?'PASS':'FAIL'}: ${sitemapUrls.length} sitemap URLs / ${errors.length} errors / ${warnings.length} warnings`);console.log(`English crawl guard: ${englishSpotCrawl.indexable_links} indexable links / ${englishSpotCrawl.noindex_pages} noindex fallbacks behind buttons`);for(const x of errors)console.error('ERROR',x);for(const x of warnings)console.warn('WARN ',x);if(baseline)console.log(`Search Console baseline (${baseline.as_of}): 検出-未登録 ${baseline.discovered_not_indexed}, クロール済み-未登録 ${baseline.crawled_not_indexed}`);
+if(reportPrefix){const jp=path.join(ROOT,`${reportPrefix}.json`), mp=path.join(ROOT,`${reportPrefix}.md`);fs.mkdirSync(path.dirname(jp),{recursive:true});fs.writeFileSync(jp,JSON.stringify(summary,null,2));fs.writeFileSync(mp,`# Kibun SEO Audit\n\n- mode: ${summary.mode}\n- checked: ${summary.checked_at}\n- sitemap URLs: ${summary.sitemap_urls}\n- target static pages: ${summary.target_static_pages}\n- guide → spot links: ${summary.guide_spot_links}\n- legacy ?spot= links: ${summary.legacy_spot_links}\n- English indexable spot links: ${summary.english_spot_crawl.indexable_links}\n- English noindex fallbacks behind buttons: ${summary.english_spot_crawl.fallback_buttons}\n- result: **${summary.ok?'PASS':'FAIL'}**\n${baseline?`- Search Console baseline (${baseline.as_of}): 検出-未登録 ${baseline.discovered_not_indexed} / クロール済み-未登録 ${baseline.crawled_not_indexed}\n`:''}\n## Errors\n${errors.length?errors.map(x=>`- ${x}`).join('\n'):'- none'}\n\n## Warnings\n${warnings.length?warnings.map(x=>`- ${x}`).join('\n'):'- none'}\n`.replace('w warnings','warnings'));}
 if(errors.length)process.exit(1);

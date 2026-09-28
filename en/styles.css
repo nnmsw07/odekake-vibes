@@ -34,3 +34,4 @@
     text-overflow:ellipsis!important;
   }
 }
+.en-spot-directory-card.en-fallback-card{font:inherit;text-align:left;width:100%;cursor:pointer;-webkit-appearance:none;appearance:none}

@@ -1,6 +1,18 @@
 {
-  "as_of": "2026-09-07",
-  "discovered_not_indexed": 31,
-  "crawled_not_indexed": 5,
-  "note": "Search Console経過確認用。次回確認時に最新件数と対象URLを比較する。"
+  "as_of": "2026-09-20",
+  "indexed": 120,
+  "not_indexed": 539,
+  "discovered_not_indexed": 513,
+  "crawled_not_indexed": 9,
+  "alternate_page_with_proper_canonical": 12,
+  "redirected_page": 3,
+  "excluded_by_noindex": 2,
+  "previous": [
+    {
+      "as_of": "2026-09-07",
+      "discovered_not_indexed": 31,
+      "crawled_not_indexed": 5
+    }
+  ],
+  "note": "2026-09-25にSearch Console画面で確認。検出-未登録の例には about.html、日英Magazine、/en/spots/ など正常な公開URLが含まれていた。"
 }
