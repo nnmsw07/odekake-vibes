@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset_name": "kibun_kanto_izu_seed_v20_16_0_whats_on",
-    "version": "0.20.20.0",
+    "version": "0.20.20.1",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -75669,6 +75669,574 @@
             "reservation": "recommended",
             "cashless": null,
             "nearest_station": "Ariake Garden",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_490",
+      "slug": "muchu-planet-yokohama-bayside",
+      "name": "Muchu Planet ユニクロパーク 横浜ベイサイド",
+      "aliases": [
+        "ムチュウプラネット 横浜ベイサイド"
+      ],
+      "category_primary": "indoor_kids_park",
+      "categories": [
+        "kids_space",
+        "indoor",
+        "digital_play",
+        "creative",
+        "books",
+        "family"
+      ],
+      "prefecture": "神奈川県",
+      "city": "横浜市金沢区",
+      "address": "神奈川県横浜市金沢区白帆6-5 UNIQLO PARK 横浜ベイサイド3F",
+      "official_url": "https://www.litpla.com/space/muchu-yokohamabayside/",
+      "environment": "indoor",
+      "stay_minutes_seed": 150,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 75,
+        "hands_on": 90,
+        "quietness": 25,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 92,
+        "baby_fit": 72,
+        "toddler_fit": 98,
+        "stroller_fit": 75,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 5,
+        "extraordinary": 96,
+        "scenic": 15,
+        "stroll": 25,
+        "relax": 55,
+        "shopping": 45,
+        "food": 15,
+        "culture": 78,
+        "animals": 5,
+        "creative": 100,
+        "active": 92,
+        "waterside": 25
+      },
+      "editorial_reason": "本とデジタル遊びが一体になった、横浜ベイサイドの新しい屋内キッズパーク。絵本・図鑑と10種類の体験を行き来しながら、遊びを好奇心につなげられる。",
+      "public_copy": "本とデジタル遊びが一体になった、横浜ベイサイドの新しい屋内キッズパーク。絵本・図鑑と10種類の体験を行き来しながら、遊びを好奇心につなげられる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026年10月31日オープン予定。10:00〜20:00（最終入場19:30）。",
+        "price_summary": "0〜1歳無料。年齢・平休日・利用時間で料金が異なる。会員登録が必要。",
+        "reservation_summary": "チケット・混雑状況は公式を確認。",
+        "age_note": "0〜1歳無料。主な遊びは幼児〜小学生向け。",
+        "temporary_note": "2026年10月31日グランドオープン予定。",
+        "checked_at": "2026-09-29",
+        "source_url": "https://www.litpla.com/space/muchu-yokohamabayside/"
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "Muchu Planet ユニクロパーク 横浜ベイサイドの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 35,
+        "solo": 15,
+        "friends": 70,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 58,
+      "routing": {
+        "municipality": "横浜市金沢区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "Muchu Planet ユニクロパーク 横浜ベイサイド",
+          "photo_index_override": 0,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "横浜",
+        "ベイサイド",
+        "屋内",
+        "0歳から",
+        "デジタル遊び",
+        "本",
+        "雨の日"
+      ],
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式"
+        ],
+        "product_match_required": true,
+        "note": "公式情報を優先。"
+      },
+      "buzz": {
+        "score": 98,
+        "freshness": 100,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 94,
+        "popularity_momentum": 95,
+        "reason": "2026年10月31日、Muchu Planet神奈川初出店。『本×遊び』とデジタル体験を組み合わせた全天候型の新業態。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-29",
+            "url": "https://www.litpla.com/space/muchu-yokohamabayside/"
+          }
+        ]
+      },
+      "current_buzz": {
+        "type": "new",
+        "reason": "2026年10月31日、Muchu Planet神奈川初出店。『本×遊び』とデジタル体験を組み合わせた全天候型の新業態。",
+        "start_date": "2026-09-29",
+        "end_date": "2027-01-31",
+        "official_url": "https://www.litpla.com/space/muchu-yokohamabayside/",
+        "checked_at": "2026-09-29"
+      },
+      "availability_constraints": {
+        "unavailable_until": "2026-10-31",
+        "note": "2026年10月31日オープン予定"
+      },
+      "family_profile": {
+        "baby_space": false,
+        "kids_space": true,
+        "nursing_room": null,
+        "diaper_changing": null,
+        "crawl_ok": false,
+        "note": "0〜1歳は入場無料。設備詳細はオープン後の公式案内を再確認。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Muchu Planet UNIQLO PARK Yokohama Bayside",
+          "public_copy": "A new indoor kids park in Yokohama Bayside combining books, educational content and ten digital-play attractions. Scheduled to open October 31, 2026.",
+          "city": "Yokohama · Kanazawa Ward",
+          "prefecture": "Kanagawa",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": "Torihama Station",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_491",
+      "slug": "robot-park-odaiba",
+      "name": "ROBOT FIGHT by The Robot Park ODAIBA",
+      "aliases": [
+        "THE ROBOT PARK ODAIBA",
+        "ザ・ロボット・パーク・お台場"
+      ],
+      "category_primary": "technology_experience",
+      "categories": [
+        "indoor",
+        "technology",
+        "robot",
+        "experience",
+        "workshop",
+        "family"
+      ],
+      "prefecture": "東京都",
+      "city": "港区",
+      "address": "東京都港区台場1-7-1 アクアシティお台場 西館6F",
+      "official_url": "https://skeletonics.com/the-robot-park-odaiba/",
+      "environment": "indoor",
+      "stay_minutes_seed": 90,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 85,
+        "hands_on": 100,
+        "quietness": 25,
+        "parent_rest": 55,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 92,
+        "baby_fit": 10,
+        "toddler_fit": 35,
+        "stroller_fit": 45,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 100,
+        "nature": 0,
+        "extraordinary": 100,
+        "scenic": 10,
+        "stroll": 20,
+        "relax": 20,
+        "shopping": 20,
+        "food": 5,
+        "culture": 78,
+        "animals": 0,
+        "creative": 95,
+        "active": 100,
+        "waterside": 5
+      },
+      "editorial_reason": "巨大ロボットの操縦、対戦型テクノロジースポーツ、デジタル合戦、ロボット組み立てを一か所で体験。子どもだけでなく大人も一緒に“ロボットに乗る”非日常を楽しめる。",
+      "public_copy": "巨大ロボットの操縦、対戦型テクノロジースポーツ、デジタル合戦、ロボット組み立てを一か所で体験。子どもだけでなく大人も一緒に“ロボットに乗る”非日常を楽しめる。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "2026年10月15日オープン予定。平日11:00〜20:00、土日祝11:00〜21:00。",
+        "price_summary": "30分2,000円、60分3,000円、90分4,000円。付き添い入場700円。東京都民価格あり。",
+        "reservation_summary": "店頭受付。混雑時は待ち時間が発生する場合あり。",
+        "age_note": "ROBOT FIGHT対戦は7歳以上かつ身長110cm以上。年齢・身長未満でも操縦体験、Cyber KASSEN、組み立て等は利用可。",
+        "temporary_note": "2026年10月15日グランドオープン予定。",
+        "checked_at": "2026-09-29",
+        "source_url": "https://skeletonics.com/the-robot-park-odaiba/"
+      },
+      "hero_image": {
+        "url": "images/ai/culture-interior.jpg",
+        "type": "ai",
+        "alt": "ROBOT FIGHT by The Robot Park ODAIBAの雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 92,
+        "partner": 78,
+        "solo": 65,
+        "friends": 100,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 94,
+      "routing": {
+        "municipality": "港区",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "ROBOT FIGHT by The Robot Park ODAIBA",
+          "photo_index_override": 0,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "お台場",
+        "ロボット",
+        "体験",
+        "工作",
+        "屋内",
+        "雨の日",
+        "大人も楽しい"
+      ],
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式"
+        ],
+        "product_match_required": true,
+        "note": "公式情報を優先。"
+      },
+      "buzz": {
+        "score": 99,
+        "freshness": 100,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 94,
+        "popularity_momentum": 95,
+        "reason": "2026年10月15日お台場に新規オープン予定。本物の外骨格ロボット操縦と対戦・工作をまとめた希少な体験型施設。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-29",
+            "url": "https://skeletonics.com/the-robot-park-odaiba/"
+          }
+        ]
+      },
+      "current_buzz": {
+        "type": "new",
+        "reason": "2026年10月15日お台場に新規オープン予定。本物の外骨格ロボット操縦と対戦・工作をまとめた希少な体験型施設。",
+        "start_date": "2026-09-29",
+        "end_date": "2027-01-15",
+        "official_url": "https://skeletonics.com/the-robot-park-odaiba/",
+        "checked_at": "2026-09-29"
+      },
+      "availability_constraints": {
+        "unavailable_until": "2026-10-15",
+        "note": "2026年10月15日オープン予定"
+      },
+      "age_constraints": {
+        "soft": true,
+        "note": "ROBOT FIGHT対戦は7歳以上かつ身長110cm以上。その他の体験は公式の利用条件を確認。"
+      },
+      "i18n": {
+        "en": {
+          "name": "ROBOT FIGHT by The Robot Park ODAIBA",
+          "public_copy": "A new hands-on robot attraction in Odaiba with wearable robot battles, Skeletonics piloting, digital swordplay and robot-building workshops. Scheduled to open October 15, 2026.",
+          "city": "Minato",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "check venue",
+            "cashless": null,
+            "nearest_station": "Daiba Station",
+            "tattoo_policy": null,
+            "halal": null,
+            "vegan": null,
+            "japanese_required": null
+          }
+        }
+      }
+    },
+    {
+      "spot_id": "spot_492",
+      "slug": "kidsland-us-tokyo-ome",
+      "name": "キッズランドUS 東京青梅店",
+      "aliases": [
+        "キッズランドUS青梅"
+      ],
+      "category_primary": "indoor_kids_park",
+      "categories": [
+        "kids_space",
+        "indoor",
+        "playground",
+        "family",
+        "active"
+      ],
+      "prefecture": "東京都",
+      "city": "青梅市",
+      "address": "東京都青梅市河辺町10-9-1 トライアル西友3F",
+      "official_url": "https://kidslandus.com/shop/tokyo-ome/",
+      "environment": "indoor",
+      "stay_minutes_seed": 180,
+      "experience_seed": {
+        "indoor": 100,
+        "outdoor": 0,
+        "physical_activity": 95,
+        "hands_on": 90,
+        "quietness": 25,
+        "parent_rest": 78,
+        "greenery": 0,
+        "water_contact": 0,
+        "animal_contact": 0,
+        "food_experience": 0,
+        "creative_sensory": 92,
+        "baby_fit": 96,
+        "toddler_fit": 100,
+        "stroller_fit": 75,
+        "rain_resilience": 100,
+        "heat_resilience": 100,
+        "walking_load": 35,
+        "planning_friction": 20
+      },
+      "vibes_seed": {
+        "cool": 96,
+        "nature": 5,
+        "extraordinary": 78,
+        "scenic": 5,
+        "stroll": 10,
+        "relax": 58,
+        "shopping": 15,
+        "food": 20,
+        "culture": 15,
+        "animals": 30,
+        "creative": 72,
+        "active": 100,
+        "waterside": 0
+      },
+      "editorial_reason": "約30種類の遊びがそろう全天候型の大型室内遊園地。0歳向けベビーコーナーからジャングルジム、トランポリン、乗り物まであり、年齢差のあるきょうだいでも過ごしやすい。",
+      "public_copy": "約30種類の遊びがそろう全天候型の大型室内遊園地。0歳向けベビーコーナーからジャングルジム、トランポリン、乗り物まであり、年齢差のあるきょうだいでも過ごしやすい。",
+      "dynamic_snapshot": {
+        "opening_hours_text": "10:00〜19:00。定休日はショッピングセンターに準ずる。",
+        "price_summary": "0歳無料。子ども1時間800円、平日1日1,000円、休日3時間1,300円。保護者1日700円（2026年9月25日時点）。",
+        "reservation_summary": "当日利用可。Web事前チケットあり。",
+        "age_note": "対象年齢0〜12歳（小学6年生）。0歳無料。",
+        "temporary_note": "2026年9月18日グランドオープン。",
+        "checked_at": "2026-09-29",
+        "source_url": "https://kidslandus.com/shop/tokyo-ome/"
+      },
+      "hero_image": {
+        "url": "images/ai/kids-play-c.jpg",
+        "type": "ai",
+        "alt": "キッズランドUS 東京青梅店の雰囲気をイメージした画像",
+        "label": "イメージ",
+        "credit": "AI生成イメージ",
+        "source_url": null,
+        "license": null,
+        "exact_spot": false
+      },
+      "research_status": {
+        "static_basic": "verified_or_high_confidence",
+        "dynamic_detail": "verified_current",
+        "needs_previsit_refresh": true
+      },
+      "audience_fit": {
+        "family": 100,
+        "partner": 20,
+        "solo": 5,
+        "friends": 60,
+        "dog": 0
+      },
+      "adult_enjoyment_seed": 48,
+      "routing": {
+        "municipality": "青梅市",
+        "geocode_provider": "geolonia_japanese_addresses_v2",
+        "geocode_accuracy": "town_or_municipality_approximation",
+        "google_place_id": null
+      },
+      "media_strategy": {
+        "hero_priority": [
+          "google_places",
+          "ai"
+        ],
+        "current_provider": "ai",
+        "google_places": {
+          "place_id": null,
+          "status": "not_resolved",
+          "query": "キッズランドUS 東京青梅店",
+          "photo_index_override": 0,
+          "force": false,
+          "use_address": true
+        }
+      },
+      "ui_tags": [
+        "青梅",
+        "0歳から",
+        "室内遊園地",
+        "ベビーコーナー",
+        "授乳室",
+        "雨の日",
+        "一日遊べる"
+      ],
+      "planning_profile": {
+        "style": "walk_in",
+        "same_day_fit": 90,
+        "reservation_expected": false
+      },
+      "monetization": {
+        "affiliate_fit": "B",
+        "status": "candidate_only",
+        "channel_candidates": [
+          "公式"
+        ],
+        "product_match_required": true,
+        "note": "公式情報を優先。"
+      },
+      "buzz": {
+        "score": 97,
+        "freshness": 100,
+        "social_presence": 82,
+        "visual_appeal": 90,
+        "media_attention": 94,
+        "popularity_momentum": 95,
+        "reason": "2026年9月18日グランドオープン。約30種類の遊び、ベビーコーナー、授乳室を備えた新しい全天候型室内遊園地。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "evidence": [
+          {
+            "kind": "official_current",
+            "date": "2026-09-29",
+            "url": "https://kidslandus.com/shop/tokyo-ome/"
+          }
+        ]
+      },
+      "current_buzz": {
+        "type": "new",
+        "reason": "2026年9月18日グランドオープン。約30種類の遊び、ベビーコーナー、授乳室を備えた新しい全天候型室内遊園地。",
+        "start_date": "2026-09-29",
+        "end_date": "2026-12-31",
+        "official_url": "https://kidslandus.com/shop/tokyo-ome/",
+        "checked_at": "2026-09-29"
+      },
+      "family_profile": {
+        "baby_space": true,
+        "kids_space": true,
+        "nursing_room": true,
+        "diaper_changing": null,
+        "crawl_ok": true,
+        "note": "公式店舗ページにベビーコーナー・授乳室を掲載。0歳無料。"
+      },
+      "i18n": {
+        "en": {
+          "name": "Kidsland US Tokyo Ome",
+          "public_copy": "A newly opened all-weather indoor playground in Ome with around 30 play options, including a baby area, nursing room, jungle gym, trampolines and ride-ons. Ages 0–12.",
+          "city": "Ome",
+          "prefecture": "Tokyo",
+          "visitor_info": {
+            "english_friendly": null,
+            "reservation": "optional",
+            "cashless": null,
+            "nearest_station": "Kabe Station",
             "tattoo_policy": null,
             "halal": null,
             "vegan": null,
