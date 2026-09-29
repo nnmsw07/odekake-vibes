@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "0.20.16.0",
-    "checked_at": "2026-09-11",
+    "version": "0.20.20.0",
+    "checked_at": "2026-09-29",
     "source_policy": "Official venue and organizer pages only.",
     "display_policy": "Expired items are hidden. Exact times, ticket availability, closures and same-day schedules must be rechecked on the official page.",
     "types": {
@@ -719,6 +719,65 @@
       "specific_dates": [],
       "official_url": "https://www.tokyo-dome.co.jp/tenq/event/",
       "checked_at": "2026-09-11"
+    },
+    {
+      "event_id": "evt_play_park_autumn_bread",
+      "venue_spot_id": "spot_028",
+      "venue_label": "PLAY! PARK",
+      "title": "焼きたて！秋のパンあそび！",
+      "title_en": "Freshly Baked! Autumn Bread Play",
+      "event_type": "family",
+      "start_date": "2026-09-19",
+      "end_date": "2026-10-25",
+      "schedule_summary": "巨大なパンで運ぶ・転がる・サンドイッチになる、秋の体験遊び",
+      "schedule_summary_en": "Autumn play with giant bread-themed installations",
+      "audience": [
+        "family"
+      ],
+      "tags": [
+        "kids",
+        "creative",
+        "autumn"
+      ],
+      "indoor": true,
+      "reservation_expected": false,
+      "age_note": "0〜12歳の子どもと保護者",
+      "price_note": "参加無料（別途入場料）",
+      "availability": "continuous",
+      "specific_dates": [],
+      "official_url": "https://play2020.jp/article/park-pan/",
+      "checked_at": "2026-09-29"
+    },
+    {
+      "event_id": "evt_yeg_halloween_2026",
+      "venue_spot_id": "spot_064",
+      "venue_label": "横浜イングリッシュガーデン",
+      "title": "ハロウィン・ディスプレイ",
+      "title_en": "Halloween Display 2026",
+      "event_type": "seasonal",
+      "start_date": "2026-09-12",
+      "end_date": "2026-10-31",
+      "schedule_summary": "秋の花、カボチャ、巨大ガイコツで庭園全体がハロウィン仕様に",
+      "schedule_summary_en": "Halloween garden display with autumn flowers, pumpkins and photo spots",
+      "audience": [
+        "family",
+        "adult",
+        "international"
+      ],
+      "tags": [
+        "garden",
+        "halloween",
+        "autumn",
+        "photo"
+      ],
+      "indoor": false,
+      "reservation_expected": false,
+      "age_note": "未就学児無料",
+      "price_note": null,
+      "availability": "continuous",
+      "specific_dates": [],
+      "official_url": "https://y-eg.jp/information/3905/",
+      "checked_at": "2026-09-29"
     }
   ]
 }

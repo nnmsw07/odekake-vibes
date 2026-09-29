@@ -1,7 +1,7 @@
 window.ODEKAKE_SEED = {
   "metadata": {
     "dataset_name": "kibun_kanto_izu_seed_v20_16_0_whats_on",
-    "version": "0.20.19.2",
+    "version": "0.20.20.0",
     "created_at": "2026-08-28",
     "score_scale": [
       0,
@@ -153,7 +153,8 @@ window.ODEKAKE_SEED = {
     "editorial_expansion_note": "v20.19.0: 6 new Japanese/English features and 8 performance-day curated plans added, connecting mood discovery with WHAT’S ON / performance venues.",
     "ui_hotfix_note": "v20.19.2: supporting mood cards compacted to match the approved mock; top CSS/app cache keys bumped to avoid stale mobile layout.",
     "magazine_hero_note": "v20.19.2: magazine hub, article heroes and spot cards use representative spot hero media; Google Places hero resolver expanded to all referenced magazine spots.",
-    "venue_whats_on_note": "v20.19.2: spot detail “see all” links open venue-specific WHAT’S ON first, with a secondary route to browse other venues. Japanese and English both supported."
+    "venue_whats_on_note": "v20.19.2: spot detail “see all” links open venue-specific WHAT’S ON first, with a secondary route to browse other venues. Japanese and English both supported.",
+    "checked_at": "2026-09-29"
   },
   "vibe_definitions": {
     "cool": "暑さから逃れて、涼しく過ごしたい",
@@ -3971,20 +3972,20 @@ window.ODEKAKE_SEED = {
         "checked_at": "2026-08-17"
       },
       "buzz": {
-        "score": 85,
-        "freshness": 35,
+        "score": 94,
+        "freshness": 96,
         "social_presence": 78,
         "visual_appeal": 94,
-        "media_attention": 70,
-        "popularity_momentum": 82,
-        "reason": "造形物の視覚性と体験性が高く、親子クリエイティブ系投稿と相性が良い。",
-        "checked_at": "2026-08-17",
-        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "media_attention": 90,
+        "popularity_momentum": 90,
+        "reason": "9/19〜10/25『焼きたて！秋のパンあそび！』開催。0〜12歳対象で、0〜2歳向け親子遊びも用意。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-17",
-            "url": "https://play2020.jp/park/"
+            "date": "2026-09-29",
+            "url": "https://play2020.jp/article/park-pan/"
           }
         ]
       },
@@ -4066,6 +4067,14 @@ window.ODEKAKE_SEED = {
             "japanese_required": null
           }
         }
+      },
+      "current_buzz": {
+        "type": "now",
+        "reason": "9/19〜10/25『焼きたて！秋のパンあそび！』開催。0〜12歳対象で、0〜2歳向け親子遊びも用意。",
+        "start_date": "2026-09-29",
+        "end_date": "2026-10-25",
+        "official_url": "https://play2020.jp/article/park-pan/",
+        "checked_at": "2026-09-29"
       }
     },
     {
@@ -7501,19 +7510,19 @@ window.ODEKAKE_SEED = {
         "source_url": "https://kawa-sui.com/"
       },
       "buzz": {
-        "score": 86,
-        "freshness": 30,
+        "score": 90,
+        "freshness": 96,
         "social_presence": 84,
         "visual_appeal": 96,
-        "media_attention": 72,
-        "popularity_momentum": 86,
-        "reason": "駅前屋内でゼロ距離感のある水辺展示が、天候回避の子連れ投稿と相性がよい。",
-        "checked_at": "2026-08-22",
-        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "media_attention": 90,
+        "popularity_momentum": 90,
+        "reason": "秋の新展示・季節企画が動く完全屋内水族館。川崎駅前で乳幼児連れの雨の日候補として使いやすい。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-22",
+            "date": "2026-09-29",
             "url": "https://kawa-sui.com/"
           }
         ]
@@ -7592,6 +7601,14 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "提携先の商品掲載を確認するまでユーザー画面には表示しない。"
+      },
+      "current_buzz": {
+        "type": "now",
+        "reason": "秋の新展示・季節企画が動く完全屋内水族館。川崎駅前で乳幼児連れの雨の日候補として使いやすい。",
+        "start_date": "2026-09-29",
+        "end_date": "2026-10-31",
+        "official_url": "https://kawa-sui.com/",
+        "checked_at": "2026-09-29"
       }
     },
     {
@@ -9278,20 +9295,20 @@ window.ODEKAKE_SEED = {
         "source_url": "https://www.y-eg.jp/"
       },
       "buzz": {
-        "score": 76,
-        "freshness": 30,
+        "score": 91,
+        "freshness": 96,
         "social_presence": 55,
         "visual_appeal": 95,
-        "media_attention": 60,
-        "popularity_momentum": 76,
-        "reason": "親満足の高い花・庭園枠。子連れポータルを“親子の休日”へ広げる。",
-        "checked_at": "2026-08-23",
-        "metric_note": "SNSの正確な投稿数・再生数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "media_attention": 90,
+        "popularity_momentum": 90,
+        "reason": "9/12〜10/31ハロウィン・ディスプレイ。未就学児無料で、花と季節装飾を親子でゆっくり楽しめる。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-08-23",
-            "url": "https://www.y-eg.jp/"
+            "date": "2026-09-29",
+            "url": "https://y-eg.jp/information/3905/"
           }
         ]
       },
@@ -9350,6 +9367,14 @@ window.ODEKAKE_SEED = {
         ],
         "product_match_required": true,
         "note": "アソビュー！の施設別チケット・体験ページを2026-09-03に確認。リンク変換は公開前後に再確認する。"
+      },
+      "current_buzz": {
+        "type": "now",
+        "reason": "9/12〜10/31ハロウィン・ディスプレイ。未就学児無料で、花と季節装飾を親子でゆっくり楽しめる。",
+        "start_date": "2026-09-29",
+        "end_date": "2026-10-31",
+        "official_url": "https://y-eg.jp/information/3905/",
+        "checked_at": "2026-09-29"
       }
     },
     {
@@ -50323,22 +50348,30 @@ window.ODEKAKE_SEED = {
         "note": "個別チケット掲載を確認できた場合のみ予約導線を表示。"
       },
       "buzz": {
-        "score": 97,
-        "freshness": 100,
+        "score": 94,
+        "freshness": 96,
         "social_presence": 90,
         "visual_appeal": 99,
-        "media_attention": 93,
-        "popularity_momentum": 97,
-        "reason": "2026年7月に東日本初出店。カプコンの大型アクティビティ・VR・ゲームをまとめて体験できる新スポット。",
-        "checked_at": "2026-09-02",
-        "metric_note": "SNSの正確な投稿数ではなく、新規性・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
+        "media_attention": 90,
+        "popularity_momentum": 90,
+        "reason": "2026年7月オープンの東日本初CAPCOMIX。1歳〜未就学児向けKids BANeTを含み、親子・兄弟で遊び方を分けやすい新施設。",
+        "checked_at": "2026-09-29",
+        "metric_note": "SNSの正確な投稿数ではなく、公式の新規性・直近企画・露出・視覚性・人気の勢いを元にした編集ヒューリスティック。",
         "evidence": [
           {
             "kind": "official_current",
-            "date": "2026-09-02",
+            "date": "2026-09-29",
             "url": "https://www.capcom.co.jp/amusement/game/shop/minatomirai"
           }
         ]
+      },
+      "current_buzz": {
+        "type": "new",
+        "reason": "2026年7月オープンの東日本初CAPCOMIX。1歳〜未就学児向けKids BANeTを含み、親子・兄弟で遊び方を分けやすい新施設。",
+        "start_date": "2026-09-29",
+        "end_date": "2026-12-31",
+        "official_url": "https://www.capcom.co.jp/amusement/game/shop/minatomirai",
+        "checked_at": "2026-09-29"
       }
     },
     {
