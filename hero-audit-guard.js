@@ -33,15 +33,30 @@
     };
   }
 
-  function effectivePhotoIndex(spot,localPhoto={}){
-    const local=localPhoto?.[spot?.spot_id];
-    if(Number.isInteger(local)) return {index:local,source:'local'};
-    const seedIndex=spot?.media_strategy?.google_places?.photo_index_override;
-    if(Number.isInteger(seedIndex)) return {index:seedIndex,source:'seed'};
-    return {index:null,source:'auto'};
+  function effectivePlacePin(spot,localPlace={}){
+    const local=localPlace?.[spot?.spot_id];
+    if(local?.place_id) return {place_id:String(local.place_id),source:'local'};
+    const gp=spot?.media_strategy?.google_places||{};
+    if(gp.place_id) return {place_id:String(gp.place_id),source:'seed'};
+    return {place_id:'',source:'none'};
   }
 
-  const api={seedPhotoOverrides,seedPlaceOverrides,buildMergedExport,effectivePhotoIndex};
+  function effectivePhotoIndex(spot,localPhoto={},localPlace={}){
+    const place=effectivePlacePin(spot,localPlace);
+    const local=localPhoto?.[spot?.spot_id];
+    if(Number.isInteger(local)){
+      if(place.place_id) return {index:local,source:'local',placeSource:place.source};
+      return {index:null,source:'unsafe_local',unsafeIndex:local,placeSource:'none'};
+    }
+    const seedIndex=spot?.media_strategy?.google_places?.photo_index_override;
+    if(Number.isInteger(seedIndex)){
+      if(place.place_id) return {index:seedIndex,source:'seed',placeSource:place.source};
+      return {index:null,source:'unsafe_seed',unsafeIndex:seedIndex,placeSource:'none'};
+    }
+    return {index:null,source:'auto',placeSource:place.source};
+  }
+
+  const api={seedPhotoOverrides,seedPlaceOverrides,buildMergedExport,effectivePlacePin,effectivePhotoIndex};
   if(typeof module!=='undefined'&&module.exports) module.exports=api;
   global.KibunHeroAuditGuard=api;
   if(typeof document==='undefined') return;
@@ -63,8 +78,21 @@
       .hero-audit-pin-state{margin:10px 0;padding:10px 12px;border-radius:12px;background:#f1f5ef;border:1px solid #d1ddce;color:#314235;font-size:12px;line-height:1.55}
       .hero-audit-pin-state strong{display:block;font-size:13px;margin-bottom:2px}
       .hero-audit-pin-state .warn{display:block;margin-top:4px;color:#7a5834}
+      .hero-audit-pin-state.is-unsafe{background:#fff7e9;border-color:#e8cf9d;color:#684c25}
     `;
     document.head.appendChild(style);
+  }
+
+  function stateBoxForButtons(buttons){
+    const grid=buttons[0]?.parentElement;
+    if(!grid) return null;
+    let state=grid.parentElement?.querySelector(':scope > .hero-audit-pin-state');
+    if(!state){
+      state=document.createElement('div');
+      state.className='hero-audit-pin-state';
+      grid.before(state);
+    }
+    return state;
   }
 
   function decorateAudit(){
@@ -73,8 +101,10 @@
     const spotId=currentSpotId();
     const spot=findSpot(spotId);
     if(!spot) return;
-    const local=global.KibunMedia.getAuditOverrides?.()||{};
-    const eff=effectivePhotoIndex(spot,local);
+    const localPhoto=global.KibunMedia.getAuditOverrides?.()||{};
+    const localPlace=global.KibunMedia.getAuditPlaceOverrides?.()||{};
+    const eff=effectivePhotoIndex(spot,localPhoto,localPlace);
+    const place=effectivePlacePin(spot,localPlace);
     let autoIndex=null;
     for(const btn of buttons){
       const idx=Number(btn.getAttribute('data-audit-index'));
@@ -87,16 +117,49 @@
       btn.querySelector('.audit-fixed')?.remove();
       if(fixed) imgWrap.insertAdjacentHTML('beforeend',`<span class="audit-fixed">FIXED #${idx}</span>`);
     }
-    const grid=buttons[0].parentElement;
-    if(!grid) return;
-    let state=grid.parentElement?.querySelector(':scope > .hero-audit-pin-state');
-    if(!state){state=document.createElement('div');state.className='hero-audit-pin-state';grid.before(state);}
+    const state=stateBoxForButtons(buttons);
+    if(!state) return;
+    state.classList.toggle('is-unsafe',eff.source==='unsafe_seed'||eff.source==='unsafe_local');
     if(Number.isInteger(eff.index)){
       const source=eff.source==='local'?'今回選択':'seed固定';
-      state.innerHTML=`<strong>Hero固定中：#${eff.index}（${source}）</strong><span>AUTO #${autoIndex??'-'} はGoogle側の自動候補で、現在の固定Heroではありません。</span><span class="warn">現在の固定方式は写真番号です。Google側で写真の並び順が変わると、同じ #${eff.index} が別写真になる可能性があります。</span>`;
+      const placeSource=place.source==='local'?'今回固定':'seed固定';
+      state.innerHTML=`<strong>Hero固定中：#${eff.index}（${source}）</strong><span>Google Place IDも${placeSource}済みです。AUTO #${autoIndex??'-'} は自動候補です。</span><span class="warn">写真番号は固定Place IDの写真一覧にだけ適用します。</span>`;
+    }else if(eff.source==='unsafe_seed'||eff.source==='unsafe_local'){
+      state.innerHTML=`<strong>旧Hero #${eff.unsafeIndex} は安全のため無効化中</strong><span>写真番号だけが保存され、Google Place IDが固定されていません。</span><span class="warn">候補写真を1枚選ぶと、Google施設を先に固定してからHeroを保存します。</span>`;
     }else{
-      state.innerHTML=`<strong>Hero未固定</strong><span>AUTO #${autoIndex??'-'} を自動候補として使用します。</span>`;
+      const placeText=place.place_id?'Google Place ID固定済み。':'Google Place ID未固定。';
+      state.innerHTML=`<strong>Hero未固定</strong><span>${placeText} AUTO #${autoIndex??'-'} を自動候補として使用します。</span>`;
     }
+  }
+
+  function showPinRequired(){
+    const buttons=[...document.querySelectorAll('[data-audit-index]')];
+    const state=stateBoxForButtons(buttons);
+    if(!state) return;
+    state.classList.add('is-unsafe');
+    state.innerHTML='<strong>先にGoogle施設の固定が必要です</strong><span>写真番号だけではHeroを保存できません。</span><span class="warn">「このGoogle施設を固定」が表示されていることを確認して、候補写真をもう一度選んでください。</span>';
+  }
+
+  function ensurePlacePinnedBeforePhotoSelection(e){
+    const photoBtn=e.target?.closest?.('[data-audit-index]');
+    if(!photoBtn||!global.KibunMedia) return true;
+    const spotId=currentSpotId();
+    const spot=findSpot(spotId);
+    if(!spot) return true;
+    if(global.KibunMedia.hasPinnedPlace?.(spot)) return true;
+
+    // Reuse the audit UI's already-resolved Place candidate. Its click handler writes
+    // the Place ID synchronously before it starts the async candidate re-render.
+    const fixBtn=document.querySelector('#spotDialog [data-audit-fix-place]')||document.querySelector('[data-audit-fix-place]');
+    if(fixBtn){
+      fixBtn.click();
+      if(global.KibunMedia.hasPinnedPlace?.(spot)) return true;
+    }
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    showPinRequired();
+    return false;
   }
 
   function openExport(payload){
@@ -125,7 +188,12 @@
       openExport(exportMerged());
       return;
     }
-    if(e.target?.closest?.('[data-audit-index],[data-audit-reset],[data-audit-place-clear],[data-audit-fix-place]')){
+    if(e.target?.closest?.('[data-audit-index]')){
+      if(!ensurePlacePinnedBeforePhotoSelection(e)) return;
+      setTimeout(decorateAudit,0);
+      return;
+    }
+    if(e.target?.closest?.('[data-audit-reset],[data-audit-place-clear],[data-audit-fix-place]')){
       setTimeout(decorateAudit,0);
     }
   },true);
