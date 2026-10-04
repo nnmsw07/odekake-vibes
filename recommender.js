@@ -406,6 +406,7 @@
         .results-grid .result-card.kibun-secondary .match-chip strong,.results-grid .result-card.kibun-extra .match-chip strong{font-size:17px}
         .kibun-more-results{margin:4px 0 0}
         .kibun-more-results button{width:100%;padding:12px 16px}
+        .results-grid .result-card.kibun-extra[hidden]{display:none!important}
       }
     `;
     document.head.appendChild(style);
