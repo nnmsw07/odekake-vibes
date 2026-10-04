@@ -8,19 +8,23 @@ assert.ok(seed.spots.length>=291);
 
 let r = R.recommend(seed,{selectedVibes:['cool','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.ok(r.recommendations[0].scores.vibe >= 70);
-assert.equal(r.recommendations.length,3);
+assert.equal(r.recommendations.length,10);
+assert.equal(new Set(r.recommendations.map(x=>x.spot_id)).size,r.recommendations.length);
+assert.equal(r.recommendations[0].slot,'best_match');
+assert.ok(r.recommendations.slice(3).every(x=>x.slot==='more'));
 
 // New nature/water data should meaningfully enter the ranking.
 r = R.recommend(seed,{selectedVibes:['nature','waterside','extraordinary'],childAgeMonths:15,weather:'hot',availableMinutes:360});
 assert.ok(r.recommendations[0].scores.vibe >= 70);
 assert.ok(r.recommendations.some(x => x.scores.vibe >= 70));
+assert.ok(r.recommendations.length>=6);
 
 r = R.recommend(seed,{selectedVibes:['culture','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
 assert.ok(r.recommendations[0].scores.vibe >= 70); // expanded culture/relax dataset
 
-// Common family use case must never collapse to zero results.
+// Common family use case must never collapse to zero results and should expose breadth.
 r = R.recommend(seed,{selectedVibes:['food','relax'],childAgeMonths:15,weather:'hot',availableMinutes:180});
-assert.equal(r.recommendations.length,3);
+assert.equal(r.recommendations.length,10);
 assert.ok(r.recommendations.some(x => (x.scores?.vibe ?? 0) >= 60));
 
 // Hard age constraint: JAL SKY MUSEUM must be excluded for a 1-year-old.
@@ -33,7 +37,7 @@ r = R.recommend(seed,{selectedVibes:['animals','cool'],childAgeMonths:15,weather
 assert.ok(['spot_109','spot_051','spot_052'].includes(r.recommendations[0].spot_id)); // すみだ / えのすい / カワスイ
 assert.ok(r.recommendations.some(x => ['spot_109','spot_051','spot_052'].includes(x.spot_id))); // animals coverage
 
-// New active/nature data should surface Aikawa Park.
+// New active/nature data should surface strong matches.
 r = R.recommend(seed,{selectedVibes:['active','nature'],childAgeMonths:15,weather:'clear',availableMinutes:240});
 assert.ok(r.recommendations[0].scores.vibe >= 70);
 
@@ -49,4 +53,4 @@ assert.ok(r.excluded.some(x => x.spot_id === 'spot_053'));
 r = R.recommend(seed,{selectedVibes:['culture','relax'],childAgeMonths:15,currentDate:'2026-09-05T12:00:00+09:00'});
 assert.ok(!r.excluded.some(x => x.spot_id === 'spot_053'));
 
-console.log('PASS: 291 spots + recommendation / age / buzz / temporary-closure scenarios');
+console.log('PASS: expanded recommendation / age / buzz / temporary-closure scenarios');
