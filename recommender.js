@@ -283,7 +283,7 @@
       if (!best) break;
       const [spot, scores] = best.pair;
       const p = payload(spot, ctx, scores);
-      p.slot = 'more';
+      p.slot = `more_${recs.length + 1}`;
       p.slot_label = 'こんなのも';
       p.rank = recs.length + 1;
       recs.push(p);
