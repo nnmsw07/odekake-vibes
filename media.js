@@ -34,6 +34,7 @@
     if(!cfg.placePhotoEnabled || !cfg.placePhotoApiUrl || cfg.placePhotoMode==='off') return false;
     const gp=strategy(spot);
     if(gp.status==='disabled') return false;
+    if(!auditMode && !hasPinnedPlace(spot)) return false;
     if(gp.force===true) return true;
     if(cfg.placePhotoMode==='prefer_places') return spot?.media_strategy?.current_provider!=='official_permission';
     const provider=spot?.media_strategy?.current_provider || (spot?.hero_image?.type==='ai'?'ai':'unknown');
