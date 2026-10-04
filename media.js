@@ -10,6 +10,7 @@
   const auditMode=auditRequested==='1' || /(?:^|[?&#])heroAudit=1(?:&|$)/.test(auditHash) || auditPersisted;
   const OVERRIDE_KEY='kibun-hero-overrides-v14';
   const PLACE_OVERRIDE_KEY='kibun-hero-place-overrides-v16';
+  const STATIC_IMAGE_PROVIDERS=new Set(['owned','official_permission','wikimedia_commons','open_license']);
 
   function strategy(spot){ return spot?.media_strategy?.google_places || {}; }
   function localOverrides(){
@@ -35,9 +36,10 @@
     const gp=strategy(spot);
     if(gp.status==='disabled') return false;
     if(!auditMode && !hasPinnedPlace(spot)) return false;
-    if(gp.force===true) return true;
-    if(cfg.placePhotoMode==='prefer_places') return spot?.media_strategy?.current_provider!=='official_permission';
     const provider=spot?.media_strategy?.current_provider || (spot?.hero_image?.type==='ai'?'ai':'unknown');
+    if(!auditMode && STATIC_IMAGE_PROVIDERS.has(provider)) return false;
+    if(gp.force===true) return true;
+    if(cfg.placePhotoMode==='prefer_places') return true;
     return provider==='ai' || spot?.hero_image?.exact_spot===false;
   }
 
