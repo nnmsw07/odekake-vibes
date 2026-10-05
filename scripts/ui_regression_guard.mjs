@@ -6,7 +6,10 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const config = read('config.js');
 const app = read('app.js');
 const styles = read('styles.css');
-const heroGuard = read('hero-audit-guard.js');
+// Hero Audit runtime is intentionally split between the lightweight loader and
+// hero-audit-guard-core.js. Guard the effective source instead of only the loader,
+// otherwise valid runtime fixes in the core are reported as regressions.
+const heroGuard = `${read('hero-audit-guard.js')}\n${read('hero-audit-guard-core.js')}`;
 const plans = read('plans/index.html');
 const plansCss = read('plans/plans.css');
 const magazineCss = read('magazine/magazine.css');
