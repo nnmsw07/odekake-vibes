@@ -18,7 +18,7 @@
 
   // Install the lightweight MutationObserver filter before the legacy guard.
   // This prevents the guard from observing and reacting to its own audit badges/state DOM updates.
-  load('/hero-audit-mutation-guard.js?v=201916','kibun-hero-audit-mutation-guard');
-  load('/hero-audit-guard-core.js?v=201916','kibun-hero-audit-guard-core');
-  load('/hero-audit-sources.js?v=201916','kibun-hero-audit-sources');
+  load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
+  load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
+  load('/hero-audit-sources.js?v=201917','kibun-hero-audit-sources');
 })(typeof window!=='undefined'?window:globalThis);
