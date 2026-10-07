@@ -10,7 +10,9 @@
   const auditMode=auditRequested==='1' || /(?:^|[?&#])heroAudit=1(?:&|$)/.test(auditHash) || auditPersisted;
   const OVERRIDE_KEY='kibun-hero-overrides-v14';
   const PLACE_OVERRIDE_KEY='kibun-hero-place-overrides-v16';
+  const DISPLAY_MODE_OVERRIDE_KEY='kibun-media-display-mode-v1';
   const STATIC_IMAGE_PROVIDERS=new Set(['owned','official_permission','wikimedia_commons','open_license']);
+  const DISPLAY_MODES=new Set(['static','kibun_image','detail_google']);
 
   function strategy(spot){ return spot?.media_strategy?.google_places || {}; }
   function localOverrides(){
@@ -31,21 +33,60 @@
     return String(po?.place_id||gp.place_id||'').trim();
   }
   function hasPinnedPlace(spot){return Boolean(pinnedPlaceId(spot));}
+  function localDisplayModeOverrides(){
+    if(!auditMode)return {};
+    try{return JSON.parse(localStorage.getItem(DISPLAY_MODE_OVERRIDE_KEY)||'{}')||{};}catch(_e){return {};}
+  }
+  function defaultDisplayMode(spot){
+    const explicit=String(spot?.media_strategy?.display_mode||'').trim();
+    if(DISPLAY_MODES.has(explicit)) return explicit;
+    const provider=spot?.media_strategy?.current_provider || (spot?.hero_image?.type==='ai'?'ai':'unknown');
+    if(STATIC_IMAGE_PROVIDERS.has(provider) && spot?.hero_image?.exact_spot!==false) return 'static';
+    if(hasPinnedPlace(spot)) return 'detail_google';
+    return 'kibun_image';
+  }
+  function displayMode(spot){
+    const local=localDisplayModeOverrides()[spot?.spot_id];
+    return DISPLAY_MODES.has(local)?local:defaultDisplayMode(spot);
+  }
+  function setAuditDisplayMode(spotId,mode){
+    if(!auditMode || !DISPLAY_MODES.has(mode)) return false;
+    const o=localDisplayModeOverrides();
+    o[spotId]=mode;
+    localStorage.setItem(DISPLAY_MODE_OVERRIDE_KEY,JSON.stringify(o));
+    clearSpotCache(spotId);
+    return true;
+  }
+  function getAuditDisplayModeOverrides(){return localDisplayModeOverrides();}
+  function isCurrentSpotDetail(spot){
+    if(typeof document==='undefined')return false;
+    const dialog=document.getElementById('spotDialog');
+    if(!dialog?.open)return false;
+    const heroMedia=dialog.querySelector('.dialog-media [data-media-spot]');
+    return heroMedia?.getAttribute('data-media-spot')===String(spot?.spot_id||'');
+  }
   function shouldUsePlacePhoto(spot){
     if(!cfg.placePhotoEnabled || !cfg.placePhotoApiUrl || cfg.placePhotoMode==='off') return false;
     const gp=strategy(spot);
     if(gp.status==='disabled') return false;
-    if(!auditMode && !hasPinnedPlace(spot)) return false;
-    const provider=spot?.media_strategy?.current_provider || (spot?.hero_image?.type==='ai'?'ai':'unknown');
-    if(!auditMode && STATIC_IMAGE_PROVIDERS.has(provider)) return false;
-    if(gp.force===true) return true;
-    if(cfg.placePhotoMode==='prefer_places') return true;
-    return provider==='ai' || spot?.hero_image?.exact_spot===false;
+    if(auditMode){
+      if(gp.force===true) return true;
+      if(cfg.placePhotoMode==='prefer_places') return true;
+      const provider=spot?.media_strategy?.current_provider || (spot?.hero_image?.type==='ai'?'ai':'unknown');
+      return provider==='ai' || spot?.hero_image?.exact_spot===false || hasPinnedPlace(spot);
+    }
+    // Public traffic: Google photos are detail-only, and only for a pre-pinned Place ID.
+    if(displayMode(spot)!=='detail_google') return false;
+    if(!hasPinnedPlace(spot)) return false;
+    if(!isCurrentSpotDetail(spot)) return false;
+    return true;
   }
 
   async function resolvePlacePhoto(spot){
     if(!shouldUsePlacePhoto(spot)) return null;
     const localIndex=runtimeOverrideIndex(spot),placeId=pinnedPlaceId(spot);
+    // Never fall back to Text Search for public page views.
+    if(!auditMode && !placeId) return null;
     const cacheKey=`${spot.spot_id}:${placeId||'search'}:${localIndex??'auto'}`;
     if(inflight.has(cacheKey)) return inflight.get(cacheKey);
     const p=(async()=>{
@@ -56,8 +97,6 @@
         u.searchParams.set('address',useAddress===false?'':(spot.address||''));
         if(placeId) u.searchParams.set('placeId',placeId);
         const seedIndex=Number.isInteger(gp.photo_index_override)?gp.photo_index_override:null;
-        // A photo index is only stable enough to reuse when it is scoped to a pinned Place ID.
-        // Legacy index-only pins are intentionally ignored so #N cannot silently drift to another place/photo list.
         const chosen=placeId?(localIndex??seedIndex):null;
         if(Number.isInteger(chosen)){
           u.searchParams.set('photoIndex',String(chosen));
@@ -134,6 +173,10 @@
     resolvePlacePhoto,
     resolvePlacePhotoCandidates,
     shouldUsePlacePhoto,
+    displayMode,
+    defaultDisplayMode,
+    setAuditDisplayMode,
+    getAuditDisplayModeOverrides,
     setAuditOverride,
     getAuditOverrides,
     setAuditPlaceOverride,
@@ -144,6 +187,7 @@
     clearCandidateCache,
     auditMode,
     overrideStorageKey:OVERRIDE_KEY,
-    placeOverrideStorageKey:PLACE_OVERRIDE_KEY
+    placeOverrideStorageKey:PLACE_OVERRIDE_KEY,
+    displayModeOverrideStorageKey:DISPLAY_MODE_OVERRIDE_KEY
   };
 })(window);
