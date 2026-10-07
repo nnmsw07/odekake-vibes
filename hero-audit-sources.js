@@ -13,6 +13,7 @@
   const MODE_LABELS={static:'静的画像',kibun_image:'Kibunイメージ',detail_google:'詳細のみGoogle'};
   const PAGE_SIZE=60;
   let verified=new Map();
+  let knownContacts=[];
   let currentFilter='action';
   let currentQuery='';
   let visibleLimit=PAGE_SIZE;
@@ -20,6 +21,7 @@
   function readReviews(){try{return JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}')||{};}catch(_e){return {};}}
   function writeReviews(value){try{localStorage.setItem(REVIEW_KEY,JSON.stringify(value));}catch(_e){}}
   function providerOf(spot){return String(spot?.media_strategy?.current_provider||spot?.hero_image?.type||'unknown');}
+  function contactFor(spot){const name=String(spot?.name||'').toLowerCase();return knownContacts.find(c=>{const m=String(c.match_name||c.match||'').toLowerCase();return m&&(name===m||name.includes(m)||m.includes(name));})||null;}
   function hasPinnedPlace(spot){return Boolean(String(spot?.media_strategy?.google_places?.place_id||'').trim());}
   function modeFor(spot){return window.KibunMedia?.displayMode?.(spot)||spot?.media_strategy?.display_mode||(hasPinnedPlace(spot)?'detail_google':'kibun_image');}
   function classify(spot){
@@ -116,7 +118,7 @@
     panel.querySelector('[data-copy-form]').addEventListener('click',()=>{save();copyText(formBody.value,'問い合わせフォーム文');});
     panel.querySelector('.hero-request-close').addEventListener('click',()=>{save();panel.classList.remove('is-open');panel.setAttribute('aria-hidden','true');});
     panel.addEventListener('click',e=>{if(e.target===panel){save();panel.classList.remove('is-open');panel.setAttribute('aria-hidden','true');}});
-    panel.openFor=spot=>{current=spot;const review=readReviews()[spot.spot_id]||{},text=outreachText(spot);panel.querySelector('.hero-request-spot').textContent=`${spot.name}への掲載画像提供依頼。連絡先もここに記録できます。`;emailInput.value=review.contact_email||'';formInput.value=review.contact_form_url||'';subjectInput.value=text.subject;emailBody.value=text.email;formBody.value=text.form;syncLinks();panel.classList.add('is-open');panel.setAttribute('aria-hidden','false');};
+    panel.openFor=spot=>{current=spot;const review=readReviews()[spot.spot_id]||{},known=contactFor(spot)||{},text=outreachText(spot);panel.querySelector('.hero-request-spot').textContent=`${spot.name}への掲載画像提供依頼。${known.note?known.note+' · ':''}連絡先もここに記録できます。`;emailInput.value=review.contact_email||known.contact_email||'';formInput.value=review.contact_form_url||known.contact_form_url||'';subjectInput.value=text.subject;emailBody.value=text.email;formBody.value=text.form;syncLinks();panel.classList.add('is-open');panel.setAttribute('aria-hidden','false');};
     return panel;
   }
 
@@ -136,8 +138,8 @@
       const total=rows.length,shown=rows.slice(0,visibleLimit);count.textContent=`${Math.min(visibleLimit,total)}件表示 / 該当${total}件 / 全${spots.length}件`;
       const reviews=readReviews();
       list.innerHTML=shown.length?shown.map(({spot,c})=>{
-        const urls=searchUrls(spot),review=reviews[spot.spot_id]||{},reviewLabel=review.decision?DECISION_LABELS[review.decision]||review.decision:'',mode=modeFor(spot);
-        return `<article class="hero-source-card" data-spot-id="${escapeHtml(spot.spot_id)}"><div class="hero-source-card-top"><div><h3>${escapeHtml(spot.name)}</h3><div class="hero-source-meta"><span class="hero-source-badge ${c.tone}">${escapeHtml(c.label)}</span><span class="hero-source-mode-label">${escapeHtml(MODE_LABELS[mode]||mode)}</span>${reviewLabel?`<span class="hero-source-review">確認: ${escapeHtml(reviewLabel)}</span>`:''}${review.outreach_prepared?'<span class="hero-source-review">依頼文準備済み</span>':''}<span>${escapeHtml(spot.city||spot.area||spot.prefecture||'')}</span>${hasPinnedPlace(spot)?'<span>Place ID固定</span>':''}</div></div><button type="button" class="hero-source-open" data-open-spot>Hero監査</button></div><div class="hero-source-modes">${Object.entries(MODE_LABELS).map(([key,label])=>`<button type="button" class="hero-source-mode ${mode===key?'is-selected':''}" data-mode="${key}">${label}</button>`).join('')}</div><div class="hero-source-links">${urls.official?`<a href="${escapeHtml(urls.official)}" target="_blank" rel="noopener">公式</a>`:''}<a href="${escapeHtml(urls.commons)}" target="_blank" rel="noopener">Commons</a><a href="${escapeHtml(urls.openverse)}" target="_blank" rel="noopener">Openverse</a><button type="button" class="hero-source-request" data-request>画像提供を依頼</button><button type="button" class="hero-source-url" data-record-url>${review.source_url?'候補URL ✓':'候補URLを記録'}</button></div><div class="hero-source-decisions">${Object.entries(DECISION_LABELS).map(([key,label])=>`<button type="button" class="hero-source-decision ${review.decision===key?'is-selected':''}" data-decision="${key}">${label}</button>`).join('')}</div>${review.contact_email?`<div style="font-size:10px;color:#6d746d">連絡先: ${escapeHtml(review.contact_email)}</div>`:''}${review.contact_form_url?`<div style="font-size:10px;color:#6d746d;word-break:break-all">フォーム: ${escapeHtml(review.contact_form_url)}</div>`:''}</article>`;
+        const urls=searchUrls(spot),review=reviews[spot.spot_id]||{},known=contactFor(spot),reviewLabel=review.decision?DECISION_LABELS[review.decision]||review.decision:'',mode=modeFor(spot);
+        return `<article class="hero-source-card" data-spot-id="${escapeHtml(spot.spot_id)}"><div class="hero-source-card-top"><div><h3>${escapeHtml(spot.name)}</h3><div class="hero-source-meta"><span class="hero-source-badge ${c.tone}">${escapeHtml(c.label)}</span><span class="hero-source-mode-label">${escapeHtml(MODE_LABELS[mode]||mode)}</span>${reviewLabel?`<span class="hero-source-review">確認: ${escapeHtml(reviewLabel)}</span>`:''}${review.outreach_prepared?'<span class="hero-source-review">依頼文準備済み</span>':''}${known?'<span class="hero-source-review">連絡先候補あり</span>':''}<span>${escapeHtml(spot.city||spot.area||spot.prefecture||'')}</span>${hasPinnedPlace(spot)?'<span>Place ID固定</span>':''}</div></div><button type="button" class="hero-source-open" data-open-spot>Hero監査</button></div><div class="hero-source-modes">${Object.entries(MODE_LABELS).map(([key,label])=>`<button type="button" class="hero-source-mode ${mode===key?'is-selected':''}" data-mode="${key}">${label}</button>`).join('')}</div><div class="hero-source-links">${urls.official?`<a href="${escapeHtml(urls.official)}" target="_blank" rel="noopener">公式</a>`:''}<a href="${escapeHtml(urls.commons)}" target="_blank" rel="noopener">Commons</a><a href="${escapeHtml(urls.openverse)}" target="_blank" rel="noopener">Openverse</a><button type="button" class="hero-source-request" data-request>画像提供を依頼</button><button type="button" class="hero-source-url" data-record-url>${review.source_url?'候補URL ✓':'候補URLを記録'}</button></div><div class="hero-source-decisions">${Object.entries(DECISION_LABELS).map(([key,label])=>`<button type="button" class="hero-source-decision ${review.decision===key?'is-selected':''}" data-decision="${key}">${label}</button>`).join('')}</div>${review.contact_email?`<div style="font-size:10px;color:#6d746d">連絡先: ${escapeHtml(review.contact_email)}</div>`:''}${review.contact_form_url?`<div style="font-size:10px;color:#6d746d;word-break:break-all">フォーム: ${escapeHtml(review.contact_form_url)}</div>`:''}</article>`;
       }).join(''):'<div class="hero-source-empty">条件に合うスポットはありません。</div>';
       if(total>visibleLimit)list.insertAdjacentHTML('beforeend',`<button type="button" class="hero-source-more" data-more>さらに${Math.min(PAGE_SIZE,total-visibleLimit)}件表示</button>`);
       filters.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{currentFilter=btn.dataset.filter;visibleLimit=PAGE_SIZE;render();}));
@@ -156,9 +158,12 @@
     panel.openAudit=()=>{visibleLimit=PAGE_SIZE;render();panel.classList.add('is-open');panel.setAttribute('aria-hidden','false');setTimeout(()=>search.focus(),50);};render();return panel;
   }
 
-  async function loadVerified(){try{const url=new URL('verified-image-sources.json',document.baseURI),res=await fetch(url,{cache:'no-store'});if(!res.ok)return;const data=await res.json();if(Array.isArray(data))verified=new Map(data.map(x=>[x.spot_id,x]));}catch(_e){}}
+  async function loadData(){
+    try{const url=new URL('verified-image-sources.json',document.baseURI),res=await fetch(url,{cache:'no-store'});if(res.ok){const data=await res.json();if(Array.isArray(data))verified=new Map(data.map(x=>[x.spot_id,x]));}}catch(_e){}
+    try{const url=new URL('official-image-contacts.json',document.baseURI),res=await fetch(url,{cache:'no-store'});if(res.ok){const data=await res.json();if(Array.isArray(data))knownContacts=data;}}catch(_e){}
+  }
   async function boot(){
-    const spots=window.ODEKAKE_SEED?.spots||[];if(!spots.length){setTimeout(boot,150);return;}installStyles();await loadVerified();const panel=createPanel(spots);let tries=0;
+    const spots=window.ODEKAKE_SEED?.spots||[];if(!spots.length){setTimeout(boot,150);return;}installStyles();await loadData();const panel=createPanel(spots);let tries=0;
     const attach=()=>{const dock=document.querySelector('.hero-audit-dock');if(!dock){if(tries++<80)setTimeout(attach,100);return;}if(dock.querySelector('[data-image-source-audit]'))return;const btn=document.createElement('button');btn.type='button';btn.className='hero-source-btn';btn.dataset.imageSourceAudit='1';btn.textContent='画像運用';btn.addEventListener('click',()=>panel.openAudit());const exportBtn=dock.querySelector('#heroAuditExport');if(exportBtn)exportBtn.insertAdjacentElement('beforebegin',btn);else dock.appendChild(btn);};attach();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
