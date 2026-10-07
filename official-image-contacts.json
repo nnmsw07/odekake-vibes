@@ -1,0 +1,23 @@
+[
+  {
+    "match_name": "bills 横浜赤レンガ倉庫",
+    "contact_email": "press@billsjapan.com",
+    "contact_form_url": "",
+    "source_url": "https://www.billsjapan.com/jp",
+    "note": "bills公式サイト掲載のPress窓口"
+  },
+  {
+    "match_name": "chano-ma 横浜",
+    "contact_email": "",
+    "contact_form_url": "https://www.dd-grp.com/contact/shop/",
+    "source_url": "https://www.dd-grp.com/contact/",
+    "note": "DDグループの店舗取材・撮影お問い合わせ"
+  },
+  {
+    "match_name": "THE WHARF HOUSE",
+    "contact_email": "",
+    "contact_form_url": "https://www.zetton.co.jp/contact/media",
+    "source_url": "https://www.zetton.co.jp/contact/media",
+    "note": "株式会社ゼットンの取材等・広報関連お問い合わせ"
+  }
+]
