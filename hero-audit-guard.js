@@ -24,4 +24,5 @@
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
   load('/hero-audit-sources.js?v=201917','kibun-hero-audit-sources');
+  load('/hero-audit-outreach-template.js?v=201922','kibun-hero-audit-outreach-template');
 })(typeof window!=='undefined'?window:globalThis);
