@@ -16,13 +16,13 @@
     document.head.appendChild(s);
   }
 
-  // Public image selector. It is lightweight and only watches added nodes.
-  load('/kibun-images.js?v=201921','kibun-images');
+  // Temporary safety fallback: category-aware Kibun images are disabled on public pages
+  // until the generated assets are re-exported and visually verified. This prevents
+  // corrupted image files from replacing existing spot/plan imagery.
 
   // Install the lightweight MutationObserver filter before the legacy guard.
   // This prevents the guard from observing and reacting to its own audit badges/state DOM updates.
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
-  load('/hero-audit-sources.js?v=201917','kibun-hero-audit-sources');
-  load('/hero-audit-outreach-template.js?v=201922','kibun-hero-audit-outreach-template');
+  load('/hero-audit-sources.js?v=201922','kibun-hero-audit-sources');
 })(typeof window!=='undefined'?window:globalThis);
