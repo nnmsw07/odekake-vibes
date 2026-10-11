@@ -16,6 +16,9 @@
     document.head.appendChild(s);
   }
 
+  // Public image selector. It is lightweight and only watches added nodes.
+  load('/kibun-images.js?v=201921','kibun-images');
+
   // Install the lightweight MutationObserver filter before the legacy guard.
   // This prevents the guard from observing and reacting to its own audit badges/state DOM updates.
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
