@@ -2,21 +2,25 @@
   'use strict';
   if(typeof document==='undefined') return;
 
+  // Public fallback pools must communicate a real outing/venue experience.
+  // Abstract/decorative mood assets are intentionally excluded here.
   const ASSET_POOLS={
-    family_cafe:['/assets/kibun-images/family_cafe.webp','/assets/plans/family-cafe.webp','/assets/editorial/parents-eat-well.webp','/assets/editorial/baby-first-outing.webp'],
+    family_cafe:['/assets/plans/family-cafe.webp','/assets/editorial/parents-eat-well.webp','/assets/editorial/baby-first-outing.webp'],
     lounge_cafe:['/assets/kibun-images/lounge_cafe.webp','/assets/editorial/hotel-without-staying.webp','/assets/plans/culture-cafe.webp','/assets/editorial/terrace-after-sunset.webp'],
-    garden_park:['/assets/kibun-images/garden_park.webp','/assets/editorial/green-breathing-room.webp','/assets/vibes/nature.webp','/assets/vibes/stroll.webp'],
-    seaside_terrace:['/assets/kibun-images/seaside_terrace.webp','/assets/plans/waterfront-walk.webp','/assets/editorial/terrace-after-sunset.webp','/assets/vibes/scenic.webp'],
-    kids_play_space:['/assets/kibun-images/kids_play_space.webp','/assets/editorial/baby-first-outing.webp','/assets/editorial/special.webp','/assets/vibes/extraordinary.webp'],
-    railway_museum:['/assets/kibun-images/railway_museum.webp','/assets/vibes/cool.webp','/assets/vibes/culture.webp','/assets/editorial/culture.webp'],
-    craft_workshop:['/assets/kibun-images/craft_workshop.webp','/assets/editorial/culture.webp','/assets/vibes/culture.webp','/assets/vibes/extraordinary.webp'],
-    onsen:['/assets/kibun-images/onsen.webp','/assets/editorial/relax.webp','/assets/editorial/hotel-without-staying.webp','/assets/vibes/relax.webp'],
-    aquarium:['/assets/kibun-images/aquarium.webp','/assets/vibes/cool.webp','/assets/vibes/extraordinary.webp'],
-    fruit_picking:['/assets/kibun-images/fruit_picking.webp','/assets/editorial/green-breathing-room.webp','/assets/vibes/nature.webp'],
-    science_museum:['/assets/vibes/cool.webp','/assets/vibes/extraordinary.webp','/assets/editorial/culture.webp'],
-    art_museum:['/assets/editorial/culture.webp','/assets/vibes/culture.webp','/assets/plans/culture-cafe.webp','/assets/vibes/extraordinary.webp'],
-    theater:['/assets/editorial/night-starts-after-five.webp','/assets/vibes/culture.webp','/assets/editorial/culture.webp'],
-    zoo:['/assets/vibes/nature.webp','/assets/editorial/green-breathing-room.webp','/assets/vibes/extraordinary.webp'],
+    garden_park:['/assets/editorial/green-breathing-room.webp','/assets/vibes/nature.webp','/assets/vibes/stroll.webp'],
+    seaside_terrace:['/assets/kibun-images/seaside_terrace.webp','/assets/plans/waterfront-walk.webp','/assets/editorial/terrace-after-sunset.webp'],
+    indoor_play:['/assets/kibun-images/kids_play_space.webp','/assets/editorial/baby-first-outing.webp'],
+    creative_play:['/assets/kibun-images/kids_play_space.webp','/assets/editorial/baby-first-outing.webp','/assets/editorial/culture.webp'],
+    character_theme_park:['/assets/kibun-images/kids_play_space.webp','/assets/editorial/baby-first-outing.webp','/assets/editorial/special.webp'],
+    railway_museum:['/assets/kibun-images/railway_museum.webp','/assets/editorial/culture.webp'],
+    craft_workshop:['/assets/kibun-images/craft_workshop.webp','/assets/editorial/culture.webp'],
+    onsen:['/assets/kibun-images/onsen.webp','/assets/editorial/hotel-without-staying.webp','/assets/vibes/relax.webp'],
+    aquarium:['/assets/kibun-images/aquarium.webp'],
+    fruit_picking:['/assets/kibun-images/fruit_picking.webp','/assets/editorial/green-breathing-room.webp'],
+    science_museum:['/assets/editorial/culture.webp','/assets/kibun-images/railway_museum.webp'],
+    art_museum:['/assets/editorial/culture.webp','/assets/plans/culture-cafe.webp'],
+    theater:['/assets/editorial/night-starts-after-five.webp','/assets/editorial/culture.webp'],
+    zoo:['/assets/editorial/green-breathing-room.webp','/assets/vibes/nature.webp'],
     shopping:['/assets/vibes/shopping.webp','/assets/editorial/night-starts-after-five.webp','/assets/plans/culture-cafe.webp']
   };
   const STATIC_PROVIDERS=new Set(['owned','official_permission','wikimedia_commons','open_license']);
@@ -27,9 +31,21 @@
   }
   const has=(text,words)=>words.some(w=>text.includes(w));
 
+  // High-visibility venues get deterministic genre overrides instead of relying on broad inference.
+  function venueOverride(spot){
+    const n=String(spot?.name||'').toLowerCase();
+    if(n.includes('play! park')||n.includes('play!park')) return 'creative_play';
+    if(n.includes('サンリオピューロランド')||n.includes('sanrio puroland')) return 'character_theme_park';
+    if(n.includes('ボーネルンド')||n.includes('キドキド')||n.includes('kid-o-kid')) return 'indoor_play';
+    if(n.includes('アンパンマンミュージアム')) return 'character_theme_park';
+    if(n.includes('エリック・カール')||n.includes('play! museum')) return 'creative_play';
+    return '';
+  }
+
   function inferKey(spot){
     const explicit=String(spot?.media_strategy?.kibun_image_key||spot?.kibun_image_key||'').trim();
     if(ASSET_POOLS[explicit]) return explicit;
+    const override=venueOverride(spot); if(override) return override;
     const t=textOf(spot),cat=String(spot?.category_primary||'').toLowerCase(),v=spot?.vibes_seed||{},e=spot?.experience_seed||{};
     if(has(t,['科学館','サイエンス','science museum','プラネタリウム','宇宙','実験展示','科学技術'])) return 'science_museum';
     if(has(t,['美術館','アートミュージアム','art museum','ギャラリー','美術展','現代美術'])) return 'art_museum';
@@ -41,7 +57,9 @@
     if(has(t,['鉄道博物館','新幹線','列車展示','車両展示','鉄道'])) return 'railway_museum';
     if(has(t,['陶芸','工作','ワークショップ','ものづくり','工芸体験','手作り体験','クラフト','料理教室'])||(cat==='experience'&&Number(e.hands_on||0)>=70)) return 'craft_workshop';
     if(has(t,['温泉','日帰り温泉','露天風呂','温浴','サウナ','スパ','spa'])||cat==='relax') return 'onsen';
-    if(has(t,['屋内遊び場','キッズパーク','プレイグラウンド','室内アスレチック','あそび場','遊び場'])||(cat==='kids'&&Number(v.active||0)>=65)) return 'kids_play_space';
+    if(has(t,['テーマパーク','キャラクター施設','屋内テーマパーク'])) return 'character_theme_park';
+    if(has(t,['造形','アトリエ','創作遊び','クリエイティブ','自由な遊び'])) return 'creative_play';
+    if(has(t,['屋内遊び場','キッズパーク','プレイグラウンド','室内アスレチック','あそび場','遊び場'])||(cat==='kids'&&Number(v.active||0)>=65)) return 'indoor_play';
     const cafe=/food|cafe|restaurant|afternoontea/.test(cat)||has(t,['カフェ','cafe','喫茶','レストラン','ランチ','ラウンジ']);
     if(cafe){
       if(has(t,['海辺','海沿い','ベイサイド','ウォーターフロント','港','マリーナ','オーシャンビュー','テラス'])||Number(v.waterside||0)>=80) return 'seaside_terrace';
@@ -76,7 +94,6 @@
     const exact=spot?.hero_image?.exact_spot;
     if(STATIC_PROVIDERS.has(provider)&&exact!==false) return true;
     if(exact===true&&type!=='ai') return true;
-    // Do not freeze old shared/AI fallback imagery; let the genre pool vary it.
     if(provider==='ai'||type==='ai'||exact===false) return false;
     if(src.includes('/assets/kibun-images/')) return false;
     return true;
