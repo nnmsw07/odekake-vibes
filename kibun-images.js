@@ -85,19 +85,32 @@
     return spot?.media_strategy?.display_mode||'kibun_image';
   }
   function findSpot(id){return (global.ODEKAKE_SEED?.spots||[]).find(s=>String(s.spot_id)===String(id));}
+
+  function isKnownSharedFallback(src){
+    if(!src) return true;
+    return src.includes('/assets/kibun-images/')||src.includes('/assets/vibes/');
+  }
+
   function shouldPreserveExisting(spot,img){
     if(!img) return false;
     const src=img.getAttribute('src')||'';
     if(!src||img.closest?.('[data-static-hero-error="1"]')||img.style?.visibility==='hidden') return false;
+
+    // Known bad/high-visibility venues keep their explicit override so the abstract images seen in production do not return.
+    if(venueOverride(spot)) return false;
+
     const provider=String(spot?.media_strategy?.current_provider||'');
     const type=String(spot?.hero_image?.type||'');
     const exact=spot?.hero_image?.exact_spot;
     if(STATIC_PROVIDERS.has(provider)&&exact!==false) return true;
     if(exact===true&&type!=='ai') return true;
-    if(provider==='ai'||type==='ai'||exact===false) return false;
-    if(src.includes('/assets/kibun-images/')) return false;
-    return true;
+
+    // Restore per-spot variety: an already assigned unique hero is preferable to recycling a tiny category pool,
+    // even when it is an illustrative/AI hero. Only known shared fallback assets are replaced.
+    if(!isKnownSharedFallback(src)) return true;
+    return false;
   }
+
   function addImageBadge(node){if(!node.querySelector('.image-badge'))node.insertAdjacentHTML('beforeend','<span class="image-badge">イメージ</span>');}
   function applyNode(node){
     if(!node?.matches?.('[data-media-spot]')) return;
