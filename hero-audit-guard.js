@@ -16,8 +16,8 @@
     document.head.appendChild(s);
   }
 
-  // Keep each spot's own hero image for variety. Category images are fallback-only.
-  load('/kibun-images.js?v=201924','kibun-images');
+  // Keep each spot's own hero image for variety. Genre-specific Kibun image pools are fallback-only.
+  load('/kibun-images.js?v=201925','kibun-images');
 
   // Install the lightweight MutationObserver filter before the legacy guard.
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
