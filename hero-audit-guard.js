@@ -16,12 +16,10 @@
     document.head.appendChild(s);
   }
 
-  // Temporary safety fallback: category-aware Kibun images are disabled on public pages
-  // until the generated assets are re-exported and visually verified. This prevents
-  // corrupted image files from replacing existing spot/plan imagery.
+  // Keep each spot's own hero image for variety. Category images are fallback-only.
+  load('/kibun-images.js?v=201924','kibun-images');
 
   // Install the lightweight MutationObserver filter before the legacy guard.
-  // This prevents the guard from observing and reacting to its own audit badges/state DOM updates.
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
   load('/hero-audit-sources.js?v=201922','kibun-hero-audit-sources');
