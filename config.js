@@ -195,8 +195,6 @@ window.KIBUN_CONFIG = {
     background:#40513d!important;
     color:#fff!important;
   }
-
-  /* Selected mood cards keep the photo visible; selection is shown by outline/badge, not a white text panel. */
   .vibe-group-mood .mood-photo-card.selected .vibe-text{
     background:transparent!important;
     background-color:transparent!important;
@@ -220,7 +218,6 @@ window.KIBUN_CONFIG = {
   document.head.appendChild(style);
 })();
 
-// Keep the three editorial hero images pinned to their approved assets.
 (function installEditorialHeroPins(){
   if (typeof document === "undefined") return;
   const heroes={
@@ -252,7 +249,6 @@ window.KIBUN_CONFIG = {
   else apply();
 })();
 
-// v20.19.10: keep the family "親も楽しい日に" collection card on its approved image.
 (function installFamilyParentDayHero(){
   if (typeof document === "undefined") return;
   const STYLE_ID="kibun-family-parent-day-v201910";
@@ -282,20 +278,16 @@ window.KIBUN_CONFIG = {
     return true;
   }
   if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',()=>{
-      if(!watch()) apply();
-    },{once:true});
-  }else if(!watch()){
-    apply();
-  }
+    document.addEventListener('DOMContentLoaded',()=>{if(!watch()) apply();},{once:true});
+  }else if(!watch()) apply();
 })();
 
-// v20.19.26: Hero audit guard. Keep seed pins visible and export a complete merged pin set.
+// v20.19.27: refresh venue-specific Kibun image quality rules.
 (function loadHeroAuditGuard(){
   if(typeof document==='undefined') return;
   if(document.querySelector('script[data-kibun-hero-audit-guard]')) return;
   const s=document.createElement('script');
-  s.src='/hero-audit-guard.js?v=201926';
+  s.src='/hero-audit-guard.js?v=201927';
   s.defer=true;
   s.dataset.kibunHeroAuditGuard='1';
   document.head.appendChild(s);
