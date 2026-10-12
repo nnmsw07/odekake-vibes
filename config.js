@@ -290,12 +290,12 @@ window.KIBUN_CONFIG = {
   }
 })();
 
-// v20.19.23: Hero audit guard. Keep seed pins visible and export a complete merged pin set.
+// v20.19.26: Hero audit guard. Keep seed pins visible and export a complete merged pin set.
 (function loadHeroAuditGuard(){
   if(typeof document==='undefined') return;
   if(document.querySelector('script[data-kibun-hero-audit-guard]')) return;
   const s=document.createElement('script');
-  s.src='/hero-audit-guard.js?v=201923';
+  s.src='/hero-audit-guard.js?v=201926';
   s.defer=true;
   s.dataset.kibunHeroAuditGuard='1';
   document.head.appendChild(s);
