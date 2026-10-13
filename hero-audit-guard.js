@@ -16,8 +16,8 @@
     document.head.appendChild(s);
   }
 
-  // Preserve unique per-spot imagery; use shared genre pools only for broken/shared fallbacks and explicit venue overrides.
-  load('/kibun-images.js?v=201928','kibun-images');
+  // Public Kibun image fallback is disabled. This loader now runs cleanup-only logic.
+  load('/kibun-images.js?v=201929','kibun-images');
 
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
