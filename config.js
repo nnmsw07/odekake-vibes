@@ -282,12 +282,12 @@ window.KIBUN_CONFIG = {
   }else if(!watch()) apply();
 })();
 
-// v20.19.27: refresh venue-specific Kibun image quality rules.
+// v20.19.29: public Kibun fallback images are disabled; load cleanup-only image logic.
 (function loadHeroAuditGuard(){
   if(typeof document==='undefined') return;
   if(document.querySelector('script[data-kibun-hero-audit-guard]')) return;
   const s=document.createElement('script');
-  s.src='/hero-audit-guard.js?v=201927';
+  s.src='/hero-audit-guard.js?v=201929';
   s.defer=true;
   s.dataset.kibunHeroAuditGuard='1';
   document.head.appendChild(s);
