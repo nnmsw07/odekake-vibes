@@ -16,8 +16,8 @@
     document.head.appendChild(s);
   }
 
-  // Public Kibun image fallback is disabled. This loader now runs cleanup-only logic.
-  load('/kibun-images.js?v=201929','kibun-images');
+  // Curated generated images are used only for strong spot matches / explicit assignments.
+  load('/kibun-images.js?v=201930','kibun-images');
 
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
