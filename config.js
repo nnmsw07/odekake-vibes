@@ -282,12 +282,12 @@ window.KIBUN_CONFIG = {
   }else if(!watch()) apply();
 })();
 
-// v20.19.29: public Kibun fallback images are disabled; load cleanup-only image logic.
+// v20.19.30: curated Kibun images are enabled only for strong/explicit spot matches.
 (function loadHeroAuditGuard(){
   if(typeof document==='undefined') return;
   if(document.querySelector('script[data-kibun-hero-audit-guard]')) return;
   const s=document.createElement('script');
-  s.src='/hero-audit-guard.js?v=201929';
+  s.src='/hero-audit-guard.js?v=201930';
   s.defer=true;
   s.dataset.kibunHeroAuditGuard='1';
   document.head.appendChild(s);
