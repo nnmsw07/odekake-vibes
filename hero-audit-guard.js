@@ -16,8 +16,8 @@
     document.head.appendChild(s);
   }
 
-  // v20.19.31: use actual recent generated assets from /assets/kibun-images/v2/.
-  load('/kibun-images.js?v=201931','kibun-images');
+  // v20.19.32: use actual recent generated assets from /assets/kibun-images/v2/.
+  load('/kibun-images.js?v=201932','kibun-images');
 
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
