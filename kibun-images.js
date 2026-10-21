@@ -16,7 +16,8 @@
     lounge_cafe:['/assets/kibun-images/v2/lounge_cafe_01.webp'],
     onsen:['/assets/kibun-images/v2/onsen_01.webp'],
     seaside_terrace:['/assets/kibun-images/v2/seaside_terrace_01.webp'],
-    fruit_picking:['/assets/kibun-images/fruit_picking.webp']
+    fruit_picking:['/assets/kibun-images/fruit_picking.webp'],
+    pottery:['/assets/kibun-images/v2/pottery_01.webp']
   };
 
   const LEGACY_SHARED=[
@@ -47,6 +48,8 @@
     if(name.includes('the wharf house')||name.includes('wharf house')) return 'seaside_terrace';
     if(name.includes('play! park')||name.includes('play!park')||name.includes('ue fantasia')||name.includes('湘南あそびマーレ')||name.includes('あそびマーレ')||name.includes('ボーネルンド')||name.includes('キドキド')) return 'kids_play_space';
 
+    // Only promote actual pottery / ceramics experiences; do not blanket-replace art museums.
+    if(has(t,['陶芸体験','陶芸教室','ろくろ体験','電動ろくろ','陶芸','陶器づくり','やきもの体験'])) return 'pottery';
     if(has(t,['水族館','aquarium','クラゲ','イルカ'])) return 'aquarium';
     if(has(t,['いちご狩り','苺狩り','果物狩り','ぶどう狩り','りんご狩り','みかん狩り','収穫体験','観光農園'])) return 'fruit_picking';
     if(has(t,['日帰り温泉','露天風呂','温浴施設','温泉','サウナ','spa','スパ'])||cat==='relax') return 'onsen';
@@ -87,8 +90,11 @@
     // Preserve a genuine unique existing hero, but replace the old Kibun single-file fallbacks
     // with the new v2 generated assets when a strong match exists.
     const isOldKibun=current.includes('/assets/kibun-images/')&&!current.includes('/assets/kibun-images/v2/');
-    if(existing&&current&&!isOldKibun&&!isLegacyShared(current)&&!explicit) return;
-    if(mode==='detail_google'&&existing&&current&&!isOldKibun&&!isLegacyShared(current)) return;
+    const isCuratedV2=current.includes('/assets/kibun-images/v2/');
+    // A recycled card can still contain a v2 image from the previous spot; update it.
+    // Preserve genuinely venue-specific imagery unless explicitly assigned.
+    if(existing&&current&&!isOldKibun&&!isCuratedV2&&!isLegacyShared(current)&&!explicit) return;
+    if(mode==='detail_google'&&existing&&current&&!isOldKibun&&!isCuratedV2&&!isLegacyShared(current)) return;
 
     const img=existing||document.createElement('img');
     if(!existing){img.loading='lazy';node.prepend(img);}
