@@ -55,6 +55,7 @@ vm.runInNewContext(js,context,{filename:'kibun-images.js'});
 const images=context.window.KibunImages;
 assert(images && images.initialAssetForSpot);
 let count=0;
+const lowResolution=[];
 for(const [key,items] of Object.entries(images.pools)){
   assert(items.length>0,key+' must have assets');
   for(const url of items){
@@ -65,6 +66,11 @@ for(const [key,items] of Object.entries(images.pools)){
     assert(bytes.length>100,'image empty: '+url);
     assert.equal(bytes.toString('ascii',0,4),'RIFF','WebP RIFF header: '+url);
     assert.equal(bytes.toString('ascii',8,12),'WEBP','WebP header: '+url);
+    if(bytes.toString('ascii',12,16)==='VP8 ' && bytes.length>=30){
+      const width=bytes.readUInt16LE(26)&0x3fff;
+      const height=bytes.readUInt16LE(28)&0x3fff;
+      if(width<640)lowResolution.push({url,width,height});
+    }
     if(url.includes('/v2/'))count++;
   }
 }
@@ -75,6 +81,10 @@ assert.match(resolved({name:'横浜イングリッシュガーデン'},'/assets/
 assert.equal(resolved({name:'鉄道博物館'},'/assets/specific/official.webp'),'/assets/specific/official.webp');
 assert.equal(resolved({name:'日本庭園',media_strategy:{display_mode:'detail_google'}},'/assets/google/photo.webp'),'/assets/google/photo.webp');
 assert.equal(images.strongKey({name:'美術館'}),'','unrelated venues must not get category imagery');
+assert.equal(images.strongKey({name:'陶芸作品の展示',category_primary:'museum'}),'','ceramics exhibits are not workshops');
+assert.equal(images.strongKey({name:'ぶどう狩り農園',category_primary:'fruit_picking'}),'','do not show strawberries for grapes');
+assert.equal(images.strongKey({name:'陶芸教室',category_primary:'workshop'}),'pottery');
+assert.equal(images.strongKey({name:'いちご狩り農園',category_primary:'fruit_picking'}),'fruit_picking');
 
 const html=read('index.html');
 assert(html.indexOf('kibun-images.js?v=201935')>=0 && html.indexOf('app.js?v=202003')>html.indexOf('kibun-images.js?v=201935'),
@@ -99,3 +109,4 @@ assert(!filters.regionMatch(yokohamaCafe,'tokyo23'));
 assert(!filters.categoryMatch(yokohamaCafe,'animals'));
 
 console.log('QA PASS: 6-hour food+relax fallback, valid pairing, short plans, hard filters, region/category filters, '+count+' WebP assets, synchronous thumbnail load, cache and failure recovery');
+if(lowResolution.length)console.warn('IMAGE QUALITY WARNING: '+lowResolution.length+' v2 assets below 640px wide: '+lowResolution.map(x=>x.url+' ('+x.width+'x'+x.height+')').join(', '));
