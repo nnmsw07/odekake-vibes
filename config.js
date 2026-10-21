@@ -287,7 +287,7 @@ window.KIBUN_CONFIG = {
   if(typeof document==='undefined') return;
   if(document.querySelector('script[data-kibun-hero-audit-guard]')) return;
   const s=document.createElement('script');
-  s.src='/hero-audit-guard.js?v=201933';
+  s.src='/hero-audit-guard.js?v=201934';
   s.defer=true;
   s.dataset.kibunHeroAuditGuard='1';
   document.head.appendChild(s);
