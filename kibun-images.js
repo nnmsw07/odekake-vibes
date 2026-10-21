@@ -16,8 +16,10 @@
     lounge_cafe:['/assets/kibun-images/v2/lounge_cafe_01.webp'],
     onsen:['/assets/kibun-images/v2/onsen_01.webp'],
     seaside_terrace:['/assets/kibun-images/v2/seaside_terrace_01.webp'],
-    fruit_picking:['/assets/kibun-images/fruit_picking.webp'],
-    pottery:['/assets/kibun-images/v2/pottery_01.webp']
+    fruit_picking:['/assets/kibun-images/v2/fruit_picking_01.webp'],
+    pottery:['/assets/kibun-images/v2/pottery_01.webp'],
+    railway_museum:['/assets/kibun-images/v2/railway_museum_01.webp'],
+    garden:['/assets/kibun-images/v2/garden_01.webp']
   };
 
   const LEGACY_SHARED=[
@@ -50,6 +52,10 @@
 
     // Only promote actual pottery / ceramics experiences; do not blanket-replace art museums.
     if(has(t,['陶芸体験','陶芸教室','ろくろ体験','電動ろくろ','陶芸','陶器づくり','やきもの体験'])) return 'pottery';
+    // Only promote a generated scene when the venue itself is unmistakably on-theme.
+    if(has(name,['鉄道博物館','地下鉄博物館','東武博物館','原鉄道模型博物館','電車とバスの博物館','リニア・鉄道館','リニア鉄道館','京王れーるランド','railway museum'])) return 'railway_museum';
+    if(has(name,['日本庭園','庭園','植物園','イングリッシュガーデン','フラワーガーデン','花菜ガーデン','バラ園']) ||
+       ((cat==='garden'||cat==='botanical_garden')&&has(t,['庭園','植物園','ガーデン']))) return 'garden';
     if(has(t,['水族館','aquarium','クラゲ','イルカ'])) return 'aquarium';
     if(has(t,['いちご狩り','苺狩り','果物狩り','ぶどう狩り','りんご狩り','みかん狩り','収穫体験','観光農園'])) return 'fruit_picking';
     if(has(t,['日帰り温泉','露天風呂','温浴施設','温泉','サウナ','spa','スパ'])||cat==='relax') return 'onsen';
