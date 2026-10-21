@@ -12,10 +12,10 @@
     kids_play_space:[
       '/assets/kibun-images/v2/kids_play_space_01.webp'
     ],
-    aquarium:['/assets/kibun-images/aquarium.webp'],
-    lounge_cafe:['/assets/kibun-images/lounge_cafe.webp'],
-    onsen:['/assets/kibun-images/onsen.webp'],
-    seaside_terrace:['/assets/kibun-images/seaside_terrace.webp'],
+    aquarium:['/assets/kibun-images/v2/aquarium_01.webp'],
+    lounge_cafe:['/assets/kibun-images/v2/lounge_cafe_01.webp'],
+    onsen:['/assets/kibun-images/v2/onsen_01.webp'],
+    seaside_terrace:['/assets/kibun-images/v2/seaside_terrace_01.webp'],
     fruit_picking:['/assets/kibun-images/fruit_picking.webp']
   };
 
