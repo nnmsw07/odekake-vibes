@@ -203,8 +203,19 @@
       used.add(companion.spot_id);const total=coverageMinutes(spots);
       return{...base,type:'combo',duration_label:requestedLabel,estimated_minutes:total,title:spots.length===3?threeStopTitle(spots,ctx,displayMinutes):comboTitle(primary,companion,'combo',displayMinutes,ctx),lead:spots.length===3?threeStopLead(spots,ctx):comboLead(primary,companion,'combo',ctx),spot_ids:spots.map(s=>s.spot_id),steps};
     }
-    if(displayMinutes<=120){const mins=coverageMinutes([primary]);return{...base,type:'single',duration_label:requestedLabel,estimated_minutes:mins,title:naturalSingleTitle(primary,displayMinutes),lead:naturalSingleLead(primary,displayMinutes),spot_ids:[primary.spot_id],steps:[{spot_id:primary.spot_id,role:'MAIN',label:'今日の主役'}]};}
-    return null;
+    // Keep a real eligible venue visible when no geographically valid companion
+    // is available. Never describe a 90-minute visit as a full-day itinerary.
+    // Genuine hard-filter zeroes remain zero in the recommender.
+    const mins=coverageMinutes([primary]);
+    const effectiveMinutes=Math.min(displayMinutes,Math.max(45,mins));
+    const partial=displayMinutes>120;
+    return{...base,type:'single',duration_label:requestedDurationLabel(effectiveMinutes),
+      estimated_minutes:mins,title:naturalSingleTitle(primary,effectiveMinutes),
+      lead:partial
+        ? `${naturalSingleLead(primary,effectiveMinutes)}近くで無理なく組み合わせられる候補が見つからなかったため、まずはここを目的地に。`
+        : naturalSingleLead(primary,effectiveMinutes),
+      spot_ids:[primary.spot_id],steps:[{spot_id:primary.spot_id,role:'MAIN',label:'今日の主役'}],
+      partial_coverage:partial};
   }
   function shortPlanAfterSuggestion(seed,plan,ctx,displayMinutes,usedAfter){
     const minutes=Number(displayMinutes||180);if(minutes<=120||minutes>240||plan.type==='overnight')return null;
