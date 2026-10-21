@@ -77,11 +77,11 @@ assert.equal(resolved({name:'日本庭園',media_strategy:{display_mode:'detail_
 assert.equal(images.strongKey({name:'美術館'}),'','unrelated venues must not get category imagery');
 
 const html=read('index.html');
-assert(html.indexOf('kibun-images.js?v=201934')>=0 && html.indexOf('app.js?v=202003')>html.indexOf('kibun-images.js?v=201934'),
+assert(html.indexOf('kibun-images.js?v=201935')>=0 && html.indexOf('app.js?v=202003')>html.indexOf('kibun-images.js?v=201935'),
   'curated resolver must load before first home-card paint');
 assert(html.includes('KIBUN_HOME_IMAGE_PRELOAD=true'));
 assert(read('hero-audit-guard.js').includes('!global.KIBUN_HOME_IMAGE_PRELOAD'));
-assert(read('config.js').includes('hero-audit-guard.js?v=201934'));
+assert(read('config.js').includes('hero-audit-guard.js?v=201935'));
 assert(html.includes('styles.css?v=202001'));
 const app=read('app.js');
 assert(app.includes('KibunImages?.initialAssetForSpot?.'),'imageBlock must resolve image before DOM insertion');
