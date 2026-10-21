@@ -45,8 +45,9 @@ const pairedSeed={...seed,spots:[
   spot('spot_3','山下町の庭園','横浜市中区','garden',{relax:92,food:35}),
   spot('spot_4','山下町のカフェ','横浜市中区','cafe',{relax:89,food:94})
 ].map(s=>({...s,address:'横浜市中区山下町'}))};
-const paired=run(pairedSeed,{...ctx,availableMinutes:240});
-assert(paired.plans.some(p=>p.type==='combo'),'keep valid nearby two-stop plans');
+const paired=planner.buildPlans(pairedSeed,{recommendations:[{spot_id:'spot_3',slot:'best_match',slot_label:'いちばんハマる',scores:{overall:88}}]},
+  {...ctx,availableMinutes:240},{displayMinutes:240});
+assert(paired.some(p=>p.type==='combo'),'keep valid nearby two-stop plans');
 
 const js=read('kibun-images.js');
 const context={window:{ODEKAKE_SEED:{spots:[]}},document:{readyState:'loading',addEventListener(){}}};
