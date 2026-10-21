@@ -19,7 +19,7 @@
   // v20.19.33: use actual recent generated assets from /assets/kibun-images/v2/.
   // The home page loads the curated resolver synchronously before app.js.
   // Keep deferred loading for subpages, but do not execute it twice on home.
-  if(!global.KIBUN_HOME_IMAGE_PRELOAD) load('/kibun-images.js?v=201934','kibun-images');
+  if(!global.KIBUN_HOME_IMAGE_PRELOAD) load('/kibun-images.js?v=201935','kibun-images');
 
   load('/hero-audit-mutation-guard.js?v=201917','kibun-hero-audit-mutation-guard');
   load('/hero-audit-guard-core.js?v=201917','kibun-hero-audit-guard-core');
