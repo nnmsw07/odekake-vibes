@@ -83,30 +83,33 @@
   function isLegacyShared(src){return LEGACY_SHARED.some(part=>src.includes(part));}
   function addBadge(node){if(!node.querySelector('.image-badge'))node.insertAdjacentHTML('beforeend','<span class="image-badge">イメージ</span>');}
 
+  // Shared by initial card rendering and the mutation observer. Making the decision
+  // before inserting <img> avoids briefly showing an unrelated legacy thumbnail.
+  function initialAssetForSpot(spot,originalSrc=''){
+    const mode=displayMode(spot);
+    if(mode!=='kibun_image'&&mode!=='detail_google') return '';
+    const key=strongKey(spot); if(!key) return '';
+    const src=assetFor(spot,key); if(!src) return '';
+    const current=String(originalSrc||''),explicit=Boolean(explicitKey(spot));
+    const old=current.includes('/assets/kibun-images/')&&!current.includes('/assets/kibun-images/v2/');
+    const v2=current.includes('/assets/kibun-images/v2/');
+    if(current&&!old&&!v2&&!isLegacyShared(current)&&!explicit)return '';
+    // A pinned Google Places detail photo takes precedence over generated imagery.
+    if(mode==='detail_google'&&current&&!old&&!v2&&!isLegacyShared(current))return '';
+    return src;
+  }
+
   function applyNode(node){
     if(!node?.matches?.('[data-media-spot]')) return;
     const spot=findSpot(node.getAttribute('data-media-spot')); if(!spot) return;
-    const mode=displayMode(spot); if(mode!=='kibun_image'&&mode!=='detail_google') return;
-    const key=strongKey(spot); if(!key) return;
-    const src=assetFor(spot,key); if(!src) return;
     const existing=node.querySelector('img');
-    const current=String(existing?.getAttribute('src')||'');
-    const explicit=Boolean(explicitKey(spot));
-
-    // Preserve a genuine unique existing hero, but replace the old Kibun single-file fallbacks
-    // with the new v2 generated assets when a strong match exists.
-    const isOldKibun=current.includes('/assets/kibun-images/')&&!current.includes('/assets/kibun-images/v2/');
-    const isCuratedV2=current.includes('/assets/kibun-images/v2/');
-    // A recycled card can still contain a v2 image from the previous spot; update it.
-    // Preserve genuinely venue-specific imagery unless explicitly assigned.
-    if(existing&&current&&!isOldKibun&&!isCuratedV2&&!isLegacyShared(current)&&!explicit) return;
-    if(mode==='detail_google'&&existing&&current&&!isOldKibun&&!isCuratedV2&&!isLegacyShared(current)) return;
-
+    const src=initialAssetForSpot(spot,existing?.getAttribute('src')||'');
+    if(!src) return;
     const img=existing||document.createElement('img');
     if(!existing){img.loading='lazy';node.prepend(img);}
     if(img.getAttribute('src')!==src) img.src=src;
     img.alt=`${spot.name||''}のイメージ`;img.referrerPolicy='no-referrer';img.style.visibility='';
-    node.dataset.kibunImage='curated-v2';node.dataset.kibunImageKey=key;node.dataset.kibunImageAsset=src;addBadge(node);
+    node.dataset.kibunImage='curated-v2';node.dataset.kibunImageKey=strongKey(spot);node.dataset.kibunImageAsset=src;addBadge(node);
   }
 
   function scan(root=document){if(root?.matches?.('[data-media-spot]'))applyNode(root);root?.querySelectorAll?.('[data-media-spot]').forEach(applyNode);}
@@ -116,6 +119,6 @@
     new MutationObserver(records=>{for(const rec of records)for(const n of rec.addedNodes)if(n.nodeType===1)scan(n);}).observe(document.body,{childList:true,subtree:true});
   }
 
-  global.KibunImages={disabled:false,pools:ASSET_POOLS,strongKey,assetFor,scan};
+  global.KibunImages={disabled:false,pools:ASSET_POOLS,strongKey,assetFor,initialAssetForSpot,scan};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })(window);
