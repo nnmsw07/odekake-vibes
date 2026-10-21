@@ -51,13 +51,19 @@
     if(name.includes('play! park')||name.includes('play!park')||name.includes('ue fantasia')||name.includes('湘南あそびマーレ')||name.includes('あそびマーレ')||name.includes('ボーネルンド')||name.includes('キドキド')) return 'kids_play_space';
 
     // Only promote actual pottery / ceramics experiences; do not blanket-replace art museums.
-    if(has(t,['陶芸体験','陶芸教室','ろくろ体験','電動ろくろ','陶芸','陶器づくり','やきもの体験'])) return 'pottery';
+    // Ceramics exhibitions and museums must not show a potter's-wheel workshop scene.
+    if(has(name,['陶芸体験','陶芸教室','陶芸工房','ろくろ体験','陶器づくり']) ||
+       ((/workshop|experience|craft|studio/.test(cat)||has(name,['工房','体験','ワークショップ']))&&
+        has(t,['陶芸体験','陶芸教室','ろくろ体験','電動ろくろ','陶器づくり','やきもの体験']))) return 'pottery';
     // Only promote a generated scene when the venue itself is unmistakably on-theme.
     if(has(name,['鉄道博物館','地下鉄博物館','東武博物館','原鉄道模型博物館','電車とバスの博物館','リニア・鉄道館','リニア鉄道館','京王れーるランド','railway museum'])) return 'railway_museum';
     if(has(name,['日本庭園','庭園','植物園','イングリッシュガーデン','フラワーガーデン','花菜ガーデン','バラ園']) ||
        ((cat==='garden'||cat==='botanical_garden')&&has(t,['庭園','植物園','ガーデン']))) return 'garden';
     if(has(t,['水族館','aquarium','クラゲ','イルカ'])) return 'aquarium';
-    if(has(t,['いちご狩り','苺狩り','果物狩り','ぶどう狩り','りんご狩り','みかん狩り','収穫体験','観光農園'])) return 'fruit_picking';
+    // The current v2 harvest scene visibly depicts strawberries. Never label grape,
+    // apple, or mandarin picking with an unrelated fruit photo.
+    if((has(name,['いちご','苺'])||has(t,['いちご狩り','苺狩り']))&&
+       !has(name,['ぶどう','葡萄','りんご','林檎','みかん','ブルーベリー'])) return 'fruit_picking';
     if(has(t,['日帰り温泉','露天風呂','温浴施設','温泉','サウナ','spa','スパ'])||cat==='relax') return 'onsen';
     if(has(t,['海沿い','海辺','ベイサイド','ウォーターフロント','オーシャンビュー','マリーナ'])||cat==='waterfront') return 'seaside_terrace';
     if(has(t,['屋内遊び場','キッズパーク','プレイグラウンド','室内アスレチック'])) return 'kids_play_space';
