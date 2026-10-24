@@ -13,13 +13,13 @@
       '/assets/kibun-images/v2/kids_play_space_01.webp'
     ],
     aquarium:['/assets/kibun-images/v2/aquarium_01.webp'],
-    lounge_cafe:['/assets/kibun-images/v2/lounge_cafe_01.webp'],
+    lounge_cafe:['/assets/kibun-images/v2/lounge_cafe_hd.webp'],
     onsen:['/assets/kibun-images/v2/onsen_01.webp'],
     seaside_terrace:['/assets/kibun-images/v2/seaside_terrace_01.webp'],
-    fruit_picking:['/assets/kibun-images/v2/fruit_picking_01.webp'],
-    pottery:['/assets/kibun-images/v2/pottery_01.webp'],
-    railway_museum:['/assets/kibun-images/v2/railway_museum_01.webp'],
-    garden:['/assets/kibun-images/v2/garden_01.webp']
+    fruit_picking:['/assets/kibun-images/v2/fruit_picking_hd.webp'],
+    pottery:['/assets/kibun-images/v2/pottery_hd.webp'],
+    railway_museum:['/assets/kibun-images/v2/railway_museum_hd.webp'],
+    garden:['/assets/kibun-images/v2/garden_hd.webp']
   };
 
   const LEGACY_SHARED=[

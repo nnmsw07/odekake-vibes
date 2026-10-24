@@ -75,9 +75,17 @@ for(const [key,items] of Object.entries(images.pools)){
   }
 }
 assert(count>=11,'expected eleven curated v2 assets');
+for(const key of ['lounge_cafe','fruit_picking','pottery','railway_museum','garden']){
+  const url=images.pools[key][0];
+  assert(url.endsWith('_hd.webp'),'HD filename must be used for '+key);
+  const bytes=fs.readFileSync(path.join(ROOT,url.slice(1)));
+  assert.equal(bytes.toString('ascii',12,16),'VP8 ','HD image must be VP8 WebP: '+key);
+  const width=bytes.readUInt16LE(26)&0x3fff, height=bytes.readUInt16LE(28)&0x3fff;
+  assert(width>=1200&&height>=900,'HD image is too small for '+key+': '+width+'x'+height);
+}
 function resolved(spot0,src){return images.initialAssetForSpot(spot0,src)||src;}
-assert.match(resolved({name:'鉄道博物館'},'/assets/kibun-images/v2/aquarium_01.webp'),/railway_museum_01\.webp$/);
-assert.match(resolved({name:'横浜イングリッシュガーデン'},'/assets/editorial/green-breathing-room.webp'),/garden_01\.webp$/);
+assert.match(resolved({name:'鉄道博物館'},'/assets/kibun-images/v2/aquarium_01.webp'),/railway_museum_hd\.webp$/);
+assert.match(resolved({name:'横浜イングリッシュガーデン'},'/assets/editorial/green-breathing-room.webp'),/garden_hd\.webp$/);
 assert.equal(resolved({name:'鉄道博物館'},'/assets/specific/official.webp'),'/assets/specific/official.webp');
 assert.equal(resolved({name:'日本庭園',media_strategy:{display_mode:'detail_google'}},'/assets/google/photo.webp'),'/assets/google/photo.webp');
 assert.equal(images.strongKey({name:'美術館'}),'','unrelated venues must not get category imagery');
@@ -87,11 +95,11 @@ assert.equal(images.strongKey({name:'陶芸教室',category_primary:'workshop'})
 assert.equal(images.strongKey({name:'いちご狩り農園',category_primary:'fruit_picking'}),'fruit_picking');
 
 const html=read('index.html');
-assert(html.indexOf('kibun-images.js?v=201935')>=0 && html.indexOf('app.js?v=202003')>html.indexOf('kibun-images.js?v=201935'),
+assert(html.indexOf('kibun-images.js?v=201936')>=0 && html.indexOf('app.js?v=202003')>html.indexOf('kibun-images.js?v=201936'),
   'curated resolver must load before first home-card paint');
 assert(html.includes('KIBUN_HOME_IMAGE_PRELOAD=true'));
 assert(read('hero-audit-guard.js').includes('!global.KIBUN_HOME_IMAGE_PRELOAD'));
-assert(read('config.js').includes('hero-audit-guard.js?v=201935'));
+assert(read('config.js').includes('hero-audit-guard.js?v=201936'));
 assert(html.includes('styles.css?v=202001'));
 const app=read('app.js');
 assert(app.includes('KibunImages?.initialAssetForSpot?.'),'imageBlock must resolve image before DOM insertion');
