@@ -4,32 +4,143 @@
   const cfg=window.KIBUN_CONFIG||{};
   const endpoint=cfg.placePhotoApiUrl;
   const imgs=[...document.querySelectorAll('img[data-hero-spot]')];
-  if(!endpoint){
-    imgs.forEach(img=>{ if(img.dataset.heroClean==='1') img.dataset.heroState='fallback'; });
-    return;
-  }
-  const revealFallback=(img)=>{
-    if(img.dataset.heroClean==='1' && img.dataset.heroState!=='ready') img.dataset.heroState='fallback';
+  // Actual venue photos remain first choice; AI assets are only illustrative fallback.
+  const PHOTO_PROVIDERS=new Set(['owned','official_permission','wikimedia_commons','open_license']);
+  const trustedUrl=value=>{
+    const raw=String(value||'').trim();
+    if(!/^https:\/\//i.test(raw)&&!/^\/\/[^/]/.test(raw)) return '';
+    try{const url=new URL(raw,location.href);return url.protocol==='https:'?url.href:'';}catch(_e){return '';}
   };
-  const load=async(img)=>{
+  const style=document.createElement('style');
+  style.setAttribute('data-kibun-photo-trust','1');
+  style.textContent=[
+    '.kibun-gmaps-photo-credit{position:absolute;right:9px;bottom:9px;z-index:4;display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;max-width:calc(100% - 18px);padding:6px 9px;background:rgba(255,255,255,.96);border:1px solid rgba(36,35,31,.13);border-radius:9px;box-shadow:0 1px 8px rgba(0,0,0,.09);font-family:Roboto,Arial,sans-serif;font-size:12px;line-height:1.35;color:#1f1f1f;text-align:left}',
+    '.kibun-gmaps-photo-credit a{color:#1f1f1f;text-decoration:underline;text-underline-offset:2px}',
+    '.kibun-gmaps-photo-credit .kibun-gmaps-brand{font:400 12px/1.35 Roboto,Arial,sans-serif;color:#1f1f1f;white-space:nowrap;letter-spacing:normal}',
+    '.kibun-gmaps-photo-credit .kibun-photo-author{display:inline-flex;gap:4px;align-items:center;min-width:0}',
+    '.kibun-gmaps-photo-credit .kibun-photo-author img{width:17px!important;height:17px!important;min-width:17px;object-fit:cover;border-radius:50%;display:inline-block;opacity:1!important}',
+    '.kibun-synthetic-photo-note{position:absolute;right:9px;bottom:9px;z-index:3;background:rgba(255,255,255,.94);color:#333;padding:5px 8px;border-radius:8px;font-size:12px;font-weight:500}',
+    '.kibun-editorial-photo-credit{position:absolute;bottom:9px;right:9px;z-index:3;max-width:calc(100% - 18px);padding:5px 8px;background:rgba(255,255,255,.94);border-radius:8px;font-size:12px;color:#4f4942}',
+    '.kibun-article-verified{font-size:12px;color:#655e56;margin:10px 0 16px}'
+  ].join('\n');
+  document.head.appendChild(style);
+  const photoHost=img=>img.parentElement;
+  const positionHost=host=>{
+    if(host&&window.getComputedStyle&&window.getComputedStyle(host).position==='static')host.style.position='relative';
+  };
+  const syntheticNote=img=>{
+    if(!/\/images\/ai\//.test(img.getAttribute('src')||''))return;
+    const host=photoHost(img);if(!host||host.querySelector('.kibun-synthetic-photo-note'))return;
+    positionHost(host);
+    const label=document.createElement('span');
+    label.className='kibun-synthetic-photo-note';label.textContent='イメージ画像';
+    host.appendChild(label);
+  };
+  const revealFallback=img=>{
+    if(img.dataset.heroClean==='1'&&img.dataset.heroState!=='ready')img.dataset.heroState='fallback';
+    syntheticNote(img);
+  };
+  // The API already returns authorAttributions and a Google Maps source URL.
+  // Never present its image when a usable source link cannot be shown.
+  const addGoogleAttribution=(img,data)=>{
+    const source=trustedUrl(data.photoGoogleMapsUri||data.placeGoogleMapsUri);
+    const host=photoHost(img);
+    if(!source||!host)return false;
+    positionHost(host);
+    host.querySelector('.kibun-gmaps-photo-credit')?.remove();
+    const credit=document.createElement('div');
+    credit.className='kibun-gmaps-photo-credit';
+    credit.setAttribute('aria-label','写真の出典');
+    const brand=document.createElement('a');
+    brand.href=source;brand.target='_blank';brand.rel='noopener noreferrer';
+    brand.className='kibun-gmaps-brand';
+    brand.setAttribute('translate','no');brand.textContent='Google Maps';
+    brand.setAttribute('aria-label','Google Mapsで写真の出典を確認');
+    credit.appendChild(brand);
+    for(const author of Array.isArray(data.authors)?data.authors:[]){
+      if(!author||!author.displayName)continue;
+      const href=trustedUrl(author.uri);
+      const container=document.createElement(href?'a':'span');
+      container.className='kibun-photo-author';
+      if(href){container.href=href;container.target='_blank';container.rel='noopener noreferrer';}
+      const avatar=trustedUrl(author.photoUri);
+      if(avatar){const photo=document.createElement('img');photo.src=avatar;photo.alt='';photo.loading='lazy';container.appendChild(photo);}
+      const name=document.createElement('span');
+      name.textContent=String(author.displayName).slice(0,120);
+      container.appendChild(name);credit.appendChild(container);
+    }
+    host.appendChild(credit);
+    return true;
+  };
+  const preferredPhoto=img=>{
+    const provider=String(img.dataset.photoProvider||'').trim();
+    if(!PHOTO_PROVIDERS.has(provider))return false;
+    // For third-party official/CC images, source and credit are required.
+    const credit=String(img.dataset.photoCredit||'').trim();
+    const url=trustedUrl(img.dataset.photoSourceUrl);
+    if(provider!=='owned'&&(!credit||!url))return false;
+    const host=photoHost(img);
+    if(host&&credit&&!host.querySelector('.kibun-editorial-photo-credit')){
+      const label=document.createElement('small');
+      label.className='kibun-editorial-photo-credit';label.textContent='写真：'+credit.slice(0,160);
+      if(url){const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent=' 出典';label.appendChild(link);}
+      host.appendChild(label);
+    }
+    img.dataset.heroState='fallback';
+    return true;
+  };
+  const load=async img=>{
+    if(img.dataset.heroResolved==='1')return;
+    if(preferredPhoto(img))return;
+    if(!endpoint){revealFallback(img);return;}
     const m=HERO_SPOTS[img.dataset.heroSpot];
-    if(img.dataset.heroClean==='1') img.dataset.heroState='loading';
-    if(!m){ revealFallback(img); return; }
+    if(img.dataset.heroClean==='1')img.dataset.heroState='loading';
+    if(!m){revealFallback(img);return;}
     try{
       const u=new URL(endpoint);
       u.searchParams.set('name',m.query||m.name);
       u.searchParams.set('address',m.useAddress===false?'':(m.address||''));
       if(m.placeId)u.searchParams.set('placeId',m.placeId);
       if(Number.isInteger(m.photoIndex))u.searchParams.set('photoIndex',String(m.photoIndex));
-      const r=await fetch(u.toString(),{cache:'no-store'}); if(!r.ok){revealFallback(img);return;}
-      const d=await r.json(); if(!d||!d.photoUri||d.matchConfidence==='low'){revealFallback(img);return;}
+      const r=await fetch(u.toString(),{cache:'no-store'});
+      if(!r.ok){revealFallback(img);return;}
+      const d=await r.json();
+      if(!d?.photoUri||d.matchConfidence==='low'){revealFallback(img);return;}
+      const target=trustedUrl(d.photoUri);
+      if(!target||!trustedUrl(d.photoGoogleMapsUri||d.placeGoogleMapsUri)){revealFallback(img);return;}
       const pre=new Image();
-      pre.onload=()=>{img.src=d.photoUri;img.dataset.heroResolved='1';img.dataset.heroState='ready';};
-      pre.onerror=()=>{revealFallback(img);};
-      pre.src=d.photoUri;
+      pre.onload=()=>{
+        if(!addGoogleAttribution(img,d)){revealFallback(img);return;}
+        const oldSrc=img.getAttribute('src')||'';
+        img.onerror=()=>{
+          img.onerror=null;img.src=oldSrc;
+          photoHost(img)?.querySelector('.kibun-gmaps-photo-credit')?.remove();
+          img.dataset.heroResolved='0';img.dataset.heroState='fallback';syntheticNote(img);
+        };
+        img.src=target;img.dataset.heroResolved='1';img.dataset.heroState='ready';
+        photoHost(img)?.querySelector('.kibun-synthetic-photo-note')?.remove();
+      };
+      pre.onerror=()=>revealFallback(img);
+      pre.src=target;
     }catch(_e){revealFallback(img);}
   };
   imgs.forEach(load);
+
+  // Never fabricate a "last checked" date. Display only dates recorded after
+  // verification against the venue's current official information.
+  document.querySelectorAll('article[data-kibun-verified]').forEach(article=>{
+    const date=String(article.dataset.kibunVerified||'');
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(date))return;
+    const parsed=new Date(date+'T00:00:00Z');
+    if(Number.isNaN(parsed.getTime())||parsed.toISOString().slice(0,10)!==date)return;
+    if(parsed.getTime()>Date.now())return;
+    const marker=document.createElement('p');
+    marker.className='kibun-article-verified';
+    marker.textContent='掲載情報の最終確認：'+date.replace(/-/g,'/');
+    const official=trustedUrl(article.dataset.kibunVerifiedSource);
+    if(official){const a=document.createElement('a');a.href=official;a.target='_blank';a.rel='noopener noreferrer';a.textContent=' 公式情報';marker.appendChild(a);}
+    (article.querySelector('.article-note')||article.querySelector('.article-hero')||article).appendChild(marker);
+  });
 })();
 
 
